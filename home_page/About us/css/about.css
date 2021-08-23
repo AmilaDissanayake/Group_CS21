@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&display=swap');
+
+*{
+    text-align: center;
+    margin:0px;
+    padding: 0%;
+    font-family: 'Oswald', sans-serif;
+}
+
+.section{
+    border: 20px;
+    margin-top: 200px;
+    background-color: #ddd;
+    background-image: url("../img/background.jpg");
+    background-position: center;
+    background-size: 800px 800px;
+    background-repeat: no-repeat;
+
+}
+
+.container{
+    width: 80%;
+    display:block;
+    margin:auto;
+    padding-top: 50px;
+}
+
+.title h1{
+    color: #F7855B;
+}
+.container-section{
+    margin-top: 500px;
+    float: none;
+    width: 55%;
+    display: block;
+    margin: auto;
+} 
+
+.content-section .content h3{
+    text-align: center;
+    margin-top: 20px;
+    color: #efefef;
+    font-size: 21px;
+}
+
+.content-section .content p{
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-ser;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.content-section .content .button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.content-section .content .button a{
+    background-color:#F7855B;
+    padding: 12px 40px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+
+}
+
+.content-section .content .button a:hover{
+    background-color: #a52a2a;
+    color:#fff;
+}
+
+.content-section .social{
+    padding-bottom: 50px;
+    margin-bottom: 200px;
+    text-align: center;
+    margin : 40px 25px;
+}
+
+.content-section .social i{
+    color:#a52a2a;
+    font-size: 30px;
+    padding:0px 10px;
+}
+
+.content-section .social i:hover{
+    color:#F7855B;
+}
+
+    
+    
