@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="bmi.css">
+</head>
+<body>
+    <div class="calculate">
+        <p class="title">CALCULATE YOUR BMI</p>
+        <div class="gender">
+            <div class="male"><span>Male</span></div>
+            <div class="female"><span>Female</span></div>
+        </div>
+        <div class="height">
+            <p>HEIGHT</p>
+            <p class="val">
+                <i class="sub">-</i>
+                <span>50</span>cm
+                <i class="add">+</i>
+            </p>
+
+            <input type="range" min="50" max="220" value="50">
+        </div>
+        <div class="weight">
+            <p>WEIGHT</p>
+            <p class="val">
+                <i class="sub">-</i>
+                <span>10</span>kg
+                <i class="add">+</i>
+            </p>
+
+            <input type="range" min="10" max="180" value="10">
+        </div>
+
+        <div class="calc">CALCULATE</div>
+    </div>
+
+    <div class="result">
+        <div class="bmi">
+            <div class="title">YOUR BMI</div>
+            <div class="val">0.00</div>
+        </div>
+
+        <div class="text">Your BMI is normal!</div>
+        <div class="recal">RECALCULATE</div>
+    </div>
+    <script type="text/javascript" src="bmi.js"></script>
+</body>
+</html>
