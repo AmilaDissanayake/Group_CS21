@@ -34,7 +34,7 @@
 }
 
 .navbar{
-    background: rgb(55,54,56);
+    background: rgb(255, 255, 255);
     padding: 5px;
     list-style:none;
     margin:0;
@@ -48,21 +48,37 @@
 }
 
 .navbar ul li a{
-    color:rgb(247,133,91);
     font-size: 15px;
     text-transform: uppercase;
     border: 1px solid transparent;
     padding: 7px 10px;
     border-radius: 3px;
+    position: relative;
+    color: #000;
+  text-decoration: none;
 }
 
 .navbar a:hover{
-    border:1px solid white;
-    transition: .5s;
-    background-color: white;
-    opacity: .3;
+    color: #000;
     
 }
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar a:hover::before {
+    transform: scaleX(1);
+  }
 
 .button{
         background: transparent;
