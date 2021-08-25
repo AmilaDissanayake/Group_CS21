@@ -77,7 +77,13 @@ body{
     font-family: 'Poppins';
     text-decoration: none;
     color: white;
-    font-size: 13px;
+    font-size: 14px;
+}
+.left li a:hover{
+  
+  color: rgba(255, 255, 255, 0.775);
+  transition: 0.5s;
+  
 }
 
 .right{
@@ -324,7 +330,7 @@ button, button::after {
   .media{
       z-index: 1000;
       margin-top: 500px;
-      position:absolute;
+      position:fixed;
       top: 50px;
       margin-left: 1200px;
       margin-top: 500px;
