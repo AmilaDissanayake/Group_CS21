@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Power House</title>
+    <link rel="stylesheet" href="css/header_hero.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/bmi.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="left">
+
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About US</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" id="myBtn">BMI Calculator</a></li>
+                <li><a href="#">Testominals</a></li>
+            </ul>
+
+        </div>
+        <div class="center">
+            <h1>POWER HOUSE</h1><br>
+            <h2>FITNESS ACADEMY</h2>
+        </div>
+        <div class="right">
+            <button type="button" class="button">Sign Up</button>
+            <button type="button" class="button">Login</button>
+
+        </div>
+    </div>
+
+    <div class="showcase">
+        <div class="video-container">
+            <video src="media/video.mp4" autoplay muted loop></video>
+        </div>
+        <div class="content">
+            <h1>Champions make no excuses.</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur veniam quo, eaque dolores iste maxime
+                repellendus, a, cupiditate recusandae tenetur reprehenderit!
+            <p>
+                <a href="#about" class="btnn">Join the Academy</a>
+        </div>
+    </div>
+
+    <div class="media">
+        <audio id="myAudio" src="media/music.mp3" preload="auto">
+        </audio>
+        <a onClick="togglePlay()"><i class="fas fa-headphones-alt"></i> <span class='label-menu'> Background Music
+            </span></a>
+
+    </div>
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <div class="calculate">
+                <p class="title">CALCULATE YOUR BMI</p>
+                <div class="gender">
+                    <div class="male">Male</div>
+                    <div class="female">Female</div>
+                </div>
+                <div class="height">
+                    <p>HEIGHT</p>
+                    <p class="val">
+                        <i class="sub">-</i>
+                        <span>50</span>cm
+                        <i class="add">+</i>
+                    </p>
+
+                    <input type="range" min="50" max="220" value="50">
+                </div>
+                <div class="weight">
+                    <p>WEIGHT</p>
+                    <p class="val">
+                        <i class="sub">-</i>
+                        <span>10</span>kg
+                        <i class="add">+</i>
+                    </p>
+
+                    <input type="range" min="10" max="180" value="10">
+                </div>
+
+                <div class="calc">CALCULATE</div>
+            </div>
+
+            <div class="result">
+                <div class="bmi">
+                    <div class="title">YOUR BMI</div>
+                    <div class="val">0.00</div>
+                </div>
+
+                <div class="text">Your BMI is normal!</div>
+                <div class="recal">RECALCULATE</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
