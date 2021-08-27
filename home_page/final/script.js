@@ -38,6 +38,9 @@ myAudio.onpause = function () {
     isPlaying = false;
 };
 
+
+
+
 let gender = 'male';
 height = 50;
 
