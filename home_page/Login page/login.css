@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@font-face {
+    font-family: "Anurati";
+    src: url("Anurati-Regular.otf");
+    }
+    
+@font-face {
+        font-family: "Azonix";
+        src :url("Azonix.otf");
+    
+        }
+
+
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +18,8 @@
     font-family: sans-serif;
     
 }
+
+
 
 section {
     position: relative;
@@ -17,7 +32,7 @@ section .img {
     position: relative;
     width: 50%;
     height: 100%;
-    background: url(img.jpg) ;
+    background: url(background.jpg) ;
     background-size: cover;
     background-repeat: no-repeat; 
 }
@@ -25,11 +40,12 @@ section .img {
 section .img .head {
     color: #fff;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 75px;
     padding-left: 30px;
     padding-right: 30px;
-    font-size: 80px;
+    font-size: 50px;
     font-weight: bold;
+    font-family: 'Anurati';
 }
 
 section .img .head3 {
@@ -38,18 +54,22 @@ section .img .head3 {
     padding-top: 0px;
     padding-left: 30px;
     padding-right: 30px;
-    font-size: 50px;
-    font-weight: bold;
+    font-size: 20px;
+    /* font-weight: bold; */
+    font-family: 'Anurati';
 }
 
 section .img .head4 {
     color: #ffffff;
     text-align: left;
-    padding-top: 65px;
+    padding-top: 350px;
     padding-left: 80px;
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 20px;
+    /* font-weight: bold; */
+    letter-spacing: 3px;
     text-decoration: underline;
+    font-family: 'Azonix';
+
 }
 
 section .img .head5 {
@@ -57,12 +77,16 @@ section .img .head5 {
     text-align: left;
     padding-top: 15px;
     padding-left: 80px;
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 35px;
+    letter-spacing: 3px;
+    /* font-weight: bold; */
+    font-family: 'Azonix';
 }
 
 section .img .head5 span {
     color: #86ff71;
+    font-family: 'Azonix';
+    font-style: italic;
 }
 
 section .img::before {
@@ -155,7 +179,7 @@ section .login .form .input1 input[type="submit"] {
 section .login .form .input1 input[type="submit"]:hover {
     /* background: #86ff71; */
     background: rgb(13, 121, 31);
-    rgb(13, 121, 31)
+    
 }
 
 section .login .form .remember label {

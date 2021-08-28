@@ -55,12 +55,8 @@ body{
 
 .left{
     width: 35%;
-<<<<<<< HEAD
-    display: flex;  
-=======
     display: flex;
     align-items: center;
->>>>>>> 0c7eaf304390fb8e04b339ccb94d206c96b5ad2d
     justify-content: center; 
 }
 
@@ -321,8 +317,8 @@ body{
       margin-top: 500px;
       position:fixed;
       top: 50px;
-      margin-left: 1200px;
-      margin-top: 500px;
+      margin-left: 1400px;
+      margin-top: 600px;
   }
 
   .media a{
