@@ -73,7 +73,7 @@ section .img .head4 {
 section .img .head5 {
     color: #bfd0d8;
     text-align: left;
-    padding-top: 15px;
+    padding-top: 350px;
     padding-left: 80px;
     font-size: 35px;
     letter-spacing: 3px;
@@ -131,13 +131,15 @@ section .login {
     padding: 4rem 2rem;
     border: none;
     border-radius: 1rem;
-    box-shadow: 1px 1px 2px 2px #146905;
+    /* box-shadow: 1px 1px 0px 0px #146905; */
 }
 .form__title{
     font-weight: 400;
     margin-bottom: 3rem;
     color: #80868B;
-    border-bottom: 4px solid #39FF14;
+    border-bottom: 3px solid #86ff71;
+    font-family: 'Azonix';
+    padding-bottom: 5px;
 }
 .form__div{
     position: relative;
@@ -149,25 +151,28 @@ section .login {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    font-size: var(--normal-font-size);
-    border: 1px solid var(--border-color);
-    border-radius: .5rem;
-    color: #fff;
+    height: 45px;
+    font-size: 15px;
+    border: 2px solid #80868B;
+    /* border-radius: .5rem ; */
+    color: #80868B;
     outline: none;
-    padding: 1rem;
+    /* padding: 1rem; */
     background: none;
     z-index: 1;
+    font-family: 'Poppins';
 }
 .form__label{
     position: absolute;
     left: 1rem;
     top: 1rem;
-    padding: 0 .25rem;
+    /* padding: 0 .25rem; */
+    color: #80868B;
     background-color: #000;
-    color: var(--input-color);
-    font-size: var(--normal-font-size);
+    /* color: var(--input-color); */
+    font-size: 14px;
     transition: .3s;
+    font-family: 'Azonix';
 }
 .form__button{
     display: block;
@@ -177,12 +182,15 @@ section .login {
     outline: none;
     border: none;
     background-color: #39FF14;
+    font-family: 'Azonix';
     color: #000;
     font-weight: bold;
     font-size: var(--normal-font-size);
-    border-radius: .5rem;
+    /* border-radius: .5rem; */
     cursor: pointer;
     transition: .3s;
+    width: 100%;
+    align-items: center;
 }
 
 
@@ -190,8 +198,8 @@ section .login {
 .form__input:focus + .form__label{
     top: -.5rem;
     left: .8rem;
-    color: var(--first-color);
-    font-size: var(--small-font-size);
+    color :#86ff71;
+    font-size: 14px;
     font-weight: 500;
     z-index: 10;
 }
@@ -200,14 +208,14 @@ section .login {
 .form__input:not(:placeholder-shown).form__input:not(:focus)+ .form__label{
     top: -.5rem;
     left: .8rem;
-    font-size: var(--small-font-size);
+    font-size: 14px;
     font-weight: 500;
     z-index: 10;
 }
 
 /*Input focus*/
 .form__input:focus{
-    border: 1.5px solid var(--first-color);
+    border: 2px solid #86ff71
 }
 
 .hover{
@@ -215,24 +223,30 @@ section .login {
 }
 
 .hover:hover{
-    color: #39FF14;
+    color: #86ff71;
 }
 
 .remember {
     margin-bottom: 10px;
+    margin-top: 30px;
     font-weight: 400;
-    font-size: 14px;
-    color: #fff;
+    font-size: 15px;
+    color: #80868B;
+    font-family: 'Poppins';
 }
 
 .remember a{
     float: right;
     margin-bottom: 20px;
+    font-family: 'Poppins';
 }
 
 .signup p{
     margin-top: 10px;
-    color: #fff;
-    float: right;
-    font-size: 13px;
+    /* display: flex; */
+    color: #80868B;
+    float: left;
+    font-size: 15px;
+    font-family: 'Poppins';
+    /* justify-content: center; */
 }
