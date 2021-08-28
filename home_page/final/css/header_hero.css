@@ -57,7 +57,7 @@ body{
 
 .left{
     width: 35%;
-    display: flex;  
+    display: flex;
     align-items: center;
     justify-content: center; 
 }
