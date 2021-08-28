@@ -23,15 +23,14 @@ body{
     align-items: center;
     position: fixed; 
     z-index: 100;
-    transition: 0.2s;
-    /* justify-content: center;  */
-    /* flex-direction: column;
-} */
+
+    
+   
 }
 .center{
     width: 30%;
     /* display: flex; */
-    justify-content: center; 
+    /* justify-content: center;  */
 }
 
 .center h1{
@@ -40,8 +39,7 @@ body{
     margin: 0px;
     font-weight: 300;
     text-align: center;
-    
-    
+       
 }
 
 .center h2{
@@ -52,13 +50,17 @@ body{
     font-weight: 300;
     text-align: center;
     margin-top: -17px;
-    color: #39FF14;  
+    color: #37ff14b4;  
 }
 
 .left{
     width: 35%;
+<<<<<<< HEAD
+    display: flex;  
+=======
     display: flex;
     align-items: center;
+>>>>>>> 0c7eaf304390fb8e04b339ccb94d206c96b5ad2d
     justify-content: center; 
 }
 
@@ -76,11 +78,8 @@ body{
     position: relative;
   /* color: #000; */
     text-decoration: none;
+    text-transform: uppercase;
     padding-bottom: 8px;  
-}
-
-.left li a:hover {
-  color: rgb(255, 255, 255);  
 }
 
 .left li a::before {
@@ -89,7 +88,6 @@ body{
   display: block;
   width: 100%;
   height: 2px;
-  
   bottom: 0;
   left: 0;
   background-color: #39FF14;
@@ -99,27 +97,20 @@ body{
 
 .left li a:hover::before {
   transform: scaleX(0.4);
-  border-spacing: 5px;
 }
-/* .left li a:hover{
-  
-  color: rgba(255, 255, 255, 0.775);
-  transition: 0.5s;
-  
-} */
 
 .right{
     width: 35%;
     display: flex; 
-    align-items: center;
     justify-content: center; 
 }
 
-button, button::after {
+.btn , .btn::after {
     width: 75px;
-    height: 25px;
-    font-size: 13px;
+    height: 27px;
+    font-size: 14px;
     font-family: 'Poppins';
+    font-weight: 500;
     background: linear-gradient(45deg, transparent 0%, #39FF14 0%);
     border: 0;
     color: black;
@@ -132,7 +123,7 @@ button, button::after {
     cursor: pointer;
   }
   
-  button::after {
+  .btn::after {
     --slice-0: inset(50% 50% 50% 50%);
     --slice-1: inset(80% -6px 0 0);
     --slice-2: inset(50% -6px 30% 0);
@@ -152,7 +143,7 @@ button, button::after {
     clip-path: var(--slice-0);
   }
   
-  button:hover::after {
+  .btn:hover::after {
     animation: 1s glitch;
     animation-timing-function: steps(2, end);
   }
