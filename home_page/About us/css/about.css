@@ -1,76 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap');
 
 *{
-    text-align: center;
-    margin:0px;
-    padding: 0%;
-    font-family: 'Oswald', sans-serif;
+    margin: auto;
 }
 
 .section{
     border: 20px;
-    margin-top: 200px;
-    background-color: #ddd;
-    background-image: url("../img/background.jpg");
-    background-position: center;
-    background-size: 800px 800px;
-    background-repeat: no-repeat;
-
+    background-color: rgb(136, 135, 135);
+    height: 100%;
 }
 
 .container{
-    width: 80%;
-    display:block;
+    background-image: url("../img/background.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    width: 90%;
+    height: 800px;
     margin:auto;
     padding-top: 50px;
+    text-align: center;
+    margin:auto;
+    padding: 0%;
+    font-family: 'Oswald', sans-serif;
 }
 
 .title h1{
-    color: #F7855B;
+    padding-top: 20px;
+    color: #39FF14;
+    font-size: 50px;
 }
-.container-section{
-    margin-top: 500px;
+.content-section{
     float: none;
-    width: 55%;
+    width: 100%;
     display: block;
-    margin: auto;
+    background-color: rgba(200,210,211,0.4);
 } 
 
 .content-section .content h3{
     text-align: center;
     margin-top: 20px;
-    color: #efefef;
-    font-size: 21px;
-}
+    color:#035e17c2;
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right:10px;}
 
 .content-section .content p{
     text-align: center;
     margin-top: 10px;
-    font-family: 'Open Sans', sans-ser;
+    font-family: 'Open Sans', 'sans-ser';
+    color: rgb(17, 17, 17);
     font-size: 18px;
-    line-height: 1.5;
+    line-height: 2;
+    padding-left: 150px;
+    padding-right: 150px;
+    word-wrap: break-word;
 }
 
-.content-section .content .button {
+#more {display: none;}
+
+.content-section .content .btn1 {
     text-align: center;
-    margin-top: 30px;
-}
-
-.content-section .content .button a{
-    background-color:#F7855B;
+    margin-top: 50px;
+    background-color:#39FF14;
     padding: 12px 40px;
     text-decoration: none;
     color: #fff;
     font-size: 25px;
     letter-spacing: 1.5px;
-
+    border: 0;
 }
 
-.content-section .content .button a:hover{
-    background-color: #a52a2a;
+.content-section .content .btn1:hover{
+    background-color: #035e17c2;
     color:#fff;
 }
+
+.btn1 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.btn1 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.btn1:hover span {
+    padding-right: 25px;
+}
+ 
+.btn1:hover span:after {
+    opacity: 1;
+    right: 0;
+}  
 
 .content-section .social{
     padding-bottom: 50px;
@@ -80,14 +112,80 @@
 }
 
 .content-section .social i{
-    color:#a52a2a;
+    color:#02d12f;
     font-size: 30px;
     padding:0px 10px;
 }
 
 .content-section .social i:hover{
-    color:#F7855B;
+    color:#035e17c2;
 }
 
-    
+.con1{
+    display:flex;
+    font-family: 'Oxygen', sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: fit-content;
+}
+
+.section .con1 .im{
+    width: 45%;
+    padding-top: 50px;
+    height: auto;
+}
+
+img{
+    height: auto;
+    width: 100%;
+}
+
+.con1 .ph{
+    width: 45%;
+    align-content: left; 
+    font-size: 15px;
+    padding-left: 50px;
+    padding-top: 50px;
+    line-height: 30px;
+}  
+
+.con1 .ph h3{
+    font-size: 35px;
+}
+
+.con2{
+    display:flex;
+    font-family: 'Oxygen', sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: fit-content;
+}
+
+.section .con2 .im{
+    width: 45%;
+    padding-top: 50px;
+    height: auto;
+}
+
+img{
+    height: auto;
+    width: 100%;
+}
+
+.con2 .ph{
+    width: 45%;
+    align-content: left; 
+    font-size: 15px;
+    padding-right: 50px;
+    padding-top: 50px;
+    line-height: 30px;
+}  
+
+.con2 .ph h3{
+    font-size: 35px;
+}
+
+
+
+
     
