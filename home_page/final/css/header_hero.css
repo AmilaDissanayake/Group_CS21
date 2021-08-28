@@ -23,9 +23,10 @@ body{
     align-items: center;
     position: fixed; 
     z-index: 100;
+
+    
    
 }
-
 .center{
     width: 30%;
     /* display: flex; */
