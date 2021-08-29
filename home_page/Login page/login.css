@@ -111,7 +111,7 @@ section .login {
     align-items: center;
     width: 50%;
     height: 100%;
-    background-color: #000;
+    background-color: #141517;
 
 }
 
@@ -153,7 +153,8 @@ section .login {
     width: 100%;
     height: 45px;
     font-size: 15px;
-    border: 2px solid #80868B;
+    padding-left: 10px;
+    border: 1px solid #80868B;
     /* border-radius: .5rem ; */
     color: #80868B;
     outline: none;
@@ -215,7 +216,7 @@ section .login {
 
 /*Input focus*/
 .form__input:focus{
-    border: 2px solid #86ff71
+    border: 1px solid #86ff71
 }
 
 .hover{
@@ -250,3 +251,6 @@ section .login {
     font-family: 'Poppins';
     /* justify-content: center; */
 }
+
+
+
