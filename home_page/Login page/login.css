@@ -138,6 +138,7 @@ section .login {
     margin-bottom: 3rem;
     color: #80868B;
     border-bottom: 3px solid #86ff71;
+    
     font-family: 'Azonix';
     padding-bottom: 5px;
 }
@@ -178,7 +179,7 @@ section .login {
 .form__button{
     display: block;
     margin-left: auto;
-    float: none;
+    /* float: none; */
     padding: .75rem 2rem;
     outline: none;
     border: none;
@@ -275,8 +276,11 @@ section .login {
     width: 50px;
     text-align: center;
     text-decoration: none;
+    transition: all .2s ease-in-out; 
     /* margin: 5px 2px; */
 }
+
+.fa:hover { transform: scale(1.1); }
 
 
 .fa-facebook {
@@ -299,3 +303,5 @@ section .login {
     /* background: #125688; */
     color: #80868B;
   }
+
+
