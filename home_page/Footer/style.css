@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+@font-face {
+    font-family: "Anurati";
+    src: url("Anurati-Regular.otf");
+    }
+    
+@font-face {
+        font-family: "Azonix";
+        src :url("Azonix.otf");
+    
+        }
+
 *{
     margin: 0;
     padding: 0;
@@ -39,11 +50,31 @@ footer .container .sec-aboutus{
     width: 40%;
 }
 
-footer .container  h2{
+footer .container .sec-aboutus  h2{
     position: relative;
     color: #fff;
+    font-size: 23px;
+    font-family: 'Anurati';
     font-weight: 500;
     margin-bottom: 15px;
+}
+
+footer .container h2{
+    position: relative;
+    color: #fff;
+    font-size: 17px;
+    font-family: 'Azonix';
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .container .sec-aboutus  h2 span{
+    position: relative;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Anurati';
+    
+    color: #86ff71;
 }
 
 footer .container h2:before{
@@ -53,11 +84,23 @@ footer .container h2:before{
     left: 0;
     width: 50px;
     height: 2px;
-    background: #39FF14;
+    background: #86ff71;
+}
+
+footer .container .sec-aboutus  h2:before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #86ff7100;
 }
 
 footer p{
     color: #999;
+    padding-right: 150px;
+    font-size: 15px;
 }
 
 .icon{
@@ -100,6 +143,7 @@ footer p{
     text-decoration: none;
     margin-bottom: 10px;
     display: inline-block; 
+    font-size: 15px;
 }
 
 .quickLinks ul li a:hover{
@@ -113,6 +157,7 @@ footer p{
 
 .contact .info{
     position: relative;
+    font-size: 15px;
 }
 
 .contact .info li{
@@ -132,11 +177,22 @@ footer p{
 
 .contact .info li a{
     color: #999;
-    text-decoration: none;
+    text-decoration: none
+    ;
 }
 
 .contact .info li a:hover{
     color: #fff;
+}
+
+.contact .fa{
+    color: #999;
+    font-size: 19px;
+   
+}
+
+.contact .fa:hover{
+    color: rgb(255, 255, 255);
 }
 
 .copyrightText{
@@ -145,6 +201,11 @@ footer p{
     padding: 8px 100px;
     color: #999;
     text-align: center;
+    font-size: 12px;
+}
+
+.cp{
+    font-family: 'Anurati';
 }
 
 @media(max-width:991px)
