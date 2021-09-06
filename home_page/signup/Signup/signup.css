@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@font-face {
+  font-family: "Anurati";
+  src: url("Anurati-Regular.otf");
+}
+
+@font-face {
+  font-family: "Azonix";
+  src: url("Azonix.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+section .img {
+  position: relative;
+  display: flex;
+  width: 50%;
+  height: 100vh;
+  background: url(background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+section .login {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  min-height: 100vh;
+  background-color: #141517;
+}
+
+.l-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+form {
+  width: 400px;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  border: none;
+  margin-top: 10px;
+  border-radius: 1rem;
+  /* box-shadow: 1px 1px 0px 0px #146905; */
+}
+.form__title {
+  font-weight: 400;
+  margin-bottom: 3rem;
+  color: #80868b;
+  border-bottom: 3px solid #86ff71;
+  font-family: "Azonix";
+  padding-bottom: 5px;
+}
+.form__div {
+  position: relative;
+  height: 48px;
+  margin-bottom: 1.5rem;
+}
+
+/* .name{
+  display: inline-block;
+} */
+
+.form__input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  font-size: 15px;
+  padding-left: 10px;
+  border: 1px solid #80868b;
+  color: #80868b;
+  outline: none;
+  background: none;
+  z-index: 1;
+  font-family: "sans-serif";
+}
+
+.float{
+  float: left;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+
+
+.form__label, option{
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: #80868b;
+  background-color: rgb(20, 21, 23);
+  font-size: 14px;
+  transition: 0.2s;
+  font-family: "Azonix";
+}
+.form__button {
+  display: block;
+  margin-left: auto;
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  background-color: #39ff14;
+  font-family: "Azonix";
+  color: #000;
+  font-weight: bold;
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  transition: 0.5s;
+  width: 100%;
+  align-items: center;
+}
+
+/*Input focus move up label*/
+.form__input:focus + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  color: #86ff71;
+  font-size: 11px;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/*Input focus sticky top label*/
+.form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/*Input focus*/
+.form__input:focus {
+  border: 1px solid #86ff71;
+}
+
+
+.hover {
+  color: #86ff71d5;
+  text-decoration: none;
+}
+
+.hover:hover {
+  color: #86ff71;
+}
+
+.remember {
+  margin-bottom: 10px;
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 15px;
+  color: #80868b;
+  font-family: "Poppins";
+}
+
+.remember label span {
+  color: #86ff71;
+}
+
+.signup p {
+  margin-top: 10px;
+  width: 100%;
+  /* display: flex; */
+  color: #80868b;
+  float: left;
+  font-size: 15px;
+  font-family: "Poppins";
+  /* justify-content: center; */
+}
+
+
+
+
+
+.select__div {
+  position: relative;
+  height: 48px;
+  margin-bottom: 1.5rem;
+}
+
+select::-ms-expand {
+  display: none;
+  }
+  
+  .select__div:after {
+    content: '<>';
+    font: 17px "Consolas", monospace;
+    color: #80868b;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 10px;
+    /*Adjust for position however you want*/
+    
+    top: 11px;
+    /* padding: 0 0 2px; */
+    border-bottom: 3px solid #80868b;
+    /*left line */
+    
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .select__div select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    font-size: 14px;
+    transition: 0.2s;
+    font-family: "Azonix";
+
+    display: block;
+    width: 100%;
+    height: 45px;
+    float: left;
+    text-align: left;
+    /* margin: 5px 0px; */
+    padding: 0px 16px;
+    /* font-size: 16px; */
+    line-height: 1.75;
+    color: #80868b;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid #80868b;
+    -ms-word-break: normal;
+    word-break: normal;
+  }
