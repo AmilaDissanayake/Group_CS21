@@ -1,0 +1,16 @@
+[0m2021.09.03 10:53:37 INFO  Started: Metals version 0.10.5 in workspace 'C:\Users\Asus\Desktop\Signup' for client Visual Studio Code 1.59.1.[0m
+[0m2021.09.03 10:53:40 INFO  time: initialize in 3.26s[0m
+[0m2021.09.03 10:53:42 WARN  Build server is not auto-connectable.[0m
+[0m2021.09.03 10:53:42 WARN  no build tool detected in workspace 'C:\Users\Asus\Desktop\Signup'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+Sep 03, 2021 11:00:54 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+[0m2021.09.03 20:39:35 INFO  shutting down Metals[0m
+[0m2021.09.03 21:13:56 INFO  Started: Metals version 0.10.5 in workspace 'C:\Users\Asus\Desktop\Signup' for client Visual Studio Code 1.60.0.[0m
+[0m2021.09.03 21:13:57 INFO  time: initialize in 1.42s[0m
+[0m2021.09.03 21:13:57 WARN  Build server is not auto-connectable.[0m
+[0m2021.09.03 21:13:57 WARN  no build tool detected in workspace 'C:\Users\Asus\Desktop\Signup'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.09.03 21:14:02 INFO  shutting down Metals[0m
+[0m2021.09.06 21:48:06 INFO  Started: Metals version 0.10.5 in workspace 'C:\Users\Asus\Desktop\Signup' for client Visual Studio Code 1.60.0.[0m
+[0m2021.09.06 21:48:08 INFO  time: initialize in 2.53s[0m
+[0m2021.09.06 21:48:08 WARN  Build server is not auto-connectable.[0m
+[0m2021.09.06 21:48:08 WARN  no build tool detected in workspace 'C:\Users\Asus\Desktop\Signup'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m

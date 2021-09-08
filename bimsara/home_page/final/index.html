@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Power House</title>
+    <link rel="stylesheet" href="css/header_hero.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/bmi.css">
+    <link rel="stylesheet" href="css/about.css">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="left">
+
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#" id="myBtn">BMI Calculator</a></li>
+                <li><a href="#">Testominals</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+
+        </div>
+        <div class="center">
+            <h1>POWER HOUSE</h1><br>
+            <h2>FITNESS ACADEMY</h2>
+        </div>
+        <div class="right">
+            <button type="button" class="btn">Sign Up</button>
+            <button type="button" class="btn">Login</button>
+
+        </div>
+
+    </div>
+
+    <div class="showcase">
+        <div class="video-container">
+            <video src="media/video.mp4" autoplay muted loop></video>
+        </div>
+        <div class="content">
+            <h1>Champions make no excuses.</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur veniam quo, eaque dolores iste maxime
+                repellendus, a, cupiditate recusandae tenetur reprehenderit!
+            <p>
+                <a href="#about" class="btnn">Join the Academy</a>
+        </div>
+    </div>
+
+    <div class="media">
+        <audio id="myAudio" src="media/music.mp3" preload="auto">
+        </audio>
+        <a onClick="togglePlay()"><i class="fas fa-headphones-alt"></i> <span class='label-menu'> Background Music
+            </span></a>
+
+    </div>
+
+    <!-- BMI CALC ////////////////////////////////////////////////////////// -->
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <div class="calculate">
+                <p class="title">CALCULATE YOUR BMI</p>
+                <div class="gender">
+                    <div class="male">Male</div>
+                    <div class="female">Female</div>
+                </div>
+                <div class="height">
+                    <p>HEIGHT</p>
+                    <p class="val">
+                        <i class="sub">-</i>
+                        <span>50</span>cm
+                        <i class="add">+</i>
+                    </p>
+
+                    <input type="range" min="50" max="220" value="50">
+                </div>
+                <div class="weight">
+                    <p>WEIGHT</p>
+                    <p class="val">
+                        <i class="sub">-</i>
+                        <span>10</span>kg
+                        <i class="add">+</i>
+                    </p>
+
+                    <input type="range" min="10" max="180" value="10">
+                </div>
+
+                <div class="calc">CALCULATE</div>
+            </div>
+
+            <div class="result">
+                <div class="bmi">
+                    <div class="title">YOUR BMI</div>
+                    <div class="val">0.00</div>
+                </div>
+
+                <div class="text">Your BMI is normal!</div>
+                <div class="recal">RECALCULATE</div>
+            </div>
+        </div>
+
+    </div><br><br>
+    <!-- ABOUT SECTION  ////////////////////////////////////////////////////////// -->
+
+    <div class="section">
+        <div class="container">
+            <div class="content-section">
+                <div class="about_title">
+                    <h1>WE’RE WAY MORE THAN A GYM
+                    </h1>
+                </div>
+                <div class="about_content">
+                    <!-- <h3>
+                        WE’RE WAY MORE THAN A GYM
+                    </h3> -->
+                    <p>
+                        You’ve never experienced a fitness facility like Next Level! If you want to become a better
+                        version of yourself, you need our workouts, our meal plans, and our love for holding each
+                        other accountable as a community.<span id="dots"></span>
+
+                        <span id="more">Our
+                            Instructors specialize in teaching individuals at all stages of the health and fitness
+                            spectrum, including individuals at the very beginning stages of transforming
+                            themselves!Once you start, you won’t want to stop! Find the promotion that suits you,
+                            meet with one of
+                            our amazing trainers, and get started on your body transformation! </span>
+
+                    </p>
+                    <button onclick="myFunction()" class="btn1" id="myBtnn"><span>Read More</span></button>
+                </div>
+                <div class="stat" id="statid">
+                    <div class="stat_left">
+                        <img src="media/icons/shoe.svg" alt="Kiwi standing on oval">
+                        <h5>FOCUSED ON HELPING YOU BE MORE PROFITABLE</h5>
+                        <h1 id="count1"></h1>
+                        <p>In sales</p>
+                    </div>
+                    <div class="stat_center">
+                        <img src="media/icons/abs.svg" alt="Kiwi standing on oval">
+                        <h5>FOCUSED ON HELPING YOU BE MORE PROFITABLE</h5>
+                        <h1 id="count2"></h1>
+                        <p>In sales</p>
+                    </div>
+                    <div class="stat_right">
+                        <h2 class="third">PH</h2>
+                        <h5>FOCUSED ON HELPING YOU BE MORE PROFITABLE</h5>
+                        <h1 id="count3"></h1>
+                        <p>In sales</p>
+                    </div>
+                </div>
+                <!-- <div class="social">
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                </div> -->
+            </div>
+        </div>
+
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
+
+
+        <div class="con1">
+            <div class="im" id="im1">
+                <img src="media/lol.png" alt="i1">
+            </div>
+            <div class="ph" id="ph1">
+                <h3>
+                    TACK YOUR PROGRESS WITH OUR FITNESS MANAGEMENT SYSTEM
+                </h3>
+
+                <p>
+                <ul>
+                    <li>Beginning their journey will attend 3 classes per week.</li>
+                    <li>Each workout is exactly 1 hour long.</li>
+
+                    <li>Rotating every other day between complete upper body and lower body workouts.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="con2">
+            <div class="ph" id="ph2">
+
+                <h3>
+                    <i>NUTRITIONAL GUIDANCE</i>
+                </h3>
+
+                <p>
+                <ul>
+                    <li>6 Meal Plans available!!</li>
+                    <li>4 (In progression) Standard Meal Plans</li>
+                    <li>1 Vegetarian Meal Plan</li>
+                    <li>1 Vegan Meal Plan</li>
+                    <li>MACRO Counting Courses offered!</li>
+                    <li>Our beginners meal plan includes a recipe book (50 RECIPES!!) as well as attached VIDEOS!!
+                    </li>
+                </ul>
+                </p>
+            </div>
+            <div class="im" id="im2">
+                <img src="media/img2.jpg" alt="i1">
+            </div>
+        </div>
+
+        <div class="con1">
+            <div class="im" id="im3">
+                <img src="media/img3.jpg" alt="i1">
+            </div>
+            <div class="ph" id="ph3">
+                <h3>
+                    <i>ALWAYS ACCOUNTABLE</i>
+                </h3>
+
+                <p>
+                <ul>
+                    <li>Unmatched accountability system proven to help you not only meet but exceed your goals! Not
+                        only
+                        will you be
+                        receiving our workouts and meal plans, but we’ll hold you accountable every step of the way.
+                    </li>
+                    <li> All trial members and members beginning with us are required to check-in/weigh-in with a
+                        trainer once per
+                        week to ensure they’re meeting their goals and we’re able to answer all questions and
+                        support
+                        your through
+                        the process.</li>
+                    <li>All trial members and members are also required to journal their meal plans the first couple
+                        of
+                        weeks to
+                        ensure understanding and application.</li>
+                    <li>We have 4 levels for our members, the first being what we like to call our ‘boot camp’. As
+                        you
+                        progress
+                        through our levels, we’ll give you more freedom on your: Work-out frequency, meal plans, as
+                        well
+                        as
+                        accountability.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+
+
+</body>
+
+</html>
