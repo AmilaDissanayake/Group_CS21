@@ -213,7 +213,7 @@
                 </p>
             </div>
             <div class="im" id="im2">
-                <img src="media/img2.jpg" alt="i1">
+                <canvas id="canvas"></canvas>
             </div>
         </div>
 
@@ -259,8 +259,82 @@
 
     <script type="text/javascript" src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <script>
+        Chart.defaults.global.defaultFontFamily = "Poppins";
+        var chartColors = {
+            red: 'rgb(255, 99, 132)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 192)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(231,233,237)'
+        };
+
+        var randomScalingFactor = function () {
+            return (Math.random() > 0.5 ? 2.0 : 1.0) * Math.round(Math.random() * 100);
+        }
+        var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var config = {
+            type: 'line',
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [{
+                    label: "My First dataset",
+                    backgroundColor: "#86ff71",
+                    borderColor: "#86ff71",
+                    data: [40, 38, 33, 30, 29, 25, 22],
+                    fill: false,
+                },]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                title: {
+                    text: 'BMI Analsys',
+                    fontSize: 18,
+                    fontStyle: '100',
+                    fontColor: 'rgba(230, 230, 230, 0.67)',
+                    padding: 10,
+                    display: true
+                },
 
 
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: false,
+                        },
+                        gridLines: {
+                            display: true,
+                            zeroLineColor: 'green',
+                            color: "#e6e6e644",
+                            lineWidth: 1
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: false
+                        },
+                        gridLines: {
+                            display: true,
+                            color: "#e6e6e644",
+                            lineWidth: 1
+                        }
+                    }]
+                }
+            }
+        };
+
+
+        var ctx = document.getElementById("canvas").getContext("2d");
+        window.myLine = new Chart(ctx, config);
+    </script>
 
 </body>
 
