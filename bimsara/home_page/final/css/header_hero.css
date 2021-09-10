@@ -3,6 +3,10 @@
     font-family: "Anurati";
     src: url("Anurati-Regular.otf");
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
     
 @font-face {
         font-family: "Azonix";

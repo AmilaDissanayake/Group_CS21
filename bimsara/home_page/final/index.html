@@ -13,6 +13,7 @@
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -23,7 +24,7 @@
 
             <ul>
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#" id="myBtn">BMI Calculator</a></li>
                 <li><a href="#">Testominals</a></li>
                 <li><a href="#">Contact</a></li>
@@ -117,7 +118,7 @@
     </div><br><br>
     <!-- ABOUT SECTION  ////////////////////////////////////////////////////////// -->
 
-    <div class="section">
+    <div class="section" id="about">
         <div class="container">
             <div class="content-section">
                 <div class="about_title">
@@ -180,7 +181,7 @@
             <div class="im" id="im1">
                 <img src="media/lol.png" alt="i1">
             </div>
-            <div class="ph" id="ph1">
+            <div class="ph" id="ph1" data-aos="fade-up" data-aos-duration="1000">
                 <h3>
                     TACK YOUR PROGRESS WITH OUR FITNESS MANAGEMENT SYSTEM
                 </h3>
@@ -204,7 +205,7 @@
         </div>
 
         <div class="con2">
-            <div class="ph" id="ph2">
+            <div class="ph" id="ph2" data-aos="fade-up" data-aos-duration="1000">
 
                 <h3>
                     <i>NUTRITIONAL GUIDANCE</i>
@@ -236,7 +237,7 @@
             <div class="im" id="im3">
                 <img src="https://www.payhere.lk/downloads/images/payhere_square_banner_dark.png" alt="PayHere" />
             </div>
-            <div class="ph" id="ph3">
+            <div class="ph" id="ph3" data-aos="fade-up" data-aos-duration="1000">
                 <h3>
                     <i>ALWAYS ACCOUNTABLE</i>
                 </h3>
@@ -260,8 +261,12 @@
             </div>
         </div>
 
+        <div calss="divider">
+            <span class="fade-effect1"> </span>
+        </div>
+
         <div class="con2">
-            <div class="ph" id="ph2">
+            <div class="ph" id="ph2" data-aos="fade-up" data-aos-duration="1000">
 
                 <h3>
                     <i>NUTRITIONAL GUIDANCE</i>
@@ -349,8 +354,10 @@
     <script type="text/javascript" src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
+        AOS.init();
         Chart.defaults.global.defaultFontFamily = "Poppins";
         var chartColors = {
             red: 'rgb(255, 99, 132)',

@@ -46,7 +46,7 @@
     color: #e6e6e6;
     font-size: 35px;
     font-family: 'Azonix';
-    text-align: left;
+    text-align: center;
     letter-spacing: 4px;
     line-height: 50px;
     
@@ -66,7 +66,7 @@
 } 
 
 .content-section .about_content h3{
-    text-align: left;
+    text-align: center;
     margin-top: 20px;
     color:#86ff71;
     font-size: 25px;
@@ -77,11 +77,11 @@
 }
 
 .content-section .about_content p{
-    text-align: left;
+    text-align: center;
     margin-top: 10px;
     /* line-height: 2; */
     font-family: 'Poppins';
-    padding-right: 100px;
+    /* padding-right: 100px; */
     /* padding-left: 150px;
     padding-right: 150px; */
     color:#e6e6e6;
@@ -93,8 +93,8 @@
 #more {display: none;}
 
 .content-section .about_content .btn1 {
-    text-align: left;
-    float: left;
+    text-align: center;
+    float: center;
     padding: 0%;
     /* margin-top: 50px; */
     background-color:transparent;
@@ -162,7 +162,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 40px;
-    padding-left: 40px;
+    /* padding-left: 40px; */
     
 }
 
@@ -170,7 +170,7 @@
     font-family: 'Poppins';
     font-size: 18px;
     font-weight: 300;
-    padding-right: 50px;
+    /* padding-right: 50px; */
     color: rgba(255, 255, 255, 0.603);
 }
 
@@ -178,7 +178,7 @@
     font-family: 'Azonix';
     font-size: 40px;
     font-weight: 300;
-    padding-right: 50px;
+    /* padding-right: 50px; */
     color: #86ff71;
 }
 
@@ -186,7 +186,7 @@
     font-family: 'Poppins';
     font-size: 17px;
     font-weight: 300;
-    padding-right: 50px;
+    /* padding-right: 50px; */
     color: rgb(235, 235, 235);
 }
 
@@ -195,19 +195,19 @@
 }
 
 .stat_left{
-    text-align: left;
+    text-align: center;
     width: 33%;
     color: white;
 }
 
 .stat_center{
-    text-align: left;
+    text-align: center;
     width: 33%;
     color: white;
 }
 
 .stat_right{
-    text-align: left;
+    text-align: center;
     width: 33%;
     color: white;
 }
@@ -412,7 +412,7 @@
   .header_btn2{
     position: relative;
     z-index: 10;
-    width: 120px;
+    width: 80px;
     height: 40px;
     border: 0px solid rgba(255, 255, 255, .5);
     border-radius: 30px;
