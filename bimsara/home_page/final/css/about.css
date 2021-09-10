@@ -290,12 +290,17 @@
 .con1 .ph p{
     margin: 0px;
 }
+.con1 .ph ul{
+    padding: 0%;
+    margin-left: 15px;
+}
 .con1 .ph li{
     font-size: 17px;
     /* line-height: 40px;
     letter-spacing: 3px; */
     color: #e6e6e6;
     font-family: 'Poppins';
+    
 }
 
 .con2{
@@ -347,6 +352,109 @@
     color: #e6e6e6;
     font-family: 'Poppins';
 }
+
+.about_btn {
+    position: relative;
+    z-index: 10;
+    width: 150px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, .1);
+    font-family: 'Azonix';
+    color: #fff;
+    font-size: 17px;
+    letter-spacing: 1px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .about_btn:hover {
+    color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 1px #86ff71;
+  border: 1px solid #86ff71;
+    transition: .4s;
+  }
+
+  .about_button{
+      margin-top: 30px;
+  }
+
+  .header_btn{
+
+    position: relative;
+    z-index: 10;
+    width: 120px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, .1);
+    font-family: 'Azonix';
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    outline: none;
+    cursor: pointer;
+
+  }
+
+  .header_btn:hover {
+    color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 1px #86ff71;
+  border: 1px solid #86ff71;
+    transition: .4s;
+  }
+
+  .header_btn2{
+    position: relative;
+    z-index: 10;
+    width: 120px;
+    height: 40px;
+    border: 0px solid rgba(255, 255, 255, .5);
+    border-radius: 30px;
+    background-color: transparent;
+    font-family: 'Azonix';
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .hero_btn{
+
+    position: relative;
+    z-index: 10;
+    width: 280px;
+    height: 50px;
+    border: 1px solid #86ff71;
+    border-radius: 30px;
+    background-color: #86ff71;
+    font-family: 'Azonix';
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    letter-spacing: 1px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    outline: none;
+    cursor: pointer;
+
+  }
+
+  .hero_btn:hover{
+
+    color: rgb(0, 0, 0);
+  box-shadow: 0px 0px 10px 1px #86ff71;
+  border: 1px solid #86ff71;
+    transition: .4s;
+
+  }
 
 
 

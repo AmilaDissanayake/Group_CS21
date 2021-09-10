@@ -170,3 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
     counter("count3", 0, 40, 3000);
 });
 
+
+//Testimonials/////////////////////
+
