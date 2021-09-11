@@ -13,6 +13,7 @@
 body{
     margin:0px;
     padding:0px;
+    display: block;
 }
 
 .header{
@@ -22,10 +23,7 @@ body{
     display: flex;
     align-items: center;
     position: fixed; 
-    z-index: 100;
-
-    
-   
+    z-index: 100;  
 }
 .center{
     width: 30%;
@@ -237,7 +235,7 @@ body{
 	position: absolute;
 }
 
-.content h1{
+.showcase .content h1{
     font-family: 'Anurati';
     color: white;
     margin: 0px;
@@ -247,7 +245,7 @@ body{
     
 }
 
-.content p{
+.showcase .content p{
     font-family: 'Poppins';
     color: white;
     margin-top: 15px;
@@ -260,12 +258,13 @@ body{
     
 }
 
-.content {
+.showcase .content {
 	z-index: 2;
     
     align-items: center;
-    justify-content: center; margin-top: 400px;
-}
+    justify-content: center; 
+    margin-top: 400px;
+} 
 
 .btnn, .btnn::after {
     width: 280px;

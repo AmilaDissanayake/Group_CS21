@@ -102,7 +102,7 @@ body{
   transform: scaleX(0.4);
 }
 
-.right{
+.rside{
     width: 35%;
     display: flex; 
     justify-content: center; 
