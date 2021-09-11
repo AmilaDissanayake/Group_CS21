@@ -17,6 +17,7 @@
 body{
     margin:0px;
     padding:0px;
+    background-color: #121317;
 }
 
 .header{
@@ -26,7 +27,7 @@ body{
     display: flex;
     align-items: center;
     position: fixed; 
-    z-index: 100;
+    z-index: 9999;
 
     
    
@@ -323,22 +324,24 @@ body{
   }
 
   .media{
-      z-index: 1000;
-      margin-top: 500px;
+      z-index: 9998;
+      
       position:fixed;
       top: 50px;
-      margin-left: 1200px;
-      margin-top: 500px;
+      margin-left: 1450px;
+      margin-top: 600px;
+     
   }
 
   .media a{
-      z-index: 8000;
+      
       color: #ffffff;
       cursor: pointer;
   }
 
   .media a i{
       font-size: 25px;
+      z-index: 9998;
   }
 
 .media:hover .label-menu {
