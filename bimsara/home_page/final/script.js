@@ -165,9 +165,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }, step);
     }
-    counter("count1", 0, 400, 3000);
-    counter("count2", 100, 50, 2500);
-    counter("count3", 0, 40, 3000);
+    counter("count1", 0, 200, 3000);
+    counter("count2", 0, 20, 2500);
+    counter("count3", 0, 4, 3000);
 });
 
 
@@ -185,7 +185,7 @@ var testim = document.getElementById("testim"),
     ;
 
 window.onload = function () {
- 
+
     function playSlide(slide) {
         for (var k = 0; k < testimDots.length; k++) {
             testimContent[k].classList.remove("active");
@@ -203,9 +203,9 @@ window.onload = function () {
         }
         testimContent[slide].classList.add("active");
         testimDots[slide].classList.add("active");
- 
+
         currentActive = currentSlide;
- 
+
         clearTimeout(testimTimer);
         testimTimer = setTimeout(function () {
             playSlide(currentSlide += 1);
@@ -218,7 +218,7 @@ window.onload = function () {
     testimRightArrow.addEventListener("click", function () {
         playSlide(currentSlide += 1);
     })
- 
+
     for (var l = 0; l < testimDots.length; l++) {
         testimDots[l].addEventListener("click", function () {
             playSlide(currentSlide = testimDots.indexOf(this));
