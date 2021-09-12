@@ -224,8 +224,11 @@ form {
 
 .select__div {
   position: relative;
-  height: 48px;
+  height: 45px;
   margin-bottom: 1.5rem;
+  width: 200px;
+  font-size: 15px;
+  margin-right: 38px;
 }
 
 select::-ms-expand {
