@@ -17,7 +17,7 @@
 }
 
 section {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -49,7 +49,7 @@ section .login {
   min-height: 100vh;
 }
 form {
-  width: 400px;
+  width: 600px;
   min-height: 100vh;
   padding: 4rem 2rem;
   border: none;
@@ -71,9 +71,24 @@ form {
   margin-bottom: 1.5rem;
 }
 
-/* .name{
-  display: inline-block;
-} */
+.name{
+  display: flex;
+}
+
+.name_input{
+  border: 1px solid #80868b;
+  color: #80868b;
+  outline: none;
+  background: none;
+  z-index: 1;
+  font-family: "sans-serif";  
+  width: 250px;
+  height: 45px;
+  padding-left: 10px;
+  font-size: 15px;
+  margin-right: 38px;
+  
+}
 
 .form__input{
   position: absolute;
@@ -95,7 +110,6 @@ form {
   float: left;
   display: flex;
   flex-direction: column;
-  width: 50%;
 }
 
 
@@ -137,6 +151,15 @@ form {
   z-index: 10;
 }
 
+.name_input:focus + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  color: #86ff71;
+  font-size: 11px;
+  font-weight: 500;
+  z-index: 10;
+}
+
 /*Input focus sticky top label*/
 .form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
   top: -0.5rem;
@@ -145,8 +168,19 @@ form {
   z-index: 10;
 }
 
+.name_input:not(:placeholder-shown).name_input:not(:focus) + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
 /*Input focus*/
 .form__input:focus {
+  border: 1px solid #86ff71;
+}
+
+.name_input:focus {
   border: 1px solid #86ff71;
 }
 
