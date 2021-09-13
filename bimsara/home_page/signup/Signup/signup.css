@@ -9,6 +9,26 @@
   src: url("Azonix.otf");
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #121317; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.308); 
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #86ff71; 
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,17 +44,83 @@ section {
 }
 
 section .img {
-  position: relative;
-  display: flex;
+  position: fixed;
+  /* display: flex; */
   width: 50%;
   height: 100vh;
-  background: url(background.jpg);
+  background: url(dd.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  
+  /* filter: grayscale(100%); */
+  /* box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.5); */
+}
+
+section .img .head {
+  color: #fff;
+  text-align: center;
+  padding-top: 75px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Anurati';
+}
+
+section .img .head3 {
+  color: #86ff71;
+  text-align: center;
+  padding-top: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 20px;
+  /* font-weight: bold; */
+  font-family: 'Anurati';
+}
+
+section .img .head4 {
+  color: #ffffff;
+  text-align: left;
+  padding-top: 350px;
+  padding-left: 80px;
+  font-size: 20px;
+  /* font-weight: bold; */
+  letter-spacing: 3px;
+  text-decoration: underline;
+  font-family: 'Azonix';
+
+}
+
+section .img .head5 {
+  color: #bfd0d8;
+  text-align: left;
+  padding-top: 350px;
+  padding-left: 80px;
+  font-size: 35px;
+  letter-spacing: 3px;
+  /* font-weight: bold; */
+  font-family: 'Azonix';
+}
+
+section .img .head5 span {
+  color: #86ff71;
+  font-family: 'Azonix';
+  font-style: italic;
+}
+
+section .img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 section .login {
   /* display: flex; */
+  position: absolute;
+  left: 50%;
   justify-content: center;
   align-items: center;
   width: 50%;
@@ -51,7 +137,11 @@ section .login {
 form {
   width: 600px;
   min-height: 100vh;
-  padding: 4rem 2rem;
+  /* padding: 4rem 2rem; */
+  padding-top: 50px;
+  padding-left:50px;
+  padding-right:50px;
+  padding-bottom:50px;
   border: none;
   margin-top: 10px;
   border-radius: 1rem;
@@ -68,8 +158,10 @@ form {
 .form__div {
   position: relative;
   height: 48px;
+
   margin-bottom: 1.5rem;
 }
+
 
 .name{
   display: flex;
@@ -82,11 +174,30 @@ form {
   background: none;
   z-index: 1;
   font-family: "sans-serif";  
-  width: 250px;
+  width: 240px;
   height: 45px;
-  padding-left: 10px;
+  /* padding-left: 10px; */
+  margin-right: 20px;
   font-size: 15px;
-  margin-right: 38px;
+  
+
+  
+}
+
+.name_input2{
+  border: 1px solid #80868b;
+  color: #80868b;
+  outline: none;
+  background: none;
+  z-index: 1;
+  font-family: "sans-serif";  
+  width: 240px;
+  height: 45px;
+  /* padding-left: 10px; */
+  /* margin-right: 20px; */
+  font-size: 15px;
+  
+
   
 }
 
@@ -225,6 +336,34 @@ form {
   border: 1px solid #86ff71;
 }
 
+.name_input2:focus + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  color: #86ff71;
+  font-size: 11px;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/*Input focus sticky top label*/
+
+
+.name_input2:not(:placeholder-shown).name_input2:not(:focus) + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/*Input focus*/
+.form__input:focus {
+  border: 1px solid #86ff71;
+}
+
+.name_input2:focus {
+  border: 1px solid #86ff71;
+}
+
 
 .hover {
   color: #86ff71d5;
@@ -267,10 +406,25 @@ form {
   position: relative;
   height: 45px;
   margin-bottom: 1.5rem;
-  width: 200px;
+  /* width: 100%; */
   font-size: 15px;
-  margin-right: 38px;
+  width: 500px;
+  margin-right: 20px;
 }
+
+.select_trainer {
+  position: relative;
+  height: 45px;
+  margin-bottom: 1.5rem;
+  /* width: 100%; */
+  width: 100%;
+  font-size: 15px;
+  /* width: 500px; */
+  /* margin-right: 20px; */
+}
+
+
+
 
 select::-ms-expand {
   display: none;
@@ -321,3 +475,22 @@ select::-ms-expand {
     -ms-word-break: normal;
     word-break: normal;
   }
+
+  .tr{
+    /* margin-top: 10px; */
+  }
+  .tr h4{
+    font-family: 'Azonix';
+    color: #80868b;
+    font-size: 12px;
+    /* margin-top: 10px; */
+  }
+
+  .tr .tr_link{
+    color: #86ff71;
+    font-family: 'Azonix';
+    
+    font-size: 12px;
+  }
+
+  

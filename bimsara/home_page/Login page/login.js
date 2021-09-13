@@ -5,24 +5,24 @@ const password = document.getElementById('password');
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
-	
+
 	checkInputs();
 });
 
 function checkInputs() {
-	
-    // trim to remove the whitespaces
-	
-    const usernameValue = username.value.trim();
+
+	// trim to remove the whitespaces
+
+	const usernameValue = username.value.trim();
 	// const emailValue = email.value.trim();
 	const passwordValue = password.value.trim();
-	
-	if(usernameValue === '') {
+
+	if (usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
 	} else {
 		setSuccessFor(username);
 	}
-	
+
 	// if(emailValue === '') {
 	// 	setErrorFor(email, 'Email cannot be blank');
 	// } else if (!isEmail(emailValue)) {
@@ -30,12 +30,12 @@ function checkInputs() {
 	// } else {
 	// 	setSuccessFor(email);
 	// }
-	
-	if(passwordValue === '') {
+
+	if (passwordValue === '') {
 		setErrorFor(password, 'Password cannot be blank');
 	} else {
 		setSuccessFor(password);
-	}	
+	}
 }
 
 function setErrorFor(input, message) {
@@ -64,3 +64,5 @@ function setSuccessFor(input) {
 //     // toggle the eye / eye slash icon
 //     this.classList.toggle('bi-eye');
 // });
+
+

@@ -145,11 +145,16 @@ section .login {
 .form__div{
     position: relative;
     height: 48px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.form__div small{
+    font-family: 'Azonix';
+    font-size: 12px;
 }
 
 .form__div.success input{
-    border-color: #2ecc70;
+    border-color: #86ff71;
 }
 
 .form__div.error input{
@@ -159,12 +164,12 @@ section .login {
 .form__div i{
     visibility: hidden;
     position: absolute;
-    top:20px;
+    top: 15px;
     right: 10px;
 }
 
 .form__div.success i.fa-check-circle {
-    color: #2ecc71;
+    color: #86ff71;
     visibility: visible;
 }
 
@@ -249,7 +254,9 @@ section .login {
 .form__input:not(:placeholder-shown).form__input:not(:focus)+ .form__label{
     top: -.5rem;
     left: .8rem;
+    font-size: 11px;
     font-weight: 500;
+    color :#86ff71;
     z-index: 10;
 }
 
@@ -341,5 +348,13 @@ section .login {
     /* background: #125688; */
     color: #80868B;
   }
+
+
+
+
+
+
+
+  
 
 
