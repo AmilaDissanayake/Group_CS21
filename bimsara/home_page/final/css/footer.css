@@ -10,7 +10,6 @@
 @font-face {
         font-family: "Azonix";
         src :url("Azonix.otf");
-    
         }
 
 
@@ -73,7 +72,7 @@
 }
 
  .footer_container .sec-aboutus  h2:before{
-    content: '';
+    /* content: ''; */
     position: absolute;
     bottom: -5px;
     left: 0;

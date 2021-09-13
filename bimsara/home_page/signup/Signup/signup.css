@@ -48,7 +48,11 @@ section .img {
   /* display: flex; */
   width: 50%;
   height: 100vh;
+<<<<<<< HEAD
+  /* background: url(dd.jpg); */
+=======
   background: url(v5.jpg);
+>>>>>>> 829460741b31f77dc17ae7e335597a5467500e44
   background-size: cover;
   background-repeat: no-repeat;
   
@@ -158,7 +162,6 @@ form {
 .form__div {
   position: relative;
   height: 48px;
-
   margin-bottom: 1.5rem;
 }
 
@@ -237,14 +240,19 @@ form {
   border-color: #e74c3c;
 } 
 
-.form__div i{
+.select__div i , .form__div i{
   visibility: hidden;
   position: absolute;
-  top:20px;
-  right: 10px;
+  top:15px;
+  right: 25px;
 }
 
 .form__div.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.select__div.success i.fa-check-circle {
   color: #2ecc71;
   visibility: visible;
 }
@@ -254,7 +262,12 @@ form {
   visibility: visible;
 }
 
-.form__div small {
+.select__div.error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.select__div small ,.form__div small {
   color: #e74c3c;
   position: absolute;
   bottom: -15px;
@@ -262,7 +275,7 @@ form {
   visibility: hidden;
 }
 
-.form__div.error small{
+.select__div.error small ,.form__div.error small{
   visibility: visible;
 }
 
