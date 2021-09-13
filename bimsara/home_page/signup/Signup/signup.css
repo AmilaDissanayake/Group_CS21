@@ -24,8 +24,8 @@ section {
 }
 
 section .img {
-  position: relative;
-  display: flex;
+  position: fixed;
+  /* display: flex; */
   width: 50%;
   height: 100vh;
   background: url(background.jpg);
@@ -35,6 +35,8 @@ section .img {
 
 section .login {
   /* display: flex; */
+  position: absolute;
+  left: 50%;
   justify-content: center;
   align-items: center;
   width: 50%;
