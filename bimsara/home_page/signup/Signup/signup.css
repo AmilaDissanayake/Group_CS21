@@ -48,11 +48,8 @@ section .img {
   /* display: flex; */
   width: 50%;
   height: 100vh;
-<<<<<<< HEAD
   /* background: url(dd.jpg); */
-=======
   background: url(v5.jpg);
->>>>>>> 829460741b31f77dc17ae7e335597a5467500e44
   background-size: cover;
   background-repeat: no-repeat;
   
@@ -179,7 +176,7 @@ form {
   font-family: "sans-serif";  
   width: 240px;
   height: 45px;
-  /* padding-left: 10px; */
+  padding-left: 10px;
   margin-right: 20px;
   font-size: 15px;
   
@@ -196,7 +193,7 @@ form {
   font-family: "sans-serif";  
   width: 240px;
   height: 45px;
-  /* padding-left: 10px; */
+  padding-left: 10px;
   /* margin-right: 20px; */
   font-size: 15px;
   
@@ -306,6 +303,10 @@ form {
   align-items: center;
 }
 
+.buttondiv{
+  margin-top: 50px;
+}
+
 /*Input focus move up label*/
 .form__input:focus + .form__label {
   top: -0.5rem;
@@ -412,9 +413,6 @@ form {
 }
 
 
-
-
-
 .select__div {
   position: relative;
   height: 45px;
@@ -490,13 +488,14 @@ select::-ms-expand {
   }
 
   .tr{
-    /* margin-top: 10px; */
+    margin-top: 10px;
   }
   .tr h4{
     font-family: 'Azonix';
     color: #80868b;
     font-size: 12px;
-    /* margin-top: 10px; */
+    margin-top: 10px;
+    padding-top: 30px;
   }
 
   .tr .tr_link{
