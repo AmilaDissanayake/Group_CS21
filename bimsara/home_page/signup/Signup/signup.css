@@ -73,7 +73,11 @@ section .login {
 form {
   width: 600px;
   min-height: 100vh;
-  padding: 4rem 2rem;
+  /* padding: 4rem 2rem; */
+  padding-top: 50px;
+  padding-left:50px;
+  padding-right:50px;
+  padding-bottom:50px;
   border: none;
   margin-top: 10px;
   border-radius: 1rem;
@@ -90,8 +94,10 @@ form {
 .form__div {
   position: relative;
   height: 48px;
+
   margin-bottom: 1.5rem;
 }
+
 
 .name{
   display: flex;
@@ -104,11 +110,30 @@ form {
   background: none;
   z-index: 1;
   font-family: "sans-serif";  
-  width: 250px;
+  width: 240px;
   height: 45px;
-  padding-left: 10px;
+  /* padding-left: 10px; */
+  margin-right: 20px;
   font-size: 15px;
-  margin-right: 38px;
+  
+
+  
+}
+
+.name_input2{
+  border: 1px solid #80868b;
+  color: #80868b;
+  outline: none;
+  background: none;
+  z-index: 1;
+  font-family: "sans-serif";  
+  width: 240px;
+  height: 45px;
+  /* padding-left: 10px; */
+  /* margin-right: 20px; */
+  font-size: 15px;
+  
+
   
 }
 
@@ -206,6 +231,34 @@ form {
   border: 1px solid #86ff71;
 }
 
+.name_input2:focus + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  color: #86ff71;
+  font-size: 11px;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/*Input focus sticky top label*/
+
+
+.name_input2:not(:placeholder-shown).name_input2:not(:focus) + .form__label {
+  top: -0.5rem;
+  left: 0.8rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/*Input focus*/
+.form__input:focus {
+  border: 1px solid #86ff71;
+}
+
+.name_input2:focus {
+  border: 1px solid #86ff71;
+}
+
 
 .hover {
   color: #86ff71d5;
@@ -248,10 +301,25 @@ form {
   position: relative;
   height: 45px;
   margin-bottom: 1.5rem;
-  width: 200px;
+  /* width: 100%; */
   font-size: 15px;
-  margin-right: 38px;
+  width: 500px;
+  margin-right: 20px;
 }
+
+.select_trainer {
+  position: relative;
+  height: 45px;
+  margin-bottom: 1.5rem;
+  /* width: 100%; */
+  width: 100%;
+  font-size: 15px;
+  /* width: 500px; */
+  /* margin-right: 20px; */
+}
+
+
+
 
 select::-ms-expand {
   display: none;
