@@ -256,6 +256,7 @@ section .login {
     left: .8rem;
     font-size: 11px;
     font-weight: 500;
+    color :#86ff71;
     z-index: 10;
 }
 
@@ -347,5 +348,13 @@ section .login {
     /* background: #125688; */
     color: #80868B;
   }
+
+
+
+
+
+
+
+  
 
 
