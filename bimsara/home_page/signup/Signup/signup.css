@@ -370,3 +370,22 @@ select::-ms-expand {
     -ms-word-break: normal;
     word-break: normal;
   }
+
+  .tr{
+    /* margin-top: 10px; */
+  }
+  .tr h4{
+    font-family: 'Azonix';
+    color: #80868b;
+    font-size: 12px;
+    /* margin-top: 10px; */
+  }
+
+  .tr .tr_link{
+    color: #86ff71;
+    font-family: 'Azonix';
+    
+    font-size: 12px;
+  }
+
+  
