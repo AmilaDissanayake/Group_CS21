@@ -48,7 +48,10 @@ section .img {
   /* display: flex; */
   width: 50%;
   height: 100vh;
+<<<<<<< HEAD
   /* background: url(dd.jpg); */
+=======
+>>>>>>> 59b6df764c0b0a072ba26ddb55ea4687a3271e68
   background: url(v5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
