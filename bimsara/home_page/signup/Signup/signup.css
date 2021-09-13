@@ -223,7 +223,48 @@ form {
   flex-direction: column;
 }
 
+.form__div{
+  position: relative;
+  height: 48px;
+  margin-bottom: 1.5rem;
+}
 
+.form__div.success input{
+  border-color: #2ecc70;
+}
+
+.form__div.error input{
+  border-color: #e74c3c;
+} 
+
+.form__div i{
+  visibility: hidden;
+  position: absolute;
+  top:20px;
+  right: 10px;
+}
+
+.form__div.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.form__div.error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.form__div small {
+  color: #e74c3c;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  visibility: hidden;
+}
+
+.form__div.error small{
+  visibility: visible;
+}
 
 .form__label, option{
   position: absolute;
