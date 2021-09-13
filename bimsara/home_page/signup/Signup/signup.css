@@ -59,7 +59,7 @@ section .img {
 section .img .head {
   color: #fff;
   text-align: center;
-  padding-top: 75px;
+  padding-top: 74px;
   padding-left: 30px;
   padding-right: 30px;
   font-size: 50px;
