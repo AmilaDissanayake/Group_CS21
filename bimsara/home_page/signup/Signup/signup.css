@@ -211,6 +211,7 @@ form {
   height: 45px;
   font-size: 15px;
   padding-left: 10px;
+  padding-right: 10px;
   border: 1px solid #80868b;
   color: #80868b;
   outline: none;
@@ -225,12 +226,18 @@ form {
   height: 100px;
   font-size: 15px;
   padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
   border: 1px solid #80868b;
   color: #80868b;
   outline: none;
   background: none;
   z-index: 1;
   font-family: "sans-serif";
+}
+
+textarea{
+  resize: none;
 }
 
 .float{
