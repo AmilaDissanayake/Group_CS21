@@ -197,10 +197,23 @@ form {
   height: 45px;
   padding-left: 10px;
   /* margin-right: 20px; */
-  font-size: 15px;
-  
+  font-size: 15px; 
+}
 
-  
+input[type="date"]{
+  width:240px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  opacity: 0.6;
+  filter: invert(0.8);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1
 }
 
 .form__input{
