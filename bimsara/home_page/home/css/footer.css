@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 
 
 
@@ -20,7 +20,7 @@
     justify-content: space-between;
     width: 100%;
     background: #111;
-    font-family: 'Poppins';
+    font-family: 'Rubik';
     padding-top: 40px;
     padding-bottom: 40px;
    
@@ -34,13 +34,17 @@
     padding-left: 150px;
 }
 
- .footer_container .sec-aboutus  h2{
+ .footer_container .sec-aboutus  h1{
     position: relative;
     color: #fff;
     font-size: 23px;
     font-family: 'Anurati';
     font-weight: 500;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
+    background: -webkit-linear-gradient(#eee, rgb(99, 99, 99));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   
 }
 
  .footer_container h2{
@@ -52,12 +56,12 @@
     margin-bottom: 15px;
 }
 
- .footer_container .sec-aboutus  h2 span{
-    position: relative;
-    color: #fff;
+ .footer_container .sec-aboutus  h2 {
+    /* position: relative; */
+    
     font-size: 15px;
     font-family: 'Anurati';
-    
+    margin-top: -15px;    
     color: #86ff71;
 }
 
@@ -78,7 +82,7 @@
     left: 0;
     width: 50px;
     height: 2px;
-    background: #86ff71;
+    background: transparent;
 }
 
 .footer_container p{
@@ -88,29 +92,30 @@
 }
 
 .icon{
-    padding-bottom: 20px;
-    padding-top: 20px;
+    /* padding-bottom: 20px;
+    padding-top: 20px; */
     display: flex;
 }
 
 .icon a{
 
-    width: 40px;
-    height: 40px;
-    background: #222;
+    /* width: 40px;
+    height: 40px; */
+    /* background: #222; */
     display: flex; 
     justify-content: center;
     align-items: center; 
-    margin-right: 10px;
+    margin-right: 25px;
     text-decoration: none;
     border-radius: 4px;
-    color: #fff;
+    color: rgb(103, 103, 103);
+    font-size: 20px;
 }
 
 .icon a:hover{
 
-    background: #86ff71;
-    color: #000;
+    /* background: #86ff71; */
+    color: rgb(255, 255, 255);
 }
 
 .quickLinks{
@@ -161,16 +166,7 @@
     
 }
 
-.contact .info li span:nth-child(1){
-    color: #fff;
-    font-size: 20px;
-    margin-right: 10px;
-}
 
-.contact .info li span{
-    color:#999;
-   
-}
 
 .contact .info li a{
     color: #999;
@@ -198,7 +194,7 @@
     
     justify-content: center;
     margin: auto;
-    font-family: 'Poppins';
+    font-family: 'Rubik';
     
     background: #181818;
     padding: 8px 100px;

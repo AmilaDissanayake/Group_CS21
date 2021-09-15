@@ -274,6 +274,12 @@
     font-family: "Rubik";
  }
 
+ .box a{
+     text-decoration: none;
+    color: #86ff71
+
+ }
+
  .faq_heading{
     text-align: center;
     color: #e6e6e6;
