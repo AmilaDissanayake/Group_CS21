@@ -559,4 +559,37 @@ select::-ms-expand {
     font-size: 12px;
   }
 
-  
+ 
+
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .2s ease-in-out; 
+    /* margin: 5px 2px; */
+}
+
+.fa:hover { transform: scale(1.1); }
+
+  .homeIcon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.fa-home {
+    background-color: transparent;
+    border: none;
+    color: #bfd0d8;
+    padding: 55px 40px;
+    font-size: 200px;
+    cursor: pointer;
+}
+
+  /* Darker background on mouse-over */
+.fa-home:hover {
+    color: black;
+}
