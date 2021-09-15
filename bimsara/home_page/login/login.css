@@ -347,14 +347,32 @@ section .login {
 .fa-instagram {
     /* background: #125688; */
     color: #80868B;
-  }
+}
+
+.homeIcon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.fa-home {
+    background-color: transparent;
+    border: none;
+    color: #bfd0d8;
+    padding: 55px 40px;
+    font-size: 200px;
+    cursor: pointer;
+}
+
+  /* Darker background on mouse-over */
+.fa-home:hover {
+    color: black;
+}
 
 
 
 
 
-
-
-  
 
 
