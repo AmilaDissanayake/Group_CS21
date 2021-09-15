@@ -73,7 +73,7 @@ section .img .head4 {
 section .img .head5 {
     color: #bfd0d8;
     text-align: left;
-    padding-top: 350px;
+    padding-top: 300px;
     padding-left: 80px;
     font-size: 35px;
     letter-spacing: 3px;
@@ -347,14 +347,47 @@ section .login {
 .fa-instagram {
     /* background: #125688; */
     color: #80868B;
-  }
+}
+
+.homeIcon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+
+.homeIcon a{
+    text-decoration: none;
+    font-size: 15px;
+    text-decoration: none;
+    color: #86ff71;
+}
+
+.fa-backward {
+    background-color: transparent;
+    border: none;
+    color: #86ff71;
+    font-size: 20px;
+    padding-left: 80px;
+    padding-bottom: 0;
+    padding-top: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+  /* Darker background on mouse-over */
+.fa-backward:hover {
+    color: #86ff71d5;
+}
+
+.homeIcon a:hover {
+    color: #86ff71d5;
+}
 
 
 
 
 
-
-
-  
 
 
