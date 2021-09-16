@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+
 @font-face {
   font-family: "Anurati";
   src: url("Anurati-Regular.otf");
@@ -33,7 +34,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: Rubik;
 }
 
 section {
@@ -169,7 +170,7 @@ form {
   outline: none;
   background: none;
   z-index: 1;
-  font-family: "sans-serif";  
+  font-family: "Rubik";  
   width: 240px;
   height: 45px;
   padding-left: 10px;
@@ -186,7 +187,7 @@ form {
   outline: none;
   background: none;
   z-index: 1;
-  font-family: "sans-serif";  
+  font-family: "Rubik";  
   width: 240px;
   height: 45px;
   padding-left: 10px;
@@ -224,7 +225,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   outline: none;
   background: none;
   z-index: 1;
-  font-family: "sans-serif";
+  font-family: "Rubik";
 }
 
 .injury{
@@ -240,7 +241,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   outline: none;
   background: none;
   z-index: 1;
-  font-family: "sans-serif";
+  font-family: "Rubik";
 }
 
 textarea{
@@ -393,6 +394,8 @@ textarea{
   left: 0.8rem;
   font-weight: 500;
   z-index: 10;
+  color: #86ff71;
+  font-size: 11px;
   
 }
 
@@ -401,6 +404,8 @@ textarea{
   left: 0.8rem;
   font-weight: 500;
   z-index: 10;
+  color: #86ff71;
+  font-size: 11px;
   
 }
 
@@ -409,6 +414,8 @@ textarea{
   left: 0.8rem;
   font-weight: 500;
   z-index: 10;
+  color: #86ff71;
+  font-size: 11px;
 }
 
 /*Input focus*/
@@ -441,6 +448,8 @@ textarea{
   left: 0.8rem;
   font-weight: 500;
   z-index: 10;
+  color: #86ff71;
+  font-size: 11px;
 }
 
 .hover {
@@ -458,7 +467,7 @@ textarea{
   font-weight: 400;
   font-size: 15px;
   color: #80868b;
-  font-family: "Poppins";
+  font-family: "Rubik";
 }
 
 .remember label span {
@@ -472,7 +481,7 @@ textarea{
   color: #80868b;
   float: left;
   font-size: 15px;
-  font-family: "Poppins";
+  font-family: "Rubik";
   /* justify-content: center; */
 }
 
@@ -554,19 +563,19 @@ select::-ms-expand {
   .tr{
     margin-top: 10px;
   }
-  .tr h4{
-    font-family: 'Azonix';
+  .tr p{
+    font-family: 'Rubik';
     color: #80868b;
-    font-size: 12px;
+    font-size: 15px;
     margin-top: 10px;
     padding-top: 30px;
   }
 
   .tr .tr_link{
     color: #86ff71;
-    font-family: 'Azonix';
+    font-family: 'Rubik';
     
-    font-size: 12px;
+    font-size: 15px;
   }
 
  
@@ -602,4 +611,104 @@ select::-ms-expand {
   /* Darker background on mouse-over */
 .fa-home:hover {
     color: black;
+}
+
+.fade-effect1{
+  display:block;
+  border:none;
+  color:white;
+  height:1px;
+  background:black;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(#86ff71), to(#121317));
+}
+.divider{
+  padding-top:30px;
+  padding-bottom: 30px;
+}
+
+
+.separator {
+  position: relative;
+  width: 100%;
+}
+
+.hr-left2,
+.hr-right2 {
+  line-height: 1em;
+  position: absolute;
+  outline: 0;
+  top: 0;
+  left: 0;
+  border: 0;
+  color: #121317;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+  width: 100%;
+}
+
+.hr-left2:before {
+  content: "";
+  background: linear-gradient(90deg,transparent,#86ff71);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 32%;
+  height: 2px;
+}
+
+.hr-right2:before {
+  content: "";
+  background: linear-gradient(90deg,#86ff71, #121317);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 32%;
+  height: 2px;
+}
+
+.hr-text {
+  position: relative;
+  display: block;
+  font-family: 'Azonix';
+  /* padding: 0 .5em; */
+  line-height: 1.5em;
+  color: #86ff71;
+  text-align: center;
+  /* top: .5em; */
+}
+
+.hr-left1,
+.hr-right1 {
+  line-height: 1em;
+  position: absolute;
+  outline: 0;
+  top: 0;
+  left: 0;
+  border: 0;
+  color: #121317;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+  width: 100%;
+}
+
+.hr-left1:before {
+  content: "";
+  background: linear-gradient(90deg,transparent,#86ff71);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 36%;
+  height: 2px;
+}
+
+.hr-right1:before {
+  content: "";
+  background: linear-gradient(90deg,#86ff71, #121317);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 36%;
+  height: 2px;
 }

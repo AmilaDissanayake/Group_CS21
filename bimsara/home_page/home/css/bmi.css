@@ -27,7 +27,7 @@
   font-size: 30px;
   font-weight: bold;
   font-family: 'Anurati';
-  background: -webkit-linear-gradient(45deg, #39FF14, #39FF14);
+  background: -webkit-linear-gradient(45deg, #86ff71, #86ff71);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -123,8 +123,8 @@
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
-    background: linear-gradient(45deg, #39FF14, #39FF14);
-    box-shadow: -50vmin 0 0 50vmin #39FF14;
+    background: linear-gradient(45deg, #86ff71, #86ff71);
+    box-shadow: -50vmin 0 0 50vmin #86ff71;
 }
 
 
@@ -181,8 +181,8 @@
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
-    background: linear-gradient(45deg, #39FF14, #39FF14);
-    box-shadow: -50vmin 0 0 50vmin #39FF14;
+    background: linear-gradient(45deg, #86ff71, #86ff71);
+    box-shadow: -50vmin 0 0 50vmin #86ff71;
 }
 
 .calculate .calc, .result .recal {
@@ -190,7 +190,7 @@
     width: 55%;
     /* line-height: 14vmin; */
     margin-top: 0px;
-    color: #39FF14;
+    color: #86ff71;
     font-size: 18px;
     /* font-weight: bold; */
     font-family: 'Anurati';
@@ -203,7 +203,7 @@
 
 .calculate .calc:hover,
 .result .recal:hover {
-    color: #39FF14;
+    color: #86ff71;
 }
 
 .result .recal {
