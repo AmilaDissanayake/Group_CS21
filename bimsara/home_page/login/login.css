@@ -344,7 +344,7 @@ section .login {
     color: #80868B;
 }
 
-.fa-instagram {
+.fa-instagram, .fa-whatsapp {
     /* background: #125688; */
     color: #80868B;
 }
