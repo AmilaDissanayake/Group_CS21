@@ -344,7 +344,7 @@ section .login {
     color: #80868B;
 }
 
-.fa-instagram {
+.fa-instagram, .fa-whatsapp {
     /* background: #125688; */
     color: #80868B;
 }
@@ -371,7 +371,7 @@ section .login {
     font-size: 20px;
     padding-left: 80px;
     padding-bottom: 0;
-    padding-top: 30px;
+    padding-top: 100px;
     cursor: pointer;
     text-decoration: none;
 }
