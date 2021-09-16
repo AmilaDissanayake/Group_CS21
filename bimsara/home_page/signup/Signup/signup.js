@@ -71,9 +71,12 @@ function checkInputs() {
 
 	if (mnumberValue === '') {
 		setErrorFor(mnumber, 'Mobile No. cannot be blank');
-	}else if(!isValidnum(mnumber)){
+	}else if(isnotvalidnum(mnumberValue)){
 		setErrorFor(mnumber, 'Invalid Input');
-	} 
+	}
+	//else if(!isValidlen(mnumber)){
+	// 	setErrorFor(mnumber, 'Phone no. length is Invalid');
+	// } 
 	else {
 		setSuccessFor(mnumber);	
 	}
@@ -91,7 +94,7 @@ function checkInputs() {
 	}
 	
     if (injValue === '') {
-		setErrorFor(inj, 'Injuries Field cannot be blank');
+		setErrorFor(inj, 'Injuries Field cannot be blank,Apply NO if there is no injuries');
 	} else {
 		setSuccessFor(inj);
 	}
@@ -162,29 +165,6 @@ function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
-// function isnotfname(fname) {
-// 	let validfname = new RegExp('(?=.*[0-9])(?=.*[^A-Za-z0-9])|(?=.*[0-9])|(?=.*[^A-Za-z0-9])')
-//  	if(validfname.test(fname)){
-// 		 return 1;
-// 	 }else{
-// 		 return 0;
-// 	 }
-// }
-
-// function isfname(fname) {
-// 	var validfname = /^[a-zA-Z]+ [a-zA-Z]+$/;
-//  	if(validfname.test(fname)){
-// 		 return 1;
-// 	 }else{
-// 		 return 0;
-// 	 }
-// }
-
-// function isfname(fname) {
-	
-// 	return true;
-// }
-
 function isnotvalid(name) {
     let invalidn = new RegExp('(?=.*[0-9])')
 	if (invalidn.test(name)){
@@ -193,14 +173,20 @@ function isnotvalid(name) {
     return false;
 }
 
-
-function isValidnum(mnumber) {
-    let validnum = new RegExp('(?=.{6,})')
-	if (validnum.test(mnumber)){
+function isnotvalidnum(mnumber) {
+    let invalid = new RegExp('(?=.*[a-z])|(?=.*[A-Z])')
+	if (invalid.test(mnumber)){
 		return true;
 	}
     return false;
 }
+// function isValidlen(mnumber) {
+//     let validnum = /^{10}$/;
+// 	if (validnum.test(mnumber)){
+// 		return true;
+// 	}
+//     return false;
+// }
 
 function isusername(username) {
     let invalidu = new RegExp('(?=.{6,})')
