@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 @font-face {
     font-family: "Anurati";
     src: url("Anurati-Regular.otf");
@@ -213,7 +214,7 @@ section .login {
     top: 1rem;
     /* padding: 0 .25rem; */
     color: #80868B;
-    background-color: #000;
+    background-color: #141517;
     /* color: var(--input-color); */
     font-size: 14px;
     transition: .2s;
@@ -280,14 +281,14 @@ section .login {
     font-weight: 400;
     font-size: 15px;
     color: #80868B;
-    font-family: 'Poppins';
+    font-family: 'Rubik', sans-serif;
     
 }
 
 .remember a{
     float: right;
     margin-bottom: 20px;
-    font-family: 'Poppins';
+    font-family: 'Rubik', sans-serif;
     
 }
 
@@ -298,7 +299,7 @@ section .login {
     color: #80868B;
     float: left;
     font-size: 15px;
-    font-family: 'Poppins';
+    font-family: 'Rubik', sans-serif;
     /* justify-content: center; */
 }
 
@@ -344,7 +345,7 @@ section .login {
     color: #80868B;
 }
 
-.fa-instagram {
+.fa-instagram, .fa-whatsapp {
     /* background: #125688; */
     color: #80868B;
 }
@@ -371,7 +372,7 @@ section .login {
     font-size: 20px;
     padding-left: 80px;
     padding-bottom: 0;
-    padding-top: 30px;
+    padding-top: 100px;
     cursor: pointer;
     text-decoration: none;
 }
