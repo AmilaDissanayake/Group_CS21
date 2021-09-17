@@ -14,12 +14,12 @@ const password2 = document.getElementById('password2');
 // const trainer = document.getElementById('trainer');
 
 
-password1.addEventListener('input', () => {
+// password1.addEventListener('input', () => {
 
-	clearTimeout(timeout);
+// 	clearTimeout(timeout);
 
-	timeout = setTimeout(() => StrengthChecker(password1.value), 10000);
-});
+// 	timeout = setTimeout(() => isPassword(password1.value), 10000);
+// });
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
@@ -46,13 +46,20 @@ function checkInputs() {
 
 	if (fnameValue === '') {
 		setErrorFor(fname, 'First name cannot be blank');
-	} else {
+	} 
+	else if(isnotvalid(fnameValue)){
+		setErrorFor(fname, 'Invalid Input');
+	}	
+	else {
 		setSuccessFor(fname);
 	}
     
     if (lnameValue === '') {
 		setErrorFor(lname, 'Last name cannot be blank');
-	} else {
+	}else if(isnotvalid(lnameValue)){
+		setErrorFor(lname, 'Invalid Input');
+	}
+	else {
 		setSuccessFor(lname);
 	}
     
@@ -64,8 +71,14 @@ function checkInputs() {
 
 	if (mnumberValue === '') {
 		setErrorFor(mnumber, 'Mobile No. cannot be blank');
-	} else {
-		setSuccessFor(mnumber);
+	}else if(isnotvalidnum(mnumberValue)){
+		setErrorFor(mnumber, 'Invalid Input');
+	}
+	//else if(!isValidlen(mnumber)){
+	// 	setErrorFor(mnumber, 'Phone no. length is Invalid');
+	// } 
+	else {
+		setSuccessFor(mnumber);	
 	}
 
 	// if (genderValue === ' Gender ') {
@@ -81,7 +94,7 @@ function checkInputs() {
 	}
 	
     if (injValue === '') {
-		setErrorFor(inj, 'Injuries Field cannot be blank');
+		setErrorFor(inj, 'Injuries Field cannot be blank,Apply NO if there is no injuries');
 	} else {
 		setSuccessFor(inj);
 	}
@@ -96,7 +109,11 @@ function checkInputs() {
 	
 	if (usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
-	} else {
+	} 
+	else if(!isusername(usernameValue)){
+		setErrorFor(username, 'User Name is Too Short');
+	}
+	else {
 		setSuccessFor(username);
 	}
 
@@ -108,7 +125,7 @@ function checkInputs() {
 
     if (password2Value === '') {
 		setErrorFor(password2, 'Confirm Password cannot be blank');
-	} else if(passwordValue !== password2Value) {
+	} else if(password1Value !== password2Value) {
 		setErrorFor(password2, 'Passwords does not match');
 	} else{
 		setSuccessFor(password2);
@@ -148,22 +165,53 @@ function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
-function isPassword(password){
-	let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
-	let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
-
-	if(strongPassword.test(password1)) {
-        const formControl = password1.parentElement;
-		const small = formControl.querySelector('small');
-		small.innerText = 'Strong Password';
-		// small.innerText.textcolor ='green';
-		small.style.display = 'visible';
-
-    } else if(mediumPassword.test(password1)) {
-        // strengthBadge.style.backgroundColor = 'blue';
-        // strengthBadge.textContent = 'Medium';
-    } else {
-        // strengthBadge.style.backgroundColor = 'red';
-        // strengthBadge.textContent = 'Weak';
-    }
+function isnotvalid(name) {
+    let invalidn = new RegExp('(?=.*[0-9])')
+	if (invalidn.test(name)){
+		return true;
+	}
+    return false;
 }
+
+function isnotvalidnum(mnumber) {
+    let invalid = new RegExp('(?=.*[a-z])|(?=.*[A-Z])')
+	if (invalid.test(mnumber)){
+		return true;
+	}
+    return false;
+}
+// function isValidlen(mnumber) {
+//     let validnum = /^{10}$/;
+// 	if (validnum.test(mnumber)){
+// 		return true;
+// 	}
+//     return false;
+// }
+
+function isusername(username) {
+    let invalidu = new RegExp('(?=.{6,})')
+	if (invalidu.test(username)){
+		return true;
+	}
+    return false;
+}
+
+// function isPassword(password){
+// 	let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+// 	let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
+
+// 	if(strongPassword.test(password1)) {
+//         const formControl = password1.parentElement;
+// 		const small = formControl.querySelector('small');
+// 		small.innerText = 'Strong Password';
+// 		// small.innerText.textcolor ='green';
+// 		small.style.display = 'visible';
+
+//     } else if(mediumPassword.test(password1)) {
+//         // strengthBadge.style.backgroundColor = 'blue';
+//         // strengthBadge.textContent = 'Medium';
+//     } else {
+//         // strengthBadge.style.backgroundColor = 'red';
+//         // strengthBadge.textContent = 'Weak';
+//     }
+// }
