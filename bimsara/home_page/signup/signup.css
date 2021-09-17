@@ -135,6 +135,7 @@ section .login {
   align-items: center;
   min-height: 100vh;
 }
+
 form {
   width: 600px;
   min-height: 100vh;
@@ -504,62 +505,12 @@ option {
   /* margin-right: 20px; */
 }
 
-select::-ms-expand {
-  display: none;
-}
 
-.select__div:after {
-  content: "<>";
-  font: 17px "Consolas", monospace;
-  color: #80868b;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  right: 10px;
-  /*Adjust for position however you want*/
-
-  top: 11px;
-  /* padding: 0 0 2px; */
-  border-bottom: 3px solid #80868b;
-  /*left line */
-
-  position: absolute;
-  pointer-events: none;
-}
-
-.select__div select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  font-size: 14px;
-  transition: 0.2s;
-  font-family: "Azonix";
-
-  display: block;
-  width: 100%;
-  height: 45px;
-  float: left;
-  text-align: left;
-  /* margin: 5px 0px; */
-  padding: 0px 16px;
-  /* font-size: 16px; */
-  line-height: 1.75;
-  color: #80868b;
-  background-color: transparent;
-  background-image: none;
-  border: 1px solid #80868b;
-  -ms-word-break: normal;
-  word-break: normal;
-}
-
-<<<<<<< HEAD:bimsara/home_page/signup/signup.css
-select::-ms-expand {
+select::-ms-expand{
   display: none;
   }
   
-  .select__div:after {
+.select__div:after {
     content: '<>';
     font: 17px "Consolas", monospace;
     color: #80868b;
@@ -579,7 +530,7 @@ select::-ms-expand {
     pointer-events: none;
   }
   
-  .select__div select {
+.select__div select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -633,10 +584,11 @@ select::-ms-expand {
     text-decoration: none;
     transition: all .2s ease-in-out; 
     /* margin: 5px 2px; */
-=======
-.tr {
+  }
+.tr{
   margin-top: 10px;
 }
+
 .tr p {
   font-family: "Rubik";
   color: #80868b;
@@ -664,7 +616,7 @@ select::-ms-expand {
 
 .fa:hover {
   transform: scale(1.1);
->>>>>>> a7924a9820552ac76642ea423d1bd2620c52f98c:bimsara/home_page/signup/Signup/signup.css
+
 }
 
 .homeIcon {
@@ -672,7 +624,6 @@ select::-ms-expand {
   display: inline-block;
   cursor: pointer;
   font-size: 40px;
-<<<<<<< HEAD:bimsara/home_page/signup/signup.css
 }
 
 
@@ -702,7 +653,7 @@ select::-ms-expand {
 /* Darker background on mouse-over */
 .fa-backward:hover {
   color: #86ff71d5;
-=======
+
 }
 
 .fa-home {
@@ -717,7 +668,6 @@ select::-ms-expand {
 /* Darker background on mouse-over */
 .fa-home:hover {
   color: black;
->>>>>>> a7924a9820552ac76642ea423d1bd2620c52f98c:bimsara/home_page/signup/Signup/signup.css
 }
 
 .fade-effect1 {
@@ -726,15 +676,7 @@ select::-ms-expand {
   color: white;
   height: 1px;
   background: black;
-  background: -webkit-gradient(
-    radial,
-    50% 50%,
-    0,
-    50% 50%,
-    350,
-    from(#86ff71),
-    to(#121317)
-  );
+  background: -webkit-gradient(radial,50% 50%,0,50% 50%,350,from(#86ff71),to(#121317));
 }
 .divider {
   padding-top: 30px;
@@ -840,9 +782,7 @@ select::-ms-expand {
   text-decoration: none;
   color: #86ff71;
 }
-.homeIcon .backTo {
-  font-family: sans-serif;
-}
+
 
 .fa-backward {
   background-color: transparent;
