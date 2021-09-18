@@ -169,12 +169,12 @@ section .login {
     right: 10px;
 }
 
-.form__div.success i.fa-check-circle {
+.form__div.success i.fa-check {
     color: #86ff71;
     visibility: visible;
 }
 
-.form__div.error i.fa-exclamation-circle {
+.form__div.error i.fa-exclamation-triangle {
     color: #e74c3c;
     visibility: visible;
 }

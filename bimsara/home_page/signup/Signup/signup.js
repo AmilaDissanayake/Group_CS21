@@ -14,12 +14,13 @@ const password2 = document.getElementById('password2');
 // const trainer = document.getElementById('trainer');
 
 
-// password1.addEventListener('input', () => {
+password1.addEventListener('input', function() {
 
-// 	clearTimeout(timeout);
+	// clearTimeout(timeout);
 
-// 	timeout = setTimeout(() => isPassword(password1.value), 10000);
-// });
+	// timeout = setTimeout(() => isPassword(password1.value), 600);
+
+});
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
@@ -74,9 +75,9 @@ function checkInputs() {
 	}else if(isnotvalidnum(mnumberValue)){
 		setErrorFor(mnumber, 'Invalid Input');
 	}
-	//else if(!isValidlen(mnumber)){
-	// 	setErrorFor(mnumber, 'Phone no. length is Invalid');
-	// } 
+	else if(!isValidlen(mnumberValue)){
+	 	setErrorFor(mnumber, 'Phone no. length is Invalid');
+	} 
 	else {
 		setSuccessFor(mnumber);	
 	}
@@ -119,7 +120,10 @@ function checkInputs() {
 
 	if (password1Value === '') {
 		setErrorFor(password1, 'Password cannot be blank');
-	} else {
+	}else if(!pwlength(password1Value)){
+		setErrorFor(password1, 'Too short!Need at least 8');
+	}
+	 else {
 		setSuccessFor(password1);
 	}
 
@@ -180,13 +184,13 @@ function isnotvalidnum(mnumber) {
 	}
     return false;
 }
-// function isValidlen(mnumber) {
-//     let validnum = /^{10}$/;
-// 	if (validnum.test(mnumber)){
-// 		return true;
-// 	}
-//     return false;
-// }
+function isValidlen(mnumber) {
+	let validnum = new RegExp("^[0-9]{10}$")
+	if (validnum.test(mnumber)){
+		return true;
+	}
+    return false;
+}
 
 function isusername(username) {
     let invalidu = new RegExp('(?=.{6,})')
@@ -196,22 +200,33 @@ function isusername(username) {
     return false;
 }
 
+function pwlength(password1) {
+    let validp = new RegExp('(?=.{8,})')
+	if (validp.test(password1)){
+		return true;
+	}
+    return false;
+}
+
 // function isPassword(password){
 // 	let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
 // 	let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
 
+// 	const formCon = password1.parentElement;
+// 	const small = formCon.querySelector('small');
+
 // 	if(strongPassword.test(password1)) {
-//         const formControl = password1.parentElement;
-// 		const small = formControl.querySelector('small');
 // 		small.innerText = 'Strong Password';
-// 		// small.innerText.textcolor ='green';
+// 		small.style.textcolor ='green';
 // 		small.style.display = 'visible';
 
 //     } else if(mediumPassword.test(password1)) {
-//         // strengthBadge.style.backgroundColor = 'blue';
-//         // strengthBadge.textContent = 'Medium';
+// 		small.innerText = 'Medium Password';
+// 		small.style.textcolor ='blue';
+// 		small.style.display = 'visible';
 //     } else {
-//         // strengthBadge.style.backgroundColor = 'red';
-//         // strengthBadge.textContent = 'Weak';
+// 		small.innerText = 'Weak Password';
+// 		small.style.textcolor ='read';
+// 		small.style.display = 'visible';
 //     }
 // }
