@@ -7,7 +7,7 @@
 ::selection { color: none; background: none; }
 
 .calculate, .result {
-    height: 500px;
+    height: 600px;
     width: 600px;
     /* padding-left: 450px;
     padding-right: 450px; */
@@ -144,6 +144,7 @@
 
 .calculate .gen_input label {
     font-size: 15px;
+    color: #fff;
 }
 
 /* .calculate .gen_input input::-webkit-slider-thumb {
