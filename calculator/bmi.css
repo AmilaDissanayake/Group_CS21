@@ -1,22 +1,21 @@
 @font-face {
     font-family: "Anurati";
-    src: url("Anurati-Regular.otf"); 
+    src: url("Anurati-Regular.otf");
 
     }
 
-body {
-  margin: 0;
-  padding: 0;
-  background: #222;
-}
+::selection { color: none; background: none; }
 
 .calculate, .result {
-  height: 100vh;
-  width: 100vh;
+  height: 500px;
+  width: 600px;
+  /* padding-left: 450px;
+  padding-right: 450px; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content:center;
+  
 }
 
 .result {
@@ -24,16 +23,16 @@ body {
 }
 
 .calculate .title {
-  font-size: 6.5vmin;
+  font-size: 30px;
   font-weight: bold;
   font-family: 'Anurati';
-  background: -webkit-linear-gradient(45deg, #ff7400, #f4511e);
-  /* -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
+  background: -webkit-linear-gradient(45deg, #86ff71, #86ff71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .calculate .gender {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -44,10 +43,10 @@ body {
     height: 32vmin;
     width: 32vmin;
     background: #232323;
-    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    /* box-shadow: 0 .5vmin 1vmin .6vmin #292929; */
     font-size: 8vmin;
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: 'Poppins'-serif;
     text-align: center;
     line-height: 32vmin;
 
@@ -72,24 +71,24 @@ body {
 }
 
 .calculate .height {
-    margin-top: 4vmin;
-    width: 75%;
-    height: 32vmin;
+    /* margin-top: 4vmin; */
+    width: 55%;
+    height: 150px;
     background: #232323;
-    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    box-shadow: 0.5vmin 0vmin .6vmin #292929;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    font-size: 5vmin;
-    font-weight: bold;
+    font-size: 20px;
+    /* font-weight: bold; */
     font-family: 'Poppins';
     color: #555;
 }
 
 .calculate .height .val {
     color: #fff;
-    font-size: 5vmin;
+    font-size: 25px;
     margin: 0;
     margin-top: -2vmin;
 
@@ -98,21 +97,22 @@ body {
 .calculate .height .val i {
     text-align: center;
     line-height: 6vmin;
-    font-size: 5vmin;
-    font-weight: bold;
+    font-size: 25px;
+    /* font-weight: bold; */
     padding: 3vmin;
+    cursor: pointer;
 }
 
 .calculate .height .val span {
-    font-size: 6vmin;
-    font-weight: bold;
-    font-family: sans-serif;
+    font-size: 25px;
+    /* font-weight: bold; */
+    font-family: 'Poppins'-serif;
 }
 
 .calculate .height input {
     -webkit-appearance: none;
-    width: 90%;
-    height: 3vmin;
+    width: 60%;
+    height: 15px;
     background: #333;
     border-radius: 50vmin;
     overflow: hidden;
@@ -120,34 +120,33 @@ body {
 
 .calculate .height input::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 3vmin;
-    width: 3vmin;
-    background: linear-gradient(45deg, #ff7400, #f4511e);
-    box-shadow: -50vmin 0 0 50vmin #f4511e;
+    height: 15px;
+    width: 15px;
+    background: linear-gradient(45deg, #86ff71, #86ff71);
+    box-shadow: -50vmin 0 0 50vmin #86ff71;
 }
 
 
 
 
 .calculate .weight {
-    margin-top: 4vmin;
-    width: 75%;
-    height: 32vmin;
+    width: 55%;
+    height: 150px;
     background: #232323;
-    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    box-shadow: 0.5vmin 0vmin .6vmin #292929;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    font-size: 5vmin;
-    font-weight: bold;
-    font-family: sans-serif;
+    font-size: 20px;
+    /* font-weight: bold; */
+    font-family: 'Poppins';
     color: #555;
 }
 
 .calculate .weight .val {
     color: #fff;
-    font-size: 5vmin;
+    font-size: 25px;
     margin: 0;
     margin-top: -2vmin;
 
@@ -156,21 +155,22 @@ body {
 .calculate .weight .val i {
     text-align: center;
     line-height: 6vmin;
-    font-size: 5vmin;
-    font-weight: bold;
+    font-size: 25px;
+    /* font-weight: bold; */
     padding: 3vmin;
+    cursor: pointer;
 }
 
 .calculate .weight .val span {
-    font-size: 6vmin;
-    font-weight: bold;
-    font-family: sans-serif;
+    font-size: 25px;
+    /* font-weight: bold; */
+    font-family: 'Poppins'-serif;
 }
 
 .calculate .weight input {
     -webkit-appearance: none;
-    width: 90%;
-    height: 3vmin;
+    width: 60%;
+    height: 15px;
     background: #333;
     border-radius: 50vmin;
     overflow: hidden;
@@ -178,70 +178,75 @@ body {
 
 .calculate .weight input::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 3vmin;
-    width: 3vmin;
-    background: linear-gradient(45deg, #ff7400, #f4511e);
-    box-shadow: -50vmin 0 0 50vmin #f4511e;
+    height: 15px;
+    width: 15px;
+    background: linear-gradient(45deg, #86ff71, #86ff71);
+    box-shadow: -50vmin 0 0 50vmin #86ff71;
 }
 
 .calculate .calc, .result .recal {
-    height: 14vmin;
-    width: 75%;
-    line-height: 14vmin;
-    margin-top: 6vmin;
-    color: #fff;
-    font-size: 5vmin;
-    font-weight: bold;
-    font-family: sans-serif;
+    height: 50px;
+    width: 55%;
+    /* line-height: 14vmin; */
+    margin-top: 0px;
+    color: #86ff71;
+    font-size: 18px;
+    /* font-weight: bold; */
+    font-family: 'Anurati';
     background: #232323;
-    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    box-shadow: 0.5vmin 0vmin .6vmin #292929;
     text-align: center;
+    padding-top:20px;
+    cursor: pointer;
 }
 
 .calculate .calc:hover,
 .result .recal:hover {
-    color: #f4511e;
+    color: #86ff71;
 }
 
 .result .recal {
-    margin-top: 20vmin;
+    margin-top: 0px;
 
 }
 
 
 .result .bmi {
-    height: 40vmin;
-    width: 75%;
+    height: 150px;
+    width: 55%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: #232323;
-    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
-    margin-top: 5vmin;
+    box-shadow: 0.5vmin 0vmin .6vmin #292929;
+    margin-top: 20px;
 }
 
 .result .bmi .title {
     color: #555;
-    font-size: 5vmin;
-    font-weight: bold;
-    font-family: sans-serif;
-    font-size: 6.5vmin;
+    font-size: 25px;
+    /* font-weight: bold; */
+    font-family: 'Poppins';
 }
 
 .result .bmi .val {
-    font-size: 7vmin;
-    font-weight: bold;
+    font-size: 25px;
+    /* font-weight: bold; */
     color: #fff;
-    font-family: sans-serif;
+    font-family: 'Poppins';
 }
 
 .result .text {
-    font-size: 5vmin;
-    font-weight: bold;
-    font-family: sans-serif;
+    font-size: 25px;
+    /* font-weight: bold; */
+    font-family: 'Poppins';
     color: #fff;
-    width: 75%;
+    width: 55%;
     text-align: center;
-    margin-top: 20vmin;
+    /* margin-top: 10px; */
+    background: #232323;
+    box-shadow: 0.5vmin 0vmin .6vmin #292929;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
