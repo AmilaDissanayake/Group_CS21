@@ -7,15 +7,14 @@
 ::selection { color: none; background: none; }
 
 .calculate, .result {
-  height: 500px;
-  width: 600px;
-  /* padding-left: 450px;
-  padding-right: 450px; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content:center;
-  
+    height: 600px;
+    width: 600px;
+    /* padding-left: 450px;
+    padding-right: 450px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
 }
 
 .result {
@@ -23,20 +22,20 @@
 }
 
 .calculate .title {
-  font-size: 30px;
-  font-weight: bold;
-  font-family: 'Anurati';
-  background: -webkit-linear-gradient(45deg, #86ff71, #86ff71);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Anurati';
+    background: -webkit-linear-gradient(45deg, #86ff71, #86ff71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .calculate .gender {
-  display: none;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 75%;
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
 }
 
 .calculate .gender div {
@@ -69,6 +68,93 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.calculate .age {
+    /* margin-top: 4vmin; */
+    width: 55%;
+    height: 150px;
+    background: #232323;
+    box-shadow: 0.5vmin 0vmin .6vmin #292929;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-size: 20px;
+    /* font-weight: bold; */
+    font-family: 'Poppins';
+    color: #555;
+}
+
+.calculate .age .val {
+    color: #fff;
+    font-size: 25px;
+    margin: 0;
+    margin-top: -2vmin;
+
+}
+
+.calculate .age .val i {
+    text-align: center;
+    line-height: 6vmin;
+    font-size: 25px;
+    /* font-weight: bold; */
+    padding: 3vmin;
+    cursor: pointer;
+}
+
+.calculate .age .val span {
+    font-size: 25px;
+    /* font-weight: bold; */
+    font-family: 'Poppins'-serif;
+}
+
+.calculate .age input {
+    -webkit-appearance: none;
+    width: 60%;
+    height: 15px;
+    background: #333;
+    border-radius: 50vmin;
+    overflow: hidden;
+}
+
+.calculate .age input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: linear-gradient(45deg, #86ff71, #86ff71);
+    box-shadow: -50vmin 0 0 50vmin #86ff71;
+}
+
+
+.calculate .gen_input {
+    /* margin-top: 4vmin; */
+    width: 55%;
+    height: 150px;
+    background: #232323;
+    box-shadow: 0.5vmin 0vmin .6vmin #292929;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-size: 20px;
+    /* font-weight: bold; */
+    font-family: 'Poppins';
+    color: #555;
+}
+
+.calculate .gen_input label {
+    font-size: 15px;
+    color: #fff;
+}
+
+/* .calculate .gen_input input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: linear-gradient(45deg, #86ff71, #86ff71);
+    box-shadow: -50vmin 0 0 50vmin #86ff71;
+} */
+
 
 .calculate .height {
     /* margin-top: 4vmin; */

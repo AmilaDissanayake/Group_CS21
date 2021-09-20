@@ -13,6 +13,26 @@ document.querySelector('.calculate .gender .male').onclick = function () {
     document.querySelector('.calculate . gender .male').className = 'male';
 }
 
+document.querySelector('.calculate .age input').onchange = function () {
+    age = parseInt(this.value);
+    document.querySelector('.calculate .age .val span').innerText = age;
+}
+
+document.querySelector('.calculate .age .val i.add').onclick = function () {
+    age += 1;
+    age = (age > 70) ? 70 : age;
+    document.querySelector('.calculate .age .val span').innerText = age;
+    document.querySelector('.calculate .age input').value = age;
+}
+
+document.querySelector('.calculate .age .val i.sub').onclick = function () {
+    age -= 1;
+    age = (age < 10) ? 10 : age;
+    document.querySelector('.calculate .age .val span').innerText = age;
+    document.querySelector('.calculate .age input').value = age;
+}
+
+
 document.querySelector('.calculate .height input').onchange = function () {
     height = parseInt(this.value);
     document.querySelector('.calculate .height .val span').innerText = height;
@@ -51,6 +71,10 @@ document.querySelector('.calculate .weight .val i.sub').onclick = function () {
     document.querySelector('.calculate .weight input').value = weight;
 }
 
+
+
+
+
 document.querySelector('.calculate .calc').onclick = function () {
     let bmi = (weight / Math.pow(height / 100, 2)).toFixed(2);
     height = 50;
@@ -84,5 +108,5 @@ document.querySelector('.calculate .calc').onclick = function () {
 
 document.querySelector('.result .recal').onclick = function () {
     document.querySelector('.result').style.display = 'none';
-    document.querySelector('.calculate').style.display = 'flex';
+    document.querySelector('.calculate').style.display = 'flex'; 
 }
