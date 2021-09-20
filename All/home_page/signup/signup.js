@@ -14,7 +14,7 @@ const password2 = document.getElementById('password2');
 // const trainer = document.getElementById('trainer');
 
 
-password1.addEventListener('input', function() {
+password1.addEventListener('input', function () {
 
 	// clearTimeout(timeout);
 
@@ -32,8 +32,8 @@ function checkInputs() {
 
 	// trim to remove the whitespaces
 
-    const fnameValue = fname.value.trim();
-    const lnameValue = lname.value.trim();
+	const fnameValue = fname.value.trim();
+	const lnameValue = lname.value.trim();
 	// const genderValue = gender.value.trim();
 	const mnumberValue = mnumber.value.trim();
 	// const dobValue = dob.value.trim();
@@ -42,28 +42,31 @@ function checkInputs() {
 	const emailValue = email.value.trim();
 	const usernameValue = username.value.trim();
 	const password1Value = password1.value.trim();
-    const password2Value = password2.value.trim();
+	const password2Value = password2.value.trim();
 	// const trainerValue = trainer.value.trim();
+
 
 	if (fnameValue === '') {
 		setErrorFor(fname, 'First name cannot be blank');
-	} 
-	else if(isnotvalid(fnameValue)){
+	}
+	else if (isnotvalid(fnameValue)) {
 		setErrorFor(fname, 'Invalid Input');
-	}	
+	}
+
+
 	else {
 		setSuccessFor(fname);
 	}
-    
-    if (lnameValue === '') {
+
+	if (lnameValue === '') {
 		setErrorFor(lname, 'Last name cannot be blank');
-	}else if(isnotvalid(lnameValue)){
+	} else if (isnotvalid(lnameValue)) {
 		setErrorFor(lname, 'Invalid Input');
 	}
 	else {
 		setSuccessFor(lname);
 	}
-    
+
 	// if (genderValue === ' Gender ') {
 	// 	setErrorFor(gender, 'Select a gender');
 	// } else {
@@ -72,14 +75,14 @@ function checkInputs() {
 
 	if (mnumberValue === '') {
 		setErrorFor(mnumber, 'Mobile No. cannot be blank');
-	}else if(isnotvalidnum(mnumberValue)){
+	} else if (isnotvalidnum(mnumberValue)) {
 		setErrorFor(mnumber, 'Invalid Input');
 	}
-	else if(!isValidlen(mnumberValue)){
-	 	setErrorFor(mnumber, 'Phone no. length is Invalid');
-	} 
+	else if (!isValidlen(mnumberValue)) {
+		setErrorFor(mnumber, 'Phone no. length is Invalid');
+	}
 	else {
-		setSuccessFor(mnumber);	
+		setSuccessFor(mnumber);
 	}
 
 	// if (genderValue === ' Gender ') {
@@ -93,8 +96,8 @@ function checkInputs() {
 	} else {
 		setSuccessFor(address);
 	}
-	
-    if (injValue === '') {
+
+	if (injValue === '') {
 		setErrorFor(inj, 'Injuries Field cannot be blank,Apply NO if there is no injuries');
 	} else {
 		setSuccessFor(inj);
@@ -107,11 +110,11 @@ function checkInputs() {
 	} else {
 		setSuccessFor(email);
 	}
-	
+
 	if (usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
-	} 
-	else if(!isusername(usernameValue)){
+	}
+	else if (!isusername(usernameValue)) {
 		setErrorFor(username, 'User Name is Too Short');
 	}
 	else {
@@ -120,18 +123,19 @@ function checkInputs() {
 
 	if (password1Value === '') {
 		setErrorFor(password1, 'Password cannot be blank');
-	}else if(!pwlength(password1Value)){
-		setErrorFor(password1, 'Too short!Need at least 8');
+	} else if (!pwlength(password1Value)) {
+		setErrorFor(password1, 'Too short! Need at least 8');
 	}
-	 else {
+	else if (!(regexOne.test(password1Value))) {
+		setErrorFor(password1Value, 'At least one Cap');
+	}
+	else {
 		setSuccessFor(password1);
 	}
 
-    if (password2Value === '') {
+	if (password2Value === '') {
 		setErrorFor(password2, 'Confirm Password cannot be blank');
-	} else if(password1Value !== password2Value) {
-		setErrorFor(password2, 'Passwords does not match');
-	} else{
+	} else {
 		setSuccessFor(password2);
 	}
 
@@ -145,22 +149,21 @@ function checkInputs() {
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
 	const small = formControl.querySelector('small');
-	if (input === inj){
+	if (input === inj) {
 		formControl.className = 'inj__div error';
 		small.innerText = message;
-	}else{
+	} else {
 		formControl.className = 'form__div error';
 		small.innerText = message;
 	}
-	
+
 }
 
 function setSuccessFor(input) {
 	const formControl = input.parentElement;
-	if (input === inj)
-	{
+	if (input === inj) {
 		formControl.className = 'inj__div success';
-	}else{
+	} else {
 		formControl.className = 'form__div success';
 	}
 }
@@ -170,42 +173,42 @@ function isEmail(email) {
 }
 
 function isnotvalid(name) {
-    let invalidn = new RegExp('(?=.*[0-9])')
-	if (invalidn.test(name)){
+	let invalidn = new RegExp('(?=.*[0-9])')
+	if (invalidn.test(name)) {
 		return true;
 	}
-    return false;
+	return false;
 }
 
 function isnotvalidnum(mnumber) {
-    let invalid = new RegExp('(?=.*[a-z])|(?=.*[A-Z])')
-	if (invalid.test(mnumber)){
+	let invalid = new RegExp('(?=.*[a-z])|(?=.*[A-Z])')
+	if (invalid.test(mnumber)) {
 		return true;
 	}
-    return false;
+	return false;
 }
 function isValidlen(mnumber) {
 	let validnum = new RegExp("^[0-9]{10}$")
-	if (validnum.test(mnumber)){
+	if (validnum.test(mnumber)) {
 		return true;
 	}
-    return false;
+	return false;
 }
 
 function isusername(username) {
-    let invalidu = new RegExp('(?=.{6,})')
-	if (invalidu.test(username)){
+	let invalidu = new RegExp('(?=.{6,})')
+	if (invalidu.test(username)) {
 		return true;
 	}
-    return false;
+	return false;
 }
 
 function pwlength(password1) {
-    let validp = new RegExp('(?=.{8,})')
-	if (validp.test(password1)){
+	let validp = new RegExp('(?=.{8,})')
+	if (validp.test(password1)) {
 		return true;
 	}
-    return false;
+	return false;
 }
 
 // function isPassword(password){
