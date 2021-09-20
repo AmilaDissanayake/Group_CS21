@@ -85,3 +85,4 @@ document.querySelector('.calculate .calc').onclick = function () {
 document.querySelector('.result .recal').onclick = function () {
     document.querySelector('.result').style.display = 'none';
     document.querySelector('.calculate').style.display = 'flex';
+}
