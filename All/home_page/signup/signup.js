@@ -122,8 +122,15 @@ function checkInputs() {
 		setErrorFor(password1, 'Password cannot be blank');
 	}else if(!pwlength(password1Value)){
 		setErrorFor(password1, 'Too short!Need at least 8');
-	}
-	 else {
+	}else if(!pwlength4(password1Value)){
+		setErrorFor(password1, 'Uppercase Letters must be included');
+	}else if(!pwlength3(password1Value)){
+		setErrorFor(password1, 'Lowercase Letters must be included');
+	}else if(!pwlength2(password1Value)){
+		setErrorFor(password1, 'Numbers must be included');
+	}else if(!pwlength1(password1Value)){
+		setErrorFor(password1, 'Symbols must be included');
+	}else {
 		setSuccessFor(password1);
 	}
 
@@ -208,6 +215,37 @@ function pwlength(password1) {
     return false;
 }
 
+function pwlength1(password1) {
+    let validp = new RegExp('(?=.*\\W)')
+	if (validp.test(password1)){
+		return true;
+	}
+    return false;
+}
+
+function pwlength2(password1) {
+    let validp = new RegExp('(?=.*[0-9])')
+	if (validp.test(password1)){
+		return true;
+	}
+    return false;
+}
+
+function pwlength3(password1) {
+    let validp = new RegExp('(?=.*[a-z])')
+	if (validp.test(password1)){
+		return true;
+	}
+    return false;
+}
+
+function pwlength4(password1) {
+    let validp = new RegExp('(?=.*[A-Z])')
+	if (validp.test(password1)){
+		return true;
+	}
+    return false;
+}
 // function isPassword(password){
 // 	let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
 // 	let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
@@ -238,8 +276,9 @@ function passwordChanged() {
 	
 	var pwd = document.getElementById("password1");
 
-    var strongRegex = new RegExp("^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-    var mediumRegex = new RegExp("^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+	var verystrongRegex = new RegExp("^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+    var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+    var mediumRegex = new RegExp("^(?=.{8,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
     var enoughRegex = new RegExp("(?=.{8,}).*", "g");
        
         
@@ -247,7 +286,10 @@ function passwordChanged() {
         small.innerHTML = 'Type Password';
     } else if (false == enoughRegex.test(pwd.value)) {
         small.innerHTML = 'More Characters';
-    } else if (strongRegex.test(pwd.value)) {
+    }else if (verystrongRegex.test(pwd.value)) {
+        small.innerHTML = '<span style="color:#03a5fc">Very Strong!</span>';
+    }
+	else if (strongRegex.test(pwd.value)) {
         small.innerHTML = '<span style="color:#2ecc70">Strong!</span>';
     } else if (mediumRegex.test(pwd.value)) {
         small.innerHTML = '<span style="color:orange">Medium!</span>';
