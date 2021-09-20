@@ -14,13 +14,13 @@ const password2 = document.getElementById('password2');
 // const trainer = document.getElementById('trainer');
 
 
-password1.addEventListener('input', function() {
+// password1.addEventListener('input', function() {
 
-	// clearTimeout(timeout);
+// 	// clearTimeout(timeout);
 
-	// timeout = setTimeout(() => isPassword(password1.value), 600);
+// 	// timeout = setTimeout(() => isPassword(password1.value), 600);
 
-});
+// });
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
@@ -230,3 +230,29 @@ function pwlength(password1) {
 // 		small.style.display = 'visible';
 //     }
 // }
+
+function passwordChanged() {
+
+	const formControl = password1.parentElement;
+	const small = formControl.querySelector('small');
+	
+	var pwd = document.getElementById("password1");
+
+    var strongRegex = new RegExp("^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+    var mediumRegex = new RegExp("^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+    var enoughRegex = new RegExp("(?=.{8,}).*", "g");
+       
+        
+	if (pwd.value.length == 0) {
+        small.innerHTML = 'Type Password';
+    } else if (false == enoughRegex.test(pwd.value)) {
+        small.innerHTML = 'More Characters';
+    } else if (strongRegex.test(pwd.value)) {
+        small.innerHTML = '<span style="color:#2ecc70">Strong!</span>';
+    } else if (mediumRegex.test(pwd.value)) {
+        small.innerHTML = '<span style="color:orange">Medium!</span>';
+    } else {
+		formControl.className = 'form__div error';
+        small.innerHTML = '<span style="color:red">Weak!';
+    }
+}
