@@ -326,6 +326,14 @@ section .login {
     /* margin: 5px 2px; */
 }
 
+.fa-check{
+    padding: 0;
+}
+
+.fa-exclamation-triangle{
+    width: 35px;
+}
+
 .fa:hover { transform: scale(1.1); }
 
 

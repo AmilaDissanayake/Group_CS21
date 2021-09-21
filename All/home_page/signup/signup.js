@@ -150,6 +150,58 @@ function checkInputs() {
 	// }
 }
 
+if (injValue === '') {
+	setErrorFor(inj, 'Injuries Field cannot be blank,Apply NO if there is no injuries');
+} else {
+	setSuccessFor(inj);
+}
+
+if (emailValue === '') {
+	setErrorFor(email, 'Email cannot be blank');
+} else if (!isEmail(emailValue)) {
+	setErrorFor(email, 'Not a valid email');
+} else {
+	setSuccessFor(email);
+}
+
+if (usernameValue === '') {
+	setErrorFor(username, 'Username cannot be blank');
+}
+else if (!isusername(usernameValue)) {
+	setErrorFor(username, 'User Name is Too Short');
+}
+else {
+	setSuccessFor(username);
+}
+
+if (password1Value === '') {
+	setErrorFor(password1, 'Password cannot be blank');
+} else if (!pwlength(password1Value)) {
+	setErrorFor(password1, 'Too short!Need at least 8');
+} else if (!pwlength4(password1Value)) {
+	setErrorFor(password1, 'Uppercase Letters must be included');
+} else if (!pwlength3(password1Value)) {
+	setErrorFor(password1, 'Lowercase Letters must be included');
+} else if (!pwlength2(password1Value)) {
+	setErrorFor(password1, 'Numbers must be included');
+} else if (!pwlength1(password1Value)) {
+	setErrorFor(password1, 'Symbols must be included');
+} else {
+	setSuccessFor(password1);
+}
+
+if (password2Value === '') {
+	setErrorFor(password2, 'Confirm Password cannot be blank');
+} else {
+	setSuccessFor(password2);
+}
+
+// if (genderValue === ' Gender ') {
+// 	setErrorFor(gender, 'Select a gender');
+// } else {
+// 	setSuccessFor(gender);
+// }
+
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
 	const small = formControl.querySelector('small');
