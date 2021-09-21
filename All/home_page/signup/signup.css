@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
 @font-face {
   font-family: "Anurati";
   src: url("Anurati-Regular.otf");
@@ -347,7 +349,7 @@ option {
   background-color: rgb(20, 21, 23);
   font-size: 14px;
   transition: 0.2s;
-  font-family: "Azonix";
+  font-family: 'Rubik', sans-serif;
 }
 .form__button {
   display: block;
@@ -545,7 +547,7 @@ select::-ms-expand{
     
     font-size: 14px;
     transition: 0.2s;
-    font-family: "Azonix";
+    font-family: 'Rubik', sans-serif;
 
     display: block;
     width: 100%;

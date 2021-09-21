@@ -34,7 +34,7 @@ const password2 = document.getElementById('password2');
 
 		const fnameValue = fname.value.trim();
 		const lnameValue = lname.value.trim();
-		// const genderValue = gender.value.trim();
+		// const genderValue = gender.value
 		const mnumberValue = mnumber.value.trim();
 		// const dobValue = dob.value.trim();
 		const addressValue = address.value.trim();
@@ -52,8 +52,6 @@ const password2 = document.getElementById('password2');
 		else if (isnotvalid(fnameValue)) {
 			setErrorFor(fname, 'Invalid Input');
 		}
-
-
 		else {
 			setSuccessFor(fname);
 		}
@@ -67,10 +65,10 @@ const password2 = document.getElementById('password2');
 			setSuccessFor(lname);
 		}
 
-		// if (genderValue === ' Gender ') {
-		// 	setErrorFor(gender, 'Select a gender');
+		// if (genderValue === '0') {
+		//  	setErrorFor(gender, 'Select a gender');
 		// } else {
-		// 	setSuccessFor(gender);
+		//  	setSuccessFor(gender);
 		// }
 
 		if (mnumberValue === '') {
