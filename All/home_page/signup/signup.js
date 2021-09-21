@@ -14,11 +14,7 @@ const password2 = document.getElementById('password2');
 // const trainer = document.getElementById('trainer');
 
 
-<<<<<<< HEAD
-password1.addEventListener('input', function () {
-=======
 // password1.addEventListener('input', function() {
->>>>>>> 2f258b5d8355efc5695c634b4f5de418e8bca44a
 
 	// 	// clearTimeout(timeout);
 
