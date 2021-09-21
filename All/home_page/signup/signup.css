@@ -286,34 +286,42 @@ textarea {
   right: 25px;
 }
 
-.form__div.success i.fa-check-circle {
+.form__div.success i.fa-check {
   color: #2ecc71;
   visibility: visible;
+  padding:0;
+  width: 18px;
 }
 
-.select__div.success i.fa-check-circle {
+.select__div.success i.fa-check {
   color: #2ecc71;
   visibility: visible;
+  padding:0;
+  width: 18px;
 }
 
-.inj__div.success i.fa-check-circle {
+.inj__div.success i.fa-check {
   color: #2ecc71;
   visibility: visible;
+  padding:0;
+  width: 18px;
 }
-.form__div.error i.fa-exclamation-circle {
+.form__div.error i.fa-exclamation-triangle {
   color: #e74c3c;
   visibility: visible;
 }
 
-.select__div.error i.fa-exclamation-circle {
+.select__div.error i.fa-exclamation-triangle {
   color: #e74c3c;
   visibility: visible;
 }
 
-.inj__div.error i.fa-exclamation-circle {
+.inj__div.error i.fa-exclamation-triangle {
   color: #e74c3c;
   visibility: visible;
 }
+
+
 .inj__div small,
 .select__div small,
 .form__div small {
