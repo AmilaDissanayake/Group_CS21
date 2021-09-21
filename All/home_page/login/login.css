@@ -317,13 +317,21 @@ section .login {
 
 
 .fa {
-    /* padding: 20px; */
+    padding: 20px;
     font-size: 30px;
     width: 50px;
     text-align: center;
     text-decoration: none;
     transition: all .2s ease-in-out; 
     /* margin: 5px 2px; */
+}
+
+.fa-check{
+    padding: 0;
+}
+
+.fa-exclamation-triangle{
+    width: 35px;
 }
 
 .fa:hover { transform: scale(1.1); }
