@@ -52,7 +52,7 @@
                         <small>Error message</small>
                     </div>
 
-                    <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit"></div>
+                    <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit" onclick="checkInputs()"></div>
                     <!-- <button class="err">Show Alert</button> -->
                     <div class="alert hide">
                         <!-- <span class="fas fa-exclamation-circle"></span> -->
@@ -111,7 +111,7 @@
         </div>
     </section>
 
-    <!-- <script type="text/javascript" src="js/login.js"></script> -->
+    <script type="text/javascript" src="js/login.js"></script>
 
 </body>
 

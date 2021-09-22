@@ -107,6 +107,7 @@
                             <li><a href="#">Aiana Lexa</a></li>
                             <li><a href="#">Rexel Mags</a></li>
                             <li><a href="#">Tiana Loths</a></li>
+
                         </ul>
                         <ul class="details">
                             <li class="topic">Sales</li>

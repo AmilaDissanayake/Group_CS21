@@ -2,12 +2,15 @@ const form = document.getElementById('form');
 const username = document.getElementById('username');
 // const email = document.getElementById('email');
 const password = document.getElementById('password');
+var usernameErr = passwordErr = true;
 
-form.addEventListener('submit', e => {
-	e.preventDefault();
+// form.addEventListener('submit', e => {
+// 	e.preventDefault();
 
-	checkInputs();
-});
+// 	checkInputs();
+// 	// return true;
+
+// });
 
 function checkInputs() {
 
@@ -19,6 +22,8 @@ function checkInputs() {
 
 	if (usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
+		usernameErr = false;
+
 	} else {
 		setSuccessFor(username);
 	}
@@ -33,10 +38,25 @@ function checkInputs() {
 
 	if (passwordValue === '') {
 		setErrorFor(password, 'Password cannot be blank');
+		passwordErr = false;
+
 	} else {
 		setSuccessFor(password);
 	}
+
+	if ((usernameErr || passwordErr) == true) {
+		return false;
+	}
+
+	else {
+		return true;
+	}
+
+
 }
+
+
+
 
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
@@ -49,6 +69,8 @@ function setSuccessFor(input) {
 	const formControl = input.parentElement;
 	formControl.className = 'form__div success';
 }
+
+
 
 // OLD SCRIPT BY NAVOD
 // ===================
