@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 </head>
 
@@ -30,7 +32,7 @@
         </div>
         <div class="login">
             <div class="l-form">
-                <form action="login.php" class="form" id="form" method="GET">
+                <form action="login.php" class="form" id="form" method="POST">
                     <h1 class="form__title">LOGIN (Admin)</h1>
 
                     <div class="form__div">
@@ -51,10 +53,33 @@
                     </div>
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit"></div>
+                    <!-- <button class="err">Show Alert</button> -->
+                    <div class="alert hide">
+                        <!-- <span class="fas fa-exclamation-circle"></span> -->
+                        <span class="msg">Username or password is Incorrect!</span>
+                        <div class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </div>
+                    </div>
+                    <script>
+                        function nn() {
+                            $('.alert').addClass("show");
+                            $('.alert').removeClass("hide");
+                            $('.alert').addClass("showAlert");
+                            setTimeout(function bb() {
+                                $('.alert').removeClass("show");
+                                $('.alert').addClass("hide");
+                            }, 500000);
+                        };
+                        $('.close-btn').click(function ss() {
+                            $('.alert').removeClass("show");
+                            $('.alert').addClass("hide");
+                        });
+                    </script>
                     <?php
                     if (isset($_SESSION['error'])) {
                         $error = $_SESSION['error'];
-                        echo "<span class='error'>$error</span>";
+                        echo '<script type="text/javascript">nn();</script>';
                     }
                     ?>
                     <div class="remember">
@@ -87,6 +112,7 @@
     </section>
 
     <!-- <script type="text/javascript" src="js/login.js"></script> -->
+
 </body>
 
 </html>

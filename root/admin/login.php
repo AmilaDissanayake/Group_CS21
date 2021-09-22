@@ -3,10 +3,10 @@ session_start();
 
 require "includes/db.php";
 
-if (isset($_GET['submit'])) {
+if (isset($_POST['submit'])) {
 
-    $username = mysqli_real_escape_string($connection, $_GET['username']);
-    $password = mysqli_real_escape_string($connection, $_GET['password']);
+    $username = mysqli_real_escape_string($connection, $_POST['username']);
+    $password = mysqli_real_escape_string($connection, $_POST['password']);
 
     if ($username != "" && $password != "") {
 
