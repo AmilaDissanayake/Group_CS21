@@ -76,6 +76,8 @@
                             $('.alert').addClass("hide");
                         });
                     </script>
+
+
                     <?php
                     if (isset($_SESSION['error'])) {
                         $error = $_SESSION['error'];
