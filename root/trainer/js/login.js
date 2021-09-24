@@ -4,13 +4,13 @@ const username = document.getElementById('username');
 const password = document.getElementById('password');
 var usernameErr = passwordErr = true;
 
-// form.addEventListener('submit', e => {
-// 	e.preventDefault();
+form.addEventListener('submit', e => {
+	e.preventDefault();
 
-// 	checkInputs();
-// 	// return true;
+	checkInputs();
+	return true;
 
-// });
+});
 
 function checkInputs() {
 
@@ -39,22 +39,18 @@ function checkInputs() {
 	if (passwordValue === '') {
 		setErrorFor(password, 'Password cannot be blank');
 		passwordErr = false;
-
 	} else {
 		setSuccessFor(password);
 	}
-
 	if ((usernameErr || passwordErr) == true) {
 		return false;
 	}
-
 	else {
 		return true;
 	}
 
 
 }
-
 
 
 

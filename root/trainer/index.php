@@ -33,7 +33,7 @@
         <div class="login">
             <div class="l-form">
                 <form action="login.php" class="form" id="form" method="POST">
-                    <h1 class="form__title">LOGIN (Admin)</h1>
+                    <h1 class="form__title">LOGIN (Trainer)</h1>
 
                     <div class="form__div">
                         <input type="text" class="form__input" id="username" placeholder=" " name="username">
@@ -103,9 +103,6 @@
                     </div>
                 </form>
             </div>
-
-
-
 
 
         </div>
