@@ -76,7 +76,7 @@ document.querySelector('.calculate .weight .val i.sub').onclick = function () {
 
 
 document.querySelector('.calculate .calc').onclick = function () {
-    let bmr = ((10*weight)+(6.25*height)-(5*age)+5).toFixed(2);
+    let bmr = ((10 * weight) + (6.25 * height) - (5 * age) + 5).toFixed(2);
     height = 50;
     weight = 10;
     document.querySelector('.calculate .weight input').value = weight;
@@ -88,8 +88,8 @@ document.querySelector('.calculate .calc').onclick = function () {
 
     document.querySelector('.result .bmi .val').innerText = bmr;
 
-    var male = document.getElementById("male");  
-    var female = document.getElementById("female"); 
+    var male = document.getElementById("male");
+    var female = document.getElementById("female");
 
 
     // if (bmr < 18.5) {
@@ -108,11 +108,13 @@ document.querySelector('.calculate .calc').onclick = function () {
     //     document.querySelector('.result .text').style.color = '#ffc107';
     // }
 
+    //sdfsdfsdfsdfsd
+
     document.querySelector('.calculate').style.display = 'none';
     document.querySelector('.result').style.display = 'flex';
 }
 
 document.querySelector('.result .recal').onclick = function () {
     document.querySelector('.result').style.display = 'none';
-    document.querySelector('.calculate').style.display = 'flex'; 
+    document.querySelector('.calculate').style.display = 'flex';
 }
