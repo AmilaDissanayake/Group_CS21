@@ -21,7 +21,6 @@
             <p>
             <h1 class="head">POWER HOUSE</h1>
             <h3 class="head3">FITNESS ACADEMY</h3>
-            <!-- <h5 class="head4">Feel good breath</h5> -->
             <h5 class="head5">BUILD PERFECT BODY <br> SHAPE FOR <span>GOOD</span> AND <br><span>HEALTHY</span> LIFE.
             </h5>
             </p>
@@ -32,14 +31,27 @@
         </div>
         <div class="login">
             <div class="l-form">
-                <form action="include/reset-request.inc.php" method="Post" class="form" id="form">
-                    <h1 class="form__title">RESET YOUR PASSWORD</h1>
+                <!-- <?php
+                    $selector = $_GET["selector"];
+                    $validator = $_GET["validator"];
+
+                    if(empty($selector) || empty($validator)){
+                        echo "Could not validate your request!";
+                    }
+                    else{
+                        if(ctype_xdigit($selector)!==false && ctype_xdigit($validator)!==false){
+                            ?> -->
+
+                <form action="include/reset-password.inc.php" method="Post" class="form" id="form">
+                <!-- <input type="hidden" name="selector" value="<?php echo $selector?>;">
+                <input type="hidden" name="validator" value="<?php echo $validator?>;"> -->
+
+                <h1 class="form__title">RESET YOUR PASSWORD</h1>
                    
                     <div class="form__div">
-                        <input type="text" class="form__input" id="email" placeholder=" "
-                            name="email">
+                        <input type="password" class="form__input" id="new-pw" placeholder=" ">
 
-                        <label for="" class="form__label">ENTER YOUR E-MAIL ADDRESS</label>
+                        <label for="" class="form__label">Enter new password</label>
                         <i class="fa fa-check"></i>
                         <!-- <i class="fas fa-check-circle"></i> -->
                         <i class="fas fa-exclamation-triangle"></i>
@@ -47,17 +59,24 @@
                         <!-- <i class="fas fa-exclamation-circle"></i> -->
                         <small>Error message</small>
                     </div>
-                    <div class="buttondiv"><input type="submit" name="reset-request-submit" class="form__button" value="SEND AN E-MAIL"></div>
+                    <div class="form__div">
+                        <input type="password" class="form__input" id="new-pw2" placeholder=" ">
+
+                        <label for="" class="form__label">Re-Enter new password</label>
+                        <i class="fa fa-check"></i>
+                        <!-- <i class="fas fa-check-circle"></i> -->
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <!-- <i class="fas fa-exclamation"></i> -->
+                        <!-- <i class="fas fa-exclamation-circle"></i> -->
+                        <small>Error message</small>
+                    </div>
+                    <div class="buttondiv"><input type="submit" name="reset-request-submit" class="form__button" value="RESET PASSWORD"></div>
                 </form>
 
-                <?php
-                    if(isset($_GET["reset"])){
-                        if($_GET["reset"]=="success"){
-                            echo "<p> Check your Email! </p>";
+                            <!-- <?php
                         }
                     }
-
-                ?>
+                ?> -->
             </div>
 
         </div>
