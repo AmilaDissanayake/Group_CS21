@@ -8,7 +8,7 @@ form.addEventListener('submit', e => {
 	e.preventDefault();
 
 	checkInputs();
-	return true;
+	// return true;
 
 });
 
@@ -39,18 +39,22 @@ function checkInputs() {
 	if (passwordValue === '') {
 		setErrorFor(password, 'Password cannot be blank');
 		passwordErr = false;
+
 	} else {
 		setSuccessFor(password);
 	}
+
 	if ((usernameErr || passwordErr) == true) {
 		return false;
 	}
+
 	else {
 		return true;
 	}
 
 
 }
+
 
 
 
