@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login (Admin)</title>
+    <title>Login (Member)</title>
     <!-- <link rel="shortcut icon" href="media/TabIcon.jpg">  -->
 
     <link rel="stylesheet" href="css/login.css">
@@ -33,7 +33,7 @@
         <div class="login">
             <div class="l-form">
                 <form action="login.php" class="form" id="form" method="POST">
-                    <h1 class="form__title">LOGIN (Admin)</h1>
+                    <h1 class="form__title">LOGIN (Member)</h1>
 
                     <div class="form__div">
                         <input type="text" class="form__input" id="username" placeholder=" " name="username">
@@ -52,8 +52,9 @@
                         <small>Error message</small>
                     </div>
 
-                    <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit"></div>
+                    <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit" ></div>
                     <!-- onclick="checkInputs()" -->
+                    
                     <!-- <button class="err">Show Alert</button> -->
                     <div class="alert hide">
                         <!-- <span class="fas fa-exclamation-circle"></span> -->
