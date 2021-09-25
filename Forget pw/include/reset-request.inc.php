@@ -53,9 +53,11 @@ $message .= '<a href="' . $url .'">' . $url . '</a></p>';
 
 $headers = "From:Amila dissanayake <amiladissanayake0810@gmail.com>\r\n";
 $headers .= "Reply-To:amiladissanayake0810@gmail.com\r\n";
-$header .= "Content-type: text/html\r\n";
+$headers .= "Content-type: text/html\r\n";
 
+mail($to, $subject, $message, $headers);
 
+header("Location: ../forget-pw.php?reset=success");
 
 else{
     header("location: ../login.html");
