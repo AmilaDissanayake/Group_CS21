@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calorie Calculator</title>
     <link rel="stylesheet" href="bmi.css">
+    <title>Calorie Calculater</title>
 </head>
-
 <body>
     <div class="calculate">
         <p class="title">CALORIE CALCULATER</p>
@@ -16,23 +14,29 @@
             <div class="male">Male</div>
             <div class="female">Female</div>
         </div>
+
+        <div class="gen_input">
+            <p>GENDER</p>
+            <div class="gen_label">
+                <input type="radio" id="male" name="fav_language" value="MALE">
+                <label for="male">MALE</label>
+                <input type="radio" id="female" name="fav_language" value="FEMALE">
+                <label for="female">FEMALE</label>
+            </div>
+
+        </div>
+
         <div class="age">
             <p>AGE</p>
             <p class="val">
                 <i class="sub">-</i>
-                <span>50</span>
+                <span>10</span>
                 <i class="add">+</i>
             </p>
 
             <input type="range" min="10" max="70" value="10">
         </div>
-        <div class="age">
-            <p>GENDER</p>
-            <select name="" id="">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
-        </div>
+        
         <div class="height">
             <p>HEIGHT</p>
             <p class="val">
@@ -53,19 +57,34 @@
 
             <input type="range" min="10" max="180" value="10">
         </div>
+        <div class="selectBox">
+            <p>ACTIVITY</p>
+            <select name="activity" id="activity">
+                <option value="1.0">Basal Metabolic Rate</option>
+                <option value="1.2">Little/no exercise</option>
+                <option selected="true" value="1.375">3 times/week</option>
+                <option value="1.4187">4 times/week</option>
+                <option value="1.4625">5 times/week</option>
+                <option value="1.550">Daily</option>
+                <option value="1.6375">5 times/week (intense)</option>
+                <option value="1.725">Daily (intense) or twice daily</option>
+                <option value="1.9">Daily exercise + physical job</option>
+            </select>
+        </div>
 
         <div class="calc">CALCULATE</div>
     </div>
 
     <div class="result">
         <div class="bmi">
-            <div class="title">YOUR BMI</div>
+            <div class="title">YOUR BMR</div>
             <div class="val">0.00</div>
         </div>
 
-        <div class="text">Your BMI is normal!</div>
+        <div class="text">Your BMR is normal!</div>
         <div class="recal">RECALCULATE</div>
     </div>
-</body>
 
+    <script src="bmi.js"></script>
+</body>
 </html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
 @font-face {
   font-family: "Anurati";
   src: url("Anurati-Regular.otf");
@@ -286,34 +288,42 @@ textarea {
   right: 25px;
 }
 
-.form__div.success i.fa-check-circle {
+.form__div.success i.fa-check {
   color: #2ecc71;
   visibility: visible;
+  padding:0;
+  width: 18px;
 }
 
-.select__div.success i.fa-check-circle {
+.select__div.success i.fa-check {
   color: #2ecc71;
   visibility: visible;
+  padding:0;
+  width: 18px;
 }
 
-.inj__div.success i.fa-check-circle {
+.inj__div.success i.fa-check {
   color: #2ecc71;
   visibility: visible;
+  padding:0;
+  width: 18px;
 }
-.form__div.error i.fa-exclamation-circle {
+.form__div.error i.fa-exclamation-triangle {
   color: #e74c3c;
   visibility: visible;
 }
 
-.select__div.error i.fa-exclamation-circle {
+.select__div.error i.fa-exclamation-triangle {
   color: #e74c3c;
   visibility: visible;
 }
 
-.inj__div.error i.fa-exclamation-circle {
+.inj__div.error i.fa-exclamation-triangle {
   color: #e74c3c;
   visibility: visible;
 }
+
+
 .inj__div small,
 .select__div small,
 .form__div small {
@@ -339,7 +349,7 @@ option {
   background-color: rgb(20, 21, 23);
   font-size: 14px;
   transition: 0.2s;
-  font-family: "Azonix";
+  font-family: 'Rubik', sans-serif;
 }
 .form__button {
   display: block;
@@ -537,7 +547,7 @@ select::-ms-expand{
     
     font-size: 14px;
     transition: 0.2s;
-    font-family: "Azonix";
+    font-family: 'Rubik', sans-serif;
 
     display: block;
     width: 100%;
