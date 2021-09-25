@@ -108,31 +108,9 @@ document.querySelector('.calculate .calc').onclick = function () {
 
     }
 
-
-
-
-
     var male = document.getElementById("male");
     var female = document.getElementById("female");
 
-
-    // if (bmr < 18.5) {
-    //     document.querySelector('.result .text').innerText = 'YOU ARE UNDERWEIGHT!';
-    //     document.querySelector('.result .bmi .val').style.color = '#3f51b5';
-    //     document.querySelector('.result .text').style.color = '#3f51b5';
-    // }
-    // else if (bmr > 18.5 && bmr < 25) {
-    //     document.querySelector('.result .text').innerText = 'YOU HAVE A HEALTHY WEIGHT!';
-    //     document.querySelector('.result .bmi .val').style.color = '#0f4';
-    //     document.querySelector('.result .text').style.color = '#0f4';
-    // }
-    // else {
-    //     document.querySelector('.result .text').innerText = 'YOU ARE OVERWEIGHT!';
-    //     document.querySelector('.result .bmi .val').style.color = '#ffc107';
-    //     document.querySelector('.result .text').style.color = '#ffc107';
-    // }
-
-    //sdfsdfsdfsdfsd
 
     document.querySelector('.calculate').style.display = 'none';
     document.querySelector('.result').style.display = 'flex';
