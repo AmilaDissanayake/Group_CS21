@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Login (Trainer)</title>
-
+    <!-- <link rel="shortcut icon" href="media/TabIcon.jpg">  -->
 
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
@@ -76,6 +76,8 @@
                             $('.alert').addClass("hide");
                         });
                     </script>
+
+
                     <?php
                     if (isset($_SESSION['error'])) {
                         $error = $_SESSION['error'];
@@ -103,6 +105,9 @@
                     </div>
                 </form>
             </div>
+
+
+
 
 
         </div>
