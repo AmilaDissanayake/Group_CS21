@@ -386,6 +386,12 @@ section .login {
     color: #86ff71d5;
 }
 
+.instruction{
+    font: #86ff71;
+    font-size: 20px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
 
 
 
