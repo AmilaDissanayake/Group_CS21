@@ -21,6 +21,7 @@
             <p>
             <h1 class="head">POWER HOUSE</h1>
             <h3 class="head3">FITNESS ACADEMY</h3>
+            <!-- <h5 class="head4">Feel good breath</h5> -->
             <h5 class="head5">BUILD PERFECT BODY <br> SHAPE FOR <span>GOOD</span> AND <br><span>HEALTHY</span> LIFE.
             </h5>
             </p>
@@ -31,7 +32,8 @@
         </div>
         <div class="login">
             <div class="l-form">
-                <!-- <?php
+
+            <?php
                     $selector = $_GET["selector"];
                     $validator = $_GET["validator"];
 
@@ -40,17 +42,16 @@
                     }
                     else{
                         if(ctype_xdigit($selector)!==false && ctype_xdigit($validator)!==false){
-                            ?> -->
+                            ?>
 
                 <form action="include/reset-password.inc.php" method="Post" class="form" id="form">
-                <!-- <input type="hidden" name="selector" value="<?php echo $selector?>;">
-                <input type="hidden" name="validator" value="<?php echo $validator?>;"> -->
+                <input type="hidden" name="selector" value="<?php echo $selector?>;">
+                <input type="hidden" name="validator" value="<?php echo $validator?>;">
 
-                <h1 class="form__title">RESET YOUR PASSWORD</h1>
-                   
+                    <h1 class="form__title">RESET YOUR PASSWORD</h1>
+
                     <div class="form__div">
-                        <input type="password" class="form__input" id="new-pw" placeholder=" ">
-
+                        <input type="password" class="form__input" id="password" placeholder=" " name="pwd">
                         <label for="" class="form__label">Enter new password</label>
                         <i class="fa fa-check"></i>
                         <!-- <i class="fas fa-check-circle"></i> -->
@@ -59,10 +60,12 @@
                         <!-- <i class="fas fa-exclamation-circle"></i> -->
                         <small>Error message</small>
                     </div>
-                    <div class="form__div">
-                        <input type="password" class="form__input" id="new-pw2" placeholder=" ">
 
-                        <label for="" class="form__label">Re-Enter new password</label>
+                    <div class="form__div">
+                        <input type="password" class="form__input" id="password" placeholder=" " id="password"
+                            name="pwd-repeat">
+
+                        <label for="" class="form__label">Re-Enter New Password</label>
                         <i class="fa fa-check"></i>
                         <!-- <i class="fas fa-check-circle"></i> -->
                         <i class="fas fa-exclamation-triangle"></i>
@@ -70,13 +73,16 @@
                         <!-- <i class="fas fa-exclamation-circle"></i> -->
                         <small>Error message</small>
                     </div>
-                    <div class="buttondiv"><input type="submit" name="reset-request-submit" class="form__button" value="RESET PASSWORD"></div>
+
+                    <div class="buttondiv"><input name="reset-password-submit" type="submit" class="form__button" value="RESET PASSWORD"></div>
+                        
                 </form>
 
-                            <!-- <?php
+                            <?php
                         }
                     }
-                ?> -->
+                ?>
+
             </div>
 
         </div>
