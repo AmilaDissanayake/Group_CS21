@@ -52,7 +52,9 @@
                         <small>Error message</small>
                     </div>
 
-                    <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit" onclick="checkInputs()"></div>
+                    <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit" ></div>
+                    <!-- onclick="checkInputs()" -->
+                    
                     <!-- <button class="err">Show Alert</button> -->
                     <div class="alert hide">
                         <!-- <span class="fas fa-exclamation-circle"></span> -->
