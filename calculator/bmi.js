@@ -1,6 +1,27 @@
 // let gender = 'male';
 // height = 50;
 
+
+function final_result(bmr) {
+    if (document.getElementById('op1').checked){
+        bmr=bmr*1.2;
+    }
+    else if(document.getElementById('op2').checked){
+        bmr=bmr*1.375;
+    }
+    else if(document.getElementById('op3').checked){
+        bmr=bmr*1.55;
+    }
+    else if(document.getElementById('op4').checked){
+        bmr=bmr*1.725;
+    }
+    else if(document.getElementById('op5').checked){
+        bmr=bmr*1.9;
+    }
+
+    console.log(bmr);
+}
+
 document.querySelector('.calculate .gender .male').onclick = function () {
     gender = 'male';
     this.classList.add('active');
@@ -86,10 +107,11 @@ document.querySelector('.calculate .calc').onclick = function () {
         document.querySelector('.calculate .age input').value = age;
         document.querySelector('.calculate .age .val span').innerText = age;
 
-        document.querySelector('.result .bmi .val').innerText = bmr;
+        
         //Male radio button is checked
 
-    } else if (document.getElementById('female').checked) {
+    } 
+    else if (document.getElementById('female').checked) {
 
 
         let bmr = ((10 * weight) + (6.25 * height) - (5 * age) - 161).toFixed(2);
@@ -102,14 +124,11 @@ document.querySelector('.calculate .calc').onclick = function () {
         document.querySelector('.calculate .age input').value = age;
         document.querySelector('.calculate .age .val span').innerText = age;
 
-        document.querySelector('.result .bmi .val').innerText = bmr;
+        
         //Female radio button is checked
-
-
     }
-
-    var male = document.getElementById("male");
-    var female = document.getElementById("female");
+    document.querySelector('.result .bmi .val').innerText = final_result(bmr);
+    
 
 
     document.querySelector('.calculate').style.display = 'none';
