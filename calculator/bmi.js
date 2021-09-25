@@ -76,31 +76,37 @@ document.querySelector('.calculate .weight .val i.sub').onclick = function () {
 
 
 document.querySelector('.calculate .calc').onclick = function () {
-    let bmi = (weight / Math.pow(height / 100, 2)).toFixed(2);
+    let bmr = ((10*weight)+(6.25*height)-(5*age)+5).toFixed(2);
     height = 50;
     weight = 10;
     document.querySelector('.calculate .weight input').value = weight;
     document.querySelector('.calculate .weight .val span').innerText = weight;
     document.querySelector('.calculate .height input').value = height;
     document.querySelector('.calculate .height .val span').innerText = height;
+    document.querySelector('.calculate .age input').value = age;
+    document.querySelector('.calculate .age .val span').innerText = age;
 
-    document.querySelector('.result .bmi .val').innerText = bmi;
+    document.querySelector('.result .bmi .val').innerText = bmr;
 
-    if (bmi < 18.5) {
-        document.querySelector('.result .text').innerText = 'YOU ARE UNDERWEIGHT!';
-        document.querySelector('.result .bmi .val').style.color = '#3f51b5';
-        document.querySelector('.result .text').style.color = '#3f51b5';
-    }
-    else if (bmi > 18.5 && bmi < 25) {
-        document.querySelector('.result .text').innerText = 'YOU HAVE A HEALTHY WEIGHT!';
-        document.querySelector('.result .bmi .val').style.color = '#0f4';
-        document.querySelector('.result .text').style.color = '#0f4';
-    }
-    else {
-        document.querySelector('.result .text').innerText = 'YOU ARE OVERWEIGHT!';
-        document.querySelector('.result .bmi .val').style.color = '#ffc107';
-        document.querySelector('.result .text').style.color = '#ffc107';
-    }
+    var male = document.getElementById("male");  
+    var female = document.getElementById("female"); 
+
+
+    // if (bmr < 18.5) {
+    //     document.querySelector('.result .text').innerText = 'YOU ARE UNDERWEIGHT!';
+    //     document.querySelector('.result .bmi .val').style.color = '#3f51b5';
+    //     document.querySelector('.result .text').style.color = '#3f51b5';
+    // }
+    // else if (bmr > 18.5 && bmr < 25) {
+    //     document.querySelector('.result .text').innerText = 'YOU HAVE A HEALTHY WEIGHT!';
+    //     document.querySelector('.result .bmi .val').style.color = '#0f4';
+    //     document.querySelector('.result .text').style.color = '#0f4';
+    // }
+    // else {
+    //     document.querySelector('.result .text').innerText = 'YOU ARE OVERWEIGHT!';
+    //     document.querySelector('.result .bmi .val').style.color = '#ffc107';
+    //     document.querySelector('.result .text').style.color = '#ffc107';
+    // }
 
     document.querySelector('.calculate').style.display = 'none';
     document.querySelector('.result').style.display = 'flex';
