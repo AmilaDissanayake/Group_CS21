@@ -2,30 +2,12 @@ const form = document.getElementById('form');
 const username = document.getElementById('username');
 // const email = document.getElementById('email');
 const password = document.getElementById('password');
-// var usernameErr = passwordErr = true;
-var isValid;
 
-form.addEventListener("submit", function(e) {
+form.addEventListener('submit', e => {
+	e.preventDefault();
+
 	checkInputs();
-	if(!isValid){
-		e.preventDefault();
-	}	
-	// return true;
-
 });
-
-// window.onload = function () {
-// 	form.onsubmit = function onSubmit(form){
-// 		var isValid = true;
-// 		checkInputs();
-
-// 		if(!isValid){
-// 			return false;
-// 		}else{
-// 			return true;
-// 		}
-// 	}
-// }
 
 function checkInputs() {
 
@@ -37,12 +19,8 @@ function checkInputs() {
 
 	if (usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
-		isValid = false;
-		// usernameErr = false;
-
 	} else {
 		setSuccessFor(username);
-		isValid = true;
 	}
 
 	// if(emailValue === '') {
@@ -55,24 +33,10 @@ function checkInputs() {
 
 	if (passwordValue === '') {
 		setErrorFor(password, 'Password cannot be blank');
-		isValid = false;
-		// passwordErr = false;
 	} else {
 		setSuccessFor(password);
-		isValid = true;
 	}
-
-	// if ((usernameErr || passwordErr) == true) {
-	// 	return false;
-	// }
-
-	// else {
-	// 	return true;
-	// }
 }
-
-
-
 
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
@@ -86,6 +50,19 @@ function setSuccessFor(input) {
 	formControl.className = 'form__div success';
 }
 
+// OLD SCRIPT BY NAVOD
+// ===================
 
+
+// const togglePassword = document.querySelector('#togglePassword');
+// const password = document.querySelector('#password');
+
+// togglePassword.addEventListener('click', function (e) {
+//     // toggle the type attribute
+//     const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+//     password.setAttribute('type', type);
+//     // toggle the eye / eye slash icon
+//     this.classList.toggle('bi-eye');
+// });
 
 
