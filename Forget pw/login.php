@@ -80,11 +80,16 @@
 
                     </div>
                 </form>
+
+                <?php
+                if(isset($_GET["newpwd"])){
+                    if($_GET["newpwd"] == "passwordUpdated"){
+                        echo "Your password has been reset";
+                    }
+                }
+                
+                ?>
             </div>
-
-
-
-
 
         </div>
     </section>
