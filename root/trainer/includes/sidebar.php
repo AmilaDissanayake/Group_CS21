@@ -1,7 +1,7 @@
 <div class="sidebar">
     <div class="logo-details">
         <i class='bx bxl-c-plus-plus'></i>
-        <span class="logo_name">CodingLab</span>
+        <span class="logo_name">Power House</span>
     </div>
     <ul class="nav-links">
         <li>
@@ -65,7 +65,7 @@
             </a>
         </li>
         <li class="log_out">
-            <a href="../admin/includes/logout.php">
+            <a href="../trainer/includes/logout.php">
                 <i class='bx bx-log-out'></i>
                 <span class=" links_name">Log out</span>
             </a>

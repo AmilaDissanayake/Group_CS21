@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Login (Trainer)</title>
-
+    <!-- <link rel="shortcut icon" href="media/TabIcon.jpg">  -->
 
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
@@ -33,7 +33,7 @@
         <div class="login">
             <div class="l-form">
                 <form action="login.php" class="form" id="form" method="POST">
-                    <h1 class="form__title">LOGIN (Admin)</h1>
+                    <h1 class="form__title">LOGIN (Trainer)</h1>
 
                     <div class="form__div">
                         <input type="text" class="form__input" id="username" placeholder=" " name="username">
@@ -76,6 +76,8 @@
                             $('.alert').addClass("hide");
                         });
                     </script>
+
+
                     <?php
                     if (isset($_SESSION['error'])) {
                         $error = $_SESSION['error'];

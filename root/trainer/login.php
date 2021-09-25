@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 
     if ($username != "" && $password != "") {
 
-        $sql_query = "SELECT COUNT(*) AS cntUser FROM admin WHERE username='" . $username . "' AND password='" . $password . "'";
+        $sql_query = "SELECT COUNT(*) AS cntUser FROM trainer WHERE username='" . $username . "' AND password='" . $password . "'";
         $result = mysqli_query($connection, $sql_query);
         $row = mysqli_fetch_array($result);
 
