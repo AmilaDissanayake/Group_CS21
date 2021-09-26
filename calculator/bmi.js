@@ -113,7 +113,7 @@ document.querySelector('.calculate .calc').onclick = function () {
         
         //Male radio button is checked
 
-    } 
+    }
     else if (document.getElementById('female').checked) {
 
 
@@ -126,6 +126,8 @@ document.querySelector('.calculate .calc').onclick = function () {
         document.querySelector('.calculate .height .val span').innerText = height;
         document.querySelector('.calculate .age input').value = age;
         document.querySelector('.calculate .age .val span').innerText = age;
+        var final = calculate_final_value(bmr);
+
 
         document.querySelector('.result .bmi .val').innerText = final_result(bmr);
         //Female radio button is checked
@@ -142,3 +144,5 @@ document.querySelector('.result .recal').onclick = function () {
     document.querySelector('.result').style.display = 'none';
     document.querySelector('.calculate').style.display = 'flex';
 }
+
+
