@@ -3,23 +3,25 @@
 
 
 function final_result(bmr) {
-    if (document.getElementById('op1').checked){
+
+    var yourSelect = document.getElementById("activity");
+    if(yourSelect.selectedIndex==0) {
         bmr=bmr*1.2;
     }
-    else if(document.getElementById('op2').checked){
+    else if(yourSelect.selectedIndex==0){
         bmr=bmr*1.375;
     }
-    else if(document.getElementById('op3').checked){
+    else if(yourSelect.selectedIndex==1){
         bmr=bmr*1.55;
     }
-    else if(document.getElementById('op4').checked){
+    else if(yourSelect.selectedIndex==2){
         bmr=bmr*1.725;
     }
-    else if(document.getElementById('op5').checked){
+    else if(yourSelect.selectedIndex==3){
         bmr=bmr*1.9;
     }
 
-    console.log(bmr);
+    return(bmr);
 }
 
 document.querySelector('.calculate .gender .male').onclick = function () {
@@ -107,6 +109,7 @@ document.querySelector('.calculate .calc').onclick = function () {
         document.querySelector('.calculate .age input').value = age;
         document.querySelector('.calculate .age .val span').innerText = age;
 
+        document.querySelector('.result .bmi .val').innerText = final_result(bmr);
         
         //Male radio button is checked
 
@@ -124,10 +127,10 @@ document.querySelector('.calculate .calc').onclick = function () {
         document.querySelector('.calculate .age input').value = age;
         document.querySelector('.calculate .age .val span').innerText = age;
 
-        
+        document.querySelector('.result .bmi .val').innerText = final_result(bmr);
         //Female radio button is checked
     }
-    document.querySelector('.result .bmi .val').innerText = final_result(bmr);
+    
     
 
 
