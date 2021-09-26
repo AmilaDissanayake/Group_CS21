@@ -47,8 +47,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="password" class="form__input" id="password" placeholder=" " id="password"
-                            name="password">
+                        <input type="password" class="form__input" id="password" placeholder=" " id="password" name="password">
 
                         <label for="" class="form__label">Password</label>
                         <i class="fa fa-check"></i>

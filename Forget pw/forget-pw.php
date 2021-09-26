@@ -32,7 +32,7 @@
         </div>
         <div class="login">
             <div class="l-form">
-                <form action="include/reset-request.inc.php" method="Post" class="form" id="form">
+                <form action="include/reset-request.inc.php" method="POST" class="form" id="form">
                     <h1 class="form__title">RESET YOUR PASSWORD</h1>
                    
                     <div class="form__div">
