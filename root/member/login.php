@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
         } else {
             // echo "Invalid username and password";
             $_SESSION['error'] = "Incorrect Username or Password.";
-            header('Location: index.php');
+            header('Location: ../login2.php');
         }
     }
 }
