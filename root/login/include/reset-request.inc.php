@@ -9,7 +9,7 @@ if(isset($_POST["reset-request-submit"])){
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
 
-    $url = "localhost/Group_CS21/Forget pw/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
+    $url = "localhost/Group_CS21/root/login/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
 
     $expires = date("U") + 1800;
 
@@ -54,11 +54,6 @@ request, you can ignore this e-mail</p>';
 $message .= '<p>Here is your password reset link: <br>';
 $message .= '<a href="' . $url .'">' . $url . '</a></p>';
 
-// $headers = "From:Amila dissanayake <amiladissanayake0810@gmail.com>\r\n";
-// $headers .= "Reply-To:amiladissanayake0810@gmail.com\r\n";
-// $headers .= "Content-type: text/html\r\n";
-
-// mail($to, $subject, $message, $headers);
 
 require '../vendor/autoload.php';
 
