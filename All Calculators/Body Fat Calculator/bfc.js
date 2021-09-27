@@ -71,6 +71,49 @@ document.querySelector('.calculate .weight .val i.sub').onclick = function () {
     document.querySelector('.calculate .weight input').value = weight;
 }
 
+document.querySelector('.calculate .neck input').onchange = function () {
+    neck = parseInt(this.value);
+    document.querySelector('.calculate .neck .val span').innerText = neck;
+}
+
+document.querySelector('.calculate .neck .val i.add').onclick = function () {
+    neck += 1;
+    neck = (neck > 30) ? 30 : neck;
+    document.querySelector('.calculate .neck .val span').innerText = neck;
+    document.querySelector('.calculate .neck input').value = neck;
+}
+
+document.querySelector('.calculate .neck .val i.sub').onclick = function () {
+    neck -= 1;
+    neck = (neck < 10) ? 10 : neck;
+    document.querySelector('.calculate .neck .val span').innerText = neck;
+    document.querySelector('.calculate .neck input').value = neck;
+}
+
+
+
+document.querySelector('.calculate .waist input').onchange = function () {
+    waist = parseInt(this.value);
+    document.querySelector('.calculate .waist .val span').innerText = waist;
+}
+
+document.querySelector('.calculate .waist .val i.add').onclick = function () {
+    waist += 1;
+    waist = (waist > 50) ? 50 : waist;
+    document.querySelector('.calculate .waist .val span').innerText = waist;
+    document.querySelector('.calculate .waist input').value = waist;
+}
+
+document.querySelector('.calculate .waist .val i.sub').onclick = function () {
+    waist -= 1;
+    waist = (waist < 15) ? 15 : waist;
+    document.querySelector('.calculate .waist .val span').innerText = waist;
+    document.querySelector('.calculate .waist input').value = waist;
+}
+
+
+
+
 document.querySelector('.calculate .calc').onclick = function () {
 
     if (document.getElementById('male').checked) {
