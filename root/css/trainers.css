@@ -38,7 +38,7 @@ body {
     display: grid;
    /* grid-template-columns:  300px; */
     
-    grid-template-rows: 210px 250px 80px;
+    grid-template-rows: 210px 300px 80px;
     
     grid-template-areas: "image" "text" "stats";
   
@@ -129,6 +129,38 @@ body {
   .card:hover {
     transform: scale(1.15);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+
+  .about_btn {
+    position: relative;
+    z-index: 10;
+    width: 110px;
+    height: 35px;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 30px;
+    background-color: #121317;
+    font-family: 'Azonix';
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .about_btn:hover {
+    color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 1px #121317;
+  border: 1px solid #121317;
+    transition: .4s;
+  }
+
+
+
+  .button-inner{
+    display: flex;
+    justify-content: space-around;
   }
 
 

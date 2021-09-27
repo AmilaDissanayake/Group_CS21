@@ -11,10 +11,12 @@
 
     <link rel="stylesheet" href="css/header_hero.css">
     <link rel="stylesheet" href="css/popup.css">
-    <link rel="stylesheet" href="css/bmi.css">
+    <link rel="stylesheet" href="css/bmi-calc.css">
+    <link rel="stylesheet" href="css/calori-calc.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/popup2.css">
 
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
@@ -37,7 +39,7 @@
                 <li><a href="#" id="myBtn">BMI Calculator</a></li>
                 <li><a href="#testim">Testimonials</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#" id="myBtn2">Contact</a></li>
             </ul>
 
 
@@ -77,56 +79,10 @@
     </div>
 
 
-    <!-- BMI CALC ////////////////////////////////////////////////////////// -->
+    <!-- CALC ////////////////////////////////////////////////////////// -->
 
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-
-            <div class="calculate">
-                <p class="title">CALCULATE YOUR BMI</p>
-                <div class="gender">
-                    <div class="male">Male</div>
-                    <div class="female">Female</div>
-                </div>
-                <div class="height">
-                    <p>HEIGHT</p>
-                    <p class="val">
-                        <i class="sub">-</i>
-                        <span>50</span>cm
-                        <i class="add">+</i>
-                    </p>
-
-                    <input type="range" min="50" max="220" value="50">
-                </div>
-                <div class="weight">
-                    <p>WEIGHT</p>
-                    <p class="val">
-                        <i class="sub">-</i>
-                        <span>10</span>kg
-                        <i class="add">+</i>
-                    </p>
-
-                    <input type="range" min="10" max="180" value="10">
-                </div>
-
-                <div class="calc">CALCULATE</div>
-            </div>
-
-            <div class="result">
-                <div class="bmi">
-                    <div class="title">YOUR BMI</div>
-                    <div class="val">0.00</div>
-                </div>
-
-                <div class="text">Your BMI is normal!</div>
-                <div class="recal">RECALCULATE</div>
-            </div>
-        </div>
-
-    </div><br><br>
+    <?php include "includes/bmi-calc.php" ?>
+    <?php include "includes/clori-calc.php" ?>
 
 
     <!-- ABOUT SECTION  ////////////////////////////////////////////////////////// -->
@@ -256,8 +212,7 @@
                     Now you can pay online securely with our system using the PayHere payment gateway. You can renew
                     your membership through the system as well.
                 </p>
-                <div class="about_button"><button class="about_btn2" id="myBtn"
-                        onclick="window.location.href = '#faq'">VIEW PRICING</button>
+                <div class="about_button"><button class="about_btn2" id="myBtn" onclick="window.location.href = '#faq'">VIEW PRICING</button>
                 </div>
             </div>
         </div>
@@ -376,9 +331,7 @@
         <div class="faqs">
             <details>
                 <summary>Where we are located?</summary>
-                <p class="text">We are located at 33, Walawwatta, Pasyala - Giriulla Rd, Mirigama <a
-                        href="https://www.google.com/maps/place/Power+House+Gym/@7.2439452,80.1224739,17z/data=!3m1!4b1!4m5!3m4!1s0x3ae31ddf621d5831:0xeaffb58665171584!8m2!3d7.2439452!4d80.1246626"
-                        target="_blank">Get
+                <p class="text">We are located at 33, Walawwatta, Pasyala - Giriulla Rd, Mirigama <a href="https://www.google.com/maps/place/Power+House+Gym/@7.2439452,80.1224739,17z/data=!3m1!4b1!4m5!3m4!1s0x3ae31ddf621d5831:0xeaffb58665171584!8m2!3d7.2439452!4d80.1246626" target="_blank">Get
                         Directions</a></p>
             </details>
             <details>
@@ -451,8 +404,7 @@
                 <li>
 
                     <a href="https://www.google.com/maps/place/Power+House+Gym/@7.2439452,80.1224739,
-                        17z/data=!3m1!4b1!4m5!3m4!1s0x3ae31ddf621d5831:0xeaffb58665171584!8m2!3d7.2439452!4d80.1246626"
-                        target="_blank">Address: 43 Vidyala Mawatha,<br> Mirigama,<br> Sri Lanka.</a>
+                        17z/data=!3m1!4b1!4m5!3m4!1s0x3ae31ddf621d5831:0xeaffb58665171584!8m2!3d7.2439452!4d80.1246626" target="_blank">Address: 43 Vidyala Mawatha,<br> Mirigama,<br> Sri Lanka.</a>
                 </li>
 
 
@@ -471,6 +423,7 @@
 
 
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/calori-calc.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -488,7 +441,7 @@
             grey: 'rgb(231,233,237)'
         };
 
-        var randomScalingFactor = function () {
+        var randomScalingFactor = function() {
             return (Math.random() > 0.5 ? 2.0 : 1.0) * Math.round(Math.random() * 100);
         }
         var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -502,7 +455,7 @@
                     borderColor: "#86ff71",
                     data: [40, 38, 33, 30, 29, 25, 22],
                     fill: false,
-                },]
+                }, ]
             },
             options: {
                 responsive: true,
