@@ -20,9 +20,9 @@ if (isset($_POST['submit'])) {
             $_SESSION['username'] = $username;
             header('Location: dashboard.php');
         } else {
-            // echo "Invalid username and password";
+            echo "Invalid username and password";
             $_SESSION['error'] = "Incorrect Username or Password.";
-            header('Location: index.php');
+            header('Location: ../login2.php');
         }
     }
 }
