@@ -51,6 +51,9 @@ section .img .head {
     font-size: 50px;
     font-weight: bold;
     font-family: 'Anurati';
+    background: -webkit-linear-gradient(#eee, rgb(99, 99, 99));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 section .img .head3 {
@@ -78,7 +81,7 @@ section .img .head4 {
 }
 
 section .img .head5 {
-    color: #bfd0d8;
+    color: rgb(135, 135, 135);
     text-align: left;
     padding-top: 300px;
     padding-left: 80px;
@@ -86,6 +89,7 @@ section .img .head5 {
     letter-spacing: 3px;
     /* font-weight: bold; */
     font-family: 'Azonix';
+    
 }
 
 section .img .head5 span {
@@ -144,7 +148,7 @@ section .login {
 }
 .form__title{
     font-weight: 400;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
     color: #80868B;
     border-bottom: 3px solid #86ff71;
     font-family: 'Azonix';
@@ -374,23 +378,23 @@ section .login {
 
 .fa-facebook {
     /* background: #3B5998; */
-    color: #80868B;
+    color: #86ff71aa;
     
 }
 
 .fa-twitter {
     /* background: #55ACEE; */
-    color: #80868B;
+    color: #86ff71aa;
 }
 
 .fa-google {
     /* background: #dd4b39; */
-    color: #80868B;
+    color: #86ff71aa;
 }
 
 .fa-instagram, .fa-whatsapp {
     /* background: #125688; */
-    color: #80868B;
+    color: #86ff71aa;
 }
 
 .homeIcon {
@@ -405,13 +409,13 @@ section .login {
     text-decoration: none;
     font-size: 15px;
     text-decoration: none;
-    color: #86ff71;
+    color: #86ff71aa;
 }
 
-.fa-backward {
+.fa-chevron-left {
     background-color: transparent;
     border: none;
-    color: #86ff71;
+    color: #86ff7190;
     font-size: 20px;
     padding-left: 80px;
     padding-bottom: 0;
@@ -421,7 +425,7 @@ section .login {
 }
 
   /* Darker background on mouse-over */
-.fa-backward:hover {
+.fa-chevron-left:hover {
     color: #86ff71d5;
 }
 
