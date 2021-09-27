@@ -6,7 +6,7 @@
 
 ::selection { color: none; background: none; }
 
-.calculate, .result {
+.calculate2, .result2 {
     height: 700px;
     width: 600px;
     /* padding-left: 450px;
@@ -17,11 +17,11 @@
     justify-content:center;
 }
 
-.result {
+.result2 {
     display: none;
 }
 
-.calculate .title {
+.calculate2 .title2 {
     font-size: 30px;
     font-weight: bold;
     font-family: 'Anurati';
@@ -30,7 +30,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-.calculate .gender {
+.calculate2 .gender2 {
     display: none;
     flex-direction: row;
     justify-content: space-between;
@@ -38,7 +38,7 @@
     width: 75%;
 }
 
-.calculate .gender div {
+.calculate2 .gender2 div {
     height: 32vmin;
     width: 32vmin;
     background: #232323;
@@ -51,25 +51,25 @@
 
 }
 
-.calculate .gender div span {
+.calculate2 .gender2 div span {
     background: #fff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.calculate .gender .male span {
+.calculate2 .gender2 .male2 span {
     background: -webkit-linear-gradient(45deg, #8e2de2, #4a00e0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.calculate .gender .female.active span {
+.calculate2 .gender2 .female2.active span {
     background: -webkit-linear-gradient(45deg, #f953c6, #b91d73);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.calculate .age {
+.calculate2 .age2 {
     /* margin-top: 4vmin; */
     width: 55%;
     height: 150px;
@@ -85,7 +85,7 @@
     color: #555;
 }
 
-.calculate .age .val {
+.calculate2 .age2 .val2 {
     color: #fff;
     font-size: 25px;
     margin: 0;
@@ -93,7 +93,7 @@
 
 }
 
-.calculate .age .val i {
+.calculate2 .age2 .val2 i {
     text-align: center;
     line-height: 6vmin;
     font-size: 25px;
@@ -102,13 +102,13 @@
     cursor: pointer;
 }
 
-.calculate .age .val span {
+.calculate2 .age2 .val2 span {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins'-serif;
 }
 
-.calculate .age input {
+.calculate2 .age2 input {
     -webkit-appearance: none;
     width: 60%;
     height: 15px;
@@ -117,7 +117,7 @@
     overflow: hidden;
 }
 
-.calculate .age input::-webkit-slider-thumb {
+.calculate2 .age2 input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
@@ -126,7 +126,7 @@
 }
 
 
-.calculate .gen_input {
+.calculate2 .gen_input2 {
     /* margin-top: 4vmin; */
     width: 55%;
     height: 150px;
@@ -142,12 +142,12 @@
     color: #555;
 }
 
-.calculate .gen_input label {
+.calculate2 .gen_input2 label {
     font-size: 15px;
     color: #fff;
 }
 
-/* .calculate .gen_input input::-webkit-slider-thumb {
+/* .calculate2 .gen_input2 input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
@@ -156,7 +156,7 @@
 } */
 
 
-.calculate .height {
+.calculate2 .height2 {
     /* margin-top: 4vmin; */
     width: 55%;
     height: 150px;
@@ -172,7 +172,7 @@
     color: #555;
 }
 
-.calculate .height .val {
+.calculate2 .height2 .val2 {
     color: #fff;
     font-size: 25px;
     margin: 0;
@@ -180,7 +180,7 @@
 
 }
 
-.calculate .height .val i {
+.calculate2 .height2 .val2 i {
     text-align: center;
     line-height: 6vmin;
     font-size: 25px;
@@ -189,13 +189,13 @@
     cursor: pointer;
 }
 
-.calculate .height .val span {
+.calculate2 .height2 .val2 span {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins'-serif;
 }
 
-.calculate .height input {
+.calculate2 .height2 input {
     -webkit-appearance: none;
     width: 60%;
     height: 15px;
@@ -204,7 +204,7 @@
     overflow: hidden;
 }
 
-.calculate .height input::-webkit-slider-thumb {
+.calculate2 .height2 input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
@@ -215,7 +215,7 @@
 
 
 
-.calculate .weight {
+.calculate2 .weight2 {
     width: 55%;
     height: 150px;
     background: #232323;
@@ -230,7 +230,7 @@
     color: #555;
 }
 
-.calculate .weight .val {
+.calculate2 .weight2 .val2 {
     color: #fff;
     font-size: 25px;
     margin: 0;
@@ -238,7 +238,7 @@
 
 }
 
-.calculate .weight .val i {
+.calculate2 .weight2 .val2 i {
     text-align: center;
     line-height: 6vmin;
     font-size: 25px;
@@ -247,13 +247,13 @@
     cursor: pointer;
 }
 
-.calculate .weight .val span {
+.calculate2 .weight2 .val2 span {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins'-serif;
 }
 
-.calculate .weight input {
+.calculate2 .weight2 input {
     -webkit-appearance: none;
     width: 60%;
     height: 15px;
@@ -262,7 +262,7 @@
     overflow: hidden;
 }
 
-.calculate .weight input::-webkit-slider-thumb {
+.calculate2 .weight2 input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
@@ -270,7 +270,7 @@
     box-shadow: -50vmin 0 0 50vmin #86ff71;
 }
 
-.selectBox {
+.selectBox2 {
     width: 55%;
     height: 150px;
     background: #232323;
@@ -285,19 +285,23 @@
     color: #555;
 }
 
-.selectBox select {
+.abc2 {
+    outline: none;
+}
+
+.selectBox2 select {
     background-color: #616161;
     border: none;
     height: 25px;
 }
 
 
-.selectBox option {
+.selectBox2 option {
     color: #fff;
     background-color: #232323;
 }
 
-.calculate .calc, .result .recal {
+.calculate2 .calc2, .result2 .recal2 {
     height: 50px;
     width: 55%;
     /* line-height: 14vmin; */
@@ -313,18 +317,18 @@
     cursor: pointer;
 }
 
-.calculate .calc:hover,
-.result .recal:hover {
+.calculate2 .calc2:hover,
+.result2 .recal2:hover {
     color: #86ff71;
 }
 
-.result .recal {
+.result2 .recal2 {
     margin-top: 0px;
 
 }
 
 
-.result .bmi {
+.result2 .bmi2 {
     height: 150px;
     width: 55%;
     display: flex;
@@ -336,21 +340,21 @@
     margin-top: 20px;
 }
 
-.result .bmi .title {
+.result2 .bmi2 .title2 {
     color: #555;
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins';
 }
 
-.result .bmi .val {
+.result2 .bmi2 .val2 {
     font-size: 25px;
     /* font-weight: bold; */
     color: #fff;
     font-family: 'Poppins';
 }
 
-.result .text {
+.result2 .text2 {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins';

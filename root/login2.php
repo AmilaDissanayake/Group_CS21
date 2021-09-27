@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +14,8 @@
     <link rel="stylesheet" href="css/login2.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 </head>
 
@@ -32,7 +36,7 @@
         </div>
         <div class="login">
             <div class="l-form">
-                <form action="" class="form" id="form">
+                <form action="" class="form" id="form" method="POST" >
                     <h1 class="form__title">LOGIN<span id="Mem"></span></h1>
                     <!-- <span id="Mem">(MEMBER)</span><span id = "Tr">(TRAINER)</span> -->
                     <div class="form__div">
@@ -51,7 +55,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="text" class="form__input" id="username" placeholder=" ">
+                        <input type="text" class="form__input" id="username" placeholder=" " name="username">
                         <label for="" class="form__label">Username or Email</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -59,8 +63,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="password" class="form__input" id="password" placeholder=" " id="password"
-                            name="password">
+                        <input type="password" class="form__input" id="password" placeholder=" " name="password">
 
                         <label for="" class="form__label">Password</label>
                         <i class="fa fa-check"></i>
@@ -68,7 +71,41 @@
                         <small>Error message</small>
                     </div>
 
-                    <div class="buttondiv"><input type="submit" class="form__button" value="Login"></div>
+                    <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit"></div>
+
+                    <!-- <button class="err">Show Alert</button> -->
+                    <div class="alert hide">
+                        <!-- <span class="fas fa-exclamation-circle"></span> -->
+                        <span class="msg">Username or password is Incorrect!</span>
+                        <div class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        function nn() {
+                            $('.alert').addClass("show");
+                            $('.alert').removeClass("hide");
+                            $('.alert').addClass("showAlert");
+                            setTimeout(function bb() {
+                                $('.alert').removeClass("show");
+                                $('.alert').addClass("hide");
+                            }, 500000);
+                        };
+                        $('.close-btn').click(function ss() {
+                            $('.alert').removeClass("show");
+                            $('.alert').addClass("hide");
+                        });
+                    </script>
+
+
+                    <?php
+                    if (isset($_SESSION['error'])) {
+                        $error = $_SESSION['error'];
+                        echo '<script type="text/javascript">nn();</script>';
+                    }
+                    ?>  
+                    
                     <div class="remember">
                         <label><input type="checkbox" name=""> Remember me</label>
                         <span class="checkmark"></span>
@@ -94,7 +131,6 @@
 
 
 
-
         </div>
     </section>
 
@@ -102,3 +138,7 @@
 </body>
 
 </html>
+
+<?php
+unset($_SESSION['error']);
+?>

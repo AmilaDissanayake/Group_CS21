@@ -7,3 +7,13 @@
 [0m2021.09.26 00:02:40 WARN  Build server is not auto-connectable.[0m
 [0m2021.09.26 00:02:40 WARN  no build tool detected in workspace 'E:\XAMMP\htdocs\Group_CS21\bimsara\home_page\about'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
 [0m2021.09.26 00:19:00 INFO  shutting down Metals[0m
+[0m2021.09.26 23:41:11 INFO  Started: Metals version 0.10.7 in workspace 'E:\XAMMP\htdocs\Group_CS21\bimsara\home_page\about' for client Visual Studio Code 1.60.2.[0m
+[0m2021.09.26 23:41:12 INFO  time: initialize in 1.96s[0m
+[0m2021.09.26 23:41:13 WARN  Build server is not auto-connectable.[0m
+[0m2021.09.26 23:41:13 WARN  no build tool detected in workspace 'E:\XAMMP\htdocs\Group_CS21\bimsara\home_page\about'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.09.27 00:03:04 INFO  shutting down Metals[0m
+[0m2021.09.27 20:29:47 INFO  Started: Metals version 0.10.7 in workspace 'E:\XAMMP\htdocs\Group_CS21\bimsara\home_page\about' for client Visual Studio Code 1.60.2.[0m
+[0m2021.09.27 20:29:49 INFO  time: initialize in 1.72s[0m
+[0m2021.09.27 20:29:49 WARN  Build server is not auto-connectable.[0m
+[0m2021.09.27 20:29:49 WARN  no build tool detected in workspace 'E:\XAMMP\htdocs\Group_CS21\bimsara\home_page\about'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.09.27 21:13:20 INFO  shutting down Metals[0m
