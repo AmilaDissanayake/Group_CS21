@@ -1,5 +1,9 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 if(isset($_POST["reset-request-submit"])){
 
     $selector = bin2hex(random_bytes(8));
@@ -11,8 +15,7 @@ if(isset($_POST["reset-request-submit"])){
 
     require 'dbh.inc.php';
 
-    $userEmail = $_POST["email"]
-
+    $userEmail = $_POST["email"];
     $sql = "DELETE FROM pwdreset WHERE pwdResetEmail=?;";
     $stmt = mysqli_stmt_init($conn);
 
@@ -41,7 +44,7 @@ if(isset($_POST["reset-request-submit"])){
 
 
 mysqli_stmt_close($stmt);
-mysqli_close();
+mysqli_close($conn);
 
 $to = $userEmail;
 $subject = "Reset your password for POWER HOUSE";
@@ -51,11 +54,39 @@ request, you can ignore this e-mail</p>';
 $message .= '<p>Here is your password reset link: <br>';
 $message .= '<a href="' . $url .'">' . $url . '</a></p>';
 
-$headers = "From:Amila dissanayake <amiladissanayake0810@gmail.com>\r\n";
-$headers .= "Reply-To:amiladissanayake0810@gmail.com\r\n";
-$headers .= "Content-type: text/html\r\n";
+// $headers = "From:Amila dissanayake <amiladissanayake0810@gmail.com>\r\n";
+// $headers .= "Reply-To:amiladissanayake0810@gmail.com\r\n";
+// $headers .= "Content-type: text/html\r\n";
 
-mail($to, $subject, $message, $headers);
+// mail($to, $subject, $message, $headers);
+
+require '../vendor/autoload.php';
+
+$mail = new PHPMailer(true);
+
+// try {
+    $mail->SMTPDebug = 1;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'powerhouse.fitness.academy@gmail.com';                     //SMTP username
+    $mail->Password   = 'Power@123';                               //SMTP password
+    $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('powerhouse.fitness.academy@gmail.com');
+    $mail->addAddress($to);     //Add a recipient
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->send();
+    echo 'Message has been sent';
+// } catch (Exception $e) {
+//     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+// }
 
 header("Location: ../forget-pw.php?reset=success");
 
