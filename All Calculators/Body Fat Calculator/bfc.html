@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bmi.css">
-    <title>Calorie Calculater</title>
+    <link rel="stylesheet" href="bfc.css">
+    <title>Body Fat Calculater</title>
 </head>
 
 <body>
     <div class="calculate">
-        <p class="title">CALORIE CALCULATER</p>
+        <p class="title">BODY FAT CALCULATER</p>
         <div class="gender">
             <div class="male">Male</div>
             <div class="female">Female</div>
@@ -59,15 +59,27 @@
 
             <input type="range" min="10" max="180" value="10">
         </div>
-        <div class="selectBox">
-            <p>ACTIVITY</p>
-            <select name="activity" id="activity">
-                <option value="1.2" id="op1">Little or no exercise</option>
-                <option selected="true" value="1.375" id="op2">Light exercise/sports 1-3 days/week</option>
-                <option value="1.4187" id="op3">Moderate exercise/sports 3-5 days/week</option>
-                <option value="1.4625" id="op4">Hard exercise/sports 6-7 days a week</option>
-                <option value="1.550" id="op5">Very hard exercise/sports & a physical job</option>
-            </select>
+
+        <div class="neck">
+            <p>NECK</p>
+            <p class="val">
+                <i class="sub">-</i>
+                <span>10</span>cm
+                <i class="add">+</i>
+            </p>
+
+            <input type="range" min="10" max="30" value="10">
+        </div>
+
+        <div class="waist">
+            <p>WAIST</p>
+            <p class="val">
+                <i class="sub">-</i>
+                <span>15</span>cm
+                <i class="add">+</i>
+            </p>
+
+            <input type="range" min="15" max="50" value="15">
         </div>
 
         <div class="calc">CALCULATE</div>
@@ -83,7 +95,7 @@
         <div class="recal">RECALCULATE</div>
     </div>
 
-    <script src="bmi.js"></script>
+    <script src="bfc.js"></script>
 </body>
 
 </html>

@@ -33,16 +33,16 @@
         <div class="login">
             <div class="l-form">
                 <form action="" class="form" id="form">
-                    <h1 class="form__title">LOGIN</h1>
-
+                    <h1 class="form__title">LOGIN<span id="Mem"></span></h1>
+                    <!-- <span id="Mem">(MEMBER)</span><span id = "Tr">(TRAINER)</span> -->
                     <div class="form__div">
                         <div class="select__div">
                             <label>
-                                <select class="form_input">
-                                    <option disabled selected> Select Login Type </option>
-                                    <option>Trainer</option>
-                                    <option>Member</option>
-                                </select>
+                                <select class="form_input" id="type" onChange = "modechange()" required>
+                                    <option value ="" disabled selected> Select Login Type </option>
+                                    <option value ="1">Trainer</option>
+                                    <option value ="2">Member</option>
+                                </select> 
                             </label>
                         </div>
                         <i class="fa fa-check"></i>

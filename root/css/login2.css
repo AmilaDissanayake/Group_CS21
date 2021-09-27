@@ -210,10 +210,37 @@ option {
     margin-bottom: 3rem;
     color: #80868B;
     border-bottom: 3px solid #86ff71;
-    
     font-family: 'Azonix';
     padding-bottom: 5px;
 }
+.form__title span{
+    font-weight: 400;
+    margin-bottom: 3rem;
+    color: #80868B;
+    border-bottom: 3px solid #86ff71;
+    font-family: 'Azonix';
+    padding-bottom: 5px;
+}
+
+/* #Mem{
+    visibility: hidden;
+} */
+
+/* #Tr{
+    visibility: hidden;
+    font-size: 7px;
+}
+
+#Mem1{
+    visibility: visible;
+    font-size: 14px;
+}
+
+#Tr1{
+    visibility: hidden;
+    font-size: 14px;
+} */
+
 .form__div{
     position: relative;
     height: 48px;
