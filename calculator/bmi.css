@@ -285,6 +285,10 @@
     color: #555;
 }
 
+.abc {
+    outline: none;
+}
+
 .selectBox select {
     background-color: #616161;
     border: none;
