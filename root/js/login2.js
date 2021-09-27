@@ -108,11 +108,13 @@ function checkInputs() {
 function modechanger1() {
 	const pri = document.getElementById('Mem')
 	pri.innerText = ' (TRAINER)';
+	document.getElementById('form').action = './trainer/login.php';
 }
 
 function modechanger2() {
 	const pri = document.getElementById('Mem')
 	pri.innerText = ' (MEMBER)';
+	document.getElementById('form').action = './member/login.php';
 }
 
 function setErrorFor(input, message) {
