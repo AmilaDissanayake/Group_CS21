@@ -20,7 +20,7 @@ if(isset($_POST["reset-password-submit"])){
 
      require 'dbh.inc.php';
 
-     $sql = "SELECT * FROM pwdreset WHERE pwdResetSelector=? AND pwdResetExpires>= ?";
+     $sql = "SELECT * FROM pwdreset WHERE pwdResetSelector=? AND pwdResetExpires>= ?;";
 
      $stmt = mysqli_stmt_init($conn);
 
@@ -49,7 +49,7 @@ if(isset($_POST["reset-password-submit"])){
 
                 $tokenEmail = $row['pwdResetEmail'];
 
-                $sql = "SELECT * users WHERE emailUsers=?;";
+                $sql = "SELECT * FROM users WHERE emailUsers=?;";
 
                 $stmt = mysqli_stmt_init($conn);
 
