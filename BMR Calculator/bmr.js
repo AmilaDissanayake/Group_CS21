@@ -1,29 +1,6 @@
 // let gender = 'male';
 // height = 50;
 
-
-function final_result(bmr) {
-
-    var yourSelect = document.getElementById("activity");
-    if(yourSelect.selectedIndex==0) {
-        bmr=bmr*1.2;
-    }
-    else if(yourSelect.selectedIndex==0){
-        bmr=bmr*1.375;
-    }
-    else if(yourSelect.selectedIndex==1){
-        bmr=bmr*1.55;
-    }
-    else if(yourSelect.selectedIndex==2){
-        bmr=bmr*1.725;
-    }
-    else if(yourSelect.selectedIndex==3){
-        bmr=bmr*1.9;
-    }
-
-    return(bmr.toFixed(2));
-}
-
 document.querySelector('.calculate .gender .male').onclick = function () {
     gender = 'male';
     this.classList.add('active');
@@ -97,11 +74,12 @@ document.querySelector('.calculate .weight .val i.sub').onclick = function () {
 document.querySelector('.calculate .calc').onclick = function () {
 
     if (document.getElementById('male').checked) {
-
+        
 
         let bmr = ((10 * weight) + (6.25 * height) - (5 * age) + 5).toFixed(2);
         height = 50;
         weight = 10;
+        age = 10;
         document.querySelector('.calculate .weight input').value = weight;
         document.querySelector('.calculate .weight .val span').innerText = weight;
         document.querySelector('.calculate .height input').value = height;
@@ -109,7 +87,7 @@ document.querySelector('.calculate .calc').onclick = function () {
         document.querySelector('.calculate .age input').value = age;
         document.querySelector('.calculate .age .val span').innerText = age;
 
-        document.querySelector('.result .bmi .val').innerText = final_result(bmr);
+        document.querySelector('.result .bmi .val').innerText = bmr;
         
         //Male radio button is checked
 
@@ -120,6 +98,7 @@ document.querySelector('.calculate .calc').onclick = function () {
         let bmr = ((10 * weight) + (6.25 * height) - (5 * age) - 161).toFixed(2);
         height = 50;
         weight = 10;
+        age = 10;
         document.querySelector('.calculate .weight input').value = weight;
         document.querySelector('.calculate .weight .val span').innerText = weight;
         document.querySelector('.calculate .height input').value = height;
@@ -129,7 +108,7 @@ document.querySelector('.calculate .calc').onclick = function () {
         
 
 
-        document.querySelector('.result .bmi .val').innerText = final_result(bmr);
+        document.querySelector('.result .bmi .val').innerText = bmr;
         //Female radio button is checked
     }
     
