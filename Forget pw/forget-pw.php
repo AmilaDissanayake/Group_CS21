@@ -36,8 +36,7 @@
                     <h1 class="form__title">RESET YOUR PASSWORD</h1>
                    
                     <div class="form__div">
-                        <input type="text" class="form__input" id="email" placeholder=" "
-                            name="email">
+                        <input type="text" class="form__input" id="email" placeholder=" "name="email">
 
                         <label for="" class="form__label">ENTER YOUR E-MAIL ADDRESS</label>
                         <i class="fa fa-check"></i>
@@ -62,8 +61,6 @@
 
         </div>
     </section>
-
-    <script type="text/javascript" src="login.js"></script>
 </body>
 
 </html>

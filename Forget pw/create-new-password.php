@@ -87,8 +87,6 @@
 
         </div>
     </section>
-
-    <script type="text/javascript" src="login.js"></script>
 </body>
 
 </html>

@@ -33,13 +33,11 @@ if(isset($_POST["reset-password-submit"])){
         mysqli_stmt_execute($stmt);
 
         $result = mysqli_stmt_get_result($stmt);
-        if(!row = mysqli_fetch_assoc($result)){
+        if(!$row = mysqli_fetch_assoc($result)){
             echo "you need to resubmit your reset request";
             exit();
-
         }
         else{
-
             $tokenBin = hex2bin($validator);
             $tokenChecks = password_verify($tokenBin, $row["pwdResetToken"]);
 
@@ -56,20 +54,18 @@ if(isset($_POST["reset-password-submit"])){
                 $stmt = mysqli_stmt_init($conn);
 
                 if(!mysqli_stmt_prepare($stmt,$sql)){
-                    echo "There was an error";
+                    echo "There this was an error";
                     exit();
                 }
                 else{
-
                    mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
                    mysqli_stmt_execute($stmt);
-
                    $result = mysqli_stmt_get_result($stmt);
-                    if(!row = mysqli_fetch_assoc($result)){
+                    if(!$row=mysqli_fetch_assoc($result)){
                     echo "There was an error";
                     exit();
 
-        }
+                    }
                     else{
                         $sql = "UPDATE users SET pwdUsers=? WHERE emailUsers=?";
                         $stmt = mysqli_stmt_init($conn);
@@ -77,7 +73,7 @@ if(isset($_POST["reset-password-submit"])){
                         if(!mysqli_stmt_prepare($stmt,$sql)){
                         echo "There was an error";
                         exit();
-                }
+                        }
                         else{
                         $newPwdHash = password_hash($password, PASSWORD_DEFAULT);
                         mysqli_stmt_bind_param($stmt, "ss", $newPwdHash, $tokenEmail);
@@ -89,7 +85,7 @@ if(isset($_POST["reset-password-submit"])){
                         if(!mysqli_stmt_prepare($stmt,$sql)){
                         echo "There was an error";
                         exit();
-                    }
+                        }
                         else{
 
                         mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
@@ -97,7 +93,7 @@ if(isset($_POST["reset-password-submit"])){
                         header("Location: ../login.php?newpwd=passwordUpdated");
                         }
 
-                    }
+                        }
                         
                     }
                    
@@ -107,7 +103,6 @@ if(isset($_POST["reset-password-submit"])){
         }
 
     }
-    
 }
 else{
     header("location: ../login.html");
