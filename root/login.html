@@ -9,7 +9,7 @@
     <title>Login Page</title>
     <!-- <link rel="shortcut icon" href="media/TabIcon.jpg">  -->
 
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login2.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -33,7 +33,22 @@
         <div class="login">
             <div class="l-form">
                 <form action="" class="form" id="form">
-                    <h1 class="form__title">LOGIN</h1>
+                    <h1 class="form__title">LOGIN<span id="Mem"></span></h1>
+                    <!-- <span id="Mem">(MEMBER)</span><span id = "Tr">(TRAINER)</span> -->
+                    <div class="form__div">
+                        <div class="select__div">
+                            <label>
+                                <select class="form_input" id="type" onChange = "modechange()" required>
+                                    <option value ="" disabled selected> Select Login Type </option>
+                                    <option value ="1">Trainer</option>
+                                    <option value ="2">Member</option>
+                                </select> 
+                            </label>
+                        </div>
+                        <i class="fa fa-check"></i>
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <small>Error message</small>
+                    </div>
 
                     <div class="form__div">
                         <input type="text" class="form__input" id="username" placeholder=" ">
@@ -83,7 +98,7 @@
         </div>
     </section>
 
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/login2.js"></script>
 </body>
 
 </html>
