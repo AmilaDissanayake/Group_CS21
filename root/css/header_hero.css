@@ -45,8 +45,8 @@ body{
     font-weight: 300;
     text-align: center;
     background: -webkit-linear-gradient(#eee, rgb(99, 99, 99));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
        
 }
 
@@ -78,7 +78,7 @@ body{
     font-family: 'Rubik';
     text-decoration: none;
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     position: relative;
   /* color: #000; */
     text-decoration: none;

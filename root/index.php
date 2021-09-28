@@ -36,7 +36,7 @@
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#" id="myBtn">BMI Calculator</a></li>
+                <li><a href="#" id="myBtn">Fitness Calculators</a></li>
                 <li><a href="#testim">Testimonials</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#" id="myBtn2">Contact</a></li>
