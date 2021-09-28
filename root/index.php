@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/testimonials.css">
     <link rel="stylesheet" href="css/popup2.css">
+    <link rel="stylesheet" href="css/bmr-calc.css">
+    <link rel="stylesheet" href="css/popup3.css">
 
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
@@ -38,7 +40,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#" id="myBtn">Fitness Calculators</a></li>
                 <li><a href="#testim">Testimonials</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#" id=myBtn3>FAQ</a></li>
                 <li><a href="#" id="myBtn2">Contact</a></li>
             </ul>
 
@@ -83,6 +85,7 @@
 
     <?php include "includes/bmi-calc.php" ?>
     <?php include "includes/clori-calc.php" ?>
+    <?php include "includes/bmr-calc.php" ?>
 
 
     <!-- ABOUT SECTION  ////////////////////////////////////////////////////////// -->
@@ -424,6 +427,7 @@
 
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/calori-calc.js"></script>
+    <script src="js/bmr-calc.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

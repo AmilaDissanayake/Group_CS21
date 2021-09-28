@@ -71,14 +71,17 @@
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit"></div>
 
+
                     <!-- <button class="err">Show Alert</button> -->
                     <div class="alert hide">
                         <!-- <span class="fas fa-exclamation-circle"></span> -->
-                        <span class="msg">Username or password is Incorrect!</span>
+                        <span class="msg">Username or password is incorrect!</span>
                         <div class="close-btn">
                             <span class="fas fa-times"></span>
                         </div>
                     </div>
+
+
 
                     <script>
                         function nn() {
@@ -95,14 +98,14 @@
                             $('.alert').addClass("hide");
                         });
                     </script>
-
-
                     <?php
                     if (isset($_SESSION['error'])) {
                         $error = $_SESSION['error'];
                         echo '<script type="text/javascript">nn();</script>';
                     }
                     ?>
+
+
 
                     <div class="remember">
                         <label><input type="checkbox" name=""> Remember me</label>
@@ -125,9 +128,6 @@
                     </div>
                 </form>
             </div>
-
-
-
 
         </div>
     </section>
