@@ -8,7 +8,7 @@ if (isset($_POST["reset-request-submit"])) {
 
     require 'db.php';
 
-    $userEmail = $_POST["email"];
+    $userEmail = strtolower($_POST["email"]);
 
     $mail_query = " SELECT COUNT(*) AS cntUser FROM admin WHERE email = '" . $userEmail . "'";
     $mail_result = mysqli_query($conn, $mail_query);
