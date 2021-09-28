@@ -1,7 +1,7 @@
 
 @font-face {
-    font-family: "Anurati";
-    src: url("Anurati-Regular.otf");
+    font-family: "Azonix";
+    src: url("Azonix-Regular.otf");
 
     }
 
@@ -24,12 +24,10 @@
 }
 
 .calculate .title {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
-  font-family: 'Anurati';
-  background: -webkit-linear-gradient(45deg, #86ff71, #86ff71);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'Azonix';
+  background: #232323;
 }
 
 .calculate .gender {
@@ -193,7 +191,7 @@
     color: #86ff71;
     font-size: 18px;
     /* font-weight: bold; */
-    font-family: 'Anurati';
+    font-family: 'Azonix';
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
     text-align: center;

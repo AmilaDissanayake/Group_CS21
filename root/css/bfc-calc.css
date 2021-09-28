@@ -6,9 +6,9 @@
 
 ::selection { color: none; background: none; }
 
-.calculate3, .result3 {
+.calculate4, .result4 {
     height: 650px;
-    width: 600px;
+    width: 650px;
     /* padding-left: 450px;
     padding-right: 450px; */
     display: flex;
@@ -17,11 +17,11 @@
     justify-content:center;
 }
 
-.result3 {
+.result4 {
     display: none;
 }
 
-.calculate3 .title3 {
+.calculate4 .title4 {
     font-size: 30px;
     font-weight: bold;
     font-family: 'Anurati';
@@ -30,7 +30,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-.calculate3 .gender3 {
+.calculate4 .gender4 {
     display: none;
     flex-direction: row;
     justify-content: space-between;
@@ -38,7 +38,7 @@
     width: 75%;
 }
 
-.calculate3 .gender3 div {
+.calculate4 .gender4 div {
     height: 32vmin;
     width: 32vmin;
     background: #232323;
@@ -51,25 +51,25 @@
 
 }
 
-.calculate3 .gender3 div span {
+.calculate4 .gender4 div span {
     background: #fff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.calculate3 .gender3 .male3 span {
+.calculate4 .gender4 .male4 span {
     background: -webkit-linear-gradient(45deg, #8e2de2, #4a00e0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.calculate3 .gender3 .female3.active span {
+.calculate4 .gender4 .female4.active span {
     background: -webkit-linear-gradient(45deg, #f953c6, #b91d73);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.calculate3 .age3 {
+.calculate4 .age4 {
     /* margin-top: 4vmin; */
     width: 55%;
     height: 150px;
@@ -85,7 +85,7 @@
     color: #555;
 }
 
-.calculate3 .age3 .val3 {
+.calculate4 .age4 .val4 {
     color: #fff;
     font-size: 25px;
     margin: 0;
@@ -93,7 +93,7 @@
 
 }
 
-.calculate3 .age3 .val3 i {
+.calculate4 .age4 .val4 i {
     text-align: center;
     line-height: 6vmin;
     font-size: 25px;
@@ -102,13 +102,13 @@
     cursor: pointer;
 }
 
-.calculate3 .age3 .val3 span {
+.calculate4 .age4 .val4 span {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins'-serif;
 }
 
-.calculate3 .age3 input {
+.calculate4 .age4 input {
     -webkit-appearance: none;
     width: 60%;
     height: 15px;
@@ -117,7 +117,7 @@
     overflow: hidden;
 }
 
-.calculate3 .age3 input::-webkit-slider-thumb {
+.calculate4 .age4 input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
@@ -126,7 +126,7 @@
 }
 
 
-.calculate3 .gen_input3 {
+.calculate4 .gen_input4 {
     /* margin-top: 4vmin; */
     width: 55%;
     height: 100px;
@@ -142,7 +142,7 @@
     color: #555;
 }
 
-.calculate3 .gen_input3 label {
+.calculate4 .gen_input4 label {
     font-size: 15px;
     color: #fff;
 }
@@ -156,7 +156,7 @@
 } */
 
 
-.calculate3 .height3 {
+.calculate4 .height4 {
     /* margin-top: 4vmin; */
     width: 55%;
     height: 150px;
@@ -172,7 +172,7 @@
     color: #555;
 }
 
-.calculate3 .height3 .val3 {
+.calculate4 .height4 .val4 {
     color: #fff;
     font-size: 25px;
     margin: 0;
@@ -180,7 +180,7 @@
 
 }
 
-.calculate3 .height3 .val3 i {
+.calculate4 .height4 .val4 i {
     text-align: center;
     line-height: 6vmin;
     font-size: 25px;
@@ -189,13 +189,13 @@
     cursor: pointer;
 }
 
-.calculate3 .height3 .val3 span {
+.calculate4 .height4 .val4 span {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins'-serif;
 }
 
-.calculate3 .height3 input {
+.calculate4 .height4 input {
     -webkit-appearance: none;
     width: 60%;
     height: 15px;
@@ -204,7 +204,7 @@
     overflow: hidden;
 }
 
-.calculate3 .height3 input::-webkit-slider-thumb {
+.calculate4 .height4 input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
@@ -215,7 +215,7 @@
 
 
 
-.calculate3 .weight3 {
+.calculate4 .weight4 {
     width: 55%;
     height: 150px;
     background: #232323;
@@ -230,7 +230,7 @@
     color: #555;
 }
 
-.calculate3 .weight3 .val3 {
+.calculate4 .weight4 .val4 {
     color: #fff;
     font-size: 25px;
     margin: 0;
@@ -238,7 +238,7 @@
 
 }
 
-.calculate3 .weight3 .val3 i {
+.calculate4 .weight4 .val4 i {
     text-align: center;
     line-height: 6vmin;
     font-size: 25px;
@@ -247,13 +247,13 @@
     cursor: pointer;
 }
 
-.calculate3 .weight3 .val3 span {
+.calculate4 .weight4 .val4 span {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins'-serif;
 }
 
-.calculate3 .weight3 input {
+.calculate4 .weight4 input {
     -webkit-appearance: none;
     width: 60%;
     height: 15px;
@@ -262,7 +262,7 @@
     overflow: hidden;
 }
 
-.calculate3 .weight3 input::-webkit-slider-thumb {
+.calculate4 .weight4 input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
@@ -271,8 +271,9 @@
 }
 
 
-.calculate3 .calc3, .result3 .recal3 {
-    height: 100px;
+
+.calculate4 .calc4, .result4 .recal4 {
+    height: 50px;
     width: 55%;
     /* line-height: 14vmin; */
     margin-top: 0px;
@@ -283,27 +284,26 @@
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
     text-align: center;
-    padding-top:75px;
+    padding-top:80px;
+    padding-bottom: 50px;
     cursor: pointer;
 }
 
-.calculate3 .calc3:hover,
-.result3 .recal3:hover {
+.calculate4 .calc4:hover,
+.result4 .recal4:hover {
     color: #86ff71;
 }
 
-.result3 .recal3 {
+.result4 .recal4 {
     margin-top: 0px;
-
 }
 
 
-.result3 .bmi3 {
-    height: 80px;
+.result4 .bmi4 {
+    height: 150px;
     width: 55%;
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
     align-items: center;
     justify-content: center;
     background: #232323;
@@ -311,21 +311,22 @@
     margin-top: 20px;
 }
 
-.result3 .bmi3 .title3 {
+.result4 .bmi4 .title4 {
     color: #555;
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins';
+    padding-top: 100px;
 }
 
-.result3 .bmi3 .val3 {
+.result4 .bmi4 .val4 {
     font-size: 25px;
     /* font-weight: bold; */
     color: #fff;
     font-family: 'Poppins';
 }
 
-.result3 .text3 {
+.result4 .text4 {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins';

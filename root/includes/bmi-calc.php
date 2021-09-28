@@ -2,7 +2,7 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" id="yy">&times;</span>
 
             <div class="calculate">
                 <p class="title">CALCULATE YOUR BMI</p>
