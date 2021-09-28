@@ -5,21 +5,22 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 if (isset($_POST["reset-request-submit"])) {
+    $userEmail = $_POST["email"];
 
     require 'db.php';
 
-    $userEmail = $_POST["email"];
 
-    $mail_query = " SELECT COUNT(*) AS cntUser FROM admin WHERE email = '" . $userEmail . "'";
-    $mail_result = mysqli_query($conn, $mail_query);
-    $mail_row = mysqli_fetch_array($mail_result);
-    $mail_count = $mail_row['cntUser'];
 
-    if ($mail_count <= 0) {
-        $_SESSION["notification"] = "Email does not exist";
-        header("Location: ../forget-pw.php");
-        exit();
-    }
+    // $mail_query = " SELECT COUNT(*) AS cntUser FROM admin WHERE email = '" . $userEmail . "'";
+    // $mail_result = mysqli_query($conn, $mail_query);
+    // $mail_row = mysqli_fetch_array($mail_result);
+    // $mail_count = $mail_row['cntUser'];
+
+    // if ($mail_count <= 0) {
+    //     $_SESSION["notification"] = "Email does not exist";
+    //     header("Location: ../forget-pw.php");
+    //     exit();
+    // }
 
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
