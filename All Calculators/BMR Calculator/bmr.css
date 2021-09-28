@@ -6,7 +6,7 @@
 
 ::selection { color: none; background: none; }
 
-.calculate, .result {
+.calculate3, .result3 {
     height: 600px;
     width: 600px;
     /* padding-left: 450px;
@@ -17,11 +17,11 @@
     justify-content:center;
 }
 
-.result {
+.result3 {
     display: none;
 }
 
-.calculate .title {
+.calculate3 .title3 {
     font-size: 30px;
     font-weight: bold;
     font-family: 'Anurati';
@@ -30,7 +30,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-.calculate .gender {
+.calculate3 .gender3 {
     display: none;
     flex-direction: row;
     justify-content: space-between;
@@ -38,7 +38,7 @@
     width: 75%;
 }
 
-.calculate .gender div {
+.calculate3 .gender3 div {
     height: 32vmin;
     width: 32vmin;
     background: #232323;
@@ -51,25 +51,25 @@
 
 }
 
-.calculate .gender div span {
+.calculate3 .gender3 div span {
     background: #fff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.calculate .gender .male span {
+.calculate3 .gender3 .male3 span {
     background: -webkit-linear-gradient(45deg, #8e2de2, #4a00e0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.calculate .gender .female.active span {
+.calculate3 .gender3 .female3.active span {
     background: -webkit-linear-gradient(45deg, #f953c6, #b91d73);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.calculate .age {
+.calculate3 .age3 {
     /* margin-top: 4vmin; */
     width: 55%;
     height: 150px;
@@ -85,7 +85,7 @@
     color: #555;
 }
 
-.calculate .age .val {
+.calculate3 .age3 .val3 {
     color: #fff;
     font-size: 25px;
     margin: 0;
@@ -93,7 +93,7 @@
 
 }
 
-.calculate .age .val i {
+.calculate3 .age3 .val3 i {
     text-align: center;
     line-height: 6vmin;
     font-size: 25px;
@@ -102,13 +102,13 @@
     cursor: pointer;
 }
 
-.calculate .age .val span {
+.calculate3 .age3 .val3 span {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins'-serif;
 }
 
-.calculate .age input {
+.calculate3 .age3 input {
     -webkit-appearance: none;
     width: 60%;
     height: 15px;
@@ -117,7 +117,7 @@
     overflow: hidden;
 }
 
-.calculate .age input::-webkit-slider-thumb {
+.calculate3 .age3 input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
@@ -126,7 +126,7 @@
 }
 
 
-.calculate .gen_input {
+.calculate3 .gen_input3 {
     /* margin-top: 4vmin; */
     width: 55%;
     height: 150px;
@@ -142,7 +142,7 @@
     color: #555;
 }
 
-.calculate .gen_input label {
+.calculate3 .gen_input3 label {
     font-size: 15px;
     color: #fff;
 }
@@ -156,7 +156,7 @@
 } */
 
 
-.calculate .height {
+.calculate3 .height3 {
     /* margin-top: 4vmin; */
     width: 55%;
     height: 150px;
@@ -172,7 +172,7 @@
     color: #555;
 }
 
-.calculate .height .val {
+.calculate3 .height3 .val3 {
     color: #fff;
     font-size: 25px;
     margin: 0;
@@ -180,7 +180,7 @@
 
 }
 
-.calculate .height .val i {
+.calculate3 .height3 .val3 i {
     text-align: center;
     line-height: 6vmin;
     font-size: 25px;
@@ -189,13 +189,13 @@
     cursor: pointer;
 }
 
-.calculate .height .val span {
+.calculate3 .height3 .val3 span {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins'-serif;
 }
 
-.calculate .height input {
+.calculate3 .height3 input {
     -webkit-appearance: none;
     width: 60%;
     height: 15px;
@@ -204,7 +204,7 @@
     overflow: hidden;
 }
 
-.calculate .height input::-webkit-slider-thumb {
+.calculate3 .height3 input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
@@ -215,7 +215,7 @@
 
 
 
-.calculate .weight {
+.calculate3 .weight3 {
     width: 55%;
     height: 150px;
     background: #232323;
@@ -230,7 +230,7 @@
     color: #555;
 }
 
-.calculate .weight .val {
+.calculate3 .weight3 .val3 {
     color: #fff;
     font-size: 25px;
     margin: 0;
@@ -238,7 +238,7 @@
 
 }
 
-.calculate .weight .val i {
+.calculate3 .weight3 .val3 i {
     text-align: center;
     line-height: 6vmin;
     font-size: 25px;
@@ -247,13 +247,13 @@
     cursor: pointer;
 }
 
-.calculate .weight .val span {
+.calculate3 .weight3 .val3 span {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins'-serif;
 }
 
-.calculate .weight input {
+.calculate3 .weight3 input {
     -webkit-appearance: none;
     width: 60%;
     height: 15px;
@@ -262,7 +262,7 @@
     overflow: hidden;
 }
 
-.calculate .weight input::-webkit-slider-thumb {
+.calculate3 .weight3 input::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 15px;
     width: 15px;
@@ -271,7 +271,7 @@
 }
 
 
-.calculate .calc, .result .recal {
+.calculate3 .calc3, .result3 .recal3 {
     height: 50px;
     width: 55%;
     /* line-height: 14vmin; */
@@ -287,18 +287,18 @@
     cursor: pointer;
 }
 
-.calculate .calc:hover,
-.result .recal:hover {
+.calculate3 .calc3:hover,
+.result3 .recal3:hover {
     color: #86ff71;
 }
 
-.result .recal {
+.result3 .recal3 {
     margin-top: 0px;
 
 }
 
 
-.result .bmi {
+.result3 .bmi3 {
     height: 150px;
     width: 55%;
     display: flex;
@@ -310,21 +310,21 @@
     margin-top: 20px;
 }
 
-.result .bmi .title {
+.result3 .bmi3 .title3 {
     color: #555;
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins';
 }
 
-.result .bmi .val {
+.result3 .bmi3 .val3 {
     font-size: 25px;
     /* font-weight: bold; */
     color: #fff;
     font-family: 'Poppins';
 }
 
-.result .text {
+.result3 .text3 {
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins';
