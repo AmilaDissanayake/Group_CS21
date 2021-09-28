@@ -84,12 +84,5 @@ request, you can ignore this e-mail</p>';
     header("Location: ../forget-pw.php?reset=success");
 } else {
 
-<<<<<<< HEAD
-}
-else{
-    header("location: ../index.php");
-}
-=======
     header("location: ../login.php");
 }
->>>>>>> b61dc7c34d041a07c9bf6b18c2a416b8cc2cfa45

@@ -31,7 +31,7 @@
             </p>
             <div class="homeIcon">
                 <a href="index.html" class=" fas fa-chevron-left"> </a>
-                    <a href="../../index.php">&nbsp Back to home</a>
+                <a href="../../index.php">&nbsp Back to home</a>
             </div>
         </div>
         <div class="login">
@@ -71,23 +71,6 @@
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit"></div>
 
-                    <!-- <button class="err">Show Alert</button> -->
-                    <div class="alert hide">
-                        <!-- <span class="fas fa-exclamation-circle"></span> -->
-                        <span class="msg">Username or password is Incorrect!</span>
-                        <div class="close-btn">
-                            <span class="fas fa-times"></span>
-                        </div>
-                    </div>
-
-                    <div class="alert2 hide2">
-                        <!-- <span class="fas fa-exclamation-circle"></span> -->
-                        <span class="msg2">Your password successfully updated!</span>
-                        <div class="close-btn2">
-                            <span class="fas fa-times"></span>
-                        </div>
-                    </div>
-
                     <script>
                         function nn() {
                             $('.alert').addClass("show");
@@ -104,38 +87,22 @@
                         });
                     </script>
 
-<script>
-                        function nn2() {
-                            $('.alert2').addClass("show2");
-                            $('.alert2').removeClass("hide2");
-                            $('.alert2').addClass("showAlert2");
-                            setTimeout(function bb() {
-                                $('.alert2').removeClass("show2");
-                                $('.alert2').addClass("hide2");
-                            }, 500000);
-                        };
-                        $('.close-btn2').click(function ss() {
-                            $('.alert2').removeClass("show2");
-                            $('.alert2').addClass("hide2");
-                        });
-                    </script>
+                    <!-- <button class="err">Show Alert</button> -->
+                    <div class="alert hide">
 
-
-                    <?php
-                    if (isset($_SESSION['error'])) {
-                        $error = $_SESSION['error'];
-                        echo '<script type="text/javascript">nn();</script>';
-                    }
-                    ?>
-
-                    <?php
-                    if(isset($_GET["newpwd"])){
-                        if($_GET["newpwd"]=="passwordUpdated"){
-                            echo '<script type="text/javascript">nn2();</script>';
+                        <?php
+                        if (isset($_SESSION['notification'])) {
+                            $notification = $_SESSION['notification'];
+                            echo '<script type="text/javascript">nn();</script>';
                         }
-                    }
+                        ?>
+                        <!-- <span class="fas fa-exclamation-circle"></span> -->
+                        <span class="msg"><?php $notification ?></span>
+                        <div class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </div>
+                    </div>
 
-                    ?>
 
                     <div class="remember">
                         <label><input type="checkbox" name=""> Remember me</label>
@@ -171,5 +138,5 @@
 </html>
 
 <?php
-unset($_SESSION['error']);
+unset($_SESSION['notification']);
 ?>

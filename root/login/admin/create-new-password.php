@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
 </head>
 
 <body>
@@ -25,62 +25,60 @@
             <h5 class="head5">BUILD PERFECT BODY <br> SHAPE FOR <span>GOOD</span> AND <br><span>HEALTHY</span> LIFE.
             </h5>
             </p>
-                <div class="homeIcon">
+            <!-- <div class="homeIcon">
                     <a href="../home/index.html" class="fas fa-backward"></a>
                     <a href="../home/index.html">Back to home</a>
-                </div>
+                </div> -->
         </div>
         <div class="login">
             <div class="l-form">
 
-            <?php
-                    $selector = $_GET["selector"];
-                    $validator = $_GET["validator"];
+                <?php
+                $selector = $_GET["selector"];
+                $validator = $_GET["validator"];
 
-                    if(empty($selector) || empty($validator)){
-                        echo "Could not validate your request!";
+                if (empty($selector) || empty($validator)) {
+                    echo "Could not validate your request!";
+                } else {
+                    if (ctype_xdigit($selector) !== false && ctype_xdigit($validator) !== false) {
+                ?>
+
+                        <form action="includes/reset-password.inc.php" method="POST" class="form" id="form">
+                            <input type="hidden" name="selector" value="<?php echo $selector; ?>">
+                            <input type="hidden" name="validator" value="<?php echo $validator; ?>">
+
+                            <h1 class="form__title">RESET YOUR PASSWORD</h1>
+
+                            <div class="form__div">
+                                <input type="password" class="form__input" id="password" placeholder=" " name="pwd">
+                                <label for="" class="form__label">Enter new password</label>
+                                <i class="fa fa-check"></i>
+                                <!-- <i class="fas fa-check-circle"></i> -->
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <!-- <i class="fas fa-exclamation"></i> -->
+                                <!-- <i class="fas fa-exclamation-circle"></i> -->
+                                <small>Error message</small>
+                            </div>
+
+                            <div class="form__div">
+                                <input type="password" class="form__input" id="password" placeholder=" " id="password" name="pwd-repeat">
+
+                                <label for="" class="form__label">Re-Enter New Password</label>
+                                <i class="fa fa-check"></i>
+                                <!-- <i class="fas fa-check-circle"></i> -->
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <!-- <i class="fas fa-exclamation"></i> -->
+                                <!-- <i class="fas fa-exclamation-circle"></i> -->
+                                <small>Error message</small>
+                            </div>
+
+                            <div class="buttondiv"><input name="reset-password-submit" type="submit" class="form__button" value="RESET PASSWORD"></div>
+
+                        </form>
+
+                <?php
                     }
-                    else{
-                        if(ctype_xdigit($selector)!==false && ctype_xdigit($validator)!==false){
-                            ?>
-
-                <form action="includes/reset-password.inc.php" method="POST" class="form" id="form">
-                <input type="hidden" name="selector" value="<?php echo $selector;?>">
-                <input type="hidden" name="validator" value="<?php echo $validator;?>">
-
-                    <h1 class="form__title">RESET YOUR PASSWORD</h1>
-
-                    <div class="form__div">
-                        <input type="password" class="form__input" id="password" placeholder=" " name="pwd">
-                        <label for="" class="form__label">Enter new password</label>
-                        <i class="fa fa-check"></i>
-                        <!-- <i class="fas fa-check-circle"></i> -->
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <!-- <i class="fas fa-exclamation"></i> -->
-                        <!-- <i class="fas fa-exclamation-circle"></i> -->
-                        <small>Error message</small>
-                    </div>
-
-                    <div class="form__div">
-                        <input type="password" class="form__input" id="password" placeholder=" " id="password"
-                            name="pwd-repeat">
-
-                        <label for="" class="form__label">Re-Enter New Password</label>
-                        <i class="fa fa-check"></i>
-                        <!-- <i class="fas fa-check-circle"></i> -->
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <!-- <i class="fas fa-exclamation"></i> -->
-                        <!-- <i class="fas fa-exclamation-circle"></i> -->
-                        <small>Error message</small>
-                    </div>
-
-                    <div class="buttondiv"><input name="reset-password-submit" type="submit" class="form__button" value="RESET PASSWORD"></div>
-                        
-                </form>
-
-                            <?php
-                        }
-                    }
+                }
                 ?>
 
             </div>
