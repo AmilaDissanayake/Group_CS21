@@ -96,8 +96,15 @@
                             echo '<script type="text/javascript">nn();</script>';
                         }
                         ?>
+                        <?php
+                        // if(isset($_GET["newpwd"])){
+                        //     if($_GET["newpwd"]=="passwordUpdated"){
+                        //         $notification = "Password successfully updated";
+                        //     }
+                        // }
+                        ?>
                         <!-- <span class="fas fa-exclamation-circle"></span> -->
-                        <span class="msg"><?php $notification ?></span>
+                        <span class="msg"><?php echo $notification ?></span>
                         <div class="close-btn">
                             <span class="fas fa-times"></span>
                         </div>
