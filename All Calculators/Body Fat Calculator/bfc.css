@@ -7,7 +7,7 @@
 ::selection { color: none; background: none; }
 
 .calculate4, .result4 {
-    height: 600px;
+    height: 650px;
     width: 650px;
     /* padding-left: 450px;
     padding-right: 450px; */
@@ -129,7 +129,7 @@
 .calculate4 .gen_input4 {
     /* margin-top: 4vmin; */
     width: 55%;
-    height: 150px;
+    height: 100px;
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
     display: flex;
@@ -284,7 +284,8 @@
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
     text-align: center;
-    padding-top:20px;
+    padding-top:80px;
+    padding-bottom: 50px;
     cursor: pointer;
 }
 
@@ -295,7 +296,6 @@
 
 .result4 .recal4 {
     margin-top: 0px;
-
 }
 
 
@@ -316,6 +316,7 @@
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Poppins';
+    padding-top: 100px;
 }
 
 .result4 .bmi4 .val4 {
