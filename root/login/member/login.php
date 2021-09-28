@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
 
         $sql_query = "SELECT COUNT(*) AS cntUser FROM member WHERE username='" . $username . "' AND password='" . $password . "'";
         $result = mysqli_query($connection, $sql_query);
-        print_r($result);
+
         $row = mysqli_fetch_array($result);
 
         $count = $row['cntUser'];
