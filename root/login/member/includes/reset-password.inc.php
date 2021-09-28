@@ -90,7 +90,7 @@ if(isset($_POST["reset-password-submit"])){
 
                         mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
                         mysqli_stmt_execute($stmt);
-                        header("Location: ../login.php?newpwd=passwordUpdated");
+                        header("Location: ../index.php?newpwd=passwordUpdated");
                         }
 
                         }
@@ -105,7 +105,7 @@ if(isset($_POST["reset-password-submit"])){
     }
 }
 else{
-    header("location: ../login.html");
+    header("location: ../index.php");
 }
 
 ?>

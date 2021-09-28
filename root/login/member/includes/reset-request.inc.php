@@ -11,7 +11,7 @@ if (isset($_POST["reset-request-submit"])) {
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
 
-    $url = "localhost/Group_CS21/root/login/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
+    $url = "localhost/Group_CS21/root/login/member/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
 
     $expires = date("U") + 1800;
 
@@ -84,5 +84,12 @@ request, you can ignore this e-mail</p>';
     header("Location: ../forget-pw.php?reset=success");
 } else {
 
+<<<<<<< HEAD
+}
+else{
+    header("location: ../index.php");
+}
+=======
     header("location: ../login.php");
 }
+>>>>>>> b61dc7c34d041a07c9bf6b18c2a416b8cc2cfa45
