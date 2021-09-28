@@ -61,11 +61,14 @@ body{
     color: #86ff71;  
 }
 
+
+
 .left{
     width: 35%;
     display: flex;
     align-items: center;
     justify-content: center; 
+
 }
 
 .left li{
@@ -308,7 +311,60 @@ border: 1px solid #86ff71;
   
 }
 
+/* -------------------------Drop Downmenu ------------------------*/
 
+.link {
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: white;
+  font-family: "Anurati";
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.dropdown.active >.link,
+.link:hover {
+  color:black;
+  background-color: #86ff71;
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: calc(150px);
+  top: calc(100% + .25rem);
+  background-color: black;
+  padding: .25rem;
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+  display: none;
+  /* visibility: hidden; */
+  /* visibility: visible; */
+  /* pointer-events: none; */
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown.active > .link + .dropdown-menu {
+  visibility: visible;
+  transform: translateY(0);
+  /* pointer-events: auto; */
+}
+
+.information-grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  /* gap: 2rem; */
+  z-index: 600;
+  
+}
+
+.dropdown-links {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  
+}
   
   
   
