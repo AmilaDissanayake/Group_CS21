@@ -44,7 +44,7 @@
                         if(ctype_xdigit($selector)!==false && ctype_xdigit($validator)!==false){
                             ?>
 
-                <form action="include/reset-password.inc.php" method="POST" class="form" id="form">
+                <form action="includes/reset-password.inc.php" method="POST" class="form" id="form">
                 <input type="hidden" name="selector" value="<?php echo $selector;?>">
                 <input type="hidden" name="validator" value="<?php echo $validator;?>">
 

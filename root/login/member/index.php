@@ -1,5 +1,7 @@
 <?php session_start(); ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +18,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
 
 </head>
 
@@ -74,8 +78,30 @@
 
                     <!-- <button class="err">Show Alert</button> -->
                     <div class="alert hide">
+                        <script>
+                            function nn() {
+                                $('.alert').addClass("show");
+                                $('.alert').removeClass("hide");
+                                $('.alert').addClass("showAlert");
+                                setTimeout(function bb() {
+                                    $('.alert').removeClass("show");
+                                    $('.alert').addClass("hide");
+                                }, 500000);
+                            };
+                            $('.close-btn').click(function ss() {
+                                $('.alert').removeClass("show");
+                                $('.alert').addClass("hide");
+                            });
+                        </script>
+
+                        <?php
+                        if (isset($_SESSION['notification'])) {
+                            $notification = $_SESSION['notification'];
+                            echo '<script type="text/javascript">nn();</script>';
+                        }
+                        ?>
                         <!-- <span class="fas fa-exclamation-circle"></span> -->
-                        <span class="msg">Username or password is incorrect!</span>
+                        <span class="msg"> <?php echo $notification ?></span>
                         <div class="close-btn">
                             <span class="fas fa-times"></span>
                         </div>
@@ -83,27 +109,8 @@
 
 
 
-                    <script>
-                        function nn() {
-                            $('.alert').addClass("show");
-                            $('.alert').removeClass("hide");
-                            $('.alert').addClass("showAlert");
-                            setTimeout(function bb() {
-                                $('.alert').removeClass("show");
-                                $('.alert').addClass("hide");
-                            }, 500000);
-                        };
-                        $('.close-btn').click(function ss() {
-                            $('.alert').removeClass("show");
-                            $('.alert').addClass("hide");
-                        });
-                    </script>
-                    <?php
-                    if (isset($_SESSION['error'])) {
-                        $error = $_SESSION['error'];
-                        echo '<script type="text/javascript">nn();</script>';
-                    }
-                    ?>
+
+
 
 
 
@@ -138,5 +145,5 @@
 </html>
 
 <?php
-unset($_SESSION['error']);
+unset($_SESSION['notification']);
 ?>

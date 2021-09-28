@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
             header('Location: ../../member/dashboard.php');
         } else {
             // echo "Invalid username and password";
-            $_SESSION['error'] = "Incorrect Username or Password.";
+            $_SESSION['notification'] = "Incorrect Username or Password.";
             header('Location: index.php');
         }
     }
