@@ -5,13 +5,14 @@
         <span class="close4">&times;</span>
 
         <div class="calculate4">
-            <p class="title4">BODY FAT CALCULATOR</p>
+
             <div class="gender4">
                 <div class="male4">Male</div>
                 <div class="female4">Female</div>
             </div>
 
             <div class="gen_input4">
+                <p class="title4">BODY FAT CALCULATOR</p>
                 <p>GENDER</p>
                 <div class="gen_label4">
                     <input type="radio" id="male4" name="fav_language" value="MALE">

@@ -24,15 +24,15 @@
   
   /* The Close Button */
   .close4 {
-    color: #aaa;
+    color: #86ff71;
     float: right;
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
   }
   
   .close4:hover,
   .close4:focus {
-    color: black;
+    color: rgba(0, 0, 0, 0.687)71;
     text-decoration: none;
     cursor: pointer;
   }

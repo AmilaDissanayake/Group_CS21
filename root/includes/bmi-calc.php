@@ -5,12 +5,13 @@
             <span class="close" id="yy">&times;</span>
 
             <div class="calculate">
-                <p class="title">CALCULATE YOUR BMI</p>
+
                 <div class="gender">
                     <div class="male">Male</div>
                     <div class="female">Female</div>
                 </div>
                 <div class="height">
+                    <p class="title">CALCULATE YOUR BMI</p>
                     <p>HEIGHT</p>
                     <p class="val">
                         <i class="sub">-</i>

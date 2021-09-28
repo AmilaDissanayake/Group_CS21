@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "Anurati";
-    src: url("Anurati-Regular.otf");
+    font-family: "Azonix";
+    src: url("Azonix-Regular.otf");
 
     }
 
@@ -22,13 +22,13 @@
 }
 
 .calculate3 .title3 {
-    font-size: 30px;
-    font-weight: bold;
-    font-family: 'Anurati';
-    background: -webkit-linear-gradient(45deg, #86ff71, #86ff71);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    font-size: 20px;
+    /* font-weight: bold; */
+    font-family: 'Azonix';
+    /* background: #232323; */
+    color: #86ff71;
+  }
+  
 
 .calculate3 .gender3 {
     display: none;
@@ -45,7 +45,7 @@
     /* box-shadow: 0 .5vmin 1vmin .6vmin #292929; */
     font-size: 8vmin;
     font-weight: bold;
-    font-family: 'Poppins'-serif;
+    font-family: 'Rubik'-serif;
     text-align: center;
     line-height: 32vmin;
 
@@ -81,7 +81,7 @@
     align-items: center;
     font-size: 20px;
     /* font-weight: bold; */
-    font-family: 'Poppins';
+    font-family: 'Rubik';
     color: #555;
 }
 
@@ -105,7 +105,7 @@
 .calculate3 .age3 .val3 span {
     font-size: 25px;
     /* font-weight: bold; */
-    font-family: 'Poppins'-serif;
+    font-family: 'Rubik'-serif;
 }
 
 .calculate3 .age3 input {
@@ -129,7 +129,7 @@
 .calculate3 .gen_input3 {
     /* margin-top: 4vmin; */
     width: 55%;
-    height: 100px;
+    height: 200px;
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
     display: flex;
@@ -138,7 +138,7 @@
     align-items: center;
     font-size: 20px;
     /* font-weight: bold; */
-    font-family: 'Poppins';
+    font-family: 'Rubik';
     color: #555;
 }
 
@@ -168,7 +168,7 @@
     align-items: center;
     font-size: 20px;
     /* font-weight: bold; */
-    font-family: 'Poppins';
+    font-family: 'Rubik';
     color: #555;
 }
 
@@ -192,7 +192,7 @@
 .calculate3 .height3 .val3 span {
     font-size: 25px;
     /* font-weight: bold; */
-    font-family: 'Poppins'-serif;
+    font-family: 'Rubik'-serif;
 }
 
 .calculate3 .height3 input {
@@ -226,7 +226,7 @@
     align-items: center;
     font-size: 20px;
     /* font-weight: bold; */
-    font-family: 'Poppins';
+    font-family: 'Rubik';
     color: #555;
 }
 
@@ -250,7 +250,7 @@
 .calculate3 .weight3 .val3 span {
     font-size: 25px;
     /* font-weight: bold; */
-    font-family: 'Poppins'-serif;
+    font-family: 'Rubik'-serif;
 }
 
 .calculate3 .weight3 input {
@@ -271,7 +271,7 @@
 }
 
 
-.calculate3 .calc3, .result3 .recal3 {
+.result3 .recal3 {
     height: 100px;
     width: 55%;
     /* line-height: 14vmin; */
@@ -279,11 +279,30 @@
     color: #86ff71;
     font-size: 18px;
     /* font-weight: bold; */
-    font-family: 'Anurati';
+    font-family: 'Azonix';
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
     text-align: center;
     padding-top:75px;
+    cursor: pointer;
+}
+
+.calculate3 .calc3 {
+    height: 75px;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* line-height: 14vmin; */
+    margin-top: 0px;
+    color: #86ff71;
+    font-size: 18px;
+    /* font-weight: bold; */
+    font-family: 'Azonix';
+    background: #232323;
+    box-shadow: 0.5vmin 0vmin .6vmin #292929;
+    text-align: center;
+    /* padding-top:75px; */
     cursor: pointer;
 }
 
@@ -315,20 +334,20 @@
     color: #555;
     font-size: 25px;
     /* font-weight: bold; */
-    font-family: 'Poppins';
+    font-family: 'Rubik';
 }
 
 .result3 .bmi3 .val3 {
     font-size: 25px;
     /* font-weight: bold; */
     color: #fff;
-    font-family: 'Poppins';
+    font-family: 'Rubik';
 }
 
 .result3 .text3 {
     font-size: 25px;
     /* font-weight: bold; */
-    font-family: 'Poppins';
+    font-family: 'Rubik';
     color: #fff;
     width: 55%;
     text-align: center;
