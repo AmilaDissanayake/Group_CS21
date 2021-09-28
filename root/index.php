@@ -38,19 +38,19 @@
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li value = "0"><a href="#" id="myBtn"  class="dropdown">Fitness Calculators</a>
-                    <div  class="dropdown-menu" id="down">
+                <li value="0"><a href="#/" id="myBtn" class="dropdown">Fitness Calculators</a>
+                    <div class="dropdown-menu" id="down">
                         <div class="dropdown-links">
-                            <a href="#" class="link">BMI Calculator</a>
-                            <a href="#" class="link">BMR Calculator</a>
-                            <a href="#" class="link">Body Fat Calculator</a>
-                            <a href="#" class="link">Calori Calculator</a>
+                            <a href="#/" class="link" id=myBtn1>BMI Calculator</a>
+                            <a href="#/" class="link" id=myBtn3>BMR Calculator</a>
+                            <a href="#/" class="link">Body Fat Calculator</a>
+                            <a href="#/" class="link" id="myBtn2">Calori Calculator</a>
                         </div>
                     </div>
                 </li>
                 <li><a href="#testim">Testimonials</a></li>
-                <li><a href="#" id=myBtn3>FAQ</a></li>
-                <li><a href="#" id="myBtn2">Contact</a></li>
+                <li><a href="#" FAQ</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
 
 
