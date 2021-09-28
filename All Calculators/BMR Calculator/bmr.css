@@ -7,7 +7,7 @@
 ::selection { color: none; background: none; }
 
 .calculate3, .result3 {
-    height: 600px;
+    height: 650px;
     width: 600px;
     /* padding-left: 450px;
     padding-right: 450px; */
@@ -129,7 +129,7 @@
 .calculate3 .gen_input3 {
     /* margin-top: 4vmin; */
     width: 55%;
-    height: 150px;
+    height: 100px;
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
     display: flex;
@@ -272,7 +272,7 @@
 
 
 .calculate3 .calc3, .result3 .recal3 {
-    height: 50px;
+    height: 100px;
     width: 55%;
     /* line-height: 14vmin; */
     margin-top: 0px;
@@ -283,7 +283,7 @@
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
     text-align: center;
-    padding-top:20px;
+    padding-top:75px;
     cursor: pointer;
 }
 
@@ -299,10 +299,11 @@
 
 
 .result3 .bmi3 {
-    height: 150px;
+    height: 80px;
     width: 55%;
     display: flex;
     flex-direction: column;
+    padding-top: 100px;
     align-items: center;
     justify-content: center;
     background: #232323;
