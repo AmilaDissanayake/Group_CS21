@@ -28,16 +28,22 @@ require "db.php";
 
 // die(mysqli_error($conn));
 
-$token = "bimsara";
+// $token = "bimsara";
 
-$hashedToken = password_hash($token, PASSWORD_DEFAULT);
+// $hashedToken = password_hash($token, PASSWORD_DEFAULT);
 
-// echo "$hashedToken";
+// // echo "$hashedToken";
 
-$result = password_verify($token, $hashedToken);
+// $result = password_verify($token, $hashedToken);
 
-if ($result) {
-    echo "Done";
-} else {
-    echo "no";
-}
+// if ($result) {
+//     echo "Done";
+// } else {
+//     echo "no";
+//}
+$sql_query = "SELECT password FROM admin WHERE username='" . $username . "' OR email='" . $username . "'";
+        //$sql_query = "SELECT COUNT(*) AS cntUser FROM admin WHERE username='" . $username . "' AND password='" . $password . "'";
+        $result = mysqli_query($conn, $sql_query);
+        print_r($result);
+
+?>
