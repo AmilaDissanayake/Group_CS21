@@ -53,11 +53,7 @@
                     </div>
                 </li>
                 <li><a href="#testim">Testimonials</a></li>
-
-
-
                 <li><a href="#faq">FAQ</a></li>
-
                 <li><a href="#">Contact</a></li>
             </ul>
 
