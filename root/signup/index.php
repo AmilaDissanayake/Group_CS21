@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="signup.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
 </head>
 
@@ -183,7 +184,7 @@
 
 
                         <label>
-                            <select class="form_input" required>
+                            <select id="xxx" class="form_input" required>
                                 <option value="" disabled selected> Select Your Trainer </option>
                                 <?php
 
@@ -215,7 +216,7 @@
 
                                 ?>
 
-                                    <option value="0">
+                                    <option value=<?php echo $rate ?>>
                                         <?php echo $f_name ?>&nbsp;(⭐<?php echo $review_value ?>)</option>
 
 
@@ -229,7 +230,20 @@
                     </div>
 
 
-                    <div class="buttondiv"><input type="submit" class="form__button" value="Sign Up"></div>
+                    <div class="buttondiv"><input type="submit" class="form__button"></div>
+                    <script>
+                        $(document).ready(function() {
+                            $("select.form_input").change(function() {
+                                var selectedCountry = $(this).children("option:selected").val();
+                                // alert("You have selected the country - " + selectedCountry);
+                                var dialogbutton = $(".form__button");
+                                dialogbutton.val("SIGN UP & PAY" + " " + selectedCountry + "/=");
+                            });
+                            var selectedVal = $("#xxx option:selected").val();
+                            $('#leaveCode').val('2500');
+
+                        });
+                    </script>
                     <div class="remember">
                         <label><input type="checkbox" name=""> I accept the <span>Terms of Use</span> & <span>Privacy
                                 Policy</span>.</label>

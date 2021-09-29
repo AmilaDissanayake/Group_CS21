@@ -139,9 +139,9 @@ function checkInputs() {
 
 	if (password2Value === '') {
 		setErrorFor(password2, 'Confirm Password cannot be blank');
-	}else if (password2Value !== password1Value) {
+	} else if (password2Value !== password1Value) {
 		setErrorFor(password2, 'Re-Entered Password is wrong');
-	}else {
+	} else {
 		setSuccessFor(password2);
 	}
 
