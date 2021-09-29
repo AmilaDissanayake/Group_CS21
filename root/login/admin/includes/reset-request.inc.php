@@ -5,10 +5,12 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 if (isset($_POST["reset-request-submit"])) {
+    $userEmail = $_POST["email"];
 
     require 'db.php';
 
     $userEmail = strtolower($_POST["email"]);
+
 
     $mail_query = " SELECT COUNT(*) AS cntUser FROM admin WHERE email = '" . $userEmail . "'";
     $mail_result = mysqli_query($conn, $mail_query);

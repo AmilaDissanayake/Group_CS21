@@ -19,12 +19,15 @@
     <link rel="stylesheet" href="css/popup2.css">
     <link rel="stylesheet" href="css/bmr-calc.css">
     <link rel="stylesheet" href="css/popup3.css">
+    <link rel="stylesheet" href="css/bfc-calc.css">
+    <link rel="stylesheet" href="css/popup4.css">
 
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 
 <body>
@@ -38,21 +41,45 @@
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#" id="myBtn">Fitness Calculators</a></li>
+                <li value="0"><a href="#/" id="myBtn" class="dropdown">Fitness Calculators</a>
+                    <div class="dropdown-menu" id="down">
+                        <div class="dropdown-links">
+                            <a href="#/" class="link" id=myBtn1>BMI Calculator</a>
+                            <a href="#/" class="link" id="myBtn2">Calori Calculator</a>
+                            <a href="#/" class="link" id=myBtn3>BMR Calculator</a>
+                            <a href="#/" class="link" id="myBtn4">Body Fat Calculator</a>
+
+                        </div>
+                    </div>
+                </li>
                 <li><a href="#testim">Testimonials</a></li>
-                <li><a href="#" id=myBtn3>FAQ</a></li>
-                <li><a href="#" id="myBtn2">Contact</a></li>
+
+
+
+                <li><a href="#faq">FAQ</a></li>
+
+                <li><a href="#">Contact</a></li>
             </ul>
 
 
         </div>
+
         <div class="center">
             <h1>POWER HOUSE</h1><br>
             <h2>FITNESS ACADEMY</h2>
         </div>
         <div class="rside">
 
-            <button class="header_btn2" onclick="location.href='login.html'">LOGIN</button>
+            <div class="dropdown">
+                <!-- <button class="header_btn2" onclick="location.href='login.html'">LOGIN</button> -->
+                <button class="header_btn2" onclick="myFunction()">LOGIN</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="">TRAINER</a>
+                    <a href="">MEMBER</a>
+                </div>
+            </div>
+
+            <!-- <button class="header_btn2" onclick="location.href='login.html'">LOGIN</button> -->
             <button class="header_btn" onclick="location.href='signup.html'">SIGN UP</button>
 
         </div>
@@ -86,6 +113,21 @@
     <?php include "includes/bmi-calc.php" ?>
     <?php include "includes/clori-calc.php" ?>
     <?php include "includes/bmr-calc.php" ?>
+    <?php include "includes/bfc-calc.php" ?>
+    <script>
+        $("#myBtn1").click(function() {
+            $("#myModal").fadeIn();
+        });
+        $("#myBtn2").click(function() {
+            $("#myModal2").fadeIn();
+        });
+        $("#myBtn3").click(function() {
+            $("#myModal3").fadeIn();
+        });
+        $("#myBtn4").click(function() {
+            $("#myModal4").fadeIn();
+        });
+    </script>
 
 
     <!-- ABOUT SECTION  ////////////////////////////////////////////////////////// -->
@@ -428,6 +470,7 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/calori-calc.js"></script>
     <script src="js/bmr-calc.js"></script>
+    <script src="js/bfc-calc.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -506,6 +549,34 @@
 
         var ctx = document.getElementById("canvas").getContext("2d");
         window.myLine = new Chart(ctx, config);
+    </script>
+
+
+
+
+    <!-- login dropdown -->
+
+
+    <script>
+        /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.header_btn2')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
     </script>
 
 </body>

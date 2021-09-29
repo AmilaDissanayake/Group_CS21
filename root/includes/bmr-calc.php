@@ -5,13 +5,14 @@
         <span class="close3">&times;</span>
 
         <div class="calculate3">
-            <p class="title3">BMR CALCULATER</p>
+
             <div class="gender3">
                 <div class="male3">Male</div>
                 <div class="female3">Female</div>
             </div>
 
             <div class="gen_input3">
+                <p class="title3">BMR CALCULATER</p>
                 <p>GENDER</p>
                 <div class="gen_label3">
                     <input type="radio" id="male3" name="fav_language" value="MALE">

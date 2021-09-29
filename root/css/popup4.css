@@ -1,4 +1,4 @@
-.modal2 {
+.modal4 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 10000; /* Sit on top */
@@ -14,7 +14,7 @@
   }
   
   /* Modal Content/Box */
-  .modal-content2 {
+  .modal-content4 {
     background-color: transparent;
      margin:  auto; 
     padding: auto;
@@ -23,15 +23,15 @@
   }
   
   /* The Close Button */
-  .close2 {
+  .close4 {
     color: #86ff71;
     float: right;
     font-size: 35px;
     font-weight: bold;
   }
   
-  .close2:hover,
-  .close2:focus {
+  .close4:hover,
+  .close4:focus {
     color: rgba(0, 0, 0, 0.687)71;
     text-decoration: none;
     cursor: pointer;

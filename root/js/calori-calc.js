@@ -8,20 +8,20 @@ function final_result(bmr) {
     if (yourSelect.selectedIndex == 0) {
         bmr = bmr * 1.2;
     }
-    else if (yourSelect.selectedIndex == 0) {
+    else if (yourSelect.selectedIndex == 1) {
         bmr = bmr * 1.375;
     }
-    else if (yourSelect.selectedIndex == 1) {
+    else if (yourSelect.selectedIndex == 2) {
         bmr = bmr * 1.55;
     }
-    else if (yourSelect.selectedIndex == 2) {
+    else if (yourSelect.selectedIndex == 3) {
         bmr = bmr * 1.725;
     }
-    else if (yourSelect.selectedIndex == 3) {
+    else if (yourSelect.selectedIndex == 4) {
         bmr = bmr * 1.9;
     }
-
-    return (bmr.toFixed(2));
+    bmr = bmr.toFixed(2);
+    return (bmr);
 }
 
 document.querySelector('.calculate2 .gender2 .male2').onclick = function () {
@@ -120,7 +120,7 @@ document.querySelector('.calculate2 .calc2').onclick = function () {
         let bmr = ((10 * weight) + (6.25 * height) - (5 * age) - 161).toFixed(2);
         height = 50;
         weight = 10;
-        document.querySelector('.calculate2 .weight 2input').value = weight;
+        document.querySelector('.calculate2 .weight2 input').value = weight;
         document.querySelector('.calculate2 .weight2 .val2 span').innerText = weight;
         document.querySelector('.calculate2 .height2 input').value = height;
         document.querySelector('.calculate2 .height2 .val2 span').innerText = height;

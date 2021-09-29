@@ -1,14 +1,14 @@
-// let gender = 'male';
-// height = 50;
+let gender2 = 'male';
+height = 50;
 
 document.querySelector('.calculate3 .gender3 .male3').onclick = function () {
-    gender = 'male3';
+    gender2 = 'male3';
     this.classList.add('active');
     document.querySelector('.calculate3 . gender3 .female3').className = 'female3';
 }
 
 document.querySelector('.calculate3 .gender3 .male3').onclick = function () {
-    gender = 'female3';
+    gender2 = 'female3';
     this.classList.add('active');
     document.querySelector('.calculate3 . gender3 .male3').className = 'male3';
 }
@@ -74,7 +74,7 @@ document.querySelector('.calculate3 .weight3 .val3 i.sub3').onclick = function (
 document.querySelector('.calculate3 .calc3').onclick = function () {
 
     if (document.getElementById('male3').checked) {
-        
+
 
         let bmr = ((10 * weight) + (6.25 * height) - (5 * age) + 5).toFixed(2);
         height = 50;
@@ -88,7 +88,7 @@ document.querySelector('.calculate3 .calc3').onclick = function () {
         document.querySelector('.calculate3 .age3 .val3 span').innerText = age;
 
         document.querySelector('.result3 .bmi3 .val3').innerText = bmr;
-        
+
         //Male radio button is checked
 
     }
@@ -105,14 +105,14 @@ document.querySelector('.calculate3 .calc3').onclick = function () {
         document.querySelector('.calculate3 .height3 .val3 span').innerText = height;
         document.querySelector('.calculate3 .age3 input').value = age;
         document.querySelector('.calculate3 .age3 .val3 span').innerText = age;
-        
+
 
 
         document.querySelector('.result3 .bmi3 .val3').innerText = bmr;
         //Female radio button is checked
     }
-    
-    
+
+
 
 
     document.querySelector('.calculate3').style.display = 'none';

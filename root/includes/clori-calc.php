@@ -4,13 +4,16 @@
         <span class="close2">&times;</span>
 
         <div class="calculate2">
-            <p class="title2">CALORIE CALCULATER</p>
+
             <div class="gender2">
+
                 <div class="male2">Male</div>
+
                 <div class="female2">Female</div>
             </div>
 
             <div class="gen_input2">
+                <p class="title2">CALORIE CALCULATER</p>
                 <p>GENDER</p>
                 <div class="gen_label2">
                     <input type="radio" id="male2" name="fav_language" value="MALE">
@@ -68,8 +71,8 @@
 
         <div class="result2">
             <div class="bmi2">
-                <div class="title2">YOUR BMR</div>
-                <div class="val2">0.00</div>
+                <div class="title2">YOU NEED</div>
+                <div class="val2">0.00</div><span class="title2"> Calories Per Day</span>
             </div>
 
             <!-- <div class="text">Your BMR is normal!</div> -->

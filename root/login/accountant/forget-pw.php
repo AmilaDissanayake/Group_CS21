@@ -61,6 +61,8 @@
 
         </div>
     </section>
+
+    <script type="text/javascript" async src="forget_pw.js" ></script>
 </body>
 
 </html>

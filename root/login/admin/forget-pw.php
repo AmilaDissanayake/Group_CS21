@@ -53,6 +53,7 @@
                     <div class="buttondiv"><input type="submit" name="reset-request-submit" class="form__button" value="SEND AN E-MAIL"></div>
                 </form>
 
+
                 <script>
                     function nn() {
                         $('.alert').addClass("show");
@@ -61,7 +62,7 @@
                         setTimeout(function bb() {
                             $('.alert').removeClass("show");
                             $('.alert').addClass("hide");
-                        }, 500000);
+                        }, 5000);
                     };
                     $('.close-btn').click(function ss() {
                         $('.alert').removeClass("show");
@@ -91,7 +92,10 @@
 
         </div>
     </section>
+
+    <script type="text/javascript" async src="forget_pw.js"></script>
 </body>
+
 
 </html>
 
