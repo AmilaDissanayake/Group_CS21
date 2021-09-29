@@ -9,6 +9,7 @@ if (isset($_POST["reset-request-submit"])) {
 
     require 'db.php';
 
+    $userEmail = strtolower($_POST["email"]);
 
 
     $mail_query = " SELECT COUNT(*) AS cntUser FROM admin WHERE email = '" . $userEmail . "'";
