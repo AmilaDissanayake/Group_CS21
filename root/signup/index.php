@@ -221,7 +221,7 @@
 
 
                                 <?php } ?>
-                                <option value="5">I don't need a trainer</option>
+                                <option value="0">I don't need a trainer</option>
                             </select>
                         </label>
                         <span class="tr"><br>
@@ -230,17 +230,16 @@
                     </div>
 
 
-                    <div class="buttondiv"><input type="submit" class="form__button"></div>
+                    <div class="buttondiv"><input type="submit" class="form__button" value="SIGN UP"></div>
                     <script>
                         $(document).ready(function() {
                             $("select.form_input").change(function() {
-                                var selectedCountry = $(this).children("option:selected").val();
+                                var selectedTrainer = $(this).children("option:selected").val();
                                 // alert("You have selected the country - " + selectedCountry);
-                                var dialogbutton = $(".form__button");
-                                dialogbutton.val("SIGN UP & PAY" + " " + selectedCountry + "/=");
+                                var button = $(".form__button");
+                                button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
                             });
-                            var selectedVal = $("#xxx option:selected").val();
-                            $('#leaveCode').val('2500');
+
 
                         });
                     </script>
