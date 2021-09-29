@@ -79,7 +79,7 @@
                             setTimeout(function bb() {
                                 $('.alert').removeClass("show");
                                 $('.alert').addClass("hide");
-                            }, 500000);
+                            }, 5000);
                         };
                         $('.close-btn').click(function ss() {
                             $('.alert').removeClass("show");

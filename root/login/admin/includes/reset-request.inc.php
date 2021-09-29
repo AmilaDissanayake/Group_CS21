@@ -11,16 +11,16 @@ if (isset($_POST["reset-request-submit"])) {
 
 
 
-    // $mail_query = " SELECT COUNT(*) AS cntUser FROM admin WHERE email = '" . $userEmail . "'";
-    // $mail_result = mysqli_query($conn, $mail_query);
-    // $mail_row = mysqli_fetch_array($mail_result);
-    // $mail_count = $mail_row['cntUser'];
+    $mail_query = " SELECT COUNT(*) AS cntUser FROM admin WHERE email = '" . $userEmail . "'";
+    $mail_result = mysqli_query($conn, $mail_query);
+    $mail_row = mysqli_fetch_array($mail_result);
+    $mail_count = $mail_row['cntUser'];
 
-    // if ($mail_count <= 0) {
-    //     $_SESSION["notification"] = "Email does not exist";
-    //     header("Location: ../forget-pw.php");
-    //     exit();
-    // }
+    if ($mail_count <= 0) {
+        $_SESSION["notification"] = "Email does not exist";
+        header("Location: ../forget-pw.php");
+        exit();
+    }
 
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
