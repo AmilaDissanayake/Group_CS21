@@ -9,7 +9,7 @@
     <title>SignUp</title>
     <!-- <link rel="shortcut icon" href="media/TabIcon.jpg">  -->
 
-    <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="signup.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -27,8 +27,8 @@
             </h5>
             </p>
             <div class="homeIcon">
-                <a href="index.html" class="fas fa-backward"></a>
-                <a href="index.html">Back to home</a>
+                <a href="index.html" class=" fas fa-chevron-left"> </a>
+                <a href="../index.php">&nbsp Back to home</a>
             </div>
         </div>
         <div class="login">
@@ -68,9 +68,9 @@
                         <div class="select__div">
                             <label>
                                 <select class="form_input" id="gender" required>
-                                    <option value ="" disabled selected> Gender </option>
-                                    <option value ="1">Male</option>
-                                    <option value ="2">Female</option>
+                                    <option value="" disabled selected> Gender </option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
                                 </select>
                             </label>
                             <i class="fa fa-check"></i>
@@ -152,8 +152,7 @@
                     </div>
                     <div class="name">
                         <div class="form__div">
-                            <input type="password" class="name_input" id="password1" placeholder=" "
-                                onkeyup="return passwordChanged();">
+                            <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();">
                             <label for="" class="form__label">Password</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -181,14 +180,46 @@
 
 
                     <div class="select__div">
+
+
                         <label>
                             <select class="form_input" required>
                                 <option value="" disabled selected> Select Your Trainer </option>
-                                <option value="0">Thusitha (⭐5.0)</option>
-                                <option value="1">Amila (⭐4.9)</option>
-                                <option value="2">Bimsara (⭐5.0)</option>
-                                <option value="3">Pamodha (⭐4.8)</option>
-                                <option value="4">Navod (⭐5.0)</option>
+                                <?php
+
+                                require "includes/db.php";
+
+                                $query = "SELECT * FROM trainer";
+
+                                $select_query = mysqli_query($conn, $query);
+
+                                while ($row = mysqli_fetch_assoc($select_query)) {
+                                    $f_name = $row['f_name'];
+
+                                    $trainer_id = $row['trainer_id'];
+
+                                    $rate = $row['rate'];
+
+
+                                    $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+                                    $review_query = mysqli_query($conn, $query2);
+                                    $review_count = mysqli_num_rows($review_query);
+                                    $review_value = 0;
+
+                                    while ($review_row = mysqli_fetch_assoc($review_query)) {
+                                        $review_value += $review_row['stars'];
+                                    }
+
+
+                                    // $select_query = mysqli_query($connection, $query);
+
+                                ?>
+
+                                    <option value="0">
+                                        <?php echo $f_name ?>&nbsp;(⭐<?php echo $review_value ?>)</option>
+
+
+                                <?php } ?>
                                 <option value="5">I don't need a trainer</option>
                             </select>
                         </label>
@@ -215,7 +246,7 @@
         </div>
     </section>
 
-    <script type="text/javascript" src="js/signup.js"></script>
+    <script type="text/javascript" src="signup.js"></script>
 
 </body>
 

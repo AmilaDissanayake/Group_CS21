@@ -50,7 +50,7 @@ section .img {
 
   /* background: url(dd.jpg); */
 
-  background: url(../media/v5.jpg);
+  background: url(v5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -646,7 +646,7 @@ select::-ms-expand{
   color: #86ff71d5;
 }
 
-.fa-backward {
+.fa-chevron-left {
   background-color: transparent;
   border: none;
   color: #86ff71;
@@ -659,7 +659,7 @@ select::-ms-expand{
 }
 
 /* Darker background on mouse-over */
-.fa-backward:hover {
+.fa-chevron-left:hover {
   color: #86ff71d5;
 
 }
