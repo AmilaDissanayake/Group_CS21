@@ -142,6 +142,7 @@
                         <i class="fas fa-exclamation-circle"></i> -->
                         <small>Error message</small>
                     </div>
+
                     <div class="form__div">
                         <input type="text" class="form__input" id="username" placeholder=" ">
                         <label for="" class="form__label">Username</label>
@@ -170,13 +171,42 @@
                             <i class="fas fa-exclamation-circle"></i> -->
                             <small>Error message</small>
                         </div>
-                    </div><br>
+                    </div>
+                    <div class="select__div">
+
+
+                        <label>
+                            <select id="membership" class="form_input" required>
+                                <option value="" disabled selected> Select Your Membership </option>
+                                <option value=2500> One Month
+                                </option>
+                                <option value=7000> Three Months
+                                </option>
+                                <option value=13500> Six Months
+                                </option>
+                                <option value=20000> One Year
+                                </option>
+
+
+
+
+                            </select>
+                        </label>
+
+                    </div>
+                    <br>
 
                     <div class="separator">
                         <hr class="hr-left2" />
                         <span class="hr-text">TRAINER DETAILS</span>
+
+
                         <hr class="hr-right2" />
                     </div>
+                    <div class="tooltip"><i class="fas fa-exclamation-circle"></i>
+                        <span class="tooltiptext">You can select a trainer here if you like. Please note that trainer will be assigned only for a month. After one month you can select the same trainer again or a seperate trainer. Trainer cannot be changeg after assignment.</span>
+                    </div>
+
                     <br>
 
 
@@ -184,7 +214,7 @@
 
 
                         <label>
-                            <select id="xxx" class="form_input" required>
+                            <select id="trainer" class="form_input" required>
                                 <option value="" disabled selected> Select Your Trainer </option>
                                 <?php
 
@@ -196,6 +226,7 @@
 
                                 while ($row = mysqli_fetch_assoc($select_query)) {
                                     $f_name = $row['f_name'];
+                                    $l_name = $row['l_name'];
 
                                     $trainer_id = $row['trainer_id'];
 
@@ -217,7 +248,7 @@
                                 ?>
 
                                     <option value=<?php echo $rate ?>>
-                                        <?php echo $f_name ?>&nbsp;(⭐<?php echo $review_value ?>)</option>
+                                        <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;(⭐<?php echo $review_value / $review_count ?>)</option>
 
 
                                 <?php } ?>
@@ -225,19 +256,64 @@
                             </select>
                         </label>
                         <span class="tr"><br>
-                            <p>See trainer details<span class="tr_link">&nbsphere</span> </p>
+                            <p> See trainer details<span class="tr_link"><a href="../trainers.php" target="_blank">&nbsphere</a></span> </p>
                         </span>
                     </div>
 
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="SIGN UP"></div>
+                    <div class="payhere">
+                        <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
+                    </div>
+
                     <script>
+                        var selectedTrainer;
+                        var selectedMembership;
+                        var cost = 0;
+                        var temp1 = 0;
+                        var temp2 = 0;
+                        var button = $(".form__button");
                         $(document).ready(function() {
-                            $("select.form_input").change(function() {
-                                var selectedTrainer = $(this).children("option:selected").val();
+                            $("select#trainer").change(function() {
+
+                                selectedTrainer = $(this).children("option:selected").val();
+                                selectedTrainer = parseInt(selectedTrainer, 10);
+                                if (temp1 > 0) {
+                                    cost = cost - temp1;
+                                    cost = cost + selectedTrainer;
+                                } else {
+                                    cost = cost + selectedTrainer;
+                                }
+
                                 // alert("You have selected the country - " + selectedCountry);
-                                var button = $(".form__button");
-                                button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
+
+                                // button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
+                                temp1 = selectedTrainer;
+
+                                button.val("SIGN UP & PAY" + " " + cost + "/=");
+
+                            });
+
+
+                        });
+
+                        $(document).ready(function() {
+                            $("select#membership").change(function() {
+                                selectedMembership = $(this).children("option:selected").val();
+                                selectedMembership = parseInt(selectedMembership, 10);
+
+                                if (temp2 > 0) {
+                                    cost = cost - temp2;
+                                    cost = cost + selectedMembership;
+                                } else {
+                                    cost = cost + selectedMembership;
+                                }
+                                temp2 = selectedMembership;
+                                button.val("SIGN UP & PAY" + " " + cost + "/=");
+                                // cost = cost - selectedMembership;
+                                // alert("You have selected the country - " + selectedCountry);
+
+                                // button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
                             });
 
 

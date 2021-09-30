@@ -67,6 +67,9 @@ section .img .head {
   font-size: 50px;
   font-weight: bold;
   font-family: "Anurati";
+  background: -webkit-linear-gradient(#eee, rgb(99, 99, 99));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 section .img .head3 {
@@ -575,7 +578,10 @@ select::-ms-expand{
     padding-top: 30px;
   }
 
-  .tr .tr_link{
+
+
+  .tr .tr_link a{
+    text-decoration: none;
     color: #86ff71;
     font-family: 'Rubik';
     
@@ -812,3 +818,81 @@ select::-ms-expand{
 .homeIcon a:hover {
   color: #86ff71d5;
 }
+
+
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  /* margin-bottom: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #86ff71;
+  font-family: 'Rubik';
+  cursor: pointer;
+  
+}
+
+
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: #555;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-family: 'Rubik';
+  padding: 10px 10px 10px 10px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  /* left: 50%; */
+  /* margin-left: -60px; */
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.payhere{
+  display: flex;
+  align-items: center;
+  
+  
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #80868b;
+    font-family: "Rubik";
+  }
+
+ 
+
