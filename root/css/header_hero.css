@@ -343,13 +343,14 @@ body {
   visibility: hidden;
   /* visibility: visible; */
   /* pointer-events: none; */
-  opacity: 1;
+  opacity: 0;
   display: grid;
   grid-template-columns: repeat(2, max-content);
   /* gap: 2rem;  */
   z-index: 600;
   transform: translateY(-10px);
-  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+
 }
 
 .dropdown .active > .link + .dropdown-menu {

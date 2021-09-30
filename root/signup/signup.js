@@ -6,26 +6,22 @@ const lname = document.getElementById('lname');
 const mnumber = document.getElementById('mnumber');
 // const dob = document.getElementById('dob');
 const address = document.getElementById('address');
-const inj = document.getElementById('inj');
+// const inj = document.getElementById('inj');
 const email = document.getElementById('email');
 const username = document.getElementById('username');
 const password1 = document.getElementById('password1');
 const password2 = document.getElementById('password2');
 // const trainer = document.getElementById('trainer');
 
+var isValid;
 
-// password1.addEventListener('input', function() {
-
-// 	// clearTimeout(timeout);
-
-// 	// timeout = setTimeout(() => isPassword(password1.value), 600);
-
-// });
-
-form.addEventListener('submit', e => {
-	e.preventDefault();
-
+form.addEventListener("submit", function (e) {
 	checkInputs();
+	if (!isValid) {
+		e.preventDefault();
+	}
+	// return true;
+
 });
 
 function checkInputs() {
@@ -48,23 +44,27 @@ function checkInputs() {
 
 	if (fnameValue === '') {
 		setErrorFor(fname, 'First name cannot be blank');
+		isValid = false;
 	}
 	else if (isnotvalid(fnameValue)) {
 		setErrorFor(fname, 'Invalid Input');
+		isValid = false;
 	}
-
-
 	else {
 		setSuccessFor(fname);
+		isValid = true;
 	}
 
 	if (lnameValue === '') {
 		setErrorFor(lname, 'Last name cannot be blank');
+		isValid = false;
 	} else if (isnotvalid(lnameValue)) {
 		setErrorFor(lname, 'Invalid Input');
+		isValid = false;
 	}
 	else {
 		setSuccessFor(lname);
+		isValid = true;
 	}
 
 	// if (genderValue === ' Gender ') {
@@ -75,14 +75,18 @@ function checkInputs() {
 
 	if (mnumberValue === '') {
 		setErrorFor(mnumber, 'Mobile No. cannot be blank');
+		isValid = false;
 	} else if (isnotvalidnum(mnumberValue)) {
 		setErrorFor(mnumber, 'Invalid Input');
+		isValid = false;
 	}
 	else if (!isValidlen(mnumberValue)) {
 		setErrorFor(mnumber, 'Phone no. length is Invalid');
+		isValid = false;
 	}
 	else {
 		setSuccessFor(mnumber);
+		isValid = true;
 	}
 
 	// if (genderValue === ' Gender ') {
@@ -93,56 +97,76 @@ function checkInputs() {
 
 	if (addressValue === '') {
 		setErrorFor(address, 'Address cannot be blank');
+		isValid = false;
 	} else {
 		setSuccessFor(address);
+		isValid = true;
 	}
 
-	if (injValue === '') {
-		setErrorFor(inj, 'Injuries Field cannot be blank,Apply NO if there is no injuries');
-	} else {
-		setSuccessFor(inj);
-	}
+	// if (injValue === '') {
+	// 	setErrorFor(inj, 'Injuries Field cannot be blank,Apply NO if there is no injuries');
+	// 	isValid = false;
+	// } else {
+	// 	setSuccessFor(inj);
+	// 	isValid = true;
+	// }
 
 	if (emailValue === '') {
 		setErrorFor(email, 'Email cannot be blank');
+		isValid = false;
 	} else if (!isEmail(emailValue)) {
 		setErrorFor(email, 'Not a valid email');
+		isValid = false;
 	} else {
 		setSuccessFor(email);
+		isValid = true;
 	}
 
 	if (usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
+		isValid = false;
 	}
 	else if (!isusername(usernameValue)) {
 		setErrorFor(username, 'User Name is Too Short');
+		isValid = false;
 	}
 	else {
 		setSuccessFor(username);
+		isValid = true;
 	}
 
 	if (password1Value === '') {
 		setErrorFor(password1, 'Password cannot be blank');
+		isValid = false;
 	} else if (!pwlength(password1Value)) {
 		setErrorFor(password1, 'Too short!Need at least 8');
+		isValid = false;
 	} else if (!pwlength4(password1Value)) {
 		setErrorFor(password1, 'Uppercase Letters must be included');
+		isValid = false;
 	} else if (!pwlength3(password1Value)) {
 		setErrorFor(password1, 'Lowercase Letters must be included');
+		isValid = false;
 	} else if (!pwlength2(password1Value)) {
 		setErrorFor(password1, 'Numbers must be included');
+		isValid = false;
 	} else if (!pwlength1(password1Value)) {
 		setErrorFor(password1, 'Symbols must be included');
+		isValid = false;
 	} else {
 		setSuccessFor(password1);
+		isValid = true;
 	}
 
 	if (password2Value === '') {
 		setErrorFor(password2, 'Confirm Password cannot be blank');
+		isValid = false;
 	} else if (password2Value !== password1Value) {
 		setErrorFor(password2, 'Re-Entered Password is wrong');
+		isValid = false;
 	} else {
 		setSuccessFor(password2);
+		isValid = true;
 	}
 
 	// if (genderValue === ' Gender ') {

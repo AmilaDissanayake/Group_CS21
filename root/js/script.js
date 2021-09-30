@@ -10,10 +10,12 @@ function choose() {
 
     if (va === 0) {
         document.getElementsByClassName('dropdown-menu')[0].style.visibility = 'visible';
+        document.getElementsByClassName('dropdown-menu')[0].style.opacity = "1";
         btn.parentElement.value = 1;
         return;
     } else if (va === 1) {
         document.getElementsByClassName('dropdown-menu')[0].style.visibility = 'hidden';
+        document.getElementsByClassName('dropdown-menu')[0].style.opacity = "0";
         btn.parentElement.value = 0;
         return;
     }
@@ -27,8 +29,7 @@ document.addEventListener('mouseup', function(e) {
         if(!btn.contains(e.target)){
             document.getElementsByClassName('dropdown-menu')[0].style.visibility = 'hidden';
             btn.parentElement.value = 0;
-        }
-        
+        }   
     }
 });
 
