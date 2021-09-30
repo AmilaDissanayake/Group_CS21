@@ -1,12 +1,27 @@
-
-
-<?php
+<?php session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 if (isset($_POST["reset-request-submit"])) {
+    $userEmail = $_POST["email"];
+
+    require 'db.php';
+
+    $userEmail = strtolower($_POST["email"]);
+
+
+    $mail_query = " SELECT COUNT(*) AS cntUser FROM member WHERE email = '" . $userEmail . "'";
+    $mail_result = mysqli_query($conn, $mail_query);
+    $mail_row = mysqli_fetch_array($mail_result);
+    $mail_count = $mail_row['cntUser'];
+
+    if ($mail_count <= 0) {
+        $_SESSION["notification"] = "Email does not exist";
+        header("Location: ../forget-pw.php");
+        exit();
+    }
 
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
@@ -15,9 +30,6 @@ if (isset($_POST["reset-request-submit"])) {
 
     $expires = date("U") + 1800;
 
-    require 'dbh.inc.php';
-
-    $userEmail = $_POST["email"];
     $sql = "DELETE FROM pwdreset WHERE pwdResetEmail=?;";
     $stmt = mysqli_stmt_init($conn);
 
@@ -33,7 +45,7 @@ if (isset($_POST["reset-request-submit"])) {
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        echo "There was an error";
+        echo "There this was an error";
     } else {
         $hashedToken = password_hash($token, PASSWORD_DEFAULT);
         mysqli_stmt_bind_param($stmt, "ssss", $userEmail, $selector, $hashedToken, $expires);
@@ -80,9 +92,9 @@ request, you can ignore this e-mail</p>';
     // } catch (Exception $e) {
     //     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     // }
-
+    $_SESSION["notification"] = "Please check your email inbox";
     header("Location: ../forget-pw.php?reset=success");
 } else {
-
-    header("location: ../login.php");
+    $_SESSION["notification"] = "An error occured!";
+    header("Location: ../forget-pw.php");
 }
