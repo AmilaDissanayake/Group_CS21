@@ -525,18 +525,7 @@ section .login {
 }
 
 
-.err{
-    padding: 8px 16px;
-    font-size: 25px;
-    font-weight: 500;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    background: #141517;
-    color: white;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
+
 
 
 

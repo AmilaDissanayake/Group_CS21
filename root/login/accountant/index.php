@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+if(isset($SESSION['username'])){
+    header('Location: ../../accountant/dashboard.php');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,14 +35,14 @@
             </h5>
             </p>
             <div class="homeIcon">
-                <a href="index.html" class= " fas fa-chevron-left "></a>
+                <a href="index.html" class=" fas fa-chevron-left"> </a>
                 <a href="../../index.php">&nbsp Back to home</a>
             </div>
         </div>
         <div class="login">
             <div class="l-form">
                 <form action="login.php" class="form" id="form" method="POST">
-                    <h1 class="form__title">MEMBER LOGIN<span id="Mem"></span></h1>
+                    <h1 class="form__title">ACCOUNTANT LOGIN<span id="Mem"></span></h1>
                     <!-- <span id="Mem">(MEMBER)</span><span id = "Tr">(TRAINER)</span> -->
 
                     <div class="select__div">
@@ -71,15 +76,6 @@
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit"></div>
 
-                    <!-- <button class="err">Show Alert</button> -->
-                    <div class="alert hide">
-                        <!-- <span class="fas fa-exclamation-circle"></span> -->
-                        <span class="msg">Username or password is Incorrect!</span>
-                        <div class="close-btn">
-                            <span class="fas fa-times"></span>
-                        </div>
-                    </div>
-
                     <script>
                         function nn() {
                             $('.alert').addClass("show");
@@ -88,7 +84,7 @@
                             setTimeout(function bb() {
                                 $('.alert').removeClass("show");
                                 $('.alert').addClass("hide");
-                            }, 500000);
+                            }, 5000);
                         };
                         $('.close-btn').click(function ss() {
                             $('.alert').removeClass("show");
@@ -96,13 +92,29 @@
                         });
                     </script>
 
+                    <!-- <button class="err">Show Alert</button> -->
+                    <div class="alert hide">
 
-                    <?php
-                    if (isset($_SESSION['error'])) {
-                        $error = $_SESSION['error'];
-                        echo '<script type="text/javascript">nn();</script>';
-                    }
-                    ?>
+                        <?php
+                        if (isset($_SESSION['notification'])) {
+                            $notification = $_SESSION['notification'];
+                            echo '<script type="text/javascript">nn();</script>';
+                        }
+                        ?>
+                        <?php
+                        // if(isset($_GET["newpwd"])){
+                        //     if($_GET["newpwd"]=="passwordUpdated"){
+                        //         $notification = "Password successfully updated";
+                        //     }
+                        // }
+                        ?>
+                        <!-- <span class="fas fa-exclamation-circle"></span> -->
+                        <span class="msg"><?php echo $notification ?></span>
+                        <div class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </div>
+                    </div>
+
 
                     <div class="remember">
                         <label><input type="checkbox" name=""> Remember me</label>
@@ -138,5 +150,5 @@
 </html>
 
 <?php
-unset($_SESSION['error']);
+unset($_SESSION['notification']);
 ?>

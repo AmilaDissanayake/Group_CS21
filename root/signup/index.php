@@ -34,7 +34,7 @@
         </div>
         <div class="login">
             <div class="l-form">
-                <form action="" class="form" id="form">
+                <form action="signup.php" class="form" id="form" method="POST">
                     <h1 class="form__title">SIGN UP</h1>
 
                     <div class="separator">
@@ -45,7 +45,7 @@
 
                     <div class="name">
                         <div class="form__div">
-                            <input type="text" class="name_input" id="fname" placeholder=" ">
+                            <input type="text" class="name_input" id="fname" placeholder=" " name="f_name">
                             <label for="" class="form__label">First Name</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -55,7 +55,7 @@
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="name_input" id="lname" placeholder=" ">
+                            <input type="text" class="name_input" id="lname" placeholder=" " name="l_name">
                             <label for="" class="form__label">Last Name</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -68,10 +68,10 @@
                     <div class="name">
                         <div class="select__div">
                             <label>
-                                <select class="form_input" id="gender" required>
+                                <select class="form_input" id="gender" required name="gender">
                                     <option value="" disabled selected> Gender </option>
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
                                 </select>
                             </label>
                             <i class="fa fa-check"></i>
@@ -82,7 +82,7 @@
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="name_input2" id="mnumber" placeholder=" ">
+                            <input type="text" class="name_input2" id="mnumber" placeholder=" " name="phone_no">
                             <label for="" class="form__label">Mobile Number</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -94,7 +94,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" ">
+                        <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" " name="dob">
                         <label for="" class="form__label">Date Of Birth</label>
                         <!-- <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i> -->
@@ -102,7 +102,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="text" class="form__input" id="address" placeholder=" ">
+                        <input type="text" class="form__input" id="address" placeholder=" " name="address">
                         <label for="" class="form__label">Address</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -112,7 +112,7 @@
                         <small>Error message</small>
                     </div>
                     <div class="inj__div">
-                        <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" "></textarea>
+                        <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries"></textarea>
                         <label for="" class="form__label">If you have any injury mention here...</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -134,7 +134,7 @@
 
 
                     <div class="form__div">
-                        <input type="text" class="form__input" id="email" placeholder=" ">
+                        <input type="text" class="form__input" id="email" placeholder=" " name="email">
                         <label for="" class="form__label">Email</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -142,8 +142,9 @@
                         <i class="fas fa-exclamation-circle"></i> -->
                         <small>Error message</small>
                     </div>
+
                     <div class="form__div">
-                        <input type="text" class="form__input" id="username" placeholder=" ">
+                        <input type="text" class="form__input" id="username" placeholder=" " name="username">
                         <label for="" class="form__label">Username</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -153,7 +154,7 @@
                     </div>
                     <div class="name">
                         <div class="form__div">
-                            <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();">
+                            <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();" name="password">
                             <label for="" class="form__label">Password</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -170,13 +171,42 @@
                             <i class="fas fa-exclamation-circle"></i> -->
                             <small>Error message</small>
                         </div>
-                    </div><br>
+                    </div>
+                    <div class="select__div">
+
+
+                        <label>
+                            <select id="membership" class="form_input" required name="membership">
+                                <option value="" disabled selected> Select Your Membership </option>
+                                <option value=2500> One Month
+                                </option>
+                                <option value=7000> Three Months
+                                </option>
+                                <option value=13500> Six Months
+                                </option>
+                                <option value=20000> One Year
+                                </option>
+
+
+
+
+                            </select>
+                        </label>
+
+                    </div>
+                    <br>
 
                     <div class="separator">
                         <hr class="hr-left2" />
                         <span class="hr-text">TRAINER DETAILS</span>
+
+
                         <hr class="hr-right2" />
                     </div>
+                    <div class="tooltip"><i class="fas fa-exclamation-circle"></i>
+                        <span class="tooltiptext">You can select a trainer here if you like. Please note that trainer will be assigned only for a month. After one month you can select the same trainer again or a seperate trainer. Trainer cannot be changeg after assignment.</span>
+                    </div>
+
                     <br>
 
 
@@ -184,7 +214,7 @@
 
 
                         <label>
-                            <select id="xxx" class="form_input" required>
+                            <select id="trainer" class="form_input" required name="trainer">
                                 <option value="" disabled selected> Select Your Trainer </option>
                                 <?php
 
@@ -196,6 +226,7 @@
 
                                 while ($row = mysqli_fetch_assoc($select_query)) {
                                     $f_name = $row['f_name'];
+                                    $l_name = $row['l_name'];
 
                                     $trainer_id = $row['trainer_id'];
 
@@ -217,7 +248,7 @@
                                 ?>
 
                                     <option value=<?php echo $rate ?>>
-                                        <?php echo $f_name ?>&nbsp;(⭐<?php echo $review_value ?>)</option>
+                                        <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;(⭐<?php echo $review_value / $review_count ?>)</option>
 
 
                                 <?php } ?>
@@ -225,19 +256,64 @@
                             </select>
                         </label>
                         <span class="tr"><br>
-                            <p>See trainer details<span class="tr_link">&nbsphere</span> </p>
+                            <p> See trainer details<span class="tr_link"><a href="../trainers.php" target="_blank">&nbsphere</a></span> </p>
                         </span>
                     </div>
 
 
-                    <div class="buttondiv"><input type="submit" class="form__button" value="SIGN UP"></div>
+                    <div class="buttondiv"><input type="submit" class="form__button" value="SIGN UP" name="submit"></div>
+                    <div class="payhere">
+                        <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
+                    </div>
+
                     <script>
+                        var selectedTrainer;
+                        var selectedMembership;
+                        var cost = 0;
+                        var temp1 = 0;
+                        var temp2 = 0;
+                        var button = $(".form__button");
                         $(document).ready(function() {
-                            $("select.form_input").change(function() {
-                                var selectedTrainer = $(this).children("option:selected").val();
+                            $("select#trainer").change(function() {
+
+                                selectedTrainer = $(this).children("option:selected").val();
+                                selectedTrainer = parseInt(selectedTrainer, 10);
+                                if (temp1 > 0) {
+                                    cost = cost - temp1;
+                                    cost = cost + selectedTrainer;
+                                } else {
+                                    cost = cost + selectedTrainer;
+                                }
+
                                 // alert("You have selected the country - " + selectedCountry);
-                                var button = $(".form__button");
-                                button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
+
+                                // button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
+                                temp1 = selectedTrainer;
+
+                                button.val("SIGN UP & PAY" + " " + cost + "/=");
+
+                            });
+
+
+                        });
+
+                        $(document).ready(function() {
+                            $("select#membership").change(function() {
+                                selectedMembership = $(this).children("option:selected").val();
+                                selectedMembership = parseInt(selectedMembership, 10);
+
+                                if (temp2 > 0) {
+                                    cost = cost - temp2;
+                                    cost = cost + selectedMembership;
+                                } else {
+                                    cost = cost + selectedMembership;
+                                }
+                                temp2 = selectedMembership;
+                                button.val("SIGN UP & PAY" + " " + cost + "/=");
+                                // cost = cost - selectedMembership;
+                                // alert("You have selected the country - " + selectedCountry);
+
+                                // button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
                             });
 
 

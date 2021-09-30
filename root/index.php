@@ -41,8 +41,8 @@
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li value="0"><a href="#/" id="myBtn" class="dropdown" >Fitness Calculators</a>
-                    <div class="dropdown-menu" id="down" value = "se">
+                <li value="0"><a href="#/" id="myBtn" class="dropdown">Fitness Calculators</a>
+                    <div class="dropdown-menu" id="down" value="se">
                         <div class="dropdown-links">
                             <a href="#/" class="link" id=myBtn1>BMI Calculator</a>
                             <a href="#/" class="link" id="myBtn2">Calori Calculator</a>
@@ -142,7 +142,7 @@
                     <p>
                         You’ve never experienced a fitness facility like Next Level! If you want to become a better
                         version of yourself, you need our workouts, our meal plans, and our love for holding each
-                        other accountable as a community.<span id="dots"></span>
+                        other accountable as a community.<span id="dots">...</span>
 
                         <span id="more">Our
                             trainers specialize in teaching individuals at all stages of the health and fitness
@@ -152,9 +152,9 @@
                             our amazing trainers, and get started on your body transformation! </span>
 
                     </p>
-                    <!-- <button onclick="myFunction()" class="btn1" id="myBtnn"><span>Read More</span></button> -->
 
-                    <button class="readmore_btn" id="myBtnn" onclick="myFunction()">Read More</button>
+
+                    <button class="readmore_btn" id="readMore" onclick="readFunction()">Read More</button>
                 </div>
                 <div class=" stat" id="statid">
                     <div class="stat_left">

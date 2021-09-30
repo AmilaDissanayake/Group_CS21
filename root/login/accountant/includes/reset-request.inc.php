@@ -1,65 +1,75 @@
-<?php
+<?php session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-if(isset($_POST["reset-request-submit"])){
+if (isset($_POST["reset-request-submit"])) {
+    $userEmail = $_POST["email"];
+
+    require 'db.php';
+
+    $userEmail = strtolower($_POST["email"]);
+
+
+    $mail_query = " SELECT COUNT(*) AS cntUser FROM accountant WHERE email = '" . $userEmail . "'";
+    $mail_result = mysqli_query($conn, $mail_query);
+    $mail_row = mysqli_fetch_array($mail_result);
+    $mail_count = $mail_row['cntUser'];
+
+    if ($mail_count <= 0) {
+        $_SESSION["notification"] = "Email does not exist";
+        header("Location: ../forget-pw.php");
+        exit();
+    }
 
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
 
-    $url = "localhost/Group_CS21/root/login/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
+    $url = "localhost/Group_CS21/root/login/accountant/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
 
     $expires = date("U") + 1800;
 
-    require 'dbh.inc.php';
-
-    $userEmail = $_POST["email"];
     $sql = "DELETE FROM pwdreset WHERE pwdResetEmail=?;";
     $stmt = mysqli_stmt_init($conn);
 
-    if(!mysqli_stmt_prepare($stmt,$sql)){
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
         echo "There was an error";
-    }
-    else{
+    } else {
         mysqli_stmt_bind_param($stmt, "s", $userEmail);
         mysqli_stmt_execute($stmt);
-
     }
 
     $sql = "INSERT INTO pwdreset(pwdResetEmail, pwdResetSelector, pwdResetToken, pwdResetExpires) VALUES(?,?,?,?);";
 
     $stmt = mysqli_stmt_init($conn);
 
-    if(!mysqli_stmt_prepare($stmt,$sql)){
-        echo "There was an error";
-    }
-    else{
-        $hashedToken= password_hash($token , PASSWORD_DEFAULT);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        echo "There this was an error";
+    } else {
+        $hashedToken = password_hash($token, PASSWORD_DEFAULT);
         mysqli_stmt_bind_param($stmt, "ssss", $userEmail, $selector, $hashedToken, $expires);
         mysqli_stmt_execute($stmt);
-
     }
 
 
-mysqli_stmt_close($stmt);
-mysqli_close($conn);
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
 
-$to = $userEmail;
-$subject = "Reset your password for POWER HOUSE";
+    $to = $userEmail;
+    $subject = "Reset your password for POWER HOUSE";
 
-$message = '<p>We recieved a password reset request. The link to reset your password is below. If you did not make this 
+    $message = '<p>We recieved a password reset request. The link to reset your password is below. If you did not make this 
 request, you can ignore this e-mail</p>';
-$message .= '<p>Here is your password reset link: <br>';
-$message .= '<a href="' . $url .'">' . $url . '</a></p>';
+    $message .= '<p>Here is your password reset link: <br>';
+    $message .= '<a href="' . $url . '">' . $url . '</a></p>';
 
 
-require '../vendor/autoload.php';
+    require '../vendor/autoload.php';
 
-$mail = new PHPMailer(true);
+    $mail = new PHPMailer(true);
 
-// try {
+    // try {
     $mail->SMTPDebug = 1;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
@@ -79,13 +89,12 @@ $mail = new PHPMailer(true);
     $mail->Body    = $message;
     $mail->send();
     echo 'Message has been sent';
-// } catch (Exception $e) {
-//     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-// }
-
-header("Location: ../forget-pw.php?reset=success");
-
-}
-else{
-    header("location: ../login.php");
+    // } catch (Exception $e) {
+    //     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    // }
+    $_SESSION["notification"] = "Please check your email inbox";
+    header("Location: ../forget-pw.php?reset=success");
+} else {
+    $_SESSION["notification"] = "An error occured!";
+    header("Location: ../forget-pw.php");
 }
