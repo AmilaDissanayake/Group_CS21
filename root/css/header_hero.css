@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
 @font-face {
   font-family: "Anurati";
   src: url("Anurati-Regular.otf");
@@ -95,6 +97,17 @@ body {
 .left li a:hover::before {
   transform: scaleX(0.4);
 }
+
+/* .left li a:hover + div{
+  visibility: visible;
+  transition: visibility 5s;
+} */
+
+/* .left li a:not(:hover) + div{
+  visibility: hidden;
+  transition: visibility 5s;
+} */
+
 
 .rside {
   width: 35%;
@@ -311,10 +324,10 @@ body {
   padding: 0.5rem;
 }
 
-.dropdown.active > .link,
+.dropdown .active > .link,
 .link:hover {
-  color: black;
-  background-color: #86ff71;
+  /* color: black; */
+  /* background-color: #86ff71; */
   font-weight: bolder;
 }
 
@@ -326,20 +339,21 @@ body {
   padding: 0.25rem;
   border-radius: 0.25rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-  /* display: none; */
+  /* display: block; */
   visibility: hidden;
   /* visibility: visible; */
   /* pointer-events: none; */
+  opacity: 1;
   display: grid;
   grid-template-columns: repeat(2, max-content);
   /* gap: 2rem;  */
   z-index: 600;
   transform: translateY(-10px);
-  /* transition: opacity 150ms ease-in-out, transform 150ms ease-in-out; */
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }
 
-.dropdown.active > .link + .dropdown-menu {
-  /* visibility: visible; */
+.dropdown .active > .link + .dropdown-menu {
+   /* visibility: visible; */
   transform: translateY(0);
   /* pointer-events: auto; */
 }
@@ -358,10 +372,11 @@ body {
   gap: 0.25rem;
 }
 
-/* login dropdown */
+/* --------------------------login dropdown-------------------- */
 .dropdown {
   position: relative;
   display: inline-block;
+  font-family: "Rubic";
 }
 .dropdown-content {
   display: none;
@@ -372,9 +387,9 @@ body {
   border-radius: 0.25rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
   z-index: 1;
-  /* transform: translateY(15px); */
+  transform: translateY(15px);
   margin-top: 30%;
-  margin-left: 15%;
+  margin-left: -45%;
   border: 3px solid black;
 }
 .dropdown-content a {
@@ -389,12 +404,31 @@ body {
   gap: 0.25rem;
   display: flex;
   flex-direction: column;
+  font-family: "Rubik";
 }
 .dropdown a:hover {
-  background-color: #86ff71;
-  color: #000000;
+  /* background-color: #86ff71; */
+  /* color: #000000; */
+  font-weight: bolder;
 }
 
 .show {
   display: block;
+}
+
+.dropdown-content a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #86ff71;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.dropdown-content a:hover::before {
+  transform: scaleX(0.4);
 }

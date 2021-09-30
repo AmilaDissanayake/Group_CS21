@@ -30,8 +30,8 @@
             </h5>
             </p>
             <div class="homeIcon">
-                <a href="index.html" class=" fas fa-chevron-left" </a>
-                    <a href="../../index.php">&nbsp Back to home</a>
+                <a href="index.html" class= " fas fa-chevron-left "></a>
+                <a href="../../index.php">&nbsp Back to home</a>
             </div>
         </div>
         <div class="login">

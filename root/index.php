@@ -41,8 +41,8 @@
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li value="0"><a href="#/" id="myBtn" class="dropdown">Fitness Calculators</a>
-                    <div class="dropdown-menu" id="down">
+                <li value="0"><a href="#/" id="myBtn" class="dropdown" >Fitness Calculators</a>
+                    <div class="dropdown-menu" id="down" value = "se">
                         <div class="dropdown-links">
                             <a href="#/" class="link" id=myBtn1>BMI Calculator</a>
                             <a href="#/" class="link" id="myBtn2">Calori Calculator</a>
@@ -53,11 +53,7 @@
                     </div>
                 </li>
                 <li><a href="#testim">Testimonials</a></li>
-
-
-
                 <li><a href="#faq">FAQ</a></li>
-
                 <li><a href="#">Contact</a></li>
             </ul>
 
@@ -432,7 +428,7 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Help</a></li>
+                <!-- <li><a href="#">Help</a></li> -->
                 <li><a href="#">Terms & Conditions</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
