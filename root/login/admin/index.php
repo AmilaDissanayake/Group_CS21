@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+if(isset($SESSION['username'])){
+    header('Location: ../../admin/dashboard.php');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,7 +84,7 @@
                             setTimeout(function bb() {
                                 $('.alert').removeClass("show");
                                 $('.alert').addClass("hide");
-                            }, 500000);
+                            }, 5000);
                         };
                         $('.close-btn').click(function ss() {
                             $('.alert').removeClass("show");

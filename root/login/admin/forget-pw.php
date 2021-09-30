@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
 </head>
 
 <body>
@@ -53,6 +53,7 @@
                     <div class="buttondiv"><input type="submit" name="reset-request-submit" class="form__button" value="SEND AN E-MAIL"></div>
                 </form>
 
+
                 <script>
                     function nn() {
                         $('.alert').addClass("show");
@@ -61,7 +62,7 @@
                         setTimeout(function bb() {
                             $('.alert').removeClass("show");
                             $('.alert').addClass("hide");
-                        }, 500000);
+                        }, 5000);
                     };
                     $('.close-btn').click(function ss() {
                         $('.alert').removeClass("show");
@@ -92,9 +93,9 @@
         </div>
     </section>
 
-    <script type="text/javascript" async src="forget_pw.js" ></script>
+    <script type="text/javascript" async src="forget_pw.js"></script>
 </body>
- 
+
 
 </html>
 
