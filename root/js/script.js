@@ -19,15 +19,18 @@ function choose() {
     }
 }
 
-window.onload = function () {
-    const divToHide = document.getElementsByClassName('dropdown-menu')[0];
-    document.onclick = function (e) {
-        if (e.target.className !== 'divToHide') {
+
+document.addEventListener('mouseup', function(e) {
+    var container = document.getElementById('down');
+    if (!container.contains(e.target)) {
+
+        if(!btn.contains(e.target)){
             document.getElementsByClassName('dropdown-menu')[0].style.visibility = 'hidden';
             btn.parentElement.value = 0;
         }
+        
     }
-}
+});
 
 
 

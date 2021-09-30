@@ -96,6 +96,17 @@ body {
   transform: scaleX(0.4);
 }
 
+/* .left li a:hover + div{
+  visibility: visible;
+  transition: visibility 5s;
+} */
+
+/* .left li a:not(:hover) + div{
+  visibility: hidden;
+  transition: visibility 5s;
+} */
+
+
 .rside {
   width: 35%;
   display: flex;
@@ -311,10 +322,10 @@ body {
   padding: 0.5rem;
 }
 
-.dropdown.active > .link,
+.dropdown .active > .link,
 .link:hover {
-  color: black;
-  background-color: #86ff71;
+  /* color: black; */
+  /* background-color: #86ff71; */
   font-weight: bolder;
 }
 
@@ -326,20 +337,21 @@ body {
   padding: 0.25rem;
   border-radius: 0.25rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-  /* display: none; */
+  /* display: block; */
   visibility: hidden;
   /* visibility: visible; */
   /* pointer-events: none; */
+  opacity: 1;
   display: grid;
   grid-template-columns: repeat(2, max-content);
   /* gap: 2rem;  */
   z-index: 600;
   transform: translateY(-10px);
-  /* transition: opacity 150ms ease-in-out, transform 150ms ease-in-out; */
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }
 
-.dropdown.active > .link + .dropdown-menu {
-  /* visibility: visible; */
+.dropdown .active > .link + .dropdown-menu {
+   /* visibility: visible; */
   transform: translateY(0);
   /* pointer-events: auto; */
 }
@@ -358,10 +370,11 @@ body {
   gap: 0.25rem;
 }
 
-/* login dropdown */
+/* --------------------------login dropdown-------------------- */
 .dropdown {
   position: relative;
   display: inline-block;
+  font-family: "Rubic";
 }
 .dropdown-content {
   display: none;
@@ -372,7 +385,7 @@ body {
   border-radius: 0.25rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
   z-index: 1;
-  /* transform: translateY(15px); */
+  transform: translateY(15px);
   margin-top: 30%;
   margin-left: 15%;
   border: 3px solid black;
@@ -398,3 +411,4 @@ body {
 .show {
   display: block;
 }
+
