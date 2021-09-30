@@ -20,15 +20,15 @@ function choose() {
 }
 
 
-document.addEventListener('mouseup', function(e) {
+document.addEventListener('mouseup', function (e) {
     var container = document.getElementById('down');
     if (!container.contains(e.target)) {
 
-        if(!btn.contains(e.target)){
+        if (!btn.contains(e.target)) {
             document.getElementsByClassName('dropdown-menu')[0].style.visibility = 'hidden';
             btn.parentElement.value = 0;
         }
-        
+
     }
 });
 
@@ -253,10 +253,10 @@ document.querySelector('.result .recal').onclick = function () {
 
 // ABOUT SCRIPT ///////////////////////////////
 
-function myFunction() {
+function readFunction() {
     var dots = document.getElementById("dots");
     var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtnn");
+    var btnText = document.getElementById("readMore");
 
     if (dots.style.display === "none") {
         dots.style.display = "inline";

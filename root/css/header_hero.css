@@ -328,7 +328,7 @@ body {
 .link:hover {
   /* color: black; */
   /* background-color: #86ff71; */
-  font-weight: bolder;
+  /* font-weight: bolder; */
 }
 
 .dropdown-menu {
@@ -350,6 +350,7 @@ body {
   z-index: 600;
   transform: translateY(-10px);
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  padding-bottom: 10px;
 }
 
 .dropdown .active > .link + .dropdown-menu {

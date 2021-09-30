@@ -34,7 +34,7 @@
         </div>
         <div class="login">
             <div class="l-form">
-                <form action="" class="form" id="form">
+                <form action="signup.php" class="form" id="form" method="POST">
                     <h1 class="form__title">SIGN UP</h1>
 
                     <div class="separator">
@@ -45,7 +45,7 @@
 
                     <div class="name">
                         <div class="form__div">
-                            <input type="text" class="name_input" id="fname" placeholder=" ">
+                            <input type="text" class="name_input" id="fname" placeholder=" " name="f_name">
                             <label for="" class="form__label">First Name</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -55,7 +55,7 @@
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="name_input" id="lname" placeholder=" ">
+                            <input type="text" class="name_input" id="lname" placeholder=" " name="l_name">
                             <label for="" class="form__label">Last Name</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -68,10 +68,10 @@
                     <div class="name">
                         <div class="select__div">
                             <label>
-                                <select class="form_input" id="gender" required>
+                                <select class="form_input" id="gender" required name="gender">
                                     <option value="" disabled selected> Gender </option>
-                                    <option value="1">Male</option>
-                                    <option value="2">Female</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
                                 </select>
                             </label>
                             <i class="fa fa-check"></i>
@@ -82,7 +82,7 @@
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="name_input2" id="mnumber" placeholder=" ">
+                            <input type="text" class="name_input2" id="mnumber" placeholder=" " name="phone_no">
                             <label for="" class="form__label">Mobile Number</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -94,7 +94,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" ">
+                        <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" " name="dob">
                         <label for="" class="form__label">Date Of Birth</label>
                         <!-- <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i> -->
@@ -102,7 +102,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="text" class="form__input" id="address" placeholder=" ">
+                        <input type="text" class="form__input" id="address" placeholder=" " name="address">
                         <label for="" class="form__label">Address</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -112,7 +112,7 @@
                         <small>Error message</small>
                     </div>
                     <div class="inj__div">
-                        <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" "></textarea>
+                        <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries"></textarea>
                         <label for="" class="form__label">If you have any injury mention here...</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -134,7 +134,7 @@
 
 
                     <div class="form__div">
-                        <input type="text" class="form__input" id="email" placeholder=" ">
+                        <input type="text" class="form__input" id="email" placeholder=" " name="email">
                         <label for="" class="form__label">Email</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -144,7 +144,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="text" class="form__input" id="username" placeholder=" ">
+                        <input type="text" class="form__input" id="username" placeholder=" " name="username">
                         <label for="" class="form__label">Username</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -154,7 +154,7 @@
                     </div>
                     <div class="name">
                         <div class="form__div">
-                            <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();">
+                            <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();" name="password">
                             <label for="" class="form__label">Password</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -176,7 +176,7 @@
 
 
                         <label>
-                            <select id="membership" class="form_input" required>
+                            <select id="membership" class="form_input" required name="membership">
                                 <option value="" disabled selected> Select Your Membership </option>
                                 <option value=2500> One Month
                                 </option>
@@ -214,7 +214,7 @@
 
 
                         <label>
-                            <select id="trainer" class="form_input" required>
+                            <select id="trainer" class="form_input" required name="trainer">
                                 <option value="" disabled selected> Select Your Trainer </option>
                                 <?php
 
@@ -261,7 +261,7 @@
                     </div>
 
 
-                    <div class="buttondiv"><input type="submit" class="form__button" value="SIGN UP"></div>
+                    <div class="buttondiv"><input type="submit" class="form__button" value="SIGN UP" name="submit"></div>
                     <div class="payhere">
                         <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
                     </div>
