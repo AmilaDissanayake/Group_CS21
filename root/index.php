@@ -91,7 +91,7 @@
             <p>Power House Fitness Academy is a top of the line fitness facility serving the city of Mirigama and
                 surrounding areas including Pasyala, Giriulla, Nittambuwa and more.
             <p>
-                <button class="hero_btn" onclick="location.href='signup.html'">JOIN THE ACADEMY</button>
+                <button class="hero_btn" onclick="location.href='./signup/index.php'">JOIN THE ACADEMY</button>
         </div>
     </div>
 
@@ -203,7 +203,7 @@
                     and analyze your progress online. The system allows you to book your trainer, check open/close
                     times, manage your schedule and many MORE!
                 </p>
-                <div class="about_button"><button class="about_btn" onclick="location.href='signup.html'">SIGN
+                <div class="about_button"><button class="about_btn" onclick="location.href='./signup/index.php'">SIGN
                         UP</button></div>
 
 
@@ -274,7 +274,7 @@
                     effective for long term overall health and wellness. Our priority is to help you become the best
                     version of YOU – fitter, healthier, and happier!
                 </p>
-                <div class="about_button"><button class="about_btn2" id="myBtn">VIEW TRAINERS</button></div>
+                <div class="about_button"><button class="about_btn2" onclick="window.open('http://localhost/Group_CS21/root/trainers.php', '_blank');">VIEW TRAINERS</button></div>
             </div>
             <div class="im" id="im4">
                 <img src="media/trainer2.png" alt="i1">
@@ -373,7 +373,7 @@
             <details>
                 <summary>Where we are located?</summary>
                 <p class="text">We are located at 33, Walawwatta, Pasyala - Giriulla Rd, Mirigama <a href="https://www.google.com/maps/place/Power+House+Gym/@7.2439452,80.1224739,17z/data=!3m1!4b1!4m5!3m4!1s0x3ae31ddf621d5831:0xeaffb58665171584!8m2!3d7.2439452!4d80.1246626" target="_blank">Get
-                        Directions</a></p>
+                        Directions.</a></p>
             </details>
             <details>
                 <summary>When the acadey is open?</summary>
@@ -381,8 +381,8 @@
             </details>
             <details>
                 <summary>What is the memebership price?</summary>
-                <p class="text">It is RS. 2500 per month. If you are taking a trainer, trainer fees may also be added to
-                    the membership. See trainer prcing <a href="#" target="_blank">Here.</a> </p>
+                <p class="text">We have 4 types of membership plans. One month : 2500/= , Three months : 7000/= , Six months : 13500/= and One year : 20000/=. If you are taking a trainer, trainer fees may also be added to
+                    the membership. See trainer prcing <a href="http://localhost/Group_CS21/root/trainers.php" target="_blank">Here.</a> </p>
             </details>
             <details>
                 <summary>Do I need to select a trainer to join tha academy?</summary>
@@ -391,8 +391,8 @@
             <details>
                 <summary>How do I select a trainer</summary>
                 <p class="text">You can select your trainer when signing up. Before that you can see all trainer
-                    details.
-                    <a href="#" target="_blank">Here.</a>
+                    details
+                    <a href="http://localhost/Group_CS21/root/trainers.php" target="_blank">Here.</a>
                 </p>
             </details>
             <details>
@@ -425,11 +425,11 @@
         <div class="quickLinks">
             <h2>Quick Links</h2>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="http://localhost/Group_CS21/root/includes/legal/privacy.pdf" target="_blank">Privacy Policy</a></li>
                 <!-- <li><a href="#">Help</a></li> -->
-                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="http://localhost/Group_CS21/root/includes/legal/terms.pdf" target="_blank">Terms & Conditions</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
