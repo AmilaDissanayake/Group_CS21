@@ -349,13 +349,8 @@ body {
   /* gap: 2rem;  */
   z-index: 600;
   transform: translateY(-10px);
-<<<<<<< HEAD
   transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
 
-=======
-  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-  padding-bottom: 10px;
->>>>>>> 9286f349517fd667e36f1181e43f955afaf08f7f
 }
 
 .dropdown .active > .link + .dropdown-menu {

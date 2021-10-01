@@ -261,7 +261,12 @@
                             <p> See trainer details<span class="tr_link"><a href="../trainers.php" target="_blank">&nbsphere</a></span> </p>
                         </span>
                     </div>
-
+                    
+                    <div class="remember">
+                        <label><input type="checkbox" name=""> I accept the <span>Terms of Use</span> & <span>Privacy
+                                Policy</span>.</label>
+                        <span class="checkmark"></span>
+                    </div>
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="SIGN UP" name="submit" id="submit"></div>
                     <div class="payhere">
@@ -332,11 +337,7 @@
 
                         });
                     </script>
-                    <div class="remember">
-                        <label><input type="checkbox" name=""> I accept the <span>Terms of Use</span> & <span>Privacy
-                                Policy</span>.</label>
-                        <span class="checkmark"></span>
-                    </div>
+
 
 
 
