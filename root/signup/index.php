@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
 
 </head>
 
@@ -262,12 +263,22 @@
                     </div>
 
 
-                    <div class="buttondiv"><input type="submit" class="form__button" value="SIGN UP" name="submit"></div>
+                    <div class="buttondiv"><input type="submit" class="form__button" value="SIGN UP" name="submit" id="submit"></div>
                     <div class="payhere">
                         <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
                     </div>
 
                     <script>
+                        // form.addEventListener("submit", function(e) {
+                        //     e.preventDefault();
+                        //     checkInputs();
+                        //     if (isValid == false) {
+                        //         e.preventDefault();
+                        //     } else {
+                        //         payhere.startPayment(payment);
+                        //     }
+
+                        // });
                         var selectedTrainer;
                         var selectedMembership;
                         var cost = 0;
