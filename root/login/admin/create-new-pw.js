@@ -155,8 +155,10 @@ function checkInputs() {
 	} else if (password2Value !== password1Value) {
 		setErrorFor(password2, 'Re-Entered Password is wrong');
 		isValid = false;
-	} 
-	else {
+	}else if (!pwlength(password2Value)) {
+		setErrorFor(password2, 'Selected Password is not Strong enough');
+		isValid = false;	
+	}else {
 		setSuccessFor(password2);
 		isValid = true;
 	}
@@ -273,9 +275,9 @@ function setSuccessFor(input) {
 // 	return false;
 // }
 
-function pwlength(password1) {
+function pwlength(password) {
 	let validp = new RegExp('(?=.{8,})')
-	if (validp.test(password1)) {
+	if (validp.test(password)) {
 		return true;
 	}
 	return false;
