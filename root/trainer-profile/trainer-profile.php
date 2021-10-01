@@ -122,13 +122,14 @@ $qualifies = explode(',', $qualifications);
                 $member_row = mysqli_fetch_assoc($member_query);
                 $member_f_name = $member_row['f_name'];
                 $member_l_name = $member_row['l_name'];
+                $member_avatar = $member_row['image'];
 
 
             ?>
 
                 <div class="review">
                     <div class="member">
-                        <div class="member-avatar"> <img src="../media/trainers/dinuka.jpg"></div>
+                        <div class="member-avatar"> <img src="../media/members/<?php echo $member_avatar ?>"></div>
                         <div class="member-name">
                             <p><?php echo $member_f_name . " " . $member_l_name ?> ⭐<?php echo $stars ?></p>
                         </div>
