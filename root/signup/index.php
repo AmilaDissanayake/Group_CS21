@@ -231,6 +231,7 @@
                                     $trainer_id = $row['trainer_id'];
 
                                     $rate = $row['rate'];
+                                    // $rate = (int)$rate;
 
 
                                     $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
@@ -247,7 +248,7 @@
 
                                 ?>
 
-                                    <option value=<?php echo $rate ?>>
+                                    <option value=<?php echo $trainer_id ?> data-trainer=<?php echo $rate ?>>
                                         <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;(⭐<?php echo $review_value / $review_count ?>)</option>
 
 
@@ -276,7 +277,8 @@
                         $(document).ready(function() {
                             $("select#trainer").change(function() {
 
-                                selectedTrainer = $(this).children("option:selected").val();
+                                selectedTrainer = $(this).find('option:selected').data('trainer');
+                                // alert($(this).find(':selected').data('trainerRate'));
                                 selectedTrainer = parseInt(selectedTrainer, 10);
                                 if (temp1 > 0) {
                                     cost = cost - temp1;
