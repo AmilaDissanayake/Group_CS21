@@ -1,6 +1,6 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header('Location: ../member/index.php');
+    header('Location: ../trainer/index.php');
     exit;
 }
