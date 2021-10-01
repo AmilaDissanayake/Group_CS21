@@ -176,11 +176,11 @@ function checkInputs() {
 	// }
 }
 
-if (injValue === '') {
-	setErrorFor(inj, 'Injuries Field cannot be blank,Apply NO if there is no injuries');
-} else {
-	setSuccessFor(inj);
-}
+// if (injValue === '') {
+// 	setErrorFor(inj, 'Injuries Field cannot be blank,Apply NO if there is no injuries');
+// } else {
+// 	setSuccessFor(inj);
+// }
 
 if (emailValue === '') {
 	setErrorFor(email, 'Email cannot be blank');

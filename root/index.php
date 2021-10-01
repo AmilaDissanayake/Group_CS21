@@ -70,13 +70,13 @@
                 <!-- <button class="header_btn2" onclick="location.href='login.html'">LOGIN</button> -->
                 <button class="header_btn2" onclick="myFunction()">LOGIN</button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="">TRAINER</a>
-                    <a href="">MEMBER</a>
+                    <a href="./login/trainer/login.php">TRAINER</a>
+                    <a href="./login/member/index.php">MEMBER</a>
                 </div>
             </div>
 
             <!-- <button class="header_btn2" onclick="location.href='login.html'">LOGIN</button> -->
-            <button class="header_btn" onclick="location.href='signup.html'">SIGN UP</button>
+            <button class="header_btn" onclick="location.href='./signup/index.php'">SIGN UP</button>
 
         </div>
 
