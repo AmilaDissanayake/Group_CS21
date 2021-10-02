@@ -219,7 +219,6 @@ function checkInputs() {
 		isValid = false;
 	} else {
 		setSuccessFor(password1);
-		isValid = true;
 		if(isValid === true){
 			isValid = true;
 		}
