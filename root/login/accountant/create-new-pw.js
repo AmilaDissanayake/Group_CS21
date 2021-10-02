@@ -167,9 +167,11 @@ function passwordChanged() {
 		small.innerHTML = 'More Characters';
 	} else if (verystrongRegex.test(pwd.value)) {
 		small.innerHTML = '<span style="color:#03a5fc">Very Strong!</span>';
+		setSuccessFor(password1);
 	}
 	else if (strongRegex.test(pwd.value)) {
 		small.innerHTML = '<span style="color:#2ecc70">Strong!</span>';
+		setSuccessFor(password1);
 	} else if (mediumRegex.test(pwd.value)) {
 		small.innerHTML = '<span style="color:orange">Medium!</span>';
 	} else {

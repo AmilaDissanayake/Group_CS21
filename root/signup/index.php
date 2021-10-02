@@ -263,7 +263,7 @@
                     </div>
 
                     <div class="remember">
-                        <label><input type="checkbox" name="" id="mycheck" required> I accept the <span>Terms of Use</span> & <span>Privacy
+                        <label><input type="checkbox" name="" id="mycheck" > I accept the <span>Terms of Use</span> & <span>Privacy
                                 Policy</span>.</label>
                         <span class="checkmark"></span>
                     </div>
@@ -274,16 +274,16 @@
                     </div>
 
                     <script>
-                        form.addEventListener("submit", function(e) {
-                            e.preventDefault();
-                            checkInputs();
-                            if (isValid == false) {
-                                e.preventDefault();
-                            } else {
-                                payhere.startPayment(payment);
-                            }
+                        // form.addEventListener("submit", function(e) {
+                        //     e.preventDefault();
+                        //     checkInputs();
+                        //     if (isValid == false) {
+                        //         e.preventDefault();
+                        //     } else {
+                        //         payhere.startPayment(payment);
+                        //     }
 
-                        });
+                        // });
                         var selectedTrainer;
                         var selectedMembership;
                         var cost = 0;
