@@ -1,4 +1,6 @@
-{/* <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script> */ }
+// src="https://www.payhere.lk/lib/payhere.js"
+
+
 const form = document.getElementById('form');
 const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
@@ -60,21 +62,18 @@ var payment = {
 
 var isValid;
 
-form.addEventListener("submit", function (e) {
-	checkInputs();
-	if (!isValid) {
-		e.preventDefault();
-	}
-	// else if(isValid){
-	// 	// payhere.startPayment(payment);
-	// }
+// form.addEventListener("submit", function (e) {
+// 	checkInputs();
+// 	if (!isValid) {
+// 		e.preventDefault();
+// 	}
+// 	else if(isValid){
+// 		payhere.startPayment(payment);
+// 	}
 
-	// else {
-	// 	payhere.startPayment(payment);
-	// }
-	// return true;
 
-});
+
+// });
 
 
 

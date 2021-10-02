@@ -273,17 +273,21 @@
                         <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
                     </div>
 
-                    <script>
-                        // form.addEventListener("submit", function(e) {
-                        //     e.preventDefault();
-                        //     checkInputs();
-                        //     if (isValid == false) {
-                        //         e.preventDefault();
-                        //     } else {
-                        //         payhere.startPayment(payment);
-                        //     }
+                    <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
 
-                        // });
+                    <script>
+                        form.addEventListener("submit", function(e) {
+
+                            checkInputs();
+                            if (isValid == false) {
+                                e.preventDefault();
+                            } else if (isValid == true){
+                                e.preventDefault();
+                                payhere.startPayment(payment);
+
+                            }
+
+                        });
                         var selectedTrainer;
                         var selectedMembership;
                         var cost = 0;
@@ -342,7 +346,7 @@
 
 
                     <div class="signup">
-                        <p>Have an account? <a href="#" class="hover"> Login</a></p>
+                        <p>Have an account? <a href="../login/member/index.php" class="hover"> Login</a></p>
                     </div>
                 </form>
             </div>
