@@ -119,12 +119,9 @@ body{
         width: 33%;
         display: flex;
         justify-content: center;
+        border-right: 2px solid #121317 ;
     }
-    .left .stat .exp{
-        width: 33%;
-        display: flex;
-        justify-content: center;
-    }
+    
 
     .left .stat .exp p , .left .stat .rate p , .left .stat .review-count p{
         text-align: center;
@@ -134,6 +131,7 @@ body{
 
     .left .stat .rate{
         width: 33%;
+        border-right: 2px solid #121317 ;
     }
 
     .left .stat .review-count{

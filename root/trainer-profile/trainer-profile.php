@@ -120,6 +120,7 @@ $qualifies = explode(',', $qualifications);
                 // $query3 = "SELECT f_name , l_name FROM member WHERE review.member_id = member.member_id AND review.review_id = $review_id";
                 $member_query = mysqli_query($conn, $query4);
                 $member_row = mysqli_fetch_assoc($member_query);
+                $member_username = $member_row['username'];
                 $member_f_name = $member_row['f_name'];
                 $member_l_name = $member_row['l_name'];
                 $member_avatar = $member_row['image'];
@@ -131,7 +132,7 @@ $qualifies = explode(',', $qualifications);
                     <div class="member">
                         <div class="member-avatar"> <img src="../media/members/<?php echo $member_avatar ?>"></div>
                         <div class="member-name">
-                            <p><?php echo $member_f_name . " " . $member_l_name ?> ⭐<?php echo $stars ?></p>
+                            <p><?php echo $member_username ?> ⭐<?php echo $stars ?></p>
                         </div>
 
                     </div>
