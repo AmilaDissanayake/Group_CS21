@@ -254,14 +254,14 @@
 
 
                                 <?php } ?>
-                                <option value="0">I don't need a trainer</option>
+                                <option value=0 data-trainer=0>I don't need a trainer</option>
                             </select>
                         </label>
                         <span class="tr"><br>
                             <p> See trainer details<span class="tr_link"><a href="../trainers.php" target="_blank">&nbsphere</a></span> </p>
                         </span>
                     </div>
-                    
+
                     <div class="remember">
                         <label><input type="checkbox" name="" id="mycheck" required> I accept the <span>Terms of Use</span> & <span>Privacy
                                 Policy</span>.</label>
