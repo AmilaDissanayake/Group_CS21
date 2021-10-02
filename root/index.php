@@ -70,7 +70,7 @@
                 <!-- <button class="header_btn2" onclick="location.href='login.html'">LOGIN</button> -->
                 <button class="header_btn2" onclick="myFunction()">LOGIN</button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="./login/trainer/login.php">TRAINER</a>
+                    <a href="./login/trainer/index.php">TRAINER</a>
                     <a href="./login/member/index.php">MEMBER</a>
                 </div>
             </div>

@@ -1,26 +1,12 @@
 
 const form = document.getElementById('form');
-// const fname = document.getElementById('fname');
-// const lname = document.getElementById('lname');
-// const gender = document.getElementById('gender');
-// const mnumber = document.getElementById('mnumber');
-// const dob = document.getElementById('dob');
-// const address = document.getElementById('address');
-// const inj = document.getElementById('inj');
-// const email = document.getElementById('email');
-// const username = document.getElementById('username');
+
 const password1 = document.getElementById('password1');
 const password2 = document.getElementById('password2');
-// const trainer = document.getElementById('trainer');
 
 
-// password1.addEventListener('input', function() {
 
-// 	// clearTimeout(timeout);
 
-// 	// timeout = setTimeout(() => isPassword(password1.value), 600);
-
-// });
 
 var isValid;
 
@@ -29,7 +15,7 @@ form.addEventListener("submit", function(e) {
 	if(!isValid){
 		e.preventDefault();
 	}	
-	// return true;
+
 
 });
 
@@ -37,94 +23,10 @@ function checkInputs() {
 
 	// trim to remove the whitespaces
 
-	// const fnameValue = fname.value.trim();
-	// const lnameValue = lname.value.trim();
-	// const genderValue = gender.value.trim();
-	// const mnumberValue = mnumber.value.trim();
-	// const dobValue = dob.value.trim();
-	// const addressValue = address.value.trim();
-	// const injValue = inj.value.trim();
-	// const emailValue = email.value.trim();
-	// const usernameValue = username.value.trim();
+
 	const password1Value = password1.value.trim();
 	const password2Value = password2.value.trim();
-	// const trainerValue = trainer.value.trim();
 
-
-	// if (fnameValue === '') {
-	// 	setErrorFor(fname, 'First name cannot be blank');
-	// }
-	// else if (isnotvalid(fnameValue)) {
-	// 	setErrorFor(fname, 'Invalid Input');
-	// }
-
-
-	// else {
-	// 	setSuccessFor(fname);
-	// }
-
-	// if (lnameValue === '') {
-	// 	setErrorFor(lname, 'Last name cannot be blank');
-	// } else if (isnotvalid(lnameValue)) {
-	// 	setErrorFor(lname, 'Invalid Input');
-	// }
-	// else {
-	// 	setSuccessFor(lname);
-	// }
-
-	// if (genderValue === ' Gender ') {
-	// 	setErrorFor(gender, 'Select a gender');
-	// } else {
-	// 	setSuccessFor(gender);
-	// }
-
-	// if (mnumberValue === '') {
-	// 	setErrorFor(mnumber, 'Mobile No. cannot be blank');
-	// } else if (isnotvalidnum(mnumberValue)) {
-	// 	setErrorFor(mnumber, 'Invalid Input');
-	// }
-	// else if (!isValidlen(mnumberValue)) {
-	// 	setErrorFor(mnumber, 'Phone no. length is Invalid');
-	// }
-	// else {
-	// 	setSuccessFor(mnumber);
-	// }
-
-	// if (genderValue === ' Gender ') {
-	// 	setErrorFor(gender, 'Select a gender');
-	// } else {
-	// 	setSuccessFor(gender);
-	// }
-
-	// if (addressValue === '') {
-	// 	setErrorFor(address, 'Address cannot be blank');
-	// } else {
-	// 	setSuccessFor(address);
-	// }
-
-	// if (injValue === '') {
-	// 	setErrorFor(inj, 'Injuries Field cannot be blank,Apply NO if there is no injuries');
-	// } else {
-	// 	setSuccessFor(inj);
-	// }
-
-	// if (emailValue === '') {
-	// 	setErrorFor(email, 'Email cannot be blank');
-	// } else if (!isEmail(emailValue)) {
-	// 	setErrorFor(email, 'Not a valid email');
-	// } else {
-	// 	setSuccessFor(email);
-	// }
-
-	// if (usernameValue === '') {
-	// 	setErrorFor(username, 'Username cannot be blank');
-	// }
-	// else if (!isusername(usernameValue)) {
-	// 	setErrorFor(username, 'User Name is Too Short');
-	// }
-	// else {
-	// 	setSuccessFor(username);
-	// }
 
 	if (password1Value === '') {
 		setErrorFor(password1, 'Password cannot be blank');
@@ -163,74 +65,16 @@ function checkInputs() {
 		isValid = true;
 	}
 
-	// if (genderValue === ' Gender ') {
-	// 	setErrorFor(gender, 'Select a gender');
-	// } else {
-	// 	setSuccessFor(gender);
-	// }
+
 }
 
-// if (injValue === '') {
-// 	setErrorFor(inj, 'Injuries Field cannot be blank,Apply NO if there is no injuries');
-// } else {
-// 	setSuccessFor(inj);
-// }
-
-// if (emailValue === '') {
-// 	setErrorFor(email, 'Email cannot be blank');
-// } else if (!isEmail(emailValue)) {
-// 	setErrorFor(email, 'Not a valid email');
-// } else {
-// 	setSuccessFor(email);
-// }
-
-// if (usernameValue === '') {
-// 	setErrorFor(username, 'Username cannot be blank');
-// }
-// else if (!isusername(usernameValue)) {
-// 	setErrorFor(username, 'User Name is Too Short');
-// }
-// else {
-// 	setSuccessFor(username);
-// }
-
-// if (password1Value === '') {
-// 	setErrorFor(password1, 'Password cannot be blank');
-// } else if (!pwlength(password1Value)) {
-// 	setErrorFor(password1, 'Too short!Need at least 8');
-// } else if (!pwlength4(password1Value)) {
-// 	setErrorFor(password1, 'Uppercase Letters must be included');
-// } else if (!pwlength3(password1Value)) {
-// 	setErrorFor(password1, 'Lowercase Letters must be included');
-// } else if (!pwlength2(password1Value)) {
-// 	setErrorFor(password1, 'Numbers must be included');
-// } else if (!pwlength1(password1Value)) {
-// 	setErrorFor(password1, 'Symbols must be included');
-// } else {
-// 	setSuccessFor(password1);
-// }
-
-// if (password2Value === '') {
-// 	setErrorFor(password2, 'Confirm Password cannot be blank');
-// } else {
-// 	setSuccessFor(password2);
-// }
-
-// if (genderValue === ' Gender ') {
-// 	setErrorFor(gender, 'Select a gender');
-// } else {
-// 	setSuccessFor(gender);
-// }
 
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
 	const small = formControl.querySelector('small');
-	// if (input === inj) {
-	// 	formControl.className = 'inj__div error';
-	// 	small.innerText = message;
 
-		formControl.className = 'form__div error';
-		small.innerText = message;
+	formControl.className = 'form__div error';
+	small.innerText = message;
 
 }
 
@@ -240,40 +84,7 @@ function setSuccessFor(input) {
 	formControl.className = 'form__div success';
 }
 
-// function isEmail(email) {
-// 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-// }
 
-// function isnotvalid(name) {
-// 	let invalidn = new RegExp('(?=.*[0-9])')
-// 	if (invalidn.test(name)) {
-// 		return true;
-// 	}
-// 	return false;
-// }
-
-// function isnotvalidnum(mnumber) {
-// 	let invalid = new RegExp('(?=.*[a-z])|(?=.*[A-Z])')
-// 	if (invalid.test(mnumber)) {
-// 		return true;
-// 	}
-// 	return false;
-// }
-// function isValidlen(mnumber) {
-// 	let validnum = new RegExp("^[0-9]{10}$")
-// 	if (validnum.test(mnumber)) {
-// 		return true;
-// 	}
-// 	return false;
-// }
-
-// function isusername(username) {
-// 	let invalidu = new RegExp('(?=.{6,})')
-// 	if (invalidu.test(username)) {
-// 		return true;
-// 	}
-// 	return false;
-// }
 
 function pwlength(password) {
 	let validp = new RegExp('(?=.{8,})')
@@ -356,9 +167,11 @@ function passwordChanged() {
 		small.innerHTML = 'More Characters';
 	} else if (verystrongRegex.test(pwd.value)) {
 		small.innerHTML = '<span style="color:#03a5fc">Very Strong!</span>';
+		setSuccessFor(password1);
 	}
 	else if (strongRegex.test(pwd.value)) {
 		small.innerHTML = '<span style="color:#2ecc70">Strong!</span>';
+		setSuccessFor(password1);
 	} else if (mediumRegex.test(pwd.value)) {
 		small.innerHTML = '<span style="color:orange">Medium!</span>';
 	} else {

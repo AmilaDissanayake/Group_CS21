@@ -263,7 +263,7 @@
                     </div>
 
                     <div class="remember">
-                        <label><input type="checkbox" name="" id="mycheck" required> I accept the <span>Terms of Use</span> & <span>Privacy
+                        <label><input type="checkbox" name="" id="mycheck" > I accept the <span>Terms of Use</span> & <span>Privacy
                                 Policy</span>.</label>
                         <span class="checkmark"></span>
                     </div>
@@ -273,14 +273,18 @@
                         <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
                     </div>
 
+                    <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+
                     <script>
                         form.addEventListener("submit", function(e) {
-                            e.preventDefault();
+
                             checkInputs();
                             if (isValid == false) {
                                 e.preventDefault();
-                            } else {
+                            } else if (isValid == true){
+                                e.preventDefault();
                                 payhere.startPayment(payment);
+
                             }
 
                         });
@@ -342,7 +346,7 @@
 
 
                     <div class="signup">
-                        <p>Have an account? <a href="#" class="hover"> Login</a></p>
+                        <p>Have an account? <a href="../login/member/index.php" class="hover"> Login</a></p>
                     </div>
                 </form>
             </div>
