@@ -175,6 +175,14 @@
                             <small>Error message</small>
                         </div>
                     </div>
+
+                    <!-- <input type="checkbox" onclick="myunction()">Show Password -->
+
+                    <label class="container">Show Password
+                        <input type="checkbox" onclick="myunction()">
+                        <span class="checkmark"></span>
+                    </label>
+
                     <div class="select__div">
 
 
@@ -265,8 +273,12 @@
                     </div>
 
                     <div class="remember">
-                        <label><input type="checkbox" name="" id="mycheck"> I accept the <span>Terms of Use</span> & <span>Privacy
-                                Policy</span>.</label>
+                        <label class="container"> I accept the <span>Terms of Use</span> & <span>Privacy
+                                Policy</span>.
+                            <input type="checkbox" id="mycheck">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label></label>
                         <span class="checkmark"></span>
                     </div>
 
@@ -280,6 +292,20 @@
                     <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
 
                     <script>
+                        function myunction() {
+                            var x = document.getElementById("password1");
+                            var y = document.getElementById("password2");
+                            if (x.type === "password") {
+                                x.type = "text";
+                            } else {
+                                x.type = "password";
+                            }
+                            if (y.type === "password") {
+                                y.type = "text";
+                            } else {
+                                y.type = "password";
+                            }
+                        }
                         var selectedTrainer;
                         var selectedMembership;
                         var cost = 0;

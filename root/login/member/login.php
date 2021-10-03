@@ -13,16 +13,15 @@ if (isset($_POST['submit'])) {
         $sql_query = "SELECT password FROM member WHERE username='" . $username . "' OR email='" . $username . "'";
         $result = mysqli_query($conn, $sql_query);
         $row = mysqli_fetch_array($result);
-        $password_hash=$row['password'];
+        $password_hash = $row['password'];
 
-        $verify = password_verify($password,$password_hash);
+        $verify = password_verify($password, $password_hash);
 
-        if($verify){
+        if ($verify) {
             $_SESSION['username'] = $username;
             header('Location: ../../member/dashboard.php');
-        }
-        else{
-            $_SESSION['error'] = "Incorrect Username or Password.";
+        } else {
+            $_SESSION['notification'] = "Incorrect Username or Password.";
             header('Location: index.php');
         }
     }

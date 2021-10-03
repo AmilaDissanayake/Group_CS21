@@ -1,6 +1,6 @@
-<?php session_start(); 
+<?php session_start();
 
-if(isset($SESSION['username'])){
+if (isset($SESSION['username'])) {
     header('Location: ../../member/dashboard.php');
 }
 ?>
@@ -84,7 +84,7 @@ if(isset($SESSION['username'])){
                             setTimeout(function bb() {
                                 $('.alert').removeClass("show");
                                 $('.alert').addClass("hide");
-                            }, 5000);
+                            }, 4000);
                         };
                         $('.close-btn').click(function ss() {
                             $('.alert').removeClass("show");
