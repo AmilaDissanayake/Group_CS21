@@ -48,7 +48,7 @@
 
                     <div class="name">
                         <div class="form__div">
-                            <input type="text" class="name_input" id="fname" placeholder=" " name="f_name">
+                            <input type="text" class="name_input" id="fname" placeholder=" " name="f_name_cc">
                             <label for="" class="form__label">First Name</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -58,7 +58,7 @@
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="name_input" id="lname" placeholder=" " name="l_name">
+                            <input type="text" class="name_input" id="lname" placeholder=" " name="l_name_cc">
                             <label for="" class="form__label">Last Name</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -71,7 +71,7 @@
                     <div class="name">
                         <div class="select__div">
                             <label>
-                                <select class="form_input" id="gender" required name="gender">
+                                <select class="form_input" id="gender" required name="gender_cc">
                                     <option value="" disabled selected> Gender </option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
@@ -85,7 +85,7 @@
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="name_input2" id="mnumber" placeholder=" " name="phone_no">
+                            <input type="text" class="name_input2" id="mnumber" placeholder=" " name="phone_no_cc">
                             <label for="" class="form__label">Mobile Number</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -97,7 +97,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" " name="dob">
+                        <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" " name="dob_cc">
                         <label for="" class="form__label">Date Of Birth</label>
                         <!-- <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i> -->
@@ -105,7 +105,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="text" class="form__input" id="address" placeholder=" " name="address">
+                        <input type="text" class="form__input" id="address" placeholder=" " name="address_cc">
                         <label for="" class="form__label">Address</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -115,7 +115,7 @@
                         <small>Error message</small>
                     </div>
                     <div class="inj__div">
-                        <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries"></textarea>
+                        <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries_cc"></textarea>
                         <label for="" class="form__label">If you have any injury mention here...</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -137,7 +137,7 @@
 
 
                     <div class="form__div">
-                        <input type="text" class="form__input" id="email" placeholder=" " name="email">
+                        <input type="text" class="form__input" id="email" placeholder=" " name="email_cc">
                         <label for="" class="form__label">Email</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -147,7 +147,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="text" class="form__input" id="username" placeholder=" " name="username">
+                        <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
                         <label for="" class="form__label">Username</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="name">
                         <div class="form__div">
-                            <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();" name="password">
+                            <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();" name="password_cc">
                             <label for="" class="form__label">Password</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -179,7 +179,7 @@
 
 
                         <label>
-                            <select id="membership" class="form_input" required name="membership">
+                            <select id="membership" class="form_input" required name="membership_cc">
                                 <option value="" disabled selected> Select Your Membership </option>
                                 <option value=2500> One Month
                                 </option>
@@ -217,7 +217,7 @@
 
 
                         <label>
-                            <select id="trainer" class="form_input" required name="trainer">
+                            <select id="trainer" class="form_input" required name="trainer_cc">
                                 <option value="" disabled selected> Select Your Trainer </option>
                                 <?php
 
