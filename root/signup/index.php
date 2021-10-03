@@ -189,13 +189,13 @@
                         <label>
                             <select id="membership" class="form_input" required name="membership_cc">
                                 <option value="" disabled selected> Select Your Membership </option>
-                                <option value=2500> One Month
+                                <option value=2500> One Month 2500/=
                                 </option>
-                                <option value=7000> Three Months
+                                <option value=7000> Three Months 7000/=
                                 </option>
-                                <option value=13500> Six Months
+                                <option value=13500> Six Months 13500/=
                                 </option>
-                                <option value=20000> One Year
+                                <option value=20000> One Year 20000/=
                                 </option>
 
 
