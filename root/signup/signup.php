@@ -26,11 +26,14 @@ if ($trainer_bb > 0) {
     $assign_trainer_bb = 0;
 }
 
-$query = 'INSERT INTO member ' .
-    "('f_name','l_name') " .
-    "VALUES ( '$f_name_bb', '$f_name_bb')";
+// echo 'trainer check done';
+
+$query = "INSERT INTO member (f_name, l_name, gender, phone_no, dob, address, injuries, email, username, password, assign_trainer ) VALUES ('$f_name_bb', '$l_name_bb', '$gender_bb', '$phone_no_bb', '$dob_bb', '$address_bb', '$injuries_bb', '$email_bb', '$username_bb', '$password_bb', '$assign_trainer_bb');";
+// echo 'query check done';
 
 $result = mysqli_query($conn, $query);
+
+// echo $result;
 
 if ($result) {
     echo 'done';
