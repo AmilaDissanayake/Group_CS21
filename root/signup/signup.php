@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require "includes/db.php";
 
 
@@ -17,6 +19,7 @@ $username_bb = filter_var($_POST['username_cc'], FILTER_SANITIZE_STRING);
 $password_bb = password_hash($_POST['password_cc'], PASSWORD_DEFAULT);
 $membership_bb = $_POST['membership_cc'];
 $trainer_bb = $_POST['trainer_cc'];
+$amount = $_COOKIE['amount'];
 
 
 
@@ -26,18 +29,52 @@ if ($trainer_bb > 0) {
     $assign_trainer_bb = 0;
 }
 
+$membership_type;
+
+switch ($membership_bb) {
+    case 2500:
+        $membership_type = 1;
+        break;
+
+    case 7000:
+        $membership_type = 3;
+        break;
+
+    case 13500:
+        $membership_type = 6;
+        break;
+
+    case 20000:
+        $membership_type = 12;
+        break;
+}
+
 // echo 'trainer check done';
 
-$query = "INSERT INTO member (f_name, l_name, gender, phone_no, dob, address, injuries, email, username, password, assign_trainer ) VALUES ('$f_name_bb', '$l_name_bb', '$gender_bb', '$phone_no_bb', '$dob_bb', '$address_bb', '$injuries_bb', '$email_bb', '$username_bb', '$password_bb', '$assign_trainer_bb');";
+$member_insert = "INSERT INTO member (f_name, l_name, gender, phone_no, dob, address, injuries, email, username, password, assign_trainer ) VALUES ('$f_name_bb', '$l_name_bb', '$gender_bb', '$phone_no_bb', '$dob_bb', '$address_bb', '$injuries_bb', '$email_bb', '$username_bb', '$password_bb', '$assign_trainer_bb');";
 // echo 'query check done';
 
-$result = mysqli_query($conn, $query);
+$result1 = mysqli_query($conn, $member_insert);
+
+$member_select = "SELECT member_id FROM member WHERE username = '$username_bb'";
+
+$result2 = mysqli_query($conn, $member_select);
+$row2 = mysqli_fetch_array($result2);
+$member_id = $row2['member_id'];
+
+$payment_insert = "INSERT INTO payment (member_id, payment_amount, trainer_id, payment_type) VALUES('$member_id', '$amount', '$trainer_bb', 'online');";
+
+$result3 = mysqli_query($conn, $payment_insert);
+
+$membership_insert = "INSERT INTO membership (member_id, membership_type) VALUES('$member_id', '$membership_type');";
+$result4 = mysqli_query($conn, $membership_insert);
 
 // echo $result;
 
-if ($result) {
-    echo 'done';
+if ($result1 && $result2 && $result3 && $result4) {
+    $_SESSION['notification'] = "Account successfully created";
+    header("Location: ../login/member/index.php");
+    echo "done";
 } else {
-    echo "not";
-    die(mysqli_error($conn));
+    header("Location: index.php");
 }

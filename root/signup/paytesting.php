@@ -105,4 +105,31 @@
     document.getElementById('payhere-payment').onclick = function(e) {
         payhere.startPayment(payment);
     };
+
+    var vell = 10;
+
+    let username = 'Max Brown';
+
+    // Set a Cookie
+    function setCookie(cName, cValue, expDays) {
+        let date = new Date();
+        date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+    }
+
+    // Apply setCookie
+    setCookie('username', username, 30);
+    // document.cookie = ''
+    // profile_viewer_uid ' = vell;
 </script>
+
+<?php
+
+
+$profile_viewer_uid = $_COOKIE['username'];
+echo $profile_viewer_uid;
+
+
+
+?>

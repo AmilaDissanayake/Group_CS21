@@ -252,7 +252,7 @@
                                 ?>
 
                                     <option value=<?php echo $trainer_id ?> data-trainer=<?php echo $rate ?>>
-                                        <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;(⭐<?php echo $review_value / $review_count ?>)</option>
+                                        <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count ?></option>
 
 
                                 <?php } ?>
@@ -396,6 +396,16 @@
 
                             var finalcost = selectedMembership + selectedTrainer;
                             finalcost2 = finalcost.toString();
+
+                            function setCookie(cName, cValue) {
+                                // let date = new Date();
+                                // date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+                                // const expires = "expires=" + date.toUTCString();
+                                document.cookie = cName + "=" + cValue;
+                            }
+
+                            // Apply setCookie
+                            setCookie('amount', finalcost2);
                             // alert(finalcost2);
                             // alert(typeof(finalcost2));
 
@@ -439,8 +449,8 @@
                             if (result == true) {
                                 // e.preventDefault();
                                 calctotal();
-                                // payhere.startPayment(payment);
-                                document.getElementById("signup_form").submit();
+                                payhere.startPayment(payment);
+                                // document.getElementById("signup_form").submit();
 
 
 
