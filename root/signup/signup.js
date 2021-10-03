@@ -1,66 +1,12 @@
 // src="https://www.payhere.lk/lib/payhere.js"
 
 
-const form = document.getElementById('form');
-const fname = document.getElementById('fname');
-const lname = document.getElementById('lname');
-// const gender = document.getElementById('gender');
-const mnumber = document.getElementById('mnumber');
-// const dob = document.getElementById('dob');
-const address = document.getElementById('address');
-// const inj = document.getElementById('inj');
-const email = document.getElementById('email');
-const username = document.getElementById('username');
-const password1 = document.getElementById('password1');
-const password2 = document.getElementById('password2');
-const checkbox1 = document.getElementById('mycheck');
+
 // const trainer = document.getElementById('trainer');
 
-payhere.onCompleted = function onCompleted(orderId) {
-	// document.getElementById("form").submit();
-	alert("Payment complete");
-	console.log("Payment completed");
-	//Note: validate the payment and show success or failure page to the customer
-};
 
-// Called when user closes the payment without completing
-payhere.onDismissed = function onDismissed() {
-	//Note: Prompt user to pay again or show an error page
-	console.log("Payment dismissed");
-};
 
-// Called when error happens when initializing payment such as invalid parameters
-payhere.onError = function onError(error) {
-	// Note: show an error page
-	console.log("Error:" + error);
-};
 
-//Put the payment variables here
-var payment = {
-	"sandbox": true,
-	"merchant_id": "1218759", // Replace your Merchant ID
-	"return_url": undefined, // Important
-	"cancel_url": undefined, // Important
-	"notify_url": "http://sample.com/notify",
-	"order_id": "ItemNo12345",
-	"items": "Door bell wireles",
-	"amount": "1000.00",
-	"currency": "LKR",
-	"first_name": "Saman",
-	"last_name": "Perera",
-	"email": "samanp@gmail.com",
-	"phone": "0771234567",
-	"address": "No.1, Galle Road",
-	"city": "Colombo",
-	"country": "Sri Lanka",
-	"delivery_address": "No. 46, Galle road, Kalutara South",
-	"delivery_city": "Kalutara",
-	"delivery_country": "Sri Lanka",
-	"custom_1": "",
-	"custom_2": ""
-};
-
-var isValid;
 
 // form.addEventListener("submit", function (e) {
 // 	checkInputs();
@@ -79,6 +25,31 @@ var isValid;
 
 
 function checkInputs() {
+	var isValid = false;
+	var fnameValid = false;
+	var lnameValid = false;
+	var mobileValid = false;
+	var addressValid = false;
+	var emailValid = false;
+	var usernameValid = false;
+	var pwd1Valid = false;
+	var pwd2Valid = false;
+	var checkBoxValid = false;
+
+
+	const form = document.getElementById('form');
+	const fname = document.getElementById('fname');
+	const lname = document.getElementById('lname');
+	// const gender = document.getElementById('gender');
+	const mnumber = document.getElementById('mnumber');
+	// const dob = document.getElementById('dob');
+	const address = document.getElementById('address');
+	// const inj = document.getElementById('inj');
+	const email = document.getElementById('email');
+	const username = document.getElementById('username');
+	const password1 = document.getElementById('password1');
+	const password2 = document.getElementById('password2');
+	const checkbox1 = document.getElementById('mycheck');
 
 	// trim to remove the whitespaces
 
@@ -98,29 +69,29 @@ function checkInputs() {
 
 	if (fnameValue === '') {
 		setErrorFor(fname, 'First name cannot be blank');
-		isValid = false;
+		fnameValid = false;
 	}
 	else if (isnotvalid(fnameValue)) {
 		setErrorFor(fname, 'Invalid Input');
-		isValid = false;
+		fnameValid = false;
 	}
 	else {
 		setSuccessFor(fname);
-		isValid = true;
+		fnameValid = true;
 	}
 
 	if (lnameValue === '') {
 		setErrorFor(lname, 'Last name cannot be blank');
-		isValid = false;
+		lnameValid = false;
 	} else if (isnotvalid(lnameValue)) {
 		setErrorFor(lname, 'Invalid Input');
-		isValid = false;
-	}else {
+		lnameValid = false;
+	} else {
 		setSuccessFor(lname);
-		if(isValid === true){
-			isValid = true;
-		}
-		
+
+		lnameValid = true;
+
+
 	}
 
 	// if (genderValue === ' Gender ') {
@@ -131,19 +102,19 @@ function checkInputs() {
 
 	if (mnumberValue === '') {
 		setErrorFor(mnumber, 'Mobile No. cannot be blank');
-		isValid = false;
+		mobileValid = false;
 	} else if (isnotvalidnum(mnumberValue)) {
 		setErrorFor(mnumber, 'Invalid Input');
-		isValid = false;
+		mobileValid = false;
 	}
 	else if (!isValidlen(mnumberValue)) {
 		setErrorFor(mnumber, 'Phone no. length is Invalid');
-		isValid = false;
-	}else {
+		mobileValid = false;
+	} else {
 		setSuccessFor(mnumber);
-		if(isValid === true){
-			isValid = true;
-		}
+
+		mobileValid = true;
+
 
 	}
 
@@ -155,13 +126,13 @@ function checkInputs() {
 
 	if (addressValue === '') {
 		setErrorFor(address, 'Address cannot be blank');
-		isValid = false;
+		addressValid = false;
 	} else {
 		setSuccessFor(address);
-		isValid = true;
-		if(isValid === true){
-			isValid = true;
-		}
+		addressValid = true;
+
+		addressValid = true;
+
 	}
 
 	// if (injValue === '') {
@@ -174,82 +145,85 @@ function checkInputs() {
 
 	if (emailValue === '') {
 		setErrorFor(email, 'Email cannot be blank');
-		isValid = false;
+		emailValid = false;
 	} else if (!isEmail(emailValue)) {
 		setErrorFor(email, 'Not a valid email');
-		isValid = false;
+		emailValid = false;
 	} else {
 		setSuccessFor(email);
-		isValid = true;
-		if(isValid === true){
-			isValid = true;
-		}
+		emailValid = true;
+
+		emailValid = true;
+
 	}
 
 	if (usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
-		isValid = false;
-	}else if (!isusername(usernameValue)) {
+		usernameValid = false;
+	} else if (!isusername(usernameValue)) {
 		setErrorFor(username, 'User Name is Too Short');
-		isValid = false;
-	}else {
+		usernameValid = false;
+	} else {
 		setSuccessFor(username);
-		if(isValid === true){
-			isValid = true;
-		}
+
+		usernameValid = true;
+
 	}
 
 	if (password1Value === '') {
 		setErrorFor(password1, 'Password cannot be blank');
-		isValid = false;
+		pwd1Valid = false;
 	} else if (!pwlength(password1Value)) {
 		setErrorFor(password1, 'Too short!Need at least 8');
-		isValid = false;
+		pwd1Valid = false;
 	} else if (!pwlength4(password1Value)) {
 		setErrorFor(password1, 'Uppercase Letters must be included');
-		isValid = false;
+		pwd1Valid = false;
 	} else if (!pwlength3(password1Value)) {
 		setErrorFor(password1, 'Lowercase Letters must be included');
-		isValid = false;
+		pwd1Valid = false;
 	} else if (!pwlength2(password1Value)) {
 		setErrorFor(password1, 'Numbers must be included');
-		isValid = false;
+		pwd1Valid = false;
 	} else if (!pwlength1(password1Value)) {
 		setErrorFor(password1, 'Symbols must be included');
-		isValid = false;
+		pwd1Valid = false;
 	} else {
 		setSuccessFor(password1);
-		if(isValid === true){
-			isValid = true;
-		}
+		pwd1Valid = true;
+
 	}
 
 	if (password2Value === '') {
 		setErrorFor(password2, 'Confirm Password cannot be blank');
-		isValid = false;
+		pwd2Valid = false;
 	} else if (!pwlength(password2Value)) {
 		setErrorFor(password2, 'Selected Password is not Strong enough');
-		isValid = false;	
-	}else if (password2Value !== password1Value) {
+		pwd2Valid = false;
+	} else if (password2Value !== password1Value) {
 		setErrorFor(password2, 'Re-Entered Password is wrong');
-		isValid = false;
+		pwd2Valid = false;
 	} else {
 		setSuccessFor(password2);
-		if(isValid === true){
-			isValid = true;
-		}
+
+		pwd2Valid = true;
+
 	}
 
-	checkbox1.setAttribute("required","");
+	checkbox1.setAttribute("required", "");
 
-	if(checkbox1.checked != true){
-		isValid = false;
-	}else{
-		if(isValid === true){
-			isValid = true;
-		}
-		
+	if (checkbox1.checked != true) {
+		checkBoxValid = false;
+	} else {
+
+		checkBoxValid = true;
+
+
 	}
+
+	console.log(lnameValid);
+
+	return (fnameValid && lnameValid && mobileValid && addressValid && emailValid && usernameValid && pwd1Valid && pwd2Valid && checkBoxValid);
 
 }
 
@@ -404,3 +378,5 @@ function passwordChanged() {
 		small.innerHTML = '<span style="color:red">Weak!';
 	}
 }
+
+

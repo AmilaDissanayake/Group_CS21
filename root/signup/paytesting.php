@@ -72,6 +72,10 @@
         console.log("Error:" + error);
     };
 
+    var cc = 40
+
+    var bb = cc.toString();
+
     // Put the payment variables here
     var payment = {
         "sandbox": true,
@@ -81,7 +85,7 @@
         "notify_url": "http://sample.com/notify",
         "order_id": "ItemNo12345",
         "items": "Door bell wireles",
-        "amount": "1000.00",
+        "amount": bb,
         "currency": "LKR",
         "first_name": "Saman",
         "last_name": "Perera",

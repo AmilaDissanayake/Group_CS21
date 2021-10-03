@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="signup.js"></script>
     <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+
 
 </head>
 
@@ -35,7 +37,7 @@
         </div>
         <div class="login">
             <div class="l-form">
-                <form action="signup.php" class="form" id="form" method="POST">
+                <form action="signup.php" class="form" id="signup_form" method="POST">
                     <h1 class="form__title">SIGN UP</h1>
 
                     <div class="separator">
@@ -263,12 +265,14 @@
                     </div>
 
                     <div class="remember">
-                        <label><input type="checkbox" name="" id="mycheck" > I accept the <span>Terms of Use</span> & <span>Privacy
+                        <label><input type="checkbox" name="" id="mycheck"> I accept the <span>Terms of Use</span> & <span>Privacy
                                 Policy</span>.</label>
                         <span class="checkmark"></span>
                     </div>
 
-                    <div class="buttondiv"><input type="submit" class="form__button" value="SIGN UP" name="submit" id="submit"></div>
+                    <div class="buttondiv"><input type="button" class="form__button" value="SIGN UP" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+
+
                     <div class="payhere">
                         <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
                     </div>
@@ -276,18 +280,6 @@
                     <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
 
                     <script>
-                        form.addEventListener("submit", function(e) {
-
-                            checkInputs();
-                            if (isValid == false) {
-                                e.preventDefault();
-                            } else if (isValid == true){
-                                e.preventDefault();
-                                payhere.startPayment(payment);
-
-                            }
-
-                        });
                         var selectedTrainer;
                         var selectedMembership;
                         var cost = 0;
@@ -307,12 +299,17 @@
                                     cost = cost + selectedTrainer;
                                 }
 
+
                                 // alert("You have selected the country - " + selectedCountry);
 
                                 // button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
                                 temp1 = selectedTrainer;
 
                                 button.val("SIGN UP & PAY" + " " + cost + "/=");
+
+
+
+
 
                             });
 
@@ -332,6 +329,10 @@
                                 }
                                 temp2 = selectedMembership;
                                 button.val("SIGN UP & PAY" + " " + cost + "/=");
+                                // selectedTrainer2 = $("#trainer").find('option:selected').data('trainer');
+                                // selectedMembership2 = $("#membership option:selected").val();
+                                // alert(selectedTrainer2);
+                                // alert(selectedMembership2);
                                 // cost = cost - selectedMembership;
                                 // alert("You have selected the country - " + selectedCountry);
 
@@ -340,6 +341,126 @@
 
 
                         });
+
+
+
+
+
+
+                        payhere.onCompleted = function onCompleted(orderId) {
+                            document.getElementById("signup_form").submit();
+                            // document.getElementById("form").submit();
+                            // alert("Payment complete");
+                            // console.log("Payment completed");
+
+                            //Note: validate the payment and show success or failure page to the customer
+                        };
+
+                        // Called when user closes the payment without completing
+                        payhere.onDismissed = function onDismissed() {
+                            //Note: Prompt user to pay again or show an error page
+                            console.log("Payment dismissed");
+                        };
+
+                        // Called when error happens when initializing payment such as invalid parameters
+                        payhere.onError = function onError(error) {
+                            // Note: show an error page
+                            console.log("Error:" + error);
+                        };
+                        // cost = Number(cost);
+                        // var bb = cost;
+
+                        // fcost = cost.toString();
+                        // fcost = cost.toString();
+                        // alert(typeof(fcost));
+
+
+
+                        // alert(selectedMembership2 + selectedTrainer2);
+
+                        var finalcost2 = "200";
+                        var payment;
+
+                        function calctotal() {
+
+                            var fname1 = document.getElementById('fname').value;
+                            var lname1 = document.getElementById('lname').value;
+                            // const gender = document.getElementById('gender').value;
+                            var mnumber1 = document.getElementById('mnumber').value;
+                            // const dob = document.getElementById('dob');
+                            var address1 = document.getElementById('address').value;
+                            // const inj = document.getElementById('inj');
+                            var email1 = document.getElementById('email').value;
+                            var membership1 = document.getElementById('membership').value;
+                            var trainer1 = document.getElementById('trainer').value;
+
+                            var finalcost = selectedMembership + selectedTrainer;
+                            finalcost2 = finalcost.toString();
+                            // alert(finalcost2);
+                            // alert(typeof(finalcost2));
+
+                            payment = {
+                                "sandbox": true,
+                                "merchant_id": "1218759", // Replace your Merchant ID
+                                "return_url": undefined, // Important
+                                "cancel_url": undefined, // Important
+                                "notify_url": "http://sample.com/notify",
+                                "order_id": "ItemNo12345",
+                                "items": membership1 + trainer1,
+                                "amount": finalcost2,
+                                "currency": "LKR",
+                                "first_name": fname1,
+                                "last_name": lname1,
+                                "email": email1,
+                                "phone": mnumber1,
+                                "address": address1,
+                                "city": "Mirigama",
+                                "country": "Sri Lanka",
+
+                            };
+
+                        }
+
+
+                        //Put the payment variables here
+
+                        // alert(finalcost2);
+                        // alert(typeof(finalcost2));
+
+
+                        // var cc = "gtgtgtgt";
+
+                        // payment["amount"] = cc;
+                        // payment["items"] = fname1;
+
+                        function submitFunction() {
+                            var result = checkInputs();
+
+                            if (result == true) {
+                                // e.preventDefault();
+                                calctotal();
+                                // payhere.startPayment(payment);
+                                document.getElementById("signup_form").submit();
+
+
+
+
+                                // }
+                            }
+                        }
+
+                        // form.addEventListener("submit", function(e) {
+
+                        //     checkInputs();
+                        //     if (isValid == false) {
+                        //         e.preventDefault();
+                        //     } else if (isValid == true) {
+                        //         e.preventDefault();
+                        //         payhere.startPayment(payment);
+
+                        //     }
+
+                        // });
                     </script>
 
 
@@ -348,12 +469,12 @@
                     <div class="signup">
                         <p>Have an account? <a href="../login/member/index.php" class="hover"> Login</a></p>
                     </div>
-                </form>
+
             </div>
         </div>
     </section>
 
-    <script type="text/javascript" src="signup.js"></script>
+
 
 </body>
 
