@@ -228,6 +228,7 @@ section .login {
 
 .form__div.error small{
     visibility: visible;
+    font-family: 'Rubik';
 }
 
 .form__input{
@@ -321,11 +322,12 @@ section .login {
     font-size: 15px;
     color: #80868B;
     font-family: 'Rubik', sans-serif;
+    float: left;
     
 }
 
 .remember a{
-    float: right;
+    float: left;
     margin-bottom: 20px;
     font-family: 'Rubik', sans-serif;
     
@@ -525,18 +527,7 @@ section .login {
 }
 
 
-.err{
-    padding: 8px 16px;
-    font-size: 25px;
-    font-weight: 500;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    background: #141517;
-    color: white;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
+
 
 
 

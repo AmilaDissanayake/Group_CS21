@@ -228,6 +228,7 @@ section .login {
 
 .form__div.error small{
     visibility: visible;
+    font-family: 'Rubik';
 }
 
 .form__input{
@@ -325,7 +326,7 @@ section .login {
 }
 
 .remember a{
-    float: right;
+    float: left;
     margin-bottom: 20px;
     font-family: 'Rubik', sans-serif;
     

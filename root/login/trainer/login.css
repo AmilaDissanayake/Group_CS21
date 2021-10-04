@@ -51,6 +51,9 @@ section .img .head {
     font-size: 50px;
     font-weight: bold;
     font-family: 'Anurati';
+    background: -webkit-linear-gradient(#eee, rgb(99, 99, 99));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 section .img .head3 {
@@ -78,7 +81,7 @@ section .img .head4 {
 }
 
 section .img .head5 {
-    color: #bfd0d8;
+    color: rgb(135, 135, 135);
     text-align: left;
     padding-top: 300px;
     padding-left: 80px;
@@ -86,6 +89,7 @@ section .img .head5 {
     letter-spacing: 3px;
     /* font-weight: bold; */
     font-family: 'Azonix';
+    
 }
 
 section .img .head5 span {
@@ -124,43 +128,6 @@ section .login {
 
 
 
-option {
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-    color: #80868b;
-    background-color: rgb(20, 21, 23);
-    font-size: 14px;
-    transition: 0.2s;
-    font-family: "Azonix";
-}
-
-.select__div select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    
-    font-size: 14px;
-    transition: 0.2s;
-    font-family: "Azonix";
-
-    display: block;
-    width: 100%;
-    height: 45px;
-    float: left;
-    text-align: left;
-    /* margin: 5px 0px; */
-    padding: 0px 16px;
-    /* font-size: 16px; */
-    line-height: 1.75;
-    color: #80868b;
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid #80868b;
-    -ms-word-break: normal;
-    word-break: normal;
-  }
-
 /* h1{
     margin: 0;
 } */
@@ -181,7 +148,7 @@ option {
 }
 .form__title{
     font-weight: 400;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
     color: #80868B;
     border-bottom: 3px solid #86ff71;
     font-family: 'Azonix';
@@ -261,6 +228,7 @@ option {
 
 .form__div.error small{
     visibility: visible;
+    font-family: 'Rubik';
 }
 
 .form__input{
@@ -354,11 +322,12 @@ option {
     font-size: 15px;
     color: #80868B;
     font-family: 'Rubik', sans-serif;
+    float: left;
     
 }
 
 .remember a{
-    float: right;
+    float: left;
     margin-bottom: 20px;
     font-family: 'Rubik', sans-serif;
     
@@ -411,23 +380,23 @@ option {
 
 .fa-facebook {
     /* background: #3B5998; */
-    color: #80868B;
+    color: #86ff71aa;
     
 }
 
 .fa-twitter {
     /* background: #55ACEE; */
-    color: #80868B;
+    color: #86ff71aa;
 }
 
 .fa-google {
     /* background: #dd4b39; */
-    color: #80868B;
+    color: #86ff71aa;
 }
 
 .fa-instagram, .fa-whatsapp {
     /* background: #125688; */
-    color: #80868B;
+    color: #86ff71aa;
 }
 
 .homeIcon {
@@ -442,13 +411,13 @@ option {
     text-decoration: none;
     font-size: 15px;
     text-decoration: none;
-    color: #86ff71;
+    color: #86ff71aa;
 }
 
-.fa-backward {
+.fa-chevron-left {
     background-color: transparent;
     border: none;
-    color: #86ff71;
+    color: #86ff7190;
     font-size: 20px;
     padding-left: 80px;
     padding-bottom: 0;
@@ -458,7 +427,7 @@ option {
 }
 
   /* Darker background on mouse-over */
-.fa-backward:hover {
+.fa-chevron-left:hover {
     color: #86ff71d5;
 }
 
@@ -558,18 +527,7 @@ option {
 }
 
 
-.err{
-    padding: 8px 16px;
-    font-size: 25px;
-    font-weight: 500;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    background: #141517;
-    color: white;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
+
 
 
 

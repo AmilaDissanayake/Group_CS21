@@ -67,6 +67,9 @@ section .img .head {
   font-size: 50px;
   font-weight: bold;
   font-family: "Anurati";
+  background: -webkit-linear-gradient(#eee, rgb(99, 99, 99));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 section .img .head3 {
@@ -160,6 +163,7 @@ form {
 
 .name {
   display: flex;
+  align-items: center;
 }
 
 .name_input {
@@ -367,7 +371,7 @@ option {
 }
 
 .buttondiv {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 /*Input focus move up label*/
@@ -470,7 +474,7 @@ option {
 
 .remember {
   margin-bottom: 10px;
-  margin-top: 30px;
+  margin-top: 60px;
   font-weight: 400;
   font-size: 15px;
   color: #80868b;
@@ -575,7 +579,10 @@ select::-ms-expand{
     padding-top: 30px;
   }
 
-  .tr .tr_link{
+
+
+  .tr .tr_link a{
+    text-decoration: none;
     color: #86ff71;
     font-family: 'Rubik';
     
@@ -812,3 +819,150 @@ select::-ms-expand{
 .homeIcon a:hover {
   color: #86ff71d5;
 }
+
+
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  /* margin-bottom: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #86ff71;
+  font-family: 'Rubik';
+  cursor: pointer;
+  
+}
+
+
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: #555;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-family: 'Rubik';
+  padding: 10px 10px 10px 10px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  /* left: 50%; */
+  /* margin-left: -60px; */
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.payhere{
+  display: flex;
+  align-items: center;
+  
+  
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #80868b;
+    font-family: "Rubik";
+  }
+
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    margin-top:-5px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #80868b;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #80868b;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #86ff71;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #86ff71;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 4px;
+    top: 0px;
+    width: 3px;
+    height: 10px;
+    border: solid rgb(0, 0, 0);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+ 
+

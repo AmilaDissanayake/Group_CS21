@@ -60,8 +60,8 @@
 
         <div class="result3">
             <div class="bmi3">
-                <div class="title3">YOUR BMR</div>
-                <div class="val3">0.00</div>
+                <div class="title3">YOU NEED</div>
+                <div class="val3">0.00</div><span class="title3"> Calories Per Day</span>
             </div>
 
             <!-- <div class="text">Your BMR is normal!</div> -->

@@ -5,23 +5,23 @@ require "includes/db.php";
 
 if (isset($_POST['submit'])) {
 
-    $username = mysqli_real_escape_string($connection, $_POST['username']);
-    $password = mysqli_real_escape_string($connection, $_POST['password']);
+    $username = mysqli_real_escape_string($conn, strtolower($_POST['username']));
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     if ($username != "" && $password != "") {
 
-        $sql_query = "SELECT COUNT(*) AS cntUser FROM member WHERE username='" . $username . "' AND password='" . $password . "'";
-        $result = mysqli_query($connection, $sql_query);
-        print_r($result);
+        $sql_query = "SELECT password FROM accountant WHERE username='" . $username . "' OR email='" . $username . "'";
+        $result = mysqli_query($conn, $sql_query);
         $row = mysqli_fetch_array($result);
+        $password_hash=$row['password'];
 
-        $count = $row['cntUser'];
+        $verify = password_verify($password,$password_hash);
 
-        if ($count > 0) {
+        if($verify){
             $_SESSION['username'] = $username;
-            header('Location: ../../member/dashboard.php');
-        } else {
-            // echo "Invalid username and password";
+            header('Location: ../../accountant/dashboard.php');
+        }
+        else{
             $_SESSION['error'] = "Incorrect Username or Password.";
             header('Location: index.php');
         }

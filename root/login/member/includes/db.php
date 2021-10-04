@@ -3,11 +3,11 @@
 define("DB_SERVER", "localhost");
 define("DB_USER", "root");
 define("DB_PWD", "");
-define("DB_NAME", "test");
+define("DB_NAME", "power_house");
 
-$connection = mysqli_connect(DB_SERVER, DB_USER, DB_PWD, DB_NAME);
+$conn = mysqli_connect(DB_SERVER, DB_USER, DB_PWD, DB_NAME);
 
-// if ($connection) {
+// if ($conn) {
 //     echo "we are connected";
 // } else {
 //     echo "not connected";

@@ -5,6 +5,7 @@
 <html>
 
 <head>
+    <title>Trainers - PH Fitness</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="css/trainers.css" />
     <link rel="stylesheet" type="text/css" href="css/header_hero.css" />
@@ -29,6 +30,7 @@
         $trainer_id = $row['trainer_id'];
         $about = $row['about'];
         $rate = $row['rate'];
+        $phone_no = $row['phone_no'];
         $date_joined = date_registered($trainer_id);
 
         if (strlen($about) > 200) {
@@ -60,13 +62,13 @@
             <div class="card-text">
                 <span class="date">Joined <?php echo $date_joined ?></span>
                 <h2><?php echo $f_name . " " . $l_name ?></h2>
-                <h2>⭐(<?php echo $review_value / $review_count ?>)</h2>
+                <h2>⭐<?php echo $review_value / $review_count ?></h2>
 
                 <p><?php echo $about_short ?></p>
                 <div class="button-inner">
-                    <div class="about_button"><button class="about_btn" onclick="location.href='signup.html'">PROFILE
+                    <div class="about_button"><button class="about_btn" onclick="location.href='trainer-profile/trainer-profile.php?trainer_id=<?php echo $trainer_id ?>','_blank'">PROFILE
                         </button></div>
-                    <div class="about_button"><button class="about_btn" onclick="location.href='signup.html'">CALL</button></div>
+                    <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">CALL</button></div>
                 </div>
             </div>
             <div class="card-stats">

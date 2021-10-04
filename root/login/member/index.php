@@ -1,6 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
 
-
+if (isset($SESSION['username'])) {
+    header('Location: ../../member/dashboard.php');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login Page</title>
+    <title>Member Login - PH Fitness</title>
     <!-- <link rel="shortcut icon" href="media/TabIcon.jpg">  -->
 
     <link rel="stylesheet" href="login.css">
@@ -18,8 +21,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
-
 
 </head>
 
@@ -34,8 +35,8 @@
             </h5>
             </p>
             <div class="homeIcon">
-                <a href="index.html" class=" fas fa-chevron-left" </a>
-                    <a href="../../index.php">&nbsp Back to home</a>
+                <a href="index.html" class=" fas fa-chevron-left"> </a>
+                <a href="../../index.php">&nbsp Back to home</a>
             </div>
         </div>
         <div class="login">
@@ -75,24 +76,24 @@
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit"></div>
 
+                    <script>
+                        function nn() {
+                            $('.alert').addClass("show");
+                            $('.alert').removeClass("hide");
+                            $('.alert').addClass("showAlert");
+                            setTimeout(function bb() {
+                                $('.alert').removeClass("show");
+                                $('.alert').addClass("hide");
+                            }, 4000);
+                        };
+                        $('.close-btn').click(function ss() {
+                            $('.alert').removeClass("show");
+                            $('.alert').addClass("hide");
+                        });
+                    </script>
 
                     <!-- <button class="err">Show Alert</button> -->
                     <div class="alert hide">
-                        <script>
-                            function nn() {
-                                $('.alert').addClass("show");
-                                $('.alert').removeClass("hide");
-                                $('.alert').addClass("showAlert");
-                                setTimeout(function bb() {
-                                    $('.alert').removeClass("show");
-                                    $('.alert').addClass("hide");
-                                }, 500000);
-                            };
-                            $('.close-btn').click(function ss() {
-                                $('.alert').removeClass("show");
-                                $('.alert').addClass("hide");
-                            });
-                        </script>
 
                         <?php
                         if (isset($_SESSION['notification'])) {
@@ -100,31 +101,32 @@
                             echo '<script type="text/javascript">nn();</script>';
                         }
                         ?>
+                        <?php
+                        // if(isset($_GET["newpwd"])){
+                        //     if($_GET["newpwd"]=="passwordUpdated"){
+                        //         $notification = "Password successfully updated";
+                        //     }
+                        // }
+                        ?>
                         <!-- <span class="fas fa-exclamation-circle"></span> -->
-                        <span class="msg"> <?php echo $notification ?></span>
+                        <span class="msg"><?php echo $notification ?></span>
                         <div class="close-btn">
                             <span class="fas fa-times"></span>
                         </div>
                     </div>
 
 
-
-
-
-
-
-
                     <div class="remember">
-                        <label><input type="checkbox" name=""> Remember me</label>
-                        <span class="checkmark"></span>
+                        <!-- <label><input type="checkbox" name=""> Remember me</label>
+                        <span class="checkmark"></span> -->
 
-                        <a href="forget-pw.php" class="hover">Forget password</a>
+                        <a href="forget-pw.php" class="hover">Forget password?</a>
                     </div>
 
 
 
                     <div class="signup">
-                        <p>Don't have an account? <a href="#" class="hover"> Sign up</a></p>
+                        <p>Don't have an account? <a href="../../signup/index.php" class="hover"> Sign up</a></p>
                     </div>
                     <div class="icon">
                         <a href="#" class="fa fa-facebook"></a>
@@ -135,6 +137,9 @@
                     </div>
                 </form>
             </div>
+
+
+
 
         </div>
     </section>
