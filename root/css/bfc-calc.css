@@ -272,10 +272,10 @@
 
 
  .result4 .recal4 {
-    height: 50px;
+    height: 70px;
     width: 55%;
     /* line-height: 14vmin; */
-    margin-top: 0px;
+    /* margin-top: 0px; */
     color: #86ff71;
     font-size: 18px;
     /* font-weight: bold; */
@@ -283,9 +283,11 @@
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
     text-align: center;
-    padding-top:80px;
-    padding-bottom: 50px;
+    /* padding-top:75px; */
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .calculate4 .calc4{
@@ -319,15 +321,15 @@
 
 
 .result4 .bmi4 {
-    height: 150px;
+    height: 100px;
     width: 55%;
     display: flex;
     flex-direction: column;
+    /* padding-top: 100px; */
     align-items: center;
     justify-content: center;
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
-    margin-top: 20px;
 }
 
 .result4 .bmi4 .title4 {
@@ -335,7 +337,7 @@
     font-size: 25px;
     /* font-weight: bold; */
     font-family: 'Rubik';
-    padding-top: 100px;
+    /* padding-top: 100px; */
 }
 
 .result4 .bmi4 .val4 {

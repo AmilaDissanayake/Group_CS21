@@ -321,11 +321,12 @@ section .login {
     font-size: 15px;
     color: #80868B;
     font-family: 'Rubik', sans-serif;
+    float: left;
     
 }
 
 .remember a{
-    float: right;
+    float: left;
     margin-bottom: 20px;
     font-family: 'Rubik', sans-serif;
     

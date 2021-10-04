@@ -5,6 +5,7 @@
 <html>
 
 <head>
+    <title>Trainers - PH Fitness</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="css/trainers.css" />
     <link rel="stylesheet" type="text/css" href="css/header_hero.css" />

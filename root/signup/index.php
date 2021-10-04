@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SignUp</title>
+    <title>Sign Up - PH Fitness</title>
     <!-- <link rel="shortcut icon" href="media/TabIcon.jpg">  -->
 
     <link rel="stylesheet" href="signup.css">
@@ -279,7 +279,7 @@
                             <span class="checkmark"></span>
                         </label>
                         <label></label>
-                        <span class="checkmark"></span>
+
                     </div>
 
                     <div class="buttondiv"><input type="button" class="form__button" value="SIGN UP" name="form_submit" id="form_submit" onclick="submitFunction()"></div>

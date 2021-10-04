@@ -407,11 +407,7 @@ body {
   flex-direction: column;
   font-family: "Rubik";
 }
-.dropdown a:hover {
-  /* background-color: #86ff71; */
-  /* color: #000000; */
-  font-weight: bolder;
-}
+
 
 .show {
   display: block;

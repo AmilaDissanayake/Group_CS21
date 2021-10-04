@@ -174,7 +174,7 @@ function checkInputs() {
 		setErrorFor(password1, 'Password cannot be blank');
 		pwd1Valid = false;
 	} else if (!pwlength(password1Value)) {
-		setErrorFor(password1, 'Too short!Need at least 8');
+		setErrorFor(password1, 'Too short! Need at least 8');
 		pwd1Valid = false;
 	} else if (!pwlength4(password1Value)) {
 		setErrorFor(password1, 'Uppercase Letters must be included');

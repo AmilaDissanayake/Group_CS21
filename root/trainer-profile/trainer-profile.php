@@ -47,7 +47,7 @@ $qualifies = explode(',', $qualifications);
     <link rel="stylesheet" href="trainer-profile.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
-    <title>Trainer-Profile</title>
+    <title>Trainer Profile - PH Fitness</title>
 </head>
 
 <body>

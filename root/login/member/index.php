@@ -13,7 +13,7 @@ if (isset($SESSION['username'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login Page</title>
+    <title>Member Login - PH Fitness</title>
     <!-- <link rel="shortcut icon" href="media/TabIcon.jpg">  -->
 
     <link rel="stylesheet" href="login.css">
@@ -117,16 +117,16 @@ if (isset($SESSION['username'])) {
 
 
                     <div class="remember">
-                        <label><input type="checkbox" name=""> Remember me</label>
-                        <span class="checkmark"></span>
+                        <!-- <label><input type="checkbox" name=""> Remember me</label>
+                        <span class="checkmark"></span> -->
 
-                        <a href="forget-pw.php" class="hover">Forget password</a>
+                        <a href="forget-pw.php" class="hover">Forget password?</a>
                     </div>
 
 
 
                     <div class="signup">
-                        <p>Don't have an account? <a href="#" class="hover"> Sign up</a></p>
+                        <p>Don't have an account? <a href="../../signup/index.php" class="hover"> Sign up</a></p>
                     </div>
                     <div class="icon">
                         <a href="#" class="fa fa-facebook"></a>

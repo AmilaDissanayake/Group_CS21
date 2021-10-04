@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Power House</title>
-    <link rel="shortcut icon" href="media/TabIcon.jpg">
+    <title>Power House Fitness - Champions Make No Execuses.</title>
+
 
     <link rel="stylesheet" href="css/header_hero.css">
     <link rel="stylesheet" href="css/popup.css">
@@ -45,7 +45,7 @@
                     <div class="dropdown-menu" id="down" value="se">
                         <div class="dropdown-links">
                             <a href="#/" class="link" id=myBtn1>BMI Calculator</a>
-                            <a href="#/" class="link" id="myBtn2">Calori Calculator</a>
+                            <a href="#/" class="link" id="myBtn2">Calorie Calculator</a>
                             <a href="#/" class="link" id=myBtn3>BMR Calculator</a>
                             <a href="#/" class="link" id="myBtn4">Body Fat Calculator</a>
 
@@ -376,7 +376,7 @@
                         Directions.</a></p>
             </details>
             <details>
-                <summary>When the acadey is open?</summary>
+                <summary>When the academy is open?</summary>
                 <p class="text">We are open 5 A.M to 10 P.M on all days. Closed on poya days.</p>
             </details>
             <details>
