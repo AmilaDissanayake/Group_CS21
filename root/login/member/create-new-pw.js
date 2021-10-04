@@ -24,14 +24,7 @@ const password2 = document.getElementById('password2');
 
 var isValid;
 
-form.addEventListener("submit", function(e) {
-	checkInputs();
-	if(!isValid){
-		e.preventDefault();
-	}	
-	// return true;
 
-});
 
 function checkInputs() {
 
@@ -155,10 +148,10 @@ function checkInputs() {
 	} else if (password2Value !== password1Value) {
 		setErrorFor(password2, 'Re-Entered Password is wrong');
 		isValid = false;
-	}else if (!pwlength(password2Value)) {
+	} else if (!pwlength(password2Value)) {
 		setErrorFor(password2, 'Selected Password is not Strong enough');
-		isValid = false;	
-	}else {
+		isValid = false;
+	} else {
 		setSuccessFor(password2);
 		isValid = true;
 	}
@@ -229,8 +222,8 @@ function setErrorFor(input, message) {
 	// 	formControl.className = 'inj__div error';
 	// 	small.innerText = message;
 
-		formControl.className = 'form__div error';
-		small.innerText = message;
+	formControl.className = 'form__div error';
+	small.innerText = message;
 
 }
 
@@ -368,3 +361,12 @@ function passwordChanged() {
 		small.innerHTML = '<span style="color:red">Weak!';
 	}
 }
+
+form.addEventListener("submit", function (e) {
+	checkInputs();
+	if (!isValid) {
+		e.preventDefault();
+	}
+	// return true;
+
+});

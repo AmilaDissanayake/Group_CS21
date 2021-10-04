@@ -228,6 +228,7 @@ section .login {
 
 .form__div.error small{
     visibility: visible;
+    font-family: 'Rubik';
 }
 
 .form__input{

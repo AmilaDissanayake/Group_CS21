@@ -6,14 +6,7 @@ var typ = document.getElementById('type')
 // var usernameErr = passwordErr = true;
 var isValid;
 
-form.addEventListener("submit", function (e) {
-	checkInputs();
-	if (!isValid) {
-		e.preventDefault();
-	}
-	// return true;
 
-});
 
 // window.onload = function () {
 // 	form.onsubmit = function onSubmit(form){
@@ -128,3 +121,13 @@ function setSuccessFor(input) {
 	const formControl = input.parentElement;
 	formControl.className = 'form__div success';
 }
+
+
+form.addEventListener("submit", function (e) {
+	checkInputs();
+	if (!isValid) {
+		e.preventDefault();
+	}
+	// return true;
+
+});

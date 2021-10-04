@@ -13,14 +13,7 @@ const email = document.getElementById('email');
 
 
 var isValid;
-form.addEventListener("submit", function(e) {
-	checkInputs();
 
-	if(!isValid){
-		e.preventDefault();
-	}	
-
-});
 
 
 function checkInputs() {
@@ -167,7 +160,7 @@ function setErrorFor(input, message) {
 
 function setSuccessFor(input) {
 	const formControl = input.parentElement;
-		formControl.className = 'form__div success';
+	formControl.className = 'form__div success';
 }
 
 function isEmail(email) {
@@ -297,3 +290,12 @@ function isEmail(email) {
 // 		small.innerHTML = '<span style="color:red">Weak!';
 // 	}
 // }
+
+form.addEventListener("submit", function (e) {
+	checkInputs();
+
+	if (!isValid) {
+		e.preventDefault();
+	}
+
+});
