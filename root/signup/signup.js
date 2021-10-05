@@ -255,7 +255,7 @@ function isEmail(email) {
 }
 
 function isnotvalid(name) {
-	let invalidn = new RegExp('(?=.*[0-9])')
+	let invalidn = new RegExp('(?=.*[0-9])|(?=.*\\W)')
 	if (invalidn.test(name)) {
 		return true;
 	}
