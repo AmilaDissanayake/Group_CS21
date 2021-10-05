@@ -33,6 +33,9 @@
         $phone_no = $row['phone_no'];
         $date_joined = date_registered($trainer_id);
 
+        $today = date("Y-m-d");
+        $diff = date_diff(date_create($date_joined), date_create($today));
+
         if (strlen($about) > 200) {
             $about_short = substr($about, 0, 100) . '...';
         }
@@ -73,8 +76,8 @@
             </div>
             <div class="card-stats">
                 <div class="stat">
-                    <div class="value">4<sup>m</sup></div>
-                    <div class="type">read</div>
+                    <div class="value"><?php echo $diff->format('%y') . 'yrs'; ?></div>
+                    <div class="type">Expirience</div>
                 </div>
                 <div class="stat border">
                     <div class="value"><?php echo $rate ?>/=</div>

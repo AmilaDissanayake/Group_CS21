@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+
 </head>
 
 <body>
@@ -50,7 +50,7 @@
                             <h1 class="form__title">RESET YOUR PASSWORD</h1>
 
                             <div class="form__div">
-                                <input type="password" class="form__input" id="password1" placeholder=" " name="pwd"  onkeyup="return passwordChanged();">
+                                <input type="password" class="form__input" id="password1" placeholder=" " name="pwd" onkeyup="return passwordChanged();">
                                 <label for="" class="form__label">Enter new password</label>
                                 <i class="fa fa-check"></i>
                                 <!-- <i class="fas fa-check-circle"></i> -->
@@ -71,6 +71,11 @@
                                 <!-- <i class="fas fa-exclamation-circle"></i> -->
                                 <small>Error message</small>
                             </div>
+
+                            <label class="container">Show Password
+                                <input type="checkbox" onclick="myunction()">
+                                <span class="checkmark"></span>
+                            </label>
 
                             <div class="buttondiv"><input name="reset-password-submit" type="submit" class="form__button" value="RESET PASSWORD"></div>
 

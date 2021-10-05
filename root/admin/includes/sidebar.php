@@ -1,7 +1,7 @@
 <div class="sidebar">
     <div class="logo-details">
-        <i class='bx bxl-c-plus-plus'></i>
-        <span class="logo_name">CodingLab</span>
+        <p>PH</p>
+        <span class="logo_name">FITNESS</span>
     </div>
     <ul class="nav-links">
         <li>

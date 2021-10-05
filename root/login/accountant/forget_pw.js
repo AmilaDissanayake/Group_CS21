@@ -13,12 +13,12 @@ const email = document.getElementById('email');
 
 
 var isValid;
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", function (e) {
 	checkInputs();
 
-	if(!isValid){
+	if (!isValid) {
 		e.preventDefault();
-	}	
+	}
 
 });
 
@@ -167,7 +167,7 @@ function setErrorFor(input, message) {
 
 function setSuccessFor(input) {
 	const formControl = input.parentElement;
-		formControl.className = 'form__div success';
+	formControl.className = 'form__div success';
 }
 
 function isEmail(email) {
@@ -297,3 +297,18 @@ function isEmail(email) {
 // 		small.innerHTML = '<span style="color:red">Weak!';
 // 	}
 // }
+
+function myunction() {
+	var x = document.getElementById("password1");
+	var y = document.getElementById("password2");
+	if (x.type === "password") {
+		x.type = "text";
+	} else {
+		x.type = "password";
+	}
+	if (y.type === "password") {
+		y.type = "text";
+	} else {
+		y.type = "password";
+	}
+}

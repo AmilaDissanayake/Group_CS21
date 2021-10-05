@@ -24,11 +24,11 @@ const password2 = document.getElementById('password2');
 
 var isValid;
 
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", function (e) {
 	checkInputs();
-	if(!isValid){
+	if (!isValid) {
 		e.preventDefault();
-	}	
+	}
 	// return true;
 
 });
@@ -155,9 +155,9 @@ function checkInputs() {
 	} else if (password2Value !== password1Value) {
 		setErrorFor(password2, 'Re-Entered Password is wrong');
 		isValid = false;
-	}else if (!pwlength(password2Value)) {
+	} else if (!pwlength(password2Value)) {
 		setErrorFor(password2, 'Selected Password is not Strong enough');
-		isValid = false;	
+		isValid = false;
 	} else {
 		setSuccessFor(password2);
 		isValid = true;
@@ -229,8 +229,8 @@ function setErrorFor(input, message) {
 	// 	formControl.className = 'inj__div error';
 	// 	small.innerText = message;
 
-		formControl.className = 'form__div error';
-		small.innerText = message;
+	formControl.className = 'form__div error';
+	small.innerText = message;
 
 }
 
@@ -366,5 +366,20 @@ function passwordChanged() {
 	} else {
 		formControl.className = 'form__div error';
 		small.innerHTML = '<span style="color:red">Weak!';
+	}
+}
+
+function myunction() {
+	var x = document.getElementById("password1");
+	var y = document.getElementById("password2");
+	if (x.type === "password") {
+		x.type = "text";
+	} else {
+		x.type = "password";
+	}
+	if (y.type === "password") {
+		y.type = "text";
+	} else {
+		y.type = "password";
 	}
 }

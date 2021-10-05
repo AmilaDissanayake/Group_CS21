@@ -37,19 +37,19 @@
             <div class="overview-boxes">
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Total Order</div>
-                        <div class="number">40,876</div>
+                        <div class="box-topic">Total Members</div>
+                        <div class="number">215</div>
                         <div class="indicator">
                             <i class='bx bx-up-arrow-alt'></i>
                             <span class="text">Up from yesterday</span>
                         </div>
                     </div>
-                    <i class='bx bx-cart-alt cart'></i>
+                    <i class='bx  bx-user cart'></i>
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Total Sales</div>
-                        <div class="number">38,876</div>
+                        <div class="box-topic">Total Trainers</div>
+                        <div class="number">21</div>
                         <div class="indicator">
                             <i class='bx bx-up-arrow-alt'></i>
                             <span class="text">Up from yesterday</span>
