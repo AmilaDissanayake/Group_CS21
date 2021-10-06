@@ -97,11 +97,16 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" " name="dob_cc">
+                        <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" " name="dob_cc" min="1920-10-01" max="2010-10-20">
                         <label for="" class="form__label">Date Of Birth</label>
                         <!-- <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i> -->
                         <small>Error message</small>
+                        <script>
+                            $("input[type='date']").keydown(function(event) {
+                                event.preventDefault();
+                            });
+                        </script>
                     </div>
 
                     <div class="form__div">
@@ -166,7 +171,7 @@
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
-                            <input type="password" class="name_input" id="password2" placeholder=" ">
+                            <input type="password" class="name_input" id="password2" placeholder=" " onkeyup="return passwordChanged2();">
                             <label for="" class="form__label">Confirm Password</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>

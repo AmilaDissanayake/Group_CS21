@@ -197,9 +197,9 @@ function checkInputs() {
 	if (password2Value === '') {
 		setErrorFor(password2, 'Confirm Password cannot be blank');
 		pwd2Valid = false;
-	} else if (!pwlength(password2Value)) {
-		setErrorFor(password2, 'Selected Password is not Strong enough');
-		pwd2Valid = false;
+		// } else if (!pwlength(password2Value)) {
+		// 	setErrorFor(password2, 'Selected Password is not Strong enough');
+		// 	pwd2Valid = false;
 	} else if (password2Value !== password1Value) {
 		setErrorFor(password2, 'Re-Entered Password is wrong');
 		pwd2Valid = false;
@@ -209,6 +209,8 @@ function checkInputs() {
 		pwd2Valid = true;
 
 	}
+
+
 
 	checkbox1.setAttribute("required", "");
 
@@ -377,6 +379,29 @@ function passwordChanged() {
 		formControl.className = 'form__div error';
 		small.innerHTML = '<span style="color:red">Weak!';
 	}
+}
+
+
+
+
+function passwordChanged2() {
+
+	const password1 = document.getElementById('password1');
+	const password2 = document.getElementById('password2');
+
+	const password1Value = password1.value.trim();
+	const password2Value = password2.value.trim();
+
+	if (password2Value !== password1Value) {
+		setErrorFor(password2, 'Re-Entered Password is wrong');
+		pwd2Valid = false;
+	} else {
+		setSuccessFor(password2);
+
+		pwd2Valid = true;
+
+	}
+
 }
 
 

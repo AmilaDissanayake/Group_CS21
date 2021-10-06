@@ -1,16 +1,16 @@
-/* Googlefont Poppins CDN Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+/* Googlefont Rubik CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 .sidebar{
   position: fixed;
   height: 100%;
   width: 240px;
-  background: #0A2558;
+  background: #141517;
   transition: all 0.5s ease;
 }
 .sidebar.active{
@@ -28,10 +28,24 @@
   min-width: 60px;
   text-align: center
 }
+.sidebar .logo-details p{
+  font-size: 28px;
+  font-weight: 500;
+  color: #86ff71;
+  font-family: 'Anurati';
+  text-align: center;
+  padding-left: 12px;
+  padding-right: 12px;
+}
 .sidebar .logo-details .logo_name{
-  color: #fff;
+  color: #80868B;
   font-size: 24px;
   font-weight: 500;
+  font-family: 'Azonix';
+  margin-top: 10px;
+  background: -webkit-linear-gradient(#eee, rgb(99, 99, 99));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .sidebar .nav-links{
   margin-top: 10px;
@@ -50,10 +64,10 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li a.active{
-  background: #081D45;
+  background: #292b2e;
 }
 .sidebar .nav-links li a:hover{
-  background: #081D45;
+  background: #292b2e;
 }
 .sidebar .nav-links li i{
   min-width: 60px;

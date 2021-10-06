@@ -186,9 +186,9 @@
 }
 
 .copyrightText{
-    display: flex;
+    /* display: flex;
     
-    justify-content: center;
+    justify-content: center; */
     margin: auto;
     font-family: 'Rubik';
     
@@ -198,6 +198,7 @@
     text-align: center;
     font-size: 12px;
 }
+
 
 .cp{
     font-family: 'Anurati';

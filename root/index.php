@@ -43,7 +43,7 @@
                 <li><a href="#about">About</a></li>
                 <li value="0"><a href="#/" id="myBtn" class="dropdown">Fitness Calculators</a>
                     <div class="dropdown-menu" id="down" value="se">
-                        <div class="dropdown-links">
+                        <div class="dropdown-links" id="xc">
                             <a href="#/" class="link" id=myBtn1>BMI Calculator</a>
                             <a href="#/" class="link" id="myBtn2">Calorie Calculator</a>
                             <a href="#/" class="link" id=myBtn3>BMR Calculator</a>
@@ -70,8 +70,9 @@
                 <!-- <button class="header_btn2" onclick="location.href='login.html'">LOGIN</button> -->
                 <button class="header_btn2" onclick="myFunction()">LOGIN</button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="./login/trainer/index.php">TRAINER</a>
+
                     <a href="./login/member/index.php">MEMBER</a>
+                    <a href="./login/trainer/index.php">TRAINER</a>
                 </div>
             </div>
 
@@ -431,6 +432,7 @@
                 <!-- <li><a href="#">Help</a></li> -->
                 <li><a href="http://localhost/Group_CS21/root/includes/legal/terms.pdf" target="_blank">Terms & Conditions</a></li>
                 <li><a href="#">Contact</a></li>
+                <li><a href="#" class="back"><i class="fas fa-chevron-up"></i>&nbspBack to top</a></li>
             </ul>
         </div>
         <div class="contact">
@@ -455,6 +457,7 @@
 
 
     <div class="copyrightText">
+
         <p><span class="cp">&nbsp;POWER&nbsp; HOUSE&nbsp; FITNESS&nbsp; ALL RIGHTS RESERVED. </span></p>
     </div>
 
@@ -550,30 +553,10 @@
 
 
 
-    <!-- login dropdown -->
 
 
-    <script>
-        /* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
 
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.header_btn2')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
+
 
 </body>
 

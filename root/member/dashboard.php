@@ -6,12 +6,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member Dashboard</title>
 
     <link rel="stylesheet" href="css/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -39,19 +37,19 @@
             <div class="overview-boxes">
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Total Order</div>
-                        <div class="number">40,876</div>
+                        <div class="box-topic">Total Members</div>
+                        <div class="number">215</div>
                         <div class="indicator">
                             <i class='bx bx-up-arrow-alt'></i>
                             <span class="text">Up from yesterday</span>
                         </div>
                     </div>
-                    <i class='bx bx-cart-alt cart'></i>
+                    <i class='bx  bx-user cart'></i>
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Total Sales</div>
-                        <div class="number">38,876</div>
+                        <div class="box-topic">Total Trainers</div>
+                        <div class="number">21</div>
                         <div class="indicator">
                             <i class='bx bx-up-arrow-alt'></i>
                             <span class="text">Up from yesterday</span>

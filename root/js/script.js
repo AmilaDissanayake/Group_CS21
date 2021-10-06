@@ -1,7 +1,7 @@
 
 var btn = document.getElementById("myBtn");
 
-btn.addEventListener("click", function (e) {
+btn.addEventListener("mouseover", function (e) {
     choose();
 })
 
@@ -20,7 +20,16 @@ function choose() {
         return;
     }
 }
+// var downbtn = document.getElementById("xc");
+// downbtn.addEventListener("mouseout", function (e) {
+//     notchoose();
+// })
 
+// function notchoose() {
+
+//     document.getElementsByClassName('dropdown-menu')[0].style.visibility = 'hidden';
+
+// }
 
 document.addEventListener('mouseup', function (e) {
     var container = document.getElementById('down');
@@ -33,6 +42,27 @@ document.addEventListener('mouseup', function (e) {
 
     }
 });
+
+
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.header_btn2')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
 
 
 
@@ -348,4 +378,8 @@ window.onload = function () {
     }
     playSlide(currentSlide);
 }
+
+var offset = 300, // browser window scroll (in pixels) after which the "back to top" link is shown
+    offsetOpacity = 1200, //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+    scrollDuration = 700;
 
