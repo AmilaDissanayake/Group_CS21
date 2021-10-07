@@ -62,12 +62,8 @@
                         setTimeout(function bb() {
                             $('.alert').removeClass("show");
                             $('.alert').addClass("hide");
-                        }, 5000);
+                        }, 4000);
                     };
-                    $('.close-btn').click(function ss() {
-                        $('.alert').removeClass("show");
-                        $('.alert').addClass("hide");
-                    });
                 </script>
 
                 <div class="alert hide">
@@ -79,12 +75,19 @@
                         echo '<script type="text/javascript">nn();</script>';
                     }
                     ?>
+
                     <!-- <span class="fas fa-exclamation-circle"></span> -->
                     <span class="msg"><?php echo $notification ?></span>
                     <div class="close-btn">
                         <span class="fas fa-times"></span>
                     </div>
                 </div>
+                <script>
+                    $('.close-btn').click(function ss() {
+                        $('.alert').removeClass("show");
+                        $('.alert').addClass("hide");
+                    });
+                </script>
 
 
 

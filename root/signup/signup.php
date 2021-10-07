@@ -51,7 +51,11 @@ switch ($membership_bb) {
 
 // echo 'trainer check done';
 
-$member_insert = "INSERT INTO member (f_name, l_name, gender, phone_no, dob, address, injuries, email, username, password, assign_trainer ) VALUES ('$f_name_bb', '$l_name_bb', '$gender_bb', '$phone_no_bb', '$dob_bb', '$address_bb', '$injuries_bb', '$email_bb', '$username_bb', '$password_bb', '$assign_trainer_bb');";
+$user_insert = "INSERT INTO users (email, username, password, user_type ) VALUES ('$email_bb', '$username_bb', '$password_bb', 'member');";
+
+$result0 = mysqli_query($conn, $user_insert);
+
+$member_insert = "INSERT INTO member (f_name, l_name, gender, phone_no, dob, address, injuries,  username, assign_trainer ) VALUES ('$f_name_bb', '$l_name_bb', '$gender_bb', '$phone_no_bb', '$dob_bb', '$address_bb', '$injuries_bb', '$username_bb', '$assign_trainer_bb');";
 // echo 'query check done';
 
 $result1 = mysqli_query($conn, $member_insert);
@@ -71,10 +75,12 @@ $result4 = mysqli_query($conn, $membership_insert);
 
 // echo $result;
 
-if ($result1 && $result2 && $result3 && $result4) {
+if ($result0 && $result1 && $result3 && $result4) {
     $_SESSION['notification'] = "Account successfully created";
-    header("Location: ../login/member/index.php");
-    echo "done";
+    $_SESSION['username'] = $username_bb;
+    header('Location: ../member/dashboard.php');
+    // echo "done";
 } else {
-    header("Location: index.php");
+    // header("Location: index.php");
+    echo die(mysqli_error($conn));
 }

@@ -115,7 +115,7 @@ if (isset($SESSION['username'])) {
                             echo '<script type="text/javascript">nn();</script>';
                         }
                         ?>
-                        
+
                         <!-- <span class="fas fa-exclamation-circle"></span> -->
                         <span class="msg"><?php echo $notification ?></span>
                         <div class="close-btn">
