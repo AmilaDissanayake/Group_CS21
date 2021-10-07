@@ -45,12 +45,12 @@ if (isset($_POST["reset-password-submit"])) {
 
                 $tokenEmail = $row['pwdResetEmail'];
 
-                $sql = "SELECT * FROM member WHERE email=?;";
+                $sql = "SELECT * FROM users WHERE email=?;";
 
                 $stmt = mysqli_stmt_init($conn);
 
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    echo "There this was an error";
+                    echo "There was an error";
                     exit();
                 } else {
                     mysqli_stmt_bind_param($stmt, "s", $tokenEmail);
@@ -60,7 +60,7 @@ if (isset($_POST["reset-password-submit"])) {
                         echo "There was an error";
                         exit();
                     } else {
-                        $sql = "UPDATE member SET password=? WHERE email=?";
+                        $sql = "UPDATE users SET password=? WHERE email=?";
                         $stmt = mysqli_stmt_init($conn);
 
                         if (!mysqli_stmt_prepare($stmt, $sql)) {

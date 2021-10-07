@@ -12,7 +12,7 @@ if (isset($_POST["reset-request-submit"])) {
     $userEmail = strtolower($_POST["email"]);
 
 
-    $mail_query = " SELECT COUNT(*) AS cntUser FROM member WHERE email = '" . $userEmail . "'";
+    $mail_query = " SELECT COUNT(*) AS cntUser FROM users WHERE email = '" . $userEmail . "'";
     $mail_result = mysqli_query($conn, $mail_query);
     $mail_row = mysqli_fetch_array($mail_result);
     $mail_count = $mail_row['cntUser'];

@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 
     if ($username != "" && $password != "") {
 
-        $sql_query = "SELECT password FROM member WHERE username='" . $username . "' OR email='" . $username . "'";
+        $sql_query = "SELECT password,user_type FROM users WHERE username='" . $username . "' OR email='" . $username . "'";
         $result = mysqli_query($conn, $sql_query);
         $row = mysqli_fetch_array($result);
         $password_hash = $row['password'];
@@ -19,7 +19,18 @@ if (isset($_POST['submit'])) {
 
         if ($verify) {
             $_SESSION['username'] = $username;
-            header('Location: ../../member/dashboard.php');
+            if($row['user_type']=='admin'){
+            header('Location: ../../admin/dashboard.php');
+            }
+            elseif($row['user_type']=='member'){
+                header('Location: ../../member/dashboard.php');
+                }
+            elseif($row['user_type']=='trainer'){
+                header('Location: ../../trainer/dashboard.php');
+                }
+            elseif($row['user_type']=='accountant'){
+                header('Location: ../../accountant/dashboard.php');
+                }
         } else {
             $_SESSION['notification'] = "Incorrect Username or Password.";
             header('Location: index.php');
