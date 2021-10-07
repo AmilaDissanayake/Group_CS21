@@ -357,7 +357,7 @@ section .login {
     margin-right: 5px;
     margin-top: 25px;
     font-size: 20px;
-    /* display: flex; */
+    display: flex;
     align-items: center;
     justify-content: center;
     display: inline-block;
@@ -373,9 +373,9 @@ section .login {
     text-align: center;
     justify-content: center;
 
-    /* text-decoration: none; */
-    /* transition: all .1s ease-in-out; 
-    color: yellow; */
+    text-decoration: none;
+    transition: all .1s ease-in-out; 
+    color: yellow;
     
     /* margin: 5px 2px; */
 }

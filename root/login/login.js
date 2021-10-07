@@ -79,7 +79,7 @@ function checkInputs() {
 
 	} 
 	else {
-		// setSuccessFor(username);
+		setSuccessFor(username);
 		isValid = true;
 	}
 
