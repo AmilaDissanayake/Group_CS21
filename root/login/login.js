@@ -3,6 +3,8 @@ const username = document.getElementById('username');
 // const email = document.getElementById('email');
 const password = document.getElementById('password');
 var typ = document.getElementById('type')
+// const unameav = document.getElementById('uname_response');
+
 // var usernameErr = passwordErr = true;
 var isValid;
 
@@ -51,7 +53,9 @@ function checkInputs() {
 	// const emailValue = email.value.trim();
 	const passwordValue = password.value.trim();
 	// var typeValue = typ.value;
+	// const unameavValue = unameav.value.trim();
 
+	// alert(unameavValue);
 
 	// if (typeValue === '') {
 	// 	setErrorFor(typ, 'Please select a login Type');
@@ -73,8 +77,9 @@ function checkInputs() {
 		isValid = false;
 		// usernameErr = false;
 
-	} else {
-		setSuccessFor(username);
+	} 
+	else {
+		// setSuccessFor(username);
 		isValid = true;
 	}
 
@@ -92,7 +97,9 @@ function checkInputs() {
 		// passwordErr = false;
 	} else {
 		setSuccessFor(password);
-		isValid = true;
+		if(isValid === true){
+			isValid = true;
+		}
 	}
 
 	// if ((usernameErr || passwordErr) == true) {
@@ -105,17 +112,17 @@ function checkInputs() {
 }
 
 
-function modechanger1() {
-	const pri = document.getElementById('Mem')
-	pri.innerText = ' (TRAINER)';
-	document.getElementById('form').action = './trainer/login.php';
-}
+// function modechanger1() {
+// 	const pri = document.getElementById('Mem')
+// 	pri.innerText = ' (TRAINER)';
+// 	document.getElementById('form').action = './trainer/login.php';
+// }
 
-function modechanger2() {
-	const pri = document.getElementById('Mem')
-	pri.innerText = ' (MEMBER)';
-	document.getElementById('form').action = './member/login.php';
-}
+// function modechanger2() {
+// 	const pri = document.getElementById('Mem')
+// 	pri.innerText = ' (MEMBER)';
+// 	document.getElementById('form').action = './member/login.php';
+// }
 
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;

@@ -226,11 +226,13 @@ section .login {
     visibility: hidden;
 }
 
+.form__div small #uname{
+    visibility: visible;
+}
 .form__div.error small{
     visibility: visible;
     font-family: Rubik;
 }
-
 .form__input{
     position: absolute;
     top: 0;
@@ -280,7 +282,12 @@ section .login {
     align-items: center;
 }
 
-
+#uname_response{
+    font-family: 'Azonix';
+    font-size: 12px;
+    padding-top: 49px;
+    padding-left: 260px;
+}
 /*Input focus move up label*/
 .form__input:focus + .form__label{
     top: -.5rem;
