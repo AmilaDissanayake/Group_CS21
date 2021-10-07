@@ -449,7 +449,7 @@ section .login {
     right: 0;
     top: 10px;
     border-radius: 2px;
-    border-left: 8px solid red;
+    /* border-left: 8px solid red; */
     overflow: hidden;
     opacity: 0;
     pointer-events: none;

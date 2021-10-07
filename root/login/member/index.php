@@ -86,10 +86,6 @@ if (isset($SESSION['username'])) {
                                 $('.alert').addClass("hide");
                             }, 4000);
                         };
-                        $('.close-btn').click(function ss() {
-                            $('.alert').removeClass("show");
-                            $('.alert').addClass("hide");
-                        });
                     </script>
 
                     <!-- <button class="err">Show Alert</button> -->
@@ -114,6 +110,12 @@ if (isset($SESSION['username'])) {
                             <span class="fas fa-times"></span>
                         </div>
                     </div>
+                    <script>
+                        $('.close-btn').click(function ss() {
+                            $('.alert').removeClass("show");
+                            $('.alert').addClass("hide");
+                        });
+                    </script>
 
 
                     <div class="remember">
