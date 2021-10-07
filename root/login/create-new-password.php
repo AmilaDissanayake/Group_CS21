@@ -61,7 +61,7 @@
                             </div>
 
                             <div class="form__div">
-                                <input type="password" class="form__input" id="password2" placeholder=" " id="password2" name="pwd-repeat">
+                                <input type="password" class="form__input" id="password2" placeholder=" " name="pwd-repeat" onkeyup="return passwordChanged2();">
 
                                 <label for="" class="form__label">Re-Enter New Password</label>
                                 <i class="fa fa-check"></i>

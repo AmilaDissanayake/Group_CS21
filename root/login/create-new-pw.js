@@ -386,3 +386,24 @@ function myunction() {
 		y.type = "password";
 	}
 }
+
+
+function passwordChanged2() {
+
+	const password1 = document.getElementById('password1');
+	const password2 = document.getElementById('password2');
+
+	const password1Value = password1.value.trim();
+	const password2Value = password2.value.trim();
+
+	if (password2Value !== password1Value) {
+		setErrorFor(password2, 'Re-Entered Password is wrong');
+		pwd2Valid = false;
+	} else {
+		setSuccessFor(password2);
+
+		pwd2Valid = true;
+
+	}
+
+}
