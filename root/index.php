@@ -66,17 +66,17 @@
         </div>
         <div class="rside">
 
-            <div class="dropdown">
+            <!-- <div class="dropdown"> -->
                 <!-- <button class="header_btn2" onclick="location.href='login.html'">LOGIN</button> -->
-                <button class="header_btn2" onclick="myFunction()">LOGIN</button>
-                <div id="myDropdown" class="dropdown-content">
+                <!-- <div id="myDropdown" class="dropdown-content">
 
                     <a href="./login/member/index.php">MEMBER</a>
                     <a href="./login/trainer/index.php">TRAINER</a>
                 </div>
-            </div>
+            </div> -->
 
             <!-- <button class="header_btn2" onclick="location.href='login.html'">LOGIN</button> -->
+            <button class="header_btn2" onclick="location.href='./login/index.php'">LOGIN</button>
             <button class="header_btn" onclick="location.href='./signup/index.php'">SIGN UP</button>
 
         </div>
@@ -549,13 +549,6 @@
         var ctx = document.getElementById("canvas").getContext("2d");
         window.myLine = new Chart(ctx, config);
     </script>
-
-
-
-
-
-
-
 
 
 </body>
