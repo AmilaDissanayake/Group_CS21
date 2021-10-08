@@ -508,7 +508,7 @@
 
 
                     <div class="signup">
-                        <p>Have an account? <a href="../login/member/index.php" class="hover"> Login</a></p>
+                        <p>Have an account? <a href="../login/index.php" class="hover"> Login</a></p>
                     </div>
 
             </div>
