@@ -15,6 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="signup.js"></script>
     <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 </head>
@@ -151,14 +152,15 @@
                         <small>Error message</small>
                     </div>
 
-                    <div class="form__div">
+                    <div class="form__div" id="uname">
                         <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
                         <label for="" class="form__label">Username</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
+                        <div id="uname_response" ></div>
                         <!-- <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i> -->
-                        <small>Error message</small>
+                        <small></small>
                     </div>
                     <div class="name">
                         <div class="form__div">
@@ -293,6 +295,35 @@
                     <div class="payhere">
                         <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
                     </div>
+
+                    <script>
+                            $(document).ready(function(){
+                            $("#username").keyup(function(){
+                            var username = $(this).val().trim();
+                            if(username != ''){
+                            $.ajax({
+                                url: 'ajaxfile.php',
+                                type: 'post',
+                                data: {username: username},
+                                success: function(response){
+
+                                if(response == "<span style='color: #86ff71;'><b>Available</b></span>"){
+                                    $('#uname').removeClass("form_div error").addClass("form__div success")
+                                }else{
+                                    $('#uname').removeClass("form_div success")
+                                    $('#uname').addClass("form__div error")
+                                }
+
+                                    $('#uname_response').html(response);
+                                }
+                            });
+                            }else{
+                                $("#uname_response").html("");
+                            }
+                            });
+                        });
+                    </script>
+
 
                     <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
 

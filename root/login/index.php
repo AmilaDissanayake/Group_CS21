@@ -50,8 +50,7 @@ if (isset($SESSION['username'])) {
                         <label for="" class="form__label">Username or Email</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
-                        <div id="uname_response" ></div>
-                        <small></small>
+                        <small>Error message</small>
                     </div>
 
                     <div class="form__div">
@@ -64,34 +63,6 @@ if (isset($SESSION['username'])) {
                     </div>
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit"></div>
-
-                    <script>
-                            $(document).ready(function(){
-                            $("#username").keyup(function(){
-                            var username = $(this).val().trim();
-                            if(username != ''){
-                            $.ajax({
-                                url: 'ajaxfile.php',
-                                type: 'post',
-                                data: {username: username},
-                                success: function(response){
-
-                                if(response == "<span style='color: #86ff71;'><b>Available</b></span>"){
-                                    $('#name').removeClass("form_div error").addClass("form__div success")
-                                }else{
-                                    $('#name').removeClass("form_div success")
-                                    $('#name').addClass("form__div error")
-                                }
-
-                                    $('#uname_response').html(response);
-                                }
-                            });
-                            }else{
-                                $("#uname_response").html("");
-                            }
-                            });
-                        });
-                    </script>
                     
                     
                     <script>
