@@ -29,7 +29,9 @@
               <th>Firstname</th>
               <th>Lastname</th>
               <th>PhoneNumber</th>
-              <th>Date of Birth</th>
+              <th>Date Joined</th>
+              <th>Membership Type</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody id="output">
