@@ -19,10 +19,10 @@
 
         <?php include "includes/header.php" ?>
 
-
-
-
         <div class="home-content">
+            <div class="header-div">
+                <h1 class="top-header">Assigned members : 30 Members</h1>
+            </div>
             <div class="search-bar">
                 <div class="search-box">
                     <input type="text" placeholder="Search by name..." id="search">
@@ -30,25 +30,27 @@
                 </div>
             </div>
 
-            <div class="member-list">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Username</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Phone Number</th>
-                            <th>Address</th>
-                            <th>Date Joined</th>
-                        </tr>
-                    </thead>
-                    <tbody id="output">
-
-                    </tbody>
+            <div class="members-div">
+                <table class="table-members">
+                    <tr>
+                        <th style="width:20%">Name</th>
+                        <th style="width:20%">Address</th>
+                        <th style="width:15%">Contact No.</th>
+                        <th style="width:20%">Injuries</th>
+                        <th style="width:12.5%"></th>
+                        <th style="width:12.5%"></th>
+                    </tr>
+                    <tr>
+                        <td>Amila dissanayake</td>
+                        <td>23/4,Nalla, Mirigama</td>
+                        <td>0112233445</td>
+                        <td>Back pain, Shoulder disjoint</td>
+                        <td><a href="#">Meal paln and shedule</a></td>
+                        <td><a href="#">Progress</button></a>
+                    </tr>
                 </table>
-
-
             </div>
+
         </div>
 
         <script type="text/javascript">

@@ -43,6 +43,15 @@
         </div>
         <li>
             <a href="#">
+                <i class='bx bx-money'></i>
+                <span class="links_name">Earnings</span>
+            </a>
+        </li>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
+        <li>
+            <a href="#">
                 <i class='bx bx-user'></i>
                 <span class="links_name">My Profile</span>
             </a>

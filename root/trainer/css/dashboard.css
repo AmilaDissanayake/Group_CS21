@@ -196,60 +196,51 @@ nav .profile-details i{
   padding-left: 30px;
   padding-right: 30px;
 }
-.home-content .overview-boxes{
+.trainer-stats{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 20px;
-  margin-bottom: 26px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  /* padding-left: 30px; */
+  background-color: white;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px #e5e5e5 solid;
+}
+
+.trainer-stats .one{
+  width: 25%;
+  text-align: center;
+}
+
+.trainer-stats .two{
+  width: 25%;
+  text-align: center;
+  border-left: 1px solid #ddd;
+}
+.trainer-stats .three{
+  width: 25%;
+  text-align: center;
+  border-left: 1px solid #ddd;
+}
+.trainer-stats .four{
+  width: 25%;
+  text-align: center;
+  border-left: 1px solid #ddd;
 
 }
-.overview-boxes .box{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100% / 3 - 15px);
-  background: #fff;
-  padding: 15px 14px;
-  border-radius: 12px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+.trainer-stats .value{
+  font-family: 'Azonix';
+  font-size: 27px;
+  color: #434548;
+  padding-bottom: 30px;
 }
-.overview-boxes .box-topic{
-  font-size: 20px;
-  font-weight: 500;
-  padding-bottom: 5px;
-}
-.home-content .box .number{
-  display: inline-block;
-  font-size: 35px;
-  margin-top: -6px;
-  font-weight: 500;
-}
-.home-content .box .indicator{
-  padding-top: 10px;
-  display: flex;
-  align-items: center;
-}
-.home-content .box .indicator i{
-  height: 20px;
-  width: 20px;
-  background: #8FDACB;
-  line-height: 20px;
-  text-align: center;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 20px;
-  margin-right: 5px;
-}
-.box .indicator i.down{
-  background: #e87d88;
-}
-.home-content .box .indicator .text{
-  font-size: 12px;
-  padding-bottom: 13px;
+
+.trainer-stats .name{
+  margin-top: 10px;
+  color: #999999;
   text-decoration: none;
-  color: black;
 }
 .home-content .box .cart{
   display: inline-block;
@@ -446,9 +437,7 @@ nav .profile-details i{
   color:white;
   height:2px;
   background:black;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(#ffffff39), to(#121317));
-
-
+  /* background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(#ffffff39), to(#121317)); */
 }
 
 .search-bar{
@@ -493,4 +482,31 @@ tbody tr:nth-child(odd) {
 
 tbody tr:nth-child(even) {
   background-color: #eee;
+}
+.top-header{
+  color:#999999;
+  font: Rubik;
+  font-size: 30px;
+}
+.header-div{
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+.table-members{
+  width: 100%;
+  border: 1px solid black;
+  
+}
+.members-div{
+  padding: 20px;
+  margin-top: 25px;
+}
+.table-members tr th{
+  font-size: 20px;
+  text-align: left;
+}
+.table-members td a{
+  text-decoration: none;
+  
 }

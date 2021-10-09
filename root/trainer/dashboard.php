@@ -20,40 +20,27 @@
 
 
         <div class="home-content">
-            <div class="overview-boxes">
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Assigned members</div>
-                        <div class="number">30</div>
-                        <div class="indicator">
-                            <i class='bx  bx-user cart'></i>
-                            <a class="text" href="members.php"><span>Show members</span></a>
-                        </div>
-                    </div>
-                    <i class='bx  bx-user cart'></i>
+        <div class="trainer-stats">
+                <div class="one">
+                    <p class="value">30</p>
+                    <a class="name" href="members.php">Assigned members</a>
                 </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Earnings(This month)</div>
-                        <div class="number">30</div>
-                        <div class="indicator">
-                            <i class='bx  bx-user cart'></i>
-                            <a class="text" href="members.php"><span>Show earning</span></a>
-                        </div>
-                    </div>
-                    <i class='bx  bx-user cart'></i>
+
+                <div class="two">
+                    <p class="value">25,000</p>
+                    <a href="members.php" class="name">Earnings</a>
                 </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Bookings(Today)</div>
-                        <div class="number">30</div>
-                        <div class="indicator">
-                            <i class='bx  bx-user cart'></i>
-                            <a class="text" href="members.php"><span>Show bookings</span></a>
-                        </div>
-                    </div>
-                    <i class='bx  bx-user cart'></i>
+
+                <div class="three">
+                    <p class="value">8</p>
+                    <a href="members.php" class="name">Bookings(Today)</a>
                 </div>
+
+                <div class="four">
+                    <p class="value">10 Oct 2021</p>
+                    <a href="members.php" class="name">Calendar</a>
+                </div>
+
             </div>
 
             <div class="sales-boxes">
