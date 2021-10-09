@@ -21,6 +21,7 @@ if (isset($SESSION['username'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
@@ -44,7 +45,7 @@ if (isset($SESSION['username'])) {
                 <form action="login.php" class="form" id="form" method="POST">
                     <h1 class="form__title">POWERHOUSE LOGIN<span id="Mem"></span></h1>
 
-                    <div class="form__div">
+                    <div class="form__div" id="name">
                         <input type="text" class="form__input" id="username" placeholder=" " name="username">
                         <label for="" class="form__label">Username or Email</label>
                         <i class="fa fa-check"></i>
@@ -62,7 +63,8 @@ if (isset($SESSION['username'])) {
                     </div>
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit"></div>
-
+                    
+                    
                     <script>
                         function nn() {
                             $('.alert').addClass("show");
@@ -111,12 +113,12 @@ if (isset($SESSION['username'])) {
                     <div class="signup">
                         <p>Don't have an account? <a href="../signup/index.php" class="hover"> Sign up</a></p>
                     </div>
+                     
                     <div class="icon">
                         <a href="#" class="fa fa-facebook"></a>
                         <!-- <a href="#" class="fa fa-google"></a> -->
                         <a href="#" class="fa fa-instagram"></a>
                         <a href="#" class="fa fa-whatsapp"></a>
-
                     </div>
                 </form>
             </div>

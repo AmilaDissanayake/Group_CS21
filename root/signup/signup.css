@@ -541,7 +541,14 @@ select::-ms-expand{
     position: absolute;
     pointer-events: none;
   }
-  
+ 
+#uname_response{
+    font-family: 'Azonix';
+    font-size: 12px;
+    padding-top: 49px;
+    padding-left: 420px;
+}
+
 .select__div select {
     -webkit-appearance: none;
     -moz-appearance: none;

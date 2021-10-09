@@ -23,7 +23,6 @@
 
 
 
-
 function checkInputs() {
 	var isValid = false;
 	var fnameValid = false;
@@ -50,6 +49,8 @@ function checkInputs() {
 	const password1 = document.getElementById('password1');
 	const password2 = document.getElementById('password2');
 	const checkbox1 = document.getElementById('mycheck');
+	const unameresponse = document.getElementById('uname_response');
+	
 
 	// trim to remove the whitespaces
 
@@ -163,9 +164,11 @@ function checkInputs() {
 	} else if (!isusername(usernameValue)) {
 		setErrorFor(username, 'User Name is Too Short');
 		usernameValid = false;
-	} else {
+	}else if (unameresponse.innerText == 'Not Available') {
+		setErrorFor(username, '');
+		usernameValid = false; 
+	}else {
 		setSuccessFor(username);
-
 		usernameValid = true;
 
 	}
