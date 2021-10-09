@@ -134,7 +134,7 @@ nav .sidebar-button i{
   height: 40px;
   /* max-width: 550px; */
   width: 300px;
-  margin: 0 20px;
+  /* margin: 0 20px; */
 }
 .search-box input{
   height: 100%;
@@ -158,7 +158,7 @@ nav .sidebar-button i{
   border-radius: 4px;
   line-height: 30px;
   text-align: center;
-  color: rgb(64, 59, 59);
+  color: #757575;
   font-size: 22px;
   transition: all 0.4 ease;
 }
@@ -192,8 +192,8 @@ nav .profile-details i{
 .home-section .home-content{
   position: relative;
   padding-top: 104px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 .home-content .overview-boxes{
   display: flex;
@@ -445,13 +445,14 @@ nav .profile-details i{
 }
 
 .search-bar{
+  display: flex;
   
 }
 
 .member-list{
   margin-top: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
+  /* padding-left: 30px;
+  padding-right: 30px; */
 }
 
 /* table//////////////////////////////////////////////////////// */
@@ -487,3 +488,104 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background-color: #eee;
 }
+
+.member-stats{
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  /* padding-left: 30px; */
+  background-color: white;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px #e5e5e5 solid;
+}
+
+.member-stats .one{
+  width: 25%;
+  text-align: center;
+}
+
+.member-stats .two{
+  width: 25%;
+  text-align: center;
+  border-left: 1px solid #ddd;
+}
+.member-stats .three{
+  width: 25%;
+  text-align: center;
+  border-left: 1px solid #ddd;
+}
+.member-stats .four{
+  width: 25%;
+  text-align: center;
+  border-left: 1px solid #ddd;
+
+}
+
+.member-stats .value{
+  font-family: 'Azonix';
+  font-size: 27px;
+  color: #434548;
+}
+
+.member-stats .name{
+  margin-top: 10px;
+  color: #999999;
+}
+
+
+.justselect-wrapper {
+
+    /* your styles here */
+   
+ 
+  }
+  
+   
+  
+  .justselect-title {
+  
+    /* your styles here */
+    /* width: 150px; */
+    
+
+  
+  }
+  
+   
+  
+  .justselect-list {
+  
+    /* your styles here */
+    
+  
+  }
+  
+   
+  
+  .justselect-list li {
+  
+    /* your styles here */
+   
+  
+  }
+  
+   
+  
+  .justselect-list li.selected {
+  
+    /* your styles here */
+  
+  }
+
+  .filter1{
+    margin-left: 20px;
+  }
+
+  .filter2{
+    margin-left: 20px;
+  }
+
+  
+  
