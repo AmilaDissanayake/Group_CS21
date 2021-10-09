@@ -140,10 +140,11 @@ nav .sidebar-button i{
   height: 100%;
   width: 100%;
   outline: none;
-  background: #F5F6FA;
-  border: 2px solid #EFEEF1;
+  background: #ffffff;
+  border: 1px solid #EFEEF1;
   border-radius: 6px;
-  font-size: 15px;
+  font-size: 14px;
+  color: #000000;
   padding: 0 15px;
   font-family: 'Rubik';
 }
@@ -158,8 +159,8 @@ nav .sidebar-button i{
   border-radius: 4px;
   line-height: 30px;
   text-align: center;
-  color: #757575;
-  font-size: 22px;
+  color: #000000;
+  font-size: 20px;
   transition: all 0.4 ease;
 }
 .home-section nav .profile-details{
@@ -194,6 +195,7 @@ nav .profile-details i{
   padding-top: 104px;
   padding-left: 100px;
   padding-right: 100px;
+  padding-bottom: 50px;
 }
 .home-content .overview-boxes{
   display: flex;
@@ -450,7 +452,7 @@ nav .profile-details i{
 }
 
 .member-list{
-  margin-top: 30px;
+  margin-top: 20px;
   /* padding-left: 30px;
   padding-right: 30px; */
 }
@@ -464,35 +466,49 @@ table {
 
 td {
   border: 0px solid black;
-  padding: 8px;
+  padding: 12px;
 }
 
 th{
-  padding: 8px;
+  padding: 12px;
   text-decoration: none;
   margin-bottom: 10px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 thead {
-  background-color: #86ff71;
+  background-color: #ffffff;
   color: rgb(0, 0, 0);
   margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
   
   
 }
 
-tbody tr:nth-child(odd) {
+/* tbody tr:nth-child(odd) {
   background-color: #fff;
 }
 
 tbody tr:nth-child(even) {
   background-color: #eee;
+} */
+
+tbody{
+  background-color: white;
+  /* border-left: 1px solid #ddd; */
+}
+
+tbody tr{
+  border-bottom: 1px solid #ddd;;
 }
 
 .member-stats{
   display: flex;
   margin-top: 25px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   /* padding-left: 30px; */
   background-color: white;
   width: 100%;
@@ -587,5 +603,55 @@ tbody tr:nth-child(even) {
     margin-left: 20px;
   }
 
+
+  .about_btn {
+    position: relative;
+    z-index: 10;
+    width: 150px;
+    height: 25px;
+    border: 0px solid rgba(255, 255, 255, .5);
+    border-radius: 30px;
+    background-color: #424244;
+    font-family: 'Rubik';
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .about_btn:hover {
+    color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 1px #121317;
+  border: 0px solid #121317;
+    transition: .4s;
+  }
+
+  .row-action{
+    display: flex;
+  }
+table{
+  width: 100%;
+
+}
+
+.member-list .avatar img{
+  width: 40px;
+  border-radius: 40px;
+  margin-right: 5px;
+}
+
+.first-column{
+  display: flex;
+  align-items: center;
+}
+
+.expired{
+  background-color: red;
+}
+ 
   
   

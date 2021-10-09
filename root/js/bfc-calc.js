@@ -95,6 +95,32 @@ document.querySelector('.calculate4 .calc4').onclick = function () {
         document.querySelector('.calculate4 .age4 .val4 span').innerText = age;
         
         document.querySelector('.result4 .bmi4 .val4').innerText = bfc;
+
+        if (bfc < 6) {
+            document.querySelector('.result4 .text4').innerText = 'ESSENTIAL FAT!';
+            document.querySelector('.result4 .bmi4 .val4').style.color = '#3f51b5';
+            document.querySelector('.result4 .text4').style.color = '#3f51b5';
+        }
+        else if (bfc > 5 && bfc < 14) {
+            document.querySelector('.result4 .text4').innerText = 'ATHLETES!';
+            document.querySelector('.result4 .bmi4 .val4').style.color = '#0f4';
+            document.querySelector('.result4 .text4').style.color = '#0f4';
+        }
+        else if (bfc > 13 && bfc < 18) {
+            document.querySelector('.result4 .text4').innerText = 'FITNESS!';
+            document.querySelector('.result4 .bmi4 .val4').style.color = '#0f4';
+            document.querySelector('.result4 .text4').style.color = '#0f4';
+        }
+        else if (bfc > 17 && bfc < 25) {
+            document.querySelector('.result4 .text4').innerText = 'AVERAGE!';
+            document.querySelector('.result4 .bmi4 .val4').style.color = '#0f4';
+            document.querySelector('.result4 .text4').style.color = '#0f4';
+        }
+        else {
+            document.querySelector('.result4 .text4').innerText = 'OBESE!';
+            document.querySelector('.result4 .bmi4 .val4').style.color = '#ffc107';
+            document.querySelector('.result4 .text4').style.color = '#ffc107';
+        }
         
         //Male radio button is checked
 
@@ -117,6 +143,32 @@ document.querySelector('.calculate4 .calc4').onclick = function () {
 
         document.querySelector('.result4 .bmi4 .val4').innerText = bfc;
         //Female radio button is checked
+
+        if (bfc < 14) {
+        document.querySelector('.result4 .text4').innerText = 'ESSENTIAL FAT!';
+        document.querySelector('.result4 .bmi4 .val4').style.color = '#3f51b5';
+        document.querySelector('.result4 .text4').style.color = '#3f51b5';
+        }
+        else if (bfc > 13 && bfc < 21) {
+            document.querySelector('.result4 .text4').innerText = 'ATHLETES!';
+            document.querySelector('.result4 .bmi4 .val4').style.color = '#0f4';
+            document.querySelector('.result4 .text4').style.color = '#0f4';
+        }
+        else if (bfc > 20 && bfc < 25) {
+            document.querySelector('.result4 .text4').innerText = 'FITNESS!';
+            document.querySelector('.result4 .bmi4 .val4').style.color = '#0f4';
+            document.querySelector('.result4 .text4').style.color = '#0f4';
+        }
+        else if (bfc > 24 && bfc < 32) {
+            document.querySelector('.result4 .text4').innerText = 'AVERAGE!';
+            document.querySelector('.result4 .bmi4 .val4').style.color = '#0f4';
+            document.querySelector('.result4 .text4').style.color = '#0f4';
+        }
+        else {
+            document.querySelector('.result4 .text4').innerText = 'OBESE!';
+            document.querySelector('.result4 .bmi4 .val4').style.color = '#ffc107';
+            document.querySelector('.result4 .text4').style.color = '#ffc107';
+        }
     }
     
     

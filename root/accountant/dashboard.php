@@ -26,45 +26,45 @@
                     <div class="right-side">
                         <div class="box-topic">Member Payments(Rs)</div>
                         <div class="number">100000.00</div>
-                        <div class="indicator">
+                        <!-- <div class="indicator">
                             <i class='bx bx-up-arrow-alt'></i>
                             <span class="text">Up from yesterday</span>
-                        </div>
+                        </div> -->
                     </div>
-                    <i class='bx  bx-user cart'></i>
+                    <!-- <i class='bx  bx-user cart'></i> -->
                 </div>
                 <div class="box">
                     <div class="right-side">
                         <div class="box-topic">Trainer Payments(Rs)</div>
                         <div class="number">40000.00</div>
-                        <div class="indicator">
+                        <!-- <div class="indicator">
                             <i class='bx bx-up-arrow-alt'></i>
                             <span class="text">Up from yesterday</span>
-                        </div>
+                        </div> -->
                     </div>
-                    <i class='bx bxs-cart-add cart two'></i>
+                    <!-- <i class='bx bxs-cart-add cart two'></i> -->
                 </div>
                 <div class="box">
                     <div class="right-side">
                         <div class="box-topic">This Month Income(Rs)</div>
                         <div class="number">60000.00</div>
-                        <div class="indicator">
+                        <!-- <div class="indicator">
                             <i class='bx bx-up-arrow-alt'></i>
                             <span class="text">Up from yesterday</span>
-                        </div>
+                        </div> -->
                     </div>
-                    <i class='bx bx-cart cart three'></i>
+                    <!-- <i class='bx bx-cart cart three'></i> -->
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Annual <br> Income(Rs)</div>
+                        <div class="box-topic">Annual Income(Rs)</div>
                         <div class="number">750000.00</div>
-                        <div class="indicator">
+                        <!-- <div class="indicator">
                             <i class='bx bx-down-arrow-alt down'></i>
                             <span class="text">Down From Today</span>
-                        </div>
+                        </div> -->
                     </div>
-                    <i class='bx bxs-cart-download cart four'></i>
+                    <!-- <i class='bx bxs-cart-download cart four'></i> -->
                 </div>
             </div>
 
