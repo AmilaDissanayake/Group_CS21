@@ -6,11 +6,14 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="./dashboard.php" class="active">
+            <a href="./dashboard.php" class="links_name">
                 <i class='bx bx-grid-alt'></i>
                 <span class="links_name">Dashboard</span>
             </a>
         </li>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
         <li id="utton">
             <a href="./members.php">
                 <i class='bx bx-group'></i>
@@ -18,8 +21,12 @@
             </a>
 
 
+
         </li>
-        <style>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
+        <!-- <style>
             .active2 {
                 list-style: circle;
                 height: 150px;
@@ -29,43 +36,61 @@
             $('#utton').click(function() {
                 $(this).addClass("active2");
             });
-        </script>
+        </script> -->
         <li>
             <a href="#">
                 <i class='bx bx-id-card'></i>
                 <span class="links_name">Trainers</span>
             </a>
         </li>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
         <li>
             <a href="#">
                 <i class='bx bx-money'></i>
                 <span class="links_name">Payments</span>
             </a>
         </li>
+
+        <span class="fade-effect1"></span>
+
         <li>
             <a href="#">
                 <i class='bx bx-time'></i>
                 <span class="links_name">Open/Close Times</span>
             </a>
         </li>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
         <li>
             <a href="#">
                 <i class='bx bx-dumbbell'></i>
                 <span class="links_name">Inventory</span>
             </a>
         </li>
+
+        <span class="fade-effect1"></span>
+
         <li>
             <a href="#">
                 <i class='bx bx-bar-chart-alt-2'></i>
                 <span class="links_name">Reports</span>
             </a>
         </li>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
         <li>
             <a href="#">
                 <i class='bx bx-user-pin'></i>
                 <span class="links_name">Profile</span>
             </a>
         </li>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
         <!-- <li>
             <a href="#">
                 <i class='bx bx-heart'></i>
