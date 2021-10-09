@@ -38,7 +38,6 @@
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Phone Number</th>
-                            <th>Membership Type</th>
                             <th>Payment Date</th>
                             <th>Payment Status</th>
                         </tr>

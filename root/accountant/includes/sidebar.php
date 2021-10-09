@@ -38,7 +38,7 @@
             });
         </script> -->
         <li>
-            <a href="#">
+            <a href="trainer_payment.php">
                 <i class='bx bx-id-card'></i>
                 <span class="links_name">Trainer Payments</span>
             </a>
@@ -56,7 +56,7 @@
         <span class="fade-effect1"></span>
 
         <li>
-            <a href="#">
+            <a href="myprofile.php">
                 <i class='bx bx-time'></i>
                 <span class="links_name">My Profile</span>
             </a>
