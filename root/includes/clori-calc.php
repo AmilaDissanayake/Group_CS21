@@ -75,7 +75,7 @@
                 <div class="val2">0.00</div><span class="title2"> Calories Per Day</span>
             </div>
 
-            <!-- <div class="text">Your BMR is normal!</div> -->
+            <!-- <div class="text">Your BMI is normal!</div> -->
             <div class="recal2">RECALCULATE</div>
         </div>
     </div>

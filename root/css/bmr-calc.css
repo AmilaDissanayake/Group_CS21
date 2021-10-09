@@ -392,6 +392,20 @@ input[type='radio']:checked:after {
     border: 2px solid #292929;
 }
 
+.result3 .text3 {
+    font-size: 25px;
+    /* font-weight: bold; */
+    font-family: 'Rubik';
+    color: #fff;
+    width: 55%;
+    text-align: center;
+    /* margin-top: 10px; */
+    background: #232323;
+    box-shadow: 0.5vmin 0vmin .6vmin #292929;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
 
 
 

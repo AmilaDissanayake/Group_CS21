@@ -64,7 +64,7 @@
                 <div class="val3">0.00</div><span class="title3"> Calories Per Day</span>
             </div>
 
-            <!-- <div class="text">Your BMR is normal!</div> -->
+            <!-- <div class="text3">Your BMR is normal!</div> -->
             <div class="recal3">RECALCULATE</div>
         </div>
     </div>

@@ -1,71 +1,58 @@
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <div class="sidebar">
     <div class="logo-details">
-        <i class='bx bxl-c-plus-plus'></i>
-        <span class="logo_name">Power House</span>
+        <p>PH</p>
+        <span class="logo_name">FITNESS</span>
     </div>
     <ul class="nav-links">
         <li>
-            <a href="#" class="active">
+            <a href="./dashboard.php" class="links_name">
                 <i class='bx bx-grid-alt'></i>
                 <span class="links_name">Dashboard</span>
             </a>
         </li>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
         <li>
-            <a href="#">
-                <i class='bx bx-box'></i>
-                <span class="links_name">Product</span>
+            <a href="./members.php">
+                <i class='bx bx-group'></i>
+                <span class="links_name">Assigned Members</span>
             </a>
         </li>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
         <li>
             <a href="#">
-                <i class='bx bx-list-ul'></i>
-                <span class="links_name">Order list</span>
+                <i class='bx bx-id-card'></i>
+                <span class="links_name">Bookings</span>
             </a>
         </li>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
         <li>
             <a href="#">
-                <i class='bx bx-pie-chart-alt-2'></i>
-                <span class="links_name">Analytics</span>
+                <i class='bx bx-calendar'></i>
+                <span class="links_name">Calendar</span>
             </a>
         </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-coin-stack'></i>
-                <span class="links_name">Stock</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-book-alt'></i>
-                <span class="links_name">Total order</span>
-            </a>
-        </li>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
         <li>
             <a href="#">
                 <i class='bx bx-user'></i>
-                <span class="links_name">Team</span>
+                <span class="links_name">My Profile</span>
             </a>
         </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-message'></i>
-                <span class="links_name">Messages</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-heart'></i>
-                <span class="links_name">Favrorites</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class='bx bx-cog'></i>
-                <span class="links_name">Setting</span>
-            </a>
-        </li>
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
+        
         <li class="log_out">
-            <a href="../trainer/includes/logout.php">
+            <a href="includes/logout.php">
                 <i class='bx bx-log-out'></i>
                 <span class=" links_name">Log out</span>
             </a>

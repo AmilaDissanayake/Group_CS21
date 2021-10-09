@@ -34,13 +34,12 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-
+                            <th>Username</th>
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Phone Number</th>
-                            <th>Membership Type</th>
-                            <th>Payment Date</th>
-                            <th>Payment Status</th>
+                            <th>Address</th>
+                            <th>Date Joined</th>
                         </tr>
                     </thead>
                     <tbody id="output">
