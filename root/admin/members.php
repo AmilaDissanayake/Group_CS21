@@ -71,6 +71,7 @@
 
             <div class="member-list">
                 <table class="table table-hover">
+
                     <thead>
                         <tr>
 
@@ -81,11 +82,61 @@
                             <!-- <th>Address</th> -->
                             <th>Date Joined</th>
                             <th>Membership Type</th>
-                            <th>Status</th>
+                            <th>Expiery Date</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody id="output">
+                        <?php
 
+                        require "includes/db.php";
+                        $sql = "SELECT * FROM member";
+                        $result = mysqli_query($conn, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+
+                                $query = "SELECT membership_type, joined_date FROM membership WHERE member_id = $row[member_id];";
+                                $result2 = mysqli_query($conn, $query);
+                                $row2 = mysqli_fetch_assoc($result2);
+                                $dateMembership = $row2['joined_date'];
+                                $membershipType = $row2['membership_type'];
+                                $dateMembership = date('Y-m-d', strtotime($dateMembership));
+                                $expireMembership = date('Y-m-d', strtotime($dateMembership . '+' . $membershipType . 'month'));
+                                $today = date("Y-m-d");
+                                $expired = "";
+                                if ($today > $expireMembership) {
+                                    $expired = "expired";
+                                }
+
+                        ?>
+
+
+
+
+                                <tr class=<?php $expired ?>>
+                                    <td>
+                                        <div class="first-column"><span class="avatar"><img src="../media/members/<?php echo $row['image'] ?>"></span><?php echo " " . $row['f_name'] . $row['l_name'] ?></div>
+                                    </td>
+                                    <td><?php echo $row['username'] ?> </td>
+                                    <td><?php echo $row['phone_no'] ?> </td>
+                                    <td><?php echo $dateMembership ?> </td>
+                                    <td><?php echo  $row2['membership_type'] . ' months' ?> </td>
+                                    <td><?php echo  $expireMembership ?> </td>
+                                    <td>
+                                        <div class="row-action">
+                                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">View/Update/Delete</button></div>
+                                            <!-- <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Delete</button></div> -->
+                                        </div>
+                                    </td>
+
+
+
+                                </tr>
+
+
+
+                        <?php }
+                        } ?>
                     </tbody>
                 </table>
 
@@ -93,45 +144,26 @@
             </div>
         </div>
 
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $("#search").keypress(function() {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'includes/member-page.php',
-                        data: {
-                            name: $("#search").val(),
-                        },
-                        success: function(data) {
-                            $("#output").html(data);
-                        }
-                    });
-                });
-            });
-        </script>
-
-
-
 
     </section>
 
 
-</body>
-
-<script>
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".sidebarBtn");
-    sidebarBtn.onclick = function() {
-        sidebar.classList.toggle("active");
-        if (sidebar.classList.contains("active")) {
-            sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-        } else
-            sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-    }
-</script>
 
 
-<script src="js/justselect.min.js"></script>
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function() {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script>
+
+
+    <script src="js/justselect.min.js"></script>
 
 
 </body>
