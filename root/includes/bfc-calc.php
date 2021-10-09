@@ -64,7 +64,7 @@
                 <div class="val4">0.00</div>
             </div>
 
-            <!-- <div class="text">Your BMR is normal!</div> -->
+            <div class="text4">Your Body Fat is normal!</div>
             <div class="recal4">RECALCULATE</div>
         </div>
     </div>

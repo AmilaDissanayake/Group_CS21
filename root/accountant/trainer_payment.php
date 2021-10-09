@@ -1,4 +1,4 @@
-<!-- <?php include "includes/check_login.php" ?> -->
+<?php include "includes/check_login.php" ?>
 
 <!DOCTYPE html>
 
@@ -35,10 +35,11 @@
                     <thead>
                         <tr>
 
-                            <th>Name</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Phone Number</th>
                             <th>Payment Date</th>
-                            <!-- <th>Address</th> -->
-                            <th>Amount</th>
+                            <th>Payment Status</th>
                         </tr>
                     </thead>
                     <tbody id="output">
@@ -55,7 +56,7 @@
                 $("#search").keypress(function() {
                     $.ajax({
                         type: 'POST',
-                        url: 'includes/member-page1.php',
+                        url: 'includes/member-page.php',
                         data: {
                             name: $("#search").val(),
                         },

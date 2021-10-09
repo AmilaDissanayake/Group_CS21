@@ -6,81 +6,41 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trainer Dashboard</title>
-
     <link rel="stylesheet" href="css/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
     <?php include "includes/sidebar.php" ?>
     <section class="home-section">
-        <nav>
-            <div class="sidebar-button">
-                <i class='bx bx-menu sidebarBtn'></i>
-                <span class="dashboard">Dashboard</span>
-            </div>
-            <div class="search-box">
-                <input type="text" placeholder="Search...">
-                <i class='bx bx-search'></i>
-            </div>
-            <div class="profile-details">
-                <!--<img src="images/profile.jpg" alt="">-->
-                <?php $name = $_SESSION['username'];
-                echo "<span class='admin_name'> $name </span>"
-                ?>
-                <i class='bx bx-chevron-down'></i>
-            </div>
-        </nav>
+
+        <?php include "includes/header.php" ?>
+
 
         <div class="home-content">
-            <div class="overview-boxes">
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Order</div>
-                        <div class="number">40,876</div>
-                        <div class="indicator">
-                            <i class='bx bx-up-arrow-alt'></i>
-                            <span class="text">Up from yesterday</span>
-                        </div>
-                    </div>
-                    <i class='bx bx-cart-alt cart'></i>
+        <div class="trainer-stats">
+                <div class="one">
+                    <p class="value">30</p>
+                    <a class="name" href="members.php">Assigned members</a>
                 </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Sales</div>
-                        <div class="number">38,876</div>
-                        <div class="indicator">
-                            <i class='bx bx-up-arrow-alt'></i>
-                            <span class="text">Up from yesterday</span>
-                        </div>
-                    </div>
-                    <i class='bx bxs-cart-add cart two'></i>
+
+                <div class="two">
+                    <p class="value">25,000</p>
+                    <a href="members.php" class="name">Earnings</a>
                 </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Profit</div>
-                        <div class="number">$12,876</div>
-                        <div class="indicator">
-                            <i class='bx bx-up-arrow-alt'></i>
-                            <span class="text">Up from yesterday</span>
-                        </div>
-                    </div>
-                    <i class='bx bx-cart cart three'></i>
+
+                <div class="three">
+                    <p class="value">8</p>
+                    <a href="members.php" class="name">Bookings(Today)</a>
                 </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Return</div>
-                        <div class="number">11,086</div>
-                        <div class="indicator">
-                            <i class='bx bx-down-arrow-alt down'></i>
-                            <span class="text">Down From Today</span>
-                        </div>
-                    </div>
-                    <i class='bx bxs-cart-download cart four'></i>
+
+                <div class="four">
+                    <p class="value">10 Oct 2021</p>
+                    <a href="members.php" class="name">Calendar</a>
                 </div>
+
             </div>
 
             <div class="sales-boxes">

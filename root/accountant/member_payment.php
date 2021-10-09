@@ -37,12 +37,10 @@
 
                             <th>Firstname</th>
                             <th>Lastname</th>
-                            <th>Username</th>
                             <th>Phone Number</th>
-                            <!-- <th>Address</th> -->
-                            <th>Date Joined</th>
                             <th>Membership Type</th>
-                            <th>Status</th>
+                            <th>Payment Date</th>
+                            <th>Payment Status</th>
                         </tr>
                     </thead>
                     <tbody id="output">
