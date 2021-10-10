@@ -46,11 +46,46 @@
                             <div class="pan"></div>
                         </div>
                         <div class="bt"><a href="./booking.php" class="readmore_btn" id="readMore">Read More</a></div>
-                        
-  
                     </div>
+                    <div class="divider2"></div>
                     <div class="pro">
-                        
+                        <div class="weekpro">
+                                <h2>Weekly Progress</h2>
+                                <ul>
+                                    <div class="itemcon">
+                                        <li class="plist">
+                                            DAY 1 <span class="stat">COMPLETED</span>
+                                        </li>
+                                        
+                                    </div>
+                                    <div class="itemcon">
+                                        <li class="plist">
+                                            DAY 2 <span class="stat">NEED TO COMPLETE</span>
+                                        </li>
+                                        
+                                    </div>
+                                    <div class="itemcon">
+                                        <li class="plist">
+                                            DAY 3 <span class="stat" >NEED TO COMPLETE</span>
+                                        </li>
+                                        
+                                    </div>
+                             </ul>
+                        </div>
+                        <div class="divider2"></div>
+                        <div class="comwork">
+                            <h2>DAY</h2>
+                            <ul>
+                                <li>Bench Press</li>
+                                <li>Incline</li>
+                                <li>shoulders</li>
+                                <li>Latteral</li>
+                                <li>Bench Press</li>
+                                <li>Incline</li>
+                                <li>shoulders</li>
+                                <li>Latteral</li>
+                            </ul>
+                        </div>
                     </div>
 
                 </div>            
