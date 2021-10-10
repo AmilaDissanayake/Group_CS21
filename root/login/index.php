@@ -1,7 +1,7 @@
 <?php session_start();
 
 if (isset($SESSION['username'])) {
-    header('Location: ../member/dashboard.php');
+    header('Location: ../trainer/dashboard.php');
 }
 ?>
 

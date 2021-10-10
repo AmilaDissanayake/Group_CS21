@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/booking.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -21,7 +21,7 @@
 
         <div class="home-content">
             <div class="header-div">
-                <h1 class="top-header">Assigned members : 30 Members</h1>
+                <h1 class="top-header">Today Bookings : 10 </h1>
             </div>
             <div class="search-bar">
                 <div class="search-box">
@@ -34,70 +34,43 @@
                 <table class="table-members">
                     <tr>
                         <th>Name</th>
-                        <th>Age</th>
-                        <th>Gender</th>
+                        <th>Time</th>
                         <th>Contact No.</th>
-                        <th>Injuries</th>
-                        <th></th>
                         <th></th>
                     </tr>
                     <tr>
                         <td>Amila dissanayake</td>
-                        <td>25</td>
-                        <td>Male</td>
+                        <td>8.00a.m.-10.00a.m.</td>
                         <td>0112233445</td>
-                        <td>Back pain, Shoulder pain</td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
-                            </div>
-                        </td>
-                        <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Progress</button> 
+                            <button class="about_btn" onclick="location.href='members.php'">Cancel booking</button> 
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>Navod shehan</td>
-                        <td>25</td>
-                        <td>Male</td>
+                        <td>8.00a.m.-10.00a.m.</td>
                         <td>0112233445</td>
-                        <td>Back pain, Shoulder pain</td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
-                            </div>
-                        </td>
-                        <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Progress</button> 
+                            <button class="about_btn" onclick="location.href='members.php'">Cancel booking</button> 
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>Pamodha mahagamage</td>
-                        <td>25</td>
-                        <td>Male</td>
+                        <td>8.00a.m.-10.00a.m.</td>
                         <td>0112233445</td>
-                        <td>Back pain, Shoulder pain</td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
-                            </div>
-                        </td>
-                        <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Progress</button> 
+                            <button class="about_btn" onclick="location.href='members.php'">Cancel booking</button> 
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td>Bimsara kulasekara</td>
-                        <td>25</td>
-                        <td>Male</td>
+                        <td>Bimsara Kulasekara</td>
+                        <td>8.00a.m.-10.00a.m.</td>
                         <td>0112233445</td>
-                        <td>Back pain, Shoulder pain</td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
-                            </div>
-                        </td>
-                        <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Progress</button> 
+                            <button class="about_btn" onclick="location.href='members.php'">Cancel booking</button> 
                             </div>
                         </td>
                     </tr>
