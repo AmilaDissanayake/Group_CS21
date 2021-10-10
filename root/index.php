@@ -476,7 +476,8 @@
 
     <script>
         AOS.init();
-        Chart.defaults.global.defaultFontFamily = "Poppins";
+        // Chart.defaults.global.defaultFontFamily = "Rubik";
+
         var chartColors = {
             red: 'rgb(255, 99, 132)',
             orange: 'rgb(255, 159, 64)',
@@ -497,7 +498,7 @@
                 labels: ["January", "February", "March", "April", "May", "June", "July"],
                 datasets: [{
                     label: "My First dataset",
-                    backgroundColor: "#86ff71",
+                    backgroundColor: "white",
                     borderColor: "#86ff71",
                     data: [40, 38, 33, 30, 29, 25, 22],
                     fill: false,
