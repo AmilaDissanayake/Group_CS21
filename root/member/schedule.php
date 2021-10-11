@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/schedule.css">
     <link rel="stylesheet" href="css/footer.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,97 @@
 
         <?php include "includes/header.php" ?>
 
+        <div class="welcomenote"><h1>HI! "NAME"</h1></div>
+ 
+        <div class="dashcover"></div>
+        <!-- <div class="dubar">
+            <div class="duhead"><h2>Membership Type</h2></div>
+            <div class="duline"><div class="remain"><h2>YEARS</h2><div class="time"><h1>YY</h1></div> </div><div class="remain"><h2>MONTHS</h2><div class="time"><h1>MM</h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1>DD</h1></div></div></div>
+        </div> -->
+        <div class="duhead"></div>
+        <div class="note"><h1>Workout Schedule</h1></div>
+        <div class="member-list">
+                <table class="table table-hover">
 
+                    <thead>
+                        <tr>
+
+                            <th>DAY 01</th>
+                            <th>DAY 02</th>
+                            <th>DAY 03</th>
+                            <th>DAY 04</th>
+                            <th>DAY 05</th>
+                            <th>DAY 06</th>
+                            <th>DAY 07</th>
+                        </tr>
+
+                        <tr>
+                            <td><b><span class ="bpart">Chest  ></span><br> flat barbell bench press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Legs  ></span><br> barbell back squats</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Shoulders  ></span><br> overhead press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Back/hamstrings  ></span><br> barbell deadlift</b><br> 4 sets of 6 reps</td>
+                        </tr>
+
+                        <tr>
+                            <td><b><span class ="bpart">Chest  ></span><br> flat barbell bench press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Legs  ></span><br> barbell back squats</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Shoulders  ></span><br> overhead press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Back/hamstrings  ></span><br> barbell deadlift</b><br> 4 sets of 6 reps</td>
+                        </tr>
+
+                        <tr>
+                            <td><b><span class ="bpart">Chest  ></span><br> flat barbell bench press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Legs  ></span><br> barbell back squats</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Shoulders  ></span><br> overhead press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Back/hamstrings  ></span><br> barbell deadlift</b><br> 4 sets of 6 reps</td>
+                        </tr>
+
+                        <tr>
+                            <td><b><span class ="bpart">Chest  ></span><br> flat barbell bench press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Legs  ></span><br> barbell back squats</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Shoulders  ></span><br> overhead press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Back/hamstrings  ></span><br> barbell deadlift</b><br> 4 sets of 6 reps</td>
+                        </tr>
+
+                        <tr>
+                            <td><b><span class ="bpart">Chest  ></span><br> flat barbell bench press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Legs  ></span><br> barbell back squats</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Shoulders  ></span><br> overhead press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Back/hamstrings  ></span><br> barbell deadlift</b><br> 4 sets of 6 reps</td>
+                        </tr>
+
+                        <tr>
+                            <td><b><span class ="bpart">Chest  ></span><br> flat barbell bench press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Legs  ></span><br> barbell back squats</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Shoulders  ></span><br> overhead press</b><br> 4 sets of 6–8 reps</td>
+                            <td><b>Rest</b></td>
+                            <td><b><span class ="bpart">Back/hamstrings  ></span><br> barbell deadlift</b><br> 4 sets of 6 reps</td>
+                        </tr>
+                    </thead>
+                    <tbody id="output">
+
+                    </tbody>
+                </table>
+
+
+        </div>
  
 
            
