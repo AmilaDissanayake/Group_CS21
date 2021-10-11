@@ -36,15 +36,16 @@
               <div class="rpanel">
                 <!-- <div class="book"> -->
                  <!-- <div class="status"> -->
-                     <div class="bmtag">
+                     <!-- <div class="bmtag">
                         <span id="bk">Calculate BMI</span>
-                     </div>
+                     </div> -->
                      
                      <div class="pan">
-                        <?php include "./../includes/bmi-calc.php" ?>
+                        <?php include "./includes/bmi-calc.php" ?>
+                        <!-- <div class="bt"><a href="./booking.php" class="readmore_btn" id="readMore">Read More</a></div> -->
                      </div>
                  <!-- </div> -->
-                 <div class="bt"><a href="./booking.php" class="readmore_btn" id="readMore">Read More</a></div>
+                 
              </div>
              <!-- <div class="divider2"></div>
              <div class="pro">
@@ -88,6 +89,7 @@
              </div> -->
 
          <!-- </div>             -->
+           <div class="divider"></div>
          <div class="lpanel">
                  <div class="btag"><b>BMI STATISTICS</b></div>
                  
@@ -95,7 +97,7 @@
                      <canvas id="canvas"></canvas>
                  </div>
          </div>
-         <div class="divider"></div>
+       
  
   </div>
 </section>
