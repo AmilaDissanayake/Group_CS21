@@ -12,7 +12,7 @@
         </div>
         <div class="height">
             <p class="title">CALCULATE YOUR BMI</p>
-            <p>HEIGHT</p>
+            <p class="Htag">HEIGHT</p>
             <p class="val">
                 <i class="sub">-</i>
                 <span>50</span>cm
@@ -22,7 +22,7 @@
             <input type="range" min="50" max="220" value="50">
         </div>
         <div class="weight">
-            <p>WEIGHT</p>
+            <p class="Htag">WEIGHT</p>
             <p class="val">
                 <i class="sub">-</i>
                 <span>10</span>kg

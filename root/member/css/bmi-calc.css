@@ -42,9 +42,12 @@
   font-family: 'Azonix';
   /* background: #232323; */
   color: #86ff71;
+  height: 40px;
 }
 
-
+.calculate .Htag{
+    height: 30px;
+}
 
 .calculate .gender {
   display: none;
@@ -88,7 +91,7 @@
 .calculate .height {
     /* margin-top: 4vmin; */
     width: 55%;
-    height: 180px;
+    height: 150px;
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
     display: flex;
@@ -147,7 +150,7 @@
 
 .calculate .weight {
     width: 55%;
-    height: 150px;
+    height: 130px;
     background: #232323;
     box-shadow: 0.5vmin 0vmin .6vmin #292929;
     display: flex;
