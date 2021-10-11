@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="css/progress.css">
     <link rel="stylesheet" href="css/bmi-calc.css">
+    <link rel="stylesheet" href="css/footer.css">
 
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -129,8 +130,10 @@
        
  
   </div>
+
 </section>
 
+<?php include "includes/footer.php" ?>
 <script type="text/javascript" src="js/bmi-cal.js"></script>
 
 <script>
