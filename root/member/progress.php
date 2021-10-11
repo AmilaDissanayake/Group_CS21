@@ -89,15 +89,43 @@
              </div> -->
 
          <!-- </div>             -->
-           <div class="divider"></div>
-         <div class="lpanel">
+        <div class="divider"></div>
+
+        <div class="left">
+            <div class="lpanel">
                  <div class="btag"><b>BMI STATISTICS</b></div>
                  
                  <div class="bmip">
                      <canvas id="canvas"></canvas>
                  </div>
-         </div>
-         
+            </div>
+            <div class="divider3"></div>
+            <div class="indc">
+                    <h2>Weekly Progress</h2>
+                         <ul>
+                             <div class="itemcon">
+                                 <li class="plist">
+                                     DAY 1 <span class="stat">COMPLETED</span>
+                                 </li>
+                                 
+                             </div>
+                             <div class="itemcon">
+                                 <li class="plist">
+                                     DAY 2 <span class="stat">NEED TO COMPLETE</span>
+                                 </li>
+                                 
+                             </div>
+                             <div class="itemcon">
+                                 <li class="plist">
+                                     DAY 3 <span class="stat" >NEED TO COMPLETE</span>
+                                 </li>
+                                 
+                             </div>
+                      </ul>      
+            </div>
+            <div class="divider3"></div>
+        </div>
+        
        
  
   </div>
