@@ -11,7 +11,7 @@
                 <span class="links_name">Dashboard</span>
             </a>
         </li>
-        <div calss="divider">
+        <div>
             <span class="fade-effect1"></span>
         </div>
         <li>
@@ -20,16 +20,16 @@
                 <span class="links_name">Assigned Members</span>
             </a>
         </li>
-        <div calss="divider">
+        <div>
             <span class="fade-effect1"></span>
         </div>
         <li>
-            <a href="#">
+            <a href="./bookings.php">
                 <i class='bx bx-id-card'></i>
                 <span class="links_name">Bookings</span>
             </a>
         </li>
-        <div calss="divider">
+        <div>
             <span class="fade-effect1"></span>
         </div>
         <li>
@@ -38,7 +38,7 @@
                 <span class="links_name">Calendar</span>
             </a>
         </li>
-        <div calss="divider">
+        <div>
             <span class="fade-effect1"></span>
         </div>
         <li>
@@ -47,7 +47,7 @@
                 <span class="links_name">Earnings</span>
             </a>
         </li>
-        <div calss="divider">
+        <div>
             <span class="fade-effect1"></span>
         </div>
         <li>
@@ -56,7 +56,7 @@
                 <span class="links_name">My Profile</span>
             </a>
         </li>
-        <div calss="divider">
+        <div>
             <span class="fade-effect1"></span>
         </div>
         
