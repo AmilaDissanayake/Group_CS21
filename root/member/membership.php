@@ -50,11 +50,29 @@
 
         <div class="btmsec">
             <div class="meship">
-                <div class="note2"><h1>Tips</h1></div>
+                <div class="ren">
+                    <div class="note2"><h1>Renew Membership</h1></div>
+                    
+                    <div class="selpack">
+                        <div class="bt"><a href="#" class="readmore_btn" id="readMore">01 MONTH</a></div> 
+                        <div class="bt"><a href="#" class="readmore_btn" id="readMore">03 MONTH</a></div>
+                        <div class="bt"><a href="#" class="readmore_btn" id="readMore">06 MONTH</a></div>
+                        <div class="bt"><a href="#" class="readmore_btn" id="readMore">12 MONTH</a></div>
+                    </div>
+
+                    <div class="pay">
+                        <button class="hero_btn" >GO FOR PAYMENT</button>
+                    </div>
+                    
+                </div>
+                
             </div>
             <div class="hordivid"></div>
             <div class="tassign">
-
+                <div class="seltr">
+                    <div class="note2"><h1>Assign to a Trainer</h1></div>
+                
+                </div>
             </div>
         </div>
 
