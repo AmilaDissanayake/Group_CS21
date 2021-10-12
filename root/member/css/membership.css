@@ -10,13 +10,20 @@
 
 .welcomenote{
   padding-top: 100px;
-
 }
 
 .welcomenote h1{
-  text-align: center;
+  padding-left: 40px;
   font-size: 34px;
 }
+
+.type{
+
+}
+.typ1 h1{
+    text-align: center;
+    font-size: 34px;
+  }
 
 .dashcover{
   background-image: url("dashcover.jpg");
@@ -44,32 +51,78 @@
   background-color: #86ff71;
 }
 
+.duhead2{
+    /* background-color: rgb(24,24,24); */
+    background-color: grey;
+    margin: 0;
+    padding : 12px;
+    width: auto;
+    text-align: center;
+}
+
+.note2 h1{
+    text-align: center;
+    font-size: 34px;
+    color: black;
+    padding-top: 20px;
+}
+
 .duhead{
-  background-color: #292b2e;
+  background-color: white;
   margin: 0;
   box-shadow: #333;
   padding : 20px;
-  color: white;
+  color: black;
   width: auto;
-}
-
-.duhead {
   text-align: center;
 }
-.duline{
+.duhead h2{
+    font-size: 34px;
+}
+
+.mainbar{
+    display: flex;
+}
+
+.duline1{
   justify-content: center;
   align-items: center;
   display: flex;
   margin: 0;
   box-shadow: #333;
   padding : 20px;
+  width: 60%;
+  border-left: black;
+  border: 10px;
 }
 
+.duline2{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0;
+    box-shadow: #333;
+    padding : 20px;
+    width: 40%;
+    border-left: 3px solid rgb(244,244,244);
+}
+
+.mainbar .bx{
+    font-size: 30px;
+}
 .time{
   font-size: 40px;
+  font-style: normal;
   text-align: center;
+  background-color: rgb(24,24,24);
+  color: white;
+  /* background-color: rgb(244,244,244); */
+  padding: 3px;
+  border-radius: 7px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
 .remain{
   text-align: center;
   position: relative;
@@ -116,87 +169,35 @@
   display: block;
 }
 
-.book{
+
+
+.divid{
   width: 100%;
-  height: 25%;
+  height: 10px;
+  background-color: rgb(244,244,244);
 }
 
-.pro{
-  width: 100%;
-  height:75%;
+.hordivid{
+    width: 1%;
+    height: 100%;
+    background-color: rgb(244,244,244);
 }
 
-.lpanel:hover{
-  background-color: rgb(32, 32, 31);
+.btmsec{
+    width: 100%;
+    height: 800px;
+    background-color: white;
+    display: flex;
 }
 
-.lpanel:hover > .btag{
-  color: white;
-}
-.rpanel:hover{
-  background-color: rgb(202, 199, 194);
+.btmsec .meship{
+    width: 60%;
+    height: 100%;
 }
 
-.divider{
-  width: 1%;
-  height: 600px;
-}
-.book{
-  background-color: white;
-  align-items: center;
-  justify-items: center;
-}
-.status{
-  text-align: center;
-  justify-content: center;
-  color: grey;
-  padding: 20px;
-  width: 100%;
-  height: 50%;
-  font-size: 25px;
-  font-weight: 900;
-}
-
-.book:hover{
-  background-color: rgb(24,24,24);  
-}
-
-.book:hover > .status{
-  color: white;
-}
-
-.bt{
-  padding: 20px;
-  text-align: center;
-  font-family: 'Rubik', sans-serif;
-}
-
-.bt a{
-  text-decoration: none;
-}
-
-#bk{
-  padding: 10px;
-  font-size: larger;
-}
-
-.pan{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 90%;
-  padding: 15px;
-  border-color: rgb(99, 99, 99);
-  border-radius: 10px;
-  border-style: double;
-  
-  background-color: rgb(24,24,24);
-  /* background-color: rgba(0, 0, 0, 1); */
-}
-
-.book:hover > .status .pan{
-  background-color: white;
+.btmsec .tassign{
+    width: 39%;
+    height: 100%;
 }
 
 .readmore_btn {
@@ -226,52 +227,7 @@
   transition: 0.4s;
 }
 
-.pro{
-  /* display: block; */
-  width: 100%;
-  height: 450px;
-  padding-top: 20px;
-  /* padding-bottom: 20px; */
-}
 
-.pro .weekpro{
-  /* border: rgb(24,24,24); */
-  /* border-radius: 5px;
-  border-style: outset; */
-    width: 100%;
-    height: 35%;
-    padding: 20px;
-    background-color: white;
-    font-size: auto;
-}
-
-.weekpro ul{
-  list-style-type: '>';
-}
-.weekpro .plist{
-  
-}
-
-
-.pro .weekpro .itemcon{
-  width: 100%;
-  height: 25px;
-  padding-left: 50px;
-  display: block;
-}
-
-.pro .comwork{
-  width: 100%;
-  height: 64%;
-  padding: 20px;
-  background-color: white;
-}
-
-.pro .divider2{
-  width: 100%;
-  height: 1%;
-  background-color: white;
-}
 
 /* -------------------------sidebar -----------------*/
 .sidebar{
@@ -712,18 +668,16 @@ nav .profile-details i{
 
 }
 
-.search-bar{
-  
-}
+
+
+
+/* table//////////////////////////////////////////////////////// */
 
 .member-list{
   margin-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
 }
-
-/* table//////////////////////////////////////////////////////// */
-
 
 table {
   border-collapse: collapse;
