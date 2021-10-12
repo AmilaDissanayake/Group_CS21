@@ -107,8 +107,18 @@
         <div class="divider"></div>
         <div class="dwnpart">
             <div class="lsd">
-                <div class="note2"><h1>General Meal Plan Suggestions</h1></div>
-
+                <div class="note2"><h1>Suggestions for Meal Plan</h1></div>
+                <div class="con1">
+                    <div class="set1">
+                        <p>Foods to Focus On</p>
+                    </div>
+                    <div class="set1">
+                        <p>Foods to Limit</p>
+                    </div>
+                    <div class="set1">
+                        <p>Bodybiliding supliments</p>
+                    </div>
+                </div>
             </div>
             <div class="divider3"></div>
             <div class="rsd">

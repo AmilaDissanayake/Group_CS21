@@ -528,12 +528,8 @@ th{
 thead {
   background-color: #86ff71;
   color: rgb(0, 0, 0);
-  margin-bottom: 10px;
-  
-  
+  margin-bottom: 10px;  
 }
-
-
 
 tbody tr:nth-child(odd) {
   background-color: #fff;
