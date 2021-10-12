@@ -123,7 +123,14 @@
             <div class="divider3"></div>
             <div class="rsd">
             <div class="note2"><h1>Tips</h1></div>
-
+                <div class="con1">
+                    <div class="set1">
+                        <p>How many calories do you need?</p>
+                    </div>
+                    <div class="set1">
+                        <p>What is Macronutrient Ratio</p>
+                    </div>
+                </div>
             </div>
 
         </div>

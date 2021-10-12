@@ -31,12 +31,31 @@
   color: grey;
   height: 70px;
   border-radius: 5px;
-  border-bottom: 2px solid rgb(244,244,244);
+  border-bottom: 5px solid rgb(244,244,244);
   background: white;
   text-align: center;
 }
 
 .lsd .con1 p{
+  font-size: larger;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 22px;
+}
+
+.rsd .con1 .set1{
+  margin-top: 50px;
+  padding: 20px;
+  width: 100%;
+  color: grey;
+  height: 70px;
+  border-radius: 5px;
+  border-bottom: 5px solid rgb(244,244,244);
+  background: white;
+  text-align: center;
+}
+
+.rsd .con1 p{
   font-size: larger;
   font-weight: 600;
   font-style: italic;
