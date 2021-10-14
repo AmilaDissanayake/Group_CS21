@@ -54,7 +54,7 @@
                 </li>
                 <li><a href="#testim">Testimonials</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="contact/index.php">Contact</a></li>
             </ul>
 
 
@@ -398,7 +398,7 @@
             </details>
             <details>
                 <summary>Didn't find the answer to your question?</summary>
-                <p class="text">No worries! We're here to help you. Simply <a href="#" target="_blank">Contact us</a>
+                <p class="text">No worries! We're here to help you. Simply <a href="contact/index.php" target="_blank">Contact us</a>
                     and we will get back to you as soon as possible.</p>
             </details>
         </div>
@@ -431,7 +431,7 @@
                 <li><a href="http://localhost/Group_CS21/root/includes/legal/privacy.pdf" target="_blank">Privacy Policy</a></li>
                 <!-- <li><a href="#">Help</a></li> -->
                 <li><a href="http://localhost/Group_CS21/root/includes/legal/terms.pdf" target="_blank">Terms & Conditions</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="contact/index.php">Contact</a></li>
                 <li><a href="#" class="back"><i class="fas fa-chevron-up"></i>&nbspBack to top</a></li>
             </ul>
         </div>
@@ -476,7 +476,8 @@
 
     <script>
         AOS.init();
-        Chart.defaults.global.defaultFontFamily = "Poppins";
+        // Chart.defaults.global.defaultFontFamily = "Rubik";
+
         var chartColors = {
             red: 'rgb(255, 99, 132)',
             orange: 'rgb(255, 159, 64)',
@@ -497,7 +498,7 @@
                 labels: ["January", "February", "March", "April", "May", "June", "July"],
                 datasets: [{
                     label: "My First dataset",
-                    backgroundColor: "#86ff71",
+                    backgroundColor: "white",
                     borderColor: "#86ff71",
                     data: [40, 38, 33, 30, 29, 25, 22],
                     fill: false,
