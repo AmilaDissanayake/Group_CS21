@@ -45,6 +45,8 @@
                             <th>SUNDAY</th>
                         </tr>
 
+                     </thead>
+                    <tbody id="output">
                         <tr>
                             <td><b><div class="ttag"><span class ="bpart">Breakfast</span></div></b><br><div class="item">Scrambled eggs with mushrooms and oatmeal</div></td>
                             <td><b><div class="ttag"><span class ="bpart">Breakfast</span></div></b><br><div class="item">Protein pancakes with light-syrup, peanut butter and raspberries</div></td>
@@ -94,8 +96,6 @@
                             <td><b><div class="ttag"><span class ="bpart">Dinner</span></div></b><br><div class="item">Diced beef with rice, black beans, bell peppers, cheese and pico de gallo.</div></td>
                             <td><b><div class="ttag"><span class ="bpart">Dinner</span></div></b><br><div class="item">Turkey meatballs, marinara sauce and parmesan cheese over pasta.</div></td>
                         </tr>
-                    </thead>
-                    <tbody id="output">
 
                     </tbody>
                 </table>
