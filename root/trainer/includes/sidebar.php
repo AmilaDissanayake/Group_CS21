@@ -33,7 +33,7 @@
             <span class="fade-effect1"></span>
         </div>
         <li>
-            <a href="#">
+            <a href="./calendar.php">
                 <i class='bx bx-calendar'></i>
                 <span class="links_name">Calendar</span>
             </a>
@@ -42,7 +42,7 @@
             <span class="fade-effect1"></span>
         </div>
         <li>
-            <a href="#">
+            <a href="./earnings.php">
                 <i class='bx bx-money'></i>
                 <span class="links_name">Earnings</span>
             </a>
