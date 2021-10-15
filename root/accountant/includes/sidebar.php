@@ -6,7 +6,7 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="./dashboard.php" class="links_name">
+            <a href="./acc_dashboard.php" class="links_name">
                 <i class='bx bx-grid-alt'></i>
                 <span class="links_name">Dashboard</span>
             </a>
