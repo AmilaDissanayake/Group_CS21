@@ -6,6 +6,26 @@
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #121317;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.308);
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #86ff71;
+}
 .sidebar{
   position: fixed;
   height: 100%;
@@ -448,6 +468,8 @@ nav .profile-details i{
 
 .search-bar{
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   
 }
 
@@ -462,6 +484,7 @@ nav .profile-details i{
 
 table {
   border-collapse: collapse;
+  border-radius: 5px;
 }
 
 td {
@@ -515,6 +538,7 @@ tbody tr{
   padding-top: 20px;
   padding-bottom: 20px;
   border: 1px #e5e5e5 solid;
+  /* border-radius: 5px; */
 }
 
 .member-stats .one{
@@ -652,6 +676,39 @@ table{
 .expired{
   background-color: red;
 }
+
+.add_btn {
+  position: relative;
+  z-index: 10;
+  width: 130px;
+  height: 30px;
+  border: 0px solid rgba(255, 255, 255, .5);
+  border-radius: 30px;
+  background-color: #86ff71;
+  font-family: 'Rubik';
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  letter-spacing: 1px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  outline: none;
+  cursor: pointer;
+  /* margin-left: 150px; */
+  /* border: solid 2px black */
+  /* margin-left: auto; */
+  /* order: 2; */
+  
+}
+
+.add_btn:hover {
+  color: rgb(0, 0, 0);
+/* box-shadow: 0px 0px 10px 1px #121317; */
+/* border: 2px solid #86ff71; */
+/* transform: scale(1.1); */
+  transition: .4s ;
+}
+
+
  
   
   

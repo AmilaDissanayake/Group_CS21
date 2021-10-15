@@ -67,6 +67,11 @@
                         <option>Female</option>
                     </select>
                 </div>
+
+
+
+                <div class="add_button"><button class="add_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Add Member</button></div>
+
             </div>
 
             <div class="member-list">
