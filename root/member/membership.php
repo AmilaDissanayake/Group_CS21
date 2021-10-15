@@ -63,7 +63,76 @@
                     <div class="pay">
                         <button class="hero_btn" >GO FOR PAYMENT</button>
                     </div>
-                    
+                    <div class="note2"><h1>Payment History</h1></div>
+                    <div class="payment-div">
+                        <table class="table-payments">
+                        <tr>
+                            <th>INVOICE NO.</th>
+                            <th>DATE</th>
+                            <th>PAYMENT METHOD</th>
+                            <th>DESCRIPTION</th>
+                            <th>DONE BY</th>
+                            <th>AMOUNT(Rs.)</th>
+                        </tr>
+
+                        <tr>
+                            <td>0001A</td>
+                            <td>25/6/2021</td>
+                            <td>Online</td>
+                            <td>Renewmembership</td>
+                            <td>USERNAME</td>
+                            <td>2,500</td>
+                            <!-- <td>
+                                <div class="row-action">
+                                    <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
+                                </div>
+                            </td> -->
+                        </tr>
+
+                        <tr>
+                            <td>0002A</td>
+                            <td>26/7/2021</td>
+                            <td>Online</td>
+                            <td>Assign to a Trainer</td>
+                            <td>USERNAME</td>
+                            <td>12,500</td>
+                            <!-- <td>
+                                <div class="row-action">
+                                    <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
+                                </div>
+                            </td> -->
+                        </tr>
+
+                        <tr>
+                            <td>0003A</td>
+                            <td>30/6/2021</td>
+                            <td>Cash</td>
+                            <td>Renewmembership & Assign to a trainer</td>
+                            <td>Accountant</td>
+                            <td>12,500</td>
+                            <!-- <td>
+                                <div class="row-action">
+                                    <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
+                                </div>
+                            </td> -->
+                        </tr>
+
+                        <tr>
+                            <td>0003A</td>
+                            <td>30/7/2021</td>
+                            <td>Cash</td>
+                            <td>Renewmembership </td>
+                            <td>Accountant</td>
+                            <td>6,500</td>
+                            <!-- <td>
+                                <div class="row-action">
+                                    <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
+                                </div>
+                            </td> -->
+                        </tr>
+ 
+                    </table>
+                    </div>
                 </div>
                 
             </div>
@@ -71,7 +140,7 @@
             <div class="tassign">
                 <div class="seltr">
                     <div class="note2"><h1>Assign to a Trainer</h1></div>
-                
+
                 </div>
             </div>
         </div>
