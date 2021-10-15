@@ -708,7 +708,54 @@ table{
   transition: .4s ;
 }
 
+.bmi {
+  width: 600px;
+  height:400px;
+  background-color: rgb(24, 24, 24);
+  margin-left: 100px;
+}
 
- 
+.bmi2 {
+  width:400px;
+  height:400px;
+  background-color: white;
+  margin-left: 50px;
+  align-items: center;
+  padding-top: 70px;
+} 
+.bmi-main{
+  display: flex;
+}
+
+.hero_btn{
+
+  position: relative;
+  z-index: 10;
+  width: 280px;
+  height: 50px;
+  border: 1px solid #86ff71;
+  border-radius: 30px;
+  background-color: #86ff71;
+  font-family: 'Azonix';
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  letter-spacing: 1px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  outline: none;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-left: 55px;
+
+}
+
+.hero_btn:hover{
+
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 0px 10px 1px #86ff71;
+  border: 1px solid #86ff71;
+  transition: .4s;
+
+}
   
   

@@ -43,7 +43,39 @@
                             <th>Payment Status</th>
                         </tr>
                     </thead>
-                    <tbody id="output">
+                    <tbody class="output" id="output">
+                        <tr>
+                            <td>Navod</td>
+                            <td>Shehan</td>
+                            <td>0702181481</td>
+                            <td>Monthly</td>
+                            <td>2021-10-10</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Amila</td>
+                            <td>Dissanayake</td>
+                            <td>0702181480</td>
+                            <td>Annual</td>
+                            <td>2021-09-10</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Pamodha</td>
+                            <td>Sankalpa</td>
+                            <td>0702183481</td>
+                            <td>Monthly</td>
+                            <td>2021-08-10</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Bimsara</td>
+                            <td>Sankabhanu</td>
+                            <td>0705683481</td>
+                            <td>Monthly</td>
+                            <td>2021-07-10</td>
+                            <td>Paid</td>
+                        </tr>
 
                     </tbody>
                 </table>
