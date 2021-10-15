@@ -37,12 +37,30 @@
 
                             <th>Name</th>
                             <th>Payment Date</th>
-                            <!-- <th>Address</th> -->
                             <th>Amount</th>
                         </tr>
                     </thead>
-                    <tbody id="output">
-
+                    <tbody class="output" id="output">
+                        <tr>
+                            <td>Navod</td>
+                            <td>2021-10-10</td>
+                            <td>1500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Amila</td>
+                            <td>2021-09-10</td>
+                            <td>15000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Pamodha</td>
+                            <td>2021-09-20</td>
+                            <td>1500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Bimsara</td>
+                            <td>2021-07-10</td>
+                            <td>1500.00</td>
+                        </tr>
                     </tbody>
                 </table>
 
