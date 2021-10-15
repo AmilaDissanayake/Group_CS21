@@ -723,6 +723,12 @@ nav .profile-details i{
 
 /* table//////////////////////////////////////////////////////// */
 
+.btmsec .payment-div{
+  text-align: -webkit-center;
+  width: 95%;
+}
+
+
 .member-list{
   margin-top: 30px;
   padding-left: 30px;
