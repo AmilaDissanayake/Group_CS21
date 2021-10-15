@@ -17,13 +17,10 @@
   font-size: 34px;
 }
 
-.type{
-
-}
 .typ1 h1{
     text-align: center;
     font-size: 34px;
-  }
+}
 
 .dashcover{
   background-image: url("dashcover.jpg");
@@ -721,13 +718,52 @@ nav .profile-details i{
 
 
 
+
 /* table//////////////////////////////////////////////////////// */
 
-.btmsec .payment-div{
-  text-align: -webkit-center;
-  width: 95%;
+.btmsec .meship .payment-div{
+  text-align: center;
+  width: 99%;
+  font-size: 16px;
+  height: 100%;
+  padding-left: 10px;
 }
 
+.payment-div td{
+  text-align: center;
+  font-size: 13px;
+}
+
+/* @media (max-width:800px){
+  .ren .payment-div {
+    overflow-x: scroll;
+  }
+  .tassign .trainer-div{
+    overflow-x: scroll;
+  }
+} */
+
+
+.payment-div table .dlist{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.tassign .trainer-div{
+  text-align: center;
+  width: 99%;
+  font-size: 16px;
+  height: 100%;
+  padding-left: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 10px;
+}
+
+.tassign .trainer-div td{
+  text-align: center;
+  font-size: 13px;
+}
 
 .member-list{
   margin-top: 30px;
@@ -754,8 +790,6 @@ thead {
   background-color: #86ff71;
   color: rgb(0, 0, 0);
   margin-bottom: 10px;
-  
-  
 }
 
 tbody tr:nth-child(odd) {
@@ -766,7 +800,32 @@ tbody tr:nth-child(even) {
   background-color: #eee;
 }
 
+.about_btn {
+  position: relative;
+  z-index: 10;
+  width: 80px;
+  margin: 3px;
+  /* height: 45px; */
+  border: 0px solid rgba(255, 255, 255, .5);
+  border-radius: 30px;
+  background-color: #424244;
+  font-family: 'Rubik';
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
 
+.about_btn:hover {
+  color: rgba(255, 255, 255, 1);
+box-shadow: 0px 0px 10px 1px #121317;
+border: 0px solid #121317;
+  transition: .4s;
+}
 /* scrollbarscrollbar */
 
 ::-webkit-scrollbar {
@@ -788,3 +847,93 @@ tbody tr:nth-child(even) {
 ::-webkit-scrollbar-thumb:hover {
   background: #86ff71; 
 }
+
+
+/*--------assigned trainer part---------------*/
+.adetails .astatus{
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+  height: 25px;
+}
+.adetails .aper{
+  width: 100%;
+  /* background-color: #FFFFFF; */
+  border: 2px solid #86ff711a;
+  padding: 40px 20px 40px 20px;
+  /* padding: 20px; */
+  /* box-shadow: 0 3px 10px #86ff7124; */
+  border-radius: 10px;
+}
+
+.avatar, .name , .joined-date  {
+  text-align: center;
+  display: block;
+}
+
+.adetails .avatar img{
+  width: 200px;
+  border-radius: 50%;
+  border: 2px solid #86ff71;
+  transition:transform 0.25s ease;
+  
+}
+
+.avatar img:hover {
+  -webkit-transform:scale(1.2); /* or some other value */
+  transform:scale(1.2);
+  cursor: pointer;
+}
+
+.adetails .joined-date p{
+ 
+  font-family: 'Rubik';
+  size: 14px;
+  color: grey;
+  /* color: rgba(255, 255, 255, 0.748); */
+}
+
+.adetails .name p{
+  font-family: 'Azonix';
+  size: 20px;
+  color: black;
+}
+
+.button-inner{
+  display: flex;
+  justify-content: center;
+}
+
+.adetails .stat{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  background-color:#86ff71 ;
+  margin-top: 20px;
+  border-radius: 50px;
+  margin-left: 20px;
+}
+
+  .adetails .stat .exp{
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      border-right: 2px solid #121317 ;
+  }
+  
+
+  .adetails .stat .exp p , .adetails .stat .rate p , .adetails .stat .review-count p{
+      text-align: center;
+      font-family: 'Azonix';
+      font-size: 14px;
+  }
+
+  .adetails .stat .rate{
+      width: 33%;
+      border-right: 2px solid #121317 ;
+  }
+
+  .adetails .stat .review-count{
+      width: 33%;
+  }

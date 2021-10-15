@@ -140,14 +140,96 @@
             <div class="tassign">
                 <div class="seltr">
                     <div class="note2"><h1>Assign to a Trainer</h1></div>
+                    <div class="adetails">
+                        <div class="astatus">
+                            <p><i class='bx bxs-flag'></i>Assign to a trainer <b>since</b> <i>21/06/2021</i> <b>till</b> <i>21/07/2021</i></p> 
+                        </div>
+                        <div class="aper">
+                            <div class="avatar">
+                                <img src="./media/thusitha.jpg">
+                            </div>
+                            <div class="joined-date">
+                                <p>Assign with</p>
+                            </div>
+                            <div class="name">
 
+                                <p>THUSITHA KAKULAWALA ⭐5 </p>
+                            </div>
+                            <div class="button-inner">
+
+                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">CALL</button></div>
+                            </div>
+                        <div class="stat">
+                            <div class="exp">
+                                <p>3 YRS<br>Expirience</p>
+                             </div>
+                            <div class="rate">
+                                <p>6,000/=<br>Per Month</p>
+                            </div>
+                            <div class="review-count">
+                                <p>50<br>Reviews</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="note2"><h1>Trainer List</h1></div>
+                    <div class="trainer-div">
+                        <table class="table-trainers">
+                        <tr>
+                            <th>NAME</th>
+                            <th>EXPERIENCE</th>
+                            <th>RATING</th>
+                            <th>MONTHLY RATE(Rs.)</th>
+                            <th></th>
+                        </tr>
+
+                        <div class="dlist">
+                            <tr>
+                                <td>Thusitha</td>
+                                <td> 2 Years</td>
+                                <td> 5 (⭐)</td>
+                                <td>2,500</td>
+                                <td>
+                                    <div class="row-action">
+                                        <button class="about_btn" onclick="location.href='members.php'">Profile</button>
+                                        <button class="about_btn" onclick="location.href='members.php'">Select</button> 
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Thusitha</td>
+                                <td> 2 Years</td>
+                                <td> 5 (⭐)</td>
+                                <td>2,500</td>
+                                <td>
+                                    <div class="row-action">
+                                        <button class="about_btn" onclick="location.href='members.php'">Profile</button>
+                                        <button class="about_btn" onclick="location.href='members.php'">Select</button> 
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Thusitha</td>
+                                <td> 2 Years</td>
+                                <td> 5 (⭐)</td>
+                                <td>2,500</td>
+                                <td>
+                                    <div class="row-action">
+                                        <button class="about_btn" onclick="location.href='members.php'">Profile</button>
+                                        <button class="about_btn" onclick="location.href='members.php'">Select</button> 
+                                    </div>
+                                </td>
+                            </tr>
+                        </div>
+                    </table>
+
+                    </div>
                 </div>
             </div>
         </div>
-
-
-
- 
+        <div class="divid"></div>
 
            
     </section>
