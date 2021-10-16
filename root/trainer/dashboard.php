@@ -40,8 +40,8 @@
                     <p class="value">10 Oct 2021</p>
                     <a href="calendar.php" class="name">Calendar</a>
                 </div>
-
         </div>
+        
         </div>
     </section>
 
