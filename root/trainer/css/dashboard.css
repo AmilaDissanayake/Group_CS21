@@ -259,9 +259,6 @@ nav .profile-details i{
     height: 50px;
     min-width: 40px;
   }
-  .home-content .sales-boxes .sales-details{
-    width: 560px;
-  }
 }
 @media (max-width: 550px) {
   .overview-boxes .box{
@@ -276,12 +273,27 @@ nav .profile-details i{
 .fade-effect1{
   display:block;
   border:none;
+  color:black;
+  height:1px;
+  background:white;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(#ffffff39), to(#121317));
+}
+.fade-effect2{
+  display:block;
+  border:none;
   color:white;
   height:2px;
   background:black;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(#ffffff39), to(#121317));
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(#86ff71), to(white));
 }
-
+.fade-effect3{
+  display:block;
+  border:none;
+  color:white;
+  height:2px;
+  background:black;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(#3c3d3c), to(white));
+}
 
 .member-list{
   margin-top: 30px;
@@ -374,3 +386,172 @@ box-shadow: 0px 0px 10px 1px #121317;
 border: 0px solid #121317;
   transition: .4s;
 }
+.about_btn1 {
+  position: relative;
+  z-index: 10;
+  width: 150px;
+  height: 45px;
+  border: 0px solid rgba(255, 255, 255, .5);
+  border-radius: 30px;
+  background-color: #86ff71;
+  font-family: 'Rubik';
+  color: black;
+  font-size: 20px;
+  letter-spacing: 1px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.about_btn1:hover {
+color: rgba(255, 255, 255, 1);
+box-shadow: 0px 0px 10px 1px #86ff71;
+border: 0px solid #86ff71;
+transition: .4s;
+}
+.button-profile{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+/* scrollbarscrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #121317; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.308); 
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #86ff71; 
+}
+
+.review{
+  width: 62%;
+  background-color: white;
+  height: 458px;
+  border-radius: 5px;
+  border-bottom: 2px solid rgb(211, 209, 209);
+  border-right: 2px solid rgb(211, 209, 209);
+  margin-left: 3%;
+}
+.review h1{
+  font: rubik;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.review h2{
+  padding-left: 25px;
+  padding-bottom: 10px;
+}
+.review p{
+  padding-left: 25px;
+  padding-right: 5px;
+  padding-bottom: 20px;
+}
+.review-content{
+  overflow-y: hidden;
+}
+.divider{
+  padding-top:10px;
+  padding-bottom: 20px;
+}
+.dashboard-bottom{
+  display: flex;
+}
+.left{
+  width: 35%;
+  background-color: #FFFFFF;
+  border: 2px solid #86ff711a;
+  padding: 30px 20px 30px 20px;
+  /* padding: 20px; */
+  /* box-shadow: 0 3px 10px #86ff7124; */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgb(211, 209, 209);
+  border-right: 2px solid rgb(211, 209, 209);
+}
+
+.avatar, .name , .joined-date  {
+  text-align: center;
+  display: block;
+}
+
+.left .avatar img{
+  width: 200px;
+  border-radius: 50%;
+  border: 2px solid #86ff71;
+  transition:transform 0.25s ease;
+  
+}
+
+.avatar img:hover {
+  -webkit-transform:scale(1.2); /* or some other value */
+  transform:scale(1.2);
+  cursor: pointer;
+}
+
+.left .joined-date p{
+ 
+  font-family: 'Rubik';
+  size: 14px;
+  color: rgba(24, 23, 23, 0.748);
+}
+
+.left .name p{
+  font-family: 'Azonix';
+  size: 20px;
+  color: black;
+}
+.left .stat{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  background-color:#86ff71 ;
+  margin-top: 20px;
+  border-radius: 50px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+  .left .stat .exp{
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      border-right: 2px solid #121317 ;
+      padding-top: 5px;
+      padding-bottom: 5px;
+  }
+  
+
+  .left .stat .exp p , .left .stat .rate p , .left .stat .review-count p{
+      text-align: center;
+      font-family: 'Azonix';
+      font-size: 14px;
+  }
+
+  .left .stat .rate{
+      width: 33%;
+      border-right: 2px solid #121317 ;
+  }
+
+  .left .stat .review-count{
+      width: 33%;
+  }
+
+
+
