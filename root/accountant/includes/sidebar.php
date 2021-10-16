@@ -1,4 +1,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <div class="sidebar">
     <div class="logo-details">
         <p>PH</p>
@@ -16,7 +18,7 @@
         </div>
         <li id="utton">
             <a href="./member_payment.php">
-                <i class='bx bx-group'></i>
+            <i class="fa fa-credit-card"></i>
                 <span class="links_name">Member Payments</span>
             </a>
 
@@ -39,7 +41,7 @@
         </script> -->
         <li>
             <a href="trainer_payment.php">
-                <i class='bx bx-id-card'></i>
+            <i class="fas fa-money-check-alt"></i>
                 <span class="links_name">Trainer Payments</span>
             </a>
         </li>
@@ -48,7 +50,7 @@
         </div>
         <li>
             <a href="./pay_history.php">
-                <i class='bx bx-money'></i>
+                <i class="fa fa-history"></i>
                 <span class="links_name">Payment History</span>
             </a>
         </li>
@@ -57,7 +59,7 @@
 
         <li>
             <a href="myprofile.php">
-                <i class='bx bx-time'></i>
+                <i class='fas fa-user-alt'></i>
                 <span class="links_name">My Profile</span>
             </a>
         </li>

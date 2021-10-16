@@ -22,7 +22,6 @@
 // });
 
 
-
 function checkInputs() {
 	var isValid = false;
 	var fnameValid = false;
