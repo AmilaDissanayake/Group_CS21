@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/booking.css">
     <link rel="stylesheet" href="css/footer.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,10 @@
 
         <?php include "includes/header.php" ?>
 
-
+        <div class="welcomenote"><h1>HI! "NAME"</h1></div>
+ 
+        <div class="dashcover"></div>
+        <div class="duhead"></div>
  
 
            
