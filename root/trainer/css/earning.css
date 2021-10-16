@@ -218,26 +218,28 @@ height:2px;
 background:black;
 background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(#ffffff39), to(#121317));
 }
-#wrapper
+.table-div
 {
  margin:0 auto;
- padding:0px;
+ padding-left:200px;
+ /* padding-right: 100px; */
  text-align:center;
- width:40%;
+ display: flex;
+ justify-content: center;
 }
-#table_detail
+.earning-table
 {
- width: 100%;
+width: 500px;
  text-align:left;
  border-collapse: collapse;
  color:#2E2E2E;
- border:1px solid #A4A4A4;
+ border:none;
 }
-#table_detail tr:hover
+.earning-table tr:hover
 {
  background-color:#F2F2F2;
 }
-#table_detail .hidden_row
+.earning-table .hidden_row
 {
  display:none;
 }
@@ -289,8 +291,10 @@ text-decoration: none;
 }
 .earning-chart{
     width: 40%;
+    padding-left: 30px;
 }
 .chart-div{
+    padding-top: 80px;
     width: 100%;
     display: flex;
 }

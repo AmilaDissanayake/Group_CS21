@@ -233,7 +233,8 @@ margin: 25px 0;
 .table-members{
 width: 100%;
 border: none;
-
+margin-top: 250px;
+margin-bottom: 100px;
 }
 .members-div{
 padding: 20px;
@@ -283,4 +284,6 @@ transition: .4s;
     padding-bottom: 50px;
     padding-right: 0;
     padding-left: 0;
+    width: 800px;
+    height: 500px;
   }
