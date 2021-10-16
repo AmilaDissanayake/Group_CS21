@@ -139,10 +139,10 @@
             <div class="hordivid"></div>
             <div class="tassign">
                 <div class="seltr">
-                    <div class="note2"><h1>Assign to a Trainer</h1></div>
+                    <div class="note2"><h1>Your Trainer</h1></div>
                     <div class="adetails">
                         <div class="astatus">
-                            <p><i class='bx bxs-flag'></i>Assign to a trainer <b>since</b> <i>21/06/2021</i> <b>till</b> <i>21/07/2021</i></p> 
+                            <p><i class='bx bxs-flag'></i>Assign to the trainer <b>since</b> <i>21/06/2021</i> <b>till</b> <i>21/07/2021</i></p> 
                         </div>
                         <div class="aper">
                             <div class="avatar">
