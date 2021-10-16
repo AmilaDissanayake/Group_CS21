@@ -498,12 +498,12 @@ th{
   margin-bottom: 10px;
   text-align: left;
   font-size: 15px;
-  font-weight: normal;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
 thead {
-  background-color: #ffffff;
+  background-color: #86ff71;
   color: rgb(0, 0, 0);
   margin-bottom: 10px;
   border-bottom: 1px solid #ddd;
