@@ -18,18 +18,17 @@
 }
 
 .note h1{
-    text-align: center;
-    font-size: 34px;
-    color: black;
-    padding-top: 50px;
-  }
-
-.divider{
-    width: 100%;
-    height: 20px;
-    background-color: rgb(244,244,244);
+  text-align: center;
+  font-size: 34px;
+  color: black;
+  padding-top: 50px;
 }
 
+.divider{
+  width: 100%;
+  height: 20px;
+  background-color: rgb(244,244,244);
+}
 
 .up{
   background-color: white;

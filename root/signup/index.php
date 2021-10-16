@@ -297,6 +297,8 @@
                     </div>
 
                     <script>
+
+                        var unameval = false;
                             $(document).ready(function(){
                             $("#username").keyup(function(){
                             var username = $(this).val().trim();
@@ -309,9 +311,12 @@
 
                                 if(response == "<span style='color: #86ff71;'><b>Available</b></span>"){
                                     $('#uname').removeClass("form_div error").addClass("form__div success")
+                                    unameval = true;
+
                                 }else{
                                     $('#uname').removeClass("form_div success")
                                     $('#uname').addClass("form__div error")
+                                    unameval = false;
                                 }
 
                                     $('#uname_response').html(response);
@@ -508,7 +513,7 @@
                         function submitFunction() {
                             var result = checkInputs();
 
-                            if (result == true) {
+                            if (result == true && unameval == true) {
                                 // e.preventDefault();
                                 calctotal();
                                 payhere.startPayment(payment);

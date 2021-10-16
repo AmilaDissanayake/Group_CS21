@@ -26,70 +26,16 @@
 
         <div class="welcomenote"><h1>HI! "NAME"</h1></div>
  
- <div class="dashcover"></div>
- <!-- <div class="dubar">
-     <div class="duhead"><h2>Membership Type</h2></div>
-     <div class="duline"><div class="remain"><h2>YEARS</h2><div class="time"><h1>YY</h1></div> </div><div class="remain"><h2>MONTHS</h2><div class="time"><h1>MM</h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1>DD</h1></div></div></div>
- </div> -->
- <div class="duhead"></div>
+        <div class="dashcover"></div>
+        <div class="duhead"></div>
 
-  <div class="analy">
-              <div class="rpanel">
-                <!-- <div class="book"> -->
-                 <!-- <div class="status"> -->
-                     <!-- <div class="bmtag">
-                        <span id="bk">Calculate BMI</span>
-                     </div> -->
-                     
+        <div class="analy">
+              <div class="rpanel">           
                      <div class="pan">
                         <?php include "./includes/bmi-calc.php" ?>
-                        <!-- <div class="bt"><a href="./booking.php" class="readmore_btn" id="readMore">Read More</a></div> -->
-                     </div>
-                 <!-- </div> -->
-                 
+                     </div>           
              </div>
-             <!-- <div class="divider2"></div>
-             <div class="pro">
-                 <div class="weekpro">
-                         <h2>Weekly Progress</h2>
-                         <ul>
-                             <div class="itemcon">
-                                 <li class="plist">
-                                     DAY 1 <span class="stat">COMPLETED</span>
-                                 </li>
-                                 
-                             </div>
-                             <div class="itemcon">
-                                 <li class="plist">
-                                     DAY 2 <span class="stat">NEED TO COMPLETE</span>
-                                 </li>
-                                 
-                             </div>
-                             <div class="itemcon">
-                                 <li class="plist">
-                                     DAY 3 <span class="stat" >NEED TO COMPLETE</span>
-                                 </li>
-                                 
-                             </div>
-                      </ul>
-                 </div>
-                 <div class="divider2"></div>
-                 <div class="comwork">
-                     <h2>DAY</h2>
-                     <ul>
-                         <li>Bench Press</li>
-                         <li>Incline</li>
-                         <li>shoulders</li>
-                         <li>Latteral</li>
-                         <li>Bench Press</li>
-                         <li>Incline</li>
-                         <li>shoulders</li>
-                         <li>Latteral</li>
-                     </ul>
-                 </div>
-             </div> -->
 
-         <!-- </div>             -->
         <div class="divider"></div>
 
         <div class="left">
