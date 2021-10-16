@@ -574,51 +574,6 @@ tbody tr{
   color: #999999;
 }
 
-
-.justselect-wrapper {
-
-    /* your styles here */
-   
- 
-  }
-  
-   
-  
-  .justselect-title {
-  
-    /* your styles here */
-    /* width: 150px; */
-    
-
-  
-  }
-  
-   
-  
-  .justselect-list {
-  
-    /* your styles here */
-    
-  
-  }
-  
-   
-  
-  .justselect-list li {
-  
-    /* your styles here */
-   
-  
-  }
-  
-   
-  
-  .justselect-list li.selected {
-  
-    /* your styles here */
-  
-  }
-
   .filter1{
     margin-left: 20px;
   }
@@ -723,6 +678,19 @@ table{
   align-items: center;
   padding-top: 70px;
 } 
+
+.bmi3, .bmi4 {
+  width: 500px;
+  height:400px;
+  background-color: white;
+  margin-left: 100px;
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .bmi-main{
   display: flex;
 }
@@ -731,8 +699,8 @@ table{
 
   position: relative;
   z-index: 10;
-  width: 280px;
-  height: 50px;
+  width: 260px;
+  height: 40px;
   border: 1px solid #86ff71;
   border-radius: 30px;
   background-color: #86ff71;
@@ -744,8 +712,9 @@ table{
   backdrop-filter: blur(10px);
   outline: none;
   cursor: pointer;
-  margin-top: 30px;
-  margin-left: 55px;
+  margin-top: 80px;
+  margin-left: 120px;
+  
 
 }
 
@@ -757,5 +726,78 @@ table{
   transition: .4s;
 
 }
-  
-  
+
+.recieve {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.bmi4{
+  margin-left: 50px;
+}
+
+.see-more{
+
+  position: relative;
+  z-index: 10;
+  width: 150px;
+  height: 30px;
+  border: 1px solid #86ff71;
+  border-radius: 30px;
+  background-color: #86ff71;
+  font-family: 'Azonix';
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  letter-spacing: 1px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  outline: none;
+  cursor: pointer;
+  float: right;
+  margin-top: 30px;
+  margin-left: 55px;
+
+}
+
+.see-more:hover{
+
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 0px 10px 1px #86ff71;
+  border: 1px solid #86ff71;
+  transition: .4s;
+
+}
+
+.member-stats2{
+  display: flex;
+  margin-left: 25px;
+  /* margin-bottom: 20px; */
+  background-color: white;
+  width: 90%;
+  height: 40%;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  border: 3px #e5e5e5 solid;
+  /* border-radius: 5px; */
+}
+
+.member-stats2 .one{
+  width: 40%;
+  text-align: center;
+}
+.member-stats2 .value{
+  font-family: 'Azonix';
+  font-size: 27px;
+  color: #434548;
+}
+
+.member-stats2 .name{
+  margin-top: 10px;
+  color: #999999;
+}
+
+.member-stats2 .one1{
+  width: 60%;
+  text-align: center;
+  border-left: 1px solid #ddd;
+}
