@@ -1,4 +1,4 @@
-<?php include "includes/check_login.php" ?>
+
 
 <!DOCTYPE html>
 

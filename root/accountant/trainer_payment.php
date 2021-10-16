@@ -1,4 +1,4 @@
-<?php include "includes/check_login.php" ?>
+
 
 <!DOCTYPE html>
 
@@ -43,7 +43,34 @@
                         </tr>
                     </thead>
                     <tbody id="output">
-
+                    <tr>
+                            <td>Gota</td>
+                            <td>Cer</td>
+                            <td>0702181481</td>
+                            <td>2021-10-10</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Mahi</td>
+                            <td>Cer</td>
+                            <td>0702181480</td>
+                            <td>2021-09-10</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Basil</td>
+                            <td>Cer</td>
+                            <td>0702183481</td>
+                            <td>2021-08-10</td>
+                            <td>Paid</td>
+                        </tr>
+                        <tr>
+                            <td>Namal</td>
+                            <td>Baby</td>
+                            <td>0705683481</td>
+                            <td>2021-07-10</td>
+                            <td>Paid</td>
+                        </tr>
                     </tbody>
                 </table>
 
