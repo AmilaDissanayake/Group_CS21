@@ -96,27 +96,27 @@
                     </thead>
                     <tbody id="output">
                         <tr>
-                            <td>Gota</td>
+                            <td>Kasun</td>
                             <td>2021-10-10</td>
                             <td>1500.00</td>
                         </tr>
                         <tr>
-                            <td>Mahi</td>
+                            <td>Nadun</td>
                             <td>2021-09-10</td>
                             <td>3000.00</td>
                         </tr>
                         <tr>
-                            <td>Basil</td>
+                            <td>Udara</td>
                             <td>2021-08-10</td>
                             <td>1500.00</td>
                         </tr>
                         <tr>
-                            <td>Namal</td>
+                            <td>Hasaranga</td>
                             <td>2021-07-10</td>
                             <td>3000.00</td>
                         </tr>
                         <tr>
-                            <td>Basil</td>
+                            <td>Dinuka</td>
                             <td>2021-08-10</td>
                             <td>1500.00</td>
                         </tr>
@@ -138,27 +138,27 @@
                     </thead>
                     <tbody id="output">
                         <tr>
-                            <td>Gota</td>
+                            <td>Thathsara</td>
                             <td>2021-10-10</td>
                             <td>1500.00</td>
                         </tr>
                         <tr>
-                            <td>Mahi</td>
+                            <td>Vimukthi</td>
                             <td>2021-09-10</td>
                             <td>3000.00</td>
                         </tr>
                         <tr>
-                            <td>Basil</td>
+                            <td>Shehan</td>
                             <td>2021-08-10</td>
                             <td>1500.00</td>
                         </tr>
                         <tr>
-                            <td>Namal</td>
+                            <td>Sampath</td>
                             <td>2021-07-10</td>
                             <td>3000.00</td>
                         </tr>
                         <tr>
-                            <td>Basil</td>
+                            <td>Kusal</td>
                             <td>2021-08-10</td>
                             <td>1500.00</td>
                         </tr>

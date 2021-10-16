@@ -677,6 +677,7 @@ table{
   margin-left: 50px;
   align-items: center;
   padding-top: 70px;
+  border: 5px solid #e5e5e5;
 } 
 
 .bmi3, .bmi4 {
@@ -713,7 +714,7 @@ table{
   outline: none;
   cursor: pointer;
   margin-top: 80px;
-  margin-left: 120px;
+  margin-left: 115px;
   
 
 }
@@ -777,7 +778,7 @@ table{
   height: 40%;
   padding-top: 40px;
   padding-bottom: 20px;
-  border: 3px #e5e5e5 solid;
+  border: 3px black solid;
   /* border-radius: 5px; */
 }
 
@@ -799,5 +800,5 @@ table{
 .member-stats2 .one1{
   width: 60%;
   text-align: center;
-  border-left: 1px solid #ddd;
+  border-left: 3px solid #ddd;
 }

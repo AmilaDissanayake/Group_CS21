@@ -45,29 +45,29 @@
                     </thead>
                     <tbody id="output">
                     <tr>
-                            <td>Gota</td>
-                            <td>Cer</td>
+                            <td>Dinuka</td>
+                            <td>Thathsara</td>
                             <td>0702181481</td>
                             <td>2021-10-10</td>
                             <td>Paid</td>
                         </tr>
                         <tr>
-                            <td>Mahi</td>
-                            <td>Cer</td>
+                            <td>Kasun</td>
+                            <td>Gunawardene</td>
                             <td>0702181480</td>
-                            <td>2021-09-10</td>
-                            <td>Paid</td>
+                            <td>Not Yet</td>
+                            <td>Not Paid</td>
                         </tr>
                         <tr>
-                            <td>Basil</td>
-                            <td>Cer</td>
+                            <td>Sampath</td>
+                            <td>Kodikara</td>
                             <td>0702183481</td>
                             <td>2021-08-10</td>
                             <td>Paid</td>
                         </tr>
                         <tr>
-                            <td>Namal</td>
-                            <td>Baby</td>
+                            <td>Udara</td>
+                            <td>Kaushalya</td>
                             <td>0705683481</td>
                             <td>2021-07-10</td>
                             <td>Paid</td>
