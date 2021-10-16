@@ -284,7 +284,7 @@ nav .profile-details i{
   color:white;
   height:2px;
   background:black;
-  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(#86ff71), to(white));
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 300, from(#86ff71), to(white));
 }
 .fade-effect3{
   display:block;
@@ -301,66 +301,6 @@ nav .profile-details i{
   padding-right: 30px;
 }
 
-/* table//////////////////////////////////////////////////////// */
-
-
-table {
-  border-collapse: collapse;
-}
-
-td {
-  border: 0px solid black;
-  padding: 8px;
-}
-
-th{
-  padding: 8px;
-  text-decoration: none;
-  margin-bottom: 10px;
-}
-
-thead {
-  background-color: #86ff71;
-  color: rgb(0, 0, 0);
-  margin-bottom: 10px;
-  
-  
-}
-
-tbody tr:nth-child(odd) {
-  background-color: #fff;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #eee;
-}
-.top-header{
-  color:#999999;
-  font: Rubik;
-  font-size: 30px;
-}
-.header-div{
-  display: flex;
-  justify-content: center;
-  margin: 25px 0;
-}
-.table-members{
-  width: 100%;
-  border: none;
-  
-}
-.members-div{
-  padding: 20px;
-  margin-top: 25px;
-}
-.table-members tr th{
-  font-size: 20px;
-  text-align: left;
-}
-.row-action{
-  display: flex;
-  justify-content: center;
-}
 .about_btn {
   position: relative;
   z-index: 10;

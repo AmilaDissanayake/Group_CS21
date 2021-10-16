@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/members.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -48,11 +48,11 @@
                         <td>0112233445</td>
                         <td>Back pain, Shoulder pain</td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
+                            <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
                             </div>
                         </td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Progress</button> 
+                            <button class="about_btn1" onclick="location.href='members.php'">Progress</button> 
                             </div>
                         </td>
                     </tr>
@@ -63,11 +63,11 @@
                         <td>0112233445</td>
                         <td>Back pain, Shoulder pain</td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
+                            <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
                             </div>
                         </td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Progress</button> 
+                            <button class="about_btn1" onclick="location.href='members.php'">Progress</button> 
                             </div>
                         </td>
                     </tr>
@@ -78,11 +78,11 @@
                         <td>0112233445</td>
                         <td>Back pain, Shoulder pain</td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
+                            <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
                             </div>
                         </td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Progress</button> 
+                            <button class="about_btn1" onclick="location.href='members.php'">Progress</button> 
                             </div>
                         </td>
                     </tr>
@@ -93,11 +93,11 @@
                         <td>0112233445</td>
                         <td>Back pain, Shoulder pain</td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
+                            <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
                             </div>
                         </td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Progress</button> 
+                            <button class="about_btn1" onclick="location.href='members.php'">Progress</button> 
                             </div>
                         </td>
                     </tr>
