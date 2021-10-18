@@ -19,7 +19,7 @@
         <?php include "includes/header.php" ?>
 
 
-        <div class="home-content">
+    <div class="home-content">
         <div class="trainer-stats">
                 <div class="one">
                     <p class="value">30</p>
@@ -40,9 +40,54 @@
                     <p class="value">10 Oct 2021</p>
                     <a href="calendar.php" class="name">Calendar</a>
                 </div>
+        </div>
+        <div class="dashboard-bottom">
+            <div class="left">
+                <div class="avatar">
+                    <img src="../media/trainers/thusitha.jpg">
+                </div>
+                <div class="joined-date">
+                    <p>Joined 2021 JAN 01 </p>
+                </div>
+                <div class="name">
+                    <p>Thusitha Kekulawala ⭐ 5 </p>
+                </div>
+                <div class="stat">
+                    <div class="exp">
+                        <p>3YRS<br>Expirience</p>
+                    </div>
+                    <div class="rate">
+                        <p>2500/=<br>Per Month</p>
+                    </div>
+                    <div class="review-count">
+                        <p>3<br>Reviews</p>
+                    </div>
+                </div>
+                <div calss="divider">
+                    <span class="fade-effect3"> </span>
+                </div>
 
+                <div class="button-profile">
+                    <div><button class="about_btn1" onclick="location.href='members.php'">My Profile</button></div>
+                </div>
+
+            </div>
+            <div class="review">
+                <h1>YOUR REVIEWS</h1>
+                <div class="divider">
+                <span class="fade-effect2"> </span>
+                </div>
+                <div class="review-content">
+                    <h2>Hiran S.</h2>
+                    <p><span>Thusitha is wonderful- I can't say enough good things about him. 
+                        I am so pleased with my personal training with him and with the results that I am achieving.</span></p>
+                    <h2>Hiran S.</h2>
+                    <p><span>Thusitha is wonderful- I can't say enough good things about him. 
+                        I am so pleased with my personal training with him and with the results that I am achieving.</span></p>
+                </div>
+            </div>
         </div>
-        </div>
+    </div>
     </section>
 
     <script>

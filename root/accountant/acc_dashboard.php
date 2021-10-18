@@ -8,7 +8,8 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="css/dashboard.css">
-    <!-- <link href="css/justselect.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="css/footer.css">
+    
 
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,25 +30,32 @@
         <div class="home-content">
             <div class="member-stats">
                 <div class="one">
-                    <p class="value">Rs. 100 000</p>
-                    <p class="name">Member Payments</p>
+                    <p class="value">Rs. 50 000</p>
+                    <p class="name">Member Recievables</p>
                 </div>
 
                 <div class="two">
-                    <p class="value">rs. 40 000</p>
-                    <p class="name">Trainer Payments</p>
+                    <p class="value">rs. 30 000</p>
+                    <p class="name">Trainer Recievables</p>
                 </div>
 
                 <div class="three">
-                    <p class="value">rs. 60 000</p>
-                    <p class="name">Monthly Income</p>
+                    <p class="value">rs. 25 000</p>
+                    <p class="name">Trainer Payables</p>
                 </div>
 
                 <div class="four">
-                    <p class="value">rs. 750 000</p>
-                    <p class="name">Annual Income</p>
+                    <p class="value">rs.15 000</p>
+                    <p class="name">Other Payables</p>
+                </div>
+                
+                <div class="two">
+                    <p class="value">rs. 80 000</p>
+                    <p class="name">Monthly Income</p>
                 </div>
 
+                
+            
             </div>
 
             <div class="member-list"></div>
@@ -59,14 +67,110 @@
             </div>
 
             <div class="bmi2">
-                    <button class="hero_btn" >Report 1</button>
-                    <button class="hero_btn" >Report 2</button>
-                    <button class="hero_btn" >Report 3</button>
+                
+                <div class="member-stats2">
+                    <div class="one">
+                        <p class="value">Profit</p>
+                        <p class="name">Profit/Loss</p>
+                    </div>
+                    <div class="one1">
+                        <p class="value">Rs. 40 000</p>
+                        <p class="name">Amount</p>
+                    </div>
+                </div>
+                <button class="hero_btn" >More Reports >></button>
+            </div>
+        </div>
+
+        <div class="bmi-main">
+            <div class="bmi3">
+                <h2 class="recieve">RECIEVABLES</h2>
+                <table class="recieve-table">
+                    <thead>
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="output">
+                        <tr>
+                            <td>Kasun</td>
+                            <td>2021-10-10</td>
+                            <td>1500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Nadun</td>
+                            <td>2021-09-10</td>
+                            <td>3000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Udara</td>
+                            <td>2021-08-10</td>
+                            <td>1500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Hasaranga</td>
+                            <td>2021-07-10</td>
+                            <td>3000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Dinuka</td>
+                            <td>2021-08-10</td>
+                            <td>1500.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="see-more" >see more >></button>
+            </div>
+
+            <div class="bmi4">
+                <h2 class="recieve">PAYABLES</h2>
+                <table class="recieve-table">
+                    <thead>
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="output">
+                        <tr>
+                            <td>Thathsara</td>
+                            <td>2021-10-10</td>
+                            <td>1500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Vimukthi</td>
+                            <td>2021-09-10</td>
+                            <td>3000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Shehan</td>
+                            <td>2021-08-10</td>
+                            <td>1500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Sampath</td>
+                            <td>2021-07-10</td>
+                            <td>3000.00</td>
+                        </tr>
+                        <tr>
+                            <td>Kusal</td>
+                            <td>2021-08-10</td>
+                            <td>1500.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="see-more" >see more >></button>
             </div>
         </div>
 
 
     </section>
+    <?php include "includes/footer.php" ?>
 
     <script>
         AOS.init();

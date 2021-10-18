@@ -10,7 +10,6 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
@@ -46,38 +45,43 @@
         <div class="earning-chart">
                      <canvas id="canvas"></canvas>
         </div>
-        <div id="wrapper">
+        <div id="wrapper" class="table-div">
 
-            <table id="table_detail" cellpadding=10>
+            <table id="table_detail" cellpadding=10 class="earning-table">
 
             <tr>
             <th>Month</th>
-            <th>Your Earning</th>
+            <th style="width:200px;">Your Earning</th>
             </tr>
 
-            <tr onclick="show_hide_row('hidden_row1');"><td>Ankit</td><td>25</td></tr>
+            <tr onclick="show_hide_row('hidden_row1');"><td>JANUARY</td><td>25</td></tr>
             <tr id="hidden_row1" class="hidden_row">
-            <td colspan=4>Ankit is 25 years old and he is a computer programmer he earns 60000 per month</td>
+                <td>Amila</td>
+                <td>2500</td>
             </tr>
 
-            <tr onclick="show_hide_row('hidden_row2');"><td>Aarti</td><td>29</td></tr>
+            <tr onclick="show_hide_row('hidden_row2');"><td>FEBRUARY</td><td>29</td></tr>
             <tr id="hidden_row2" class="hidden_row">
-            <td colspan=4>Aarti is 29 years old and she is a web designer he earns 40000 per month</td>
+                <td>Bimsara</td>
+                <td>2500</td>
             </tr>
 
-            <tr onclick="show_hide_row('hidden_row3');"><td>Mohit</td><td>32</td></tr>
+            <tr onclick="show_hide_row('hidden_row3');"><td>MARCH</td><td>32</td></tr>
             <tr id="hidden_row3" class="hidden_row">
-            <td colspan=4>Mohit is 32 years old and he is a cyber security expert he earns 90000 per month</td>
+                <td>Navod</td>
+                <td>2500</td>
             </tr>
 
-            <tr onclick="show_hide_row('hidden_row4');"><td>John</td><td>22</td></tr>
+            <tr onclick="show_hide_row('hidden_row4');"><td>APRIL</td><td>22</td></tr>
             <tr id="hidden_row4" class="hidden_row">
-            <td colspan=4>John is 22 years old and he is a content writer he earns 20000 per month</td>
+                <td>Pamodha</td>
+                <td>2500</td>
             </tr>
 
-            <tr onclick="show_hide_row('hidden_row5');"><td>Mukesh</td><td>40</td></tr>
+            <tr onclick="show_hide_row('hidden_row5');"><td>JUNE</td><td>40</td></tr>
             <tr id="hidden_row5" class="hidden_row">
-            <td colspan=4>Mukesh is 40 years old and he is chief executive he earns 3,50000 per month</td>
+                <td>Sandunika</td>
+                <td>2500</td>
             </tr>
 
             </table>
@@ -107,12 +111,12 @@
  var config = {
      type: 'bar',
      data: {
-         labels: ["January", "February", "March", "April", "May", "June", "July"],
+         labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September"],
          datasets: [{
-             label: "BMI value",
+             label: "earning chart",
              backgroundColor: "#86ff71",
              borderColor: "#86ff71",
-             data: [40, 38, 33, 30, 29, 25, 22],
+             data: [20, 30, 28, 27, 29, 25, 32, 34, 31],
              fill: false,
          }, ]
      },
@@ -135,7 +139,7 @@
          scales: {
              yAxes: [{
                  ticks: {
-                     beginAtZero: false,
+                     beginAtZero: true,
                  },
                  gridLines: {
                      display: true,
