@@ -29,6 +29,7 @@
         <div class="divider"></div>
 
         <div class="dwnpart">
+            <div class="divider3"></div>
             <div class="lsd">
                 <div class="note2"><h1>Profile</h1></div>
                 <div class="con1">
@@ -36,6 +37,7 @@
                         <div class="aper">
                             <div class="avatar">
                                 <img src="./media/thusitha.jpg">
+                                <i class='bx bxs-pencil'></i>
                             </div>
                             <div class="joined-date">
                                 <p></p>
@@ -51,13 +53,18 @@
                     </div>
                 </div>
                 <div class="con1">
-                    <div class="profcov">
+                    <div class="profcov2">
                         <div class="aper">
-                            <div class="joined-date">
-                                <p>AmilaD</p>
+                            <div class="covuname">
+                                <p>Amila(uname)</p>
                             </div>
-                            <div class="name">
-                                <p></p>
+                            <div class="pdetails">
+                                <p> <i class='bx bx-dumbbell'></i> NAME  <i class='bx bxs-right-arrow'></i> Amila Dissanayaka</p>
+                                <p> <i class='bx bx-dumbbell'></i> GENDER <i class='bx bxs-right-arrow'></i>  MALE</p>
+                                <p> <i class='bx bx-dumbbell'></i> AGE <i class='bx bxs-right-arrow'></i> 22</p>
+                                <p> <i class='bx bx-dumbbell'></i> LIVE IN <i class='bx bxs-right-arrow'></i>Mirigama</p>
+                                <p> <i class='bx bx-dumbbell'></i> CONTACT NO. <i class='bx bxs-right-arrow'></i> 0750000001</p>
+                                <p> <i class='bx bx-dumbbell'></i> E-MAIL <i class='bx bxs-right-arrow'></i>abc@gmail.conm</p>
                             </div>
                         </div>
                     </div>
@@ -220,15 +227,12 @@
                     </label> 
 
                     <div class="buttondiv"><input type="button" class="form__button" value="SAVE PROFILE" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
-
                 </div>
-
-
             </div>
-
+            <div class="divider3"></div>
         </div>
  
-
+        <div class="divider"></div>
            
     </section>
     <?php include "includes/footer.php" ?>

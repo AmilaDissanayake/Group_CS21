@@ -43,16 +43,14 @@
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 50px;
-    border: 2px solid #86ff711a;
+    border: 1px solid rgb(244,244,244);
     margin-top: 10px;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
   }
 
-
-.form:hover{
-    background-color: rgb(24,24,24);
+.separator .hr{
+  color: rgb(24,24,24);
 }
-
 .name {
     display: flex;
     align-items: center;
@@ -61,8 +59,8 @@
 }
   
 .name_input {
-    border: 1px solid #80868b;
-    color: #80868b;
+    border: 1px solid rgb(24,24,24);
+    color: rgb(24,24,24);
     outline: none;
     background: none;
     z-index: 1;
@@ -75,8 +73,8 @@
 }
   
   .name_input2 {
-    border: 1px solid #80868b;
-    color: #80868b;
+    border: 1px solid rgb(24,24,24);
+    color: rgb(24,24,24);
     outline: none;
     background: none;
     z-index: 1;
@@ -113,8 +111,8 @@
     font-size: 15px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px solid #80868b;
-    color: #80868b;
+    border: 1px solid rgb(24,24,24);
+    color: rgb(24,24,24);
     outline: none;
     background: none;
     z-index: 1;
@@ -129,8 +127,8 @@
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;
-    border: 1px solid #80868b;
-    color: #80868b;
+    border: 1px solid rgb(24,24,24);
+    color: rgb(24,24,24);
     outline: none;
     background: none;
     z-index: 1;
@@ -241,7 +239,7 @@
     position: absolute;
     left: 1rem;
     top: 1rem;
-    color: #80868b;
+    color: rgb(24,24,24);
     font-size: 14px;
     transition: 0.2s;
     font-family: "Azonix";
@@ -271,7 +269,7 @@
   .form__input:focus + .form__label {
     top: -0.5rem;
     left: 0.8rem;
-    color: #86ff71;
+    color: rgb(24,24,24);
     font-size: 11px;
     font-weight: 500;
     z-index: 10;
@@ -280,7 +278,7 @@
   .injury:focus + .form__label {
     top: -0.5rem;
     left: 0.8rem;
-    color: #86ff71;
+    color: rgb(24,24,24);
     font-size: 11px;
     font-weight: 500;
     z-index: 10;
@@ -289,7 +287,7 @@
   .name_input:focus + .form__label {
     top: -0.5rem;
     left: 0.8rem;
-    color: #86ff71;
+    color: rgb(24,24,24);
     font-size: 11px;
     font-weight: 500;
     z-index: 10;
@@ -301,7 +299,7 @@
     left: 0.8rem;
     font-weight: 500;
     z-index: 10;
-    color: #86ff71;
+    color: rgb(24,24,24);
     font-size: 11px;
   }
   
@@ -310,7 +308,7 @@
     left: 0.8rem;
     font-weight: 500;
     z-index: 10;
-    color: #86ff71;
+    color: rgb(24,24,24);
     font-size: 11px;
   }
   
@@ -319,27 +317,27 @@
     left: 0.8rem;
     font-weight: 500;
     z-index: 10;
-    color: #86ff71;
+    color: rgb(24,24,24);
     font-size: 11px;
   }
   
   /*Input focus*/
   .form__input:focus {
-    border: 1px solid #86ff71;
+    border: 1px solid rgb(24,24,24);
   }
   
   .injury:focus {
-    border: 1px solid #86ff71;
+    border: 1px solid rgb(24,24,24);
   }
   
   .name_input:focus {
-    border: 1px solid #86ff71;
+    border: 1px solid rgb(24,24,24);
   }
   
   .name_input2:focus + .form__label {
     top: -0.5rem;
     left: 0.8rem;
-    color: #86ff71;
+    color: rgb(24,24,24);
     font-size: 11px;
     font-weight: 500;
     z-index: 10;
@@ -352,17 +350,17 @@
     left: 0.8rem;
     font-weight: 500;
     z-index: 10;
-    color: #86ff71;
+    color: rgb(24,24,24);
     font-size: 11px;
   }
   
   .hover {
-    color: #86ff71d5;
+    color: rgb(24,24,24)d5;
     text-decoration: none;
   }
   
   .hover:hover {
-    color: #86ff71;
+    color: rgb(24,24,24);
   }
   
   .remember {
@@ -370,19 +368,19 @@
     margin-top: 60px;
     font-weight: 400;
     font-size: 15px;
-    color: #80868b;
+    color: rgb(24,24,24);
     font-family: "Rubik";
   }
   
   .remember label span {
-    color: #86ff71;
+    color: rgb(24,24,24);
   }
   
   .signup p {
     margin-top: 10px;
     width: 100%;
     /* display: flex; */
-    color: #80868b;
+    color: rgb(24,24,24);
     float: left;
     font-size: 15px;
     font-family: "Rubik";
@@ -418,7 +416,8 @@
   .select__div:after {
       content: '<>';
       font: 17px "Consolas", monospace;
-      color: #80868b;
+      /* color: rgb(24,24,24); */
+      color: rgb(24,24,24);
       -webkit-transform: rotate(90deg);
       -moz-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
@@ -428,7 +427,7 @@
       
       top: 11px;
       /* padding: 0 0 2px; */
-      border-bottom: 3px solid #80868b;
+      border-bottom: 3px solid rgb(24,24,24);
       /*left line */
       
       position: absolute;
@@ -460,10 +459,11 @@
       padding: 0px 16px;
       /* font-size: 16px; */
       line-height: 1.75;
-      color: #80868b;
+      /* color: rgb(24,24,24); */
+      color: rgb(24,24,24);
       background-color: transparent;
       background-image: none;
-      border: 1px solid #80868b;
+      border: 1px solid rgb(24,24,24);
       -ms-word-break: normal;
       word-break: normal;
     }
@@ -487,7 +487,7 @@
     font-family: "Azonix";
     /* padding: 0 .5em; */
     line-height: 1.5em;
-    color: #86ff71;
+    color: rgb(24,24,24);
     text-align: center;
     /* top: .5em; */
   }
@@ -504,7 +504,7 @@
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
-      color: #80868b;
+      color: rgb(24,24,24);
     }
     
     /* Hide the browser's default checkbox */
@@ -523,17 +523,18 @@
       left: 0;
       height: 15px;
       width: 15px;
-      background-color: #80868b;
+      /* background-color: rgb(24,24,24); */
+      background-color: rgb(24,24,24);
     }
     
     /* On mouse-over, add a grey background color */
     .container:hover input ~ .checkmark {
-      background-color: #86ff71;
+      background-color: rgb(24,24,24);
     }
     
     /* When the checkbox is checked, add a blue background */
     .container input:checked ~ .checkmark {
-      background-color: #86ff71;
+      background-color: #86FF71;
     }
     
     /* Create the checkmark/indicator (hidden when not checked) */

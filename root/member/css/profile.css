@@ -126,7 +126,7 @@
   height:75%;
 }
 
-.lpanel:hover{
+/* .lpanel:hover{
   background-color: rgb(32, 32, 31);
 }
 
@@ -135,7 +135,7 @@
 }
 .rpanel:hover{
   background-color: rgb(202, 199, 194);
-}
+} */
 
 .divider{
   width: 100%;
@@ -843,6 +843,7 @@ tbody tr:nth-child(even) {
   font-family: 'Rubik';
   size: 14px;
   color: grey;
+  font-style: normal;
   /* color: rgba(255, 255, 255, 0.748); */
 }
 
@@ -852,6 +853,34 @@ tbody tr:nth-child(even) {
   color: black;
 }
 
+.profcov2{
+  padding: 10px;
+  padding-top: 30px;
+
+}
+
+.profcov2 .aper .covuname p{
+  font-size: 18px;
+  color: grey;
+  padding: 15px;
+  font-style: normal;
+  font-family: 'Rubik';
+}
+
+.profcov2 .aper .pdetails p{
+  margin: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-style: normal;
+  font-family: 'Rubik';
+  font-size: 16px;
+  font-weight: normal;
+  background-color: rgba(24,24,24,0.9);
+  color: rgb(244,244,244);
+  /* border-top: 2px solid rgb(244,244,244); */
+  border-bottom: 2px solid rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
 
 .divider3{
     width: 20px;
