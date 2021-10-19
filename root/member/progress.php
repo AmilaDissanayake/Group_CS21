@@ -51,22 +51,19 @@
                     <h2>Weekly Progress</h2>
                          <ul>
                              <div class="itemcon">
-                                 <li class="plist">
-                                     DAY 1 <span class="stat">COMPLETED</span>
-                                 </li>
-                                 
+                                 <li class="plist">  
+                                    DAY 1 <span class="stat1">COMPLETED</span>
+                                </li>  
                              </div>
                              <div class="itemcon">
                                  <li class="plist">
-                                     DAY 2 <span class="stat">NEED TO COMPLETE</span>
+                                    DAY 2 <span class="stat2" >NOT COMPLETED</span>
                                  </li>
-                                 
                              </div>
                              <div class="itemcon">
                                  <li class="plist">
-                                     DAY 3 <span class="stat" >NEED TO COMPLETE</span>
+                                    DAY 3 <span class="stat2" >NOT COMPLETED</span>
                                  </li>
-                                 
                              </div>
                       </ul>      
             </div>

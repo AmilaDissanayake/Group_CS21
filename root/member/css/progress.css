@@ -101,6 +101,11 @@
   background-color: rgb(24,24,24);
 }
 
+.bmip #canvas:hover{
+  transform: scale(1.01);
+  transition: 0.35s ease;
+}
+
 .left .divider3{
   width: 100%;
   height: 20px;
@@ -113,9 +118,9 @@
   background-color: white;
 }
 
-.indc:hover{
+/* .indc:hover{
   background-color: rgb(24,24,24);
-}
+} */
 
 .btag{
   width: 100%;
@@ -150,13 +155,13 @@
   height:75%;
 }
 
-.lpanel:hover{
+/* .lpanel:hover{
   background-color: rgb(32, 32, 31);
 }
 
 .lpanel:hover > .btag{
   color: white;
-}
+} */
 
 
 .divider{
@@ -180,13 +185,13 @@
   font-weight: 900;
 }
 
-.book:hover{
+/* .book:hover{
   background-color: rgb(24,24,24);  
 }
 
 .book:hover > .status{
   color: white;
-}
+} */
 
 .bt{
   padding: 20px;
@@ -215,32 +220,26 @@
   width: 100%;
   height: 780px;
   padding: 15px;
-  /* border-color: rgb(99, 99, 99); */
-  /* border-radius: 10px; */
-  /* border-style: double; */
   background-color: white;
-  /* background-color: rgb(24,24,24); */
-  /* background-color: rgba(0, 0, 0, 1); */
 }
 
-.pan:hover{
+/* .pan:hover{
     background-color: rgb(24,24,24);
     color: white;
-}
+} */
 
 .rpanel .bmtag{
     display: block;
     width: 100%;
     height: 30px;
-    
-
 }
-.pan:hover >.bmtag {
+
+/* .pan:hover >.bmtag {
     background-color: rgb(24,24,24);
 }
 .book:hover > .status .pan{
   background-color: white;
-}
+} */
 
 .readmore_btn {
   padding: 10px;
@@ -291,17 +290,28 @@
 .indc ul{
   list-style: none;
 }
-.indc .plist{
-  
+
+.indc .itemcon{
+  width: 50%;
+  height: 50px;
+  padding: 10px;
+  padding-left: 100px;
+  font-weight: bold;
 }
 
-.indc:hover > h2{
+/* .indc:hover > h2{
   color: white;
-}
+} */
 .indc h2{
   text-align: center;
   padding-top: 20px;
   color: grey;
+}
+
+.indc .itemcon span{
+  width: 30%;
+  /* background-color: #86ff71; */
+  padding: 10px;
 }
 
 .pro .weekpro .itemcon{
@@ -364,6 +374,7 @@
   margin-top: 10px;
   background: -webkit-linear-gradient(#eee, rgb(99, 99, 99));
   -webkit-background-clip: text;
+  background-clip: normal;
   -webkit-text-fill-color: transparent;
 }
 .sidebar .nav-links{
@@ -763,18 +774,15 @@ nav .profile-details i{
 
 }
 
-.search-bar{
-  
-}
+
+
+/* table//////////////////////////////////////////////////////// */
 
 .member-list{
   margin-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
-}
-
-/* table//////////////////////////////////////////////////////// */
-
+} 
 
 table {
   border-collapse: collapse;
