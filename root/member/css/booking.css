@@ -13,8 +13,9 @@
 }
 
 .welcomenote h1{
-  text-align: center;
+  text-align: left;
   font-size: 34px;
+  padding-left: 40px;
 }
 
 .dashcover{

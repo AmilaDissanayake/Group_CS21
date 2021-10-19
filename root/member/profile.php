@@ -37,12 +37,12 @@
                         <div class="aper">
                             <div class="avatar">
                                 <img src="./media/thusitha.jpg">
-                                <i class='bx bxs-pencil'></i>
+                                <i class='bx bxs-edit-alt'></i>
                             </div>
                             <div class="joined-date">
-                                <p></p>
+                                <p>Joined since september 2019</p>
                             </div>
-                            <div class="name">
+                            <div class="fulname">
                                 <p>Amila Dissanayake</p>
                             </div>
                         </div>
@@ -56,15 +56,15 @@
                     <div class="profcov2">
                         <div class="aper">
                             <div class="covuname">
-                                <p>Amila(uname)</p>
+                                <p>amila99</p>
                             </div>
                             <div class="pdetails">
-                                <p> <i class='bx bx-dumbbell'></i> NAME  <i class='bx bxs-right-arrow'></i> Amila Dissanayaka</p>
-                                <p> <i class='bx bx-dumbbell'></i> GENDER <i class='bx bxs-right-arrow'></i>  MALE</p>
-                                <p> <i class='bx bx-dumbbell'></i> AGE <i class='bx bxs-right-arrow'></i> 22</p>
-                                <p> <i class='bx bx-dumbbell'></i> LIVE IN <i class='bx bxs-right-arrow'></i>Mirigama</p>
-                                <p> <i class='bx bx-dumbbell'></i> CONTACT NO. <i class='bx bxs-right-arrow'></i> 0750000001</p>
-                                <p> <i class='bx bx-dumbbell'></i> E-MAIL <i class='bx bxs-right-arrow'></i>abc@gmail.conm</p>
+                            <i class='bx bx-dumbbell'></i>  NAME <p> <i class='bx bxs-right-arrow'></i> Amila Dissanayaka</p>
+                            <i class='bx bx-dumbbell'></i> GENDER  <p><i class='bx bxs-right-arrow'></i>  MALE</p>
+                            <i class='bx bx-dumbbell'></i> AGE  <p> <i class='bx bxs-right-arrow'></i> 22</p>
+                            <i class='bx bx-dumbbell'></i> LIVES IN <p> <i class='bx bxs-right-arrow'></i>Mirigama</p>
+                            <i class='bx bx-dumbbell'></i> CONTACT NO. <p> <i class='bx bxs-right-arrow'></i> 0750000001</p>
+                            <i class='bx bx-dumbbell'></i> E-MAIL <p><i class='bx bxs-right-arrow'></i>abc@gmail.conm</p>
                             </div>
                         </div>
                     </div>
@@ -206,8 +206,6 @@
                             <label for="" class="form__label">Password</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
-                            <!-- <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation-circle"></i> -->
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
@@ -215,8 +213,6 @@
                             <label for="" class="form__label">Confirm Password</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
-                            <!-- <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation-circle"></i> -->
                             <small>Error message</small>
                         </div>
                     </div>

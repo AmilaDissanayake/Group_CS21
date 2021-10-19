@@ -30,67 +30,82 @@
             <div class="duline"><div class="remain"><h2>MONTHS</h2><div class="time"><h1>MM</h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1>DD</h1></div></div></div>
         </div>
         <div class="duhead"></div>
- 
+        <div class="Hdivider"></div>
          <div class="analy">
+                <div class="divider"></div>
                 <div class="lpanel">
                         <div class="btag"><b>BMI STATISTICS</b></div>
                         
                         <div class="bmi">
                             <canvas id="canvas"></canvas>
                         </div>
+
+                        <div class="bmistatus">
+                            <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span> OBESITY</span></p>
+                            <div class="pgo">
+                                <a href="./progress.php" class="readmore_btn" id="readMore">UPDATE BMI</a>
+                            </div>
+                        </div>
+
+
                 </div>
                 <div class="divider"></div>
                 <div class="rpanel">
                     <div class="book">
-                        <div class="status">
-                            <span id="bk">Booking Status</span>
-                            <div class="pan"></div>
-                        </div>
-                        <div class="bt"><a href="./booking.php" class="readmore_btn" id="readMore">Read More</a></div>
-                    </div>
-                    <div class="divider2"></div>
-                    <div class="pro">
-                        <div class="weekpro">
-                                <h2>Weekly Progress</h2>
-                                <ul>
-                                    <div class="itemcon">
-                                        <li class="plist">
-                                            DAY 1 <span class="stat">COMPLETED</span>
-                                        </li>
-                                        
-                                    </div>
-                                    <div class="itemcon">
-                                        <li class="plist">
-                                            DAY 2 <span class="stat">NEED TO COMPLETE</span>
-                                        </li>
-                                        
-                                    </div>
-                                    <div class="itemcon">
-                                        <li class="plist">
-                                            DAY 3 <span class="stat" >NEED TO COMPLETE</span>
-                                        </li>
-                                        
-                                    </div>
-                             </ul>
+                        <div class="Asignt">
+                            <span id="bk">ASSIGN WITH</span>
+                            <div class="pan1"><i class='bx bxs-user-check'></i> <p>THUSITHA KAKULAWALA ⭐5</p></div>
+                            <div class="bt"><a href="./membership.php" class="readmore_btn" id="readMore">View More</a></div>
                         </div>
                         <div class="divider2"></div>
-                        <div class="comwork">
-                            <h2>DAY</h2>
-                            <ul>
-                                <li>Bench Press</li>
-                                <li>Incline</li>
-                                <li>shoulders</li>
-                                <li>Latteral</li>
-                                <li>Bench Press</li>
-                                <li>Incline</li>
-                                <li>shoulders</li>
-                                <li>Latteral</li>
-                            </ul>
+                        <div class="status">
+                            <span id="bk">BOOKING STATUS</span>
+                            <div class="pan2"><i class='bx bxs-message-square-check'></i><p>Booking Fixed</p></div>
+                            <div class="bt"><a href="./booking.php" class="readmore_btn" id="readMore">View More</a></div>
                         </div>
+                        <div class="divider2"></div>
                     </div>
-
-                </div>            
+                    <div class="divider2"></div>
+                        <div class="progcon">
+                            <div class="comwork">
+                                <h2>UPCOMING DAY</h2>
+                                <ul>
+                                    <li>Bench Press</li>
+                                    <li>Incline</li>
+                                    <li>shoulders</li>
+                                    <li>Latteral</li>
+                                    <li>Bench Press</li>
+                                    <li>Incline</li>
+                                    <li>shoulders</li>
+                                    <li>Latteral</li>
+                                </ul>
+                                <div class="bt"><a href="./schedule.php" class="readmore_btn" id="readMore">View More</a></div>
+                            </div>
+                            <div class="pchart">
+                                <div class="weekpro">
+                                    <h2>Weekly Progress</h2>
+                                    <ul>
+                                        <div class="itemcon">
+                                            <li class="plist">DAY 1 </li><span class="stat" >COMPLETED</span>
+                                        </div>
+                                        <div class="itemcon">
+                                            <li class="plist">DAY 2 </li><span class="stat" >NEED TO COMPLETE</span>
+                                        </div>
+                                        <div class="itemcon">
+                                            <li class="plist">DAY 3 </li><span class="stat" >NEED TO COMPLETE</span>
+                                        </div>
+                                    </ul>
+                                <div class="bt"><a href="./progress.php" class="readmore_btn" id="readMore">View More</a></div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="divider2"></div>
+                    </div>
+                    <div class="divider"></div> 
+                </div> 
+                          
          </div>
+         <div class="Hdivider"></div>
     </section>
     <?php include "includes/footer.php" ?>
 
@@ -120,7 +135,7 @@
                     label: "BMI value",
                     backgroundColor: "#86ff71",
                     borderColor: "#86ff71",
-                    data: [40, 38, 33, 30, 29, 25, 22],
+                    data: [40, 39, 38, 38, 35, 35, 34],
                     fill: false,
                 }, ]
             },
