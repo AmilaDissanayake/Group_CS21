@@ -69,16 +69,18 @@
                         <div class="progcon">
                             <div class="comwork">
                                 <h2>UPCOMING DAY</h2>
-                                <ul>
-                                    <li>Bench Press</li>
-                                    <li>Incline</li>
-                                    <li>shoulders</li>
-                                    <li>Latteral</li>
-                                    <li>Bench Press</li>
-                                    <li>Incline</li>
-                                    <li>shoulders</li>
-                                    <li>Latteral</li>
-                                </ul>
+                                <div class="wlist">
+                                    <ul>
+                                        <li>Bench Press</li>
+                                        <li>Incline</li>
+                                        <li>shoulders</li>
+                                        <li>Latteral</li>
+                                        <li>Bench Press</li>
+                                        <li>Incline</li>
+                                        <li>shoulders</li>
+                                        <li>Latteral</li>
+                                    </ul>
+                                </div>
                                 <div class="bt"><a href="./schedule.php" class="readmore_btn" id="readMore">View More</a></div>
                             </div>
                             <div class="pchart">
@@ -86,13 +88,13 @@
                                     <h2>Weekly Progress</h2>
                                     <ul>
                                         <div class="itemcon">
-                                            <li class="plist">DAY 1 </li><span class="stat" >COMPLETED</span>
+                                            <li class="plist">DAY 1 <i class='bx bxs-check-circle'></i></li>
                                         </div>
                                         <div class="itemcon">
-                                            <li class="plist">DAY 2 </li><span class="stat" >NEED TO COMPLETE</span>
+                                            <li class="plist">DAY 2 <i class='bx bxs-x-circle' ></i></li>
                                         </div>
                                         <div class="itemcon">
-                                            <li class="plist">DAY 3 </li><span class="stat" >NEED TO COMPLETE</span>
+                                            <li class="plist">DAY 3 <i class='bx bxs-x-circle' ></i></li>
                                         </div>
                                     </ul>
                                 <div class="bt"><a href="./progress.php" class="readmore_btn" id="readMore">View More</a></div>

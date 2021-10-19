@@ -315,7 +315,30 @@
   display: block;
 } */
 
+.progcon .comwork h2 , .progcon .pchart h2{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: grey;
+  font-style:normal;
+  font-size: 18px;
+  text-align: center;
+}
 
+.comwork .wlist{
+  padding-bottom: 10px;
+}
+.progcon ul{
+  list-style-type: none;
+}
+
+.progcon ul li{
+    padding: 3px;
+    padding-left: 30%;
+}
+
+.progcon .pchart .bt{
+  padding-top: 20px;
+}
 
 .progcon .comwork{
  /* align-content: center; */
