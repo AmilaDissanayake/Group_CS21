@@ -79,7 +79,7 @@
   padding : 20px;
 }
 
-.lpanel{
+.lpanel, .dlpanel{
   padding: 20px;
   margin: 0;
   width: 100%;
@@ -95,7 +95,7 @@
   display: block;
 }
 
-.bmip{
+.bmip ,.bfp{
   padding: 20px;
   border-style: double;
   border-radius: 10px;
@@ -104,6 +104,11 @@
 }
 
 .bmip #canvas:hover{
+  transform: scale(1.01);
+  transition: 0.35s ease;
+}
+
+.bfp #bfchart:hover{
   transform: scale(1.01);
   transition: 0.35s ease;
 }
@@ -131,7 +136,6 @@
   height: 100%;
   padding: 10px;
 }
-
 .indc .plist input{
   margin: 5px;
 }
@@ -161,7 +165,7 @@
   color: rgb(24,24,24);
 }
 
-.analy{
+.analy, .analy2{
   display: flex;
   height: 800px;
 }

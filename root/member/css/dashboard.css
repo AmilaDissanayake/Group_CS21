@@ -142,7 +142,7 @@
   text-align: right;
 }
 
-.analy{
+.analy,.analy2{
   display: flex;
 }
 
@@ -157,6 +157,53 @@
 .book{
   width: 100%;
   height: 50%;
+  background-color: white;
+  align-items: center;
+  justify-items: center;
+}
+
+.analy2 .weekpro h2{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: grey;
+  font-style: normal;
+  font-size: 18px;
+  text-align: center;
+}
+
+.analy2 .duration h2{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: grey;
+  font-style: normal;
+  font-size: 18px;
+  text-align: center;
+}
+
+.progcon .duration{
+  width: 50%;
+  height: 100%;
+  padding: 3px;
+}
+.analy2 .duration .mdu, .analy2 .duration .tdu{
+  width: 100%;
+  height: 50%;
+  text-align: center;
+}
+
+.analy2 .duration .mdu .tm, .analy2 .duration .tdu .tm{
+  font-weight: bold;
+
+}
+
+.analy2 .duration .mdu span, .analy2 .duration .tdu span{
+  font-size: 40px;
+}
+
+.duration .mdu  .sm,.duration .tdu .sm{
+  font-size: 18px;
+  font-style: italic;
+  color: grey;
 }
 
 .pro{
@@ -165,8 +212,12 @@
 }
 
 
-
 .lpanel #canvas:hover{
+  transform: scale(1.01);
+  transition: 0.4s ease;
+}
+
+.lpanel #canvas2:hover{
   transform: scale(1.01);
   transition: 0.4s ease;
 }
@@ -175,11 +226,13 @@
   width: 1%;
   height: 600px;
 }
-.book{
-  background-color: white;
-  align-items: center;
-  justify-items: center;
+
+.vdivider{
+  width: 2px;
+  height: 100%;
+  background-color: rgb(244,244,244);
 }
+
 .status, .Asignt{
   text-align: center;
   justify-content: center;

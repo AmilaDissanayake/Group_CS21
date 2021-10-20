@@ -14,7 +14,20 @@
                         'rgba(24, 24, 24,0.3)'
                     ],
                     hoverOffset: 4
-                }]
+                }],
+                options: [{
+                    elements: {
+                      center: {
+                        text: '33%',
+                        color: '#FF6384',
+                        fontStyle: 'Arial', 
+                        sidePadding: 20, 
+                        minFontSize: 20, 
+                        lineHeight: 25 
+                      }
+                    }
+            }]
+
         };
 
         var config2 = {

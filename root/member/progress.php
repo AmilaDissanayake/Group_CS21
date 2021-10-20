@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="css/progress.css">
     <link rel="stylesheet" href="css/bmi-calc.css">
+    <link rel="stylesheet" href="css/bfc-calc.css">
     <link rel="stylesheet" href="css/footer.css">
 
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -47,9 +48,9 @@
                         <canvas id="canvas"></canvas>
                     </div>
                 </div>
-            <div class="divider3"></div>
-            <div class="indc">
-                <div class="wdetails">
+                <div class="divider3"></div>
+                <div class="indc">
+                    <div class="wdetails">
                     <h2>Weekly Progress</h2>
                     <ul>
                         <div class="itemcon">
@@ -68,22 +69,71 @@
                             </li>
                         </div>
                     </ul>     
+                    </div>
+                    <div class="wp"> 
+                        <canvas id="dchart"></canvas>
+                    </div> 
                 </div>
-                    
-                <div class="wp"> 
-                    <canvas id="dchart"></canvas>
-                </div> 
+                <div class="divider3"></div>
+            </div>
+            <div class="divider"></div>
+        </div>
+        <div class="analy2">
+            <div class="divider"></div>
+            <div class="rpanel">           
+                <div class="pan">
+                    <?php include "./includes/bfc-calc.php" ?>
+                </div>           
             </div>
 
-            <div class="divider3"></div>
+            <div class="divider"></div>
+            <div class="left">
+                    <div class="indc">
+                        <div class="wdetails">
+                        <h2>Monthly Attendance</h2>
+                        <ul>
+                            <div class="itemcon">
+                                <li class="plist">  
+                                    <p> MONTH 1</p> <div class="stag"><span class="stat1">GOOD</span></div>
+                                </li>  
+                            </div>
+                            <div class="itemcon">
+                                <li class="plist">
+                                    <p> MONTH 2</p> <div class="stag"><span class="stat2">NOT GOOD</span></div>
+                                </li>
+                            </div>
+                            <div class="itemcon">
+                                <li class="plist">
+                                    <p> MONTH 3</p> <div class="stag"><span class="stat2">NOT GOOD</span></div>
+                                </li>
+                            </div>
+                        </ul>     
+                        </div>
+                        <div class="wp"> 
+                            <canvas id="dchart2"></canvas>
+                        </div> 
+                    </div>
+                <div class="divider3"></div>
+                <div class="dlpanel">
+                    <div class="btag"><b>BODY FAT STATISTICS</b></div>
+                 
+                    <div class="bfp">
+                    <div class="bmip">
+                        <canvas id="canvas2"></canvas>
+                    </div>
+                    </div>
+                
+                </div>
+                <div class="divider3"></div>
+            </div>
+            <div class="divider"></div>
         </div>
-        <div class="divider"></div>
-  </div>
+    </section>
 
-</section>
+    <?php include "includes/footer.php" ?>
 
-<?php include "includes/footer.php" ?>
 <script type="text/javascript" src="js/bmi-cal.js"></script>
+<script type="text/javascript" src="js/bfc-cal.js"></script>
 
 <script>
              AOS.init();
@@ -162,11 +212,14 @@
 
             var ctx = document.getElementById("canvas").getContext("2d");
             window.myLine = new Chart(ctx, config);
-            </script>
- 
-
-           
+            </script>     
     </section>
+
+    <script src="js/bfchart.js" type="text/javascript"></script>
+    <script >
+        var bftx = document.getElementById("canvas2").getContext("2d");
+        window.myLine = new Chart(bftx, config3);
+    </script>
 
     <script src="js/progchart.js" type="text/javascript"></script>
     <script >

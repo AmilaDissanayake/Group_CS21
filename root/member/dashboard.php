@@ -31,7 +31,7 @@
         </div>
         <!-- <div class="duhead"></div> -->
         <div class="Hdivider"></div>
-         <div class="analy">
+        <div class="analy">
                 <div class="divider"></div>
                 <div class="lpanel">
                         <div class="btag"><b>BMI STATISTICS</b></div>
@@ -46,8 +46,6 @@
                                 <a href="./progress.php" class="readmore_btn" id="readMore">UPDATE BMI</a>
                             </div>
                         </div>
-
-
                 </div>
                 <div class="divider"></div>
                 <div class="rpanel">
@@ -66,51 +64,94 @@
                         <div class="divider2"></div>
                     </div>
                     <div class="divider2"></div>
-                        <div class="progcon">
-                            <div class="comwork">
-                                <h2>UPCOMING DAY</h2>
-                                <div class="wlist">
-                                    <ul>
-                                        <li>Bench Press</li>
-                                        <li>Incline</li>
-                                        <li>shoulders</li>
-                                        <li>Latteral</li>
-                                        <li>Bench Press</li>
-                                        <li>Incline</li>
-                                        <li>shoulders</li>
-                                        <li>Latteral</li>
-                                    </ul>
-                                </div>
-                                <div class="bt"><a href="./schedule.php" class="readmore_btn" id="readMore">View More</a></div>
+                    <div class="progcon">
+                        <div class="pchart">
+                            <div class="weekpro">
+                                <h2>BMI value categorizer</h2>
+                                    <div class="wp">
+                                   
+                                    </div>
                             </div>
-                            <div class="pchart">
-                                <div class="weekpro">
-                                    <h2>Weekly Progress</h2>
-                                    <!-- <ul>
-                                        <div class="itemcon">
-                                            <li class="plist">DAY 1 <i class='bx bxs-check-circle'></i></li>
-                                        </div>
-                                        <div class="itemcon">
-                                            <li class="plist">DAY 2 <i class='bx bxs-x-circle' ></i></li>
-                                        </div>
-                                        <div class="itemcon">
-                                            <li class="plist">DAY 3 <i class='bx bxs-x-circle' ></i></li>
-                                        </div>
-                                    </ul> -->
+                        </div>
+                        <div class="vdivider"></div>
+                        <div class="pchart">
+                            <div class="weekpro">
+                                <h2>Weekly Progress</h2>
                                     <div class="wp">
                                         <canvas id="dchart" height="80px" width="80px"></canvas>
                                     </div>
                                 <div class="bt"><a href="./progress.php" class="readmore_btn" id="readMore">View More</a></div>
                             </div>
-                            </div>
                         </div>
-                        <div class="divider2"></div>
                     </div>
-                    <div class="divider"></div> 
-                </div> 
+                    <div class="divider2"></div>
+                </div>
+                <div class="divider"></div>
+        </div> 
+        <div class="Hdivider"></div>
+        <div class="analy2">
+                <div class="divider"></div>
+                <div class="rpanel">
+                <div class="progcon">
+                        <div class="comwork">
+                            <h2>UPCOMING DAY</h2>
+                            <div class="wlist">
+                                <ul>
+                                    <li>Bench Press</li>
+                                    <li>Incline</li>
+                                    <li>shoulders</li>
+                                    <li>Latteral</li>
+                                    <li>Bench Press</li>
+                                    <li>Incline</li>
+                                    <li>shoulders</li>
+                                    <li>Latteral</li>
+                                </ul>
+                            </div>
+                            <div class="bt"><a href="./schedule.php" class="readmore_btn" id="readMore">View More</a></div>
+                        </div>
+                        <div class="duration">   
+                                    <div class="mdu">
+                                        <h2>Membership</h2>
+                                        <p class="tm"><span>11</span>Months <span>21</span>Days</p>
+                                        <p class="sm">Remaining</p>
+                                    </div>
+                                    <div class="divider2"></div>
+                                    <div class="tdu">
+                                        <h2>Trainer</h2>
+                                        <p class="tm"><span>21</span>Days</p>
+                                        <p class="sm">Remaining</p>
+                                    </div>
+                        </div>
+                    </div>
+
+                    <div class="divider2"></div>
+                    <div class="book">
+                            <div class="weekpro">
+                                <h2>Body Fat value categorizer</h2>
+                            </div>
+                            <div class="status">
+
+                            </div>
+                    </div>
+                    <div class="divider2"></div>
+                </div>
+                <div class="divider"></div>
+                <div class="lpanel">
+                    <div class="btag"><b>BODY FAT STATISTICS</b></div>
+                    <div class="bmi">
+                        <canvas id="canvas2"></canvas>
+                    </div>
+                    <div class="bmistatus">
+                        <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span > AVERAGE </span></p>
+                        <div class="pgo">
+                            <a href="./progress.php" class="readmore_btn" id="readMore">UPDATE BODY FAT</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </div> 
                           
-         </div>
-         <div class="Hdivider"></div>
+        <div class="Hdivider"></div>
     </section>
     <?php include "includes/footer.php" ?>
 
@@ -189,6 +230,12 @@
 
         var ctx = document.getElementById("canvas").getContext("2d");
         window.myLine = new Chart(ctx, config);
+    </script>
+
+    <script src="js/bfchart.js" type="text/javascript"></script>
+    <script >
+        var bftx = document.getElementById("canvas2").getContext("2d");
+        window.myLine = new Chart(bftx, config3);
     </script>
 
     <script src="js/progchart.js" type="text/javascript"></script>
