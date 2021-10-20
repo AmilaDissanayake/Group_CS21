@@ -13,8 +13,11 @@
 }
 
 .welcomenote h1{
-  text-align: center;
+  text-align: left;
+  padding-left: 40px;
   font-size: 34px;
+  font-family: 'Azonix'; 
+  font-weight: 600;
 }
 
 .dashcover{
@@ -52,7 +55,8 @@
   width: auto;
 }
 
-.duhead {
+.duhead h2{
+  font-style: normal;
   text-align: center;
 }
 .duline{
@@ -160,6 +164,8 @@
   height:75%;
 }
 
+
+
 .lpanel #canvas:hover{
   transform: scale(1.01);
   transition: 0.4s ease;
@@ -246,6 +252,7 @@
 .rpanel .status .bt{
   align-content: center;
   text-align: right;
+  /* font-style: normal; */
 }
 .rapnel .pan1 :hover{
   transform: scale(1.5);
@@ -337,7 +344,7 @@
 }
 
 .progcon .pchart .bt{
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .progcon .comwork{
@@ -354,6 +361,11 @@
   width: 50%;
   height: 100%;
   padding: 3px;
+}
+
+.progcon .pchart .wp{
+  width: 100%;
+  height: 50%;
 }
 .divider2{
   width: 100%;

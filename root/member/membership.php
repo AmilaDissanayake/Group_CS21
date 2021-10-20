@@ -20,7 +20,7 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1>HI! "NAME"</h1></div>
+        <div class="welcomenote"><h1>HI! PAMODHA</h1></div>
  
         <!-- <div class="dashcover"></div> -->
         <div class="dubar">

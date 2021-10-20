@@ -24,54 +24,60 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1>HI! "NAME"</h1></div>
+        <div class="welcomenote"><h1>HI! PAMODHA</h1></div>
  
-        <div class="dashcover"></div>
+        <!-- <div class="dashcover"></div> -->
         <div class="duhead"></div>
-
+        <div class="divider3"></div>
+        
         <div class="analy">
-              <div class="rpanel">           
-                     <div class="pan">
-                        <?php include "./includes/bmi-calc.php" ?>
-                     </div>           
-             </div>
-
-        <div class="divider"></div>
-
-        <div class="left">
-            <div class="lpanel">
-                 <div class="btag"><b>BMI STATISTICS</b></div>
-                 
-                 <div class="bmip">
-                     <canvas id="canvas"></canvas>
-                 </div>
+            <div class="divider"></div>
+            <div class="rpanel">           
+                <div class="pan">
+                    <?php include "./includes/bmi-calc.php" ?>
+                </div>           
             </div>
+
+            <div class="divider"></div>
+            <div class="left">
+                <div class="lpanel">
+                    <div class="btag"><b>BMI STATISTICS</b></div>
+                 
+                    <div class="bmip">
+                        <canvas id="canvas"></canvas>
+                    </div>
+                </div>
             <div class="divider3"></div>
             <div class="indc">
+                <div class="wdetails">
                     <h2>Weekly Progress</h2>
-                         <ul>
-                             <div class="itemcon">
-                                 <li class="plist">  
-                                    DAY 1 <span class="stat1">COMPLETED</span>
-                                </li>  
-                             </div>
-                             <div class="itemcon">
-                                 <li class="plist">
-                                    DAY 2 <span class="stat2" >NOT COMPLETED</span>
-                                 </li>
-                             </div>
-                             <div class="itemcon">
-                                 <li class="plist">
-                                    DAY 3 <span class="stat2" >NOT COMPLETED</span>
-                                 </li>
-                             </div>
-                      </ul>      
+                    <ul>
+                        <div class="itemcon">
+                            <li class="plist">  
+                                <input type="checkbox"><p> DAY 1</p> <div class="stag"><span class="stat1">COMPLETED</span></div>
+                            </li>  
+                        </div>
+                        <div class="itemcon">
+                            <li class="plist">
+                                <input type="checkbox"><p> DAY 2</p> <div class="stag"><span class="stat2">NOT COMPLETED</span></div>
+                            </li>
+                        </div>
+                        <div class="itemcon">
+                            <li class="plist">
+                                <input type="checkbox"><p> DAY 3</p> <div class="stag"><span class="stat2">NOT COMPLETED</span></div>
+                            </li>
+                        </div>
+                    </ul>     
+                </div>
+                    
+                <div class="wp"> 
+                    <canvas id="dchart"></canvas>
+                </div> 
             </div>
+
             <div class="divider3"></div>
         </div>
-        
-       
- 
+        <div class="divider"></div>
   </div>
 
 </section>
@@ -162,7 +168,11 @@
            
     </section>
 
-
+    <script src="js/progchart.js" type="text/javascript"></script>
+    <script >
+        var dtx = document.getElementById("dchart").getContext("2d");
+        window.myLine = new Chart(dtx, config2);
+    </script>
 </body>
 
 </html>

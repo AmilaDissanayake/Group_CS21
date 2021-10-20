@@ -22,14 +22,14 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1>WELCOME "NAME"</h1></div>
+        <div class="welcomenote"><h1>WELCOME! PAMODHA</h1></div>
  
-        <div class="dashcover"></div>
+        <!-- <div class="dashcover"></div> -->
         <div class="dubar">
-            <div class="duhead"><h2>"12 MONTH" MEMBERSHIP</h2></div>
-            <div class="duline"><div class="remain"><h2>MONTHS</h2><div class="time"><h1>MM</h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1>DD</h1></div></div></div>
+            <div class="duhead"><h2>12 MONTH MEMBERSHIP</h2></div>
+            <!-- <div class="duline"><div class="remain"><h2>MONTHS</h2><div class="time"><h1>MM</h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1>DD</h1></div></div></div> -->
         </div>
-        <div class="duhead"></div>
+        <!-- <div class="duhead"></div> -->
         <div class="Hdivider"></div>
          <div class="analy">
                 <div class="divider"></div>
@@ -60,7 +60,7 @@
                         <div class="divider2"></div>
                         <div class="status">
                             <span id="bk">BOOKING STATUS</span>
-                            <div class="pan2"><i class='bx bxs-message-square-check'></i><p>Booking Fixed</p></div>
+                            <div class="pan2"><i class='bx bxs-message-square-check'></i><p>Booking Fixed on 21/10/2021</p></div>
                             <div class="bt"><a href="./booking.php" class="readmore_btn" id="readMore">View More</a></div>
                         </div>
                         <div class="divider2"></div>
@@ -86,7 +86,7 @@
                             <div class="pchart">
                                 <div class="weekpro">
                                     <h2>Weekly Progress</h2>
-                                    <ul>
+                                    <!-- <ul>
                                         <div class="itemcon">
                                             <li class="plist">DAY 1 <i class='bx bxs-check-circle'></i></li>
                                         </div>
@@ -96,7 +96,10 @@
                                         <div class="itemcon">
                                             <li class="plist">DAY 3 <i class='bx bxs-x-circle' ></i></li>
                                         </div>
-                                    </ul>
+                                    </ul> -->
+                                    <div class="wp">
+                                        <canvas id="dchart" height="80px" width="80px"></canvas>
+                                    </div>
                                 <div class="bt"><a href="./progress.php" class="readmore_btn" id="readMore">View More</a></div>
                             </div>
                             </div>
@@ -186,6 +189,12 @@
 
         var ctx = document.getElementById("canvas").getContext("2d");
         window.myLine = new Chart(ctx, config);
+    </script>
+
+    <script src="js/progchart.js" type="text/javascript"></script>
+    <script >
+        var dtx = document.getElementById("dchart").getContext("2d");
+        window.myLine = new Chart(dtx, config2);
     </script>
 
 </body>
