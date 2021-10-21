@@ -52,7 +52,7 @@
                     <div class="profcov2">
                         <div class="aper">
                             <div class="covuname">
-                                <p>pamodha98</p>
+                                <p>navod98</p>
                             </div>
                             <div class="pdetails">
                             <i class='bx bx-dumbbell'></i>  NAME <p> <i class='bx bxs-right-arrow'></i>Navod Wimalaweera</p>
@@ -185,19 +185,17 @@
 
                     <div class="buttondiv"><input type="button" class="form__button" value="UPDATE EMAIL" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
-                    <div class="topic"><h2><i class='bx bx-pen'></i>Change Username</h2></div>
+                    <!-- <div class="topic"><h2><i class='bx bx-pen'></i>Change Username</h2></div>
                     <div class="form__div" id="uname">
                         <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
                         <label for="" class="form__label">Username</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
                         <div id="uname_response" ></div>
-                        <!-- <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i> -->
                         <small></small>
-                    </div>
+                    </div> -->
 
-                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE USERNAME" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+                    <!-- <div class="buttondiv"><input type="button" class="form__button" value="UPDATE USERNAME" name="form_submit" id="form_submit" onclick="submitFunction()"></div> -->
 
                     <div class="topic"><h2><i class='bx bx-pen'></i>Change Password</h2></div>
                     <div class="form__div">
