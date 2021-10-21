@@ -1,3 +1,5 @@
+<?php include "includes/check_login.php" ?>
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -5,12 +7,13 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/inventory.css">
     <link href="css/justselect.css" rel="stylesheet" />
 
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 </head>
 
 <body>
@@ -26,7 +29,7 @@
             <div class="member-stats">
                 <div class="one">
                     <p class="value">255</p>
-                    <p class="name">Total Members</p>
+                    <p class="name">Total Recived</p>
                 </div>
 
                 <div class="two">
@@ -36,7 +39,7 @@
 
                 <div class="three">
                     <p class="value">10</p>
-                    <p class="name">Expired Memberships</p>
+                    <p class="name">Profit</p>
                 </div>
 
                 <div class="four">
@@ -68,24 +71,21 @@
 
 
 
-                <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Member</button></div>
+                <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Equipment</button></div>
 
             </div>
-
             <div class="member-list">
                 <table class="table table-hover">
 
                     <thead>
                         <tr>
 
-                            <th>Name</th>
+                            <th>Equipment</th>
 
-                            <th>Username</th>
-                            <th>Phone Number</th>
+                            <th>Details</th>
+                            <th>Count</th>
                             <!-- <th>Address</th> -->
-                            <th>Date Joined</th>
-                            <th>Membership Type</th>
-                            <th>Expiery Date</th>
+
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -93,38 +93,28 @@
                         <?php
 
                         require "includes/db.php";
-                        $sql = "SELECT * FROM member";
+                        $sql = "SELECT * FROM inventory";
                         $result = mysqli_query($conn, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
-
-                                $query = "SELECT membership_type, joined_date FROM membership WHERE member_id = $row[member_id];";
-                                $result2 = mysqli_query($conn, $query);
-                                $row2 = mysqli_fetch_assoc($result2);
-                                $dateMembership = $row2['joined_date'];
-                                $membershipType = $row2['membership_type'];
-                                $dateMembership = date('Y-m-d', strtotime($dateMembership));
-                                $expireMembership = date('Y-m-d', strtotime($dateMembership . '+' . $membershipType . 'month'));
-                                $today = date("Y-m-d");
-                                $expired = "";
-                                if ($today > $expireMembership) {
-                                    $expired = "expired";
-                                }
-
                         ?>
 
 
 
 
-                                <tr class=<?php $expired ?>>
+                                <tr>
+
+                                    <td><img src="media/inventory/<?php echo $row['image'] ?>"> </td>
                                     <td>
-                                        <div class="first-column"><span class="avatar"><img src="../media/members/<?php echo $row['image'] ?>"></span><?php echo " " . $row['f_name'] . $row['l_name'] ?></div>
+                                        <?php echo " " . $row['name'] ?>
                                     </td>
-                                    <td><?php echo $row['username'] ?> </td>
-                                    <td><?php echo $row['phone_no'] ?> </td>
-                                    <td><?php echo $dateMembership ?> </td>
-                                    <td><?php echo  $row2['membership_type'] . ' months' ?> </td>
-                                    <td><?php echo  $expireMembership ?> </td>
+                                    <td>
+
+                                        <?php echo " " . $row['quantity'] ?>
+
+                                    </td>
+
+
                                     <td>
                                         <div class="row-action">
                                             <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">View/Update/Delete</button></div>
@@ -145,6 +135,14 @@
 
 
             </div>
+
+            <!-- <div class="equip">
+                <div class="one">
+                    <img src="media/inventory/dumbbell.png" alt="">
+                </div>
+            </div> -->
+
+
         </div>
 
 

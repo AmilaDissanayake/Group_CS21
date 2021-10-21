@@ -1,3 +1,5 @@
+<?php include "includes/check_login.php" ?>
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -26,7 +28,7 @@
             <div class="member-stats">
                 <div class="one">
                     <p class="value">255</p>
-                    <p class="name">Total Members</p>
+                    <p class="name">Total Trainers</p>
                 </div>
 
                 <div class="two">
@@ -52,9 +54,9 @@
                 </div>
                 <div class="filter1">
                     <select name="Membership" id="" class="justselect">
-                        <option selected="selected">Membership</option>
-                        <option>Membership Valid</option>
-                        <option>Membership Expired</option>
+                        <option selected="selected">Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
                     </select>
                 </div>
 
@@ -68,7 +70,7 @@
 
 
 
-                <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Member</button></div>
+                <div class="add_button"><button class="add_btn" onclick="location.href='add-trainer.php'">Add Trainer</button></div>
 
             </div>
 
@@ -81,11 +83,13 @@
                             <th>Name</th>
 
                             <th>Username</th>
+                            <th>Joined Date</th>
                             <th>Phone Number</th>
                             <!-- <th>Address</th> -->
-                            <th>Date Joined</th>
-                            <th>Membership Type</th>
-                            <th>Expiery Date</th>
+                            <!-- <th>Qualifications</th> -->
+                            <th>Rate</th>
+                            <th>Rating</th>
+                            <th>Assgined Members</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -93,38 +97,51 @@
                         <?php
 
                         require "includes/db.php";
-                        $sql = "SELECT * FROM member";
+                        $sql = "SELECT * FROM trainer";
                         $result = mysqli_query($conn, $sql);
+
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
 
-                                $query = "SELECT membership_type, joined_date FROM membership WHERE member_id = $row[member_id];";
+                                $date = strtotime($row['joined_date']);
+                                $formattedValue = date("F Y", $date);
+
+
+                                $query = "SELECT * FROM review WHERE trainer_id = $row[trainer_id]";
                                 $result2 = mysqli_query($conn, $query);
-                                $row2 = mysqli_fetch_assoc($result2);
-                                $dateMembership = $row2['joined_date'];
-                                $membershipType = $row2['membership_type'];
-                                $dateMembership = date('Y-m-d', strtotime($dateMembership));
-                                $expireMembership = date('Y-m-d', strtotime($dateMembership . '+' . $membershipType . 'month'));
-                                $today = date("Y-m-d");
-                                $expired = "";
-                                if ($today > $expireMembership) {
-                                    $expired = "expired";
+                                $review_count = mysqli_num_rows($result2);
+
+
+                                $review_value = 0;
+                                while ($row2 = mysqli_fetch_assoc($result2)) {
+                                    $review_value += $row2['stars'];
                                 }
+                                // $dateMembership = $row2['joined_date'];
+                                // $membershipType = $row2['membership_type'];
+                                // $dateMembership = date('Y-m-d', strtotime($dateMembership));
+                                // $expireMembership = date('Y-m-d', strtotime($dateMembership . '+' . $membershipType . 'month'));
+                                // $today = date("Y-m-d");
+                                // $expired = "";
+                                // if ($today > $expireMembership) {
+                                //     $expired = "expired";
+                                // }
 
                         ?>
 
 
 
 
-                                <tr class=<?php $expired ?>>
+                                <tr class=>
                                     <td>
-                                        <div class="first-column"><span class="avatar"><img src="../media/members/<?php echo $row['image'] ?>"></span><?php echo " " . $row['f_name'] . $row['l_name'] ?></div>
+                                        <div class="first-column"><span class="avatar"><img src="../media/trainers/<?php echo $row['image'] ?>"></span><?php echo " " . $row['f_name'] . " " . $row['l_name'] ?></div>
                                     </td>
                                     <td><?php echo $row['username'] ?> </td>
+                                    <td><?php echo $formattedValue ?> </td>
                                     <td><?php echo $row['phone_no'] ?> </td>
-                                    <td><?php echo $dateMembership ?> </td>
-                                    <td><?php echo  $row2['membership_type'] . ' months' ?> </td>
-                                    <td><?php echo  $expireMembership ?> </td>
+
+                                    <td><?php echo  $row['rate'] ?> </td>
+                                    <td> ⭐ <?php echo  $review_value / $review_count ?> </td>
+                                    <td> <?php echo  $row['assigned_members'] ?> </td>
                                     <td>
                                         <div class="row-action">
                                             <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">View/Update/Delete</button></div>
