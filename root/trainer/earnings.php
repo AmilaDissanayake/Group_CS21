@@ -41,7 +41,7 @@
                 <a href="calendar.php" class="name">Earnings(This year)</a>
             </div>
         </div>
-        <div class="chart-div">
+    <div class="chart-div">
         <div class="earning-chart">
                      <canvas id="canvas"></canvas>
         </div>
@@ -87,7 +87,7 @@
             </table>
 
         </div>
-        </div>
+    </div>
     </div>
     </section>
     <script>
@@ -124,10 +124,10 @@
          responsive: true,
          maintainAspectRatio: true,
          title: {
-             text: 'BMI Analysis',
+             text: 'EARNING ANALYSIS',
              fontSize: 19,
              fontStyle: '600',
-             fontColor: 'rgba(240,250,237,1)',
+             fontColor: 'black',
              padding: 10,
              display: true
          },
