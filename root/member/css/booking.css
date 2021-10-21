@@ -45,18 +45,25 @@
 }
 
 /*------------body section--------------------*/
-.uppart{
+.home-section .uppart{
   padding: 10px;
   width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.uppart .middle{
+  width: calc(100%-40px);
   height: auto;
   background-color: white;
 }
 
-.uppart .note{
+.uppart .middle .note{
   text-align: center;
   padding: 20px;
   font-size: 25px;
 }
+
 
 /*--------------Status section----------------*/
 .bkstatus{
@@ -126,6 +133,10 @@
 .divider{
   width: 100%;
   height: 20px;
+}
+.vdivid{
+  width: 20px;
+  height: 100%;
 }
 
 /*-----------buttons--------------*/

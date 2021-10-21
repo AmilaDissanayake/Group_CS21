@@ -130,6 +130,12 @@
   background-color: rgb(244,244,244);
 }
 
+.divider1{
+  width: 20px;
+  height: 100%;
+  background-color: rgb(244,244,244);
+}
+
 .divider3{
     width: 20px;
     height: 100%px;
@@ -137,10 +143,17 @@
 }
 
 .uppart{
-    padding: 20px;
-    background-color: white;
+  width: 100%;
+  height: auto;
+  display: flex;
 }
 
+.middle{
+  width: calc(100% - 40px);
+  height: auto;
+  padding: 20px;
+  background-color: white;
+}
 
 .dwnpart{
     display: flex;

@@ -102,7 +102,7 @@
 
 .bmi{
   padding: 20px;
-  border-style: double;
+  /* border-style: double; */
   border-radius: 10px;
   border-color: grey;
   background-color: rgb(24,24,24);
@@ -377,7 +377,7 @@
 
 .progcon .comwork h2 , .progcon .pchart h2{
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
   color: grey;
   font-style:normal;
   font-size: 18px;
@@ -415,11 +415,130 @@
   height: 100%;
   padding: 3px;
 }
-
-.progcon .pchart .wp{
+.progcon .pchart .wp, .progcon .pchart .bc{
   width: 100%;
   height: 50%;
 }
+
+.bc .cathead, .bc .cat1{
+  width: 100%;
+  height: 20%;
+}
+.cathead, .cat1{
+  display: flex;
+}
+.bc .cimg{
+  width: 18%;
+  height: 100%;
+}
+.bc .cimg img{
+  width: 30px;
+  height: 40px;
+}
+.bc .cat1 .cimg img:hover{
+  transform: scale(1.03);
+  transition: 0.25s ease;
+}
+.cathead{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+.cathead .tx{
+  width: 82%;
+  height: 100%;
+  font-weight: bold;
+  display: flex;
+}
+.cathead .tx .ty, .cat1 .tx .ty{
+  width: 50%;
+}
+.cathead .tx .val{
+  width: 50%;
+  text-align: center;
+  border-left: 2px solid black;
+}
+.cat1 .tx .val{
+  width: 50%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+.cat1{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.cat1 .tx{
+  width: 82%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+}
+
+.book .status .bfc{
+  width: 100%;
+  height: auto;
+}
+
+.book .bfc .bcathead{
+  width: 100%;
+  height: 10%;
+  display: flex;
+}
+.book .bfc .bcat1{
+  width: 100%;
+  height: 18%;
+  display: flex;
+  color: black;
+}
+.bfc .ctag{
+  width: 40%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  padding-bottom: 8px;
+}
+.bfc .bcat1 .ctag:hover{
+  transform: scale(1.03);
+  transition: 0.25s ease;
+}
+
+.bcathead{
+  padding-bottom: 10px;
+}
+.bcathead .tx{
+  width: 60%;
+  height: 100%;
+  font-weight: bold;
+  display: flex;
+}
+.bcathead .tx i{
+  color: rgb(24,24,24);
+  font-size: 37px;
+}
+.bcathead .tx .ty, .bcat1 .tx .ty{
+  width: 50%;
+}
+.bcathead .tx .val{
+  width: 50%;
+  text-align: center;
+  font-weight: bold;
+}
+.bcat1 .tx .val{
+  width: 50%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+.bcat1{
+  padding-bottom: 5px;
+}
+.bcat1 .tx{
+  width: 60%;
+  padding-bottom: 8px;
+  display: flex;
+}
+
 .divider2{
   width: 100%;
   height: 3px;
