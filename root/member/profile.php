@@ -21,9 +21,9 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1>HI! "NAME"</h1></div>
+        <div class="welcomenote"><h1>HI! PAMODHA</h1></div>
  
-        <div class="dashcover"></div>
+        <!-- <div class="dashcover"></div> -->
         
         <div class="duhead"></div>
         <div class="divider"></div>
@@ -43,37 +43,28 @@
                                 <p>Joined since september 2019</p>
                             </div>
                             <div class="fulname">
-                                <p>Amila Dissanayake</p>
+                                <p>Pamodha Mahagamage</p>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="pdetail">
- 
                     </div>
                 </div>
                 <div class="con1">
                     <div class="profcov2">
                         <div class="aper">
                             <div class="covuname">
-                                <p>amila99</p>
+                                <p>pamodha98</p>
                             </div>
                             <div class="pdetails">
-                            <i class='bx bx-dumbbell'></i>  NAME <p> <i class='bx bxs-right-arrow'></i> Amila Dissanayaka</p>
-                            <i class='bx bx-dumbbell'></i> GENDER  <p><i class='bx bxs-right-arrow'></i>  MALE</p>
-                            <i class='bx bx-dumbbell'></i> AGE  <p> <i class='bx bxs-right-arrow'></i> 22</p>
+                            <i class='bx bx-dumbbell'></i>  NAME <p> <i class='bx bxs-right-arrow'></i>Pamodha Mahgamage</p>
+                            <i class='bx bx-dumbbell'></i> GENDER  <p><i class='bx bxs-right-arrow'></i>Male</p>
+                            <i class='bx bx-dumbbell'></i> AGE  <p> <i class='bx bxs-right-arrow'></i>23</p>
                             <i class='bx bx-dumbbell'></i> LIVES IN <p> <i class='bx bxs-right-arrow'></i>Mirigama</p>
                             <i class='bx bx-dumbbell'></i> CONTACT NO. <p> <i class='bx bxs-right-arrow'></i> 0750000001</p>
                             <i class='bx bx-dumbbell'></i> E-MAIL <p><i class='bx bxs-right-arrow'></i>abc@gmail.conm</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="pdetail">
- 
-                    </div>
                 </div>
-
             </div>  
             <div class="divider3"></div>
             <div class="rsd">
@@ -172,13 +163,16 @@
                     </div>
                     <br>
 
+                    <div class="buttondiv"><input type="button" class="form__button" value="SAVE PROFILE" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+
                     <div class="separator">
                         <hr class="hr-left2" />
                         <span class="hr-text">ACCOUNT INFO</span>
                         <hr class="hr-right2" />
                     </div>
                     <br>
-
+                    
+                    <div class="topic"><h2><i class='bx bx-pen'></i>Change E-mail</h2></div>
                     <div class="form__div">
                         <input type="text" class="form__input" id="email" placeholder=" " name="email_cc">
                         <label for="" class="form__label">Email</label>
@@ -189,6 +183,9 @@
                         <small>Error message</small>
                     </div>
 
+                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE EMAIL" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+
+                    <div class="topic"><h2><i class='bx bx-pen'></i>Change Username</h2></div>
                     <div class="form__div" id="uname">
                         <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
                         <label for="" class="form__label">Username</label>
@@ -200,17 +197,28 @@
                         <small></small>
                     </div>
 
+                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE USERNAME" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+
+                    <div class="topic"><h2><i class='bx bx-pen'></i>Change Password</h2></div>
+                    <div class="form__div">
+                            <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();" name="password_cc">
+                            <label for="" class="form__label">Current Password</label>
+                            <i class="fa fa-check"></i>
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <small>Error message</small>
+                    </div>
+
                     <div class="name">
                         <div class="form__div">
                             <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();" name="password_cc">
-                            <label for="" class="form__label">Password</label>
+                            <label for="" class="form__label">New Password</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
                             <input type="password" class="name_input" id="password2" placeholder=" " onkeyup="return passwordChanged2();">
-                            <label for="" class="form__label">Confirm Password</label>
+                            <label for="" class="form__label">Confirm New Password</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
                             <small>Error message</small>
@@ -222,7 +230,7 @@
                         <span class="checkmark"></span>
                     </label> 
 
-                    <div class="buttondiv"><input type="button" class="form__button" value="SAVE PROFILE" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE PASSWORD" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
                 </div>
             </div>
             <div class="divider3"></div>

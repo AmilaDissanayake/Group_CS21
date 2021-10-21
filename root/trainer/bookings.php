@@ -34,12 +34,14 @@
                 <table class="table-members">
                     <tr>
                         <th>Name</th>
+                        <th>Date</th>
                         <th>Time</th>
                         <th>Contact No.</th>
                         <th></th>
                     </tr>
                     <tr>
                         <td>Amila dissanayake</td>
+                        <td>2021 Oct 21</td>
                         <td>8.00a.m.-10.00a.m.</td>
                         <td>0112233445</td>
                         <td><div class="row-action">
@@ -49,6 +51,7 @@
                     </tr>
                     <tr>
                         <td>Navod shehan</td>
+                        <td>2021 Oct 21</td>
                         <td>8.00a.m.-10.00a.m.</td>
                         <td>0112233445</td>
                         <td><div class="row-action">
@@ -58,6 +61,7 @@
                     </tr>
                     <tr>
                         <td>Pamodha mahagamage</td>
+                        <td>2021 Oct 21</td>
                         <td>8.00a.m.-10.00a.m.</td>
                         <td>0112233445</td>
                         <td><div class="row-action">
@@ -67,6 +71,7 @@
                     </tr>
                     <tr>
                         <td>Bimsara Kulasekara</td>
+                        <td>2021 Oct 21</td>
                         <td>8.00a.m.-10.00a.m.</td>
                         <td>0112233445</td>
                         <td><div class="row-action">

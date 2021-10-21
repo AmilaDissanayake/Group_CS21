@@ -193,14 +193,13 @@ nav .profile-details i{
 .home-section .home-content{
   position: relative;
   padding-top: 104px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 .trainer-stats{
   display: flex;
-  margin-top: 25px;
-  margin-bottom: 50px;
-  /* padding-left: 30px; */
+  margin-top: 15px;
+  margin-bottom: 40px;
   background-color: white;
   width: 100%;
   padding-top: 20px;
@@ -234,7 +233,6 @@ nav .profile-details i{
   font-family: 'Azonix';
   font-size: 27px;
   color: #434548;
-  padding-bottom: 30px;
 }
 
 .trainer-stats .name{
@@ -388,19 +386,22 @@ transition: .4s;
   margin-left: 3%;
 }
 .review h1{
-  font: rubik;
+  font-family: 'Azonix';
   text-align: center;
   padding-top: 20px;
   padding-bottom: 10px;
+  letter-spacing: 1px;
 }
 .review h2{
   padding-left: 25px;
   padding-bottom: 10px;
+  font-family: 'rubik';
 }
 .review p{
   padding-left: 25px;
   padding-right: 5px;
   padding-bottom: 20px;
+  font-family: 'rubik';
 }
 .review-content{
   overflow-y: hidden;

@@ -22,19 +22,31 @@
         <?php include "includes/header.php" ?>
 
         <div class="home-content">
-            <div class="calendar-top">
-                <div class="calendar-input">
-                    <input type='Date' required>
-                    <input type='Time' min="08:00" max="22:00" required>
-                    <button type="submit" name="date-submit">ADD</button>
-                </div>
+            <div class="calendar-input">
+                <input type='Date' required>
+                <input type='Time' min="08:00" max="22:00" required>
+                <button type="submit" name="date-submit">SET</button>
+            </div>
+            <div class="bottom-div">
+                <div id='calendar' class="calendar"></div>
                 <div class="calendar-table">
+                    <div class="availability-header"><h1>AVAILABILITY</h1></div>
+                    <div class="divider">
+                    <span class="fade-effect2"> </span>
+                    </div>
                     <table class="table-members">
                         <tr>
                             <th>Date</th>
                             <th>Time</th>
                             <th></th>
-                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>2021-10-17</td>
+                            <td>8.00a.m.-10.00a.m.</td>
+                            <td><div class="row-action">
+                                <button class="about_btn" onclick="location.href='members.php'">Remove</button> 
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>2021-10-17</td>
@@ -46,7 +58,6 @@
                         </tr>
                 </div>
             </div>
-            <div id='calendar' class="calendar"></div>
         </div>
     </section>
     <script>
