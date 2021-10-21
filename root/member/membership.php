@@ -46,6 +46,7 @@
         <div class="divid"></div>
 
         <div class="btmsec">
+            <div class="hordivid"></div>
             <div class="meship">
                 <div class="ren">
                     <div class="note2"><h1>Renew Membership</h1></div>
@@ -225,6 +226,7 @@
                     </div>
                 </div>
             </div>
+            <div class="hordivid"></div>
         </div>
         <div class="divid"></div>
 

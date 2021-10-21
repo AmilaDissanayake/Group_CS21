@@ -28,8 +28,10 @@
  
         <div class="divider"></div>
         <div class="uppart">
-            <div class="note"><h2>Booking</h2></div>
-            <div class="bkstatus">
+            <div class="vdivid"></div>
+            <div class="middle">
+                <div class="note"><h2>Booking</h2></div>
+                <div class="bkstatus">
                         <h1>Availability Checker</h1>
                         <div class="avail">
                             <div class="statbx"><i class='bx bxs-message-square-check'></i></div>
@@ -39,12 +41,14 @@
                             </div>
                         </div>
                         <div class="check_button"><button class="check_btn" >CHECK</button></div>
-            </div>
+                </div>
 <!-- 
-            <div id="calendar-t" class="calendar-top">
-                <div id="calendar" class="calendar"></div>
-            </div> -->
-            <div id='calendar' class="calendar"></div>
+                <div id="calendar-t" class="calendar-top">
+                    <div id="calendar" class="calendar"></div>
+                </div> -->
+                <div id='calendar' class="calendar"></div>
+            </div>
+            <div class="vdivid"></div>
         </div>
         <div></div>
 

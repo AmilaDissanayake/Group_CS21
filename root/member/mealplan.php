@@ -27,6 +27,10 @@
         <div class="duhead"></div>
         <div class="divider"></div>
         <div class="uppart">
+            <div class="divider1"></div>
+            <div class="middle">
+
+            
             <div class="note"><h1>Meal Plan</h1></div>
             <div class="member-list">
                 <table class="table table-hover">
@@ -99,10 +103,12 @@
 
 
             </div>
-        
+            </div>
+            <div class="divider1"></div>
         </div>
         <div class="divider"></div>
         <div class="dwnpart">
+            <div class="divider1"></div>
             <div class="lsd">
                 <div class="note2"><h1>Suggestions for Meal Plan</h1></div>
                 <div class="con1">
@@ -129,11 +135,9 @@
                     </div>
                 </div>
             </div>
-
+            <div class="divider1"></div>
         </div>
-            
- 
-
+        <div class="divider"></div>    
            
     </section>
     <?php include "includes/footer.php" ?>

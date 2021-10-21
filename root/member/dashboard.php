@@ -68,8 +68,22 @@
                         <div class="pchart">
                             <div class="weekpro">
                                 <h2>BMI value categorizer</h2>
-                                    <div class="wp">
-                                   
+                                    <div class="bc">
+                                            <div class="cathead">
+                                                <div class="cimg"></div><div class="tx"><div class="ty"><p>CATEGORY</p></div><div class="val">VALUE</div></div>
+                                            </div>
+                                            <div class="cat1">
+                                                <div class="cimg"><img src="./media/1.jpg" alt="Under weight" ></div><div class="tx"><div class="ty"><p>UNDER</p></div><div class="val">< 18.5</div></div>
+                                            </div>
+                                            <div class="cat1">
+                                                <div class="cimg"><img src="./media/2.jpg" alt="Healthy weight" ></div><div class="tx"><div class="ty"><p>HEALTHY</p></div><div class="val">18.5-24.9</div></div>
+                                            </div>
+                                            <div class="cat1">
+                                                <div class="cimg"><img src="./media/3.jpg" alt="Over weight" ></div><div class="tx"><div class="ty"><p>OVER</p></div><div class="val">25-29.9</div></div>
+                                            </div>
+                                            <div class="cat1">
+                                                <div class="cimg"><img src="./media/4.jpg" alt="Obese weight" ></div><div class="tx"><div class="ty"><p>OBESE</p></div><div class="val">> 30</div></div>
+                                            </div>
                                     </div>
                             </div>
                         </div>
@@ -130,7 +144,26 @@
                                 <h2>Body Fat value categorizer</h2>
                             </div>
                             <div class="status">
-
+                                <div class="bfc">
+                                        <div class="bcathead">
+                                            <div class="tx"><div class="ty"><i class='bx bx-male'></i></div><div class="val"><i class='bx bx-female' ></i></div></div><div class="ctag"></div>
+                                        </div>
+                                        <div class="bcat1">
+                                            <div class="tx"><div class="val">10-13%</div><div class="val">2-5%</div></div><div class="ctag">ESSANTIAL FAT</div>
+                                        </div>
+                                        <div class="bcat1">
+                                            <div class="tx"><div class="val">14-20%</div><div class="val">6-13%</div></div><div class="ctag">ATHLETES</div>
+                                        </div>
+                                        <div class="bcat1">
+                                            <div class="tx"><div class="val">21-24%</div><div class="val">14-17%</div></div><div class="ctag">FITNESS</div>
+                                        </div>
+                                        <div class="bcat1">
+                                            <div class="tx"><div class="val">25-31%</div><div class="val">18-24%</div></div><div class="ctag">AVERAGE</div>
+                                        </div>
+                                        <div class="bcat1">
+                                            <div class="tx"><div class="val">>31%</div><div class="val">>25%</div></div><div class="ctag">OBESE</div>
+                                        </div>
+                                </div>
                             </div>
                     </div>
                     <div class="divider2"></div>
