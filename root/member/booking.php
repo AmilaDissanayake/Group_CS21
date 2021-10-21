@@ -21,16 +21,33 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1>HI! "NAME"</h1></div>
+        <div class="welcomenote"><h1>HI! PAMODHA</h1></div>
  
-        <div class="dashcover"></div>
+        <!-- <div class="dashcover"></div> -->
         <div class="duhead"></div>
  
         <div class="divider"></div>
         <div class="uppart">
             <div class="note"><h2>Booking</h2></div>
+            <div class="bkstatus">
+                        <h1>Availability Checker</h1>
+                        <div class="avail">
+                            <div class="statbx"><i class='bx bxs-message-square-check'></i></div>
+                            <!-- <i class='bx bxs-message-square-x' ></i> -->
+                            <div class="txtvi">
+                                <p>Avilable for booking</p>
+                            </div>
+                        </div>
+                        <div class="check_button"><button class="check_btn" >CHECK</button></div>
+            </div>
+<!-- 
+            <div id="calendar-t" class="calendar-top">
+                <div id="calendar" class="calendar"></div>
+            </div> -->
             <div id='calendar' class="calendar"></div>
         </div>
+        <div></div>
+
         <div class="divider"></div>   
     </section>
     
@@ -38,5 +55,7 @@
 
 
 </body>
+
+   <script type="text/javascript" src="js/calendar.js"> </script>
 
 </html>
