@@ -2,34 +2,32 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet">
+
+    <title>PIGNOSE Calendar</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/pignose.calendar.min.css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    <script type="text/javascript" src="dist/js/pignose.calendar.full.min.js"></script>
+
 </head>
 
 <body>
-    <form id="modal-redirect">
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname">
-    </form>
-    <div id="myModal">Click me to open a modal window!</div>
+
+
+    <a href="#" class="btn-calendar">Open Modal</a>
+
+
+
 
     <script>
-        new jBox('Modal', {
-            width: 300,
-            height: 100,
-            attach: '#myModal',
-            title: 'My Modal Window',
-            content: $('#modal-redirect')
+        var $btn = $('.btn-calendar').pignoseCalendar({
+            // apply: onApplyHandler,
+            modal: true, // It means modal will be showed when you click the target button.
+            buttons: true
         });
     </script>
-
 
 
 </body>
