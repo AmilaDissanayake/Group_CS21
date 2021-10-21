@@ -73,7 +73,7 @@
 
             </div>
             <div class="review">
-                <h1>YOUR REVIEWS</h1>
+                <h1>REVIEWS</h1>
                 <div class="divider">
                 <span class="fade-effect2"> </span>
                 </div>

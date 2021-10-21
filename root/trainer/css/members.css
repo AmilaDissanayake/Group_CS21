@@ -99,8 +99,8 @@
 .home-section .home-content{
     position: relative;
     padding-top: 104px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
   .home-section .search-box{
     position: relative;
@@ -282,7 +282,7 @@ nav .profile-details i{
   }
   .top-header{
     color:#999999;
-    font: Rubik;
+    font-family: 'Rubik';
     font-size: 30px;
   }
   .header-div{

@@ -166,8 +166,8 @@ transition: all 0.4 ease;
 .home-section .home-content{
 position: relative;
 padding-top: 104px;
-padding-left: 30px;
-padding-right: 30px;
+padding-left: 100px;
+padding-right: 100px;
 }
 
 @media (max-width: 1240px) {
@@ -220,20 +220,41 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(#ffffff39), 
 }
 .table-div
 {
- margin:0 auto;
- padding-left:200px;
- /* padding-right: 100px; */
- text-align:center;
- display: flex;
- justify-content: center;
+ background-color: white;
+ width: 48%;
+ margin-left: 4%;
+ border-radius: 10px;
+ padding: 20px 3% 20px 3%;
+}
+table {
+border-collapse: collapse;
+}
+
+td {
+border: 0px solid black;
+padding: 10px 10px 10px 20px;
+}
+
+th{
+padding: 15px 15px 15px 20px;
+text-decoration: none;
+margin-bottom: 10px;
+font-family: 'rubik';
+font-size: 20px;
+}
+tbody tr:nth-child(even) {
+background-color: #fff;
+}
+tbody tr:nth-child(odd) {
+background-color: #eee;
 }
 .earning-table
 {
-width: 500px;
- text-align:left;
- border-collapse: collapse;
- color:#2E2E2E;
- border:none;
+width: 94%;
+text-align:left;
+border-collapse: collapse;
+color:#2E2E2E;
+border:none;
 }
 .earning-table tr:hover
 {
@@ -244,15 +265,15 @@ width: 500px;
  display:none;
 }
 .trainer-stats{
-    display: flex;
-    margin-top: 25px;
-    margin-bottom: 50px;
-    /* padding-left: 30px; */
-    background-color: white;
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border: 1px #e5e5e5 solid;
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  /* padding-left: 30px; */
+  background-color: white;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px #e5e5e5 solid;
 }
   
 .trainer-stats .one{
@@ -281,7 +302,7 @@ border-left: 1px solid #ddd;
 font-family: 'Azonix';
 font-size: 27px;
 color: #434548;
-padding-bottom: 30px;
+padding-bottom: 10px;
 }
 
 .trainer-stats .name{
@@ -290,11 +311,32 @@ color: #999999;
 text-decoration: none;
 }
 .earning-chart{
-    width: 40%;
-    padding-left: 30px;
+background-color: white;
+width: 48%;
+padding: 80px 30px 80px 30px;
+height: 480px;
+border-radius: 10px;
 }
 .chart-div{
-    padding-top: 80px;
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
+}
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #121317; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: rgba(255, 255, 255, 0.308); 
+border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #86ff71; 
 }
