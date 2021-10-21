@@ -1,3 +1,11 @@
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="../admin/includes/dist/css/pignose.calendar.css" />
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+<script type="text/javascript" src="../admin/includes/dist/js/pignose.calendar.full.min.js"></script>
+
 <nav>
     <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
@@ -11,6 +19,35 @@
         <!--<img src="images/profile.jpg" alt="">-->
         <span class='admin_name'> Academy is open today </span>
 
-        <i class='bx bx-chevron-down'></i>
+        <i class='bx bx-chevron-down' class="btn-calendar"></i>
     </div>
 </nav>
+
+<script>
+    var $btn = $('.profile-details').pignoseCalendar({
+        // apply: onApplyHandler,
+        modal: true, // It means modal will be showed when you click the target button.
+        buttons: false,
+        minDate: '2021-10-19',
+        theme: 'dark',
+        schedules: [{
+            name: 'holiday',
+            date: '2021-10-21'
+        }, {
+            name: 'holiday',
+            date: '2021-10-22'
+        }],
+
+        scheduleOptions: {
+
+            colors: {
+                holiday: '#000101',
+                seminar: '#5c6270',
+                meetup: '#ef8080',
+            }
+        },
+
+
+        // pickWeeks: true
+    });
+</script>

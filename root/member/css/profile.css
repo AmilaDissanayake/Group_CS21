@@ -1,5 +1,6 @@
 /* Googlefont Rubik CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400;500;600;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -16,6 +17,8 @@
 .welcomenote h1{
   text-align: center;
   font-size: 34px;
+  font-family: 'Azonix'; 
+  font-weight: 400;  
 }
 
 .dashcover{
@@ -126,7 +129,7 @@
   height:75%;
 }
 
-.lpanel:hover{
+/* .lpanel:hover{
   background-color: rgb(32, 32, 31);
 }
 
@@ -135,7 +138,7 @@
 }
 .rpanel:hover{
   background-color: rgb(202, 199, 194);
-}
+} */
 
 .divider{
   width: 100%;
@@ -227,52 +230,7 @@
   transition: 0.4s;
 }
 
-.pro{
-  /* display: block; */
-  width: 100%;
-  height: 450px;
-  padding-top: 20px;
-  /* padding-bottom: 20px; */
-}
 
-.pro .weekpro{
-  /* border: rgb(24,24,24); */
-  /* border-radius: 5px;
-  border-style: outset; */
-    width: 100%;
-    height: 35%;
-    padding: 20px;
-    background-color: white;
-    font-size: auto;
-}
-
-.weekpro ul{
-  list-style-type: '>';
-}
-.weekpro .plist{
-  
-}
-
-
-.pro .weekpro .itemcon{
-  width: 100%;
-  height: 25px;
-  padding-left: 50px;
-  display: block;
-}
-
-.pro .comwork{
-  width: 100%;
-  height: 64%;
-  padding: 20px;
-  background-color: white;
-}
-
-.pro .divider2{
-  width: 100%;
-  height: 1%;
-  background-color: white;
-}
 
 /* -------------------------sidebar -----------------*/
 .sidebar{
@@ -314,6 +272,7 @@
   margin-top: 10px;
   background: -webkit-linear-gradient(#eee, rgb(99, 99, 99));
   -webkit-background-clip: text;
+  background-clip: text;;
   -webkit-text-fill-color: transparent;
 }
 .sidebar .nav-links{
@@ -324,8 +283,6 @@
   list-style: none;
   height: 50px;
 }
-
-
 .sidebar .nav-links li a{
   height: 100%;
   width: 100%;
@@ -446,13 +403,6 @@ nav .profile-details img{
   width: 40px;
   border-radius: 6px;
   object-fit: cover;
-}
-nav .profile-details .admin_name{
-  font-size: 15px;
-  font-weight: 500;
-  color: #333;
-  margin: 0 10px;
-  white-space: nowrap;
 }
 nav .profile-details i{
   font-size: 25px;
@@ -713,18 +663,13 @@ nav .profile-details i{
 
 }
 
-.search-bar{
-  
-}
 
+/* table//////////////////////////////////////////////////////// */
 .member-list{
   margin-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
 }
-
-/* table//////////////////////////////////////////////////////// */
-
 
 table {
   border-collapse: collapse;
@@ -791,7 +736,7 @@ tbody tr:nth-child(even) {
   
   .lsd .con1 p{
     font-size: larger;
-    font-weight: 600;
+    /* font-weight: 600; */
     font-style: italic;
     font-size: 22px;
   }
@@ -825,34 +770,84 @@ tbody tr:nth-child(even) {
   border-radius: 10px;
 }
 
-.avatar, .name , .joined-date  {
+.con1 .profcov .aper .fulname p{
+  font-family: 'Azonix';
+  size: 20px;
+  color: black;
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+}
+
+.avatar{
+  /* align-items: center; */
+  align-content: center;
   text-align: center;
   display: block;
 }
 
+.avatar i{
+  font-size: 30px;
+  padding: 0px;
+}
+
+.avatar i:hover{
+  color: rgb(24,24,24);
+  transform:scale(1.5);
+}
+
 .profcov .avatar img{
-  width: 200px;
+  width: 80%;
   border-radius: 50%;
   border: 2px solid #86ff71;
   transition:transform 0.25s ease;
-  
+}
+
+.avatar img:hover{
+  transform: scale(1.08);
 }
 
 .profcov .joined-date p{
- 
-  font-family: 'Rubik';
-  size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  font-style: normal;
   color: grey;
-  /* color: rgba(255, 255, 255, 0.748); */
+  text-align: center;
+  display: block;
 }
 
-.profcov .name p{
-  font-family: 'Azonix';
-  size: 20px;
-  color: black;
+.profcov2{
+  padding: 10px;
+  padding-top: 30px;
+
 }
 
+.profcov2 .aper .covuname p{
+  font-size: 18px;
+  color: grey;
+  padding: 15px;
+  font-style: normal;
+  /* font-family: 'Rubik'; */
+}
 
+.profcov2 .aper .pdetails p{
+  margin: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-style: normal;
+  font-family: 'Rubik';
+  font-size: 16px;
+  font-weight: normal;
+  background-color: rgba(24,24,24,0.9);
+  color: rgb(244,244,244);
+  border-bottom: 2px solid rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
+
+.profcov2 .aper .pdetails i{
+  padding: 5px;
+}
 .divider3{
     width: 20px;
     height: 100%px;

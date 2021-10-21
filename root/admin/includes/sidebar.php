@@ -38,7 +38,7 @@
             });
         </script> -->
         <li>
-            <a href="#">
+            <a href="./trainers.php">
                 <i class='bx bx-id-card'></i>
                 <span class="links_name">Trainers</span>
             </a>
@@ -47,7 +47,7 @@
             <span class="fade-effect1"></span>
         </div>
         <li>
-            <a href="#">
+            <a href="./payments.php">
                 <i class='bx bx-money'></i>
                 <span class="links_name">Payments</span>
             </a>
@@ -56,7 +56,7 @@
         <span class="fade-effect1"></span>
 
         <li>
-            <a href="#">
+            <a href="#" class=btn-calendar">
                 <i class='bx bx-time'></i>
                 <span class="links_name">Open/Close Times</span>
             </a>
@@ -65,7 +65,7 @@
             <span class="fade-effect1"></span>
         </div>
         <li>
-            <a href="#">
+            <a href="./inventory.php">
                 <i class='bx bx-dumbbell'></i>
                 <span class="links_name">Inventory</span>
             </a>

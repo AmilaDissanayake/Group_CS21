@@ -20,7 +20,7 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1>HI! "NAME"</h1></div>
+        <div class="welcomenote"><h1>HI! PAMODHA</h1></div>
  
         <!-- <div class="dashcover"></div> -->
         <div class="dubar">
@@ -46,6 +46,7 @@
         <div class="divid"></div>
 
         <div class="btmsec">
+            <div class="hordivid"></div>
             <div class="meship">
                 <div class="ren">
                     <div class="note2"><h1>Renew Membership</h1></div>
@@ -225,6 +226,7 @@
                     </div>
                 </div>
             </div>
+            <div class="hordivid"></div>
         </div>
         <div class="divid"></div>
 

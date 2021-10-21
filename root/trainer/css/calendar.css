@@ -140,8 +140,8 @@ nav .sidebar-button i{
 .home-section .home-content{
 position: relative;
 padding-top: 104px;
-padding-left: 30px;
-padding-right: 30px;
+padding-left: 100px;
+padding-right: 100px;
 }
 
 @media (max-width: 1240px) {
@@ -198,47 +198,25 @@ border-collapse: collapse;
 
 td {
 border: 0px solid black;
-padding: 8px;
+padding: 10px 10px 10px 20px;
 }
 
 th{
-padding: 8px;
+padding: 15px 15px 15px 20px;
 text-decoration: none;
 margin-bottom: 10px;
 }
-
-thead {
-background-color: #86ff71;
-color: rgb(0, 0, 0);
-margin-bottom: 10px;
-}
-
 tbody tr:nth-child(odd) {
 background-color: #fff;
 }
-
 tbody tr:nth-child(even) {
 background-color: #eee;
 }
-.top-header{
-color:#999999;
-font: Rubik;
-font-size: 30px;
-}
-.header-div{
-display: flex;
-justify-content: center;
-margin: 25px 0;
-}
+
 .table-members{
 width: 100%;
 border: none;
-margin-top: 250px;
-margin-bottom: 100px;
-}
-.members-div{
-padding: 20px;
-margin-top: 25px;
+margin-top: 10px;
 }
 .table-members tr th{
 font-size: 20px;
@@ -248,16 +226,51 @@ text-align: left;
 display: flex;
 justify-content: center;
 }
-.about_btn {
+.calendar-input input{
+  padding: 7px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 2px solid #86ff71;
+}
+.calendar-input button{
+  margin-left: 100px;
+  font: 'rubik';
+  font-size: 17px;
+  padding: 1px 30px 1px 30px;
+  border-radius: 30px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: white;
+  border: 0px;
+  letter-spacing: 1px;
+  background-color: rgb(44,62,80);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  outline: none;
+  cursor: pointer;
+}
+.calendar-input button:hover{
+  box-shadow: 0px 0px 10px 1px rgb(44,62,80);
+  transition: .4s;
+}
+.calendar-input{
+  width: 48%;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+.about_btn{
 position: relative;
 z-index: 10;
-width: 150px;
-height: 45px;
+width: 130px;
+height: 35px;
 border: 0px solid rgba(255, 255, 255, .5);
 border-radius: 30px;
-background-color: #424244;
+background-color: #86ff71;
 font-family: 'Rubik';
-color: #fff;
+color: black;
 font-size: 15px;
 letter-spacing: 1px;
 -webkit-backdrop-filter: blur(10px);
@@ -269,21 +282,75 @@ margin-right: 10px;
 
 .about_btn:hover {
 color: rgba(255, 255, 255, 1);
-box-shadow: 0px 0px 10px 1px #121317;
-border: 0px solid #121317;
+box-shadow: 0px 0px 10px 1px #86ff71;
+border: 0px solid #86ff71;
 transition: .4s;
 }
-.calendar-div{
-    padding: 100px;
-  }
-  .calendar-top{
-    display: grid;
-  }
-  .calendar{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-right: 0;
-    padding-left: 0;
-    width: 800px;
-    height: 500px;
-  }
+.calendar{
+  padding-top: 40px;
+  padding-bottom: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 48%;
+  height: 580px;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.bottom-div{
+display: flex;
+width: 100%;
+}
+.calendar-table{
+  width: 48%;
+  margin-left: 4%;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  height: 580px;
+}
+.availability-header{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  letter-spacing: 1px;
+}
+.availability-header h1{
+  color: black;
+  font-family: 'rubik';
+  letter-spacing: 1px;
+  font-size: 28px;
+}
+.divider{
+  padding-top:10px;
+  padding-bottom: 10px;
+}
+.fade-effect2{
+  display:block;
+  border:none;
+  color:white;
+  height:2px;
+  background:black;
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 300, from(#86ff71), to(white));
+}
+/* scrollbarscrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #121317; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.308); 
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #86ff71; 
+}
