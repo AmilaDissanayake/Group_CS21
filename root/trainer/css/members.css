@@ -296,8 +296,9 @@ nav .profile-details i{
     
   }
   .members-div{
-    padding: 20px;
+    padding: 20px 0px 20px 0px;
     margin-top: 25px;
+    background-color: white;
   }
   .table-members tr th{
     font-size: 20px;
