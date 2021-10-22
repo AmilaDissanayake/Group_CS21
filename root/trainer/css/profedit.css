@@ -62,7 +62,6 @@
   color: rgb(24,24,24);
 }
 .name {
-    padding-top: 20px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -76,7 +75,7 @@
     background: none;
     z-index: 1;
     font-family: "Rubik";
-    width: 240px;
+    width: 255px;
     height: 45px;
     padding-left: 10px;
     margin-right: 20px;
@@ -90,7 +89,7 @@
     background: none;
     z-index: 1;
     font-family: "Rubik";
-    width: 240px;
+    width: 255px;
     height: 45px;
     padding-left: 10px;
     /* margin-right: 20px; */
@@ -98,7 +97,7 @@
   }
   
   input[type="date"] {
-    width: 240px;
+    width: 255px;
   }
   
   input[type="date"]::-webkit-calendar-picker-indicator {
@@ -164,7 +163,7 @@
   
   .inj__div {
     position: relative;
-    height: 100px;
+    height: 80px;
     margin-bottom: 1.5rem;
   }
   
@@ -256,26 +255,29 @@ option {
     font-family: "Azonix";
 }
 .form__button {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   margin-bottom: 30px;
-  display: block;
+  display: flex;
+  justify-content: center;
   margin-left: auto;
   padding: 0.75rem 2rem;
   outline: none;
-  border: none;
-  background-color: #39ff14;
+  border-radius: 50px;
+  background-color: #86ff71;
   font-family: "Azonix";
   color: #000;
   font-weight: bold;
-  font-size: var(--normal-font-size);
+  font-size: 13px;
   cursor: pointer;
   transition: 0.5s;
-  width: 250px;
+  width: 170px;
   align-items: center;
+  border: none;
+
 }
   
 .buttondiv {
-  margin-top: 20px;
+  margin-top: 0px;
 }
   
   /*Input focus move up label*/
@@ -496,6 +498,8 @@ option {
     line-height: 1.5em;
     color: rgb(24,24,24);
     text-align: center;
+    padding-top: 15px;
+    font-size: 18px;
     /* top: .5em; */
   }
   
