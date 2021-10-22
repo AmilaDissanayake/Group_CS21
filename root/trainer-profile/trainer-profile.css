@@ -48,8 +48,7 @@ body{
     width: 200px;
     border-radius: 50%;
     border: 2px solid #86ff71;
-    transition:transform 0.25s ease;
-    
+    transition:transform 0.25s ease;   
 }
 
 .avatar img:hover {
@@ -96,8 +95,6 @@ body{
   border: 2px solid #86ff71;
     transition: .4s;
   }
-
-
 
   .button-inner{
     display: flex;

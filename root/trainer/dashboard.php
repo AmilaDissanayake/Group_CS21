@@ -57,7 +57,7 @@
                         <p>3YRS<br>Expirience</p>
                     </div>
                     <div class="rate">
-                        <p>2500/=<br>Per Month</p>
+                        <p>5000/=<br>Per Month</p>
                     </div>
                     <div class="review-count">
                         <p>3<br>Reviews</p>
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="button-profile">
-                    <div><button class="about_btn1" onclick="location.href='members.php'">My Profile</button></div>
+                    <div><button class="about_btn1" onclick="location.href='profile.php'">My Profile</button></div>
                 </div>
 
             </div>

@@ -236,7 +236,7 @@ nav .profile-details i{
 }
 
 .trainer-stats .name{
-  margin-top: 10px;
+  margin-top: 0px;
   color: #999999;
   text-decoration: none;
 }
@@ -332,9 +332,9 @@ border: 0px solid #121317;
   border: 0px solid rgba(255, 255, 255, .5);
   border-radius: 30px;
   background-color: #86ff71;
-  font-family: 'Rubik';
+  font-family: 'Azonix';
   color: black;
-  font-size: 20px;
+  font-size: 15px;
   letter-spacing: 1px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -354,6 +354,7 @@ transition: .4s;
   display: flex;
   justify-content: center;
   padding-top: 25px;
+  font-family: 'Azonix';
 }
 /* scrollbarscrollbar */
 ::-webkit-scrollbar {
@@ -379,7 +380,7 @@ transition: .4s;
 .review{
   width: 62%;
   background-color: white;
-  height: 458px;
+  height: 486px;
   border-radius: 5px;
   border-bottom: 2px solid rgb(211, 209, 209);
   border-right: 2px solid rgb(211, 209, 209);
@@ -429,6 +430,7 @@ transition: .4s;
 .avatar, .name , .joined-date  {
   text-align: center;
   display: block;
+  padding-top: 10px;
 }
 
 .left .avatar img{
@@ -446,7 +448,6 @@ transition: .4s;
 }
 
 .left .joined-date p{
- 
   font-family: 'Rubik';
   size: 14px;
   color: rgba(24, 23, 23, 0.748);
@@ -469,30 +470,26 @@ transition: .4s;
   margin-bottom: 20px;
 }
 
-  .left .stat .exp{
-      width: 33%;
-      display: flex;
-      justify-content: center;
-      border-right: 2px solid #121317 ;
-      padding-top: 5px;
-      padding-bottom: 5px;
-  }
-  
-
-  .left .stat .exp p , .left .stat .rate p , .left .stat .review-count p{
-      text-align: center;
-      font-family: 'Azonix';
-      font-size: 14px;
-  }
-
-  .left .stat .rate{
-      width: 33%;
-      border-right: 2px solid #121317 ;
-  }
-
-  .left .stat .review-count{
-      width: 33%;
-  }
+.left .stat .exp{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    border-right: 2px solid #121317 ;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.left .stat .exp p , .left .stat .rate p , .left .stat .review-count p{
+    text-align: center;
+    font-family: 'Azonix';
+    font-size: 12px;
+}
+.left .stat .rate{
+    width: 33%;
+    border-right: 2px solid #121317 ;
+}
+.left .stat .review-count{
+    width: 33%;
+}
 
 
 

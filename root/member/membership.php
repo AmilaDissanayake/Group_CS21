@@ -20,7 +20,7 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1>HI! PAMODHA</h1></div>
+        <div class="welcomenote"><h1></h1></div>
  
         <!-- <div class="dashcover"></div> -->
         <div class="dubar">
@@ -31,12 +31,12 @@
             <div class="mainbar">
                 <div class="duline1">
                     <div class="typ1"><i class='bx bxs-hourglass-top'></i><h1>Membership Type</h1></div>
-                    <div class="remain"><h2>MONTHS</h2><div class="time"><h1>MM</h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1>DD</h1></div></div></div>
+                    <div class="remain"><h2>MONTHS</h2><div class="time"><h1>11</h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1>21</h1></div></div></div>
                     
                 <div class="duline2">
                 <!-- <i class='bx bxs-user-x' ></i> -->
                     <div class="typ1"><i class='bx bxs-user-check'></i><h1>Trainer Assignment</h1></div>
-                    <div class="remain"><h2>DAYS</h2><div class="time"><h1>DD</h1></div></div></div>
+                    <div class="remain"><h2>DAYS</h2><div class="time"><h1>21</h1></div></div></div>
                     
             </div>
             <div class="duhead2"></div>
@@ -70,16 +70,16 @@
                             <th>PAYMENT METHOD</th>
                             <th>DESCRIPTION</th>
                             <th>DONE BY</th>
-                            <th>AMOUNT(Rs.)</th>
+                            <th>AMOUNT(LKR)</th>
                         </tr>
 
                         <tr>
                             <td>0001A</td>
-                            <td>25/6/2021</td>
+                            <td>25/06/2020</td>
                             <td>Online</td>
                             <td>Renewmembership</td>
-                            <td>USERNAME</td>
-                            <td>2,500</td>
+                            <td>Pamodha98</td>
+                            <td>7,000</td>
                             <!-- <td>
                                 <div class="row-action">
                                     <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
@@ -89,11 +89,11 @@
 
                         <tr>
                             <td>0002A</td>
-                            <td>26/7/2021</td>
+                            <td>26/07/2021</td>
                             <td>Online</td>
                             <td>Assign to a Trainer</td>
-                            <td>USERNAME</td>
-                            <td>12,500</td>
+                            <td>Pamodha98</td>
+                            <td>4,500</td>
                             <!-- <td>
                                 <div class="row-action">
                                     <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
@@ -103,11 +103,11 @@
 
                         <tr>
                             <td>0003A</td>
-                            <td>30/6/2021</td>
+                            <td>26/09/2021</td>
                             <td>Cash</td>
                             <td>Renewmembership & Assign to a trainer</td>
                             <td>Accountant</td>
-                            <td>12,500</td>
+                            <td>18,000</td>
                             <!-- <td>
                                 <div class="row-action">
                                     <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
@@ -115,19 +115,19 @@
                             </td> -->
                         </tr>
 
-                        <tr>
+                        <!-- <tr>
                             <td>0003A</td>
                             <td>30/7/2021</td>
                             <td>Cash</td>
                             <td>Renewmembership </td>
                             <td>Accountant</td>
-                            <td>6,500</td>
+                            <td>6,500</td> -->
                             <!-- <td>
                                 <div class="row-action">
                                     <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
                                 </div>
                             </td> -->
-                        </tr>
+                        <!-- </tr> -->
  
                     </table>
                     </div>
@@ -177,7 +177,7 @@
                             <th>NAME</th>
                             <th>EXPERIENCE</th>
                             <th>RATING</th>
-                            <th>MONTHLY RATE(Rs.)</th>
+                            <th>MONTHLY RATE(LKR)</th>
                             <th></th>
                         </tr>
 

@@ -8,7 +8,6 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/profedit.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,62 +20,59 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1></h1></div>
- 
-        <!-- <div class="dashcover"></div> -->
-        
-        <!-- <div class="duhead"></div> -->
-        <div class="divider"></div>
-
+        <div class="seperator"></div>
         <div class="dwnpart">
-            <div class="divider3"></div>
-            <div class="lsd">
-                <div class="note2"><h1>Profile</h1></div>
-                <div class="con1">
-                    <div class="profcov">
-                        <div class="aper">
-                            <div class="avatar">
-                                <img src="./media/thusitha.jpg">
-                                <i class='bx bxs-edit-alt'></i>
-                            </div>
-                            <div class="joined-date">
-                                <p>Joined since september 2019</p>
-                            </div>
-                            <div class="fulname">
-                                <p>Pamodha Mahagamage</p>
-                            </div>
-                        </div>
+            <div class="left">
+                <div class="avatar">
+                    <img src="../media/trainers/thusitha.jpg">
+                </div>
+                <div class="joined-date">
+                    <p>Joined September 2018 </p>
+                </div>
+                <div class="name-trainer">
+                    <p>THUSITHA KEKULAWALA ⭐ 5 </p>
+                </div>
+                <div class="stat">
+                    <div class="exp">
+                        <p>3 YRS<br>Expirience</p>
+                    </div>
+                    <div class="rate">
+                        <p>5000/=<br>Per Month</p>
+                    </div>
+                    <div class="review-count">
+                        <p>3<br>Reviews</p>
                     </div>
                 </div>
-                <div class="con1">
-                    <div class="profcov2">
-                        <div class="aper">
-                            <div class="covuname">
-                                <p>pamodha98</p>
-                            </div>
-                            <div class="pdetails">
-                            <i class='bx bx-dumbbell'></i>  NAME <p> <i class='bx bxs-right-arrow'></i>Pamodha Mahgamage</p>
-                            <i class='bx bx-dumbbell'></i> GENDER  <p><i class='bx bxs-right-arrow'></i>Male</p>
-                            <i class='bx bx-dumbbell'></i> AGE  <p> <i class='bx bxs-right-arrow'></i>23</p>
-                            <i class='bx bx-dumbbell'></i> LIVES IN <p> <i class='bx bxs-right-arrow'></i>Mirigama</p>
-                            <i class='bx bx-dumbbell'></i> CONTACT NO. <p> <i class='bx bxs-right-arrow'></i> 0750000001</p>
-                            <i class='bx bx-dumbbell'></i> E-MAIL <p><i class='bx bxs-right-arrow'></i>abc@gmail.conm</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="about">
+                    <h4>ABOUT</h4>
+                    <p>10+ years of experience as a Personal Trainer. 
+                        I am enthusiastic about instructing groups and individuals on exercise 
+                        activities and the fundamentals of sports by demonstrating proper techniques and 
+                        methods of participation. I enjoy teaching group fitness classes to people of all 
+                        ages and encouraging safe use of exercise equipment to promote individual fitness goals.</p>
                 </div>
-            </div>  
-            <div class="divider3"></div>
-            <div class="rsd">
-                <div class="con1">
-                    <form action="signup.php" class="form" id="signup_form" method="POST">
-                        <!-- <h1 class="form__title">SIGN UP</h1> -->
 
-                        <div class="separator">
-                            <hr class="hr-left1" />
+                <div class="divider">
+                <span class="fade-effect2"> </span>
+                </div>
+
+                <div class="qualifications">
+                    <h4>Qualifications</h4>
+                    <ul>
+                        <li>NCSF-Accredited personal trainer</li>
+                        <li>Additional expertise in youth athletic conditioning</li>
+                        <li>with focuses on strength training</li>
+                        <li>Strong interpersonal communication skills</li>
+                        <li>Excellent leadership skills</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rsd">
+                    <form action="signup.php" class="form" id="signup_form" method="POST">
                                 <span class="hr-text">PERSONAL INFO </span>
-                            <hr class="hr-right1" />
-                        </div><br>
+                                <div class="divider">
+                                <span class="fade-effect2"> </span>
+                                </div>
 
                     <div class="name">
                         <div class="form__div">
@@ -129,7 +125,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" " name="dob_cc" min="1920-10-01" max="2010-10-20">
+                        <input type="date" class="form__input" value="2000-10-20" id="dateofbirth" placeholder=" " name="dob_cc" min="1920-10-01" max="2010-10-20">
                         <label for="" class="form__label">Date Of Birth</label>
                         <!-- <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i> -->
@@ -185,17 +181,19 @@
 
                     <div class="buttondiv"><input type="button" class="form__button" value="UPDATE EMAIL" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
-                    <!-- <div class="topic"><h2><i class='bx bx-pen'></i>Change Username</h2></div>
+                    <div class="topic"><h2><i class='bx bx-pen'></i>Change Username</h2></div>
                     <div class="form__div" id="uname">
                         <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
                         <label for="" class="form__label">Username</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
                         <div id="uname_response" ></div>
+                        <!-- <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i> -->
                         <small></small>
-                    </div> -->
+                    </div>
 
-                    <!-- <div class="buttondiv"><input type="button" class="form__button" value="UPDATE USERNAME" name="form_submit" id="form_submit" onclick="submitFunction()"></div> -->
+                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE USERNAME" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
                     <div class="topic"><h2><i class='bx bx-pen'></i>Change Password</h2></div>
                     <div class="form__div">
@@ -230,14 +228,10 @@
 
                     <div class="buttondiv"><input type="button" class="form__button" value="UPDATE PASSWORD" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
                 </div>
-            </div>
-            <div class="divider3"></div>
         </div>
- 
-        <div class="divider"></div>
            
     </section>
-    <?php include "includes/footer.php" ?>
+    <!-- <?php include "includes/footer.php" ?> -->
 
     <script type="text/javascript" src="./../signup/signup.js"></script>
 </body>
