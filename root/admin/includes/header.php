@@ -35,6 +35,9 @@
             date: '2021-10-21'
         }, {
             name: 'holiday',
+            date: '2021-10-26'
+        }, {
+            name: 'holiday',
             date: '2021-10-22'
         }],
 

@@ -53,7 +53,7 @@
                     <input type="text" placeholder="Search by name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
-                <div class="filter1">
+                <!-- <div class="filter1">
                     <select name="Membership" id="" class="justselect">
                         <option selected="selected">Membership</option>
                         <option>Membership Valid</option>
@@ -67,7 +67,7 @@
                         <option>Male</option>
                         <option>Female</option>
                     </select>
-                </div>
+                </div> -->
 
 
 
@@ -117,7 +117,9 @@
 
                                     <td>
                                         <div class="row-action">
-                                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">View/Update/Delete</button></div>
+                                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Add 1</button></div>
+
+                                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Remove 1</button></div>
                                             <!-- <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Delete</button></div> -->
                                         </div>
                                     </td>

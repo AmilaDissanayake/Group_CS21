@@ -21,11 +21,11 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1>HI! PAMODHA</h1></div>
+        <div class="welcomenote"><h1></h1></div>
  
         <!-- <div class="dashcover"></div> -->
         
-        <div class="duhead"></div>
+        <!-- <div class="duhead"></div> -->
         <div class="divider"></div>
 
         <div class="dwnpart">
@@ -185,19 +185,17 @@
 
                     <div class="buttondiv"><input type="button" class="form__button" value="UPDATE EMAIL" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
-                    <div class="topic"><h2><i class='bx bx-pen'></i>Change Username</h2></div>
+                    <!-- <div class="topic"><h2><i class='bx bx-pen'></i>Change Username</h2></div>
                     <div class="form__div" id="uname">
                         <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
                         <label for="" class="form__label">Username</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
                         <div id="uname_response" ></div>
-                        <!-- <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i> -->
                         <small></small>
-                    </div>
+                    </div> -->
 
-                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE USERNAME" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+                    <!-- <div class="buttondiv"><input type="button" class="form__button" value="UPDATE USERNAME" name="form_submit" id="form_submit" onclick="submitFunction()"></div> -->
 
                     <div class="topic"><h2><i class='bx bx-pen'></i>Change Password</h2></div>
                     <div class="form__div">
