@@ -20,11 +20,11 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1>HI! PAMODHA</h1></div>
+        <div class="welcomenote"><h1></h1></div>
  
         <!-- <div class="dashcover"></div> -->
 
-        <div class="duhead"></div>
+        <!-- <div class="duhead"></div> -->
         <div class="divider"></div>
         <div class="uppart">
             <div class="divider1"></div>
@@ -37,6 +37,7 @@
 
                     <thead>
                         <tr>
+                            <th></th>
                             <th>MONDAY</th>
                             <th>TUSEDAY</th>
                             <th>WEDNSEDAY</th>
@@ -44,58 +45,64 @@
                             <th>FRIDAY</th>
                             <th>SATURDAY</th>
                             <th>SUNDAY</th>
+                            
                         </tr>
 
                      </thead>
                     <tbody id="output">
                         <tr>
-                            <td><b><div class="ttag"><span class ="bpart">Breakfast</span></div></b><br><div class="item">Scrambled eggs with mushrooms and oatmeal</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Breakfast</span></div></b><br><div class="item">Protein pancakes with light-syrup, peanut butter and raspberries</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Breakfast</span></div></b><br><div class="item">Chicken sausage with egg and roasted potatoes</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Breakfast</span></div></b><br><div class="item">Ground turkey, egg, cheese and salsa in a whole-grain tortilla</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Breakfast</span></div></b><br><div class="item">Blueberries, strawberries and vanilla Greek yogurt on overnight oats</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Breakfast</span></div></b><br><div class="item">Ground turkey and egg with corn, bell peppers, cheese and salsa</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Breakfast</span></div></b><br><div class="item">Eggs sunny-side up and avocado toast</div></td>
+                            <td class="rcat"><div class="visul"><img src="./media/breakfast.png" alt=""></div><div class="ttag"><span class ="bpart">Breakfast</span></div></td>
+                            <td><div class="item">Scrambled eggs with mushrooms and oatmeal</div></td>
+                            <td><div class="item">Protein pancakes with light-syrup, peanut butter and raspberries</div></td>
+                            <td><div class="item">Chicken sausage with egg and roasted potatoes</div></td>
+                            <td><div class="item">Ground turkey, egg, cheese and salsa in a whole-grain tortilla</div></td>
+                            <td><div class="item">Blueberries, strawberries and vanilla Greek yogurt on overnight oats</div></td>
+                            <td><div class="item">Ground turkey and egg with corn, bell peppers, cheese and salsa</div></td>
+                            <td><div class="item">Eggs sunny-side up and avocado toast</div></td>
                         </tr>
 
                         <tr>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Low-fat cottage cheese with blueberries</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Hard-boiled eggs and an apple.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Greek yogurt and almonds.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Yogurt with granola.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Jerky and mixed nuts.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Can of tuna with crackers.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Protein balls and almond butter.</div></td>
+                            <td class="rcat"><div class="visul"><img src="./media/snack1.png" alt=""></div><div class="ttag"><span class ="bpart">Snack</span></div></td>
+                            <td><div class="item">Low-fat cottage cheese with blueberries</div></td>
+                            <td><div class="item">Hard-boiled eggs and an apple.</div></td>
+                            <td><div class="item">Greek yogurt and almonds.</div></td>
+                            <td><div class="item">Yogurt with granola.</div></td>
+                            <td><div class="item">Jerky and mixed nuts.</div></td>
+                            <td><div class="item">Can of tuna with crackers.</div></td>
+                            <td><div class="item">Protein balls and almond butter.</div></td>
                         </tr>
 
                         <tr>
-                            <td><b><div class="ttag"><span class ="bpart">Lunch</span></div></b><br><div class="item">Venison burger, white rice and broccoli.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Lunch</span></div></b><br><div class="item">Sirloin steak, sweet potato and spinach salad with vinaigrette.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Lunch</span></div></b><br><div class="item">Turkey breast, basmati rice and mushrooms.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Lunch</span></div></b><br><div class="item">Chicken breast, baked potato, sour cream and broccoli.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Lunch</span></div></b><br><div class="item">Tilapia fillets with lime juice, black and pinto beans and seasonal veggies.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Lunch</span></div></b><br><div class="item">Tilapia fillet, potato wedges and bell peppers.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Lunch</span></div></b><br><div class="item">Pork tenderloin slices with roasted garlic potatoes and green beans.</div></td>
+                            <td class="rcat"><div class="visul"><img src="./media/lunch.png" alt=""></div><div class="ttag"><span class ="bpart">Lunch</span></div></td>
+                            <td><div class="item">Venison burger, white rice and broccoli.</div></td>
+                            <td><div class="item">Sirloin steak, sweet potato and spinach salad with vinaigrette.</div></td>
+                            <td><div class="item">Turkey breast, basmati rice and mushrooms.</div></td>
+                            <td><div class="item">Chicken breast, baked potato, sour cream and broccoli.</div></td>
+                            <td><div class="item">Tilapia fillets with lime juice, black and pinto beans and seasonal veggies.</div></td>
+                            <td><div class="item">Tilapia fillet, potato wedges and bell peppers.</div></td>
+                            <td><div class="item">Pork tenderloin slices with roasted garlic potatoes and green beans.</div></td>
                         </tr>
 
                         <tr>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Protein shake and a banana.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Protein shake and walnuts.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Protein shake and grapes.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Protein shake and mixed berries.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Protein shake and watermelon.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Protein shake and pear.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Snack</span></div></b><br><div class="item">Protein shake and strawberries.</div></td>
+                            <td class="rcat"><div class="visul"><img src="./media/snack2.png" alt=""></div><div class="ttag"><span class ="bpart">Snack</span></div></td>
+                            <td><div class="item">Protein shake and a banana.</div></td>
+                            <td><div class="item">Protein shake and walnuts.</div></td>
+                            <td><div class="item">Protein shake and grapes.</div></td>
+                            <td><div class="item">Protein shake and mixed berries.</div></td>
+                            <td><div class="item">Protein shake and watermelon.</div></td>
+                            <td><div class="item">Protein shake and pear.</div></td>
+                            <td><div class="item">Protein shake and strawberries.</div></td>
                         </tr>
 
                         <tr>
-                            <td><b><div class="ttag"><span class ="bpart">Dinner</span></div></b><br><div class="item">Salmon, quinoa and asparagus.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Dinner</span></div></b><br><div class="item">Ground turkey and marinara sauce over pasta.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Dinner</span></div></b><br><div class="item">Mackerel, brown rice and salad leaves with vinaigrette.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Dinner</span></div></b><br><div class="item">Stir-fry with chicken, egg, brown rice, broccoli, peas and carrots.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Dinner</span></div></b><br><div class="item">Ground beef with corn, brown rice, green peas and green beans.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Dinner</span></div></b><br><div class="item">Diced beef with rice, black beans, bell peppers, cheese and pico de gallo.</div></td>
-                            <td><b><div class="ttag"><span class ="bpart">Dinner</span></div></b><br><div class="item">Turkey meatballs, marinara sauce and parmesan cheese over pasta.</div></td>
+                            <td class="rcat"><div class="visul"><img src="./media/dinner.png" alt=""></div><div class="ttag"><span class ="bpart">Dinner</span></div></td>
+                            <td><div class="item">Salmon, quinoa and asparagus.</div></td>
+                            <td><div class="item">Ground turkey and marinara sauce over pasta.</div></td>
+                            <td><div class="item">Mackerel, brown rice and salad leaves with vinaigrette.</div></td>
+                            <td><div class="item">Stir-fry with chicken, egg, brown rice, broccoli, peas and carrots.</div></td>
+                            <td><div class="item">Ground beef with corn, brown rice, green peas and green beans.</div></td>
+                            <td><div class="item">Diced beef with rice, black beans, bell peppers, cheese and pico de gallo.</div></td>
+                            <td><div class="item">Turkey meatballs, marinara sauce and parmesan cheese over pasta.</div></td>
                         </tr>
 
                     </tbody>

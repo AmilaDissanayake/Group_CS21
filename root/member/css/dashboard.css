@@ -55,6 +55,55 @@
   width: auto;
 }
 
+.conset{
+  display: flex;
+  width: 100%;
+}
+.conset .vcontentdivider{
+  width: 8%;
+  height: 150px;
+}
+.conset .mdu, .conset .tdu, .conset .Asignt , .conset .status{
+  padding: 20px;
+  width: 25%;
+  height: 150px;
+  text-align: center;
+  background-color: white;
+}
+.secdivider{
+  width: 4px;
+  height: 150px;
+  background-color: grey;
+}
+
+/* .analy2 .duration .mdu, .analy2 .duration .tdu{
+  width: 100%;
+  height: 50%;
+  text-align: center;
+} */
+
+.conset .mdu .tm, .conset .tdu .tm{
+  font-weight: bold;
+}
+
+.conset .mdu span, .conset .tdu span{
+  font-size: 40px;
+}
+
+.mdu  .sm,.tdu .sm{
+  font-size: 18px;
+  font-style: italic;
+  color: grey;
+}
+
+.conset .Asignt h2, .conset .status h2{
+  font-size: 24px;
+  color: black;
+  padding-bottom: 20px;
+}
+
+
+
 .duhead h2{
   font-style: normal;
   text-align: center;
@@ -95,8 +144,8 @@
 .lpanel{
   padding: 20px;
   margin: 0;
-  width: 64%;
-  height: 600px;
+  width: 50%;
+  height: 500px;
   background-color:white;
 }
 
@@ -148,8 +197,8 @@
 
 .rpanel{
   margin: 0;
-  width: 35%;
-  height: 600px;
+  width: 50%;
+  height:300px;
   background-color: white;
   display: block;
 }
@@ -224,7 +273,12 @@
 
 .divider{
   width: 1%;
-  height: 600px;
+  height: 500px;
+}
+.dividerin{
+  width: 10px;
+  height: 300px;
+  background-color: rgb(244,244,244);
 }
 
 .vdivider{
@@ -295,6 +349,14 @@
   color: #38ce38;
   font-size: 30px;
 
+}
+
+.rpanelbf{
+  margin: 0;
+  width: 50%;
+  height:300px;
+  background-color: white;
+  display: flex;
 }
 
 .rpanel .Asignt .bt{
@@ -377,7 +439,7 @@
 
 .progcon .comwork h2 , .progcon .pchart h2{
   padding-top: 10px;
-  padding-bottom: 7px;
+  padding-bottom: 15px;
   color: grey;
   font-style:normal;
   font-size: 18px;
@@ -389,6 +451,15 @@
 }
 .progcon ul{
   list-style-type: none;
+}
+
+.st{
+  font-size: 35px;
+  color: #38ce38;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 60%;
+  padding-bottom: 50%;
 }
 
 .progcon ul li{
@@ -407,7 +478,7 @@
   height: 100%;
   padding: 3px;
   background-color: white;
-  border-right: 5px solid rgb(244,244,244);
+  /* border-right: 5px solid rgb(244,244,244); */
 }
 
 .progcon .pchart{

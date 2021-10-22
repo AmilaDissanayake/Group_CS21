@@ -22,14 +22,43 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1>WELCOME! PAMODHA</h1></div>
+        <div class="welcomenote"><h1></h1></div>
  
         <!-- <div class="dashcover"></div> -->
         <div class="dubar">
-            <div class="duhead"><h2>12 MONTH MEMBERSHIP</h2></div>
+            <!-- <div class="duhead"><h2>12 MONTH MEMBERSHIP</h2></div> -->
             <!-- <div class="duline"><div class="remain"><h2>MONTHS</h2><div class="time"><h1>MM</h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1>DD</h1></div></div></div> -->
         </div>
         <!-- <div class="duhead"></div> -->
+        <div class="Hdivider"></div>
+
+        <div class="conset">
+            <div class="vcontentdivider"></div>    
+            <div class="mdu">
+                <h2>Membership</h2>
+                <p class="tm"><span>11</span>Months <span>21</span>Days</p>
+                <p class="sm">Remaining</p>
+            </div>
+            <div class="secdivider"></div>
+            <div class="tdu">
+                <h2>Trainer</h2>
+                <p class="tm"><span>21</span>Days</p>
+                <p class="sm">Remaining</p>
+            </div>
+            <div class="secdivider"></div>
+            <div class="Asignt">
+                <h2>Assign With</h2>
+                <div class="pan1"><i class='bx bxs-user-check'></i> <p>THUSITHA KAKULAWALA </p>⭐5</div>
+                <!-- <div class="bt"><a href="./membership.php" class="readmore_btn" id="readMore">View More</a></div> -->
+            </div>
+            <div class="secdivider"></div>
+            <div class="status">
+                <h2>Booking Status</h2>
+                <div class="pan2"><i class='bx bxs-message-square-check'></i><p>Booking Fixed on 21/10/2021</p></div>
+                <!-- <div class="bt"><a href="./booking.php" class="readmore_btn" id="readMore">View More</a></div> -->
+            </div>
+            <div class="vcontentdivider"></div>
+        </div>
         <div class="Hdivider"></div>
         <div class="analy">
                 <div class="divider"></div>
@@ -48,24 +77,28 @@
                         </div>
                 </div>
                 <div class="divider"></div>
-                <div class="rpanel">
-                    <div class="book">
-                        <div class="Asignt">
-                            <span id="bk">ASSIGN WITH</span>
-                            <div class="pan1"><i class='bx bxs-user-check'></i> <p>THUSITHA KAKULAWALA ⭐5</p></div>
-                            <div class="bt"><a href="./membership.php" class="readmore_btn" id="readMore">View More</a></div>
-                        </div>
-                        <div class="divider2"></div>
-                        <div class="status">
-                            <span id="bk">BOOKING STATUS</span>
-                            <div class="pan2"><i class='bx bxs-message-square-check'></i><p>Booking Fixed on 21/10/2021</p></div>
-                            <div class="bt"><a href="./booking.php" class="readmore_btn" id="readMore">View More</a></div>
-                        </div>
-                        <div class="divider2"></div>
+                <div class="lpanel">
+                    <div class="btag"><b>BODY FAT STATISTICS</b></div>
+                    <div class="bmi">
+                        <canvas id="canvas2"></canvas>
                     </div>
-                    <div class="divider2"></div>
+                    <div class="bmistatus">
+                        <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span > AVERAGE </span></p>
+                        <div class="pgo">
+                            <a href="./progress.php" class="readmore_btn" id="readMore">UPDATE BODY FAT</a> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+        </div> 
+        <div class="Hdivider"></div>
+        <div class="analy2">
+            <div class="dividerin"></div>
+                <div class="rpanel">
                     <div class="progcon">
-                        <div class="pchart">
+                        <div class="progcon">
+                            <div class="pchart">
                             <div class="weekpro">
                                 <h2>BMI value categorizer</h2>
                                     <div class="bc">
@@ -85,29 +118,10 @@
                                                 <div class="cimg"><img src="./media/4.jpg" alt="Obese weight" ></div><div class="tx"><div class="ty"><p>OBESE</p></div><div class="val">> 30</div></div>
                                             </div>
                                     </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="vdivider"></div>
-                        <div class="pchart">
-                            <div class="weekpro">
-                                <h2>Weekly Progress</h2>
-                                    <div class="wp">
-                                        <canvas id="dchart" height="80px" width="80px"></canvas>
-                                    </div>
-                                <div class="bt"><a href="./progress.php" class="readmore_btn" id="readMore">View More</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="divider2"></div>
-                </div>
-                <div class="divider"></div>
-        </div> 
-        <div class="Hdivider"></div>
-        <div class="analy2">
-                <div class="divider"></div>
-                <div class="rpanel">
-                <div class="progcon">
-                        <div class="comwork">
+                            <div class="dividerin"></div>
+                            <div class="comwork">
                             <h2>UPCOMING DAY</h2>
                             <div class="wlist">
                                 <ul>
@@ -123,22 +137,36 @@
                             </div>
                             <div class="bt"><a href="./schedule.php" class="readmore_btn" id="readMore">View More</a></div>
                         </div>
-                        <div class="duration">   
-                                    <div class="mdu">
-                                        <h2>Membership</h2>
-                                        <p class="tm"><span>11</span>Months <span>21</span>Days</p>
-                                        <p class="sm">Remaining</p>
-                                    </div>
-                                    <div class="divider2"></div>
-                                    <div class="tdu">
-                                        <h2>Trainer</h2>
-                                        <p class="tm"><span>21</span>Days</p>
-                                        <p class="sm">Remaining</p>
-                                    </div>
+                        </div>
+                        <div class="dividerin"></div>
+                        <div class="pchart">
+                            <div class="weekpro">
+                                <h2>Weekly Progress</h2>
+                                <div class="wp">
+                                    <canvas id="dchart" height="80px" width="80px"></canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="divider2"></div>
+                </div>
+                <!-- <div class="dividerin"></div> -->
+                <div class="rpanelbf">  
+                    <!-- <div class="comwork">
+                        <h2>MONTHLY ATTENDANCE</h2>
+                        <div class="wlist">
+                            <p>GOOD</p>
+                        </div>
+                    </div> -->
+                    <div class="pchart">
+                            <div class="weekpro">
+                                <h2>Monthly Attendance</h2>
+                                <div class="st">
+                                    <p>GOOD</p>
+                                </div>
+                            </div>
+                            <div class="bt"><a href="./progress.php" class="readmore_btn" id="readMore">View More</a></div>
+                    </div>
+                    <div class="dividerin"></div>
                     <div class="book">
                             <div class="weekpro">
                                 <h2>Body Fat value categorizer</h2>
@@ -166,24 +194,9 @@
                                 </div>
                             </div>
                     </div>
-                    <div class="divider2"></div>
                 </div>
-                <div class="divider"></div>
-                <div class="lpanel">
-                    <div class="btag"><b>BODY FAT STATISTICS</b></div>
-                    <div class="bmi">
-                        <canvas id="canvas2"></canvas>
-                    </div>
-                    <div class="bmistatus">
-                        <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span > AVERAGE </span></p>
-                        <div class="pgo">
-                            <a href="./progress.php" class="readmore_btn" id="readMore">UPDATE BODY FAT</a> 
-                        </div>
-                    </div>
-                </div>
-                <div class="divider"></div>
-            </div> 
-                          
+                <div class="dividerin"></div>
+            </div>                
         <div class="Hdivider"></div>
     </section>
     <?php include "includes/footer.php" ?>
