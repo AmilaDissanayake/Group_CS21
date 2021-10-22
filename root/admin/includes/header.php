@@ -1,5 +1,6 @@
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" type="text/css" href="../admin/includes/dist/css/pignose.calendar.css" />
+<link rel="stylesheet" type="text/css" href="../admin/css/header.css" />
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -20,6 +21,10 @@
         <span class='admin_name'> Academy is open today </span>
 
         <i class='bx bx-chevron-down' class="btn-calendar"></i>
+    </div>
+
+    <div class="header-img">
+        <img src="./media/dinuka.jpg" alt=" no image">
     </div>
 </nav>
 
