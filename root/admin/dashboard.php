@@ -22,6 +22,32 @@
 
         <div class="home-content">
 
+
+            <div class="member-stats">
+                <div class="one">
+                    <p class="value">255</p>
+                    <p class="name">Total Members</p>
+                </div>
+
+                <div class="two">
+                    <p class="value">20</p>
+                    <p class="name">Total Trainers</p>
+                </div>
+
+                <div class="three">
+                    <p class="value">LKR 30,000</p>
+                    <p class="name">Earnings All Time</p>
+                </div>
+
+                <div class="four">
+                    <p class="value">LKR 5,000</p>
+                    <p class="name">Earnings This Month</p>
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
     <script>
