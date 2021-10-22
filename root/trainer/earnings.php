@@ -28,7 +28,7 @@
 
             <div class="two">
                 <p class="value">46</p>
-                <a href="earnings.php" class="name">Assigned members(This year))</a>
+                <a href="earnings.php" class="name">Assigned members(This year)</a>
             </div>
 
             <div class="three">
