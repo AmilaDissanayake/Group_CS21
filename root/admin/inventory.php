@@ -1,4 +1,4 @@
-<?php include "includes/check_login.php" ?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 
@@ -23,7 +23,40 @@
         <?php include "includes/header.php" ?>
 
 
+        <script>
+            function nn() {
+                $('.alert').addClass("show");
+                $('.alert').removeClass("hide");
+                $('.alert').addClass("showAlert");
+                setTimeout(function bb() {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                }, 4000);
+            };
+        </script>
 
+        <!-- <button class="err">Show Alert</button> -->
+        <div class="alert hide">
+
+            <?php
+            if (isset($_SESSION['notification'])) {
+                $notification = $_SESSION['notification'];
+                echo '<script type="text/javascript">nn();</script>';
+            }
+            ?>
+
+            <!-- <span class="fas fa-exclamation-circle"></span> -->
+            <span class="msg"><?php echo $notification ?></span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
+        </div>
+        <script>
+            $('.close-btn').click(function ss() {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        </script>
 
         <div class="home-content">
             <div class="member-stats">
@@ -117,10 +150,12 @@
 
                                     <td>
                                         <div class="row-action">
-                                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Add 1</button></div>
+                                            <div class="about_button"><button class="about_btn" onclick="location.href='add-inventory.php?inventory_id=<?php echo $row['inventory_id'] ?>'">Add 1</button></div>
 
-                                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Remove 1</button></div>
-                                            <!-- <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Delete</button></div> -->
+                                            <div class="about_button"><button class="about_btn" onclick="location.href='remove-inventory.php?inventory_id=<?php echo $row['inventory_id'] ?>'">Remove 1</button></div>
+
+                                            <div class="about_button"><button class="about_btnn" onclick="location.href='remove-inventory.php?inventory_id=<?php echo $row['inventory_id'] ?>'">Remove Equipment</button></div>
+
                                         </div>
                                     </td>
 
@@ -172,3 +207,7 @@
 </body>
 
 </html>
+
+<?php
+unset($_SESSION['notification']);
+?>

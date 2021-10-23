@@ -1,5 +1,3 @@
-<?php include "includes/check_login.php" ?>
-
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -53,7 +51,7 @@
                     <i class='bx bx-search'></i>
                 </div>
                 <div class="filter1">
-                    <select name="Membership" id="" class="justselect">
+                    <select name="gender" id="" class="justselect">
                         <option selected="selected">Gender</option>
                         <option>Male</option>
                         <option>Female</option>
@@ -61,16 +59,22 @@
                 </div>
 
                 <div class="filter2">
-                    <select name="Membership" id="" class="justselect">
-                        <option selected="selected">Gender</option>
-                        <option>Male</option>
-                        <option>Female</option>
+                    <select name="rating" id="" class="justselect">
+                        <option selected="selected">Rating</option>
+                        <option>⭐5</option>
+                        <option>⭐4</option>
+                        <option>⭐3</option>
+                        <option>⭐2</option>
+                        <option>⭐1</option>
+
                     </select>
                 </div>
 
+                <div class="add_button"><button class="add_btn_filter" onclick="location.href='add-member.php'">Filter</button></div>
 
 
-                <div class="add_button"><button class="add_btn" onclick="location.href='add-trainer.php'">Add Trainer</button></div>
+
+                <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Trainer</button></div>
 
             </div>
 

@@ -157,7 +157,7 @@
                         <label for="" class="form__label">Username</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
-                        <div id="uname_response" ></div>
+                        <div id="uname_response"></div>
                         <!-- <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i> -->
                         <small></small>
@@ -222,7 +222,7 @@
                         <hr class="hr-right2" />
                     </div>
                     <div class="tooltip"><i class="fas fa-exclamation-circle"></i>
-                        <span class="tooltiptext">You can select a trainer here if you like. Please note that trainer will be assigned only for a month. After one month you can select the same trainer again or a seperate trainer. Trainer cannot be changeg after assignment.</span>
+                        <span class="tooltiptext">You can select a trainer here if you like. Please note that trainer will be assigned only for a month. After one month you can select the same trainer again or a seperate trainer. Trainer cannot be changed after assignment.</span>
                     </div>
 
                     <br>
@@ -297,34 +297,35 @@
                     </div>
 
                     <script>
-
                         var unameval = false;
-                            $(document).ready(function(){
-                            $("#username").keyup(function(){
-                            var username = $(this).val().trim();
-                            if(username != ''){
-                            $.ajax({
-                                url: 'ajaxfile.php',
-                                type: 'post',
-                                data: {username: username},
-                                success: function(response){
+                        $(document).ready(function() {
+                            $("#username").keyup(function() {
+                                var username = $(this).val().trim();
+                                if (username != '') {
+                                    $.ajax({
+                                        url: 'ajaxfile.php',
+                                        type: 'post',
+                                        data: {
+                                            username: username
+                                        },
+                                        success: function(response) {
 
-                                if(response == "<span style='color: #86ff71;'><b>Available</b></span>"){
-                                    $('#uname').removeClass("form_div error").addClass("form__div success")
-                                    unameval = true;
+                                            if (response == "<span style='color: #86ff71;'><b>Available</b></span>") {
+                                                $('#uname').removeClass("form_div error").addClass("form__div success")
+                                                unameval = true;
 
-                                }else{
-                                    $('#uname').removeClass("form_div success")
-                                    $('#uname').addClass("form__div error")
-                                    unameval = false;
+                                            } else {
+                                                $('#uname').removeClass("form_div success")
+                                                $('#uname').addClass("form__div error")
+                                                unameval = false;
+                                            }
+
+                                            $('#uname_response').html(response);
+                                        }
+                                    });
+                                } else {
+                                    $("#uname_response").html("");
                                 }
-
-                                    $('#uname_response').html(response);
-                                }
-                            });
-                            }else{
-                                $("#uname_response").html("");
-                            }
                             });
                         });
                     </script>

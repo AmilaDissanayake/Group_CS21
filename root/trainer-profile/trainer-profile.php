@@ -32,11 +32,6 @@ $today = date("Y-m-d");
 $diff = date_diff(date_create($date_joined), date_create($today));
 
 $qualifies = explode(',', $qualifications);
-
-
-
-
-
 ?>
 
 

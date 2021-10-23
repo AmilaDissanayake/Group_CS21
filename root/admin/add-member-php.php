@@ -77,8 +77,8 @@ $result4 = mysqli_query($conn, $membership_insert);
 
 if ($result0 && $result1 && $result3 && $result4) {
     $_SESSION['notification'] = "Account successfully created";
-    $_SESSION['username'] = $username_bb;
-    header('Location: add-member.php');
+    // $_SESSION['username'] = $username_bb;
+    header('Location: members.php');
     // echo "done";
 } else {
     // header("Location: index.php");
