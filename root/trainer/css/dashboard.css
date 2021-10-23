@@ -236,7 +236,7 @@ nav .profile-details i{
 }
 
 .trainer-stats .name{
-  margin-top: 10px;
+  margin-top: 0px;
   color: #999999;
   text-decoration: none;
 }
@@ -380,7 +380,7 @@ transition: .4s;
 .review{
   width: 62%;
   background-color: white;
-  height: 458px;
+  height: 486px;
   border-radius: 5px;
   border-bottom: 2px solid rgb(211, 209, 209);
   border-right: 2px solid rgb(211, 209, 209);
@@ -430,6 +430,7 @@ transition: .4s;
 .avatar, .name , .joined-date  {
   text-align: center;
   display: block;
+  padding-top: 10px;
 }
 
 .left .avatar img{

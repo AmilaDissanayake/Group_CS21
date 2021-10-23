@@ -51,7 +51,7 @@
             <span class="fade-effect1"></span>
         </div>
         <li>
-            <a href="#">
+            <a href="./profile.php">
                 <i class='bx bx-user'></i>
                 <span class="links_name">My Profile</span>
             </a>

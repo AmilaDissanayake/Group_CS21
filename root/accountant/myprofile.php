@@ -233,9 +233,8 @@
             </div>
             <div class="divider3"></div>
         </div>
- 
+
         <div class="divider"></div>
-           
     </section>
     <?php include "includes/footer.php" ?>
 
