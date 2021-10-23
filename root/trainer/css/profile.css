@@ -13,7 +13,6 @@
 
 .divider {
     padding-top: 5px;
-    padding-bottom: 5px;
   }
 /* -------------------------sidebar -----------------*/
 .sidebar{
@@ -371,6 +370,7 @@ nav .profile-details i{
     height:2px;
     background:black;
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 300, from(#86ff71), to(white));
+    margin-bottom: 20px;
   }
 
 /* scrollbarscrollbar */

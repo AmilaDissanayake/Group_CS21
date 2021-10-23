@@ -149,7 +149,7 @@
                     </div>
                     <div class="inj__div">
                         <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries_cc"></textarea>
-                        <label for="" class="form__label">If you have any injury mention here...</label>
+                        <label for="" class="form__label">About you...</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
                         <!-- <i class="fas fa-check-circle"></i>
@@ -159,15 +159,14 @@
                     </div>
                     <br>
 
-                    <div class="buttondiv"><input type="button" class="form__button" value="SAVE PROFILE" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE PROFILE" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
-                    <div class="separator">
-                        <hr class="hr-left2" />
+
                         <span class="hr-text">ACCOUNT INFO</span>
-                        <hr class="hr-right2" />
-                    </div>
-                    <br>
-                    
+                        <div class="divider">
+                            <span class="fade-effect2"> </span>
+                        </div>
+
                     <div class="topic"><h2><i class='bx bx-pen'></i>Change E-mail</h2></div>
                     <div class="form__div">
                         <input type="text" class="form__input" id="email" placeholder=" " name="email_cc">
@@ -181,10 +180,10 @@
 
                     <div class="buttondiv"><input type="button" class="form__button" value="UPDATE EMAIL" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
-                    <div class="topic"><h2><i class='bx bx-pen'></i>Change Username</h2></div>
-                    <div class="form__div" id="uname">
-                        <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
-                        <label for="" class="form__label">Username</label>
+                    <div class="topic"><h2><i class='bx bx-pen'></i>Change Rate</h2></div>
+                    <div class="form__div" id="Rate_div">
+                        <input type="text" class="form__input" id="Rate" placeholder=" ">
+                        <label for="" class="form__label">Rate</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
                         <div id="uname_response" ></div>
@@ -193,7 +192,7 @@
                         <small></small>
                     </div>
 
-                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE USERNAME" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE RATE" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
                     <div class="topic"><h2><i class='bx bx-pen'></i>Change Password</h2></div>
                     <div class="form__div">
