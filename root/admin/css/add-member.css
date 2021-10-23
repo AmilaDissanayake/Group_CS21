@@ -856,6 +856,7 @@
 
 
     /* Googlefont Rubik CDN Link */
+/* Googlefont Rubik CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -977,6 +978,18 @@
   width: calc(100% - 60px);
   left: 60px;
 }
+
+.header-img img{
+
+  width: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.header-img img :hover{
+
+  border: solid 2px #000000;
+}
 .home-section nav{
   display: flex;
   justify-content: space-between;
@@ -996,16 +1009,7 @@
   left: 60px;
   width: calc(100% - 60px);
 }
-.home-section nav .sidebar-button{
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: 500;
-}
-nav .sidebar-button i{
-  font-size: 35px;
-  margin-right: 10px;
-}
+
 .home-section .search-box{
   position: relative;
   height: 40px;
@@ -1040,33 +1044,7 @@ nav .sidebar-button i{
   font-size: 20px;
   transition: all 0.4 ease;
 }
-.home-section nav .profile-details{
-  display: flex;
-  align-items: center;
-  background: #F5F6FA;
-  border: 2px solid #EFEEF1;
-  border-radius: 6px;
-  height: 50px;
-  min-width: 190px;
-  padding: 0 15px 0 2px;
-}
-nav .profile-details img{
-  height: 40px;
-  width: 40px;
-  border-radius: 6px;
-  object-fit: cover;
-}
-nav .profile-details .admin_name{
-  font-size: 15px;
-  font-weight: 500;
-  color: #333;
-  margin: 0 10px;
-  white-space: nowrap;
-}
-nav .profile-details i{
-  font-size: 25px;
-  color: #333;
-}
+
 .home-section .home-content{
   position: relative;
   padding-top: 104px;
@@ -1288,20 +1266,7 @@ nav .profile-details i{
     margin-bottom: 15px;
   }
 }
-@media (max-width: 700px) {
-  nav .sidebar-button .dashboard,
-  nav .profile-details .admin_name,
-  nav .profile-details i{
-    display: none;
-  }
-  .home-section nav .profile-details{
-    height: 50px;
-    min-width: 40px;
-  }
-  .home-content .sales-boxes .sales-details{
-    width: 560px;
-  }
-}
+
 @media (max-width: 550px) {
   .overview-boxes .box{
     width: 100%;
@@ -1564,6 +1529,11 @@ table{
 /* transform: scale(1.1); */
   transition: .4s ;
 }
+
+
+ 
+  
+  
 
 
  

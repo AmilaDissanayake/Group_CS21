@@ -23,6 +23,8 @@ const password2 = document.getElementById('password2');
 // });
 
 var isValid;
+var isValid1;
+var isValid2;
 
 
 
@@ -122,38 +124,54 @@ function checkInputs() {
 	if (password1Value === '') {
 		setErrorFor(password1, 'Password cannot be blank');
 		isValid = false;
+		return;
 	} else if (!pwlength(password1Value)) {
 		setErrorFor(password1, 'Too short!Need at least 8');
 		isValid = false;
+		return;
 	} else if (!pwlength4(password1Value)) {
 		setErrorFor(password1, 'Uppercase Letters must be included');
 		isValid = false;
+		return;
 	} else if (!pwlength3(password1Value)) {
 		setErrorFor(password1, 'Lowercase Letters must be included');
 		isValid = false;
+		return;
 	} else if (!pwlength2(password1Value)) {
 		setErrorFor(password1, 'Numbers must be included');
 		isValid = false;
+		return;
 	} else if (!pwlength1(password1Value)) {
 		setErrorFor(password1, 'Symbols must be included');
 		isValid = false;
+		return;
 	} else {
 		setSuccessFor(password1);
-		isValid = true;
+		isValid1 = true;
 	}
 
 	if (password2Value === '') {
 		setErrorFor(password2, 'Confirm Password cannot be blank');
 		isValid = false;
+		return;
 	} else if (password2Value !== password1Value) {
 		setErrorFor(password2, 'Re-Entered Password is wrong');
 		isValid = false;
+		return;
 	} else if (!pwlength(password2Value)) {
 		setErrorFor(password2, 'Selected Password is not Strong enough');
 		isValid = false;
+		return;
 	} else {
 		setSuccessFor(password2);
+		isValid2 = true;
+	}
+
+	if (isValid1 === true && isValid2 === true)
+	{
 		isValid = true;
+	}else{
+		isValid =false;
 	}
 
 	// if (genderValue === ' Gender ') {
