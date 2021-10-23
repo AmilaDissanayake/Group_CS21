@@ -109,6 +109,7 @@
 
 
 
+                <div class="add_button"><button class="add_btn_filter" onclick="location.href='add-member.php'">Filter</button></div>
                 <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Member</button></div>
 
             </div>

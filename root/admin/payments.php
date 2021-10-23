@@ -54,22 +54,28 @@
                 <div class="filter1">
                     <select name="Membership" id="" class="justselect">
                         <option selected="selected">Membership</option>
-                        <option>Membership Valid</option>
-                        <option>Membership Expired</option>
+                        <option>1 Month</option>
+                        <option>3 Months</option>
+                        <option>6 Months</option>
+                        <option>12 Months</option>
                     </select>
                 </div>
 
                 <div class="filter2">
                     <select name="Membership" id="" class="justselect">
-                        <option selected="selected">Gender</option>
-                        <option>Male</option>
-                        <option>Female</option>
+                        <option selected="selected">Type</option>
+                        <option>Online</option>
+                        <option>Offline</option>
                     </select>
                 </div>
 
 
 
-                <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Update</button></div>
+                <div class="add_button"><button class="add_btn_filter" onclick="location.href='add-member.php'">Filter</button></div>
+
+
+
+                <!-- <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Trainer</button></div> -->
 
             </div>
 
