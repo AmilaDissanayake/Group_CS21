@@ -23,16 +23,12 @@
         <?php include "includes/header.php" ?>
 
         <div class="welcomenote"><h1></h1></div>
- 
-        <!-- <div class="dashcover"></div> -->
-        <!-- <div class="duhead"></div> -->
- 
-        <div class="divider"></div>
+
+        <div class="HdividerL"></div>
         <div class="uppart">
-            <div class="vdivid"></div>
+            <div class="vboderdivider"></div>
             <div class="middle">
                 <div class="note"><h2>Booking</h2></div>
-                <div class="divider"></div>
                 <div class="cont">
                     <div class="left">
                         <div class="bkstatus">
@@ -96,11 +92,11 @@
                     </div>
                 </div>  
             </div>
-            <div class="vdivid"></div>
+            <div class="vboderdivider"></div>
         </div>
         <div></div>
 
-        <div class="divider"></div>   
+        <div class="HdividerL"></div>   
     </section>
     
     <?php include "includes/footer.php" ?>

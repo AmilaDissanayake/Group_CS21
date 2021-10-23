@@ -66,6 +66,7 @@
 
             <div class="text4">Your Body Fat is normal!</div>
             <div class="recal4">RECALCULATE</div>
+            <div class="recal4">INSERT INTO THE ANALYSIS</div>
         </div>
     </div>
 </div>
