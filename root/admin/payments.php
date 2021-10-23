@@ -1,5 +1,3 @@
-<?php include "includes/check_login.php" ?>
-
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -71,7 +69,7 @@
 
 
 
-                <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Member</button></div>
+                <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Update</button></div>
 
             </div>
 
@@ -105,7 +103,7 @@
                                 $member_result = mysqli_query($conn, $member_query);
                                 $member_row = mysqli_fetch_assoc($member_result);
 
-                                $trainer_query = "SELECT username, image FROM trainer WHERE trainer_id = $row[member_id];";
+                                $trainer_query = "SELECT username, image FROM trainer WHERE trainer_id = $row[trainer_id];";
                                 $trainer_result = mysqli_query($conn, $trainer_query);
                                 $trainer_row = mysqli_fetch_assoc($trainer_result);
 
