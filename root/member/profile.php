@@ -22,21 +22,16 @@
         <?php include "includes/header.php" ?>
 
         <div class="welcomenote"><h1></h1></div>
- 
-        <!-- <div class="dashcover"></div> -->
-        
-        <!-- <div class="duhead"></div> -->
-        <div class="divider"></div>
-
+        <div class="HdividerL"></div>
         <div class="dwnpart">
-            <div class="divider3"></div>
+            <div class="vboderdivider"></div>
             <div class="lsd">
                 <div class="note2"><h1>Profile</h1></div>
                 <div class="con1">
                     <div class="profcov">
                         <div class="aper">
                             <div class="avatar">
-                                <img src="./media/thusitha.jpg">
+                                <img src="./media/pamod.jpg">
                                 <i class='bx bxs-edit-alt'></i>
                             </div>
                             <div class="joined-date">
@@ -231,10 +226,10 @@
                     <div class="buttondiv"><input type="button" class="form__button" value="UPDATE PASSWORD" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
                 </div>
             </div>
-            <div class="divider3"></div>
+            <div class="vboderdivider"></div>
         </div>
  
-        <div class="divider"></div>
+        <div class="HdividerL"></div>
            
     </section>
     <?php include "includes/footer.php" ?>

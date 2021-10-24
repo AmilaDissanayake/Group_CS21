@@ -144,6 +144,15 @@
   width: 100%;
   height: 20px;
 }
+.vboderdivider{
+  width: 7%;
+  height: auto;
+  background-color: rgb(244,244,244);
+}
+.HdividerL{
+  width: 100%;
+  height: 70px;
+}
 
 .book{
   background-color: white;
@@ -707,10 +716,10 @@ tbody tr:nth-child(even) {
 }
 
 .dwnpart .lsd{
-    /* height: 100%; */
+    height: 80%;
     width: 33%;
     padding: 20px;
-    padding-left: 30px;
+    padding-left: 20px;
     background-color: white;
 }
 
