@@ -37,7 +37,7 @@
             </div>
 
             <div class="four">
-                <p class="value">100,000</p>
+                <p class="value">200,000</p>
                 <a href="calendar.php" class="name">Earnings(This year)</a>
             </div>
         </div>
@@ -54,31 +54,31 @@
             <th style="width:200px;">Your Earning</th>
             </tr>
 
-            <tr onclick="show_hide_row('hidden_row1');"><td>JANUARY</td><td>25</td></tr>
+            <tr onclick="show_hide_row('hidden_row1');"><td>JANUARY</td><td>25,000</td></tr>
             <tr id="hidden_row1" class="hidden_row">
                 <td>Amila</td>
                 <td>2500</td>
             </tr>
 
-            <tr onclick="show_hide_row('hidden_row2');"><td>FEBRUARY</td><td>29</td></tr>
+            <tr onclick="show_hide_row('hidden_row2');"><td>FEBRUARY</td><td>29,000</td></tr>
             <tr id="hidden_row2" class="hidden_row">
                 <td>Bimsara</td>
                 <td>2500</td>
             </tr>
 
-            <tr onclick="show_hide_row('hidden_row3');"><td>MARCH</td><td>32</td></tr>
+            <tr onclick="show_hide_row('hidden_row3');"><td>MARCH</td><td>32,000</td></tr>
             <tr id="hidden_row3" class="hidden_row">
                 <td>Navod</td>
                 <td>2500</td>
             </tr>
 
-            <tr onclick="show_hide_row('hidden_row4');"><td>APRIL</td><td>22</td></tr>
+            <tr onclick="show_hide_row('hidden_row4');"><td>APRIL</td><td>22,000</td></tr>
             <tr id="hidden_row4" class="hidden_row">
                 <td>Pamodha</td>
                 <td>2500</td>
             </tr>
 
-            <tr onclick="show_hide_row('hidden_row5');"><td>JUNE</td><td>40</td></tr>
+            <tr onclick="show_hide_row('hidden_row5');"><td>JUNE</td><td>40,000</td></tr>
             <tr id="hidden_row5" class="hidden_row">
                 <td>Sandunika</td>
                 <td>2500</td>

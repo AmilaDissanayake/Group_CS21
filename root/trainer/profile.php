@@ -1,4 +1,40 @@
+<?php include "includes/check_login.php" ?>
+<?php require "includes/db.php";
+    require "includes/date-joined.php"; ?>
 
+<?php
+    $username= $_SESSION['username'];
+
+    $query = "SELECT * FROM trainer WHERE username = '" . $username . "'";
+    $trainer_result = mysqli_query($conn, $query);
+    $trainer_row = mysqli_fetch_assoc($trainer_result);
+    $f_name = $trainer_row['f_name'];
+    $l_name = $trainer_row['l_name'];
+    $image = $trainer_row['image'];
+    $trainer_id = $trainer_row['trainer_id'];
+    $about = $trainer_row['about'];
+    $rate = $trainer_row['rate'];
+    $phone_no = $trainer_row['phone_no'];
+    $qualifications = $trainer_row['qualifications'];
+    $date_joined = date_registered($trainer_id);
+
+    $_SESSION['trainer_id']= $trainer_row['trainer_id'];
+
+    $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+    $review_query = mysqli_query($conn, $query2);
+
+    $review_count = mysqli_num_rows($review_query);
+    $review_value = 0;
+
+    while ($review_row = mysqli_fetch_assoc($review_query)) {
+        $review_value += $review_row['stars'];
+    }
+
+    $today = date("Y-m-d");
+    $diff = date_diff(date_create($date_joined), date_create($today));
+
+    $qualifies = explode(',', $qualifications);
+?>
 
 <!DOCTYPE html>
 
@@ -24,32 +60,28 @@
         <div class="dwnpart">
             <div class="left">
                 <div class="avatar">
-                    <img src="../media/trainers/thusitha.jpg">
+                    <img src="../media/trainers/<?php echo $image ?>">
                 </div>
                 <div class="joined-date">
-                    <p>Joined September 2018 </p>
+                    <p>Joined <?php echo $date_joined ?></p>
                 </div>
                 <div class="name-trainer">
-                    <p>THUSITHA KEKULAWALA ⭐ 5 </p>
+                    <p><?php echo $f_name . " " . $l_name ?> ⭐ <?php echo $review_value / $review_count ?> </p>
                 </div>
                 <div class="stat">
                     <div class="exp">
-                        <p>3 YRS<br>Expirience</p>
+                        <p><?php echo $diff->format('%y') . 'yrs'; ?></p>
                     </div>
                     <div class="rate">
-                        <p>5000/=<br>Per Month</p>
+                        <p><?php echo $rate ?>/=<br>Per Month</p>
                     </div>
                     <div class="review-count">
-                        <p>3<br>Reviews</p>
+                        <p><?php echo $review_count ?><br>Reviews</p>
                     </div>
                 </div>
                 <div class="about">
                     <h4>ABOUT</h4>
-                    <p>10+ years of experience as a Personal Trainer. 
-                        I am enthusiastic about instructing groups and individuals on exercise 
-                        activities and the fundamentals of sports by demonstrating proper techniques and 
-                        methods of participation. I enjoy teaching group fitness classes to people of all 
-                        ages and encouraging safe use of exercise equipment to promote individual fitness goals.</p>
+                    <p><?php echo "$about"; ?></p>
                 </div>
 
                 <div class="divider">
@@ -59,11 +91,9 @@
                 <div class="qualifications">
                     <h4>Qualifications</h4>
                     <ul>
-                        <li>NCSF-Accredited personal trainer</li>
-                        <li>Additional expertise in youth athletic conditioning</li>
-                        <li>with focuses on strength training</li>
-                        <li>Strong interpersonal communication skills</li>
-                        <li>Excellent leadership skills</li>
+                    <?php foreach ($qualifies as $item) { ?>
+                        <li><?php echo $item ?> </li>
+                    <?php } ?>
                     </ul>
                 </div>
             </div>
