@@ -19,9 +19,6 @@
 
         <?php include "includes/header.php" ?>
 
-
-
-
         <div class="home-content">
             <div class="member-stats">
                 <div class="one">

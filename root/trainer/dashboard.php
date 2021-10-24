@@ -1,4 +1,40 @@
 <?php include "includes/check_login.php" ?>
+<?php require "includes/db.php";
+    require "includes/date-joined.php"; ?>
+
+<?php
+    $username= $_SESSION['username'];
+
+    $query = "SELECT * FROM trainer WHERE username = '" . $username . "'";
+    $trainer_result = mysqli_query($conn, $query);
+    $trainer_row = mysqli_fetch_assoc($trainer_result);
+    $f_name = $trainer_row['f_name'];
+    $l_name = $trainer_row['l_name'];
+    $image = $trainer_row['image'];
+    $trainer_id = $trainer_row['trainer_id'];
+    $about = $trainer_row['about'];
+    $rate = $trainer_row['rate'];
+    $phone_no = $trainer_row['phone_no'];
+    $qualifications = $trainer_row['qualifications'];
+    $date_joined = date_registered($trainer_id);
+
+    $_SESSION['trainer_id']= $trainer_row['trainer_id'];
+
+    $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+    $review_query = mysqli_query($conn, $query2);
+
+    $review_count = mysqli_num_rows($review_query);
+    $review_value = 0;
+
+    while ($review_row = mysqli_fetch_assoc($review_query)) {
+        $review_value += $review_row['stars'];
+    }
+
+    $today = date("Y-m-d");
+    $diff = date_diff(date_create($date_joined), date_create($today));
+
+    $qualifies = explode(',', $qualifications);
+?>
 
 <!DOCTYPE html>
 
@@ -44,23 +80,23 @@
         <div class="dashboard-bottom">
             <div class="left">
                 <div class="avatar">
-                    <img src="../media/trainers/thusitha.jpg">
+                    <img src="../media/trainers/<?php echo $image ?>">
                 </div>
                 <div class="joined-date">
-                    <p>Joined 2021 JAN 01 </p>
+                    <p>Joined <?php echo $date_joined ?></p>
                 </div>
                 <div class="name">
-                    <p>Thusitha Kekulawala ⭐ 5 </p>
+                    <p><?php echo $f_name . " " . $l_name ?> ⭐<?php echo $review_value / $review_count ?> </p>
                 </div>
                 <div class="stat">
                     <div class="exp">
-                        <p>3YRS<br>Expirience</p>
+                        <p><?php echo $diff->format('%y') . 'yrs'; ?><br>Expirience</p>
                     </div>
                     <div class="rate">
-                        <p>5000/=<br>Per Month</p>
+                        <p><?php echo $rate ?>/=<br>Per Month</p>
                     </div>
                     <div class="review-count">
-                        <p>3<br>Reviews</p>
+                        <p><?php echo $review_count ?><br>Reviews</p>
                     </div>
                 </div>
                 <div calss="divider">
@@ -75,16 +111,40 @@
             <div class="review">
                 <h1>REVIEWS</h1>
                 <div class="divider">
-                <span class="fade-effect2"> </span>
+                <span class="fade-effect3"> </span>
                 </div>
+            <?php
+            $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+            $review_query = mysqli_query($conn, $query2);
+
+            while ($review_row = mysqli_fetch_assoc($review_query)) {
+                $review_id = $review_row['review_id'];
+                $review = $review_row['review'];
+                $stars = $review_row['stars'];
+                $member_id=$review_row['member_id'];
+
+                $review_date = date_reviewed($review_id);
+
+                $query4 = "SELECT * FROM member WHERE member_id='" . $member_id . "'";
+
+                $member_query = mysqli_query($conn, $query4);
+                $member_row = mysqli_fetch_assoc($member_query);
+                $member_username = $member_row['username'];
+                $member_f_name = $member_row['f_name'];
+                $member_l_name = $member_row['l_name'];
+                $member_avatar = $member_row['image'];
+            ?>
                 <div class="review-content">
-                    <h2>Hiran S.</h2>
-                    <p><span>Thusitha is wonderful- I can't say enough good things about him. 
-                        I am so pleased with my personal training with him and with the results that I am achieving.</span></p>
-                    <h2>Hiran S.</h2>
-                    <p><span>Thusitha is wonderful- I can't say enough good things about him. 
-                        I am so pleased with my personal training with him and with the results that I am achieving.</span></p>
+                    <div class="member">
+                    <div class="member-avatar"> <img src="../media/members/<?php echo $member_avatar ?>"></div>
+                        <div class="member-name">
+                            <p><?php echo $member_username ?> ⭐<?php echo $stars ?></p>
+                        </div>
+                    </div>
+                    <p class="published-date"><?php echo $review ?></p>
+                    <p>Published on <?php echo $review_date ?></p>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </div>

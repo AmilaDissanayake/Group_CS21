@@ -10,10 +10,11 @@ if (isset($_POST['submit'])) {
 
     if ($username != "" && $password != "") {
 
-        $sql_query = "SELECT password, user_type FROM users WHERE username='" . $username . "' OR email='" . $username . "'";
+        $sql_query = "SELECT password, user_type, username FROM users WHERE username='" . $username . "' OR email='" . $username . "'";
         $result = mysqli_query($conn, $sql_query);
         $row = mysqli_fetch_array($result);
         $password_hash = $row['password'];
+        $username = $row['username'];
 
         $verify = password_verify($password, $password_hash);
 
