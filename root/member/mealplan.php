@@ -1,4 +1,4 @@
-
+<?php include "includes/check_login.php" ?>
 
 <!DOCTYPE html>
 
@@ -21,20 +21,13 @@
         <?php include "includes/header.php" ?>
 
         <div class="welcomenote"><h1></h1></div>
- 
-        <!-- <div class="dashcover"></div> -->
-
-        <!-- <div class="duhead"></div> -->
-        <div class="divider"></div>
+        <div class="HdividerL"></div>
         <div class="uppart">
-            <div class="divider1"></div>
+            <div class="vboderdivider"></div>
             <div class="middle">
-
-            
             <div class="note"><h1>Meal Plan</h1></div>
             <div class="member-list">
                 <table class="table table-hover">
-
                     <thead>
                         <tr>
                             <th></th>
@@ -45,10 +38,9 @@
                             <th>FRIDAY</th>
                             <th>SATURDAY</th>
                             <th>SUNDAY</th>
-                            
                         </tr>
-
                      </thead>
+
                     <tbody id="output">
                         <tr>
                             <td class="rcat"><div class="visul"><img src="./media/breakfast.png" alt=""></div><div class="ttag"><span class ="bpart">Breakfast</span></div></td>
@@ -104,18 +96,18 @@
                             <td><div class="item">Diced beef with rice, black beans, bell peppers, cheese and pico de gallo.</div></td>
                             <td><div class="item">Turkey meatballs, marinara sauce and parmesan cheese over pasta.</div></td>
                         </tr>
-
                     </tbody>
                 </table>
-
-
             </div>
+                <div class="fixT">
+                    <button class="check_btn" id="tbook" type="submit" name="time-submit">EDIT MEAL PLAN</button>
+                </div>
             </div>
-            <div class="divider1"></div>
+            <div class="vboderdivider"></div>
         </div>
         <div class="divider"></div>
         <div class="dwnpart">
-            <div class="divider1"></div>
+            <div class="vboderdivider"></div>
             <div class="lsd">
                 <div class="note2"><h1>Suggestions for Meal Plan</h1></div>
                 <div class="con1">
@@ -142,9 +134,9 @@
                     </div>
                 </div>
             </div>
-            <div class="divider1"></div>
+            <div class="vboderdivider"></div>
         </div>
-        <div class="divider"></div>    
+        <div class="HdividerL"></div>  
            
     </section>
     <?php include "includes/footer.php" ?>

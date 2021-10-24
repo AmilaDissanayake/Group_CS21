@@ -1,3 +1,4 @@
+<?php include "includes/check_login.php" ?>
 
 <!DOCTYPE html>
 
@@ -22,54 +23,41 @@
         <?php include "includes/header.php" ?>
 
         <div class="welcomenote"><h1></h1></div>
- 
-        <!-- <div class="dashcover"></div> -->
-        <div class="dubar">
-            <!-- <div class="duhead"><h2>12 MONTH MEMBERSHIP</h2></div> -->
-            <!-- <div class="duline"><div class="remain"><h2>MONTHS</h2><div class="time"><h1>MM</h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1>DD</h1></div></div></div> -->
-        </div>
-        <!-- <div class="duhead"></div> -->
+        <div class="dubar"></div>
         <div class="Hdivider"></div>
+        <div class="member-stats">
+            <div class="one">
+                <p class="value">11Months 21Days</p>
+                <p class="name">Membership</p>
+            </div>
 
-        <div class="conset">
-            <div class="vcontentdivider"></div>    
-            <div class="mdu">
-                <h2>Membership</h2>
-                <p class="tm"><span>11</span>Months <span>21</span>Days</p>
-                <p class="sm">Remaining</p>
+            <div class="two">
+                <p class="value">21 Days</p>
+                <p class="name">Trainer</p>
             </div>
-            <div class="secdivider"></div>
-            <div class="tdu">
-                <h2>Trainer</h2>
-                <p class="tm"><span>21</span>Days</p>
-                <p class="sm">Remaining</p>
+
+            <div class="three">
+                <p class="value">Thusitha⭐5</p>
+                <p class="name">Assign With</p>
             </div>
-            <div class="secdivider"></div>
-            <div class="Asignt">
-                <h2>Assign With</h2>
-                <div class="pan1"><i class='bx bxs-user-check'></i> <p>THUSITHA KAKULAWALA </p>⭐5</div>
-                <!-- <div class="bt"><a href="./membership.php" class="readmore_btn" id="readMore">View More</a></div> -->
+
+            <div class="four">
+                <p class="value">21/10/2021</p>
+                <p class="name">Booking Fixed on</p>
             </div>
-            <div class="secdivider"></div>
-            <div class="status">
-                <h2>Booking Status</h2>
-                <div class="pan2"><i class='bx bxs-message-square-check'></i><p>Booking Fixed on 21/10/2021</p></div>
-                <!-- <div class="bt"><a href="./booking.php" class="readmore_btn" id="readMore">View More</a></div> -->
-            </div>
-            <div class="vcontentdivider"></div>
         </div>
         <div class="Hdivider"></div>
         <div class="analy">
-                <div class="divider"></div>
+                <div class="vboderdivider"></div>
                 <div class="lpanel">
-                        <div class="btag"><b>BMI STATISTICS</b></div>
+                        <div class="btag"><p>BMI STATISTICS</p></div>
                         
                         <div class="bmi">
                             <canvas id="canvas"></canvas>
                         </div>
 
                         <div class="bmistatus">
-                            <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span> OBESITY</span></p>
+                            <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id="ob"> OBESITY</span></p>
                             <div class="pgo">
                                 <a href="./progress.php" class="readmore_btn" id="readMore">UPDATE BMI</a>
                             </div>
@@ -77,7 +65,7 @@
                 </div>
                 <div class="divider"></div>
                 <div class="lpanel">
-                    <div class="btag"><b>BODY FAT STATISTICS</b></div>
+                    <div class="btag"><p>BODY FAT STATISTICS</p></div>
                     <div class="bmi">
                         <canvas id="canvas2"></canvas>
                     </div>
@@ -88,12 +76,11 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="divider"></div>
+                <div class="vboderdivider"></div>
         </div> 
         <div class="Hdivider"></div>
         <div class="analy2">
-            <div class="dividerin"></div>
+            <div class="vboderdivider"></div>
                 <div class="rpanel">
                     <div class="progcon">
                         <div class="progcon">
@@ -148,14 +135,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="dividerin"></div> -->
                 <div class="rpanelbf">  
-                    <!-- <div class="comwork">
-                        <h2>MONTHLY ATTENDANCE</h2>
-                        <div class="wlist">
-                            <p>GOOD</p>
-                        </div>
-                    </div> -->
                     <div class="pchart">
                             <div class="weekpro">
                                 <h2>Monthly Attendance</h2>
@@ -194,9 +174,9 @@
                             </div>
                     </div>
                 </div>
-                <div class="dividerin"></div>
+                <div class="vboderdivider"></div>
             </div>                
-        <div class="Hdivider"></div>
+        <div class="HdividerL"></div>
     </section>
     <?php include "includes/footer.php" ?>
 

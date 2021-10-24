@@ -1,4 +1,4 @@
-
+<?php include "includes/check_login.php" ?>
 
 <!DOCTYPE html>
 
@@ -21,12 +21,9 @@
         <?php include "includes/header.php" ?>
 
         <div class="welcomenote"><h1></h1></div>
- 
-        <!-- <div class="dashcover"></div> -->
-        <!-- <div class="duhead"></div> -->
-        <div class="divider"></div>
+        <div class="HdividerL"></div>
         <div class="up">
-            <div class="divider1"></div>
+            <div class="vboderdivider"></div>
             <div class="middle">
                 <div class="note"><h1>Workout Schedule</h1></div>
                 <div class="member-list">
@@ -106,12 +103,15 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="fixT">
+                    <button class="check_btn" id="tbook" type="submit" name="time-submit">EDIT SCHEDULE</button>
+                </div>
             </div>
             
-            <div class="divider1"></div>
+            <div class="vboderdivider"></div>
         </div>
 
-        <div class="divider"></div>
+        <div class="HdividerL"></div>
 
            
     </section>

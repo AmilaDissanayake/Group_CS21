@@ -1,3 +1,9 @@
+<?php session_start(); ?>
+
+<?php include "includes/check_login.php" ?>
+
+
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -19,6 +25,47 @@
 
         <?php include "includes/header.php" ?>
 
+<<<<<<< HEAD
+=======
+        <script>
+            function nn() {
+                $('.alert').addClass("show");
+                $('.alert').removeClass("hide");
+                $('.alert').addClass("showAlert");
+                setTimeout(function bb() {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                }, 4000);
+            };
+        </script>
+
+        <!-- <button class="err">Show Alert</button> -->
+        <div class="alert hide">
+
+            <?php
+            if (isset($_SESSION['notification'])) {
+                $notification = $_SESSION['notification'];
+                echo '<script type="text/javascript">nn();</script>';
+            }
+            ?>
+
+            <!-- <span class="fas fa-exclamation-circle"></span> -->
+            <span class="msg"><?php echo $notification ?></span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
+        </div>
+        <script>
+            $('.close-btn').click(function ss() {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        </script>
+
+
+
+
+>>>>>>> c7741ecfb8b38b3f2ed68795c274cb9205b7e251
         <div class="home-content">
             <div class="member-stats">
                 <div class="one">
@@ -65,6 +112,7 @@
 
 
 
+                <div class="add_button"><button class="add_btn_filter" onclick="location.href='add-member.php'">Filter</button></div>
                 <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Member</button></div>
 
             </div>
@@ -115,7 +163,7 @@
 
                                 <tr class=<?php $expired ?>>
                                     <td>
-                                        <div class="first-column"><span class="avatar"><img src="../media/members/<?php echo $row['image'] ?>"></span><?php echo " " . $row['f_name'] . $row['l_name'] ?></div>
+                                        <div class="first-column"><span class="avatar"><img src="../media/members/<?php echo $row['image'] ?>"></span><?php echo " " . $row['f_name'] . " " . $row['l_name'] ?></div>
                                     </td>
                                     <td><?php echo $row['username'] ?> </td>
                                     <td><?php echo $row['phone_no'] ?> </td>
@@ -169,3 +217,7 @@
 </body>
 
 </html>
+
+<?php
+unset($_SESSION['notification']);
+?>

@@ -23,11 +23,13 @@
 
 .calculate4 .title4 {
     font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     /* font-weight: bold; */
     font-family: 'Azonix';
     /* background: #232323; */
     color: #86ff71;
-  }
+}
 
 .calculate4 .gender4 {
     display: none;
@@ -53,18 +55,21 @@
 .calculate4 .gender4 div span {
     background: #fff;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .calculate4 .gender4 .male4 span {
     background: -webkit-linear-gradient(45deg, #8e2de2, #4a00e0);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .calculate4 .gender4 .female4.active span {
     background: -webkit-linear-gradient(45deg, #f953c6, #b91d73);
     -webkit-background-clip: text;
+    background-clip: text;;
     -webkit-text-fill-color: transparent;
 }
 
@@ -88,8 +93,7 @@
     color: #fff;
     font-size: 25px;
     margin: 0;
-    margin-top: -2vmin;
-
+    /* margin-top: -2vmin; */
 }
 
 .calculate4 .age4 .val4 i {
@@ -140,10 +144,15 @@
     font-family: 'Rubik';
     color: #555;
 }
-
+.calculate4 .gen_input4 p{
+    padding-top:30px;
+}
 .calculate4 .gen_input4 label {
     font-size: 15px;
     color: #fff;
+}
+.calculate4 .gen_label4{
+    padding-top: 10px;
 }
 
 /* .calculate .gen_input input::-webkit-slider-thumb {
@@ -175,8 +184,7 @@
     color: #fff;
     font-size: 25px;
     margin: 0;
-    margin-top: -2vmin;
-
+    /* margin-top: -2vmin; */
 }
 
 .calculate4 .height4 .val4 i {
@@ -233,8 +241,7 @@
     color: #fff;
     font-size: 25px;
     margin: 0;
-    margin-top: -2vmin;
-
+    /* margin-top: -2vmin; */
 }
 
 .calculate4 .weight4 .val4 i {

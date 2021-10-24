@@ -1,4 +1,4 @@
-
+<?php include "includes/check_login.php" ?>
 
 <!DOCTYPE html>
 
@@ -26,13 +26,10 @@
         <?php include "includes/header.php" ?>
 
         <div class="welcomenote"><h1></h1></div>
- 
-        <!-- <div class="dashcover"></div> -->
-        <!-- <div class="duhead"></div> -->
-        <div class="divider3"></div>
-        
+
+        <div class="HdividerL"></div>
         <div class="analy">
-            <div class="divider"></div>
+             <div class="vboderdivider"></div>
             <div class="rpanel">           
                 <div class="pan">
                     <?php include "./includes/bmi-calc.php" ?>
@@ -42,49 +39,51 @@
             <div class="divider"></div>
             <div class="left">
                 <div class="lpanel">
-                    <div class="btag"><b>BMI STATISTICS</b></div>
+                    <div class="btag"><p>BMI STATISTICS</p></div>
                  
                     <div class="bmip">
                         <canvas id="canvas"></canvas>
                     </div>
                 </div>
                 <div class="divider3"></div>
-                <div class="indc">
-                    <div class="wdetails">
+                <div class="indc1">
                     <h2>Weekly Progress</h2>
-                    <ul>
-                        <div class="itemcon">
-                            <li class="plist">  
-                                <input type="checkbox"><p> DAY 1</p> <div class="stag"><span class="stat1">COMPLETED</span></div>
-                            </li>  
-                        </div>
-                        <div class="itemcon">
+                    <div class="protick">
+                        <div class="wdetails">
+                            <ul>
+                            <div class="itemcon">
+                                <li class="plist">  
+                                    <input type="checkbox"><p> DAY 1</p> <div class="stag"><span class="stat1">COMPLETED</span></div>
+                                </li>  
+                            </div>
+                            <div class="itemcon">
                             <li class="plist">
-                                <input type="checkbox"><p> DAY 2</p> <div class="stag_not"><span class="stat2">NOT COMPLETED</span></div>
-                            </li>
+                                    <input type="checkbox"><p> DAY 2</p> <div class="stag_not"><span class="stat2">NOT COMPLETED</span></div>
+                                </li>
+                            </div>
+                            <div class="itemcon">
+                                <li class="plist">
+                                    <input type="checkbox"><p> DAY 3</p> <div class="stag_not"><span class="stat2">NOT COMPLETED</span></div>
+                                </li>
+                            </div>
+                            <div class="itemcon">
+                                <li class="plist">
+                                    <input type="checkbox"><p> DAY 4</p> <div class="stag_not"><span class="stat2">NOT COMPLETED</span></div>
+                                </li>
+                            </div>
+                        </ul>     
                         </div>
-                        <div class="itemcon">
-                            <li class="plist">
-                                <input type="checkbox"><p> DAY 3</p> <div class="stag_not"><span class="stat2">NOT COMPLETED</span></div>
-                            </li>
-                        </div>
-                        <div class="itemcon">
-                            <li class="plist">
-                                <input type="checkbox"><p> DAY 4</p> <div class="stag_not"><span class="stat2">NOT COMPLETED</span></div>
-                            </li>
-                        </div>
-                    </ul>     
+                        <div class="wp"> 
+                            <canvas id="dchart"></canvas>
+                        </div> 
                     </div>
-                    <div class="wp"> 
-                        <canvas id="dchart"></canvas>
-                    </div> 
                 </div>
                 <div class="divider3"></div>
             </div>
-            <div class="divider"></div>
+            <div class="vboderdivider"></div>
         </div>
         <div class="analy2">
-            <div class="divider"></div>
+            <div class="vboderdivider"></div>
             <div class="rpanel">           
                 <div class="pan">
                     <?php include "./includes/bfc-calc.php" ?>
@@ -93,56 +92,54 @@
 
             <div class="divider"></div>
             <div class="left">
-                    <div class="indc">
-                        <div class="wdetails">
+                    <div class="indc1">
                         <h2>Monthly Attendance</h2>
+                        <div class="monthviewlst">
+                            <div class="wdetails">
                             <ul>
-                            <div class="itemcon"><li class="plist"><p class="month"> MONTH 1</p> <div class="stag_good"><span class="stat1">GOOD</span></div></li></div>
-                            <div class="itemcon"><li class="plist"><p class="month"> MONTH 2</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                            <div class="itemcon"><li class="plist"><p class="month"> MONTH 3</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                <div class="itemcon"><li class="plist"><p class="month"> MONTH 1</p> <div class="stag_good"><span class="stat1">GOOD</span></div></li></div>
+                                <div class="itemcon"><li class="plist"><p class="month"> MONTH 2</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                <div class="itemcon"><li class="plist"><p class="month"> MONTH 3</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
                             </ul>
-                        </div>
-                        <div class="wdetails">
-                            <div class="up"></div>
-                            <ul>
-                            <div class="itemcon"><li class="plist"> <p class="month"> MONTH 4</p><div class="stag_not_good"><span class="stat1"></span></div></li>  </div>
-                            <div class="itemcon"><li class="plist"><p class="month"> MONTH 5</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                            <div class="itemcon"><li class="plist"><p class="month"> MONTH 6</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                            </ul>
-                        </div>
-                        <div class="wdetails">
-                            <div class="up"></div>
-                            <ul>
-                            <div class="itemcon"><li class="plist"> <p class="month"> MONTH 7</p><div class="stag_not_good"><span class="stat1"></span></div></li>  </div>
-                            <div class="itemcon"><li class="plist"><p class="month"> MONTH 8</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                            <div class="itemcon"><li class="plist"><p class="month"> MONTH 9</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                            </ul>
-                        </div>
-                        <div class="wdetails">
-                            <div class="up"></div>
-                            <ul>
-                            <div class="itemcon"><li class="plist"> <p class="month"> MONTH 10</p><div class="stag_not_good"><span class="stat1"></span></div></li>  </div>
-                            <div class="itemcon"><li class="plist"><p class="month"> MONTH 11</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                            <div class="itemcon"><li class="plist"><p class="month"> MONTH 12</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                            </ul>
-                        </div>
+                            </div>
+                            <div class="wdetails">
+                                <ul>
+                                    <div class="itemcon"><li class="plist"> <p class="month"> MONTH 4</p><div class="stag_not_good"><span class="stat1"></span></div></li>  </div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 5</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 6</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                </ul>
+                            </div>
+                            <div class="wdetails">
+                                <ul>
+                                    <div class="itemcon"><li class="plist"> <p class="month"> MONTH 7</p><div class="stag_not_good"><span class="stat1"></span></div></li>  </div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 8</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 9</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                </ul>
+                            </div>
+                            <div class="wdetails">
+                                <ul>
+                                    <div class="itemcon"><li class="plist"> <p class="month"> MONTH 10</p><div class="stag_not_good"><span class="stat1"></span></div></li>  </div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 11</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 12</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                </ul>
+                            </div>
 
+                        </div>  
                     </div>
                 <div class="divider3"></div>
                 <div class="dlpanel">
-                    <div class="btag"><b>BODY FAT STATISTICS</b></div>
-                 
+                    <div class="btag"><p>BODY FAT STATISTICS</p></div>
                     <div class="bfp">
                     <div class="bmip">
                         <canvas id="canvas2"></canvas>
                     </div>
                     </div>
-                
                 </div>
                 <div class="divider3"></div>
             </div>
-            <div class="divider"></div>
+            <div class="vboderdivider"></div>
         </div>
+        <div class="HdividerL"></div>
     </section>
 
     <?php include "includes/footer.php" ?>
