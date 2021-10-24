@@ -25,6 +25,8 @@
 
         <?php include "includes/header.php" ?>
 
+<<<<<<< HEAD
+=======
         <script>
             function nn() {
                 $('.alert').addClass("show");
@@ -63,6 +65,7 @@
 
 
 
+>>>>>>> c7741ecfb8b38b3f2ed68795c274cb9205b7e251
         <div class="home-content">
             <div class="member-stats">
                 <div class="one">

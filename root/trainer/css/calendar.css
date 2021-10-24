@@ -227,10 +227,12 @@ display: flex;
 justify-content: center;
 }
 .calendar-input input{
-  padding: 7px;
+  padding: 5px;
+  width: 250px;
   font-size: 18px;
   border-radius: 5px;
-  border: 2px solid #86ff71;
+  border: 1px solid rgb(235,235,235);
+  margin-right: 20px;
 }
 .calendar-input button{
   margin-left: 100px;

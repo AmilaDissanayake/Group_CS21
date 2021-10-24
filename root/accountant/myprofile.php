@@ -21,11 +21,11 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1>HI! NAVOD</h1></div>
- 
+        <div class="welcomenote"><h1></h1></div>
+
         <!-- <div class="dashcover"></div> -->
         
-        <div class="duhead"></div>
+        <!-- <div class="duhead"></div> -->
         <div class="divider"></div>
 
         <div class="dwnpart">

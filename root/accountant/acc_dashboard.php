@@ -196,7 +196,7 @@
                 labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
                 datasets: [{
                     label: "Monthly Income",
-                    backgroundColor: "#86ff71",
+                    backgroundColor: "rgba(134, 255, 113, 0.8)",
                     borderColor: "#86ff71",
                     data: [40000, 38000, 33000, 50000, 39000, 45000, 35000, 40000, 37000, 60000, 0,0],
                     fill: false,

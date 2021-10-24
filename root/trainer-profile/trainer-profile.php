@@ -32,11 +32,6 @@ $today = date("Y-m-d");
 $diff = date_diff(date_create($date_joined), date_create($today));
 
 $qualifies = explode(',', $qualifications);
-
-
-
-
-
 ?>
 
 
@@ -112,10 +107,11 @@ $qualifies = explode(',', $qualifications);
                 $review_id = $review_row['review_id'];
                 $review = $review_row['review'];
                 $stars = $review_row['stars'];
+                $member_id=$review_row['member_id'];
 
                 $review_date = date_reviewed($review_id);
 
-                $query4 = "SELECT * FROM review INNER JOIN member ON review.member_id = member.member_id AND review.trainer_id = $trainer_id AND review.review_id = $review_id";
+                $query4 = "SELECT * FROM member WHERE member_id='" . $member_id . "'";
 
                 // $query3 = "SELECT f_name , l_name FROM member WHERE review.member_id = member.member_id AND review.review_id = $review_id";
                 $member_query = mysqli_query($conn, $query4);

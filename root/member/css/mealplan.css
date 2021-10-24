@@ -8,7 +8,7 @@
 }
 
 .welcomenote{
-  padding-top: 100px;
+  padding-top: 60px;
 }
 
 .welcomenote h1{
@@ -23,7 +23,7 @@
     text-align: center;
     font-size: 34px;
     color: black;
-    padding-top: 50px;
+    /* padding-top: 50px; */
   }
 
 .lsd .con1 .set1{
@@ -129,17 +129,24 @@
   height: 20px;
   background-color: rgb(244,244,244);
 }
-
 .divider1{
   width: 20px;
   height: 100%;
   background-color: rgb(244,244,244);
 }
-
 .divider3{
     width: 20px;
     height: 100%px;
     background-color: rgb(244,244,244);
+}
+.vboderdivider{
+  width: 4%;
+  height: auto;
+  background-color: rgb(244,244,244);
+}
+.HdividerL{
+  width: 100%;
+  height: 70px;
 }
 
 .uppart{
@@ -192,7 +199,6 @@
   text-decoration: none;
 }
 
-
 .readmore_btn {
   padding: 10px;
   position: relative;
@@ -220,7 +226,41 @@
   transition: 0.4s;
 }
 
-
+.fixT{
+  width: 100%;
+  text-align: right;
+  padding-right: 25px;
+  padding-top: 20px;
+}
+.fixT .check_btn{
+  width: 200px;
+  height: 40px;
+}
+.check_btn {
+  position: relative;
+  z-index: 10;
+  width: 80px;
+  margin: 3px;
+  /* height: 45px; */
+  border: 0px solid rgba(255, 255, 255, .5);
+  border-radius: 30px;
+  background-color: #424244;
+  font-family: 'Rubik';
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.check_btn:hover {
+  color:white;
+  box-shadow: 0px 0px 10px 1px #121317;
+  border: 0px solid #121317;
+  transition: .4s;
+}
 
 
 /* -------------------------sidebar -----------------*/
@@ -500,7 +540,7 @@ nav .profile-details i{
 .member-list{
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .row-action{

@@ -9,7 +9,7 @@
 
 /*-----------------header----------------------*/
 .welcomenote{
-  padding-top: 100px;
+  padding-top: 60px;
 }
 
 .welcomenote h1{
@@ -260,7 +260,16 @@
   width: 20px;
   height: 100%;
 }
-
+.HdividerL{
+  width: 100%;
+  height: 70px;
+  background-color: rgb(244,244,244);
+}
+.vboderdivider{
+  width: 4%;
+  height: auto;
+  background-color: rgb(244,244,244);
+}
 /*-----------buttons--------------*/
 .readmore_btn {
   padding: 10px;
