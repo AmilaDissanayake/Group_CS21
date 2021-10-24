@@ -1,3 +1,5 @@
+
+
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" type="text/css" href="../trainer/includes/dist/css/pignose.calendar.css" />
 <link rel="stylesheet" type="text/css" href="../trainer/css/header.css" />
@@ -27,7 +29,8 @@
     </div>
 
     <div class="header-img">
-        <img src="../trainer/media/dinuka.jpg" alt=" no image">
+        <?php $image=$_SESSION['image']; ?>
+        <img src="../media/trainers/<?php echo $image ?>" alt=" no image">
     </div>
 </nav>
 

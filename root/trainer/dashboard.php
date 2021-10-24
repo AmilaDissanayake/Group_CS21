@@ -11,6 +11,7 @@
     $f_name = $trainer_row['f_name'];
     $l_name = $trainer_row['l_name'];
     $image = $trainer_row['image'];
+    $_SESSION['image'] = $image;
     $trainer_id = $trainer_row['trainer_id'];
     $about = $trainer_row['about'];
     $rate = $trainer_row['rate'];
