@@ -803,9 +803,9 @@ table{
   text-align: center;
   border-left: 3px solid #ddd;
 }
-.bmi2:hover{
+/* .bmi2:hover{
   background-color: #000000;
-}
+} */
 
 
 
@@ -835,7 +835,7 @@ table{
   position: relative;
   z-index: 10;
   width: 150px;
-  height: 30px;
+  height: 40px;
   border: 1px solid #86ff71;
   border-radius: 30px;
   background-color: #86ff71;
@@ -851,6 +851,13 @@ table{
   /* margin-top: 30px;
   margin-left: 55px; */
 
+}
+
+.see-more2 a {
+  text-decoration: none;
+  font-family: 'Azonix';
+  color: rgb(0, 0, 0);
+  font-size: 14px;
 }
 
 .see-more2:hover{

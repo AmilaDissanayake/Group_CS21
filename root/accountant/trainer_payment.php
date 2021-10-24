@@ -32,6 +32,9 @@
                     <input type="text" placeholder="Search by name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
+                <div class="search-box">
+                    <button class="see-more2" >+ ADD PAYMENT</button>
+                </div>
             </div>
 
             <div class="member-list">

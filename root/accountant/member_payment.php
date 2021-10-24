@@ -33,7 +33,7 @@ require "includes/db.php";
                     <i class='bx bx-search'></i>
                 </div>
                 <div class="search-box">
-                    <button class="see-more2" >+ ADD PAYMENT</button>
+                    <button class="see-more2"><a href="member_payment_form.php">+ ADD PAYMENT</a></button>
                 </div>
             </div>
             

@@ -45,7 +45,7 @@
                         <tr>
                             <td>Navod</td>
                             <td>2021-10-10</td>
-                            <td>1500.00</td>
+                            <td>-1500.00</td>
                         </tr>
                         <tr>
                             <td>Amila</td>
@@ -55,7 +55,7 @@
                         <tr>
                             <td>Pamodha</td>
                             <td>2021-09-20</td>
-                            <td>1500.00</td>
+                            <td>-1500.00</td>
                         </tr>
                         <tr>
                             <td>Bimsara</td>
