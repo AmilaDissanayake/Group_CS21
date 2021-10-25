@@ -27,7 +27,7 @@
     </div>
 
     <div class="header-img">
-        <img src="./media/dinuka.jpg" alt=" no image">
+        <img src="./media/pamod.jpg" alt=" no image">
     </div>
 </nav>
 
