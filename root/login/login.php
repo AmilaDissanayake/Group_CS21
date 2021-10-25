@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
         if ($verify) {
             $_SESSION['username'] = $username;
             if ($row['user_type'] == 'admin') {
-                header('Location: ../admin/dashboard.php');
+                header('Location: ../admin/members.php');
             } elseif ($row['user_type'] == 'member') {
                 header('Location: ../member/dashboard.php');
             } elseif ($row['user_type'] == 'trainer') {
