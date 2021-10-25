@@ -81,8 +81,8 @@
                 </div>
 
                 <div class="four">
-                    <p class="value">255</p>
-                    <p class="name">Total Members</p>
+                    <p class="value">2-</p>
+                    <p class="name">Member Drops</p>
                 </div>
 
             </div>

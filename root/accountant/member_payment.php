@@ -2,6 +2,7 @@
 
 require "includes/db.php";
 ?>
+<?php require "includes/check_login.php"?>
 
 <!DOCTYPE html>
 
