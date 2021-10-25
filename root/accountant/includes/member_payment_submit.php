@@ -29,4 +29,3 @@
         }
         header("location:../member_payment.php");
     }
-?>

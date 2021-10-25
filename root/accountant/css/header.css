@@ -43,9 +43,9 @@ body{
     margin-left: 750px;
     cursor: pointer;
   }
-  nav .header-img img{
-    height: 40px;
-    width: 40px;
+  nav .header-img img {
+    height: 50px;
+    width: 50px;
     border-radius: 30px;
     object-fit: cover;
   }
