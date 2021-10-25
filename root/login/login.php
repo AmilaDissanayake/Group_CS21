@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
             } elseif ($row['user_type'] == 'trainer') {
                 header('Location: ../trainer/dashboard.php');
             } elseif ($row['user_type'] == 'accountant') {
-                header('Location: ../accountant/dashboard.php');
+                header('Location: ../accountant/acc_dashboard.php');
             }
         } else {
             $_SESSION['notification'] = "Incorrect Username or Password.";
