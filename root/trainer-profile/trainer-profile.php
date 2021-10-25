@@ -22,11 +22,16 @@ $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
 $review_query = mysqli_query($conn, $query2);
 
 $review_count = mysqli_num_rows($review_query);
-$review_value = 0;
-
-while ($review_row = mysqli_fetch_assoc($review_query)) {
-    $review_value += $review_row['stars'];
+if ($review_count == 0) {
+    $final_rating = 'No Reviews Yet';
+} else {
+    $review_value = 0;
+    while ($row2 = mysqli_fetch_assoc($review_query)) {
+        $review_value += $row2['stars'];
+    }
+    $final_rating = $review_value / $review_count;
 }
+
 
 $today = date("Y-m-d");
 $diff = date_diff(date_create($date_joined), date_create($today));
@@ -56,7 +61,7 @@ $qualifies = explode(',', $qualifications);
                 <p>Joined <?php echo $date_joined ?> </p>
             </div>
             <div class="name">
-                <p><?php echo $f_name . " " . $l_name ?> ⭐<?php echo $review_value / $review_count ?> </p>
+                <p><?php echo $f_name . " " . $l_name ?> ⭐<?php echo $final_rating ?> </p>
             </div>
             <div class="button-inner">
 
@@ -96,7 +101,7 @@ $qualifies = explode(',', $qualifications);
 
         <div class=" right">
             <div class="title">
-                <p>Reviews as a Trainer ⭐<?php echo $review_value / $review_count ?> (<?php echo $review_count ?> Reviews) </p>
+                <p>Reviews as a Trainer ⭐<?php echo $final_rating ?> (<?php echo $review_count ?> Reviews) </p>
             </div>
 
             <?php
@@ -107,7 +112,7 @@ $qualifies = explode(',', $qualifications);
                 $review_id = $review_row['review_id'];
                 $review = $review_row['review'];
                 $stars = $review_row['stars'];
-                $member_id=$review_row['member_id'];
+                $member_id = $review_row['member_id'];
 
                 $review_date = date_reviewed($review_id);
 

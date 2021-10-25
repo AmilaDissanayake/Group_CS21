@@ -26,23 +26,23 @@
         <div class="home-content">
             <div class="member-stats">
                 <div class="one">
-                    <p class="value">255</p>
+                    <p class="value">LKR 50,000</p>
                     <p class="name">Total Recived</p>
                 </div>
 
                 <div class="two">
-                    <p class="value">5+</p>
+                    <p class="value">LKR 30,000</p>
                     <p class="name">This Month</p>
                 </div>
 
                 <div class="three">
-                    <p class="value">10</p>
-                    <p class="name">Profit</p>
+                    <p class="value">LKR 100,000</p>
+                    <p class="name">Total Profit</p>
                 </div>
 
                 <div class="four">
-                    <p class="value">255</p>
-                    <p class="name">Total Members</p>
+                    <p class="value">LKR 30,000</p>
+                    <p class="name">Thsi Month Profit</p>
                 </div>
 
             </div>
