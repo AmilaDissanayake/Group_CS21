@@ -1,5 +1,5 @@
 <?php
-
+    require "check_login.php";
     require "db.php";
     if(isset($_POST['form_submit'])){
         $username = $_POST['username'];
@@ -21,13 +21,12 @@
 
             $member_id = $row2['member_id'];
 
-            $sql3 = "INSERT INTO payment('member_id', 'payment_amount', 'trainer_id', 'payment_type') VALUES('$member_id', '$amount', '$assigned_trainer', '$payment_type')";
+            $sql3 = "INSERT INTO payment(member_id, payment_amount, trainer_id, payment_type) VALUES('$member_id', '$amount', '$assigned_trainer', '$payment_type')";
             mysqli_query($conn, $sql3);
 
-            $sql4 = "INSERT INTO membership('member_id', 'membership_type') VALUES ('$member_id', '$membership_type')";
+            $sql4 = "INSERT INTO membership(member_id, membership_type) VALUES ('$member_id', '$membership_type')";
             mysqli_query($conn, $sql4);
         }
-
+        header("location:../member_payment.php");
     }
-
 ?>
