@@ -73,13 +73,13 @@
 
         <span class="fade-effect1"></span>
 
-        <li>
+        <!-- <li>
             <a href="#">
                 <i class='bx bx-bar-chart-alt-2'></i>
                 <span class="links_name">Reports</span>
             </a>
-        </li>
-        <div calss="divider">
+        </li> -->
+        <!-- <div calss="divider">
             <span class="fade-effect1"></span>
         </div>
         <li>
@@ -87,7 +87,7 @@
                 <i class='bx bx-user-pin'></i>
                 <span class="links_name">Profile</span>
             </a>
-        </li>
+        </li> -->
         <div calss="divider">
             <span class="fade-effect1"></span>
         </div>

@@ -22,7 +22,7 @@
         <?php include "includes/header.php" ?>
 
         <div class="welcomenote"><h1></h1></div>
- 
+
         <!-- <div class="dashcover"></div> -->
         
         <!-- <div class="duhead"></div> -->
@@ -36,14 +36,14 @@
                     <div class="profcov">
                         <div class="aper">
                             <div class="avatar">
-                                <img src="./media/my.JPG">
+                                <img src="./media/pamod.JPG">
                                 <i class='bx bxs-edit-alt'></i>
                             </div>
                             <div class="joined-date">
                                 <p>Joined since january 2018</p>
                             </div>
                             <div class="fulname">
-                                <p>Navod Wimalaweera</p>
+                                <p>Udara Kaushalya</p>
                             </div>
                         </div>
                     </div>
@@ -52,10 +52,10 @@
                     <div class="profcov2">
                         <div class="aper">
                             <div class="covuname">
-                                <p>navod98</p>
+                                <p>udara98</p>
                             </div>
                             <div class="pdetails">
-                            <i class='bx bx-dumbbell'></i>  NAME <p> <i class='bx bxs-right-arrow'></i>Navod Wimalaweera</p>
+                            <i class='bx bx-dumbbell'></i>  NAME <p> <i class='bx bxs-right-arrow'></i>Udara Kaushalya</p>
                             <i class='bx bx-dumbbell'></i> GENDER  <p><i class='bx bxs-right-arrow'></i>Male</p>
                             <i class='bx bx-dumbbell'></i> AGE  <p> <i class='bx bxs-right-arrow'></i>23</p>
                             <i class='bx bx-dumbbell'></i> LIVES IN <p> <i class='bx bxs-right-arrow'></i>Mirigama</p>
@@ -151,16 +151,7 @@
                         <i class="fas fa-exclamation-circle"></i> -->
                         <small>Error message</small>
                     </div>
-                    <div class="inj__div">
-                        <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries_cc"></textarea>
-                        <label for="" class="form__label">If you have any injury mention here...</label>
-                        <i class="fa fa-check"></i>
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <!-- <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation"></i>
-                        <i class="fas fa-exclamation-circle"></i> -->
-                        <small>Error message</small>
-                    </div>
+                    
                     <br>
 
                     <div class="buttondiv"><input type="button" class="form__button" value="SAVE PROFILE" name="form_submit" id="form_submit" onclick="submitFunction()"></div>

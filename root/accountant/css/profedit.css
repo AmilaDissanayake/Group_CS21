@@ -131,6 +131,24 @@
     z-index: 1;
     font-family: "Rubik";
   }
+#address1 {
+  width: 45%;
+}
+
+#membership1{
+  width: 80%;
+}
+
+#main_address1, #select_div{
+  margin-left: 38%;
+}
+
+#form_submit1{
+  margin-left: 45%;
+  margin-top: 40px;
+  width: 15%;
+}
+
   
   .injury {
     position: absolute;
@@ -576,6 +594,7 @@ option {
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
     }
+
   
    
   

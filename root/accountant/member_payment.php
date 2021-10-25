@@ -1,4 +1,7 @@
+<?php
 
+require "includes/db.php";
+?>
 
 <!DOCTYPE html>
 
@@ -29,54 +32,72 @@
                     <input type="text" placeholder="Search by name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
+                <div class="search-box">
+                    <button class="see-more2"><a href="member_payment_form.php">+ ADD PAYMENT</a></button>
+                </div>
             </div>
+            
 
             <div class="member-list">
                 <table class="table table-hover">
                     <thead>
                         <tr>
 
+                            <th>Payment ID</th>
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Phone Number</th>
                             <th>Membership Type</th>
+                            <th>Assigned Trainer</th>
+                            <th>Payment Amount</th>
                             <th>Payment Date</th>
-                            <th>Payment Status</th>
+                            <th>Payment Type</th>
                         </tr>
                     </thead>
                     <tbody class="output" id="output">
+                        <?php
+                            $sql = "SELECT * FROM payment";
+                            $result = mysqli_query($conn, $sql);
+                            while ($payment_row = mysqli_fetch_assoc($result)) {
+                                $payment_id = $payment_row['payment_id'];
+                                $member_id = $payment_row['member_id'];
+                                $payment_date = $payment_row['payment_date'];
+                                $payment_amount = $payment_row['payment_amount'];
+                                $trainer_id = $payment_row['trainer_id'];
+                                $payment_type = $payment_row['payment_type'];
+                                
+                                $sql2 = "SELECT * FROM member WHERE member_id = $member_id";
+                                $result2 = mysqli_query($conn, $sql2);
+                                $payment_row2 = mysqli_fetch_assoc($result2);
+                                $f_name = $payment_row2['f_name'];
+                                $l_name = $payment_row2['l_name'];
+                                $phone_no = $payment_row2['phone_no'];
+                                $assign_trainer = $payment_row2['assign_trainer'];
+
+                                $sql3 = "SELECT username FROM trainer WHERE trainer_id = $assign_trainer";
+                                $result3 = mysqli_query($conn, $sql3);
+                                $payment_row3 = mysqli_fetch_assoc($result3);
+                                $trainer_name = $payment_row3['username'];
+
+                                $sql4 = "SELECT membership_type FROM membership WHERE member_id = $member_id";
+                                $result4 = mysqli_query($conn, $sql4);
+                                $payment_row4 = mysqli_fetch_assoc($result4);
+                                $membership_type = $payment_row4['membership_type'];
+
+
+                        ?>
                         <tr>
-                            <td>Navod</td>
-                            <td>Shehan</td>
-                            <td>0702181481</td>
-                            <td>Monthly</td>
-                            <td>2021-10-10</td>
-                            <td>Paid</td>
+                            <td><?php echo "$payment_id"?></td>
+                            <td><?php echo "$f_name"?></td>
+                            <td><?php echo "$l_name"?></td>
+                            <td><?php echo "$phone_no"?></td>
+                            <td><?php echo "$membership_type"?> Month</td>
+                            <td><?php echo "$trainer_name"?></td>
+                            <td><?php echo "$payment_amount"?></td>
+                            <td><?php echo "$payment_date"?></td>
+                            <td><?php echo "$payment_type"?></td>
                         </tr>
-                        <tr>
-                            <td>Amila</td>
-                            <td>Dissanayake</td>
-                            <td>0702181480</td>
-                            <td>Annual</td>
-                            <td>2021-09-10</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr>
-                            <td>Pamodha</td>
-                            <td>Sankalpa</td>
-                            <td>0702183481</td>
-                            <td>Monthly</td>
-                            <td>2021-08-10</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr>
-                            <td>Bimsara</td>
-                            <td>Sankabhanu</td>
-                            <td>0705683481</td>
-                            <td>Monthly</td>
-                            <td>2021-07-10</td>
-                            <td>Paid</td>
-                        </tr>
+                        <?php } ?>
 
                     </tbody>
                 </table>

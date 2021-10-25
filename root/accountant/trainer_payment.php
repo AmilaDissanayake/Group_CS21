@@ -1,4 +1,7 @@
+<?php
 
+    require "includes/db.php";
+?>
 
 <!DOCTYPE html>
 
@@ -29,49 +32,54 @@
                     <input type="text" placeholder="Search by name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
+                <div class="search-box">
+                    <button class="see-more2" >+ ADD PAYMENT</button>
+                </div>
             </div>
 
             <div class="member-list">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-
+                            <th>Trainer ID</th>
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Phone Number</th>
+                            <th>Assigned Members</th>
                             <th>Payment Date</th>
-                            <th>Payment Status</th>
+                            <th>Payment Amount</th>
                         </tr>
                     </thead>
                     <tbody id="output">
-                    <tr>
-                            <td>Dinuka</td>
-                            <td>Thathsara</td>
-                            <td>0702181481</td>
-                            <td>2021-10-10</td>
-                            <td>Paid</td>
-                        </tr>
+                        <?php
+                            $sql = "SELECT * FROM trainer";
+                            $result = mysqli_query($conn, $sql);
+                            while ($trainer_row = mysqli_fetch_assoc($result)) {
+                                $trainer_id = $trainer_row['trainer_id'];
+                                $f_name = $trainer_row['f_name'];
+                                $l_name = $trainer_row['l_name'];
+                                $phone_no = $trainer_row['phone_no'];
+                                $assigned_members = $trainer_row['assigned_members'];
+                                
+                                $sql2 = "SELECT * FROM trainer_payments WHERE trainer_id = $trainer_id";
+                                $result2 = mysqli_query($conn, $sql2);
+                                $trainer_row2 = mysqli_fetch_assoc($result2);
+                                $payment_amount = $trainer_row2['payment_amount'];
+                                $payment_date = $trainer_row2['payment_date'];
+
+
+                        ?>
+
                         <tr>
-                            <td>Kasun</td>
-                            <td>Gunawardene</td>
-                            <td>0702181480</td>
-                            <td>Not Yet</td>
-                            <td>Not Paid</td>
+                            <td><?php echo "$trainer_id"?></td>
+                            <td><?php echo "$f_name"?></td>
+                            <td><?php echo "$l_name"?></td>
+                            <td><?php echo "$phone_no"?></td>
+                            <td><?php echo "$assigned_members"?></td>
+                            <td><?php echo "$payment_date"?></td>
+                            <td><?php echo "$payment_amount"?></td>
                         </tr>
-                        <tr>
-                            <td>Sampath</td>
-                            <td>Kodikara</td>
-                            <td>0702183481</td>
-                            <td>2021-08-10</td>
-                            <td>Paid</td>
-                        </tr>
-                        <tr>
-                            <td>Udara</td>
-                            <td>Kaushalya</td>
-                            <td>0705683481</td>
-                            <td>2021-07-10</td>
-                            <td>Paid</td>
-                        </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
 
