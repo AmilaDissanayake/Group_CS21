@@ -17,7 +17,7 @@
 <body>
     
     <section> 
-                    <form action="signup.php" class="form" id="signup_form" method="POST">
+                    <form action="includes/member_payment_submit.php" class="form" id="signup_form" method="POST">
 
                         <div class="separator">
                                 <hr class="hr-left1" />
@@ -27,12 +27,12 @@
                     
                         <div class="main_class">
                             <div class="form__div" id="main_address1">
-                                <input type="text" class="form__input" id="address1" placeholder=" " name="address_cc">
+                                <input type="text" class="form__input" id="address1" placeholder=" " name="username">
                                 <label for="" class="form__label">User Name</label>
                                 
                             </div>
                             <div class="form__div" id="main_address1">
-                                <input type="text" class="form__input" id="address1" placeholder=" " name="address_cc">
+                                <input type="text" class="form__input" id="address1" placeholder=" " name="email">
                                 <label for="" class="form__label">Email</label>
                             </div>
 
@@ -40,34 +40,64 @@
 
 
                                 <label>
-                                    <select id="membership1" class="form_input" required name="membership_cc">
-                                        <option value="" disabled selected> Assigned Trainer </option>
-                                        <option> Thusitha
-                                        </option>
-                                        <option> Isuru
-                                        </option>
-                                        <option> Dinuka
-                                        </option>
-                                        <option> Hasitha
-                                        </option>
+                                    <select id="trainer" class="form_input" required name="assigned_trainer">
+                                        <option value="" disabled selected> Select Your Trainer </option>
+                                        <?php
+
+                                        require "includes/db.php";
+
+                                        $query = "SELECT * FROM trainer";
+
+                                        $select_query = mysqli_query($conn, $query);
+
+                                        while ($row = mysqli_fetch_assoc($select_query)) {
+                                            $f_name = $row['f_name'];
+                                            $l_name = $row['l_name'];
+
+                                            $trainer_id = $row['trainer_id'];
+
+                                            $rate = $row['rate'];
+                                            // $rate = (int)$rate;
+
+
+                                            $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+                                            $review_query = mysqli_query($conn, $query2);
+                                            $review_count = mysqli_num_rows($review_query);
+                                            $review_value = 0;
+
+                                            while ($review_row = mysqli_fetch_assoc($review_query)) {
+                                                $review_value += $review_row['stars'];
+                                            }
+
+
+                                            // $select_query = mysqli_query($connection, $query);
+
+                                        ?>
+
+                                            <option value=<?php echo $trainer_id ?> data-trainer=<?php echo $rate ?>>
+                                                <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count ?></option>
+
+
+                                        <?php } ?>
+                                        <option value=0 data-trainer=0>I don't need a trainer</option>
                                     </select>
                                 </label>
 
                             </div>
 
-                            <div class="select__div" id="select_div">
+                            <div class="select__div" id="select_div" >
 
 
                                 <label>
-                                    <select id="membership1" class="form_input" required name="membership_cc">
+                                    <select id="membership1" class="form_input" required name="membership_type">
                                         <option value="" disabled selected> Membership Type </option>
-                                        <option value=2500> One Month 2500/=
+                                        <option value=1> One Month 2500/=
                                         </option>
-                                        <option value=7000> Three Months 7000/=
+                                        <option value=3> Three Months 7000/=
                                         </option>
-                                        <option value=13500> Six Months 13500/=
+                                        <option value=6> Six Months 13500/=
                                         </option>
-                                        <option value=20000> One Year 20000/=
+                                        <option value=12> One Year 20000/=
                                         </option>
                                     </select>
                                 </label>
@@ -75,11 +105,11 @@
                             </div>
 
                             <div class="form__div" id="main_address1">
-                                <input type="text" class="form__input" id="address1" placeholder=" " name="address_cc">
+                                <input type="text" class="form__input" id="address1" placeholder=" " name="amount">
                                 <label for="" class="form__label">Amount</label>
                             </div>
                             <div class="buttondiv">
-                                <input type="button" class="form__button" value="PAY" name="form_submit" id="form_submit1">
+                                <input type="submit" class="form__button" value="SUBMIT" name="form_submit" id="form_submit1">
                             </div>
                         </div>
                         

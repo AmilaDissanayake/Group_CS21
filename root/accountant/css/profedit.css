@@ -132,22 +132,26 @@
     font-family: "Rubik";
   }
 #address1 {
-  width: 45%;
+  width: 500px;
 }
 
 #membership1{
-  width: 80%;
+  width: 500px;
 }
 
 #main_address1, #select_div{
-  margin-left: 38%;
+  margin-left: 35%;
 }
+
+
 
 #form_submit1{
   margin-left: 45%;
   margin-top: 40px;
   width: 15%;
 }
+
+
 
   
   .injury {
@@ -466,7 +470,8 @@ option {
       position: absolute;
       pointer-events: none;
     }
-   
+
+
   #uname_response{
       font-family: 'Azonix';
       font-size: 12px;
