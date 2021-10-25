@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -19,13 +22,48 @@
 
         <?php include "includes/header.php" ?>
 
+        <script>
+            function nn() {
+                $('.alert').addClass("show");
+                $('.alert').removeClass("hide");
+                $('.alert').addClass("showAlert");
+                setTimeout(function bb() {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                }, 4000);
+            };
+        </script>
+
+        <!-- <button class="err">Show Alert</button> -->
+        <div class="alert hide">
+
+            <?php
+            if (isset($_SESSION['notification'])) {
+                $notification = $_SESSION['notification'];
+                echo '<script type="text/javascript">nn();</script>';
+            }
+            ?>
+
+            <!-- <span class="fas fa-exclamation-circle"></span> -->
+            <span class="msg"><?php echo $notification ?></span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
+        </div>
+        <script>
+            $('.close-btn').click(function ss() {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        </script>
+
 
 
 
         <div class="home-content">
             <div class="member-stats">
                 <div class="one">
-                    <p class="value">255</p>
+                    <p class="value">25</p>
                     <p class="name">Total Trainers</p>
                 </div>
 
@@ -36,12 +74,12 @@
 
                 <div class="three">
                     <p class="value">10</p>
-                    <p class="name">Expired Memberships</p>
+                    <p class="name">Male</p>
                 </div>
 
                 <div class="four">
-                    <p class="value">255</p>
-                    <p class="name">Total Members</p>
+                    <p class="value">15</p>
+                    <p class="name">Female</p>
                 </div>
 
             </div>
@@ -70,11 +108,11 @@
                     </select>
                 </div>
 
-                <div class="add_button"><button class="add_btn_filter" onclick="location.href='add-member.php'">Filter</button></div>
+                <div class="add_button"><button class="add_btn_filter" onclick="location.href='#'">Filter</button></div>
 
 
 
-                <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Trainer</button></div>
+                <div class="add_button"><button class="add_btn" onclick="location.href='add-trainer.php'">Add Trainer</button></div>
 
             </div>
 
@@ -115,11 +153,18 @@
                                 $result2 = mysqli_query($conn, $query);
                                 $review_count = mysqli_num_rows($result2);
 
-
-                                $review_value = 0;
-                                while ($row2 = mysqli_fetch_assoc($result2)) {
-                                    $review_value += $row2['stars'];
+                                if ($review_count == 0) {
+                                    $final_rating = 'No Reviews Yet';
+                                } else {
+                                    $review_value = 0;
+                                    while ($row2 = mysqli_fetch_assoc($result2)) {
+                                        $review_value += $row2['stars'];
+                                    }
+                                    $final_rating = $review_value / $review_count;
                                 }
+
+
+
                                 // $dateMembership = $row2['joined_date'];
                                 // $membershipType = $row2['membership_type'];
                                 // $dateMembership = date('Y-m-d', strtotime($dateMembership));
@@ -144,7 +189,7 @@
                                     <td><?php echo $row['phone_no'] ?> </td>
 
                                     <td><?php echo  $row['rate'] ?> </td>
-                                    <td> ⭐ <?php echo  $review_value / $review_count ?> </td>
+                                    <td> ⭐ <?php echo  $final_rating ?> </td>
                                     <td> <?php echo  $row['assigned_members'] ?> </td>
                                     <td>
                                         <div class="row-action">
@@ -193,3 +238,7 @@
 </body>
 
 </html>
+
+<?php
+unset($_SESSION['notification']);
+?>
