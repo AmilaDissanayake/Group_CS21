@@ -135,7 +135,7 @@ nav .sidebar-button i{
     height: 40px;
     /* max-width: 550px; */
     width: 300px;
-    margin: 0 20px;
+    margin: 0 0px;
 }
 .search-box input{
 height: 100%;
@@ -261,7 +261,15 @@ margin: 25px 0;
 .table-members{
 width: 100%;
 border: none;
-
+}
+.first-column{
+  display: flex;
+  align-items: center;
+}
+.avatar img{
+  width: 40px;
+  border-radius: 40px;
+  margin-right: 5px;
 }
 .members-div{
 padding: 20px 0px 20px 0px;

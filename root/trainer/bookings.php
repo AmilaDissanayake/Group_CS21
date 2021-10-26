@@ -1,4 +1,6 @@
-<?php include "includes/check_login.php" ?>
+<?php include "includes/check_login.php";
+        require "includes/db.php";
+?>
 
 <!DOCTYPE html>
 
@@ -21,7 +23,15 @@
 
         <div class="home-content">
             <div class="header-div">
-                <h1 class="top-header">Today Bookings : 10 </h1>
+            <?php
+                    $trainer_id = $_SESSION['trainer_id'];
+                    $date = date("y-m-d");
+
+                    $sql1 = "SELECT * FROM book WHERE trainer_id = '".$trainer_id."' AND date = '".$date."'";
+                    $result1 = mysqli_query($conn,$sql1);
+                    $count = mysqli_num_rows($result1);
+            ?>
+                <h1 class="top-header">Today Bookings : <?php echo $count ?></h1>
             </div>
             <div class="search-bar">
                 <div class="search-box">
@@ -39,46 +49,37 @@
                         <th>Contact No.</th>
                         <th></th>
                     </tr>
+                    <?php
+                    $sql2 = "SELECT * FROM book WHERE trainer_id = '".$trainer_id."'";
+                    $result2 = mysqli_query($conn,$sql2);
+                    while($book_row2=mysqli_fetch_assoc($result2)){
+                        $book_id = $book_row2['book_id'];
+                        $member_id = $book_row2['member_id'];
+                        $date = $book_row2['date'];
+                        $time = $book_row2['time'];
+
+                        $sql3 = "SELECT f_name,l_name,phone_no,image FROM member WHERE member_id= '".$member_id."'";
+                        $result3 = mysqli_query($conn, $sql3);
+                        $book_row3 = mysqli_fetch_assoc($result3);
+
+                        $f_name = $book_row3['f_name'];
+                        $l_name = $book_row3['l_name'];
+                        $phone_no = $book_row3['phone_no'];
+                        $image = $book_row3['image'];
+                    ?>
                     <tr>
-                        <td>Amila dissanayake</td>
-                        <td>2021 Oct 21</td>
-                        <td>8.00a.m.-10.00a.m.</td>
-                        <td>0112233445</td>
+                        <td>
+                        <div class="first-column"><span class="avatar"><img src="../media/members/<?php echo $image ?>"></span><?php echo " " . $f_name . " " . $l_name ?></div>
+                        </td>
+                        <td><?php echo $date; ?></td>
+                        <td><?php echo $time; ?></td>
+                        <td><?php echo $phone_no; ?></td>
                         <td><div class="row-action">
                             <button class="about_btn" onclick="location.href='members.php'">Cancel booking</button> 
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Navod shehan</td>
-                        <td>2021 Oct 21</td>
-                        <td>8.00a.m.-10.00a.m.</td>
-                        <td>0112233445</td>
-                        <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Cancel booking</button> 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Pamodha mahagamage</td>
-                        <td>2021 Oct 21</td>
-                        <td>8.00a.m.-10.00a.m.</td>
-                        <td>0112233445</td>
-                        <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Cancel booking</button> 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bimsara Kulasekara</td>
-                        <td>2021 Oct 21</td>
-                        <td>8.00a.m.-10.00a.m.</td>
-                        <td>0112233445</td>
-                        <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Cancel booking</button> 
-                            </div>
-                        </td>
-                    </tr>
+                    <?php } ?>
                 </table>
             </div>
 

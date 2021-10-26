@@ -70,7 +70,7 @@
                 </div>
                 <div class="stat">
                     <div class="exp">
-                        <p><?php echo $diff->format('%y') . 'yrs'; ?></p>
+                        <p><?php echo $diff->format('%y') . 'yrs'; ?><br>EXPERIENCE</p>
                     </div>
                     <div class="rate">
                         <p><?php echo $rate ?>/=<br>Per Month</p>
