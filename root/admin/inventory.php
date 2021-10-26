@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include "includes/check_login.php" ?>
 
 <!DOCTYPE html>
 
@@ -104,7 +104,7 @@
 
 
 
-                <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Equipment</button></div>
+                <div class="add_button"><button class="add_btn" onclick="location.href='add-equipment.php'">Add Equipment</button></div>
 
             </div>
             <div class="member-list">
