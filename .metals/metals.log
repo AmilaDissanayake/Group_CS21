@@ -22,3 +22,13 @@
 [0m2021.10.24 10:35:46 WARN  Build server is not auto-connectable.[0m
 [0m2021.10.24 10:35:46 WARN  no build tool detected in workspace 'E:\XAMMP\htdocs\Group_CS21'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
 [0m2021.10.25 00:58:25 INFO  shutting down Metals[0m
+[0m2021.10.25 11:14:22 INFO  Started: Metals version 0.10.7 in workspace 'E:\XAMMP\htdocs\Group_CS21' for client Visual Studio Code 1.61.2.[0m
+[0m2021.10.25 11:14:24 INFO  time: initialize in 2.02s[0m
+[0m2021.10.25 11:14:24 WARN  Build server is not auto-connectable.[0m
+[0m2021.10.25 11:14:24 WARN  no build tool detected in workspace 'E:\XAMMP\htdocs\Group_CS21'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.10.25 16:34:49 INFO  shutting down Metals[0m
+[0m2021.10.25 21:55:36 INFO  Started: Metals version 0.10.7 in workspace 'E:\XAMMP\htdocs\Group_CS21' for client Visual Studio Code 1.61.2.[0m
+[0m2021.10.25 21:55:38 INFO  time: initialize in 1.8s[0m
+[0m2021.10.25 21:55:39 WARN  Build server is not auto-connectable.[0m
+[0m2021.10.25 21:55:39 WARN  no build tool detected in workspace 'E:\XAMMP\htdocs\Group_CS21'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.10.25 22:29:30 INFO  shutting down Metals[0m
