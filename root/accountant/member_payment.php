@@ -110,7 +110,7 @@ require "includes/db.php";
                                 $phone_no = $payment_row2['phone_no'];
                                 $assign_trainer = $payment_row2['assign_trainer'];
 
-                                $sql3 = "SELECT username FROM trainer WHERE trainer_id = $assign_trainer";
+                                $sql3 = "SELECT username FROM trainer WHERE trainer_id = '".$assign_trainer."'";
                                 $result3 = mysqli_query($conn, $sql3);
                                 $payment_row3 = mysqli_fetch_assoc($result3);
                                 $trainer_name = $payment_row3['username'];

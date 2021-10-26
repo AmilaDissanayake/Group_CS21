@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- <link rel="stylesheet" href="css/dashboard.css"> -->
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/profedit.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
