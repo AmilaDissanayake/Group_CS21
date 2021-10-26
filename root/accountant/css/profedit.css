@@ -64,6 +64,11 @@
 .separator .hr{
   color: rgb(24,24,24);
 }
+
+.separator1 .hr{
+  color: rgb(24,24,24);
+}
+
 .name {
     display: flex;
     align-items: center;
@@ -515,6 +520,11 @@ option {
   .separator {
     position: relative;
     width: 100%;
+  }
+  .separator1 {
+    position: relative;
+    width: 100%;
+    padding-top: 100px;
   }
   
 

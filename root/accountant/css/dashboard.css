@@ -153,7 +153,7 @@ nav .sidebar-button i{
   position: relative;
   height: 40px;
   /* max-width: 550px; */
-  width: 300px;
+  width: 650px;
   /* margin: 0 20px; */
 }
 .search-box input{
@@ -167,6 +167,9 @@ nav .sidebar-button i{
   color: #000000;
   padding: 0 15px;
   font-family: 'Rubik';
+}
+#search-bar{
+  width: 300px;
 }
 .search-box .bx-search{
   position: absolute;
@@ -829,11 +832,11 @@ table{
 
   position: relative;
   z-index: 10;
-  width: 150px;
-  height: 40px;
-  border: 1px solid #86ff71;
-  border-radius: 30px;
-  background-color: #86ff71;
+  width: 160px;
+  height: 45px;
+  /* border: 1px solid #86ff71; */
+  border-radius: 5px;
+  background-color: black;
   font-family: 'Azonix';
   color: rgb(0, 0, 0);
   font-size: 14px;
@@ -842,7 +845,7 @@ table{
   backdrop-filter: blur(10px);
   outline: none;
   cursor: pointer;
-  float: right;
+  float: left;
   /* margin-top: 30px;
   margin-left: 55px; */
 
@@ -851,15 +854,15 @@ table{
 .see-more2 a {
   text-decoration: none;
   font-family: 'Azonix';
-  color: rgb(0, 0, 0);
+  color: white;
   font-size: 14px;
 }
 
 .see-more2:hover{
 
   color: rgb(0, 0, 0);
-  box-shadow: 0px 0px 10px 1px #86ff71;
-  border: 1px solid #86ff71;
+  /* box-shadow: 0px 0px 10px 1px #86ff71; */
+  /* border: 1px solid #86ff71; */
   transition: .4s;
 
 }
