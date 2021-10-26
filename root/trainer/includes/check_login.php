@@ -2,5 +2,7 @@
 session_start();
 if (!isset($_SESSION['username'])) {
     header('Location: ./../login/index.php');
-    exit;
+}
+elseif($_SESSION['user_type'] !== 'trainer'){
+    header('Location: ./../login/index.php');
 }

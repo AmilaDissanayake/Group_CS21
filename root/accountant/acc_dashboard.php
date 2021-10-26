@@ -1,5 +1,5 @@
 
-
+<?php require "includes/check_login.php"?>
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">

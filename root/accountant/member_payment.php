@@ -2,6 +2,7 @@
 
 require "includes/db.php";
 ?>
+<?php require "includes/check_login.php"?>
 
 <!DOCTYPE html>
 
@@ -23,12 +24,47 @@ require "includes/db.php";
 
         <?php include "includes/header.php" ?>
 
+        <script>
+            function nn() {
+                $('.alert').addClass("show");
+                $('.alert').removeClass("hide");
+                $('.alert').addClass("showAlert");
+                setTimeout(function bb() {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                }, 4000);
+            };
+        </script>
+
+        <!-- <button class="err">Show Alert</button> -->
+        <div class="alert hide">
+
+            <?php
+            if (isset($_SESSION['notification'])) {
+                $notification = $_SESSION['notification'];
+                echo '<script type="text/javascript">nn();</script>';
+            }
+            ?>
+
+            <!-- <span class="fas fa-exclamation-circle"></span> -->
+            <span class="msg"><?php echo $notification ?></span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
+        </div>
+        <script>
+            $('.close-btn').click(function ss() {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        </script>
+
 
 
 
         <div class="home-content">
             <div class="search-bar">
-                <div class="search-box">
+                <div class="search-box" id="search-bar">
                     <input type="text" placeholder="Search by name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
@@ -74,7 +110,7 @@ require "includes/db.php";
                                 $phone_no = $payment_row2['phone_no'];
                                 $assign_trainer = $payment_row2['assign_trainer'];
 
-                                $sql3 = "SELECT username FROM trainer WHERE trainer_id = $assign_trainer";
+                                $sql3 = "SELECT username FROM trainer WHERE trainer_id = '".$assign_trainer."'";
                                 $result3 = mysqli_query($conn, $sql3);
                                 $payment_row3 = mysqli_fetch_assoc($result3);
                                 $trainer_name = $payment_row3['username'];
@@ -144,3 +180,6 @@ require "includes/db.php";
 </body>
 
 </html>
+<?php
+unset($_SESSION['notification']);
+?>

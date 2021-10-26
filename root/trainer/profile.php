@@ -70,7 +70,7 @@
                 </div>
                 <div class="stat">
                     <div class="exp">
-                        <p><?php echo $diff->format('%y') . 'yrs'; ?></p>
+                        <p><?php echo $diff->format('%y') . 'yrs'; ?><br>EXPERIENCE</p>
                     </div>
                     <div class="rate">
                         <p><?php echo $rate ?>/=<br>Per Month</p>
@@ -260,9 +260,18 @@
         </div>
            
     </section>
-    <!-- <?php include "includes/footer.php" ?> -->
-
-    <script type="text/javascript" src="./../signup/signup.js"></script>
+    <!-- <script type="text/javascript" src="./../signup/signup.js"></script> -->
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function() {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
+    </script>
 </body>
 
 </html>

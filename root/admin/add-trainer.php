@@ -1,5 +1,3 @@
-<?php include "includes/check_login.php" ?>
-
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -23,10 +21,13 @@
 
 
         <div class="home-content">
+
             <div class="login">
                 <div class="l-form">
-                    <form action="add-member-php.php" class="form" id="signup_form" method="POST">
+                    <form action="add-trainer-php.php" class="form" id="signup_form" method="POST">
                         <h1 class="form__title">ADD TRAINER</h1>
+
+
 
                         <div class="separator">
                             <hr class="hr-left1" />
@@ -121,7 +122,7 @@
                         </div>
 
                         <div class="inj__div">
-                            <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="qualifications_cc"></textarea>
+                            <textarea type="text" cols="40" rows="5" class="injury" id="inj2" placeholder=" " name="qualifications_cc"></textarea>
                             <label for="" class="form__label">Qualifications</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -145,6 +146,16 @@
                         <div class="form__div">
                             <input type="text" class="form__input" id="email" placeholder=" " name="email_cc">
                             <label for="" class="form__label">Email</label>
+                            <i class="fa fa-check"></i>
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <!-- <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i> -->
+                            <small>Error message</small>
+                        </div>
+
+                        <div class="form__div">
+                            <input type="text" class="form__input" id="rate" placeholder=" " name="rate_cc">
+                            <label for="" class="form__label">Rate</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
                             <!-- <i class="fas fa-check-circle"></i>
@@ -193,7 +204,7 @@
 
 
                         <div class="remember">
-                            <label class="container"> Member accepts the <span>Terms of Use</span> & <span>Privacy
+                            <label class="container"> Trainer accepts the <span>Terms of Use</span> & <span>Privacy
                                     Policy</span>.
                                 <input type="checkbox" id="mycheck">
                                 <span class="checkmark"></span>
@@ -203,11 +214,6 @@
                         </div>
 
                         <div class="buttondiv"><input type="button" class="form__button" value="ADD TRAINER" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
-
-
-                        <!-- <div class="payhere">
-                            <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
-                        </div> -->
 
                         <script>
                             $(document).ready(function() {
@@ -240,6 +246,13 @@
                         </script>
 
 
+                        <!-- <div class="payhere">
+                            <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
+                        </div> -->
+
+
+
+
                         <!-- <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script> -->
 
                         <script>
@@ -257,131 +270,6 @@
                                     y.type = "password";
                                 }
                             }
-                            var selectedTrainer;
-                            var selectedMembership;
-                            var cost = 0;
-                            var temp1 = 0;
-                            var temp2 = 0;
-                            var button = $(".form__button");
-                            $(document).ready(function() {
-                                $("select#trainer").change(function() {
-
-                                    selectedTrainer = $(this).find('option:selected').data('trainer');
-                                    // alert($(this).find(':selected').data('trainerRate'));
-                                    selectedTrainer = parseInt(selectedTrainer, 10);
-                                    if (temp1 > 0) {
-                                        cost = cost - temp1;
-                                        cost = cost + selectedTrainer;
-                                    } else {
-                                        cost = cost + selectedTrainer;
-                                    }
-
-
-                                    // alert("You have selected the country - " + selectedCountry);
-
-                                    // button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
-                                    temp1 = selectedTrainer;
-
-                                    button.val("ADD MEMBER & PAY" + " " + cost + "/=");
-
-
-
-
-
-                                });
-
-
-                            });
-
-                            $(document).ready(function() {
-                                $("select#membership").change(function() {
-                                    selectedMembership = $(this).children("option:selected").val();
-                                    selectedMembership = parseInt(selectedMembership, 10);
-
-                                    if (temp2 > 0) {
-                                        cost = cost - temp2;
-                                        cost = cost + selectedMembership;
-                                    } else {
-                                        cost = cost + selectedMembership;
-                                    }
-                                    temp2 = selectedMembership;
-                                    button.val("ADD MEMBER & PAY" + " " + cost + "/=");
-                                    // selectedTrainer2 = $("#trainer").find('option:selected').data('trainer');
-                                    // selectedMembership2 = $("#membership option:selected").val();
-                                    // alert(selectedTrainer2);
-                                    // alert(selectedMembership2);
-                                    // cost = cost - selectedMembership;
-                                    // alert("You have selected the country - " + selectedCountry);
-
-                                    // button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
-                                });
-
-
-                            });
-
-
-
-
-
-
-
-                            // cost = Number(cost);
-                            // var bb = cost;
-
-                            // fcost = cost.toString();
-                            // fcost = cost.toString();
-                            // alert(typeof(fcost));
-
-
-
-                            // alert(selectedMembership2 + selectedTrainer2);
-
-
-
-                            function calctotal() {
-
-                                var fname1 = document.getElementById('fname').value;
-                                var lname1 = document.getElementById('lname').value;
-                                // const gender = document.getElementById('gender').value;
-                                var mnumber1 = document.getElementById('mnumber').value;
-                                // const dob = document.getElementById('dob');
-                                var address1 = document.getElementById('address').value;
-                                // const inj = document.getElementById('inj');
-                                var email1 = document.getElementById('email').value;
-                                var membership1 = document.getElementById('membership').value;
-                                var trainer1 = document.getElementById('trainer').value;
-
-                                var finalcost = selectedMembership + selectedTrainer;
-                                finalcost2 = finalcost.toString();
-
-                                function setCookie(cName, cValue) {
-                                    // let date = new Date();
-                                    // date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
-                                    // const expires = "expires=" + date.toUTCString();
-                                    document.cookie = cName + "=" + cValue;
-                                }
-
-                                // Apply setCookie
-                                setCookie('amount', finalcost2);
-                                document.getElementById("signup_form").submit();
-
-
-                                // alert(finalcost2);
-                                // alert(typeof(finalcost2)
-
-                            }
-
-
-                            //Put the payment variables here
-
-                            // alert(finalcost2);
-                            // alert(typeof(finalcost2));
-
-
-                            // var cc = "gtgtgtgt";
-
-                            // payment["amount"] = cc;
-                            // payment["items"] = fname1;
 
 
                             function submitFunction() {
@@ -389,9 +277,9 @@
 
                                 if (result == true) {
                                     // e.preventDefault();
-                                    calctotal();
 
-                                    // document.getElementById("signup_form").submit();
+
+                                    document.getElementById("signup_form").submit();
 
 
 
@@ -399,20 +287,8 @@
                                     // }
                                 }
                             }
-
-                            // form.addEventListener("submit", function(e) {
-
-                            //     checkInputs();
-                            //     if (isValid == false) {
-                            //         e.preventDefault();
-                            //     } else if (isValid == true) {
-                            //         e.preventDefault();
-                            //         payhere.startPayment(payment);
-
-                            //     }
-
-                            // });
                         </script>
+
 
 
 

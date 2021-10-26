@@ -38,6 +38,8 @@
 
         if (strlen($about) > 200) {
             $about_short = substr($about, 0, 100) . '...';
+        } else {
+            $about_short = $about;
         }
 
         // $post_author = $row['post_author'];
@@ -47,11 +49,17 @@
         $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
         $review_query = mysqli_query($connection, $query2);
         $review_count = mysqli_num_rows($review_query);
-        $review_value = 0;
 
-        while ($review_row = mysqli_fetch_assoc($review_query)) {
-            $review_value += $review_row['stars'];
+        if ($review_count == 0) {
+            $final_rating = 'No Reviews Yet';
+        } else {
+            $review_value = 0;
+            while ($row2 = mysqli_fetch_assoc($review_query)) {
+                $review_value += $row2['stars'];
+            }
+            $final_rating = $review_value / $review_count;
         }
+
 
 
         // $select_query = mysqli_query($connection, $query);
@@ -65,7 +73,7 @@
             <div class="card-text">
                 <span class="date">Joined <?php echo $date_joined ?></span>
                 <h2><?php echo $f_name . " " . $l_name ?></h2>
-                <h2>⭐<?php echo $review_value / $review_count ?></h2>
+                <h2>⭐<?php echo $final_rating ?></h2>
 
                 <p><?php echo $about_short ?></p>
                 <div class="button-inner">

@@ -1,8 +1,4 @@
-<?php session_start(); ?>
-
-
-
-
+<?php include "includes/check_login.php" ?>
 
 <!DOCTYPE html>
 
@@ -81,8 +77,8 @@
                 </div>
 
                 <div class="four">
-                    <p class="value">255</p>
-                    <p class="name">Total Members</p>
+                    <p class="value">2-</p>
+                    <p class="name">Member Drops</p>
                 </div>
 
             </div>
@@ -109,7 +105,7 @@
 
 
 
-                <div class="add_button"><button class="add_btn_filter" onclick="location.href='add-member.php'">Filter</button></div>
+                <div class="add_button"><button class="add_btn_filter" onclick="location.href='#'">Filter</button></div>
                 <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Member</button></div>
 
             </div>
@@ -154,7 +150,7 @@
                                 }
 
                         ?>
-
+ 
 
 
 

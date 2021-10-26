@@ -2,6 +2,7 @@
 
     require "includes/db.php";
 ?>
+<?php require "includes/check_login.php"?>
 
 <!DOCTYPE html>
 
@@ -61,7 +62,7 @@
                                 $phone_no = $trainer_row['phone_no'];
                                 $assigned_members = $trainer_row['assigned_members'];
                                 
-                                $sql2 = "SELECT * FROM trainer_payments WHERE trainer_id = $trainer_id";
+                                $sql2 = "SELECT * FROM trainer_payments WHERE trainer_id = '".$trainer_id."'";
                                 $result2 = mysqli_query($conn, $sql2);
                                 $trainer_row2 = mysqli_fetch_assoc($result2);
                                 $payment_amount = $trainer_row2['payment_amount'];

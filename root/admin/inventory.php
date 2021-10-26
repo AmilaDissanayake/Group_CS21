@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include "includes/check_login.php" ?>
 
 <!DOCTYPE html>
 
@@ -61,23 +61,23 @@
         <div class="home-content">
             <div class="member-stats">
                 <div class="one">
-                    <p class="value">255</p>
-                    <p class="name">Total Recived</p>
+                    <p class="value">60</p>
+                    <p class="name">Total Equipments</p>
                 </div>
 
                 <div class="two">
-                    <p class="value">5+</p>
-                    <p class="name">This Month</p>
+                    <p class="value">20</p>
+                    <p class="name">Total Dumbells</p>
                 </div>
 
                 <div class="three">
-                    <p class="value">10</p>
-                    <p class="name">Profit</p>
+                    <p class="value">20</p>
+                    <p class="name">Total Plates</p>
                 </div>
 
                 <div class="four">
-                    <p class="value">255</p>
-                    <p class="name">Total Members</p>
+                    <p class="value">15</p>
+                    <p class="name">Total Barbells</p>
                 </div>
 
             </div>
@@ -104,7 +104,7 @@
 
 
 
-                <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Equipment</button></div>
+                <div class="add_button"><button class="add_btn" onclick="location.href='add-equipment.php'">Add Equipment</button></div>
 
             </div>
             <div class="member-list">
@@ -154,7 +154,7 @@
 
                                             <div class="about_button"><button class="about_btn" onclick="location.href='remove-inventory.php?inventory_id=<?php echo $row['inventory_id'] ?>'">Remove 1</button></div>
 
-                                            <div class="about_button"><button class="about_btnn" onclick="location.href='remove-inventory.php?inventory_id=<?php echo $row['inventory_id'] ?>'">Remove Equipment</button></div>
+                                            <div class="about_button"><button class="about_btnn" onclick="location.href='remove-inventory-all.php?inventory_id=<?php echo $row['inventory_id'] ?>'">Remove Equipment</button></div>
 
                                         </div>
                                     </td>
@@ -207,7 +207,6 @@
 </body>
 
 </html>
-
 <?php
 unset($_SESSION['notification']);
 ?>

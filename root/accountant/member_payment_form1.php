@@ -1,0 +1,129 @@
+<?php require "includes/check_login.php"?>
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/profedit.css">
+    <link href="css/justselect.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+<?php include "includes/sidebar.php" ?>
+    <section> 
+        <?php include "includes/header.php" ?>
+    
+                    <form action="includes/member_payment_submit.php" class="form" id="signup_form" method="POST">
+
+                        <div class="separator">
+                                <hr class="hr-left1" />
+                                    <span class="hr-text">MEMBER PAYMENT </span>
+                                <hr class="hr-right1" />
+                        </div><br><br><br> <br><br>   
+                    
+                        <div class="main_class">
+                            <div class="form__div" id="main_address1">
+                                <input type="text" class="form__input" id="address1" placeholder=" " name="username">
+                                <label for="" class="form__label">User Name</label>
+                                
+                            </div>
+                            <div class="form__div" id="main_address1">
+                                <input type="text" class="form__input" id="address1" placeholder=" " name="email">
+                                <label for="" class="form__label">Email</label>
+                            </div>
+
+                            <div class="select__div" id="select_div">
+
+
+                                <label>
+                                    <select id="trainer" class="form_input" required name="assigned_trainer">
+                                        <option value="" disabled selected> Select Your Trainer </option>
+                                        <?php
+
+                                        require "includes/db.php";
+
+                                        $query = "SELECT * FROM trainer";
+
+                                        $select_query = mysqli_query($conn, $query);
+
+                                        while ($row = mysqli_fetch_assoc($select_query)) {
+                                            $f_name = $row['f_name'];
+                                            $l_name = $row['l_name'];
+
+                                            $trainer_id = $row['trainer_id'];
+
+                                            $rate = $row['rate'];
+                                            // $rate = (int)$rate;
+
+
+                                            $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+                                            $review_query = mysqli_query($conn, $query2);
+                                            $review_count = mysqli_num_rows($review_query);
+                                            $review_value = 0;
+
+                                            while ($review_row = mysqli_fetch_assoc($review_query)) {
+                                                $review_value += $review_row['stars'];
+                                            }
+
+
+                                            // $select_query = mysqli_query($connection, $query);
+
+                                        ?>
+
+                                            <option value=<?php echo $trainer_id ?> data-trainer=<?php echo $rate ?>>
+                                                <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count ?></option>
+
+
+                                        <?php } ?>
+                                        <option value=0 data-trainer=0>I don't need a trainer</option>
+                                    </select>
+                                </label>
+
+                            </div>
+
+                            <div class="select__div" id="select_div" >
+
+
+                                <label>
+                                    <select id="membership1" class="form_input" required name="membership_type">
+                                        <option value="" disabled selected> Membership Type </option>
+                                        <option value=1> One Month 2500/=
+                                        </option>
+                                        <option value=3> Three Months 7000/=
+                                        </option>
+                                        <option value=6> Six Months 13500/=
+                                        </option>
+                                        <option value=12> One Year 20000/=
+                                        </option>
+                                    </select>
+                                </label>
+
+                            </div>
+
+                            <div class="form__div" id="main_address1">
+                                <input type="text" class="form__input" id="address1" placeholder=" " name="amount">
+                                <label for="" class="form__label">Amount</label>
+                            </div>
+                            <div class="buttondiv">
+                                <input type="submit" class="form__button" value="SUBMIT" name="form_submit" id="form_submit1">
+                            </div>
+                        </div>
+                        
+
+                        
+    </section>
+    <?php include "includes/footer.php" ?>
+
+    <script type="text/javascript" src="./../signup/signup.js"></script>
+    <script src="js/justselect.min.js"></script>
+</body>
+
+</html>

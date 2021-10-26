@@ -1,11 +1,11 @@
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-<link rel="stylesheet" type="text/css" href="../admin/includes/dist/css/pignose.calendar.css" />
-<link rel="stylesheet" type="text/css" href="../admin/css/header.css" />
+<link rel="stylesheet" type="text/css" href="../accountant/includes/dist/css/pignose.calendar.css" />
+<link rel="stylesheet" type="text/css" href="../accountant/css/header.css" />
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
-<script type="text/javascript" src="../admin/includes/dist/js/pignose.calendar.full.min.js"></script>
+<script type="text/javascript" src="../accountant/includes/dist/js/pignose.calendar.full.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -27,7 +27,7 @@
     </div>
 
     <div class="header-img">
-        <img src="./media/dinuka.jpg" alt=" no image">
+        <img src="./media/pamod.jpg" alt=" no image">
     </div>
 </nav>
 

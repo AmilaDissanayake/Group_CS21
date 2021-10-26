@@ -21,13 +21,17 @@ if (isset($_POST['submit'])) {
         if ($verify) {
             $_SESSION['username'] = $username;
             if ($row['user_type'] == 'admin') {
-                header('Location: ../admin/dashboard.php');
+                header('Location: ../admin/members.php');
+                $_SESSION['user_type'] = 'admin';
             } elseif ($row['user_type'] == 'member') {
                 header('Location: ../member/dashboard.php');
+                $_SESSION['user_type'] = 'member';
             } elseif ($row['user_type'] == 'trainer') {
                 header('Location: ../trainer/dashboard.php');
+                $_SESSION['user_type'] = 'trainer';
             } elseif ($row['user_type'] == 'accountant') {
-                header('Location: ../accountant/dashboard.php');
+                header('Location: ../accountant/acc_dashboard.php');
+                $_SESSION['user_type'] = 'accountant';
             }
         } else {
             $_SESSION['notification'] = "Incorrect Username or Password.";
