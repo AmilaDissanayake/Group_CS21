@@ -21,10 +21,13 @@
 
 
         <div class="home-content">
+
             <div class="login">
                 <div class="l-form">
                     <form action="add-trainer-php.php" class="form" id="signup_form" method="POST">
                         <h1 class="form__title">ADD TRAINER</h1>
+
+
 
                         <div class="separator">
                             <hr class="hr-left1" />

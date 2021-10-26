@@ -1,3 +1,5 @@
+<?php include "includes/check_login.php" ?>
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -71,7 +73,7 @@
 
 
 
-                <div class="add_button"><button class="add_btn_filter" onclick="location.href='add-member.php'">Filter</button></div>
+                <div class="add_button"><button class="add_btn_filter" onclick="location.href='#'">Filter</button></div>
 
 
 
