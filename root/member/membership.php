@@ -26,7 +26,37 @@
         <?php include "includes/header.php" ?>
 
         <div class="welcomenote"><h1></h1></div>
-        <div class="HdividerL"></div>
+        <div class="HdividerL">
+            <script>
+                function nn() {
+                    $('.alert').addClass("show");
+                    $('.alert').removeClass("hide");
+                    $('.alert').addClass("showAlert");
+                        setTimeout(function bb() {
+                        $('.alert').removeClass("show");
+                        $('.alert').addClass("hide");
+                        }, 4000);
+                    };
+            </script>
+            <div class="alert hide">
+                <?php
+                    if (isset($_SESSION['notification'])) {
+                        $notification = $_SESSION['notification'];
+                        echo '<script type="text/javascript">nn();</script>';
+                    }
+                ?>
+                <span class="msg"><?php echo $notification ?></span>
+                <div class="close-btn">
+                    <span class="fas fa-times"></span>
+                </div>
+            </div>
+            <script>
+                $('.close-btn').click(function ss() {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                });
+            </script>
+        </div>
         <div class="board">
             <div class="vboderdivider"></div>
             <div class="dubar">
@@ -218,14 +248,16 @@
             <div class="vboderdivider"></div>
         </div>
         <div class="udetails">
-            <div class="paralist" id="fname" ><?php echo "$f_name"; ?></p></div>
-            <div class="paralist" id="lname" ><?php echo "$l_name"; ?></div>
-            <div class="paralist" id="mnumber" ><?php echo "$p_no"; ?></div>
-            <div class="paralist" id="address" ><?php echo "$address"; ?></div>
+            <input type="text"><div class="paralist" id="fname" ><?php echo "$f_name"; ?></p></div>
+            <input type="text"><div class="paralist" id="lname" ><?php echo "$l_name"; ?></div>
+            <input type="text"><div class="paralist" id="mnumber" ><?php echo "$p_no"; ?></div>
+            <input type="text"><div class="paralist" id="address" ><?php echo "$address"; ?></div>
             <div class="paralist" id="email" ><?php echo "$email"; ?></div>
             <div class="paralist" id="membership" ></div>
+            <form id="amount_form" action="add-payment.php" method="POST">
+                <input type="text" id="passamount" name = "amount" value="">
+            </form>
             <div class="paralist" id="mamount" ></div>
-
         </div>
         <div class="HdividerL"></div>   
     </section>
@@ -244,6 +276,7 @@
                 pack = "1 Month Membership";      
                 $("#mval").text(cost);
                 $("#mamount").text(cost);
+                $("#passamount").val(cost);
                 $("#membership").text(pack);
         });
         $("#mon3").click(function(){ 
@@ -251,6 +284,7 @@
                 pack = "3 Month Membership";          
                 $("#mval").text(cost);
                 $("#mamount").text(cost);
+                $("#passamount").val(cost);
                 $("#membership").text(pack);
         });
         $("#mon6").click(function(){
@@ -258,6 +292,7 @@
                 pack = "6 Month Membership";           
                 $("#mval").text(cost);
                 $("#mamount").text(cost);
+                $("#passamount").val(cost);
                 $("#membership").text(pack);
         });
         $("#mon12").click(function(){
@@ -265,11 +300,14 @@
                 pack = "12 Month Membership";      
                 $("#mval").text(cost);
                 $("#mamount").text(cost);
+                $("#passamount").val(cost);
                 $("#membership").text(pack);
         });
 
+       
         function checkpackin(){
             var amountval = document.getElementById("mval").innerText;
+
             if( amountval === '0'){
                 return false;
             }else{
@@ -277,8 +315,9 @@
             }
         }            
 
+
         payhere.onCompleted = function onCompleted(orderId) {
-            document.getElementById("signup_form").submit();
+            document.getElementById("amount_form").submit();
             console.log("Payment completed");
             //Note: validate the payment and show success or failure page to the customer
         };
@@ -296,6 +335,8 @@
         };
 
         var payment;
+        var amount1 = document.getElementById('mamount').innerText;
+
         function calctotal() {
 
             var fname1 = document.getElementById('fname').innerText;
@@ -323,8 +364,8 @@
                 "address": address1,
                 "city": "Mirigama",
                 "country": "Sri Lanka",
-
                 };
+
             }
 
         function submitFunction() {
@@ -332,6 +373,7 @@
 
             if (result == true) {     
                 calctotal();
+
                 payhere.startPayment(payment);
             }
         }
@@ -341,3 +383,8 @@
 </body>
 
 </html>
+
+
+<?php
+unset($_SESSION['notification']);
+?>

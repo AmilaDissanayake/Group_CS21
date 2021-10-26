@@ -7,11 +7,9 @@
   font-family: 'Rubik', sans-serif;
 }
 
-
 .welcomenote{
   padding-top: 100px;
 }
-
 .welcomenote h1{
   padding-left: 40px;
   font-size: 34px;
@@ -771,8 +769,9 @@ nav .profile-details i{
 
 
 .payment-div table .dlist{
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
+  border: 5px solid grey;
 }
 
 .tassign .trainer-div{
@@ -799,6 +798,7 @@ nav .profile-details i{
 
 table {
   border-collapse: collapse;
+  width: 100%;
 }
 
 td {
@@ -808,7 +808,9 @@ td {
 
 th{
   padding: 8px;
+  border: 1px solid rgb(244,244,244);
   text-decoration: none;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
