@@ -7,27 +7,27 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/profedit.css">
+    <link href="css/justselect.css" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
-    <?php include "includes/sidebar.php" ?>
-    <section class="home-section">
-
+<?php include "includes/sidebar.php" ?>
+    <section> 
         <?php include "includes/header.php" ?>
+    
+                    <form action="includes/member_payment_submit.php" class="form" id="signup_form" method="POST">
 
-        <form action="includes/member_payment_submit.php" class="form" id="signup_form" method="POST">
-
-                        <div class="separator1">
+                        <div class="separator">
                                 <hr class="hr-left1" />
                                     <span class="hr-text">MEMBER PAYMENT </span>
                                 <hr class="hr-right1" />
-                        </div><br>   
+                        </div><br><br><br> <br><br>   
                     
                         <div class="main_class">
                             <div class="form__div" id="main_address1">
@@ -116,50 +116,14 @@
                                 <input type="submit" class="form__button" value="SUBMIT" name="form_submit" id="form_submit1">
                             </div>
                         </div>
-        </form>
+                        
 
-
-
-
-        
-
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $("#search").keypress(function() {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'includes/member-page1.php',
-                        data: {
-                            name: $("#search").val(),
-                        },
-                        success: function(data) {
-                            $("#output").html(data);
-                        }
-                    });
-                });
-            });
-        </script>
-
+                        
     </section>
     <?php include "includes/footer.php" ?>
 
-
-</body>
-
-<script>
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".sidebarBtn");
-    sidebarBtn.onclick = function() {
-        sidebar.classList.toggle("active");
-        if (sidebar.classList.contains("active")) {
-            sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-        } else
-            sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-    }
-</script>
-<script type="text/javascript" src="./../signup/signup.js"></script>
+    <script type="text/javascript" src="./../signup/signup.js"></script>
     <script src="js/justselect.min.js"></script>
-
 </body>
 
 </html>

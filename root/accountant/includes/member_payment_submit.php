@@ -27,5 +27,11 @@
             $sql4 = "INSERT INTO membership(member_id, membership_type) VALUES ('$member_id', '$membership_type')";
             mysqli_query($conn, $sql4);
         }
-        header("location:../member_payment.php");
+        
+        if ($result1 && $result2) {
+            $_SESSION['notification'] = "Payment successfully";
+            // $_SESSION['username'] = $username_bb;
+            header("location:../member_payment.php");
+            // echo "done";
+        }
     }
