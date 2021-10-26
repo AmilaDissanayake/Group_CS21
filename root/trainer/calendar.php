@@ -23,6 +23,41 @@ require "includes/db.php"; ?>
 
         <?php include "includes/header.php" ?>
 
+        <script>
+            function nn() {
+                $('.alert').addClass("show");
+                $('.alert').removeClass("hide");
+                $('.alert').addClass("showAlert");
+                setTimeout(function bb() {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                }, 4000);
+            };
+        </script>
+
+        <!-- <button class="err">Show Alert</button> -->
+        <div class="alert hide">
+
+            <?php
+            if (isset($_SESSION['notification'])) {
+                $notification = $_SESSION['notification'];
+                echo '<script type="text/javascript">nn();</script>';
+            }
+            ?>
+
+            <!-- <span class="fas fa-exclamation-circle"></span> -->
+            <span class="msg"><?php echo $notification ?></span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
+        </div>
+        <script>
+            $('.close-btn').click(function ss() {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        </script>
+
         <div class="home-content">
         <form action="includes/availability.php" method="POST">
             <div class="calendar-input">              
@@ -60,7 +95,7 @@ require "includes/db.php"; ?>
                             <td><?php echo "$date"; ?></td>
                             <td><?php echo "$time_slot"; ?></td>
                             <td><div class="row-action">
-                                <button class="about_btn" onclick="location.href='members.php'">Remove</button> 
+                                <button class="about_btn" onclick="location.href='includes/remove-availability.php?time_id=<?php echo $availability_row['time_id'];?>'">Remove</button> 
                                 </div>
                             </td>
                         </tr>
@@ -84,3 +119,7 @@ require "includes/db.php"; ?>
 <script type="text/javascript" src="js/calendar.js"> </script>
 <script src="js/justselect.min.js"></script>
 </html>
+
+<?php
+unset($_SESSION['notification']);
+?>
