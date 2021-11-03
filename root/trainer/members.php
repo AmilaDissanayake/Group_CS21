@@ -43,10 +43,10 @@
                     </tr>
                     <tr>
                         <td>Amila dissanayake</td>
-                        <td>25</td>
+                        <td>23</td>
                         <td>Male</td>
-                        <td>0112233445</td>
-                        <td>Back pain, Shoulder pain</td>
+                        <td>0782211455</td>
+                        <td>Shoulder pain</td>
                         <td><div class="row-action">
                             <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
                             </div>
@@ -58,10 +58,10 @@
                     </tr>
                     <tr>
                         <td>Navod shehan</td>
-                        <td>25</td>
+                        <td>24</td>
                         <td>Male</td>
-                        <td>0112233445</td>
-                        <td>Back pain, Shoulder pain</td>
+                        <td>0775541226</td>
+                        <td>Back pain</td>
                         <td><div class="row-action">
                             <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
                             </div>
@@ -75,8 +75,8 @@
                         <td>Pamodha mahagamage</td>
                         <td>25</td>
                         <td>Male</td>
-                        <td>0112233445</td>
-                        <td>Back pain, Shoulder pain</td>
+                        <td>0714552563</td>
+                        <td>No injuries</td>
                         <td><div class="row-action">
                             <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
                             </div>
@@ -88,9 +88,9 @@
                     </tr>
                     <tr>
                         <td>Bimsara kulasekara</td>
-                        <td>25</td>
+                        <td>23</td>
                         <td>Male</td>
-                        <td>0112233445</td>
+                        <td>0785542113</td>
                         <td>Back pain, Shoulder pain</td>
                         <td><div class="row-action">
                             <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
