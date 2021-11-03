@@ -799,7 +799,6 @@ nav .sidebar-button i{
 .home-section .search-box{
   position: relative;
   height: 40px;
-  /* max-width: 550px; */
   width: 300px;
   margin: 0 20px;
 }
@@ -838,22 +837,11 @@ nav .sidebar-button i{
   min-width: 190px;
   padding: 0 15px 0 2px;
 }
-nav .profile-details img{
+.header-img img{
   height: 40px;
   width: 40px;
-  border-radius: 6px;
+  border-radius: 50%;
   object-fit: cover;
-}
-nav .profile-details .admin_name{
-  font-size: 15px;
-  font-weight: 500;
-  color: #333;
-  margin: 0 10px;
-  white-space: nowrap;
-}
-nav .profile-details i{
-  font-size: 25px;
-  color: #333;
 }
 
 /* Responsive Media Query */

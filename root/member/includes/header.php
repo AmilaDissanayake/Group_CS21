@@ -1,6 +1,6 @@
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" type="text/css" href="../member/includes/dist/css/pignose.calendar.css" />
-<link rel="stylesheet" type="text/css" href="../admin/css/header.css" />
+<link rel="stylesheet" type="text/css" href="../member/css/header.css" />
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -12,19 +12,14 @@
         <i class='bx bx-menu sidebarBtn'></i>
         <span class="dashboard">Dashboard</span>
     </div>
-    <!-- <div class="search-box">
-                <input type="text" placeholder="Search...">
-                <i class='bx bx-search'></i>
-            </div> -->
-    <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
-        <span class='admin_name'> Academy is open today </span>
 
+    <div class="profile-details">
+        <span class='day_status'> Academy is open today </span>
         <i class='bx bx-chevron-down' class="btn-calendar"></i>
     </div>
 
     <div class="header-img">
-        <!-- <img src="./media/pamod.jpg" alt=" no image"> -->
+        <img src="./media/pamod.jpg" alt=" no image">
     </div>
 </nav>
 

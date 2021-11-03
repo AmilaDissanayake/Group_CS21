@@ -54,14 +54,14 @@
                         <h1>Time slots</h1>
                         <div class="tslotlist">
                             <div class="grid-container">
-                                <div class="grid-item"> 6.00 a.m. -  8.00 a.m.</div>
-                                <div class="grid-item"> 8.00 a.m. - 10.00 a.m.</div>
-                                <div class="grid-item">10.00 a.m. - 12.00 a.m.</div>
-                                <div class="grid-item">12.00 a.m. -  2.00 p.m.</div>
-                                <div class="grid-item"> 2.00 p.m. -  4.00 p.m.</div>
-                                <div class="grid-item"> 4.00 p.m. -  6.00 p.m.</div>
-                                <div class="grid-item"> 6.00 p.m. -  8.00 p.m.</div>
-                                <div class="grid-item"> 8.00 p.m. - 10.00 p.m.</div>
+                                <div class="grid-item"> 06.00 a.m. - 08.00 a.m.</div>
+                                <div class="grid-item"> 08.00 a.m. - 10.00 a.m.</div>
+                                <div class="grid-item"> 10.00 a.m. - 12.00 a.m.</div>
+                                <div class="grid-item"> 12.00 a.m. - 02.00 p.m.</div>
+                                <div class="grid-item"> 02.00 p.m. - 04.00 p.m.</div>
+                                <div class="grid-item"> 04.00 p.m. - 06.00 p.m.</div>
+                                <div class="grid-item"> 06.00 p.m. - 08.00 p.m.</div>
+                                <div class="grid-item"> 08.00 p.m. - 10.00 p.m.</div>
                             </div>
                             
                             

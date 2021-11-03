@@ -19,7 +19,6 @@
   font-family: 'Azonix'; 
   font-weight: 400;  
 }
-
 .dashcover{
   background-image: url("dashcover.jpg");
   background-repeat: no-repeat;
@@ -208,34 +207,7 @@
   font-size: 20px;
 }
 
-
-
 /*---------------calender section ---------------*/
-
-/* .uppart .calendar{
-  height: 500px;
-  width: 100;
-  padding: 20px;
-} */
-
-/* #calendar-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.fc-header-toolbar {
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-} */
-
-/* .calendar-top{
-  display: grid;
-} */
-
 .calendar{
   padding-top: 20px;
   padding-bottom: 50px;
@@ -250,6 +222,7 @@
   width: 100%;
   padding-top: 50px;
 }
+
 /*------------- Content divider ----------------*/
 .divider{
   width: 100%;
@@ -446,16 +419,6 @@
   left: 60px;
   width: calc(100% - 60px);
 }
-.home-section nav .sidebar-button{
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: 500;
-}
-nav .sidebar-button i{
-  font-size: 35px;
-  margin-right: 10px;
-}
 
 .home-section .search-box{
   position: relative;
@@ -489,33 +452,7 @@ nav .sidebar-button i{
   font-size: 22px;
   transition: all 0.4 ease;
 }
-.home-section nav .profile-details{
-  display: flex;
-  align-items: center;
-  background: #F5F6FA;
-  border: 2px solid #EFEEF1;
-  border-radius: 6px;
-  height: 50px;
-  min-width: 190px;
-  padding: 0 15px 0 2px;
-}
-nav .profile-details img{
-  height: 40px;
-  width: 40px;
-  border-radius: 6px;
-  object-fit: cover;
-}
-nav .profile-details .admin_name{
-  font-size: 15px;
-  font-weight: 500;
-  color: #333;
-  margin: 0 10px;
-  white-space: nowrap;
-}
-nav .profile-details i{
-  font-size: 25px;
-  color: #333;
-}
+
 /* Responsive Media Query */
 @media (max-width: 1240px) {
   .sidebar{

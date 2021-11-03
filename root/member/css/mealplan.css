@@ -20,11 +20,11 @@
 }
 
 .note h1{
-    text-align: center;
-    font-size: 34px;
-    color: black;
-    /* padding-top: 50px; */
-  }
+  text-align: center;
+  font-size: 34px;
+  color: black;
+  /* padding-top: 50px; */
+}
 
 .lsd .con1 .set1{
   margin-top: 50px;
@@ -314,8 +314,6 @@
   list-style: none;
   height: 50px;
 }
-
-
 .sidebar .nav-links li a{
   height: 100%;
   width: 100%;
@@ -378,16 +376,7 @@
   left: 60px;
   width: calc(100% - 60px);
 }
-.home-section nav .sidebar-button{
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: 500;
-}
-nav .sidebar-button i{
-  font-size: 35px;
-  margin-right: 10px;
-}
+
 .home-section .search-box{
   position: relative;
   height: 40px;
@@ -420,39 +409,6 @@ nav .sidebar-button i{
   color: rgb(64, 59, 59);
   font-size: 22px;
   transition: all 0.4 ease;
-}
-.home-section nav .profile-details{
-  display: flex;
-  align-items: center;
-  background: #F5F6FA;
-  border: 2px solid #EFEEF1;
-  border-radius: 6px;
-  height: 50px;
-  min-width: 190px;
-  padding: 0 15px 0 2px;
-}
-nav .profile-details img{
-  height: 40px;
-  width: 40px;
-  border-radius: 6px;
-  object-fit: cover;
-}
-nav .profile-details .admin_name{
-  font-size: 15px;
-  font-weight: 500;
-  color: #333;
-  margin: 0 10px;
-  white-space: nowrap;
-}
-nav .profile-details i{
-  font-size: 25px;
-  color: #333;
-}
-.home-section .home-content{
-  position: relative;
-  padding-top: 104px;
-  padding-left: 30px;
-  padding-right: 30px;
 }
 
 /* Responsive Media Query */
