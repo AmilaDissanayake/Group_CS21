@@ -59,7 +59,7 @@
                         <div class="bmistatus">
                             <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id="ob"> OBESITY</span></p>
                             <div class="pgo">
-                                <a href="./progress.php" class="readmore_btn" id="readMore">UPDATE BMI</a>
+                                <a href="./progress.php#updatebmi" class="readmore_btn" id="readMore">UPDATE BMI</a>
                             </div>
                         </div>
                 </div>
@@ -72,7 +72,7 @@
                     <div class="bmistatus">
                         <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span > AVERAGE </span></p>
                         <div class="pgo">
-                            <a href="./progress.php" class="readmore_btn" id="readMore">UPDATE BODY FAT</a> 
+                            <a href="./progress.php#updatebf" class="readmore_btn" id="readMore">UPDATE BODY FAT</a> 
                         </div>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                                     <p>GOOD</p>
                                 </div>
                             </div>
-                            <div class="bt"><a href="./progress.php" class="readmore_btn" id="readMore">View More</a></div>
+                            <div class="bt"><a href="./progress.php#weekprgs" class="readmore_btn" id="readMore">View More</a></div>
                     </div>
                     <div class="dividerin"></div>
                     <div class="book">

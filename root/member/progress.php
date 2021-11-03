@@ -31,7 +31,7 @@
         <div class="analy">
              <div class="vboderdivider"></div>
             <div class="rpanel">           
-                <div class="pan">
+                <div class="pan" id="updatebmi">
                     <?php include "./includes/bmi-calc.php" ?>
                 </div>           
             </div>
@@ -41,14 +41,14 @@
                 <div class="lpanel">
                     <div class="btag"><p>BMI STATISTICS</p></div>
                  
-                    <div class="bmip">
+                    <div class="bmip" id="weekprgs">
                         <canvas id="canvas"></canvas>
                     </div>
                 </div>
-                <div class="divider3"></div>
-                <div class="indc1">
+                <div class="divider3" ></div>
+                <div class="indc1" >
                     <h2>Weekly Progress</h2>
-                    <div class="protick">
+                    <div class="protick" >
                         <div class="wdetails">
                             <ul>
                             <div class="itemcon">
@@ -85,7 +85,7 @@
         <div class="analy2">
             <div class="vboderdivider"></div>
             <div class="rpanel">           
-                <div class="pan">
+                <div class="pan" id="updatebf">
                     <?php include "./includes/bfc-calc.php" ?>
                 </div>           
             </div>
