@@ -267,11 +267,24 @@
   font-size: 25px;
   font-weight: 900;
 }
+.category{
+  padding-top: 20px;
+  font-size: 22px;
+  font-weight: 800;
+  color:rgb(64, 59, 59)
+}
+.category #ob{
+  color: red;
+  margin-right: 30px;
+}
+.category span {
+  color: orange;
+  margin-right: 90px;
+}
 
 /* .book:hover{
   background-color: rgb(24,24,24);  
 }
-
 .book:hover > .status{
   color: white;
 } */

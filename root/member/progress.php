@@ -44,6 +44,7 @@
                     <div class="bmip" id="weekprgs">
                         <canvas id="canvas"></canvas>
                     </div>
+                    <p class="category"><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id="ob"> OBESITY</span> BMI value - 22(in July)</p>
                 </div>
                 <div class="divider3" ></div>
                 <div class="indc1" >
@@ -130,10 +131,11 @@
                 <div class="dlpanel">
                     <div class="btag"><p>BODY FAT STATISTICS</p></div>
                     <div class="bfp">
-                    <div class="bmip">
-                        <canvas id="canvas2"></canvas>
+                        <div class="bmip">
+                            <canvas id="canvas2"></canvas>
+                        </div> 
                     </div>
-                    </div>
+                    <p class="category"><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span > AVERAGE </span>BF value - 25(in July)</p>
                 </div>
                 <div class="divider3"></div>
             </div>

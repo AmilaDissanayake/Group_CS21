@@ -113,12 +113,43 @@
                 <div class="con1">
                     <div class="set1">
                         <p>Foods to Focus On</p>
+                        <span class="fade-effect2"></span>
+                        <ul>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Meats, poultry and fish:</b> <br>Sirloin steak, ground beef, pork tenderloin, venison, chicken breast, salmon, tilapia and cod.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Dairy:</b> <br>Yogurt, cottage cheese, low-fat milk and cheese.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Grains:</b> <br>Bread, cereal, crackers, oatmeal, quinoa, popcorn and rice.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Fruits:</b> <br>Oranges, apples, bananas, grapes, pears, peaches, watermelon and berries.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Starchy vegetables:</b> <br>Potatoes, corn, green peas, green lima beans and cassava.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Vegetables:</b> <br>Broccoli, spinach, leafy salad greens, tomatoes, green beans, cucumber, zucchini, asparagus, peppers and mushrooms.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Seeds and nuts:</b> <br>Almonds, walnuts, sunflower seeds, chia seeds and flax seeds.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Beans and legumes:</b> <br>Chickpeas, lentils, kidney beans, black beans and pinto beans.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Oils:</b> <br>Olive oil, flaxseed oil and avocado oil.</li>
+                        </ul>
                     </div>
                     <div class="set1">
                         <p>Foods to Limit</p>
+                        <span class="fade-effect2"></span>
+                        <ul class="flimit">
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Alcohol:</b> <br>Alcohol can negatively affect your ability to build muscle and lose fat, especially if you consume it in excess.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Added sugars:</b> <br>These offer plenty of calories but few nutrients. Foods high in added sugars include candy, cookies, doughnuts, ice cream, cake and sugar-sweetened beverages, such as soda and sports drinks.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Deep-fried foods:</b> <br>These may promote inflammation and — when consumed in excess — disease. Examples include fried fish, french fries, onion rings, chicken strips and cheese curds.</li>
+                            <li><br>In addition to limiting these, you may also want to avoid certain foods before going to the gym that can slow digestion and cause stomach upset during your workout.</li>
+                            <li><b>These include:</b></li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>High-fat foods:</b> <br>High-fat meats, buttery foods and heavy sauces or creams.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>High-fiber foods:</b> <br>Beans and cruciferous vegetables like broccoli or cauliflower.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Carbonated beverages:</b> <br>Sparkling water or diet soda.</li>
+                        </ul>
                     </div>
                     <div class="set1">
                         <p>Bodybiliding supliments</p>
+                        <span class="fade-effect2"></span>
+                        <ul>
+                            <li><br>Many bodybuilders take dietary supplements, some of which are useful while others are not.</li>
+                            <li><b>The best bodybuilding supplements include:</b></li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Whey protein:</b> <br>Consuming whey protein powder is an easy and convenient way to increase your protein intake.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Creatine:</b> <br>Creatine provides your muscles with the energy needed to perform an additional rep or two. While there are many brands of creatine, look for creatine monohydrate as it’s the most effective.</li>
+                            <li><i class='bx bxs-caret-right-circle'></i><b>Caffeine:</b> <br>Caffeine decreases fatigue and allows you to work harder. It’s found in pre-workout supplements, coffee or tea.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
