@@ -99,93 +99,126 @@
                     <div class="note2"><h1>Payment History</h1></div>
                     <div class="payment-div">
                         <table class="table-payments">
+                            <thead>
+                                <tr>
+                                    <th>INVOICE NO.</th>
+                                    <th>DATE</th>
+                                    <th>PAYMENT METHOD</th>
+                                    <!-- <th>DESCRIPTION</th> -->
+                                    <!-- <th>DONE BY</th> -->
+                                    <th>AMOUNT(LKR)</th>
+                                </tr>
+                            </thead>
                         
-                        <tr>
-                            <th>INVOICE NO.</th>
-                            <th>DATE</th>
-                            <th>PAYMENT METHOD</th>
-                            <!-- <th>DESCRIPTION</th> -->
-                            <!-- <th>DONE BY</th> -->
-                            <th>AMOUNT(LKR)</th>
-                        </tr>
-                        <?php 
-                            $query1 = "SELECT * FROM member WHERE username = '".$username."'";
-                            $result1 = mysqli_query($conn, $query1);
-                            $row1 = mysqli_fetch_assoc($result1);
+                            <?php 
+                                $query1 = "SELECT * FROM member WHERE username = '".$username."'";
+                                $result1 = mysqli_query($conn, $query1);
+                                $row1 = mysqli_fetch_assoc($result1);
 
-                            $member_id = $row1['member_id'];
-                            $f_name = $row1['f_name'];
-                            $l_name = $row1['l_name'];
-                            $p_no = $row1['phone_no'];
-                            $address = $row1['address'];
+                                $member_id = $row1['member_id'];
+                                $f_name = $row1['f_name'];
+                                $l_name = $row1['l_name'];
+                                $p_no = $row1['phone_no'];
+                                $address = $row1['address'];
 
-                            $query3 = "SELECT email FROM users WHERE username = '".$username."'";
-                            $result3 = mysqli_query($conn, $query3);
-                            $row3 = mysqli_fetch_assoc($result3);
+                                $query3 = "SELECT email FROM users WHERE username = '".$username."'";
+                                $result3 = mysqli_query($conn, $query3);
+                                $row3 = mysqli_fetch_assoc($result3);
 
-                            $email = $row3['email'];    
-                       
-                            $query2 = "SELECT * FROM payment WHERE member_id = '".$member_id."'";
-                            $result2 = mysqli_query($conn, $query2);
-                            
-                        while($row2 = mysqli_fetch_assoc($result2)){
+                                $email = $row3['email'];    
+                        
+                                $query2 = "SELECT * FROM payment WHERE member_id = '".$member_id."'";
+                                $result2 = mysqli_query($conn, $query2);
+                                
+                            while($row2 = mysqli_fetch_assoc($result2)){
 
-                            $payment_id = $row2['payment_id'];
-                            $date = $row2['payment_date'];
-                            $method = $row2['payment_type'];
-                            $amount = $row2['payment_amount'];
-                        ?>
-                        <tr>
-                            <td> <?php echo "$payment_id" ?></td>
-                            <td><?php echo "$date" ?></td>
-                            <td><?php echo "$method" ?></td>
-                            <!-- <td>Renewmembership</td> -->
-                            <!-- <td>Pamodha98</td> -->
-                            <td><?php echo "$amount" ?></td>
-                            <!-- <td>
-                                <div class="row-action">
-                                    <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
-                                </div>
-                            </td> -->
-                        </tr>
-                        <?php } ?>
-                    </table>
+                                $payment_id = $row2['payment_id'];
+                                $date = $row2['payment_date'];
+                                $method = $row2['payment_type'];
+                                $amount = $row2['payment_amount'];
+                            ?>
+                                <tr>
+                                    <td> <?php echo "$payment_id" ?></td>
+                                    <td><?php echo "$date" ?></td>
+                                    <td><?php echo "$method" ?></td>
+                                    <!-- <td>Renewmembership</td> -->
+                                    <!-- <td>Pamodha98</td> -->
+                                    <td><?php echo "$amount" ?></td>
+                                    <!-- <td>
+                                        <div class="row-action">
+                                            <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
+                                        </div>
+                                    </td> -->
+                                </tr>
+                            <?php } ?>
+                        </table>
                     </div>
                 </div>
-                
             </div>
             <div class="hordivid"></div>
             <div class="tassign">
                 <div class="seltr">
                     <div class="note2"><h1>Your Trainer</h1></div>
+                    <?php 
+                        $trainer_id = 1;
+
+                        $assign_trainer_query = "SELECT * FROM trainer WHERE trainer_id = $trainer_id";
+                        $trainer_result = mysqli_query($conn, $assign_trainer_query);
+                        $trainer_row = mysqli_fetch_assoc($trainer_result);
+
+                        $trainer_f_name = $trainer_row['f_name'];
+                        $trainer_l_name = $trainer_row['l_name'];
+                        $trainer_image = $trainer_row['image'];
+                        $trainer_rate = $trainer_row['rate'];
+                        $trainer_phone_no = $trainer_row['phone_no'];
+                        $date_joined = $trainer_row['joined_date'];
+                       
+                                                
+                        $today = date("Y-m-d");
+                        $diff = date_diff(date_create($date_joined), date_create($today));
+                        
+                        $rate_tr_query = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+                        $review_query = mysqli_query($conn, $rate_tr_query);
+                        
+                        $review_count = mysqli_num_rows($review_query);
+                        if ($review_count == 0) {
+                            $final_rating = 'No Reviews Yet';
+                        } else {
+                            $review_value = 0;
+                            while ($row6 = mysqli_fetch_assoc($review_query)) {
+                                $review_value += $row6['stars'];
+                            }
+                            $final_rating = $review_value / $review_count;
+                        } 
+                    ?>
+                    
                     <div class="adetails">
                         <div class="astatus">
                             <p><i class='bx bxs-flag'></i>Assign to the trainer <b>since</b> <i>21/06/2021</i> <b>till</b> <i>21/07/2021</i></p> 
                         </div>
                         <div class="aper">
                             <div class="avatar">
-                                <img src="./media/thusitha.jpg">
+                                <img src="../media/trainers/<?php echo $trainer_image?>">
                             </div>
                             <div class="joined-date">
-                                <p>Assign with</p>
+                                <p>Assign with </p>
                             </div>
                             <div class="name">
-
-                                <p>THUSITHA KAKULAWALA ⭐5 </p>
+                                <p><?php echo $trainer_f_name." ".$trainer_l_name ?> ⭐<?php echo $final_rating?></p>
                             </div>
                             <div class="button-inner">
-
-                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">CALL</button></div>
+                                <div class="about_button"><button class="about_btn" onclick="location.href='../trainer-profile/trainer-profile.php?trainer_id=<?php echo $trainer_id ?>'">PROFILE</button></div>
+                                <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">CALL</button></div> 
                             </div>
                         <div class="stat">
                             <div class="exp">
-                                <p>3 YRS<br>Expirience</p>
+                                <p><?php echo $diff->format('%y') . 'yrs'; ?><br>Expirience</p>
                              </div>
                             <div class="rate">
-                                <p>6,000/=<br>Per Month</p>
+                                <p><?php echo $trainer_rate ?>/=<br>Per Month</p>
                             </div>
                             <div class="review-count">
-                                <p>50<br>Reviews</p>
+                                <p><?php echo $review_count ?><br>Reviews</p>
                             </div>
                         </div>
                         </div>
@@ -193,54 +226,62 @@
                     <div class="note2"><h1>Trainer List</h1></div>
                     <div class="trainer-div">
                         <table class="table-trainers">
-                        <tr>
-                            <th>NAME</th>
-                            <th>EXPERIENCE</th>
-                            <th>RATING</th>
-                            <th>MONTHLY RATE(LKR)</th>
-                            <th></th>
-                        </tr>
+                            <thead>
+                                <tr>
+                                    <th>NAME</th>
+                                    <th>EXPERIENCE</th>
+                                    <th>RATING</th>
+                                    <th>MONTHLY RATE(LKR)</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <?php 
+                        
+                                $query4 = "SELECT * FROM trainer";
+                                $result4 = mysqli_query($conn, $query4);
+                                
+                            while($row3 = mysqli_fetch_assoc($result4)){
 
-                        <div class="dlist">
-                            <tr>
-                                <td>Thusitha</td>
-                                <td> 2 Years</td>
-                                <td> 5 (⭐)</td>
-                                <td>2,500</td>
-                                <td>
-                                    <div class="row-action">
-                                        <button class="about_btn" onclick="location.href='members.php'">Profile</button>
-                                        <button class="about_btn" onclick="location.href='members.php'">Select</button> 
-                                    </div>
-                                </td>
-                            </tr>
+                                $trainer_id = $row3['trainer_id'];
+                                $t_fname= $row3['f_name'];
+                                $image = $row3['image'];
+                                $about = $row3['about'];
+                                $rate = $row3['rate'];
+                                $phone_no = $row3['phone_no'];
+                                $date_joined = $row3['joined_date'];
+                        
+                                $today = date("Y-m-d");
+                                $diff = date_diff(date_create($date_joined), date_create($today));
 
-                            <tr>
-                                <td>Thusitha</td>
-                                <td> 2 Years</td>
-                                <td> 5 (⭐)</td>
-                                <td>2,500</td>
-                                <td>
-                                    <div class="row-action">
-                                        <button class="about_btn" onclick="location.href='members.php'">Profile</button>
-                                        <button class="about_btn" onclick="location.href='members.php'">Select</button> 
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Thusitha</td>
-                                <td> 2 Years</td>
-                                <td> 5 (⭐)</td>
-                                <td>2,500</td>
-                                <td>
-                                    <div class="row-action">
-                                        <button class="about_btn" onclick="location.href='members.php'">Profile</button>
-                                        <button class="about_btn" onclick="location.href='members.php'">Select</button> 
-                                    </div>
-                                </td>
-                            </tr>
-                        </div>
+                                $query5 = "SELECT * FROM review WHERE trainer_id = '".$trainer_id."'";
+                                $review_query = mysqli_query($conn, $query5);
+                                $review_count = mysqli_num_rows($review_query);
+                        
+                                if ($review_count == 0) {
+                                    $final_rating = 'No Reviews Yet';
+                                } else {
+                                    $review_value = 0;
+                                    while ($row4 = mysqli_fetch_assoc($review_query)) {
+                                        $review_value += $row4['stars'];
+                                    }
+                                    $final_rating = $review_value / $review_count;
+                                }
+                            ?>
+                                <tr>
+                                    <td> <?php echo "$t_fname" ?></td>
+                                    <td><?php 
+                                    echo $diff->format('%y') . 'years'; 
+                                    ?></td>
+                                    <td><?php echo "$final_rating"?>(⭐)</td>
+                                    <td><?php echo "$rate" ?></td>
+                                    <td>
+                                        <div class="row-action">
+                                            <button class="about_btn" onclick="location.href='../trainer-profile/trainer-profile.php?trainer_id=<?php echo $trainer_id ?>'">Profile</button>
+                                            <button class="about_btn" onclick="location.href='members.php'">Select</button> 
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                     </table>
                     </div>
                 </div>

@@ -231,12 +231,12 @@
 }
 
 .selpack{
-    padding-top: 60px;
-    width: 100%;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    display: flex;
+  padding-top: 60px;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
 }
 
 .readmore_btn {
@@ -267,37 +267,37 @@
 }
 
 .hero_btn{
-    position: relative;
-    z-index: 10;
-    width: 220px;
-    height: 50px;
-    border: 1px solid #86ff71;
-    border-radius: 30px;
-    background-color: #86ff71;
-    font-family: 'Azonix';
-    color: rgb(0, 0, 0);
-    font-size: 17px;
-    letter-spacing: 1px;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    outline: none;
-    cursor: pointer;
+  position: relative;
+  z-index: 10;
+  width: 220px;
+  height: 50px;
+  border: 1px solid #86ff71;
+  border-radius: 30px;
+  background-color: #86ff71;
+  font-family: 'Azonix';
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  letter-spacing: 1px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  outline: none;
+  cursor: pointer;
 
 }
 
 .hero_btn:hover{
-    color: rgb(0, 0, 0);
-    box-shadow: 0px 0px 10px 1px #86ff71;
-    border: 1px solid #86ff71;
-    transition: .4s;
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 0px 10px 1px #86ff71;
+  border: 1px solid #86ff71;
+  transition: .4s;
 }
 
 .pay{
-    padding-top: 30px;
-    width: 100%;
-    text-align: center;
-    padding-bottom: 30px;
-    border-bottom: 3px solid rgb(244,244,244);
+  padding-top: 30px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 30px;
+  border-bottom: 3px solid rgb(244,244,244);
 }
 /* -------------------------sidebar -----------------*/
 .sidebar{
@@ -534,42 +534,28 @@
 
 .btmsec .meship .payment-div{
   text-align: center;
-  width: 99%;
+  width: calc(100%-10px);
   font-size: 16px;
-  height: 100%;
+  height: 330px;
   padding-left: 10px;
+  margin-right: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-
 .payment-div td{
   text-align: center;
   font-size: 13px;
 }
 
-/* @media (max-width:800px){
-  .ren .payment-div {
-    overflow-x: scroll;
-  }
-  .tassign .trainer-div{
-    overflow-x: scroll;
-  }
-} */
-
-
-.payment-div table .dlist{
-  overflow-y: hidden;
-  overflow-x: hidden;
-  border: 5px solid grey;
-}
-
-.tassign .trainer-div{
+.tassign .trainer-div {
   text-align: center;
   width: 99%;
   font-size: 16px;
-  height: 100%;
   padding-left: 10px;
-  overflow-y: scroll;
-  overflow-x: hidden;
   padding-bottom: 10px;
+  height: 240px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .tassign .trainer-div td{
@@ -587,12 +573,10 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-
 td {
   border: 0px solid black;
   padding: 8px;
 }
-
 th{
   padding: 8px;
   border: 1px solid rgb(244,244,244);
@@ -600,10 +584,12 @@ th{
   font-weight: 500;
   margin-bottom: 10px;
 }
-
-thead {
-  background-color: #86ff71;
+table thead {
+  background-color: white;
   color: rgb(0, 0, 0);
+  position: sticky;
+  z-index: 100;
+  top: 0;
   margin-bottom: 10px;
 }
 
@@ -730,25 +716,24 @@ border: 0px solid #121317;
   margin-left: 20px;
 }
 
-  .adetails .stat .exp{
-      width: 33%;
-      display: flex;
-      justify-content: center;
-      border-right: 2px solid #121317 ;
-  }
-  
+.adetails .stat .exp{
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  border-right: 2px solid #121317 ;
+}
 
-  .adetails .stat .exp p , .adetails .stat .rate p , .adetails .stat .review-count p{
-      text-align: center;
-      font-family: 'Azonix';
-      font-size: 14px;
-  }
+.adetails .stat .exp p , .adetails .stat .rate p , .adetails .stat .review-count p{
+  text-align: center;
+  font-family: 'Azonix';
+  font-size: 14px;
+}
 
-  .adetails .stat .rate{
-      width: 33%;
-      border-right: 2px solid #121317 ;
-  }
+.adetails .stat .rate{
+  width: 33%;
+  border-right: 2px solid #121317 ;
+}
 
-  .adetails .stat .review-count{
-      width: 33%;
-  }
+.adetails .stat .review-count{
+  width: 33%;
+}
