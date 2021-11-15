@@ -1,5 +1,10 @@
 <?php include "includes/check_login.php" ?>
 
+<?php 
+    require "includes/db.php";
+    $username = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -10,6 +15,7 @@
     <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/profedit.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -64,18 +70,16 @@
             <div class="divider3"></div>
             <div class="rsd">
                 <div class="con1">
-                    <form action="signup.php" class="form" id="signup_form" method="POST">
-                        <!-- <h1 class="form__title">SIGN UP</h1> -->
-
+                    <form action="dashboard.php" class="form" id="form" method="POST">
                         <div class="separator">
                             <hr class="hr-left1" />
                                 <span class="hr-text">PERSONAL INFO </span>
                             <hr class="hr-right1" />
                         </div><br>
-
+                    <?php  $f_name = 'Pamodha' ?>
                     <div class="name">
                         <div class="form__div">
-                            <input type="text" class="name_input" id="fname" placeholder=" " name="f_name_cc">
+                            <input type="text" class="name_input" id="fname" placeholder=" " name="f_name_cc" value=<?php echo $f_name ?>>
                             <label for="" class="form__label">First Name</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -157,9 +161,10 @@
                         <small>Error message</small>
                     </div>
                     <br>
-
-                    <div class="buttondiv"><input type="button" class="form__button" value="SAVE PROFILE" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
-
+                        
+                    <div class="buttondiv"><input type="submit" class="form__button" value="SAVE PROFILE"  ></div>
+                </form>
+                <form action="progress.php" class="form" id="acc_form" method="POST">
                     <div class="separator">
                         <hr class="hr-left2" />
                         <span class="hr-text">ACCOUNT INFO</span>
@@ -178,8 +183,8 @@
                         <small>Error message</small>
                     </div>
 
-                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE EMAIL" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
-
+                    <div class="buttondiv"><input type="submit" class="form__button" value="UPDATE EMAIL"  ></div>
+                </form>
                     <!-- <div class="topic"><h2><i class='bx bx-pen'></i>Change Username</h2></div>
                     <div class="form__div" id="uname">
                         <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
@@ -191,13 +196,13 @@
                     </div> -->
 
                     <!-- <div class="buttondiv"><input type="button" class="form__button" value="UPDATE USERNAME" name="form_submit" id="form_submit" onclick="submitFunction()"></div> -->
-
+                <form action="membership.php" class="form" id="pw_form" method="POST">
                     <div class="topic"><h2><i class='bx bx-pen'></i>Change Password</h2></div>
                     <div class="form__div">
-                            <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();" name="password_cc">
+                            <input type="password" class="name_input" id="password" placeholder=" " name="current_pw">
                             <label for="" class="form__label">Current Password</label>
-                            <i class="fa fa-check"></i>
-                            <i class="fas fa-exclamation-triangle"></i>
+                            <i id="right" class="fa fa-check"></i>
+                            <i id="wrong" class="fas fa-exclamation-triangle"></i>
                             <small>Error message</small>
                     </div>
 
@@ -211,7 +216,7 @@
                         </div>
                         <div class="form__div">
                             <input type="password" class="name_input" id="password2" placeholder=" " onkeyup="return passwordChanged2();">
-                            <label for="" class="form__label">Confirm New Password</label>
+                            <label for="" class="form__label">Confirm Password</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
                             <small>Error message</small>
@@ -223,7 +228,8 @@
                         <span class="checkmark"></span>
                     </label> 
 
-                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE PASSWORD" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+                    <div class="buttondiv"><input type="submit" class="form__button" value="UPDATE PASSWORD" ></div>
+                </form>
                 </div>
             </div>
             <div class="vboderdivider"></div>
@@ -233,8 +239,29 @@
            
     </section>
     <?php include "includes/footer.php" ?>
-
-    <script type="text/javascript" src="./../signup/signup.js"></script>
+    <script>
+        function myunction() {
+            var x = document.getElementById("password1");
+            var y = document.getElementById("password2");
+            var z = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            if (y.type === "password") {
+                y.type = "text";
+            } else {
+                y.type = "password";
+            }
+            if (z.type === "password") {
+                z.type = "text";
+            } else {
+                z.type = "password";
+            }
+        }
+    </script>
+    <script type="text/javascript" src="./js/profile.js"></script>
 </body>
 
 </html>

@@ -49,40 +49,39 @@
   font-weight: 100;
 }
 
-  form {
-    width: 100%;
-    min-height: 100vh;
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 50px;
-    border: 1px solid rgb(244,244,244);
-    margin-top: 10px;
-    border-radius: 0.5rem;
-  }
+form {
+  width: 100%;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  border: 1px solid rgb(244,244,244);
+  margin-top: 10px;
+  border-radius: 0.5rem;
+}
 
 .separator .hr{
   color: rgb(24,24,24);
 }
 .name {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    align-self: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  align-self: center;
 }
   
 .name_input {
-    border: 1px solid rgb(24,24,24);
-    color: rgb(24,24,24);
-    outline: none;
-    background: none;
-    z-index: 1;
-    font-family: "Rubik";
-    width: 240px;
-    height: 45px;
-    padding-left: 10px;
-    margin-right: 20px;
-    font-size: 15px;
+  border: 1px solid rgb(24,24,24);
+  color: rgb(24,24,24);
+  outline: none;
+  background: none;
+  z-index: 1;
+  font-family: "Rubik";
+  width: 240px;
+  height: 45px;
+  padding-left: 10px;
+  margin-right: 20px;
+  font-size: 15px;
 }
   
   .name_input2 {
@@ -194,7 +193,14 @@
     top: 15px;
     right: 25px;
   }
-  
+
+  .form__div i #right ,.form__div i #wrong{
+    left: 250px;
+    visibility: hidden;
+    position: absolute;
+    top: 15px;
+  }
+
   .form__div.success i.fa-check {
     color: #2ecc71;
     visibility: visible;
