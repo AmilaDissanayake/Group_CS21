@@ -26,13 +26,77 @@
     <section class="home-section">
 
         <?php include "includes/header.php" ?>
+        <script>
+            function nn() {
+                $('.alert').addClass("show");
+                $('.alert').removeClass("hide");
+                $('.alert').addClass("showAlert");
+                    setTimeout(function bb() {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                    }, 4000);
+                };
+        </script>
+        <div class="alert hide">
+            <?php
+                if (isset($_SESSION['notification'])) {
+                    $notification = $_SESSION['notification'];
+                    echo '<script type="text/javascript">nn();</script>';
+                }
+            ?>
+            <span class="msg"><?php echo $notification ?></span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
+        </div>
+        <script>
+            $('.close-btn').click(function ss() {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        </script>
+        <?php 
+            $query1 = "SELECT * FROM member WHERE username = '".$username."'";
+            $result1 = mysqli_query($conn, $query1);
+            $row1 = mysqli_fetch_assoc($result1);
 
+            $member_id = $row1['member_id'];
+            $f_name = $row1['f_name'];
+            $l_name = $row1['l_name'];
+
+            if($row1['gender'] == 'male' ){
+                $gender = 'Male'; 
+            }else{
+                $gender = 'Female';
+            }
+
+            $p_no = $row1['phone_no'];
+            $address = $row1['address'];
+            $injuries = $row1['injuries'];
+
+            $dob = $row1['dob'];
+            $today = date("Y-m-d");
+            $diff = date_diff(date_create($dob), date_create($today));
+           
+                            
+            $join_date = strtotime($row1['joined_date']);
+            $formatted_date = date("F Y", $join_date);
+                
+            
+            $query3 = "SELECT email FROM users WHERE username = '".$username."'";
+            $result3 = mysqli_query($conn, $query3);
+            $row3 = mysqli_fetch_assoc($result3);
+
+            $email = $row3['email'];    
+
+        ?>
         <div class="welcomenote"><h1></h1></div>
         <div class="HdividerL"></div>
         <div class="dwnpart">
             <div class="vboderdivider"></div>
             <div class="lsd">
                 <div class="note2"><h1>Profile</h1></div>
+
                 <div class="con1">
                     <div class="profcov">
                         <div class="aper">
@@ -41,10 +105,10 @@
                                 <i class='bx bxs-edit-alt'></i>
                             </div>
                             <div class="joined-date">
-                                <p>Joined since september 2019</p>
+                                <p>Joined since <?php echo $formatted_date ?></p>
                             </div>
                             <div class="fulname">
-                                <p>Pamodha Mahagamage</p>
+                                <p><?php echo $f_name." ".$l_name ?></p>
                             </div>
                         </div>
                     </div>
@@ -53,15 +117,15 @@
                     <div class="profcov2">
                         <div class="aper">
                             <div class="covuname">
-                                <p>pamodha98</p>
+                                <p><?php echo $username ?></p>
                             </div>
                             <div class="pdetails">
-                            <i class='bx bx-dumbbell'></i>  NAME <p> <i class='bx bxs-right-arrow'></i>Pamodha Mahgamage</p>
-                            <i class='bx bx-dumbbell'></i> GENDER  <p><i class='bx bxs-right-arrow'></i>Male</p>
-                            <i class='bx bx-dumbbell'></i> AGE  <p> <i class='bx bxs-right-arrow'></i>23</p>
-                            <i class='bx bx-dumbbell'></i> LIVES IN <p> <i class='bx bxs-right-arrow'></i>Mirigama</p>
-                            <i class='bx bx-dumbbell'></i> CONTACT NO. <p> <i class='bx bxs-right-arrow'></i> 0750000001</p>
-                            <i class='bx bx-dumbbell'></i> E-MAIL <p><i class='bx bxs-right-arrow'></i>abc@gmail.conm</p>
+                            <i class='bx bx-dumbbell'></i>  NAME <p> <i class='bx bxs-right-arrow'></i><?php echo $f_name." ".$l_name ?></p>
+                            <i class='bx bx-dumbbell'></i> GENDER  <p><i class='bx bxs-right-arrow'></i><?php echo $gender ?></p>
+                            <i class='bx bx-dumbbell'></i> AGE  <p> <i class='bx bxs-right-arrow'></i><?php echo $diff->format('%y'); ?></p>
+                            <i class='bx bx-dumbbell'></i> LIVES IN <p> <i class='bx bxs-right-arrow'></i><?php echo $address ?></p>
+                            <i class='bx bx-dumbbell'></i> CONTACT NO. <p> <i class='bx bxs-right-arrow'></i><?php echo $p_no ?></p>
+                            <i class='bx bx-dumbbell'></i> E-MAIL <p><i class='bx bxs-right-arrow'></i><?php echo $email ?></p>
                             </div>
                         </div>
                     </div>
@@ -70,13 +134,12 @@
             <div class="divider3"></div>
             <div class="rsd">
                 <div class="con1">
-                    <form action="dashboard.php" class="form" id="form" method="POST">
+                    <form action="./includes/updatepersonal.php" class="form" id="form" method="POST">
                         <div class="separator">
                             <hr class="hr-left1" />
                                 <span class="hr-text">PERSONAL INFO </span>
                             <hr class="hr-right1" />
                         </div><br>
-                    <?php  $f_name = 'Pamodha' ?>
                     <div class="name">
                         <div class="form__div">
                             <input type="text" class="name_input" id="fname" placeholder=" " name="f_name_cc" value=<?php echo $f_name ?>>
@@ -89,7 +152,7 @@
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="name_input" id="lname" placeholder=" " name="l_name_cc">
+                            <input type="text" class="name_input" id="lname" placeholder=" " name="l_name_cc" value=<?php echo $l_name ?>>
                             <label for="" class="form__label">Last Name</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -102,10 +165,10 @@
                     <div class="name">
                         <div class="select__div">
                             <label>
-                                <select class="form_input" id="gender" required name="gender_cc">
+                                <select class="form_input" id="gender" required name="gender_cc" value="male">
                                     <option value="" disabled selected> Gender </option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
+                                    <option value="male" <?php if($gender=="Male") echo 'selected="selected"'; ?>>Male</option>
+                                    <option value="female"<?php if($gender=="Female") echo 'selected="selected"'; ?>>Female</option>
                                 </select>
                             </label>
                             <i class="fa fa-check"></i>
@@ -116,7 +179,7 @@
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="name_input2" id="mnumber" placeholder=" " name="phone_no_cc">
+                            <input type="text" class="name_input2" id="mnumber" placeholder=" " name="phone_no_cc" value=<?php echo $p_no ?>>
                             <label for="" class="form__label">Mobile Number</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -128,7 +191,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" " name="dob_cc" min="1920-10-01" max="2010-10-20">
+                        <input type="date" class="form__input" value=<?php echo $dob ?> id=" dateofbirth" placeholder=" " name="dob_cc" min="1920-10-01" max="2010-10-20">
                         <label for="" class="form__label">Date Of Birth</label>
                         <!-- <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i> -->
@@ -141,7 +204,7 @@
                     </div>
 
                     <div class="form__div">
-                        <input type="text" class="form__input" id="address" placeholder=" " name="address_cc">
+                        <input type="text" class="form__input" id="address" placeholder=" " name="address_cc" value=<?php echo $address ?>>
                         <label for="" class="form__label">Address</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -151,7 +214,7 @@
                         <small>Error message</small>
                     </div>
                     <div class="inj__div">
-                        <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries_cc"></textarea>
+                        <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries_cc" value=<?php echo $injuries ?>></textarea>
                         <label for="" class="form__label">If you have any injury mention here...</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -174,7 +237,7 @@
                     
                     <div class="topic"><h2><i class='bx bx-pen'></i>Change E-mail</h2></div>
                     <div class="form__div">
-                        <input type="text" class="form__input" id="email" placeholder=" " name="email_cc">
+                        <input type="text" class="form__input" id="email" placeholder=" " name="email_cc" value=<?php echo $email ?>>
                         <label for="" class="form__label">Email</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
@@ -185,17 +248,7 @@
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="UPDATE EMAIL"  ></div>
                 </form>
-                    <!-- <div class="topic"><h2><i class='bx bx-pen'></i>Change Username</h2></div>
-                    <div class="form__div" id="uname">
-                        <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
-                        <label for="" class="form__label">Username</label>
-                        <i class="fa fa-check"></i>
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <div id="uname_response" ></div>
-                        <small></small>
-                    </div> -->
-
-                    <!-- <div class="buttondiv"><input type="button" class="form__button" value="UPDATE USERNAME" name="form_submit" id="form_submit" onclick="submitFunction()"></div> -->
+ 
                 <form action="membership.php" class="form" id="pw_form" method="POST">
                     <div class="topic"><h2><i class='bx bx-pen'></i>Change Password</h2></div>
                     <div class="form__div">
@@ -265,3 +318,7 @@
 </body>
 
 </html>
+
+<?php
+unset($_SESSION['notification']);
+?>

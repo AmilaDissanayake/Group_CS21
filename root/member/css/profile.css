@@ -508,61 +508,41 @@ tbody tr:nth-child(even) {
 }
 
 .dwnpart{
-    display: flex;
+  display: flex;
 }
 
 .dwnpart .lsd{
-    height: 80%;
-    width: 33%;
-    padding: 20px;
-    padding-left: 20px;
-    background-color: white;
+  height: 80%;
+  width: 33%;
+  padding: 20px;
+  padding-left: 20px;
+  background-color: white;
 }
 
 .dwnpart .rsd{
-    height: 100%;
-    width: calc(67% - 20px);
-    padding: 20px;
-    padding-right: 30px;
-    background-color: white;
+  height: 100%;
+  width: calc(67% - 20px);
+  padding: 20px;
+  padding-right: 30px;
+  background-color: white;
 }
 
-.lsd .con1 .set1{
-    margin-top: 50px;
-    padding: 20px;
-    width: 100%;
-    color: grey;
-    height: 70px;
-    border-radius: 5px;
-    border-bottom: 5px solid rgb(244,244,244);
-    background: white;
-    text-align: center;
-  }
-  
-  .lsd .con1 p{
-    font-size: larger;
-    /* font-weight: 600; */
-    font-style: italic;
-    font-size: 22px;
-  }
-  
-  .rsd .con1 .set1{
-    margin-top: 50px;
-    padding: 20px;
-    width: 100%;
-    color: grey;
-    height: 70px;
-    border-radius: 5px;
-    border-bottom: 5px solid rgb(244,244,244);
-    background: white;
-    text-align: center;
-  }
+.lsd .con1{
+  width: 100%;
+  padding: 0;
+}
+
+.lsd .con1 p{
+  font-size: larger;
+  font-style: italic;
+  font-size: 21px;
+}
   
 .rsd .con1 p{
-    font-size: larger;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 22px;
+  font-size: larger;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 22px;
 }
 
 .profcov .aper{

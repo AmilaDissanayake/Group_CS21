@@ -185,21 +185,18 @@ form {
     border-color: #e74c3c;
   }
   
-  .inj__div i,
-  .select__div i,
-  .form__div i {
-    visibility: hidden;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-  }
+#wrong ,#right{
+  left: 215px;
+}
 
-  .form__div i #right ,.form__div i #wrong{
-    left: 250px;
-    visibility: hidden;
-    position: absolute;
-    top: 15px;
-  }
+.inj__div i,
+.select__div i,
+.form__div i {
+  visibility: hidden;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
 
   .form__div.success i.fa-check {
     color: #2ecc71;
