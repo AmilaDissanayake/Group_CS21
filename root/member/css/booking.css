@@ -6,6 +6,15 @@
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
 }
+/*-----------------Calender override------------*/
+.fc th {
+  background-color: #86FF71;
+}
+.fc .fc-toolbar-title {
+  font-size: 1.25em;
+  margin: 0;
+  font-family: 'Azonix';
+}
 
 /*-----------------header----------------------*/
 .welcomenote{

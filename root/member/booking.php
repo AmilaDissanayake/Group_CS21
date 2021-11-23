@@ -24,6 +24,11 @@
 
         <div class="welcomenote"><h1></h1></div>
 
+        <?php 
+            date_default_timezone_set('Asia/Colombo');
+            $date = date('Y-m-d');
+            $maxdate = date('Y-m-d',strtotime("+2 week", strtotime($date)));
+        ?>
         <div class="HdividerL"></div>
         <div class="uppart">
             <div class="vboderdivider"></div>
@@ -35,9 +40,12 @@
                             <h1>Availability Checker</h1>
                             <div class="avail">
                                 <div class="calendar-input">
-                                    <input type='Date' required>
-                                    <button class="check_btn" type="submit" name="date-submit">CHECK</button>
+                                    <form action="dashboard.php" id="dcheck_form" >
+                                    <input type="date" class="date__input" value=<?php echo $date?> id="bk_date" placeholder=" " name="booking_cc" min=<?php echo $date?> max=<?php echo $maxdate?> required>
+                                    <button type="submit" class="check_btn"  name="date-submit">CHECK</button>
+                                    </form>
                                 </div>
+
                                 <div class="statbx"><i class='bx bxs-message-square-check'></i></div>
                                 <div class="txtvi">
                                     <p>Avilable for booking</p>
@@ -66,27 +74,29 @@
                             
                             
                             <div class="selectslot">
-                                <h1>Booking for a time slot</h1> 
-                                <div class="select__div">
-                                    <p><i class='bx bxs-time'></i>Select Time Slot</p>
-                                    <label>
-                                        <select id="membership" class="form_input" required name="membership_cc">
-                                            <option value="" disabled selected> Prefer time slot </option>
-                                            <option value=1> 6.00 a.m. -  8.00 a.m. </option>
-                                            <option value=2> 8.00 a.m. - 10.00 a.m. </option>
-                                            <option value=3>10.00 a.m. - 12.00 a.m.</option>
-                                            <option value=4>12.00 a.m. -  2.00 p.m.</option>
-                                            <option value=1>12.00 a.m. -  2.00 p.m.</option>
-                                            <option value=2> 2.00 p.m. -  4.00 p.m.</option>
-                                            <option value=3> 4.00 p.m. -  6.00 p.m.</option>
-                                            <option value=4> 6.00 p.m. -  8.00 p.m.</option>
-                                            <option value=4> 8.00 p.m. - 10.00 p.m.</option>
-                                        </select>
-                                    </label>  
-                                </div>
-                                <div class="fixT">
-                                    <button class="check_btn" id="tbook" type="submit" name="time-submit">MAKE BOOKING</button>
-                                </div>
+                                <form action="progress.php" id="form" >
+                                    <h1>Booking for a time slot</h1> 
+                                    <div class="select__div">
+                                    
+                                        <p><i class='bx bxs-time'></i>Select Time Slot</p>
+                                        <label>
+                                            <select id="time_slot" class="form_input" name="time_sl" required >
+                                                <option value="" disabled selected> Prefer time slot </option>
+                                                <option value=1> 6.00 a.m. -  8.00 a.m. </option>
+                                                <option value=2> 8.00 a.m. - 10.00 a.m. </option>
+                                                <option value=3>10.00 a.m. - 12.00 a.m.</option>
+                                                <option value=4>12.00 a.m. -  2.00 p.m.</option>
+                                                <option value=5> 2.00 p.m. -  4.00 p.m.</option>
+                                                <option value=6> 4.00 p.m. -  6.00 p.m.</option>
+                                                <option value=7> 6.00 p.m. -  8.00 p.m.</option>
+                                                <option value=8> 8.00 p.m. - 10.00 p.m.</option>
+                                            </select>
+                                        </label>  
+                                    </div>
+                                    <div class="fixT">
+                                        <button type="submit" class="check_btn" id="tbook"  name="time-submit">MAKE BOOKING</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

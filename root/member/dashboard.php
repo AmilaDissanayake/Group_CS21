@@ -121,7 +121,7 @@
                                     <li>Latteral</li>
                                 </ul>
                             </div>
-                            <div class="bt"><a href="./schedule.php" class="readmore_btn" id="readMore">View More</a></div>
+                            <div class="bt"><a href="./schedule.php" class="readmore_btn" id="readM">View More</a></div>
                         </div>
                         </div>
                         <div class="dividerin"></div>
