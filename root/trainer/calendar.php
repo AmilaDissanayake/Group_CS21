@@ -60,8 +60,9 @@ require "includes/db.php"; ?>
 
         <div class="home-content">
         <form action="includes/availability.php" method="POST">
-            <div class="calendar-input">              
-                <input type='Date' name="date"required>
+            <div class="calendar-input">  
+                <?php $Date = date("Y-m-d"); ?>
+                <input type='Date' name="date"required min="<?php echo $Date; ?>" max="<?php echo date('Y-m-d', strtotime($Date. ' + 7 days')); ?>">
                 <select name="time" id="" class="justselect">
                     <option selected="selected">All day</option>
                     <option>Morning</option>
@@ -71,6 +72,11 @@ require "includes/db.php"; ?>
             </div>
         </form>
             <div class="bottom-div">
+                <?php
+                $trainer_id = $_SESSION['trainer_id'];
+                $sql1 = "DELETE from availability WHERE date < '$Date' AND trainer_id = $trainer_id";
+                mysqli_query($conn,$sql1);
+                ?>
                 <div id='calendar' class="calendar"></div>
                 <div class="calendar-table">
                     <div class="availability-header"><h1>AVAILABILITY</h1></div>
@@ -84,7 +90,6 @@ require "includes/db.php"; ?>
                             <th></th>
                         </tr>
                         <?php
-                        $trainer_id = $_SESSION['trainer_id'];
                         $sql_query = "SELECT * FROM availability Where trainer_id = '".$trainer_id."'";
                         $result = mysqli_query($conn,$sql_query);
                         while($availability_row = mysqli_fetch_assoc($result)){
