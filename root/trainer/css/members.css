@@ -352,3 +352,14 @@ nav .profile-details i{
   ::-webkit-scrollbar-thumb:hover {
     background: #86ff71; 
   }
+
+  .first-column{
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar img{
+    width: 40px;
+    border-radius: 40px;
+    margin-right: 5px;
+  }

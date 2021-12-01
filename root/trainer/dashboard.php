@@ -35,6 +35,16 @@
     $diff = date_diff(date_create($date_joined), date_create($today));
 
     $qualifies = explode(',', $qualifications);
+
+    $query3 = "SELECT * FROM member WHERE assign_trainer = $trainer_id";
+    $assign_query = mysqli_query($conn, $query3);
+    $assign_members = mysqli_num_rows($assign_query);
+
+    $today = date("Y-m-d");
+
+    $sql1 = "SELECT * FROM book WHERE trainer_id = '".$trainer_id."' AND date = '".$today."'";
+    $result1 = mysqli_query($conn,$sql1);
+    $count = mysqli_num_rows($result1);
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +69,7 @@
     <div class="home-content">
         <div class="trainer-stats">
                 <div class="one">
-                    <p class="value">30</p>
+                    <p class="value"><?php echo $assign_members ?></p>
                     <a class="name" href="members.php">Assigned members</a>
                 </div>
 
@@ -69,12 +79,12 @@
                 </div>
 
                 <div class="three">
-                    <p class="value">8</p>
+                    <p class="value"><?php echo $count ?></p>
                     <a href="bookings.php" class="name">Bookings(Today)</a>
                 </div>
 
                 <div class="four">
-                    <p class="value">10 Oct 2021</p>
+                    <p class="value"><?php echo $today ?></p>
                     <a href="calendar.php" class="name">Calendar</a>
                 </div>
         </div>
