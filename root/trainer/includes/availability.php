@@ -1,6 +1,7 @@
 <?php
 include "db.php";
 session_start();
+date_default_timezone_set("Asia/Colombo");
 
 if ($_SESSION['notification']) {
     unset($_SESSION['notification']);
@@ -34,7 +35,7 @@ if(isset($_POST['date-submit'])){
     }
     else{
         header("location: ../calendar.php");  
-        $_SESSION['notification'] = "Cannot set availability";
+        $_SESSION['notification'] = "Please select a valid time-slot";
     }
 }
 
