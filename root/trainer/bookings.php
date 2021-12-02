@@ -1,5 +1,6 @@
 <?php include "includes/check_login.php";
         require "includes/db.php";
+        date_default_timezone_set("Asia/Colombo");
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +21,48 @@
     <section class="home-section">
 
         <?php include "includes/header.php" ?>
+
+        <script>
+            function nn() {
+                $('.alert').addClass("show");
+                $('.alert').removeClass("hide");
+                $('.alert').addClass("showAlert");
+                setTimeout(function bb() {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                }, 4000);
+            };
+        </script>
+
+        <!-- <button class="err">Show Alert</button> -->
+        <div class="alert hide">
+
+            <?php
+            if (isset($_SESSION['notification'])) {
+                $notification = $_SESSION['notification'];
+                echo '<script type="text/javascript">nn();</script>';
+            }
+            ?>
+
+            <!-- <span class="fas fa-exclamation-circle"></span> -->
+            <span class="msg"><?php echo $notification ?></span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
+        </div>
+        <script>
+            $('.close-btn').click(function ss() {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        </script>
+
+            <?php
+                $Date = date("Y-m-d");
+                $trainer_id = $_SESSION['trainer_id'];
+                $sql1 = "DELETE from book WHERE date < '$Date' AND trainer_id = $trainer_id";
+                mysqli_query($conn,$sql1);
+            ?>
 
         <div class="home-content">
             <div class="header-div">
@@ -75,7 +118,7 @@
                         <td><?php echo $time; ?></td>
                         <td><?php echo $phone_no; ?></td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='members.php'">Cancel booking</button> 
+                            <button class="about_btn" onclick="location.href='includes/cancel_booking.php?book_id=<?php echo $book_id; ?>'">Cancel booking</button> 
                             </div>
                         </td>
                     </tr>
@@ -125,3 +168,7 @@
 </body>
 
 </html>
+
+<?php
+unset($_SESSION['notification']);
+?>
