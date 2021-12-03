@@ -118,7 +118,7 @@
                         <td><?php echo $time; ?></td>
                         <td><?php echo $phone_no; ?></td>
                         <td><div class="row-action">
-                            <button class="about_btn" onclick="location.href='includes/cancel_booking.php?book_id=<?php echo $book_id; ?>'">Cancel booking</button> 
+                            <button class="about_btn" onclick="myfunction()">Cancel booking</button> 
                             </div>
                         </td>
                     </tr>
@@ -127,6 +127,14 @@
             </div>
 
         </div>
+        <script>
+            function myfunction(){
+                let action = confirm("Do you really want to cancel this booking?")
+                if(action){
+                    location.href='includes/cancel_booking.php?book_id=<?php echo $book_id; ?>'
+                }
+            }
+        </script>
 
         <script type="text/javascript">
             $(document).ready(function() {

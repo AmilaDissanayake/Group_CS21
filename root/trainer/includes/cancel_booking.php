@@ -2,7 +2,12 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+?>
+<script>
+    window.confirm("Do you really want to cancel the booking?");
+</script>
 
+<?php
 session_start();
 require "db.php";
 date_default_timezone_set("Asia/Colombo");

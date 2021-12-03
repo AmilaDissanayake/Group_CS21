@@ -27,7 +27,7 @@ if(isset($_POST['date-submit'])){
     $_SESSION['notification'] = "Successfully set availability";
     }
 
-    elseif (((int) date('H', $currentTime)) <= 15 && $slot == "Evening"){
+    elseif (((int) date('H', $currentTime)) <= 14 && $slot == "Evening"){
         $sql_query="INSERT INTO availability(trainer_id, date, time_slot) VALUES('$trainer_id','$date','$slot')";
         mysqli_query($conn,$sql_query);
         header("location: ../calendar.php");  
