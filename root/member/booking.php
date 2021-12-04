@@ -27,7 +27,7 @@
         <?php 
             date_default_timezone_set('Asia/Colombo');
             $date = date('Y-m-d');
-            $maxdate = date('Y-m-d',strtotime("+2 week", strtotime($date)));
+            $maxdate = date('Y-m-d',strtotime("+1 week", strtotime($date)));
         ?>
         <div class="HdividerL"></div>
         <div class="uppart">

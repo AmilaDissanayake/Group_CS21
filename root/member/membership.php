@@ -57,19 +57,50 @@
                 });
             </script>
         </div>
+        <?php
+            $mem_date = new DateTime("2021-03-24");
+            $membexp_date = new DateTime("2022-03-24");
+            $mem_interval = $mem_date->diff($membexp_date);
+
+            if($mem_date->format("Y-m-d")  == "2021-03-24" && $membexp_date->format("Y-m-d") == "2022-03-24"){
+                $mem_interval->y = 00;
+                $mem_interval->m = 12;
+                $mem_interval->d = 00;
+            }
+            $mem_type = 12; 
+
+            $t_assign_date = new DateTime("2021-03-24");
+            $t_exp_date = new DateTime("2021-04-24");
+            $tr_interval = $t_assign_date->diff($t_exp_date);
+            
+            // echo "difference " . $interval->y . " years, " . $interval->m." months, ".$interval->d." days "; 
+            
+            // shows the total amount of days (not divided into years, months and days like above)
+            // echo "difference " . $interval->days . " days ";
+        ?>
         <div class="board">
             <div class="vboderdivider"></div>
             <div class="dubar">
                 <div class="duhead"><h2>Membership</h2></div>   
                 <div class="mainbar">
                     <div class="duline1">
-                        <div class="typ1"><i class='bx bxs-hourglass-top'></i><h1>12 Month Membership</h1></div>
-                        <div class="remain"><h2>MONTHS</h2><div class="time"><h1>11</h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1>21</h1></div></div>
+                        <div class="typ1"><i class='bx bxs-hourglass-top'></i><h1><?php echo $mem_type ?> Month Membership</h1></div>
+                        <div class="remain"><h2>MONTHS</h2><div class="time"><h1><?php echo $mem_interval->m ?></h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1><?php echo $mem_interval->d?></h1></div></div>
                     </div>   
                     <div class="duline2">
-                        <!-- <i class='bx bxs-user-x' ></i> -->
-                        <div class="typ1"><i class='bx bxs-user-check'></i><h1>Trainer Assignment</h1></div>
-                        <div class="remain"><h2>DAYS</h2><div class="time"><h1>21</h1></div></div>
+                        <?php 
+                            $flag = 1;
+
+                            if($flag == 1){
+                                $icon = "'bx bxs-user-check'";
+                                $t_assign_status = "Trainer Assignment";
+                            }else{
+                                $icon = "'bx bxs-user-x'";
+                                $t_assign_status = "No Trainer Assignment" ;
+                            }
+                        ?>
+                        <div class="typ1"><i class=<?php echo $icon ?>></i><h1><?php echo $t_assign_status ?></h1></div>
+                        <div class="remain"><h2>DAYS</h2><div class="time"><h1><?php echo $tr_interval->days ?></h1></div></div>
                     </div>    
                 </div>
                 <div class="duhead"></div>
@@ -289,16 +320,10 @@
             <div class="vboderdivider"></div>
         </div>
         <div class="udetails">
-            <input type="text"><div class="paralist" id="fname" ><?php echo "$f_name"; ?></p></div>
-            <input type="text"><div class="paralist" id="lname" ><?php echo "$l_name"; ?></div>
-            <input type="text"><div class="paralist" id="mnumber" ><?php echo "$p_no"; ?></div>
-            <input type="text"><div class="paralist" id="address" ><?php echo "$address"; ?></div>
-            <div class="paralist" id="email" ><?php echo "$email"; ?></div>
-            <div class="paralist" id="membership" ></div>
+            <div class="paralist" id="email" ></div>
             <form id="amount_form" action="add-payment.php" method="POST">
                 <input type="text" id="passamount" name = "amount" value="">
             </form>
-            <div class="paralist" id="mamount" ></div>
         </div>
         <div class="HdividerL"></div>   
     </section>
@@ -316,33 +341,25 @@
                 cost = 2500;   
                 pack = "1 Month Membership";      
                 $("#mval").text(cost);
-                $("#mamount").text(cost);
                 $("#passamount").val(cost);
-                $("#membership").text(pack);
         });
         $("#mon3").click(function(){ 
                 cost = 7000; 
                 pack = "3 Month Membership";          
                 $("#mval").text(cost);
-                $("#mamount").text(cost);
                 $("#passamount").val(cost);
-                $("#membership").text(pack);
         });
         $("#mon6").click(function(){
                 cost = 10000;
                 pack = "6 Month Membership";           
                 $("#mval").text(cost);
-                $("#mamount").text(cost);
                 $("#passamount").val(cost);
-                $("#membership").text(pack);
         });
         $("#mon12").click(function(){
                 cost = 20000;     
                 pack = "12 Month Membership";      
                 $("#mval").text(cost);
-                $("#mamount").text(cost);
                 $("#passamount").val(cost);
-                $("#membership").text(pack);
         });
 
        
@@ -376,17 +393,27 @@
         };
 
         var payment;
-        var amount1 = document.getElementById('mamount').innerText;
 
         function calctotal() {
 
-            var fname1 = document.getElementById('fname').innerText;
-            var lname1 = document.getElementById('lname').innerText;
-            var mnumber1 = document.getElementById('mnumber').innerText;
-            var address1 = document.getElementById('address').innerText;
-            var email1 = document.getElementById('email').innerText;
-            var membership1 = document.getElementById('membership').innerText;
-            var amount1 = document.getElementById('mamount').innerText;
+            var fname1 = "<?php echo "$f_name"; ?>";
+            var lname1 = "<?php echo "$l_name"; ?>";
+            var mnumber1 = "<?php echo "$p_no"; ?>";
+            var address1 = "<?php echo "$address"; ?>";
+            var email1 = "<?php echo "$email"; ?>";
+           
+            var amount1 = document.getElementById('mval').innerText;
+            var membership1 ;
+
+            if (amount1 == '2500'){
+                membership1 = "1 Month Membership";
+            }else if (amount1 == '7000'){
+                membership1 = "3 Month Membership";
+            }else if (amount1 == '10000'){
+                membership1 = "6 Month Membership";
+            }else if (amount1 == '20000'){
+                membership1 = "12 Month Membership";
+            }
 
             payment = {
                 "sandbox": true,
