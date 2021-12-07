@@ -28,8 +28,40 @@
             date_default_timezone_set('Asia/Colombo');
             $date = date('Y-m-d');
             $maxdate = date('Y-m-d',strtotime("+1 week", strtotime($date)));
+            $yesterday = date('Y-m-d',strtotime("-1 day", strtotime($date)));
+            $overmaxdate = date('Y-m-d',strtotime("+8 day", strtotime($date)))
         ?>
-        <div class="HdividerL"></div>
+        <div class="HdividerL">
+            <script>
+                function nn() {
+                    $('.alert').addClass("show");
+                    $('.alert').removeClass("hide");
+                    $('.alert').addClass("showAlert");
+                        setTimeout(function bb() {
+                        $('.alert').removeClass("show");
+                        $('.alert').addClass("hide");
+                        }, 4000);
+                    };
+            </script>
+            <div class="alert hide">
+                <?php
+                    if (isset($_SESSION['notification'])) {
+                        $notification = $_SESSION['notification'];
+                        echo '<script type="text/javascript">nn();</script>';
+                    }
+                ?>
+                <span class="msg"><?php echo $notification ?></span>
+                <div class="close-btn">
+                    <span class="fas fa-times"></span>
+                </div>
+            </div>
+            <script>
+                $('.close-btn').click(function ss() {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                });
+            </script>
+        </div>
         <div class="uppart">
             <div class="vboderdivider"></div>
             <div class="middle">
@@ -40,15 +72,82 @@
                             <h1>Availability Checker</h1>
                             <div class="avail">
                                 <div class="calendar-input">
-                                    <form action="dashboard.php" id="dcheck_form" >
-                                    <input type="date" class="date__input" value=<?php echo $date?> id="bk_date" placeholder=" " name="booking_cc" min=<?php echo $date?> max=<?php echo $maxdate?> required>
-                                    <button type="submit" class="check_btn"  name="date-submit">CHECK</button>
-                                    </form>
+                                    <input type="date" class="date__input" value=<?php echo $date?> id="bk_date" placeholder=" " name="date" min=<?php echo $date?> max=<?php echo $maxdate?> required>
+                                    <button type="submit" class="check_btn"  name="date-submit" id="check_date">CHECK</button>
                                 </div>
+                                <script>
 
-                                <div class="statbx"><i class='bx bxs-message-square-check'></i></div>
+                                    function slot_update(respo){
+                                        if(respo.slot1 == true){var i = 1; $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot1== false){var i = 1; $('#time_slot option[value='+i+']').prop('disabled',true);}
+                                        if(respo.slot2== true){var i = 2;  $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot2== false){var i = 2 ; $('#time_slot option[value='+i+']').prop('disabled',true);}
+                                        if(respo.slot3== true){var i = 3;  $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot3== false){var i = 3 ; $('#time_slot option[value='+i+']').prop('disabled',true);}
+                                        if(respo.slot4== true){var i = 4;  $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot4== false){var i = 4 ; $('#time_slot option[value='+i+']').prop('disabled',true);}
+                                        if(respo.slot5== true){var i = 5; $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot5== false){var i = 5; $('#time_slot option[value='+i+']').prop('disabled',true);}
+                                        if(respo.slot6== true){var i = 6;  $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot6== false){var i = 6 ; $('#time_slot option[value='+i+']').prop('disabled',true);}
+                                        if(respo.slot7== true){var i = 7;  $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot7== false){var i = 7 ; $('#time_slot option[value='+i+']').prop('disabled',true);}
+                                        if(respo.slot8== true){var i = 8;  $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot8== false){var i = 8 ; $('#time_slot option[value='+i+']').prop('disabled',true);}
+                                    }
+
+                                    $(document).ready(function() {
+                                        $("#check_date").click(function(e) {
+                                            var date = $("#bk_date").val();
+                                             
+                                            if (date != '') {
+                                                alert(date);
+                                                $.ajax({
+                                                    url: './includes/check-availability.php',
+                                                    type: 'post',
+                                                    data: {
+                                                        date:date
+                                                    },
+                                                    dataType:'json',
+                                                    success: function(respo) {
+                                                        console.log("success");
+                                                        $('#day').text("in "+date);
+                                                        $('#input_date').val(date)
+                                                        if( respo.set == 'None'){
+                                                                $('#show').removeClass('bx bxs-message-square-check'); $('#show').addClass('bx bxs-message-square-error');
+                                                                $('.statbx').css('color','red');
+                                                                $('.txtvi').css('display','inline-block');
+                                                                $('#unavailable').css('display','inline-block');
+                                                                $('#display_slots').children().removeClass("active_grid-item").addClass("deactive_grid-item");
+                                                                slot_update(respo);
+                                                        }else if( respo.set == 'Done'){
+                                                                $('#show').removeClass('bx bxs-message-square-error'); $('#show').addClass('bx bxs-message-square-check');
+                                                                $('.statbx').css('color','#86ff71');
+                                                                $('.txtvi').css('display','block');
+                                                                $('#unavailable').css('display','none');
+                                                            if (respo.Main_Slot== "All day") {
+                                                            $('#display_slots').children().removeClass("deactive_grid-item").addClass("active_grid-item");
+                                                            slot_update(respo);
+                                                            } else if ( respo.Main_Slot == "Morning"){
+                                                                $('#display_slots').children().removeClass("active_grid-item").addClass("deactive_grid-item");
+                                                                $('#slot1').removeClass("deactive_grid-item"); $('#slot1').addClass("active_grid-item");
+                                                                $('#slot2').removeClass("deactive_grid-item"); $('#slot2').addClass("active_grid-item");
+                                                                $('#slot3').removeClass("deactive_grid-item"); $('#slot3').addClass("active_grid-item");
+                                                                $('#slot4').removeClass("deactive_grid-item"); $('#slot4').addClass("active_grid-item");
+                                                                slot_update(respo);
+                                                            }else if ( respo.Main_Slot == "Evening"){
+                                                                $('#display_slots').children().removeClass("active_grid-item").addClass("deactive_grid-item");   
+                                                                $('#slot5').removeClass("deactive_grid-item"); $('#slot5').addClass("active_grid-item");
+                                                                $('#slot6').removeClass("deactive_grid-item"); $('#slot6').addClass("active_grid-item");
+                                                                $('#slot7').removeClass("deactive_grid-item"); $('#slot7').addClass("active_grid-item");
+                                                                $('#slot8').removeClass("deactive_grid-item"); $('#slot8').addClass("active_grid-item");
+                                                                slot_update(respo);
+                                                            }
+                                                        }
+                                                    },
+                                                    error: function(){
+                                                        console.log("error");
+                                                    }
+                                                });
+                                            }
+                                        });
+                                    });
+                                </script>
+                                <div class="statbx"><i id="show"></i></div>
                                 <div class="txtvi">
-                                    <p>Avilable for booking</p>
+                                    <p><span id="unavailable"><b>NOT </b></span>Avilable for booking</p>
                                 </div>
                             </div>
                         </div>
@@ -57,39 +156,41 @@
                             <div id="calendar" class="calendar"></div>
                         </div>
                     </div>
+
+
                     <div class="midvdiv"></div>
                     <div class="right">
                         <h1>Time slots</h1>
                         <div class="tslotlist">
-                            <div class="grid-container">
-                                <div class="grid-item"> 06.00 a.m. - 08.00 a.m.</div>
-                                <div class="grid-item"> 08.00 a.m. - 10.00 a.m.</div>
-                                <div class="grid-item"> 10.00 a.m. - 12.00 a.m.</div>
-                                <div class="grid-item"> 12.00 a.m. - 02.00 p.m.</div>
-                                <div class="grid-item"> 02.00 p.m. - 04.00 p.m.</div>
-                                <div class="grid-item"> 04.00 p.m. - 06.00 p.m.</div>
-                                <div class="grid-item"> 06.00 p.m. - 08.00 p.m.</div>
-                                <div class="grid-item"> 08.00 p.m. - 10.00 p.m.</div>
+                            <div class="grid-container" id="display_slots">
+                                <div id="slot1" class="deactive_grid-item"> 06.00 a.m. - 08.00 a.m.</div>
+                                <div id="slot2" class="deactive_grid-item"> 08.00 a.m. - 10.00 a.m.</div>
+                                <div id="slot3" class="deactive_grid-item"> 10.00 a.m. - 12.00 a.m.</div>
+                                <div id="slot4" class="deactive_grid-item"> 12.00 a.m. - 02.00 p.m.</div>
+                                <div id="slot5" class="deactive_grid-item"> 02.00 p.m. - 04.00 p.m.</div>
+                                <div id="slot6" class="deactive_grid-item"> 04.00 p.m. - 06.00 p.m.</div>
+                                <div id="slot7" class="deactive_grid-item"> 06.00 p.m. - 08.00 p.m.</div>
+                                <div id="slot8" class="deactive_grid-item"> 08.00 p.m. - 10.00 p.m.</div>
                             </div>
                             
                             
                             <div class="selectslot">
-                                <form action="progress.php" id="form" >
+                                <form action="makebooking.php" id="form" method="GET" >
                                     <h1>Booking for a time slot</h1> 
                                     <div class="select__div">
-                                    
-                                        <p><i class='bx bxs-time'></i>Select Time Slot</p>
+                                        <p><i class='bx bxs-time'></i>Select a Time Slot <span id="day"></span></p>
+                                        <input type="text" id="input_date" name="date_cc" required>
                                         <label>
-                                            <select id="time_slot" class="form_input" name="time_sl" required >
+                                            <select id="time_slot" class="form_input" name="time_cc" required >
                                                 <option value="" disabled selected> Prefer time slot </option>
-                                                <option value=1> 6.00 a.m. -  8.00 a.m. </option>
-                                                <option value=2> 8.00 a.m. - 10.00 a.m. </option>
-                                                <option value=3>10.00 a.m. - 12.00 a.m.</option>
-                                                <option value=4>12.00 a.m. -  2.00 p.m.</option>
-                                                <option value=5> 2.00 p.m. -  4.00 p.m.</option>
-                                                <option value=6> 4.00 p.m. -  6.00 p.m.</option>
-                                                <option value=7> 6.00 p.m. -  8.00 p.m.</option>
-                                                <option value=8> 8.00 p.m. - 10.00 p.m.</option>
+                                                <option value=1 disabled id="op1"> 6.00 a.m. -  8.00 a.m. </option>
+                                                <option value=2 disabled id="op2"> 8.00 a.m. - 10.00 a.m. </option>
+                                                <option value=3 disabled id="op3">10.00 a.m. - 12.00 a.m.</option>
+                                                <option value=4 disabled id="op4">12.00 a.m. -  2.00 p.m.</option>
+                                                <option value=5 disabled id="op5"> 2.00 p.m. -  4.00 p.m.</option>
+                                                <option value=6 disabled id="op6"> 4.00 p.m. -  6.00 p.m.</option>
+                                                <option value=7 disabled id="op7"> 6.00 p.m. -  8.00 p.m.</option>
+                                                <option value=8 disabled id="op8"> 8.00 p.m. - 10.00 p.m.</option>
                                             </select>
                                         </label>  
                                     </div>
@@ -117,3 +218,7 @@
    <script type="text/javascript" src="js/calendar.js"> </script>
 
 </html>
+
+<?php
+unset($_SESSION['notification']);
+?>

@@ -61,7 +61,15 @@
   padding: 2px;
   margin-left: 15px;
 }
-.grid-item {
+.deactive_grid-item {
+  background-color: gray;
+  border: 2px solid rgb(24,24,24);
+  border-radius: 5px;
+  padding: 1px;
+  font-size: 18px;
+  text-align: center;
+}
+.active_grid-item {
   background-color: #86ff71;
   border: 2px solid rgb(244,244,244);
   border-radius: 5px;
@@ -199,7 +207,6 @@
   text-align: center;
 
 }
-
 .bkstatus .avail{
   display: flex;
   height: 40px;
@@ -208,12 +215,19 @@
   /* border: 3px solid rgb(244,244,244); */
   padding: 10px;
 }
-
 .avail .statbx{
   padding-right: 5px;
-  color: #86ff71;
   height: 100%;
   font-size: 20px;
+}
+.txtvi{
+  display: none;
+}
+.unavailable{
+  display: none;
+}
+#input_date{
+ display: none;
 }
 
 /*---------------calender section ---------------*/
