@@ -175,7 +175,7 @@
                             
                             
                             <div class="selectslot">
-                                <form action="makebooking.php" id="form" method="GET" >
+                                <form action="makebooking.php" id="form" method="POST" >
                                     <h1>Booking for a time slot</h1> 
                                     <div class="select__div">
                                         <p><i class='bx bxs-time'></i>Select a Time Slot <span id="day"></span></p>
