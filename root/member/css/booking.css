@@ -476,6 +476,54 @@
   transition: all 0.4 ease;
 }
 
+/* ---------- Fixed booking list ------------ */
+table {
+  border-collapse: collapse;
+  width: 95%;
+  height: 90%;
+  overflow-y: auto;
+} 
+td {
+  border: 0px solid black;
+  padding: 10px 10px 10px 20px;
+  border: 2px solid rgb(244,244,244);
+}
+th{
+  padding: 15px 15px 15px 20px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+.about_btn{
+  position: relative;
+  z-index: 10;
+  width: 130px;
+  height: 35px;
+  border: 0px solid rgba(255, 255, 255, .5);
+  border-radius: 30px;
+  background-color: #86ff71;
+  font-family: 'Rubik';
+  color: black;
+  font-size: 15px;
+  letter-spacing: 1px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.about_btn:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: #424244;
+  box-shadow: 0px 0px 10px 1px #86ff71;
+  border: 0px solid #86ff71;
+  transition: .4s;
+}
 /* Responsive Media Query */
 @media (max-width: 1240px) {
   .sidebar{

@@ -21,6 +21,7 @@
     <section class="home-section">
 
         <?php include "includes/header.php" ?>
+        <?php require "includes/db.php" ?>
 
         <div class="welcomenote"><h1></h1></div>
 
@@ -198,6 +199,33 @@
                                         <button type="submit" class="check_btn" id="tbook"  name="time-submit">MAKE BOOKING</button>
                                     </div>
                                 </form>
+                            </div>
+
+                            <?php $member_id = 36;?>
+                            <div >
+                                <div><h1>Fixed Booking List</h1></div>
+                                <table>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Time slot</th>
+                                        <th></th>
+                                    </tr>
+                                    <tbody>
+                                    <?php
+                                        $sql_query = "SELECT * FROM book Where member_id = '".$member_id."' AND date >= '".$date."'";
+                                        $result = mysqli_query($conn,$sql_query);
+                                        while($availability_row = mysqli_fetch_assoc($result)){
+                                            $date = $availability_row['date'];
+                                            $time_slot = $availability_row['time'];
+                                    ?>
+                                        <tr>
+                                            <td><?php echo "$date"; ?></td>
+                                            <td><?php echo "$time_slot"; ?></td>
+                                            <td><div class="row-action"><button class="about_btn" onclick="location.href='includes/cancel_booking.php?book_id=<?php echo $availability_row['book_id'];?>'">Cancel</button></div></td>
+                                        </tr>
+                                    <?php }?>
+                                    <tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
