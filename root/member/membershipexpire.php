@@ -1,10 +1,10 @@
 <?php 
-// include "includes/check_login.php"
+    include "includes/check_expireduser.php"
  ?>
 
 <?php 
     require "includes/db.php";
-    // $username = $_SESSION['username'];
+    $username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@
     </div>
 
     <?php 
-        $username = "pamodha98";
+        // $username = "pamodha98";
         $query1 = "SELECT * FROM member WHERE username = '".$username."'";
         $result1 = mysqli_query($conn, $query1);
         $row1 = mysqli_fetch_assoc($result1);

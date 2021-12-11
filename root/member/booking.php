@@ -30,7 +30,9 @@
             $date = date('Y-m-d');
             $maxdate = date('Y-m-d',strtotime("+1 week", strtotime($date)));
             $yesterday = date('Y-m-d',strtotime("-1 day", strtotime($date)));
-            $overmaxdate = date('Y-m-d',strtotime("+8 day", strtotime($date)))
+            $overmaxdate = date('Y-m-d',strtotime("+8 day", strtotime($date)));
+            $today = $date;
+            $member_id = 36;
         ?>
         <div class="HdividerL">
             <script>
@@ -156,6 +158,20 @@
                             <h1>Calendar</h1>
                             <div id="calendar" class="calendar"></div>
                         </div>
+                        <script>
+                            var dates = [];
+                        </script>
+                        <?php
+                            $book_query = "SELECT * FROM book Where member_id = '".$member_id."'";
+                            $booking_results = mysqli_query($conn,$book_query);
+                            while($bookings_row = mysqli_fetch_assoc($booking_results)){
+                                $date1 = $bookings_row['date'];
+                                $time_slot1 = $bookings_row['time'];
+                        ?>
+                        <script>
+                            dates.push({time_slot:'<?php echo $time_slot1; ?>', date:"<?php echo $date1; ?>",txtclr:"<?php if(date($date1) < $today){echo 'white';}else{echo 'black';} ?>",colorT:"<?php if(date($date1) < $today){echo '#5B5C5F';}else{echo '#86FF71';} ?>"})
+                        </script>
+                        <?php } ?>
                     </div>
 
 
@@ -201,7 +217,7 @@
                                 </form>
                             </div>
 
-                            <?php $member_id = 36;?>
+                            
                             <div >
                                 <div><h1>Fixed Booking List</h1></div>
                                 <table>
@@ -226,6 +242,7 @@
                                     <?php }?>
                                     <tbody>
                                 </table>
+        
                             </div>
                         </div>
                     </div>

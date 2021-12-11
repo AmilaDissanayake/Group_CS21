@@ -24,6 +24,7 @@ $result2 = mysqli_query($conn, $payment_insert);
 
 if ($result2) {
     $_SESSION['notification'] = "Successfully Extended the period !";
+    $_SESSION['subscription'] = "Valid";
     header('Location: membership.php');
 } else {
     echo die(mysqli_error($conn));

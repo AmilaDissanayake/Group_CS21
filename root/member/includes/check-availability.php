@@ -24,18 +24,19 @@ if (isset($_POST['date'])) {
         if ($slot  == "All day") {
             $response['Main_Slot']="All day";
 
-            $query2 = "SELECT count(*) AS bkcount6 FROM book WHERE date = '".$date."' AND time = '0".($i*2+4).":00:00' AND trainer_id = $trainer_id  ";
-            $result2 = mysqli_query($conn, $query2);
-            $row = mysqli_fetch_array($result2);
+            for ($i= 1; $i<=8;$i++ ){
+                $query2 = "SELECT count(*) AS bkcount6 FROM book WHERE date = '".$date."' AND time = '0".($i*2+4).":00:00' AND trainer_id = $trainer_id  ";
+                $result2 = mysqli_query($conn, $query2);
+                $row = mysqli_fetch_array($result2);
 
-            $slot1count = $row['bkcount6'];
-            echo $slot1count;
-            if($slot1count < 5 )
-            {
-                $response["slot$i"]= true;
-            }else if($slot1count >= 5 )
-            { 
-                $response["slot$i"]= false;
+                $slot1count = $row['bkcount6'];
+                if($slot1count < 5 )
+                {
+                    $response["slot$i"]= true;
+                }else if($slot1count >= 5 )
+                { 
+                    $response["slot$i"]= false;
+                }
             }
             
         }else if ($slot  == "Morning") {
@@ -65,7 +66,6 @@ if (isset($_POST['date'])) {
                 $row = mysqli_fetch_array($result2);
 
                 $slot1count = $row['bkcount6'];
-                echo $slot1count;
                 if($slot1count < 5 )
                 {
                     $response["slot$i"]= true;
