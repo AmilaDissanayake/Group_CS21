@@ -89,7 +89,7 @@
                     </div>   
                     <div class="duline2">
                         <?php 
-                            $flag = 1;
+                            $flag = 0;
 
                             if($flag == 1){
                                 $icon = "'bx bxs-user-check'";
@@ -107,8 +107,94 @@
             </div>
             <div class="vboderdivider"></div>
         </div>
-        
         <div class="divid"></div>
+        <?php 
+
+                    $trainer_id = 1;
+                    $assign_trainer_query = "SELECT * FROM trainer WHERE trainer_id = $trainer_id";
+                    $trainer_result = mysqli_query($conn, $assign_trainer_query);
+                    $trainer_row = mysqli_fetch_assoc($trainer_result);
+
+                    $trainer_f_name = $trainer_row['f_name'];
+                    $trainer_l_name = $trainer_row['l_name'];
+                    $trainer_image = $trainer_row['image'];
+                    $trainer_rate = $trainer_row['rate'];
+                    $trainer_phone_no = $trainer_row['phone_no'];
+                    $date_joined = $trainer_row['joined_date'];
+                    
+                                            
+                    $today = date("Y-m-d");
+                    $diff = date_diff(date_create($date_joined), date_create($today));
+                    
+                    $rate_tr_query = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+                    $review_query = mysqli_query($conn, $rate_tr_query);
+                    
+                    $review_count = mysqli_num_rows($review_query);
+                    if ($review_count == 0) {
+                        $final_rating = 'No Reviews Yet';
+                    } else {
+                        $review_value = 0;
+                        while ($row6 = mysqli_fetch_assoc($review_query)) {
+                            $review_value += $row6['stars'];
+                        }
+                        $final_rating = $review_value / $review_count;
+                    } 
+        ?>
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>Hi <?php echo $username ?> </h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    <div class="msg">You are already assign with <b><?php echo $trainer_f_name." ".$trainer_l_name ?> </b><?php echo $final_rating?>(⭐).</div><div class="later">Try again after the assignment duration.</div>
+                </div>
+            </div>
+        </div>
+        <div id="popup2" class="overlay">
+            <div class="popup">
+                <h2>Hi <?php echo $username ?> </h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    <div class="msg" id="pop2tr_name"><p></p></div><div class="later">Try to assign with another trainer who is available at the moment.</div>
+                </div>
+            </div>
+        </div>
+        <div id="popup3" class="overlay">
+            <div class="popup">
+                <h2>Hi <?php echo $username ?> </h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content"> 
+                    <div class="aper">
+                        <div class="joined-date">
+                            <p>You can Assignment with </p>
+                        </div>
+                        <div class="name" id="pop3tr_name">
+                            <p></p>
+                        </div>
+                        <div class="avatar">
+                            <img src="" id="pop3tr_image">
+                        </div>
+                        <div class="button-inner">
+                            <div class="about_button"><button class="about_btn" id="profile" onclick="">PROFILE</button></div>
+                        </div>
+                        <div class="stat">
+                            <div class="exp" id="pop3tr_expi">
+                                <p></p>
+                             </div>
+                            <div class="rate" id="pop3tr_ratei">
+                                <p></p>
+                            </div>
+                            <div class="review-count" id="pop3tr_counti">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="msg">So do you really want to make this assign with him ?</div><div class="later"><button class="about_btn" onclick="submit_for_tr();">YES</button><button class="about_btn"onclick="location.href='#'" >NO</button></div>
+                        </div>
+                        <form action="add-tr_payment.php" id="tr_form" method="$_GET">
+                            <input type="text" id="intr_id" name="trainer_id" value="">
+                        </form>
+                </div>
+            </div>
+        </div>
         <div class="btmsec">
             <div class="vboderdivider"></div>
             <div class="meship">
@@ -190,39 +276,6 @@
             <div class="tassign">
                 <div class="seltr">
                     <div class="note2"><h1>Your Trainer</h1></div>
-                    <?php 
-                        $trainer_id = 1;
-
-                        $assign_trainer_query = "SELECT * FROM trainer WHERE trainer_id = $trainer_id";
-                        $trainer_result = mysqli_query($conn, $assign_trainer_query);
-                        $trainer_row = mysqli_fetch_assoc($trainer_result);
-
-                        $trainer_f_name = $trainer_row['f_name'];
-                        $trainer_l_name = $trainer_row['l_name'];
-                        $trainer_image = $trainer_row['image'];
-                        $trainer_rate = $trainer_row['rate'];
-                        $trainer_phone_no = $trainer_row['phone_no'];
-                        $date_joined = $trainer_row['joined_date'];
-                       
-                                                
-                        $today = date("Y-m-d");
-                        $diff = date_diff(date_create($date_joined), date_create($today));
-                        
-                        $rate_tr_query = "SELECT * FROM review WHERE trainer_id = $trainer_id";
-                        $review_query = mysqli_query($conn, $rate_tr_query);
-                        
-                        $review_count = mysqli_num_rows($review_query);
-                        if ($review_count == 0) {
-                            $final_rating = 'No Reviews Yet';
-                        } else {
-                            $review_value = 0;
-                            while ($row6 = mysqli_fetch_assoc($review_query)) {
-                                $review_value += $row6['stars'];
-                            }
-                            $final_rating = $review_value / $review_count;
-                        } 
-                    ?>
-                    
                     <div class="adetails">
                         <div class="astatus">
                             <p><i class='bx bxs-flag'></i>Assign to the trainer <b>since</b> <i>21/06/2021</i> <b>till</b> <i>21/07/2021</i></p> 
@@ -239,7 +292,7 @@
                             </div>
                             <div class="button-inner">
                                 <div class="about_button"><button class="about_btn" onclick="location.href='../trainer-profile/trainer-profile.php?trainer_id=<?php echo $trainer_id ?>'">PROFILE</button></div>
-                                <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">CALL</button></div> 
+                                <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $trainer_phone_no ?>'">CALL</button></div> 
                             </div>
                         <div class="stat">
                             <div class="exp">
@@ -274,7 +327,8 @@
                             while($row3 = mysqli_fetch_assoc($result4)){
 
                                 $trainer_id = $row3['trainer_id'];
-                                $t_fname= $row3['f_name'];
+                                $t_fname = $row3['f_name'];
+                                $t_lname= $row3['l_name'];
                                 $image = $row3['image'];
                                 $about = $row3['about'];
                                 $rate = $row3['rate'];
@@ -283,7 +337,7 @@
                         
                                 $today = date("Y-m-d");
                                 $diff = date_diff(date_create($date_joined), date_create($today));
-
+                                $exp = $diff->format('%y');
                                 $query5 = "SELECT * FROM review WHERE trainer_id = '".$trainer_id."'";
                                 $review_query = mysqli_query($conn, $query5);
                                 $review_count = mysqli_num_rows($review_query);
@@ -299,16 +353,14 @@
                                 }
                             ?>
                                 <tr>
-                                    <td> <?php echo "$t_fname" ?></td>
-                                    <td><?php 
-                                    echo $diff->format('%y') . 'years'; 
-                                    ?></td>
+                                    <td><?php echo "$t_fname" ?></td>
+                                    <td><?php echo $diff->format('%y') . 'years'; ?></td>
                                     <td><?php echo "$final_rating"?>(⭐)</td>
                                     <td><?php echo "$rate" ?></td>
                                     <td>
                                         <div class="row-action">
                                             <button class="about_btn" onclick="location.href='../trainer-profile/trainer-profile.php?trainer_id=<?php echo $trainer_id ?>'">Profile</button>
-                                            <button class="about_btn" onclick="location.href='members.php'">Select</button> 
+                                            <button class="about_btn" onclick=<?php if($flag == 1){ echo("location.href='#popup1'");}else{ echo"check_tr($trainer_id,'$t_fname',$final_rating,'$t_lname','$image',$rate,$exp,$review_count);";} ?>>Select</button> 
                                         </div>
                                     </td>
                                 </tr>
@@ -373,10 +425,16 @@
             }
         }            
 
-
+        var type= 0;
         payhere.onCompleted = function onCompleted(orderId) {
-            document.getElementById("amount_form").submit();
-            console.log("Payment completed");
+            if(type === 1 ){
+                document.getElementById("tr_form").submit();
+                console.log("Payment completed");
+            }
+            else{
+                document.getElementById("amount_form").submit();
+                console.log("Payment completed");
+            }   
             //Note: validate the payment and show success or failure page to the customer
         };
 
@@ -393,6 +451,7 @@
         };
 
         var payment;
+        var tr_payment;
 
         function calctotal() {
 
@@ -435,17 +494,93 @@
                 };
 
             }
+            function calctotal_fee( rate , fname , lname) {
 
+                var fname1 = "<?php echo "$f_name"; ?>";
+                var lname1 = "<?php echo "$l_name"; ?>";
+                var mnumber1 = "<?php echo "$p_no"; ?>";
+                var address1 = "<?php echo "$address"; ?>";
+                var email1 = "<?php echo "$email"; ?>";
+
+                var amount1 = rate;
+                var description = '1 month Assignment with '+fname+' '+lname;
+
+                
+
+                tr_payment = {
+                    "sandbox": true,
+                    "merchant_id": "1218759", // Replace your Merchant ID
+                    "return_url": undefined, // Important
+                    "cancel_url": undefined, // Important
+                    "notify_url": "http://sample.com/notify",
+                    "order_id": "ItemNo12345",
+                    "items": description ,
+                    "amount": amount1,
+                    "currency": "LKR",
+                    "first_name": fname1,
+                    "last_name": lname1,
+                    "email": email,
+                    "phone": mnumber1,
+                    "address": address1,
+                    "city": "Mirigama",
+                    "country": "Sri Lanka",
+                    };
+                }
         function submitFunction() {
             var result = checkpackin();
 
             if (result == true) {     
                 calctotal();
-
+                type = 0;
                 payhere.startPayment(payment);
             }
         }
 
+        function submit_for_tr() {
+                type = 1;
+                payhere.startPayment(tr_payment);
+        }
+
+        function check_tr(tr_id , fname , rating , lname , image , rate , exp , count  ){
+            var response;
+                
+            if (tr_id != '') {
+                $.ajax({
+                    url: './includes/check-trainer_assignments.php',
+                    type: 'post',
+                    data: {
+                        tr_id:tr_id
+                    },
+                    success: function(response) {
+                        console.log("success");
+                        if( response == "true"){
+                            $('#intr_id').val(tr_id);
+                            alert(tr_id);
+                            $( '#pop3tr_name' ).empty();$('#pop3tr_name').append(fname+' '+lname+' ⭐'+rating);
+                            $( '#pop3tr_image' ).empty();$("#pop3tr_image").attr("src",'../media/trainers/'+image);
+                            $( '#pop3tr_expi' ).empty();$('#pop3tr_expi').append( '<p>'+exp+'yrs<br>Expirience</p>');
+                            $( '#pop3tr_ratei' ).empty();$('#pop3tr_ratei').append('<p>'+rate+'/=<br>Per Month</p>');
+                            $( '#pop3tr_counti' ).empty();$('#pop3tr_counti').append('<p>'+count+'<br>Reviews</p>');
+                            $( '#profile' ).attr("onclick", "");$("#profile").attr("onclick","location.href='../trainer-profile/trainer-profile.php?trainer_id="+tr_id+"'");
+                            
+                            window.location.href = "#popup3"; 
+                            calctotal_fee(rate,fname,lname); 
+                        }else{
+                            $('#pop2tr_name').append('Sorry! At the moment this <b>'+fname+' '+lname+' </b>'+rating+'(⭐) trainer is not available for the assignments.');
+                            window.location.href = "#popup2";  
+                        }
+                    },
+                    error: function(){
+                        console.log("error");
+                    }
+                }
+            );
+        }
+    }
+
+    $( document ).ready(function() {
+        window.location.href = "#";
+    });
     </script>
 
 </body>
