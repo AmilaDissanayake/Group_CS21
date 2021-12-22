@@ -20,85 +20,174 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1></h1></div>
+        <div class="welcomenote">
+            <h1></h1>
+        </div>
         <div class="HdividerL"></div>
         <div class="uppart">
             <div class="vboderdivider"></div>
             <div class="middle">
-            <div class="note"><h1>Meal Plan</h1></div>
-            <div class="member-list">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>MONDAY</th>
-                            <th>TUSEDAY</th>
-                            <th>WEDNSEDAY</th>
-                            <th>THURSDAY</th>
-                            <th>FRIDAY</th>
-                            <th>SATURDAY</th>
-                            <th>SUNDAY</th>
-                        </tr>
-                     </thead>
+                <div class="note">
+                    <h1>Meal Plan</h1>
+                </div>
+                <div class="member-list">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>MONDAY</th>
+                                <th>TUSEDAY</th>
+                                <th>WEDNSEDAY</th>
+                                <th>THURSDAY</th>
+                                <th>FRIDAY</th>
+                                <th>SATURDAY</th>
+                                <th>SUNDAY</th>
+                            </tr>
+                        </thead>
 
-                    <tbody id="output">
-                        <tr>
-                            <td class="rcat"><div class="visul"><img src="./media/breakfast.png" alt=""></div><div class="ttag"><span class ="bpart">Breakfast</span></div></td>
-                            <td><div class="item">Scrambled eggs with mushrooms and oatmeal</div></td>
-                            <td><div class="item">Protein pancakes with light-syrup, peanut butter and raspberries</div></td>
-                            <td><div class="item">Chicken sausage with egg and roasted potatoes</div></td>
-                            <td><div class="item">Ground turkey, egg, cheese and salsa in a whole-grain tortilla</div></td>
-                            <td><div class="item">Blueberries, strawberries and vanilla Greek yogurt on overnight oats</div></td>
-                            <td><div class="item">Ground turkey and egg with corn, bell peppers, cheese and salsa</div></td>
-                            <td><div class="item">Eggs sunny-side up and avocado toast</div></td>
-                        </tr>
+                        <tbody id="output">
+                            <tr>
+                                <td class="rcat">
+                                    <div class="visul"><img src="./media/breakfast.png" alt=""></div>
+                                    <div class="ttag"><span class="bpart">Breakfast</span></div>
+                                </td>
+                                <td>
+                                    <div class="item">Scrambled eggs with mushrooms and oatmeal</div>
+                                </td>
+                                <td>
+                                    <div class="item">Protein pancakes with light-syrup, peanut butter and raspberries</div>
+                                </td>
+                                <td>
+                                    <div class="item">Chicken sausage with egg and roasted potatoes</div>
+                                </td>
+                                <td>
+                                    <div class="item">Ground turkey, egg, cheese and salsa in a whole-grain tortilla</div>
+                                </td>
+                                <td>
+                                    <div class="item">Blueberries, strawberries and vanilla Greek yogurt on overnight oats</div>
+                                </td>
+                                <td>
+                                    <div class="item">Ground turkey and egg with corn, bell peppers, cheese and salsa</div>
+                                </td>
+                                <td>
+                                    <div class="item">Eggs sunny-side up and avocado toast</div>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td class="rcat"><div class="visul"><img src="./media/snack1.png" alt=""></div><div class="ttag"><span class ="bpart">Snack</span></div></td>
-                            <td><div class="item">Low-fat cottage cheese with blueberries</div></td>
-                            <td><div class="item">Hard-boiled eggs and an apple.</div></td>
-                            <td><div class="item">Greek yogurt and almonds.</div></td>
-                            <td><div class="item">Yogurt with granola.</div></td>
-                            <td><div class="item">Jerky and mixed nuts.</div></td>
-                            <td><div class="item">Can of tuna with crackers.</div></td>
-                            <td><div class="item">Protein balls and almond butter.</div></td>
-                        </tr>
+                            <tr>
+                                <td class="rcat">
+                                    <div class="visul"><img src="./media/snack1.png" alt=""></div>
+                                    <div class="ttag"><span class="bpart">Snack</span></div>
+                                </td>
+                                <td>
+                                    <div class="item">Low-fat cottage cheese with blueberries</div>
+                                </td>
+                                <td>
+                                    <div class="item">Hard-boiled eggs and an apple.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Greek yogurt and almonds.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Yogurt with granola.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Jerky and mixed nuts.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Can of tuna with crackers.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Protein balls and almond butter.</div>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td class="rcat"><div class="visul"><img src="./media/lunch.png" alt=""></div><div class="ttag"><span class ="bpart">Lunch</span></div></td>
-                            <td><div class="item">Venison burger, white rice and broccoli.</div></td>
-                            <td><div class="item">Sirloin steak, sweet potato and spinach salad with vinaigrette.</div></td>
-                            <td><div class="item">Turkey breast, basmati rice and mushrooms.</div></td>
-                            <td><div class="item">Chicken breast, baked potato, sour cream and broccoli.</div></td>
-                            <td><div class="item">Tilapia fillets with lime juice, black and pinto beans and seasonal veggies.</div></td>
-                            <td><div class="item">Tilapia fillet, potato wedges and bell peppers.</div></td>
-                            <td><div class="item">Pork tenderloin slices with roasted garlic potatoes and green beans.</div></td>
-                        </tr>
+                            <tr>
+                                <td class="rcat">
+                                    <div class="visul"><img src="./media/lunch.png" alt=""></div>
+                                    <div class="ttag"><span class="bpart">Lunch</span></div>
+                                </td>
+                                <td>
+                                    <div class="item">Venison burger, white rice and broccoli.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Sirloin steak, sweet potato and spinach salad with vinaigrette.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Turkey breast, basmati rice and mushrooms.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Chicken breast, baked potato, sour cream and broccoli.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Tilapia fillets with lime juice, black and pinto beans and seasonal veggies.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Tilapia fillet, potato wedges and bell peppers.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Pork tenderloin slices with roasted garlic potatoes and green beans.</div>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td class="rcat"><div class="visul"><img src="./media/snack2.png" alt=""></div><div class="ttag"><span class ="bpart">Snack</span></div></td>
-                            <td><div class="item">Protein shake and a banana.</div></td>
-                            <td><div class="item">Protein shake and walnuts.</div></td>
-                            <td><div class="item">Protein shake and grapes.</div></td>
-                            <td><div class="item">Protein shake and mixed berries.</div></td>
-                            <td><div class="item">Protein shake and watermelon.</div></td>
-                            <td><div class="item">Protein shake and pear.</div></td>
-                            <td><div class="item">Protein shake and strawberries.</div></td>
-                        </tr>
+                            <tr>
+                                <td class="rcat">
+                                    <div class="visul"><img src="./media/snack2.png" alt=""></div>
+                                    <div class="ttag"><span class="bpart">Snack</span></div>
+                                </td>
+                                <td>
+                                    <div class="item">Protein shake and a banana.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Protein shake and walnuts.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Protein shake and grapes.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Protein shake and mixed berries.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Protein shake and watermelon.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Protein shake and pear.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Protein shake and strawberries.</div>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td class="rcat"><div class="visul"><img src="./media/dinner.png" alt=""></div><div class="ttag"><span class ="bpart">Dinner</span></div></td>
-                            <td><div class="item">Salmon, quinoa and asparagus.</div></td>
-                            <td><div class="item">Ground turkey and marinara sauce over pasta.</div></td>
-                            <td><div class="item">Mackerel, brown rice and salad leaves with vinaigrette.</div></td>
-                            <td><div class="item">Stir-fry with chicken, egg, brown rice, broccoli, peas and carrots.</div></td>
-                            <td><div class="item">Ground beef with corn, brown rice, green peas and green beans.</div></td>
-                            <td><div class="item">Diced beef with rice, black beans, bell peppers, cheese and pico de gallo.</div></td>
-                            <td><div class="item">Turkey meatballs, marinara sauce and parmesan cheese over pasta.</div></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                            <tr>
+                                <td class="rcat">
+                                    <div class="visul"><img src="./media/dinner.png" alt=""></div>
+                                    <div class="ttag"><span class="bpart">Dinner</span></div>
+                                </td>
+                                <td>
+                                    <div class="item">Salmon, quinoa and asparagus.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Ground turkey and marinara sauce over pasta.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Mackerel, brown rice and salad leaves with vinaigrette.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Stir-fry with chicken, egg, brown rice, broccoli, peas and carrots.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Ground beef with corn, brown rice, green peas and green beans.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Diced beef with rice, black beans, bell peppers, cheese and pico de gallo.</div>
+                                </td>
+                                <td>
+                                    <div class="item">Turkey meatballs, marinara sauce and parmesan cheese over pasta.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="fixT">
                     <button class="check_btn" id="tbook" type="submit" name="time-submit">EDIT MEAL PLAN</button>
                 </div>
@@ -109,10 +198,12 @@
         <div class="dwnpart">
             <div class="vboderdivider"></div>
             <div class="lsd">
-                <div class="note2"><h1>Suggestions for Meal Plan</h1></div>
+                <div class="note2">
+                    <h1>Suggestions for Meal Plan</h1>
+                </div>
                 <div class="con1">
                     <div class="set1">
-                        <p>Foods to Focus On</p>
+                        <p>Foods to Focus On <img src="./media/nutrition.png" alt=""></p>
                         <span class="fade-effect2"></span>
                         <ul>
                             <li><i class='bx bxs-caret-right-circle'></i><b>Meats, poultry and fish:</b> <br>Sirloin steak, ground beef, pork tenderloin, venison, chicken breast, salmon, tilapia and cod.</li>
@@ -127,7 +218,7 @@
                         </ul>
                     </div>
                     <div class="set1">
-                        <p>Foods to Limit</p>
+                        <p>Foods to Limit<img src="./media/bad-habits.png" alt=""></p>
                         <span class="fade-effect2"></span>
                         <ul class="flimit">
                             <li><i class='bx bxs-caret-right-circle'></i><b>Alcohol:</b> <br>Alcohol can negatively affect your ability to build muscle and lose fat, especially if you consume it in excess.</li>
@@ -141,7 +232,7 @@
                         </ul>
                     </div>
                     <div class="set1">
-                        <p>Bodybiliding supliments</p>
+                        <p>Bodybiliding supliments<img src="./media/supplement.png" alt=""></p>
                         <span class="fade-effect2"></span>
                         <ul>
                             <li><br>Many bodybuilders take dietary supplements, some of which are useful while others are not.</li>
@@ -155,20 +246,46 @@
             </div>
             <div class="divider3"></div>
             <div class="rsd">
-            <div class="note2"><h1>Tips</h1></div>
+                <div class="note2">
+                    <h1>Tips</h1>
+                </div>
                 <div class="con1">
                     <div class="set1">
                         <p>How many calories do you need?</p>
+                        <span class="fade-effect2"></span>
+                        <ul>  
+                            <li><i class='bx bxs-hand-right'></i>You need to weigh yourself at least three times a week and record what you eat using a <a href="../">calorie calculator.</a></li>
+                            <li><i class='bx bxs-hand-right'></i>If your weight stays the same, the daily number of calories you eat is your <b>maintenance calories</b>.</li>
+                            <li><i class='bx bxs-hand-right'></i>During your <b>bulking phase</b>, it’s recommended to increase your calorie intake by <b>15%</b>.</li>
+                            <li><i class='bx bxs-hand-right'></i>When transitioning from  <b>a bulking to a cutting phase</b>, you would instead decrease your maintenance calories by <b>15%</b>.</li>
+                            <li><i class='bx bxs-hand-right'></i>As you gain weight in the bulking phase or lose weight in the cutting phase, you will need to <b>adjust your calorie intake at least monthly.</b></li>
+                            <li><i class='bx bxs-hand-right'></i><b>Increase</b> your calories <b>as you gain weight</b> in the bulking phase and <b>decrease</b> your calories <b>as you lose weight</b> in the cutting phase <b>for continued progression</b>.</li>
+                            <li><i class='bx bxs-hand-right'></i>During either phase, it’s recommended not to lose or gain more than <b>0.5–1%</b> of your <b>body weight per week</b>.</li>
+                            <div class="rightdown"><img src="./media/calories.png" alt=""></div>
+                        </ul>
                     </div>
                     <div class="set1">
                         <p>What is Macronutrient Ratio</p>
+                        <span class="fade-effect2"></span>
+                        <ul>
+                            <li><i class='bx bxs-hand-right'></i>Once you establish the number of calories you need, you can determine your macronutrient ratio.</li>
+                            <li><i class='bx bxs-hand-right'></i>It is the <b>ratio between your protein, carbohydrate and fat intake.</b></li>
+                            <li><i class='bx bxs-hand-right'></i>Unlike the difference in your calorie needs between the bulking and cutting phase, your <b>macronutrient ratio does not change</b>.</li>
+                            <li><i class='bx bxs-hand-right'></i><b>Protein and carbs</b> contain <b>four calories per gram</b>, and <b>fat</b> contains <b>nine</b>.</li>
+                            <b><li>It’s recommended that you get:</li>
+                            <li>30–35% of your calories from protein</li>
+                            <li>55–60% of your calories from carbs</li>
+                            <li>15–20% of your calories from fat</li></b>
+                            <div class="rightdown"><img src="./media/macronutrient.png" alt=""></div>
+                        </ul>
                     </div>
+                    <div class="rightbottom"><div class="intxt"><p><span class="tg">EXERCISE</span> is <span class="tg">KIGN</span>.<br><span class="tg">NUTRITION</span> is <span class="tg" >QUEEN</span>.<br>Put them together and you've got a <span class="tg">KINGDOM...!</span></p></div></div>
                 </div>
             </div>
             <div class="vboderdivider"></div>
         </div>
-        <div class="HdividerL"></div>  
-           
+        <div class="HdividerL"></div>
+
     </section>
     <?php include "includes/footer.php" ?>
 

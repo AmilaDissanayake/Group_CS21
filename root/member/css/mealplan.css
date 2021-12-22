@@ -70,7 +70,7 @@
   padding: 20px;
   width: 100%;
   color: grey;
-  height: 70px;
+  height: auto;
   border-radius: 5px;
   border-bottom: 5px solid rgb(244,244,244);
   background: white;
@@ -93,20 +93,68 @@
   height: 250px;
   width: 100%;
   margin: 0;
+  font-weight: bolder;
 }
 
+.set1 a{
+  text-decoration: none;
+  color: #489e39;
+  font-family: 'Rubik';
+  /* font-size: 17px; */
+}
 
+.set1 .rightdown{
+  width: 100%;
+  height: auto;
+  text-align: right;
+}
+.set1 img{
+  width: 50%;
+  height: auto;
+}
+
+.set1 p img{
+  width: 10%;
+  height: auto;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.con1 .rightbottom {
+  width: 100%;
+  height: 370px;
+  background-image: url("../media/RB-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-style: normal;
+  padding-top: 20%;
+  padding-bottom: 20%;
+  margin-top: 20px;
+  line-height: 1.8;
+  border-radius: 10px;
+}
+.con1 .rightbottom .intxt{
+  margin-bottom: 20%;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.con1 .rightbottom .intxt p{
+  color: black;
+  font-size: 26px;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+}
+.tg{
+  color: grey;
+  font-size: 32px;
+  font-weight: bolder;
+}
 .dubar{
   top: 50%;
   left: 50%;
   width:100%;
-  /* padding-right: 10%;
-  padding-left: 10%; */
   margin: 0;
-  /* display: flex; */
-  /* justify-content: center;
-  align-content: center;
-  align-items: center; */
   background-color: #86ff71;
 }
 
@@ -196,7 +244,7 @@
 }
 
 .dwnpart .rsd{
-    height: 100%;
+    height: auto;
     width: calc(40% - 20px);
     padding: 20px;
     padding-right: 30px;
