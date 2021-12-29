@@ -1,4 +1,12 @@
-<?php include "includes/check_login.php" ?>
+<?php include "includes/check_login.php";
+require "includes/db.php";
+
+$trainer_id = $_SESSION['trainer_id'];
+
+$sql = "SELECT * FROM member WHERE assign_trainer = $trainer_id";
+$assign_query = mysqli_query($conn, $sql);
+$assign_members = mysqli_num_rows($assign_query);
+?>
 
 <!DOCTYPE html>
 
@@ -21,7 +29,7 @@
 
         <div class="home-content">
             <div class="header-div">
-                <h1 class="top-header">Assigned members : 30 Members</h1>
+                <h1 class="top-header">Assigned members : <?php echo $assign_members; ?></h1>
             </div>
             <div class="search-bar">
                 <div class="search-box">
@@ -41,12 +49,26 @@
                         <th></th>
                         <th></th>
                     </tr>
+                    <?php
+                    $sql2 = "SELECT * FROM member WHERE assign_trainer = '".$trainer_id."'";
+                    $result2 = mysqli_query($conn,$sql2);
+                    while($member_row=mysqli_fetch_assoc($result2)){
+                        $f_name = $member_row['f_name'];
+                        $l_name = $member_row['l_name'];
+                        $image = $member_row['image'];
+                        $contact = $member_row['phone_no'];
+                        $gender = $member_row['gender'];
+                        $injury = $member_row['injuries'];
+                        $dob = $member_row['dob'];
+                        $today = date("Y-m-d");
+                        $diff = date_diff(date_create($dob), date_create($today));
+                    ?>
                     <tr>
-                        <td>Amila dissanayake</td>
-                        <td>25</td>
-                        <td>Male</td>
-                        <td>0112233445</td>
-                        <td>Back pain, Shoulder pain</td>
+                        <td><div class="first-column"><span class="avatar"><img src="../media/members/<?php echo $image ?>"></span><?php echo " " . $f_name . " " . $l_name ?></div></td>
+                        <td><?php echo $diff->format('%y'); ?></td>
+                        <td><?php echo $gender; ?></td>
+                        <td><?php echo $contact; ?></td>
+                        <td><?php echo $injury; ?></td>
                         <td><div class="row-action">
                             <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
                             </div>
@@ -56,51 +78,7 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Navod shehan</td>
-                        <td>25</td>
-                        <td>Male</td>
-                        <td>0112233445</td>
-                        <td>Back pain, Shoulder pain</td>
-                        <td><div class="row-action">
-                            <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
-                            </div>
-                        </td>
-                        <td><div class="row-action">
-                            <button class="about_btn1" onclick="location.href='members.php'">Progress</button> 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Pamodha mahagamage</td>
-                        <td>25</td>
-                        <td>Male</td>
-                        <td>0112233445</td>
-                        <td>Back pain, Shoulder pain</td>
-                        <td><div class="row-action">
-                            <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
-                            </div>
-                        </td>
-                        <td><div class="row-action">
-                            <button class="about_btn1" onclick="location.href='members.php'">Progress</button> 
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bimsara kulasekara</td>
-                        <td>25</td>
-                        <td>Male</td>
-                        <td>0112233445</td>
-                        <td>Back pain, Shoulder pain</td>
-                        <td><div class="row-action">
-                            <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
-                            </div>
-                        </td>
-                        <td><div class="row-action">
-                            <button class="about_btn1" onclick="location.href='members.php'">Progress</button> 
-                            </div>
-                        </td>
-                    </tr>
+                    <?php } ?>
                 </table>
             </div>
 

@@ -6,6 +6,15 @@
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
 }
+/*-----------------Calender override------------*/
+.fc th {
+  background-color: #86FF71;
+}
+.fc .fc-toolbar-title {
+  font-size: 1.25em;
+  margin: 0;
+  font-family: 'Azonix';
+}
 
 /*-----------------header----------------------*/
 .welcomenote{
@@ -19,7 +28,6 @@
   font-family: 'Azonix'; 
   font-weight: 400;  
 }
-
 .dashcover{
   background-image: url("dashcover.jpg");
   background-repeat: no-repeat;
@@ -53,7 +61,15 @@
   padding: 2px;
   margin-left: 15px;
 }
-.grid-item {
+.deactive_grid-item {
+  background-color: gray;
+  border: 2px solid rgb(24,24,24);
+  border-radius: 5px;
+  padding: 1px;
+  font-size: 18px;
+  text-align: center;
+}
+.active_grid-item {
   background-color: #86ff71;
   border: 2px solid rgb(244,244,244);
   border-radius: 5px;
@@ -191,7 +207,6 @@
   text-align: center;
 
 }
-
 .bkstatus .avail{
   display: flex;
   height: 40px;
@@ -200,42 +215,22 @@
   /* border: 3px solid rgb(244,244,244); */
   padding: 10px;
 }
-
 .avail .statbx{
   padding-right: 5px;
-  color: #86ff71;
   height: 100%;
   font-size: 20px;
 }
-
-
-
-/*---------------calender section ---------------*/
-
-/* .uppart .calendar{
-  height: 500px;
-  width: 100;
-  padding: 20px;
-} */
-
-/* #calendar-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.txtvi{
+  display: none;
+}
+.unavailable{
+  display: none;
+}
+#input_date{
+ display: none;
 }
 
-.fc-header-toolbar {
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-} */
-
-/* .calendar-top{
-  display: grid;
-} */
-
+/*---------------calender section ---------------*/
 .calendar{
   padding-top: 20px;
   padding-bottom: 50px;
@@ -250,6 +245,7 @@
   width: 100%;
   padding-top: 50px;
 }
+
 /*------------- Content divider ----------------*/
 .divider{
   width: 100%;
@@ -446,16 +442,6 @@
   left: 60px;
   width: calc(100% - 60px);
 }
-.home-section nav .sidebar-button{
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: 500;
-}
-nav .sidebar-button i{
-  font-size: 35px;
-  margin-right: 10px;
-}
 
 .home-section .search-box{
   position: relative;
@@ -489,32 +475,54 @@ nav .sidebar-button i{
   font-size: 22px;
   transition: all 0.4 ease;
 }
-.home-section nav .profile-details{
-  display: flex;
-  align-items: center;
-  background: #F5F6FA;
-  border: 2px solid #EFEEF1;
-  border-radius: 6px;
-  height: 50px;
-  min-width: 190px;
-  padding: 0 15px 0 2px;
+
+/* ---------- Fixed booking list ------------ */
+table {
+  border-collapse: collapse;
+  width: 95%;
+  height: 90%;
+  overflow-y: auto;
+} 
+td {
+  border: 0px solid black;
+  padding: 10px 10px 10px 20px;
+  border: 2px solid rgb(244,244,244);
 }
-nav .profile-details img{
-  height: 40px;
-  width: 40px;
-  border-radius: 6px;
-  object-fit: cover;
+th{
+  padding: 15px 15px 15px 20px;
+  text-decoration: none;
+  margin-bottom: 10px;
 }
-nav .profile-details .admin_name{
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+.about_btn{
+  position: relative;
+  z-index: 10;
+  width: 130px;
+  height: 35px;
+  border: 0px solid rgba(255, 255, 255, .5);
+  border-radius: 30px;
+  background-color: #86ff71;
+  font-family: 'Rubik';
+  color: black;
   font-size: 15px;
-  font-weight: 500;
-  color: #333;
-  margin: 0 10px;
-  white-space: nowrap;
+  letter-spacing: 1px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px;
 }
-nav .profile-details i{
-  font-size: 25px;
-  color: #333;
+.about_btn:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: #424244;
+  box-shadow: 0px 0px 10px 1px #86ff71;
+  border: 0px solid #86ff71;
+  transition: .4s;
 }
 /* Responsive Media Query */
 @media (max-width: 1240px) {

@@ -24,8 +24,19 @@ if (isset($_POST['submit'])) {
                 header('Location: ../admin/members.php');
                 $_SESSION['user_type'] = 'admin';
             } elseif ($row['user_type'] == 'member') {
-                header('Location: ../member/dashboard.php');
-                $_SESSION['user_type'] = 'member';
+                date_default_timezone_set('Asia/Colombo');
+                $today = date('Y-m-d');
+                $expirey = date('Y-m-d');// $expirey = "2021-12-01";
+                 
+                if($today > $expirey ){
+                    $_SESSION['user_type'] = 'member';
+                    $_SESSION['subscription'] = 'Invalid';
+                    header('Location: ../member/membershipexpire.php');
+                }else{
+                    header('Location: ../member/dashboard.php');
+                    $_SESSION['subscription'] = 'Valid';
+                    $_SESSION['user_type'] = 'member';
+                }
             } elseif ($row['user_type'] == 'trainer') {
                 header('Location: ../trainer/dashboard.php');
                 $_SESSION['user_type'] = 'trainer';

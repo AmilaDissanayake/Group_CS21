@@ -1,5 +1,6 @@
 <?php include "includes/check_login.php";
-require "includes/db.php"; ?>
+require "includes/db.php";
+date_default_timezone_set("Asia/Colombo"); ?>
 
 <!DOCTYPE html>
 
@@ -7,7 +8,6 @@ require "includes/db.php"; ?>
 
 <head>
     <meta charset="UTF-8">
-    <!-- <link rel="stylesheet" href="css/dashboard.css"> -->
     <link rel="stylesheet" href="css/calendar.css">
     <link href="css/justselect.css" rel="stylesheet" >
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'>
@@ -60,8 +60,9 @@ require "includes/db.php"; ?>
 
         <div class="home-content">
         <form action="includes/availability.php" method="POST">
-            <div class="calendar-input">              
-                <input type='Date' name="date"required>
+            <div class="calendar-input">  
+                <?php $Date = date("Y-m-d"); ?>
+                <input type='Date' name="date"required min="<?php echo $Date; ?>" max="<?php echo date('Y-m-d', strtotime($Date. ' + 7 days')); ?>">
                 <select name="time" id="" class="justselect">
                     <option selected="selected">All day</option>
                     <option>Morning</option>
@@ -71,6 +72,11 @@ require "includes/db.php"; ?>
             </div>
         </form>
             <div class="bottom-div">
+                <?php
+                $trainer_id = $_SESSION['trainer_id'];
+                $sql1 = "DELETE from availability WHERE date < '$Date' AND trainer_id = $trainer_id";
+                mysqli_query($conn,$sql1);
+                ?>
                 <div id='calendar' class="calendar"></div>
                 <div class="calendar-table">
                     <div class="availability-header"><h1>AVAILABILITY</h1></div>
@@ -83,8 +89,8 @@ require "includes/db.php"; ?>
                             <th>Time</th>
                             <th></th>
                         </tr>
+
                         <?php
-                        $trainer_id = $_SESSION['trainer_id'];
                         $sql_query = "SELECT * FROM availability Where trainer_id = '".$trainer_id."'";
                         $result = mysqli_query($conn,$sql_query);
                         while($availability_row = mysqli_fetch_assoc($result)){
@@ -100,6 +106,41 @@ require "includes/db.php"; ?>
                             </td>
                         </tr>
                         <?php } ?>
+                        
+                        <script> 
+                        var dates = [];
+                        </script>
+                        <?php
+                        $sql_query1 = "SELECT * FROM availability Where trainer_id = '".$trainer_id."'";
+                        $result1 = mysqli_query($conn,$sql_query1);
+                        while($availability_row1 = mysqli_fetch_assoc($result1)){
+                            $date1 = $availability_row1['date'];
+                            $time_slot1 = $availability_row1['time_slot'];
+                        ?>
+                        <script>
+                            dates.push({time_slot:"<?php echo $time_slot1; ?>", date:"<?php echo $date1; ?>"})
+                        </script>
+                        <?php } ?>
+                            <script>
+                                draw(dates.map(obj=>{
+                                return{
+                                    title:obj.time_slot,
+                                    start:obj.date
+                                }
+                                }))
+
+                                function draw(data) {
+                                var calendarEl = document.getElementById('calendar');
+                                var calendar = new FullCalendar.Calendar(calendarEl, {
+                                    initialView: 'dayGridMonth',
+
+                                    events : data,
+                                    // eventColor: 'rgb(44,62,80)'
+                                });
+
+                                calendar.render();
+                                };
+                            </script>
                 </div>
             </div>
         </div>
@@ -116,7 +157,6 @@ require "includes/db.php"; ?>
         }
     </script>
 </body>
-<script type="text/javascript" src="js/calendar.js"> </script>
 <script src="js/justselect.min.js"></script>
 </html>
 

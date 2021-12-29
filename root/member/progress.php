@@ -31,7 +31,7 @@
         <div class="analy">
              <div class="vboderdivider"></div>
             <div class="rpanel">           
-                <div class="pan">
+                <div class="pan" id="updatebmi">
                     <?php include "./includes/bmi-calc.php" ?>
                 </div>           
             </div>
@@ -41,34 +41,35 @@
                 <div class="lpanel">
                     <div class="btag"><p>BMI STATISTICS</p></div>
                  
-                    <div class="bmip">
+                    <div class="bmip" id="weekprgs">
                         <canvas id="canvas"></canvas>
                     </div>
+                    <p class="category"><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id="ob"> OBESITY</span> BMI value - 22(in July)</p>
                 </div>
-                <div class="divider3"></div>
-                <div class="indc1">
+                <div class="divider3" ></div>
+                <div class="indc1" >
                     <h2>Weekly Progress</h2>
-                    <div class="protick">
+                    <div class="protick" >
                         <div class="wdetails">
                             <ul>
                             <div class="itemcon">
                                 <li class="plist">  
-                                    <input type="checkbox"><p> DAY 1</p> <div class="stag"><span class="stat1">COMPLETED</span></div>
+                                    <input type="checkbox" id="ck_d1"><p> DAY 1</p> <div class="stag_not" id="tg_d1"><span>NOT COMPLETED</span></div>
                                 </li>  
                             </div>
                             <div class="itemcon">
                             <li class="plist">
-                                    <input type="checkbox"><p> DAY 2</p> <div class="stag_not"><span class="stat2">NOT COMPLETED</span></div>
+                                    <input type="checkbox" id="ck_d2"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
                                 </li>
                             </div>
                             <div class="itemcon">
                                 <li class="plist">
-                                    <input type="checkbox"><p> DAY 3</p> <div class="stag_not"><span class="stat2">NOT COMPLETED</span></div>
+                                    <input type="checkbox"id="ck_d3"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
                                 </li>
                             </div>
                             <div class="itemcon">
                                 <li class="plist">
-                                    <input type="checkbox"><p> DAY 4</p> <div class="stag_not"><span class="stat2">NOT COMPLETED</span></div>
+                                    <input type="checkbox" id="ck_d4"><p> DAY 4</p> <div class="stag_not" id="tg_d4"><span>NOT COMPLETED</span></div>
                                 </li>
                             </div>
                         </ul>     
@@ -85,7 +86,7 @@
         <div class="analy2">
             <div class="vboderdivider"></div>
             <div class="rpanel">           
-                <div class="pan">
+                <div class="pan" id="updatebf">
                     <?php include "./includes/bfc-calc.php" ?>
                 </div>           
             </div>
@@ -95,12 +96,17 @@
                     <div class="indc1">
                         <h2>Monthly Attendance</h2>
                         <div class="monthviewlst">
-                            <div class="wdetails">
-                            <ul>
-                                <div class="itemcon"><li class="plist"><p class="month"> MONTH 1</p> <div class="stag_good"><span class="stat1">GOOD</span></div></li></div>
-                                <div class="itemcon"><li class="plist"><p class="month"> MONTH 2</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                                <div class="itemcon"><li class="plist"><p class="month"> MONTH 3</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                            </ul>
+                            <?php  
+                            
+                            $package_type = 6;
+                            if($package_type == 12){
+                                echo(
+                            '<div class="wdetails">
+                                <ul>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 1</p> <div class="stag_good"><span class="stat1">GOOD</span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 2</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 3</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                </ul>
                             </div>
                             <div class="wdetails">
                                 <ul>
@@ -122,18 +128,74 @@
                                     <div class="itemcon"><li class="plist"><p class="month"> MONTH 11</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
                                     <div class="itemcon"><li class="plist"><p class="month"> MONTH 12</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
                                 </ul>
+                            </div>');
+                            }else if($package_type == 6){
+                            echo'<div class="wdetails">
+                                <ul>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 1</p> <div class="stag_good"><span class="stat1">GOOD</span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 2</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 3</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                </ul>
                             </div>
+                            <div class="wdetails">
+                                <ul>
+                                    <div class="itemcon"><li class="plist"> <p class="month"> MONTH 4</p><div class="stag_not_good"><span class="stat1"></span></div></li>  </div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 5</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> MONTH 6</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                </ul>
+                            </div>
+                           ';
+                            }else if($package_type == 3){
+                                echo'<div class="wdetails_s">
+                                <ul>
+                                    <div class="itemcon"><li class="plist"><p class="month">  MONTH 1 |</p></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month">  MONTH 2 |</p></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month">  MONTH 3 |</p></li></div>
+                                </ul>
+                            </div>
+                            <div class="wdetails_l">
+                                <ul>
+                                    <div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p> <div class="stag_good"><span class="stat1">GOOD</span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                </ul>
+                            </div>
+                            <div class="wdetails_l">
+                                <ul>
+                                    <div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p> <div class="stag_good"><span class="stat1">GOOD</span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                </ul>
+                            </div>
+                           ';
+                            }else if($package_type == 1){
+                                echo'<div class="wdetails">
+                                <ul>
+                                    <div class="itemcon"><li class="plist"><p class="month"> WEEK 01</p> <div class="stag_good"><span class="stat1">GOOD</span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> WEEK 02</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                </ul>
+                                </div>
+                                <div class="wdetails">   
+                                <ul>
+                                    <div class="itemcon"><li class="plist"><p class="month"> WEEK 03</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                    <div class="itemcon"><li class="plist"><p class="month"> WEEK 04</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                </ul>
+                            </div>
+                           ';}
+                            ?>
 
                         </div>  
+                        
                     </div>
                 <div class="divider3"></div>
                 <div class="dlpanel">
                     <div class="btag"><p>BODY FAT STATISTICS</p></div>
                     <div class="bfp">
-                    <div class="bmip">
-                        <canvas id="canvas2"></canvas>
+                        <div class="bmip">
+                            <canvas id="canvas2"></canvas>
+                        </div> 
                     </div>
-                    </div>
+                    <p class="category"><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span > AVERAGE </span>BF value - 25(in July)</p>
                 </div>
                 <div class="divider3"></div>
             </div>
@@ -146,6 +208,26 @@
 
 <script type="text/javascript" src="js/bmi-cal.js"></script>
 <script type="text/javascript" src="js/bfc-cal.js"></script>
+
+<script> 
+    var checkbox = document.getElementById("ck_d1");
+    var tag = document.getElementById("tg_d1");
+
+    checkbox.onclick = function(){ 
+       
+        if(checkbox.checked == true){
+            alert('clicked');
+            tag.className = 'stag';
+		    tag.innerText = 'COMPLETED';
+        }else{
+            alert('not clicked');
+            tag.className = 'stag_not';
+		    tag.innerText = 'NOT COMPLETED';
+        }
+        
+    };
+   
+</script>
 
 <script>
              AOS.init();

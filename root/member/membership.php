@@ -57,27 +57,144 @@
                 });
             </script>
         </div>
+        <?php
+            $mem_date = new DateTime("2021-03-24");
+            $membexp_date = new DateTime("2022-03-24");
+            $mem_interval = $mem_date->diff($membexp_date);
+
+            if($mem_date->format("Y-m-d")  == "2021-03-24" && $membexp_date->format("Y-m-d") == "2022-03-24"){
+                $mem_interval->y = 00;
+                $mem_interval->m = 12;
+                $mem_interval->d = 00;
+            }
+            $mem_type = 12; 
+
+            $t_assign_date = new DateTime("2021-03-24");
+            $t_exp_date = new DateTime("2021-04-24");
+            $tr_interval = $t_assign_date->diff($t_exp_date);
+            
+            // echo "difference " . $interval->y . " years, " . $interval->m." months, ".$interval->d." days "; 
+            
+            // shows the total amount of days (not divided into years, months and days like above)
+            // echo "difference " . $interval->days . " days ";
+        ?>
         <div class="board">
             <div class="vboderdivider"></div>
             <div class="dubar">
                 <div class="duhead"><h2>Membership</h2></div>   
                 <div class="mainbar">
                     <div class="duline1">
-                        <div class="typ1"><i class='bx bxs-hourglass-top'></i><h1>12 Month Membership</h1></div>
-                        <div class="remain"><h2>MONTHS</h2><div class="time"><h1>11</h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1>21</h1></div></div>
+                        <div class="typ1"><i class='bx bxs-hourglass-top'></i><h1><?php echo $mem_type ?> Month Membership</h1></div>
+                        <div class="remain"><h2>MONTHS</h2><div class="time"><h1><?php echo $mem_interval->m ?></h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1><?php echo $mem_interval->d?></h1></div></div>
                     </div>   
                     <div class="duline2">
-                        <!-- <i class='bx bxs-user-x' ></i> -->
-                        <div class="typ1"><i class='bx bxs-user-check'></i><h1>Trainer Assignment</h1></div>
-                        <div class="remain"><h2>DAYS</h2><div class="time"><h1>21</h1></div></div>
+                        <?php 
+                            $flag = 0;
+
+                            if($flag == 1){
+                                $icon = "'bx bxs-user-check'";
+                                $t_assign_status = "Trainer Assignment";
+                            }else{
+                                $icon = "'bx bxs-user-x'";
+                                $t_assign_status = "No Trainer Assignment" ;
+                            }
+                        ?>
+                        <div class="typ1"><i class=<?php echo $icon ?>></i><h1><?php echo $t_assign_status ?></h1></div>
+                        <div class="remain"><h2>DAYS</h2><div class="time"><h1><?php echo $tr_interval->days ?></h1></div></div>
                     </div>    
                 </div>
                 <div class="duhead"></div>
             </div>
             <div class="vboderdivider"></div>
         </div>
-        
         <div class="divid"></div>
+        <?php 
+
+                    $trainer_id = 1;
+                    $assign_trainer_query = "SELECT * FROM trainer WHERE trainer_id = $trainer_id";
+                    $trainer_result = mysqli_query($conn, $assign_trainer_query);
+                    $trainer_row = mysqli_fetch_assoc($trainer_result);
+
+                    $trainer_f_name = $trainer_row['f_name'];
+                    $trainer_l_name = $trainer_row['l_name'];
+                    $trainer_image = $trainer_row['image'];
+                    $trainer_rate = $trainer_row['rate'];
+                    $trainer_phone_no = $trainer_row['phone_no'];
+                    $date_joined = $trainer_row['joined_date'];
+                    
+                                            
+                    $today = date("Y-m-d");
+                    $diff = date_diff(date_create($date_joined), date_create($today));
+                    
+                    $rate_tr_query = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+                    $review_query = mysqli_query($conn, $rate_tr_query);
+                    
+                    $review_count = mysqli_num_rows($review_query);
+                    if ($review_count == 0) {
+                        $final_rating = 'No Reviews Yet';
+                    } else {
+                        $review_value = 0;
+                        while ($row6 = mysqli_fetch_assoc($review_query)) {
+                            $review_value += $row6['stars'];
+                        }
+                        $final_rating = $review_value / $review_count;
+                    } 
+        ?>
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>Hi <?php echo $username ?> </h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    <div class="msg">You are already assign with <b><?php echo $trainer_f_name." ".$trainer_l_name ?> </b><?php echo $final_rating?>(⭐).</div><div class="later">Try again after the assignment duration.</div>
+                </div>
+            </div>
+        </div>
+        <div id="popup2" class="overlay">
+            <div class="popup">
+                <h2>Hi <?php echo $username ?> </h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    <div class="msg" id="pop2tr_name"><p></p></div><div class="later">Try to assign with another trainer who is available at the moment.</div>
+                </div>
+            </div>
+        </div>
+        <div id="popup3" class="overlay">
+            <div class="popup">
+                <h2>Hi <?php echo $username ?> </h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content"> 
+                    <div class="aper">
+                        <div class="joined-date">
+                            <p>You can Assignment with </p>
+                        </div>
+                        <div class="name" id="pop3tr_name">
+                            <p></p>
+                        </div>
+                        <div class="avatar">
+                            <img src="" id="pop3tr_image">
+                        </div>
+                        <div class="button-inner">
+                            <div class="about_button"><button class="about_btn" id="profile" onclick="">PROFILE</button></div>
+                        </div>
+                        <div class="stat">
+                            <div class="exp" id="pop3tr_expi">
+                                <p></p>
+                             </div>
+                            <div class="rate" id="pop3tr_ratei">
+                                <p></p>
+                            </div>
+                            <div class="review-count" id="pop3tr_counti">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="msg">So do you really want to make this assign with him ?</div><div class="later"><button class="about_btn" onclick="submit_for_tr();">YES</button><button class="about_btn"onclick="location.href='#'" >NO</button></div>
+                        </div>
+                        <form action="add-tr_payment.php" id="tr_form" method="$_GET">
+                            <input type="text" id="intr_id" name="trainer_id" value="">
+                        </form>
+                </div>
+            </div>
+        </div>
         <div class="btmsec">
             <div class="vboderdivider"></div>
             <div class="meship">
@@ -99,60 +216,61 @@
                     <div class="note2"><h1>Payment History</h1></div>
                     <div class="payment-div">
                         <table class="table-payments">
+                            <thead>
+                                <tr>
+                                    <th>INVOICE NO.</th>
+                                    <th>DATE</th>
+                                    <th>PAYMENT METHOD</th>
+                                    <!-- <th>DESCRIPTION</th> -->
+                                    <!-- <th>DONE BY</th> -->
+                                    <th>AMOUNT(LKR)</th>
+                                </tr>
+                            </thead>
                         
-                        <tr>
-                            <th>INVOICE NO.</th>
-                            <th>DATE</th>
-                            <th>PAYMENT METHOD</th>
-                            <!-- <th>DESCRIPTION</th> -->
-                            <!-- <th>DONE BY</th> -->
-                            <th>AMOUNT(LKR)</th>
-                        </tr>
-                        <?php 
-                            $query1 = "SELECT * FROM member WHERE username = '".$username."'";
-                            $result1 = mysqli_query($conn, $query1);
-                            $row1 = mysqli_fetch_assoc($result1);
+                            <?php 
+                                $query1 = "SELECT * FROM member WHERE username = '".$username."'";
+                                $result1 = mysqli_query($conn, $query1);
+                                $row1 = mysqli_fetch_assoc($result1);
 
-                            $member_id = $row1['member_id'];
-                            $f_name = $row1['f_name'];
-                            $l_name = $row1['l_name'];
-                            $p_no = $row1['phone_no'];
-                            $address = $row1['address'];
+                                $member_id = $row1['member_id'];
+                                $f_name = $row1['f_name'];
+                                $l_name = $row1['l_name'];
+                                $p_no = $row1['phone_no'];
+                                $address = $row1['address'];
 
-                            $query3 = "SELECT email FROM users WHERE username = '".$username."'";
-                            $result3 = mysqli_query($conn, $query3);
-                            $row3 = mysqli_fetch_assoc($result3);
+                                $query3 = "SELECT email FROM users WHERE username = '".$username."'";
+                                $result3 = mysqli_query($conn, $query3);
+                                $row3 = mysqli_fetch_assoc($result3);
 
-                            $email = $row3['email'];    
-                       
-                            $query2 = "SELECT * FROM payment WHERE member_id = '".$member_id."'";
-                            $result2 = mysqli_query($conn, $query2);
-                            
-                        while($row2 = mysqli_fetch_assoc($result2)){
+                                $email = $row3['email'];    
+                        
+                                $query2 = "SELECT * FROM payment WHERE member_id = '".$member_id."'";
+                                $result2 = mysqli_query($conn, $query2);
+                                
+                            while($row2 = mysqli_fetch_assoc($result2)){
 
-                            $payment_id = $row2['payment_id'];
-                            $date = $row2['payment_date'];
-                            $method = $row2['payment_type'];
-                            $amount = $row2['payment_amount'];
-                        ?>
-                        <tr>
-                            <td> <?php echo "$payment_id" ?></td>
-                            <td><?php echo "$date" ?></td>
-                            <td><?php echo "$method" ?></td>
-                            <!-- <td>Renewmembership</td> -->
-                            <!-- <td>Pamodha98</td> -->
-                            <td><?php echo "$amount" ?></td>
-                            <!-- <td>
-                                <div class="row-action">
-                                    <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
-                                </div>
-                            </td> -->
-                        </tr>
-                        <?php } ?>
-                    </table>
+                                $payment_id = $row2['payment_id'];
+                                $date = $row2['payment_date'];
+                                $method = $row2['payment_type'];
+                                $amount = $row2['payment_amount'];
+                            ?>
+                                <tr>
+                                    <td> <?php echo "$payment_id" ?></td>
+                                    <td><?php echo "$date" ?></td>
+                                    <td><?php echo "$method" ?></td>
+                                    <!-- <td>Renewmembership</td> -->
+                                    <!-- <td>Pamodha98</td> -->
+                                    <td><?php echo "$amount" ?></td>
+                                    <!-- <td>
+                                        <div class="row-action">
+                                            <button class="about_btn" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
+                                        </div>
+                                    </td> -->
+                                </tr>
+                            <?php } ?>
+                        </table>
                     </div>
                 </div>
-                
             </div>
             <div class="hordivid"></div>
             <div class="tassign">
@@ -164,28 +282,27 @@
                         </div>
                         <div class="aper">
                             <div class="avatar">
-                                <img src="./media/thusitha.jpg">
+                                <img src="../media/trainers/<?php echo $trainer_image?>">
                             </div>
                             <div class="joined-date">
-                                <p>Assign with</p>
+                                <p>Assign with </p>
                             </div>
                             <div class="name">
-
-                                <p>THUSITHA KAKULAWALA ⭐5 </p>
+                                <p><?php echo $trainer_f_name." ".$trainer_l_name ?> ⭐<?php echo $final_rating?></p>
                             </div>
                             <div class="button-inner">
-
-                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">CALL</button></div>
+                                <div class="about_button"><button class="about_btn" onclick="location.href='../trainer-profile/trainer-profile.php?trainer_id=<?php echo $trainer_id ?>'">PROFILE</button></div>
+                                <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $trainer_phone_no ?>'">CALL</button></div> 
                             </div>
                         <div class="stat">
                             <div class="exp">
-                                <p>3 YRS<br>Expirience</p>
+                                <p><?php echo $diff->format('%y') . 'yrs'; ?><br>Expirience</p>
                              </div>
                             <div class="rate">
-                                <p>6,000/=<br>Per Month</p>
+                                <p><?php echo $trainer_rate ?>/=<br>Per Month</p>
                             </div>
                             <div class="review-count">
-                                <p>50<br>Reviews</p>
+                                <p><?php echo $review_count ?><br>Reviews</p>
                             </div>
                         </div>
                         </div>
@@ -193,54 +310,61 @@
                     <div class="note2"><h1>Trainer List</h1></div>
                     <div class="trainer-div">
                         <table class="table-trainers">
-                        <tr>
-                            <th>NAME</th>
-                            <th>EXPERIENCE</th>
-                            <th>RATING</th>
-                            <th>MONTHLY RATE(LKR)</th>
-                            <th></th>
-                        </tr>
+                            <thead>
+                                <tr>
+                                    <th>NAME</th>
+                                    <th>EXPERIENCE</th>
+                                    <th>RATING</th>
+                                    <th>MONTHLY RATE(LKR)</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <?php 
+                        
+                                $query4 = "SELECT * FROM trainer";
+                                $result4 = mysqli_query($conn, $query4);
+                                
+                            while($row3 = mysqli_fetch_assoc($result4)){
 
-                        <div class="dlist">
-                            <tr>
-                                <td>Thusitha</td>
-                                <td> 2 Years</td>
-                                <td> 5 (⭐)</td>
-                                <td>2,500</td>
-                                <td>
-                                    <div class="row-action">
-                                        <button class="about_btn" onclick="location.href='members.php'">Profile</button>
-                                        <button class="about_btn" onclick="location.href='members.php'">Select</button> 
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Thusitha</td>
-                                <td> 2 Years</td>
-                                <td> 5 (⭐)</td>
-                                <td>2,500</td>
-                                <td>
-                                    <div class="row-action">
-                                        <button class="about_btn" onclick="location.href='members.php'">Profile</button>
-                                        <button class="about_btn" onclick="location.href='members.php'">Select</button> 
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Thusitha</td>
-                                <td> 2 Years</td>
-                                <td> 5 (⭐)</td>
-                                <td>2,500</td>
-                                <td>
-                                    <div class="row-action">
-                                        <button class="about_btn" onclick="location.href='members.php'">Profile</button>
-                                        <button class="about_btn" onclick="location.href='members.php'">Select</button> 
-                                    </div>
-                                </td>
-                            </tr>
-                        </div>
+                                $trainer_id = $row3['trainer_id'];
+                                $t_fname = $row3['f_name'];
+                                $t_lname= $row3['l_name'];
+                                $image = $row3['image'];
+                                $about = $row3['about'];
+                                $rate = $row3['rate'];
+                                $phone_no = $row3['phone_no'];
+                                $date_joined = $row3['joined_date'];
+                        
+                                $today = date("Y-m-d");
+                                $diff = date_diff(date_create($date_joined), date_create($today));
+                                $exp = $diff->format('%y');
+                                $query5 = "SELECT * FROM review WHERE trainer_id = '".$trainer_id."'";
+                                $review_query = mysqli_query($conn, $query5);
+                                $review_count = mysqli_num_rows($review_query);
+                        
+                                if ($review_count == 0) {
+                                    $final_rating = 'No Reviews Yet';
+                                } else {
+                                    $review_value = 0;
+                                    while ($row4 = mysqli_fetch_assoc($review_query)) {
+                                        $review_value += $row4['stars'];
+                                    }
+                                    $final_rating = $review_value / $review_count;
+                                }
+                            ?>
+                                <tr>
+                                    <td><?php echo "$t_fname" ?></td>
+                                    <td><?php echo $diff->format('%y') . 'years'; ?></td>
+                                    <td><?php echo "$final_rating"?>(⭐)</td>
+                                    <td><?php echo "$rate" ?></td>
+                                    <td>
+                                        <div class="row-action">
+                                            <button class="about_btn" onclick="location.href='../trainer-profile/trainer-profile.php?trainer_id=<?php echo $trainer_id ?>'">Profile</button>
+                                            <button class="about_btn" onclick=<?php if($flag == 1){ echo("location.href='#popup1'");}else{ echo"check_tr($trainer_id,'$t_fname',$final_rating,'$t_lname','$image',$rate,$exp,$review_count);";} ?>>Select</button> 
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                     </table>
                     </div>
                 </div>
@@ -248,16 +372,10 @@
             <div class="vboderdivider"></div>
         </div>
         <div class="udetails">
-            <input type="text"><div class="paralist" id="fname" ><?php echo "$f_name"; ?></p></div>
-            <input type="text"><div class="paralist" id="lname" ><?php echo "$l_name"; ?></div>
-            <input type="text"><div class="paralist" id="mnumber" ><?php echo "$p_no"; ?></div>
-            <input type="text"><div class="paralist" id="address" ><?php echo "$address"; ?></div>
-            <div class="paralist" id="email" ><?php echo "$email"; ?></div>
-            <div class="paralist" id="membership" ></div>
+            <div class="paralist" id="email" ></div>
             <form id="amount_form" action="add-payment.php" method="POST">
                 <input type="text" id="passamount" name = "amount" value="">
             </form>
-            <div class="paralist" id="mamount" ></div>
         </div>
         <div class="HdividerL"></div>   
     </section>
@@ -275,33 +393,25 @@
                 cost = 2500;   
                 pack = "1 Month Membership";      
                 $("#mval").text(cost);
-                $("#mamount").text(cost);
                 $("#passamount").val(cost);
-                $("#membership").text(pack);
         });
         $("#mon3").click(function(){ 
                 cost = 7000; 
                 pack = "3 Month Membership";          
                 $("#mval").text(cost);
-                $("#mamount").text(cost);
                 $("#passamount").val(cost);
-                $("#membership").text(pack);
         });
         $("#mon6").click(function(){
                 cost = 10000;
                 pack = "6 Month Membership";           
                 $("#mval").text(cost);
-                $("#mamount").text(cost);
                 $("#passamount").val(cost);
-                $("#membership").text(pack);
         });
         $("#mon12").click(function(){
                 cost = 20000;     
                 pack = "12 Month Membership";      
                 $("#mval").text(cost);
-                $("#mamount").text(cost);
                 $("#passamount").val(cost);
-                $("#membership").text(pack);
         });
 
        
@@ -315,10 +425,16 @@
             }
         }            
 
-
+        var type= 0;
         payhere.onCompleted = function onCompleted(orderId) {
-            document.getElementById("amount_form").submit();
-            console.log("Payment completed");
+            if(type === 1 ){
+                document.getElementById("tr_form").submit();
+                console.log("Payment completed");
+            }
+            else{
+                document.getElementById("amount_form").submit();
+                console.log("Payment completed");
+            }   
             //Note: validate the payment and show success or failure page to the customer
         };
 
@@ -335,17 +451,28 @@
         };
 
         var payment;
-        var amount1 = document.getElementById('mamount').innerText;
+        var tr_payment;
 
         function calctotal() {
 
-            var fname1 = document.getElementById('fname').innerText;
-            var lname1 = document.getElementById('lname').innerText;
-            var mnumber1 = document.getElementById('mnumber').innerText;
-            var address1 = document.getElementById('address').innerText;
-            var email1 = document.getElementById('email').innerText;
-            var membership1 = document.getElementById('membership').innerText;
-            var amount1 = document.getElementById('mamount').innerText;
+            var fname1 = "<?php echo "$f_name"; ?>";
+            var lname1 = "<?php echo "$l_name"; ?>";
+            var mnumber1 = "<?php echo "$p_no"; ?>";
+            var address1 = "<?php echo "$address"; ?>";
+            var email1 = "<?php echo "$email"; ?>";
+           
+            var amount1 = document.getElementById('mval').innerText;
+            var membership1 ;
+
+            if (amount1 == '2500'){
+                membership1 = "1 Month Membership";
+            }else if (amount1 == '7000'){
+                membership1 = "3 Month Membership";
+            }else if (amount1 == '10000'){
+                membership1 = "6 Month Membership";
+            }else if (amount1 == '20000'){
+                membership1 = "12 Month Membership";
+            }
 
             payment = {
                 "sandbox": true,
@@ -367,17 +494,93 @@
                 };
 
             }
+            function calctotal_fee( rate , fname , lname) {
 
+                var fname1 = "<?php echo "$f_name"; ?>";
+                var lname1 = "<?php echo "$l_name"; ?>";
+                var mnumber1 = "<?php echo "$p_no"; ?>";
+                var address1 = "<?php echo "$address"; ?>";
+                var email1 = "<?php echo "$email"; ?>";
+
+                var amount1 = rate;
+                var description = '1 month Assignment with '+fname+' '+lname;
+
+                
+
+                tr_payment = {
+                    "sandbox": true,
+                    "merchant_id": "1218759", // Replace your Merchant ID
+                    "return_url": undefined, // Important
+                    "cancel_url": undefined, // Important
+                    "notify_url": "http://sample.com/notify",
+                    "order_id": "ItemNo12345",
+                    "items": description ,
+                    "amount": amount1,
+                    "currency": "LKR",
+                    "first_name": fname1,
+                    "last_name": lname1,
+                    "email": email,
+                    "phone": mnumber1,
+                    "address": address1,
+                    "city": "Mirigama",
+                    "country": "Sri Lanka",
+                    };
+                }
         function submitFunction() {
             var result = checkpackin();
 
             if (result == true) {     
                 calctotal();
-
+                type = 0;
                 payhere.startPayment(payment);
             }
         }
 
+        function submit_for_tr() {
+                type = 1;
+                payhere.startPayment(tr_payment);
+        }
+
+        function check_tr(tr_id , fname , rating , lname , image , rate , exp , count  ){
+            var response;
+                
+            if (tr_id != '') {
+                $.ajax({
+                    url: './includes/check-trainer_assignments.php',
+                    type: 'post',
+                    data: {
+                        tr_id:tr_id
+                    },
+                    success: function(response) {
+                        console.log("success");
+                        if( response == "true"){
+                            $('#intr_id').val(tr_id);
+                            alert(tr_id);
+                            $( '#pop3tr_name' ).empty();$('#pop3tr_name').append(fname+' '+lname+' ⭐'+rating);
+                            $( '#pop3tr_image' ).empty();$("#pop3tr_image").attr("src",'../media/trainers/'+image);
+                            $( '#pop3tr_expi' ).empty();$('#pop3tr_expi').append( '<p>'+exp+'yrs<br>Expirience</p>');
+                            $( '#pop3tr_ratei' ).empty();$('#pop3tr_ratei').append('<p>'+rate+'/=<br>Per Month</p>');
+                            $( '#pop3tr_counti' ).empty();$('#pop3tr_counti').append('<p>'+count+'<br>Reviews</p>');
+                            $( '#profile' ).attr("onclick", "");$("#profile").attr("onclick","location.href='../trainer-profile/trainer-profile.php?trainer_id="+tr_id+"'");
+                            
+                            window.location.href = "#popup3"; 
+                            calctotal_fee(rate,fname,lname); 
+                        }else{
+                            $('#pop2tr_name').append('Sorry! At the moment this <b>'+fname+' '+lname+' </b>'+rating+'(⭐) trainer is not available for the assignments.');
+                            window.location.href = "#popup2";  
+                        }
+                    },
+                    error: function(){
+                        console.log("error");
+                    }
+                }
+            );
+        }
+    }
+
+    $( document ).ready(function() {
+        window.location.href = "#";
+    });
     </script>
 
 </body>

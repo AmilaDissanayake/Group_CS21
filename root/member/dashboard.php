@@ -6,11 +6,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/footer.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -59,7 +59,7 @@
                         <div class="bmistatus">
                             <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id="ob"> OBESITY</span></p>
                             <div class="pgo">
-                                <a href="./progress.php" class="readmore_btn" id="readMore">UPDATE BMI</a>
+                                <a href="./progress.php#updatebmi" class="readmore_btn" id="readMore">UPDATE BMI</a>
                             </div>
                         </div>
                 </div>
@@ -72,7 +72,7 @@
                     <div class="bmistatus">
                         <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span > AVERAGE </span></p>
                         <div class="pgo">
-                            <a href="./progress.php" class="readmore_btn" id="readMore">UPDATE BODY FAT</a> 
+                            <a href="./progress.php#updatebf" class="readmore_btn" id="readMore">UPDATE BODY FAT</a> 
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                                     <li>Latteral</li>
                                 </ul>
                             </div>
-                            <div class="bt"><a href="./schedule.php" class="readmore_btn" id="readMore">View More</a></div>
+                            <div class="bt"><a href="./schedule.php" class="readmore_btn" id="readM">View More</a></div>
                         </div>
                         </div>
                         <div class="dividerin"></div>
@@ -143,7 +143,7 @@
                                     <p>GOOD</p>
                                 </div>
                             </div>
-                            <div class="bt"><a href="./progress.php" class="readmore_btn" id="readMore">View More</a></div>
+                            <div class="bt"><a href="./progress.php#weekprgs" class="readmore_btn" id="readMore">View More</a></div>
                     </div>
                     <div class="dividerin"></div>
                     <div class="book">
