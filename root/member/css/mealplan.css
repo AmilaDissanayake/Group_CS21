@@ -329,7 +329,9 @@
   border: 0px solid #121317;
   transition: .4s;
 }
-
+.overlay .check_btn:hover {
+  box-shadow: 0px 0px 10px 1px #86FF71;
+}
 
 /* -------------------------sidebar -----------------*/
 .sidebar{
@@ -623,6 +625,21 @@ td {
   padding: 8px;
   background-color: white;
 }
+.col_1,.col_2,.col_3,.col_4,.col_5,.col_6,.col_7 {
+  transition: all .2s ease-in;
+  cursor: pointer;
+}
+.col_1:hover,.col_2:hover,.col_3:hover,.col_4:hover,.col_5:hover,.col_6:hover,.col_7:hover {
+  background-color: #f5f5f58f;
+  transform: scale(1.02);
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* @media only screen and (max-width: 768px) {
+  table {
+      width: 90%;
+  }
+} */
 /* .rcat{
   width: 70%;
   height: 100%;
@@ -661,21 +678,37 @@ th{
 
 thead {
   background-color: #86ff71;
-  color: rgb(0, 0, 0);
-  margin-bottom: 10px;
-  
-  
+  margin-bottom: 10px; 
+}
+
+.overlay thead{
+  background-color: #000;
+  border: 2px solid rgb(24,24,24);
+}
+.overlay td {
+  border: 2px solid rgb(24,24,24);
+  background-color: black;
+}
+
+.overlay tr{
+  height: auto;
+}
+.overlay .item{
+  background-color: rgb(24,24,24);
+  color: white;
+  text-align: justify;
+  justify-content: baseline;
+  padding: 2px;
 }
 
 
-
-tbody tr:nth-child(odd) {
+/* tbody tr:nth-child(odd) {
   background-color: #fff;
 }
 
 tbody tr:nth-child(even) {
   background-color: #eee;
-}
+} */
 
 
 /* scrollbarscrollbar */
@@ -698,4 +731,81 @@ tbody tr:nth-child(even) {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #86ff71; 
+}
+
+/*popup*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000;
+  color: white;
+  overflow: auto;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #000;
+  z-index: 1000;
+  border: white solid;
+  border-radius: 5px;
+  width: 92%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.popup h2 {
+  margin-top: 0;
+  color: grey;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(182, 172, 172);
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: #000;
+}
+
+.later{
+  width: 100%;
+  padding-top: 10px;
+  text-align: center;
+  color: #86FF71;
+  font-weight: bold;
+}
+
+
+.msg{
+  text-align: center;
+  padding-top: 15px;
+}
+@media screen and (max-width: 780px){
+  .popup{
+    width: 100%;
+    
+  }
 }
