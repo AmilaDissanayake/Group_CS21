@@ -73,6 +73,22 @@
 
         <span class="fade-effect1"></span>
 
+        <li>
+            <a href="./accountants.php">
+                <i class='bx bx-dollar'></i>
+                <span class="links_name">Accountants</span>
+            </a>
+        </li>
+
+        <span class="fade-effect1"></span>
+
+        <li>
+            <a href="./profile.php">
+                <i class='bx bx-user'></i>
+                <span class="links_name">Profile</span>
+            </a>
+        </li>
+
         <!-- <li>
             <a href="#">
                 <i class='bx bx-bar-chart-alt-2'></i>

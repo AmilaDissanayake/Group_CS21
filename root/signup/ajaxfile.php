@@ -20,7 +20,7 @@ if (isset($_POST['username'])) {
         $count = $row['cntUser'];
 
         if ($count > 0) {
-            $response = "<span style='color: #e74c3c;'><b>Not Available</b></span>";
+            $response = "<span style='color: #e74c3c;'><b>Already exist</b></span>";
         }
     }
 

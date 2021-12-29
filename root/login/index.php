@@ -43,7 +43,7 @@ if (isset($SESSION['username'])) {
         <div class="login">
             <div class="l-form">
                 <form action="login.php" class="form" id="form" method="POST">
-                    <h1 class="form__title">POWERHOUSE LOGIN<span id="Mem"></span></h1>
+                    <h1 class="form__title">POWER HOUSE LOGIN<span id="Mem"></span></h1>
 
                     <div class="form__div" id="name">
                         <input type="text" class="form__input" id="username" placeholder=" " name="username">
@@ -63,8 +63,8 @@ if (isset($SESSION['username'])) {
                     </div>
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="Login" name="submit"></div>
-                    
-                    
+
+
                     <script>
                         function nn() {
                             $('.alert').addClass("show");
@@ -113,7 +113,7 @@ if (isset($SESSION['username'])) {
                     <div class="signup">
                         <p>Don't have an account? <a href="../signup/index.php" class="hover"> Sign up</a></p>
                     </div>
-                     
+
                     <div class="icon">
                         <a href="#" class="fa fa-facebook"></a>
                         <!-- <a href="#" class="fa fa-google"></a> -->
