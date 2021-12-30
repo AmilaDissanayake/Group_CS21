@@ -27,6 +27,42 @@ $assign_members = mysqli_num_rows($assign_query);
 
         <?php include "includes/header.php" ?>
 
+        <script>
+            function nn() {
+                $('.alert').addClass("show");
+                $('.alert').removeClass("hide");
+                $('.alert').addClass("showAlert");
+                setTimeout(function bb() {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                }, 4000);
+            };
+        </script>
+
+        <!-- <button class="err">Show Alert</button> -->
+        <div class="alert hide">
+
+            <?php
+            if (isset($_SESSION['notification'])) {
+                $notification = $_SESSION['notification'];
+                echo '<script type="text/javascript">nn();</script>';
+            }
+            ?>
+
+            <!-- <span class="fas fa-exclamation-circle"></span> -->
+            <span class="msg"><?php echo $notification ?></span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
+        </div>
+        <script>
+            $('.close-btn').click(function ss() {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        </script>
+
+
         <div class="home-content">
             <div class="header-div">
                 <h1 class="top-header">Assigned members : <?php echo $assign_members; ?></h1>
@@ -53,6 +89,7 @@ $assign_members = mysqli_num_rows($assign_query);
                     $sql2 = "SELECT * FROM member WHERE assign_trainer = '".$trainer_id."'";
                     $result2 = mysqli_query($conn,$sql2);
                     while($member_row=mysqli_fetch_assoc($result2)){
+                        $member_id= $member_row['member_id'];
                         $f_name = $member_row['f_name'];
                         $l_name = $member_row['l_name'];
                         $image = $member_row['image'];
@@ -70,7 +107,7 @@ $assign_members = mysqli_num_rows($assign_query);
                         <td><?php echo $contact; ?></td>
                         <td><?php echo $injury; ?></td>
                         <td><div class="row-action">
-                            <button class="about_btn1" onclick="location.href='members.php'">Meal Plan and Schedule</button> 
+                            <button class="about_btn1" onclick="location.href='meal_plan.php?member_id=<?php echo $member_id;?>'">Meal Plan and Schedule</button> 
                             </div>
                         </td>
                         <td><div class="row-action">
@@ -124,3 +161,7 @@ $assign_members = mysqli_num_rows($assign_query);
 </body>
 
 </html>
+
+<?php
+unset($_SESSION['notification']);
+?>
