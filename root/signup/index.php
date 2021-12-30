@@ -256,10 +256,17 @@
                                     $review_query = mysqli_query($conn, $query2);
                                     $review_count = mysqli_num_rows($review_query);
                                     $review_value = 0;
-
-                                    while ($review_row = mysqli_fetch_assoc($review_query)) {
-                                        $review_value += $review_row['stars'];
+                                    if ($review_count == 0) {
+                                        $review_count = 1;
+                                    } else {
+                                        while ($review_row = mysqli_fetch_assoc($review_query)) {
+                                            $review_value += $review_row['stars'];
+                                        }
                                     }
+
+
+
+
 
 
                                     // $select_query = mysqli_query($connection, $query);
@@ -280,10 +287,12 @@
                     </div>
 
                     <div class="remember">
-                        <label class="container"> I accept the <span>Terms of Use</span> & <span>Privacy
-                                Policy</span>.
+
+                        <label class="container"> I accept the <span><a href="../includes/legal/terms.pdf">Terms of Use</a></span> & <span><a href="../includes/legal/privacy.pdf">Privacy
+                                    Policy</a></span>.
                             <input type="checkbox" id="mycheck">
                             <span class="checkmark"></span>
+
                         </label>
                         <label></label>
 

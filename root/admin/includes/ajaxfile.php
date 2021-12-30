@@ -27,3 +27,14 @@ if (isset($_POST['username'])) {
     echo $response;
     die;
 }
+
+<td>
+                                        <div class='first-column'><span class='avatar'><img src='../media/members/<?php echo $row['image'] ?>"></span><?php echo " " . $row['f_name'] . " " . $row['l_name'] ?></div>
+                                    </td>
+
+                                    <td>
+                    <div class="row-action">
+                        <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">View/Update/Delete</button></div>
+                        <!-- <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Delete</button></div> -->
+                    </div>
+                </td>

@@ -481,6 +481,11 @@ option {
   font-family: "Rubik";
 }
 
+.remember a {
+  text-decoration: none;
+  color: #86ff71;
+}
+
 .remember label span {
   color: #86ff71;
 }

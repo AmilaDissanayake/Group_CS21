@@ -103,57 +103,57 @@
                                 <form action="update_mealplan.php"  id="meal_form " method="POST">
                                     <tr>
                                         <td class="rcat"><div class="ttag"><span class="bpart">Breakfast</span></div></td>
-                                        <td class="col_1"><textarea class="item" rows="4" cols="50" id="mon_bf" name="mon_b"><?php echo $monday_bkft ?> </textarea></td>
-                                        <td class="col_2"><textarea class="item" rows="4" cols="50" id="tus_bf" name="tus_b"><?php echo $tuseday_bkft ?> </textarea></td>
-                                        <td class="col_3"><textarea class="item" rows="4" cols="50" id="wed_bf" name="wed_b"><?php echo $wednesday_bkft ?> </textarea></td>
-                                        <td class="col_4"><textarea class="item" rows="4" cols="50" id="thu_bf" name="thu_b"><?php echo $thursday_bkft ?> </textarea></td>
-                                        <td class="col_5"><textarea class="item" rows="4" cols="50" id="fri_bf" name="fri_b"><?php echo $friday_bkft ?> </textarea></td>
-                                        <td class="col_6"><textarea class="item" rows="4" cols="50" id="sat_bf" name="sat_b"><?php echo $saturday_bkft ?> </textarea></td>
-                                        <td class="col_7"><textarea class="item" rows="4" cols="50" id="sun_bf" name="sun_b"><?php echo $sunday_bkft ?> </textarea></td>
+                                        <td class="col_1"><textarea class="item" rows="4" cols="50" id="1" name="mon_b"><?php echo $monday_bkft ?> </textarea></td>
+                                        <td class="col_2"><textarea class="item" rows="4" cols="50" id="2" name="tus_b"><?php echo $tuseday_bkft ?> </textarea></td>
+                                        <td class="col_3"><textarea class="item" rows="4" cols="50" id="3" name="wed_b"><?php echo $wednesday_bkft ?> </textarea></td>
+                                        <td class="col_4"><textarea class="item" rows="4" cols="50" id="4" name="thu_b"><?php echo $thursday_bkft ?> </textarea></td>
+                                        <td class="col_5"><textarea class="item" rows="4" cols="50" id="5" name="fri_b"><?php echo $friday_bkft ?> </textarea></td>
+                                        <td class="col_6"><textarea class="item" rows="4" cols="50" id="6" name="sat_b"><?php echo $saturday_bkft ?> </textarea></td>
+                                        <td class="col_7"><textarea class="item" rows="4" cols="50" id="7" name="sun_b"><?php echo $sunday_bkft ?> </textarea></td>
                                     </tr>
 
                                     <tr>
                                         <td class="rcat"><div class="ttag"><span class="bpart">Snack</span></div></td>
-                                        <td class="col_1"><textarea class="item" rows="4" cols="50" id="mon_msk" name="mon_ms"><?php echo $monday_msnk ?></textarea></td>
-                                        <td class="col_2"><textarea class="item" rows="4" cols="50" id="tus_msk" name="tus_ms"><?php echo $tuseday_msnk ?></textarea></td> 
-                                        <td class="col_3"><textarea class="item" rows="4" cols="50" id="wed_msk" name="wed_ms"><?php echo $wednesday_msnk ?></textarea></td>
-                                        <td class="col_4"><textarea class="item" rows="4" cols="50" id="thu_msk" name="thu_ms"><?php echo $thursday_msnk ?></textarea></td>
-                                        <td class="col_5"><textarea class="item" rows="4" cols="50" id="fri_msk" name="fri_ms"><?php echo $friday_bkft ?></textarea></td>
-                                        <td class="col_6"><textarea class="item" rows="4" cols="50" id="sat_msk" name="sat_ms"><?php echo $saturday_msnk ?></textarea></td>
-                                        <td class="col_7"><textarea class="item" rows="4" cols="50" id="sun_msk" name="sun_ms"><?php echo $sunday_msnk ?></textarea></td>
+                                        <td class="col_1"><textarea class="item" rows="4" cols="50" id="8" name="mon_ms"><?php echo $monday_msnk ?></textarea></td>
+                                        <td class="col_2"><textarea class="item" rows="4" cols="50" id="9" name="tus_ms"><?php echo $tuseday_msnk ?></textarea></td> 
+                                        <td class="col_3"><textarea class="item" rows="4" cols="50" id="10" name="wed_ms"><?php echo $wednesday_msnk ?></textarea></td>
+                                        <td class="col_4"><textarea class="item" rows="4" cols="50" id="11" name="thu_ms"><?php echo $thursday_msnk ?></textarea></td>
+                                        <td class="col_5"><textarea class="item" rows="4" cols="50" id="12" name="fri_ms"><?php echo $friday_bkft ?></textarea></td>
+                                        <td class="col_6"><textarea class="item" rows="4" cols="50" id="13" name="sat_ms"><?php echo $saturday_msnk ?></textarea></td>
+                                        <td class="col_7"><textarea class="item" rows="4" cols="50" id="14" name="sun_ms"><?php echo $sunday_msnk ?></textarea></td>
                                     </tr>
 
                                     <tr>
                                         <td class="rcat"><div class="ttag"><span class="bpart">Lunch</span></div></td>
-                                        <td class="col_1"><textarea class="item" rows="4" cols="50" id="mon_ln" name="mon_l"><?php echo $monday_lunch ?></textarea></td>
-                                        <td class="col_2"><textarea class="item" rows="4" cols="50" id="tus_ln" name="tus_l"><?php echo $tuseday_lunch ?></textarea></td>
-                                        <td class="col_3"><textarea class="item" rows="4" cols="50" id="wed_ln" name="wed_l"><?php echo $wednesday_lunch ?></textarea></td>
-                                        <td class="col_4"><textarea class="item" rows="4" cols="50" id="thu_ln" name="thu_l"><?php echo $thursday_lunch ?></textarea></td>
-                                        <td class="col_5"><textarea class="item" rows="4" cols="50" id="fri_ln" name="fri_l"><?php echo $friday_lunch ?></textarea></td>
-                                        <td class="col_6"><textarea class="item" rows="4" cols="50" id="sat_ln" name="sat_l"><?php echo $saturday_lunch ?></textarea></td>
-                                        <td class="col_7"><textarea class="item" rows="4" cols="50" id="sun_ln" name="sun_l"><?php echo $sunday_lunch ?></textarea></div>   </td>
+                                        <td class="col_1"><textarea class="item" rows="4" cols="50" id="15" name="mon_l"><?php echo $monday_lunch ?></textarea></td>
+                                        <td class="col_2"><textarea class="item" rows="4" cols="50" id="16" name="tus_l"><?php echo $tuseday_lunch ?></textarea></td>
+                                        <td class="col_3"><textarea class="item" rows="4" cols="50" id="17" name="wed_l"><?php echo $wednesday_lunch ?></textarea></td>
+                                        <td class="col_4"><textarea class="item" rows="4" cols="50" id="18" name="thu_l"><?php echo $thursday_lunch ?></textarea></td>
+                                        <td class="col_5"><textarea class="item" rows="4" cols="50" id="19" name="fri_l"><?php echo $friday_lunch ?></textarea></td>
+                                        <td class="col_6"><textarea class="item" rows="4" cols="50" id="20" name="sat_l"><?php echo $saturday_lunch ?></textarea></td>
+                                        <td class="col_7"><textarea class="item" rows="4" cols="50" id="21 name="sun_l"><?php echo $sunday_lunch ?></textarea></div>   </td>
                                     </tr>
 
                                     <tr>
                                         <td class="rcat"><div class="ttag"><span class="bpart">Snack</span></div></td>
-                                        <td class="col_1"><textarea class="item" rows="4" cols="50" id="mon_esnk" name="mon_esn"><?php echo $monday_esnk ?></textarea></td>
-                                        <td class="col_2"><textarea class="item" rows="4" cols="50" id="tus_esnk" name="tus_esn"><?php echo $tuseday_esnk ?></textarea></td>
-                                        <td class="col_3"><textarea class="item" rows="4" cols="50" id="wed_esnk" name="wed_esn"><?php echo $wednesday_esnk ?></textarea></td>
-                                        <td class="col_4"><textarea class="item" rows="4" cols="50" id="thu_esnk" name="thu_esn"><?php echo $thursday_esnk ?></textarea></td>
-                                        <td class="col_5"><textarea class="item" rows="4" cols="50" id="fri_esnk" name="fri_esn"><?php echo $friday_esnk ?></textarea></td>
-                                        <td class="col_6"><textarea class="item" rows="4" cols="50" id="sat_esnk" name="sat_esn"><?php echo $saturday_esnk ?></textarea></td>                        
-                                        <td class="col_7"><textarea class="item" rows="4" cols="50" id="sun_esnk" name="sun_esn"><?php echo $sunday_esnk ?></textarea></td>
+                                        <td class="col_1"><textarea class="item" rows="4" cols="50" id="22" name="mon_esn"><?php echo $monday_esnk ?></textarea></td>
+                                        <td class="col_2"><textarea class="item" rows="4" cols="50" id="23" name="tus_esn"><?php echo $tuseday_esnk ?></textarea></td>
+                                        <td class="col_3"><textarea class="item" rows="4" cols="50" id="24" name="wed_esn"><?php echo $wednesday_esnk ?></textarea></td>
+                                        <td class="col_4"><textarea class="item" rows="4" cols="50" id="25" name="thu_esn"><?php echo $thursday_esnk ?></textarea></td>
+                                        <td class="col_5"><textarea class="item" rows="4" cols="50" id="26" name="fri_esn"><?php echo $friday_esnk ?></textarea></td>
+                                        <td class="col_6"><textarea class="item" rows="4" cols="50" id="27" name="sat_esn"><?php echo $saturday_esnk ?></textarea></td>                        
+                                        <td class="col_7"><textarea class="item" rows="4" cols="50" id="28" name="sun_esn"><?php echo $sunday_esnk ?></textarea></td>
                                     </tr>
 
                                     <tr>
                                         <td class="rcat"><div class="ttag"><span class="bpart">Dinner</span></div></td>
-                                        <td class="col_1"><textarea class="item" rows="4" cols="50" id="mon_din" name="mon_di"><?php echo $monday_din ?></textarea></td>    
-                                        <td class="col_2"><textarea class="item" rows="4" cols="50" id="tus_din" name="tus_di"><?php echo $tuseday_din ?></textarea></td>
-                                        <td class="col_3"><textarea class="item" rows="4" cols="50" id="wed_din" name="wed_di"><?php echo $wednesday_din ?></textarea></td>
-                                        <td class="col_4"><textarea class="item" rows="4" cols="50" id="thu_din" name="thu_di"><?php echo $thursday_din ?></textarea></td>
-                                        <td class="col_5"><textarea class="item" rows="4" cols="50" id="fri_din" name="fri_di"><?php echo $friday_din ?></textarea></td>
-                                        <td class="col_6"><textarea class="item" rows="4" cols="50" id="sat_din" name="sat_di"><?php echo $saturday_din ?></textarea></td>
-                                        <td class="col_7"><textarea class="item" rows="4" cols="50" id="sun_din" name="sun_di"><?php echo $sunday_din ?></textarea></td>
+                                        <td class="col_1"><textarea class="item" rows="4" cols="50" id="29" name="mon_di"><?php echo $monday_din ?></textarea></td>    
+                                        <td class="col_2"><textarea class="item" rows="4" cols="50" id="30" name="tus_di"><?php echo $tuseday_din ?></textarea></td>
+                                        <td class="col_3"><textarea class="item" rows="4" cols="50" id="31" name="wed_di"><?php echo $wednesday_din ?></textarea></td>
+                                        <td class="col_4"><textarea class="item" rows="4" cols="50" id="32" name="thu_di"><?php echo $thursday_din ?></textarea></td>
+                                        <td class="col_5"><textarea class="item" rows="4" cols="50" id="33" name="fri_di"><?php echo $friday_din ?></textarea></td>
+                                        <td class="col_6"><textarea class="item" rows="4" cols="50" id="34" name="sat_di"><?php echo $saturday_din ?></textarea></td>
+                                        <td class="col_7"><textarea class="item" rows="4" cols="50" id="35" name="sun_di"><?php echo $sunday_din ?></textarea></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -358,6 +358,35 @@
         $( document ).ready(function() {
             window.location.href = "#";
         });
+        
+            // var isValid;
+            // const form = document.getElementById('meal_form');
+            // form.addEventListener("submit", function (e) {
+            //     e.preventDefault();
+            //     var result = checkInputs();
+
+            //     alert(result);
+              
+                    
+              
+            // });
+
+
+            // function checkInputs() {
+            //     const in1 = document.getElementById('1');
+            //     const in1val = in1.value.trim();
+                
+            //     if (in1val === '') {
+            //         in1.style.borderColor="red";
+
+            //         isValid = false;
+            //         return false;
+            //     } 
+            //     else {
+            //         isValid = true;
+            //         return true;
+            //     }
+
     </script>
 </body>
 
