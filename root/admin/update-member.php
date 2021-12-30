@@ -1,3 +1,19 @@
+<?php
+include 'includes/db.php';
+
+$username = $_GET['username'];
+
+
+$sql = "SELECT * FROM member WHERE username = '$username'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+
+$f_name = $row['f_name'];
+$l_name = $row['l_name'];
+
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -6,7 +22,7 @@
     <meta charset="UTF-8">
 
 
-    <link rel="stylesheet" href="css/update-member.css">
+    <link rel="stylesheet" href="css/add-member.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -24,7 +40,10 @@
             <div class="login">
                 <div class="l-form">
                     <form action="add-member-php.php" class="form" id="signup_form" method="POST">
-                        <h1 class="form__title">ADD MEMBER</h1>
+                        <h1 class="form__title">Update MEMBER</h1>
+                        <div class="pic">
+                            <img src="../member/media/<?php echo $image ?>" alt="">
+                        </div>
 
                         <div class="separator">
                             <hr class="hr-left1" />
@@ -34,7 +53,7 @@
 
                         <div class="name">
                             <div class="form__div">
-                                <input type="text" class="name_input" id="fname" placeholder=" " name="f_name_cc">
+                                <input type="text" class="name_input" id="fname" value="<?php echo $f_name ?> " name="f_name_cc">
                                 <label for="" class="form__label">First Name</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>
@@ -44,7 +63,7 @@
                                 <small>Error message</small>
                             </div>
                             <div class="form__div">
-                                <input type="text" class="name_input" id="lname" placeholder=" " name="l_name_cc">
+                                <input type="text" class="name_input" id="lname" value="<?php echo $l_name ?>" name=" l_name_cc">
                                 <label for="" class="form__label">Last Name</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>

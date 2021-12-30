@@ -63,7 +63,15 @@
 
         <div class="home-content">
             <div class="cover">
-                <img src="media/cover.jpg" alt="">
+                <?php
+
+                $image_select1 = "SELECT cover_image FROM admin WHERE username='$username'";
+                $result1 = mysqli_query($conn, $image_select1);
+                $image_row1 = mysqli_fetch_assoc($result1);
+                $cover = $image_row1['cover_image'];
+
+                ?>
+                <img src="media/<?php echo $cover ?>" alt="">
             </div>
             <div class="overlayy">
 
@@ -72,7 +80,7 @@
                     <label id='update_profile2'> <i class='bx bx-upload ccc'></i>
                         <input type='file' name='u_image' size='60' />
                     </label><br><br><br><br>
-                    <button id='button_profile' name='update' class='upp'>Update Cover</button>
+                    <button id='button_profile' name='update-cover' class='upp'>Update Cover</button>
                 </form>
 
 
@@ -102,6 +110,15 @@
 
                 </div>
 
+            </div>
+
+            <div class="details">
+                <div class="left">
+
+                </div>
+                <div class="right">
+
+                </div>
             </div>
 
 

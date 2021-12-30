@@ -878,6 +878,24 @@ border: 2px solid #86ff71;
   left: 85%;
 }
 
+.details{
+  display: flex;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.left{
+  width: 30%;
+  background-color: #121317;
+}
+
+.right{
+  width: 70%;
+  background-color: yellow;
+}
+
+
+
  
   
   
