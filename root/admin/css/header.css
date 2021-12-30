@@ -8,6 +8,7 @@ body{
     align-items: center;
     font-size: 24px;
     font-weight: 500;
+    /* width: 200px; */
   }
   nav .sidebar-button i{
     font-size: 35px;
@@ -149,4 +150,13 @@ body{
     color: #141517;
     font-size: 15px;
     line-height: 40px;
+}
+
+.header-img img{
+
+  height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    object-fit: cover;
+
 }
