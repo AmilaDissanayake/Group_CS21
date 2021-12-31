@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="css/schedule.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -60,36 +62,7 @@
             <div class="vboderdivider"></div>
             <div class="middle">
                 <div class="note"><h1>Workout Schedule</h1></div>
-                <div id="popup1" class="overlay">
-                    <div class="popup">
-                        <h2>Hi <?php echo $username ?>! You may edit your Schedule now. </h2>
-                        <a class="close" href="#">&times;</a>
-                        <div class="content">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>DAY 01</th>
-                                    <th>DAY 02</th>
-                                    <th>DAY 03</th>
-                                    <th>DAY 04</th>
-                                    <th>DAY 05</th>
-                                    <th>DAY 06</th>
-                                    <th>DAY 07</th>
-                                </tr>
-                            </thead>
-
-                            <tbody id="output">
-                                <form action="update_schedule.php"  id="meal_form " method="POST">
-
-                            </tbody>
-                        </table>
-                            <div class="fixT">
-                                <button class="check_btn" id="tbook" type="submit" name="time-submit" onclick="">SAVE SCHEDULE</button>
-                            </div>
-                            <div class="msg" id="pop2tr_name"><p></p></div><div class="later">NOTE:If you are assign with a trainer ,that specific trainer can access your these tables.</div>
-                        </form>
-                        </div>
-                    </div>
+                
                 </div>
                 <div class="member-list">
                     <table class="table table-hover">
@@ -186,6 +159,32 @@
         $( document ).ready(function() {
             window.location.href = "#";
         });
+
+        var i;
+        function changemode(i) {
+
+            var value = document.getElementById(i).checked;
+            alert(value);
+
+            // var x = document.getElementById("password1");
+            // var y = document.getElementById("password2");
+            // var z = document.getElementById("password");
+            // if (x.type === "password") {
+            //     x.type = "text";
+            // } else {
+            //     x.type = "password";
+            // }
+            // if (y.type === "password") {
+            //     y.type = "text";
+            // } else {
+            //     y.type = "password";
+            // }
+            // if (z.type === "password") {
+            //     z.type = "text";
+            // } else {
+            //     z.type = "password";
+            // }
+        }
     </script>
 
 </body>
