@@ -8,8 +8,26 @@ $sql = "SELECT * FROM member WHERE username = '$username'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
+$sql2 = "SELECT * FROM users WHERE username = '$username'";
+$result2 = mysqli_query($conn, $sql2);
+$row2 = mysqli_fetch_assoc($result2);
+
 $f_name = $row['f_name'];
 $l_name = $row['l_name'];
+$phone_no = $row['phone_no'];
+$address = $row['address'];
+$dob = $row['dob'];
+$gender = $row['gender'];
+$inj = $row['injuries'];
+$email = $row2['email'];
+$member_id = $row['member_id'];
+
+$sql3 = "SELECT * FROM membership WHERE member_id = '$member_id'";
+$result3 = mysqli_query($conn, $sql3);
+$row3 = mysqli_fetch_assoc($result3);
+
+$membership_type = $row3['membership_type']
+
 
 
 ?>
@@ -22,7 +40,7 @@ $l_name = $row['l_name'];
     <meta charset="UTF-8">
 
 
-    <link rel="stylesheet" href="css/add-member.css">
+    <link rel="stylesheet" href="css/update-member.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -77,9 +95,13 @@ $l_name = $row['l_name'];
                             <div class="select__div">
                                 <label>
                                     <select class="form_input" id="gender" required name="gender_cc">
-                                        <option value="" disabled selected> Gender </option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                        <option value="" disabled> Gender </option>
+                                        <option value="male" <?php if ($gender == 'male') {
+                                                                    echo "selected";
+                                                                } ?>>Male</option>
+                                        <option value="female" <?php if ($gender == 'female') {
+                                                                    echo "selected";
+                                                                } ?>>Female</option>
                                     </select>
                                 </label>
                                 <i class="fa fa-check"></i>
@@ -90,7 +112,7 @@ $l_name = $row['l_name'];
                                 <small>Error message</small>
                             </div>
                             <div class="form__div">
-                                <input type="text" class="name_input2" id="mnumber" placeholder=" " name="phone_no_cc">
+                                <input type="text" class="name_input2" id="mnumber" placeholder=" " value="<?php echo $phone_no ?>" name="phone_no_cc">
                                 <label for="" class="form__label">Mobile Number</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>
@@ -102,7 +124,7 @@ $l_name = $row['l_name'];
                         </div>
 
                         <div class="form__div">
-                            <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" " name="dob_cc" min="1920-10-01" max="2010-10-20">
+                            <input type="date" class="form__input" value="<?php echo $dob ?>" id=" dateofbirth" placeholder=" " name="dob_cc" min="1920-10-01" max="2010-10-20">
                             <label for="" class="form__label">Date Of Birth</label>
                             <!-- <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i> -->
@@ -115,7 +137,7 @@ $l_name = $row['l_name'];
                         </div>
 
                         <div class="form__div">
-                            <input type="text" class="form__input" id="address" placeholder=" " name="address_cc">
+                            <input type="text" class="form__input" id="address" placeholder=" " name="address_cc" value="<?php echo $address ?>">
                             <label for="" class="form__label">Address</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -125,7 +147,7 @@ $l_name = $row['l_name'];
                             <small>Error message</small>
                         </div>
                         <div class="inj__div">
-                            <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries_cc"></textarea>
+                            <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries_cc" value="<?php echo $inj ?>"></textarea>
                             <label for="" class="form__label">If you have any injury mention here...</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -147,7 +169,7 @@ $l_name = $row['l_name'];
 
 
                         <div class="form__div">
-                            <input type="text" class="form__input" id="email" placeholder=" " name="email_cc">
+                            <input type="text" class="form__input" id="email" placeholder=" " name="email_cc" value="<?php echo $email ?>">
                             <label for="" class="form__label">Email</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -157,7 +179,7 @@ $l_name = $row['l_name'];
                         </div>
 
                         <div class="form__div" id="uname">
-                            <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
+                            <input type="text" class="form__input" id="username" placeholder=" " name="username_cc" value="<?php echo $username ?>" disabled>
                             <label for="" class="form__label">Username</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -166,14 +188,14 @@ $l_name = $row['l_name'];
                         <i class="fas fa-exclamation-circle"></i> -->
                             <small></small>
                         </div>
-                        <div class="name">
+                        <!-- <div class="name">
                             <div class="form__div">
                                 <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();" name="password_cc">
                                 <label for="" class="form__label">Password</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>
-                                <!-- <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation-circle"></i> -->
+                                <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
                                 <small>Error message</small>
                             </div>
                             <div class="form__div">
@@ -181,32 +203,40 @@ $l_name = $row['l_name'];
                                 <label for="" class="form__label">Confirm Password</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>
-                                <!-- <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation-circle"></i> -->
+                                <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
                                 <small>Error message</small>
                             </div>
                         </div>
 
-                        <!-- <input type="checkbox" onclick="myunction()">Show Password -->
+                        <input type="checkbox" onclick="myunction()">Show Password
 
                         <label class="container">Show Password
                             <input type="checkbox" onclick="myunction()">
                             <span class="checkmark"></span>
-                        </label>
+                        </label> -->
 
                         <div class="select__div">
 
 
                             <label>
-                                <select id="membership" class="form_input" required name="membership_cc">
-                                    <option value="" disabled selected> Select Your Membership </option>
-                                    <option value=2500> One Month 2500/=
+                                <select id="membership" class="form_input" required name="membership_cc" disabled>
+                                    <option value="" disabled> Select Your Membership </option>
+                                    <option value=2500 <?php if ($membership_type == 1) {
+                                                            echo "selected";
+                                                        } ?>> One Month 2500/=
                                     </option>
-                                    <option value=7000> Three Months 7000/=
+                                    <option value=7000 <?php if ($membership_type == 3) {
+                                                            echo "selected";
+                                                        } ?>> Three Months 7000/=
                                     </option>
-                                    <option value=13500> Six Months 13500/=
+                                    <option value=13500 <?php if ($membership_type == 6) {
+                                                            echo "selected";
+                                                        } ?>> Six Months 13500/=
                                     </option>
-                                    <option value=20000> One Year 20000/=
+                                    <option value=20000 <?php if ($membership_type == 12) {
+                                                            echo "selected";
+                                                        } ?>> One Year 20000/=
                                     </option>
 
 
