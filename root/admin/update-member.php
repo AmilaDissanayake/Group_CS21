@@ -8,8 +8,39 @@ $sql = "SELECT * FROM member WHERE username = '$username'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
+$sql2 = "SELECT * FROM users WHERE username = '$username'";
+$result2 = mysqli_query($conn, $sql2);
+$row2 = mysqli_fetch_assoc($result2);
+
 $f_name = $row['f_name'];
 $l_name = $row['l_name'];
+$phone_no = $row['phone_no'];
+$address = $row['address'];
+$dob = $row['dob'];
+$gender = $row['gender'];
+$inj = $row['injuries'];
+$email = $row2['email'];
+$member_id = $row['member_id'];
+$assign_trainer = $row['assign_trainer'];
+
+$sql3 = "SELECT * FROM membership WHERE member_id = '$member_id'";
+$result3 = mysqli_query($conn, $sql3);
+$row3 = mysqli_fetch_assoc($result3);
+
+$membership_type = $row3['membership_type'];
+
+$trainer;
+$sql4;
+
+if ($assign_trainer == 0) {
+    $trainer = 0;
+} else {
+    $sql4 = "SELECT trainer_id FROM assignment WHERE member_id = '$member_id'";
+}
+
+$result4 = mysqli_query($conn, $sql4);
+$row4 = mysqli_fetch_assoc($result4);
+
 
 
 ?>
@@ -22,11 +53,11 @@ $l_name = $row['l_name'];
     <meta charset="UTF-8">
 
 
-    <link rel="stylesheet" href="css/add-member.css">
+    <link rel="stylesheet" href="css/update-member.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="js/add-member.js"></script>
+    <script type="text/javascript" src="js/update-member.js"></script>
 </head>
 
 <body>
@@ -39,7 +70,10 @@ $l_name = $row['l_name'];
         <div class="home-content">
             <div class="login">
                 <div class="l-form">
-                    <form action="add-member-php.php" class="form" id="signup_form" method="POST">
+                    <form hidden class="form" id="delete_form" action="delete-member.php" method="POST">
+                        <input type="text" id="h-username" value="<?php echo $username ?>" name="username">
+                    </form>
+                    <form action="update-member-php.php" class="form" id="signup_form" method="POST">
                         <h1 class="form__title">Update MEMBER</h1>
                         <div class="pic">
                             <img src="../member/media/<?php echo $image ?>" alt="">
@@ -77,9 +111,13 @@ $l_name = $row['l_name'];
                             <div class="select__div">
                                 <label>
                                     <select class="form_input" id="gender" required name="gender_cc">
-                                        <option value="" disabled selected> Gender </option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                        <option value="" disabled> Gender </option>
+                                        <option value="male" <?php if ($gender == 'male') {
+                                                                    echo "selected";
+                                                                } ?>>Male</option>
+                                        <option value="female" <?php if ($gender == 'female') {
+                                                                    echo "selected";
+                                                                } ?>>Female</option>
                                     </select>
                                 </label>
                                 <i class="fa fa-check"></i>
@@ -90,7 +128,7 @@ $l_name = $row['l_name'];
                                 <small>Error message</small>
                             </div>
                             <div class="form__div">
-                                <input type="text" class="name_input2" id="mnumber" placeholder=" " name="phone_no_cc">
+                                <input type="text" class="name_input2" id="mnumber" placeholder=" " value="<?php echo $phone_no ?>" name="phone_no_cc">
                                 <label for="" class="form__label">Mobile Number</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>
@@ -102,7 +140,7 @@ $l_name = $row['l_name'];
                         </div>
 
                         <div class="form__div">
-                            <input type="date" class="form__input" value="2000-10-20" id=" dateofbirth" placeholder=" " name="dob_cc" min="1920-10-01" max="2010-10-20">
+                            <input type="date" class="form__input" value="<?php echo $dob ?>" id=" dateofbirth" placeholder=" " name="dob_cc" min="1920-10-01" max="2010-10-20">
                             <label for="" class="form__label">Date Of Birth</label>
                             <!-- <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i> -->
@@ -115,7 +153,7 @@ $l_name = $row['l_name'];
                         </div>
 
                         <div class="form__div">
-                            <input type="text" class="form__input" id="address" placeholder=" " name="address_cc">
+                            <input type="text" class="form__input" id="address" placeholder=" " name="address_cc" value="<?php echo $address ?>">
                             <label for="" class="form__label">Address</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -125,7 +163,7 @@ $l_name = $row['l_name'];
                             <small>Error message</small>
                         </div>
                         <div class="inj__div">
-                            <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries_cc"></textarea>
+                            <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries_cc" value="<?php echo $inj ?>"></textarea>
                             <label for="" class="form__label">If you have any injury mention here...</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -147,7 +185,7 @@ $l_name = $row['l_name'];
 
 
                         <div class="form__div">
-                            <input type="text" class="form__input" id="email" placeholder=" " name="email_cc">
+                            <input type="text" class="form__input" id="email" placeholder=" " name="email_cc" value="<?php echo $email ?>">
                             <label for="" class="form__label">Email</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -157,7 +195,7 @@ $l_name = $row['l_name'];
                         </div>
 
                         <div class="form__div" id="uname">
-                            <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
+                            <input type="text" class="form__input" id="username" placeholder=" " name="username" value="<?php echo $username ?>" disabled>
                             <label for="" class="form__label">Username</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -166,14 +204,14 @@ $l_name = $row['l_name'];
                         <i class="fas fa-exclamation-circle"></i> -->
                             <small></small>
                         </div>
-                        <div class="name">
+                        <!-- <div class="name">
                             <div class="form__div">
                                 <input type="password" class="name_input" id="password1" placeholder=" " onkeyup="return passwordChanged();" name="password_cc">
                                 <label for="" class="form__label">Password</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>
-                                <!-- <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation-circle"></i> -->
+                                <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
                                 <small>Error message</small>
                             </div>
                             <div class="form__div">
@@ -181,32 +219,40 @@ $l_name = $row['l_name'];
                                 <label for="" class="form__label">Confirm Password</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>
-                                <!-- <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation-circle"></i> -->
+                                <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
                                 <small>Error message</small>
                             </div>
                         </div>
 
-                        <!-- <input type="checkbox" onclick="myunction()">Show Password -->
+                        <input type="checkbox" onclick="myunction()">Show Password
 
                         <label class="container">Show Password
                             <input type="checkbox" onclick="myunction()">
                             <span class="checkmark"></span>
-                        </label>
+                        </label> -->
 
                         <div class="select__div">
 
 
                             <label>
-                                <select id="membership" class="form_input" required name="membership_cc">
-                                    <option value="" disabled selected> Select Your Membership </option>
-                                    <option value=2500> One Month 2500/=
+                                <select id="membership" class="form_input" required name="membership_cc" disabled>
+                                    <option value="" disabled> Select Your Membership </option>
+                                    <option value=2500 <?php if ($membership_type == 1) {
+                                                            echo "selected";
+                                                        } ?>> One Month 2500/=
                                     </option>
-                                    <option value=7000> Three Months 7000/=
+                                    <option value=7000 <?php if ($membership_type == 3) {
+                                                            echo "selected";
+                                                        } ?>> Three Months 7000/=
                                     </option>
-                                    <option value=13500> Six Months 13500/=
+                                    <option value=13500 <?php if ($membership_type == 6) {
+                                                            echo "selected";
+                                                        } ?>> Six Months 13500/=
                                     </option>
-                                    <option value=20000> One Year 20000/=
+                                    <option value=20000 <?php if ($membership_type == 12) {
+                                                            echo "selected";
+                                                        } ?>> One Year 20000/=
                                     </option>
 
 
@@ -236,8 +282,8 @@ $l_name = $row['l_name'];
 
 
                             <label>
-                                <select id="trainer" class="form_input" required name="trainer_cc">
-                                    <option value="" disabled selected> Select Your Trainer </option>
+                                <select id="trainer" class="form_input" required name="trainer_cc" disabled>
+                                    <option value=""> Select Your Trainer </option>
                                     <?php
 
                                     require "includes/db.php";
@@ -270,20 +316,25 @@ $l_name = $row['l_name'];
 
                                     ?>
 
-                                        <option value=<?php echo $trainer_id ?> data-trainer=<?php echo $rate ?>>
+                                        <option value=<?php echo $trainer_id ?> <?php if ($trainer_id == $row4['trainer_id']) {
+                                                                                    echo "selected";
+                                                                                } ?> data-trainer=<?php echo $rate ?>>
                                             <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count ?></option>
 
 
                                     <?php } ?>
-                                    <option value=0 data-trainer=0>I don't need a trainer</option>
+                                    <option value=0 data-trainer=0 <?php if ($trainer_id == 0) {
+                                                                        echo "selected";
+                                                                    } ?>>No Trainer</option>
                                 </select>
                             </label>
-                            <span class="tr"><br>
+                            <!-- <span class="tr"><br>
                                 <p> See trainer details<span class="tr_link"><a href="../trainers.php" target="_blank">&nbsphere</a></span> </p>
-                            </span>
+                            </span> -->
+
                         </div>
 
-                        <div class="remember">
+                        <!-- <div class="remember">
                             <label class="container"> Member accepts the <span>Terms of Use</span> & <span>Privacy
                                     Policy</span>.
                                 <input type="checkbox" id="mycheck">
@@ -291,16 +342,23 @@ $l_name = $row['l_name'];
                             </label>
                             <label></label>
 
-                        </div>
+                        </div> -->
+                    </form>
 
-                        <div class="buttondiv"><input type="button" class="form__button" value="ADD MEMBER" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
 
-                        <!-- <div class="payhere">
+                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE MEMBER" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+
+                    <div class="buttondiv" id="delete_submit"><input type="button" class="form__button" value="DELETE MEMBER" onclick="go()"></div>
+
+                    <!-- <button value="DELETE MEMBER" id="delete_submit"></button> -->
+
+
+                    <!-- <div class="payhere">
                             <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
                         </div> -->
 
-                        <script>
+                    <!-- <script>
                             $(document).ready(function() {
                                 $("#username").keyup(function() {
                                     var username = $(this).val().trim();
@@ -328,186 +386,72 @@ $l_name = $row['l_name'];
                                     }
                                 });
                             });
-                        </script>
+                        </script> -->
 
 
-                        <!-- <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script> -->
+                    <!-- <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script> -->
 
-                        <script>
-                            function myunction() {
-                                var x = document.getElementById("password1");
-                                var y = document.getElementById("password2");
-                                if (x.type === "password") {
-                                    x.type = "text";
-                                } else {
-                                    x.type = "password";
-                                }
-                                if (y.type === "password") {
-                                    y.type = "text";
-                                } else {
-                                    y.type = "password";
-                                }
-                            }
-                            var selectedTrainer;
-                            var selectedMembership;
-                            var cost = 0;
-                            var temp1 = 0;
-                            var temp2 = 0;
-                            var button = $(".form__button");
-                            $(document).ready(function() {
-                                $("select#trainer").change(function() {
+                    <script>
+                        function submitFunction() {
+                            var result = checkInputs();
 
-                                    selectedTrainer = $(this).find('option:selected').data('trainer');
-                                    // alert($(this).find(':selected').data('trainerRate'));
-                                    selectedTrainer = parseInt(selectedTrainer, 10);
-                                    if (temp1 > 0) {
-                                        cost = cost - temp1;
-                                        cost = cost + selectedTrainer;
-                                    } else {
-                                        cost = cost + selectedTrainer;
-                                    }
-
-
-                                    // alert("You have selected the country - " + selectedCountry);
-
-                                    // button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
-                                    temp1 = selectedTrainer;
-
-                                    button.val("ADD MEMBER & PAY" + " " + cost + "/=");
-
-
-
-
-
-                                });
-
-
-                            });
-
-                            $(document).ready(function() {
-                                $("select#membership").change(function() {
-                                    selectedMembership = $(this).children("option:selected").val();
-                                    selectedMembership = parseInt(selectedMembership, 10);
-
-                                    if (temp2 > 0) {
-                                        cost = cost - temp2;
-                                        cost = cost + selectedMembership;
-                                    } else {
-                                        cost = cost + selectedMembership;
-                                    }
-                                    temp2 = selectedMembership;
-                                    button.val("ADD MEMBER & PAY" + " " + cost + "/=");
-                                    // selectedTrainer2 = $("#trainer").find('option:selected').data('trainer');
-                                    // selectedMembership2 = $("#membership option:selected").val();
-                                    // alert(selectedTrainer2);
-                                    // alert(selectedMembership2);
-                                    // cost = cost - selectedMembership;
-                                    // alert("You have selected the country - " + selectedCountry);
-
-                                    // button.val("SIGN UP & PAY" + " " + selectedTrainer + "/=");
-                                });
-
-
-                            });
-
-
-
-
-
-
-
-                            // cost = Number(cost);
-                            // var bb = cost;
-
-                            // fcost = cost.toString();
-                            // fcost = cost.toString();
-                            // alert(typeof(fcost));
-
-
-
-                            // alert(selectedMembership2 + selectedTrainer2);
-
-
-
-                            function calctotal() {
-
-                                var fname1 = document.getElementById('fname').value;
-                                var lname1 = document.getElementById('lname').value;
-                                // const gender = document.getElementById('gender').value;
-                                var mnumber1 = document.getElementById('mnumber').value;
-                                // const dob = document.getElementById('dob');
-                                var address1 = document.getElementById('address').value;
-                                // const inj = document.getElementById('inj');
-                                var email1 = document.getElementById('email').value;
-                                var membership1 = document.getElementById('membership').value;
-                                var trainer1 = document.getElementById('trainer').value;
-
-                                var finalcost = selectedMembership + selectedTrainer;
-                                finalcost2 = finalcost.toString();
-
-                                function setCookie(cName, cValue) {
-                                    // let date = new Date();
-                                    // date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
-                                    // const expires = "expires=" + date.toUTCString();
-                                    document.cookie = cName + "=" + cValue;
-                                }
-
-                                // Apply setCookie
-                                setCookie('amount', finalcost2);
+                            if (result == true) {
+                                // e.preventDefault();
                                 document.getElementById("signup_form").submit();
 
+                                // document.getElementById("signup_form").submit();
 
-                                // alert(finalcost2);
-                                // alert(typeof(finalcost2)
-
+                                // }
                             }
+                        }
+
+                        function deleteFunction() {
 
 
-                            //Put the payment variables here
-
-                            // alert(finalcost2);
-                            // alert(typeof(finalcost2));
+                        }
 
 
-                            // var cc = "gtgtgtgt";
+                        // $(document).ready(function() {
+                        //     $("#search").keydown(function() {
+                        //         $.ajax({
+                        //             type: 'POST',
+                        //             url: 'search.php',
+                        //             data: {
+                        //                 name: $("#search").val(),
+                        //             },
+                        //             success: function(data) {
+                        //                 $("#output").html(data);
+                        //             }
+                        //         });
+                        //     });
+                        // });
 
-                            // payment["amount"] = cc;
-                            // payment["items"] = fname1;
+                        $(document).ready(function() {
+                            $('#delete_submit').click(function() {
+                                {
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: 'delete-member.php',
+                                        dataType: "html",
+                                        data: '<?php echo $username ?>',
 
-
-                            function submitFunction() {
-                                var result = checkInputs();
-
-                                if (result == true) {
-                                    // e.preventDefault();
-                                    calctotal();
-
-                                    // document.getElementById("signup_form").submit();
-
-
-
-
-                                    // }
+                                        // success: function(data) {
+                                        //     $("#output").html(data);
+                                        // }
+                                    });
                                 }
-                            }
+                            });
+                        });
 
-                            // form.addEventListener("submit", function(e) {
 
-                            //     checkInputs();
-                            //     if (isValid == false) {
-                            //         e.preventDefault();
-                            //     } else if (isValid == true) {
-                            //         e.preventDefault();
-                            //         payhere.startPayment(payment);
-
-                            //     }
-
-                            // });
-                        </script>
+                        function go() {
+                            document.getElementById("delete_form").submit();
+                        }
+                    </script>
 
 
 
-                        <!-- 
+                    <!-- 
                         <div class="signup">
                             <p>Have an account? <a href="../login/index.php" class="hover"> Login</a></p>
                         </div> -->
