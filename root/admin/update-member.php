@@ -1,7 +1,10 @@
 <?php
+
+session_start();
 include 'includes/db.php';
 
 $username = $_GET['username'];
+
 
 
 $sql = "SELECT * FROM member WHERE username = '$username'";
@@ -45,6 +48,8 @@ $row4 = mysqli_fetch_assoc($result4);
 
 ?>
 
+
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -65,6 +70,40 @@ $row4 = mysqli_fetch_assoc($result4);
     <section class="home-section">
 
         <?php include "includes/header.php" ?>
+        <script>
+            function nn() {
+                $('.alert').addClass("show");
+                $('.alert').removeClass("hide");
+                $('.alert').addClass("showAlert");
+                setTimeout(function bb() {
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                }, 4000);
+            };
+        </script>
+
+        <!-- <button class="err">Show Alert</button> -->
+        <div class="alert hide">
+
+            <?php
+            if (isset($_SESSION['notification'])) {
+                $notification = $_SESSION['notification'];
+                echo '<script type="text/javascript">nn();</script>';
+            }
+            ?>
+
+            <!-- <span class="fas fa-exclamation-circle"></span> -->
+            <span class="msg"><?php echo $notification ?></span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
+        </div>
+        <script>
+            $('.close-btn').click(function ss() {
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            });
+        </script>
 
 
         <div class="home-content">
@@ -195,7 +234,7 @@ $row4 = mysqli_fetch_assoc($result4);
                         </div>
 
                         <div class="form__div" id="uname">
-                            <input type="text" class="form__input" id="username" placeholder=" " name="username" value="<?php echo $username ?>" disabled>
+                            <input type="text" class="form__input" id="username" placeholder=" " name="username_cc" value="<?php echo $username ?>" readonly>
                             <label for="" class="form__label">Username</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -343,22 +382,22 @@ $row4 = mysqli_fetch_assoc($result4);
                             <label></label>
 
                         </div> -->
-                    </form>
 
 
 
-                    <div class="buttondiv"><input type="button" class="form__button" value="UPDATE MEMBER" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
-                    <div class="buttondiv" id="delete_submit"><input type="button" class="form__button" value="DELETE MEMBER" onclick="go()"></div>
+                        <div class="buttondiv"><input type="button" class="form__button" value="UPDATE MEMBER" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
-                    <!-- <button value="DELETE MEMBER" id="delete_submit"></button> -->
+                        <div class="buttondiv" id="delete_submit"><input type="button" class="form__button" value="DELETE MEMBER" onclick="go()"></div>
+
+                        <!-- <button value="DELETE MEMBER" id="delete_submit"></button> -->
 
 
-                    <!-- <div class="payhere">
+                        <!-- <div class="payhere">
                             <p>Payments are securely processed by&nbsp;</p> <img src="payherelogo.png" width="80px">
                         </div> -->
 
-                    <!-- <script>
+                        <!-- <script>
                             $(document).ready(function() {
                                 $("#username").keyup(function() {
                                     var username = $(this).val().trim();
@@ -389,69 +428,69 @@ $row4 = mysqli_fetch_assoc($result4);
                         </script> -->
 
 
-                    <!-- <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script> -->
+                        <!-- <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script> -->
 
-                    <script>
-                        function submitFunction() {
-                            var result = checkInputs();
+                        <script>
+                            function submitFunction() {
+                                var result = checkInputs();
 
-                            if (result == true) {
-                                // e.preventDefault();
-                                document.getElementById("signup_form").submit();
+                                if (result == true) {
+                                    // e.preventDefault();
+                                    document.getElementById("signup_form").submit();
 
-                                // document.getElementById("signup_form").submit();
+                                    // document.getElementById("signup_form").submit();
 
-                                // }
-                            }
-                        }
-
-                        function deleteFunction() {
-
-
-                        }
-
-
-                        // $(document).ready(function() {
-                        //     $("#search").keydown(function() {
-                        //         $.ajax({
-                        //             type: 'POST',
-                        //             url: 'search.php',
-                        //             data: {
-                        //                 name: $("#search").val(),
-                        //             },
-                        //             success: function(data) {
-                        //                 $("#output").html(data);
-                        //             }
-                        //         });
-                        //     });
-                        // });
-
-                        $(document).ready(function() {
-                            $('#delete_submit').click(function() {
-                                {
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: 'delete-member.php',
-                                        dataType: "html",
-                                        data: '<?php echo $username ?>',
-
-                                        // success: function(data) {
-                                        //     $("#output").html(data);
-                                        // }
-                                    });
+                                    // }
                                 }
+                            }
+
+                            function deleteFunction() {
+
+
+                            }
+
+
+                            // $(document).ready(function() {
+                            //     $("#search").keydown(function() {
+                            //         $.ajax({
+                            //             type: 'POST',
+                            //             url: 'search.php',
+                            //             data: {
+                            //                 name: $("#search").val(),
+                            //             },
+                            //             success: function(data) {
+                            //                 $("#output").html(data);
+                            //             }
+                            //         });
+                            //     });
+                            // });
+
+                            $(document).ready(function() {
+                                $('#delete_submit').click(function() {
+                                    {
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: 'delete-member.php',
+                                            dataType: "html",
+                                            data: '<?php echo $username ?>',
+
+                                            // success: function(data) {
+                                            //     $("#output").html(data);
+                                            // }
+                                        });
+                                    }
+                                });
                             });
-                        });
 
 
-                        function go() {
-                            document.getElementById("delete_form").submit();
-                        }
-                    </script>
+                            function go() {
+                                document.getElementById("delete_form").submit();
+                            }
+                        </script>
 
 
 
-                    <!-- 
+                        <!-- 
                         <div class="signup">
                             <p>Have an account? <a href="../login/index.php" class="hover"> Login</a></p>
                         </div> -->
@@ -477,3 +516,6 @@ $row4 = mysqli_fetch_assoc($result4);
 </body>
 
 </html>
+<?php
+unset($_SESSION['notification']);
+?>

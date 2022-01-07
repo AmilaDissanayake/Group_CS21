@@ -15,7 +15,7 @@ $dob_bb = $_POST['dob_cc'];
 $address_bb = filter_var($_POST['address_cc'], FILTER_SANITIZE_STRING);
 $injuries_bb = filter_var($_POST['injuries_cc'], FILTER_SANITIZE_STRING);
 $email_bb = filter_var($_POST['email_cc'], FILTER_SANITIZE_EMAIL);
-$username_bb = $_POST['username'];
+$username_bb = $_POST['username_cc'];
 // $password_bb = password_hash($_POST['password_cc'], PASSWORD_DEFAULT);
 // $membership_bb = $_POST['membership_cc'];
 // $trainer_bb = $_POST['trainer_cc'];
@@ -51,7 +51,7 @@ $username_bb = $_POST['username'];
 
 // echo 'trainer check done';
 
-$user_update = "UPDATE users SET email = '$email_bb' WHERE username = " . $username_bb . "";
+$user_update = "UPDATE users SET email = '$email_bb' WHERE username = '$username_bb'";
 
 $result0 = mysqli_query($conn, $user_update);
 
@@ -81,6 +81,18 @@ if ($result0 && $result1) {
     header("Location: update-member.php?username=hiran");
     // echo "done";
 } else {
-    // header("Location: index.php");
+    //header("Location: index.php");
     echo die(mysqli_error($conn));
 }
+
+// if ($result0) {
+//     echo "one done";
+// } else {
+//     echo "one not done";
+// }
+
+// if ($result1) {
+//     echo "two done";
+// } else {
+//     echo "two not done";
+// }
