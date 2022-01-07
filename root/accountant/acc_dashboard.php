@@ -25,12 +25,25 @@
         <?php include "includes/header.php" ?>
 
 
-
+        
 
         <div class="home-content">
+        <?php require "includes/db.php"; ?>
+        
             <div class="member-stats">
                 <div class="one">
-                    <p class="value">Rs. 50 000</p>
+                    <?php $select_query = "SELECT payment_amount FROM payment";
+                    $select_result = mysqli_query($conn, $select_query);
+                    $sum = 0;
+
+                    if (mysqli_num_rows($select_result) > 0) {
+                        while ($row = mysqli_fetch_assoc($select_result)) {
+                        $sum = $sum + $row['payment_amount'];    
+                        }
+                    ?> 
+                    <p class="value">Rs. <?php  print_r($sum);
+                    }
+                    ?></p>
                     <p class="name">Member Recievables</p>
                 </div>
 
