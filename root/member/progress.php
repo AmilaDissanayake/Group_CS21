@@ -54,22 +54,22 @@
                             <ul>
                             <div class="itemcon">
                                 <li class="plist">  
-                                    <input type="checkbox" id="ck_d1"><p> DAY 1</p> <div class="stag_not" id="tg_d1"><span>NOT COMPLETED</span></div>
+                                    <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div class="stag_not" id="tg_d1"><span>NOT COMPLETED</span></div>
                                 </li>  
                             </div>
                             <div class="itemcon">
                             <li class="plist">
-                                    <input type="checkbox" id="ck_d2"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
+                                    <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
                                 </li>
                             </div>
                             <div class="itemcon">
                                 <li class="plist">
-                                    <input type="checkbox"id="ck_d3"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
+                                    <input type="checkbox"id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
                                 </li>
                             </div>
                             <div class="itemcon">
                                 <li class="plist">
-                                    <input type="checkbox" id="ck_d4"><p> DAY 4</p> <div class="stag_not" id="tg_d4"><span>NOT COMPLETED</span></div>
+                                    <input type="checkbox" id="ck_d4" onclick="tick_check(4);"><p> DAY 4</p> <div class="stag_not" id="tg_d4"><span>NOT COMPLETED</span></div>
                                 </li>
                             </div>
                         </ul>     
@@ -210,23 +210,19 @@
 <script type="text/javascript" src="js/bfc-cal.js"></script>
 
 <script> 
-    var checkbox = document.getElementById("ck_d1");
-    var tag = document.getElementById("tg_d1");
+        function tick_check(i){
 
-    checkbox.onclick = function(){ 
-       
-        if(checkbox.checked == true){
-            alert('clicked');
-            tag.className = 'stag';
-		    tag.innerText = 'COMPLETED';
-        }else{
-            alert('not clicked');
-            tag.className = 'stag_not';
-		    tag.innerText = 'NOT COMPLETED';
-        }
-        
-    };
-   
+            var checkbox = document.getElementById("ck_d"+i);
+            var tag = document.getElementById("tg_d"+i);
+
+            if(checkbox.checked == true){
+                tag.className = 'stag';
+                tag.innerText = 'COMPLETED';
+            }else{
+                tag.className = 'stag_not';
+                tag.innerText = 'NOT COMPLETED';
+            }  
+        }    
 </script>
 
 <script>

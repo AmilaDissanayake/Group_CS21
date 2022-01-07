@@ -21,12 +21,18 @@
 
         <?php include "includes/header.php" ?>
 
+
         <div class="welcomenote">
             <h1></h1>
         </div>
+        <div class="cover">
+            <img src="media/cover.jpg" alt="">
+        </div>
         <div class="HdividerL"></div>
         <div class="dwnpart">
+
             <div class="vboderdivider"></div>
+
             <div class="lsd">
                 <div class="note2">
                     <h1>Profile</h1>
@@ -36,10 +42,10 @@
                         <div class="aper">
                             <div class="avatar">
                                 <img src="./media/dinuka.jpg">
-                                <i class='bx bxs-edit-alt'></i>
+                                <!-- <i class='bx bxs-edit-alt'></i> -->
                             </div>
                             <div class="joined-date">
-                                <p>Joined since september 2019</p>
+                                <p>Joined September 2019</p>
                             </div>
                             <div class="fulname">
                                 <p>Thusistha Kakulawala</p>

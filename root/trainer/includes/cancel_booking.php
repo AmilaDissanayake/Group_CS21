@@ -3,9 +3,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 ?>
-<script>
-    window.confirm("Do you really want to cancel the booking?");
-</script>
 
 <?php
 session_start();
@@ -32,7 +29,7 @@ $userEmail = $row3['email'];
 $to = $userEmail;
     $subject = "Booking cancelled";
 
-    $message = '<p>Please note that your booking for the POWER HOUSE has been cancel by your trainer</p>';
+    $message = '<p>Please note that your booking for the POWER HOUSE has been cancelled by your trainer</p>';
     $message .= '<p>We are sorry about the inconvenience.';
     $message .= '<p>Thank you,<br>STAY WITH POWERHOUSE</p>';
 

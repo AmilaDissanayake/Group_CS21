@@ -16,6 +16,8 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: white;
+    border-radius: 10px;
   }
   
   form {
@@ -1047,7 +1049,7 @@
 
 .home-section .home-content{
   position: relative;
-  padding-top: 104px;
+  padding-top: 130px;
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 50px;

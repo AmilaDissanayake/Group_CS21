@@ -13,6 +13,7 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -88,24 +89,24 @@
                     <i class='bx bx-search'></i>
                 </div>
                 <div class="filter1">
-                    <select name="Membership" id="" class="justselect">
-                        <option selected="selected">Membership</option>
-                        <option>Membership Valid</option>
-                        <option>Membership Expired</option>
+                    <select name="Membership" class="justselectt" id="membership">
+                        <option selected="selected" value=all1>Membership</option>
+                        <option value="valid">Membership Valid</option>
+                        <option value="invalid">Membership Expired</option>
                     </select>
                 </div>
 
                 <div class="filter2">
-                    <select name="Membership" id="" class="justselect">
-                        <option selected="selected">Gender</option>
-                        <option>Male</option>
-                        <option>Female</option>
+                    <select name="Membership" class="justselectt" id="gender">
+                        <option selected="selected" value="all">Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
                     </select>
                 </div>
 
 
 
-                <div class="add_button"><button class="add_btn_filter" onclick="location.href='#'">Filter</button></div>
+                <div class="add_button"><button class="add_btn_filter" id="btn">Filter</button></div>
                 <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Member</button></div>
 
             </div>
@@ -130,7 +131,10 @@
                     <tbody id="output">
                         <?php
 
-                        require "includes/db.php";
+                        include 'includes/db.php';
+
+                        // echo "asfsdfd";
+
                         $sql = "SELECT * FROM member";
                         $result = mysqli_query($conn, $sql);
                         if (mysqli_num_rows($result) > 0) {
@@ -139,6 +143,7 @@
                                 $query = "SELECT membership_type, joined_date FROM membership WHERE member_id = $row[member_id];";
                                 $result2 = mysqli_query($conn, $query);
                                 $row2 = mysqli_fetch_assoc($result2);
+                                $username = $row['username'];
                                 $dateMembership = $row2['joined_date'];
                                 $membershipType = $row2['membership_type'];
                                 $dateMembership = date('Y-m-d', strtotime($dateMembership));
@@ -148,9 +153,14 @@
                                 if ($today > $expireMembership) {
                                     $expired = "expired";
                                 }
+                                $button = 'location.href="update-member.php?username=' . $username . '"';
+
+                                $action = '<div class="row-action">
+                                <div class="about_button"><button class="about_btn" onclick= ' . $button . '>View/Update/Delete</button></div>';
+
 
                         ?>
- 
+
 
 
 
@@ -163,12 +173,8 @@
                                     <td><?php echo $dateMembership ?> </td>
                                     <td><?php echo  $row2['membership_type'] . ' months' ?> </td>
                                     <td><?php echo  $expireMembership ?> </td>
-                                    <td>
-                                        <div class="row-action">
-                                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">View/Update/Delete</button></div>
-                                            <!-- <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Delete</button></div> -->
-                                        </div>
-                                    </td>
+                                    <td><?php echo $action ?></td>
+
 
 
 
@@ -177,7 +183,10 @@
 
 
                         <?php }
-                        } ?>
+                        }
+                        ?>
+
+
                     </tbody>
                 </table>
 
@@ -204,7 +213,52 @@
     </script>
 
 
+
     <script src="js/justselect.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#search").keydown(function() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'search.php',
+                    data: {
+                        name: $("#search").val(),
+                    },
+                    success: function(data) {
+                        $("#output").html(data);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="js/justselect.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function()
+
+            {
+
+
+                $('#btn').click(function() {
+                    // var gender = $('#gender :selected').val();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'filter.php',
+                        data: {
+                            gender: $('#gender :selected').val(),
+                            membership: $('#membership :selected').val(),
+                        },
+                        success: function(data) {
+                            $("#output").html(data);
+                        }
+                    });
+
+                });
+
+            });
+    </script>
+
+
 
 
 </body>

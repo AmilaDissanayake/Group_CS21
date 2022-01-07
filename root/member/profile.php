@@ -90,25 +90,58 @@
             $email = $row3['email'];    
 
         ?>
-        <div class="welcomenote"><h1></h1></div>
-        <div class="HdividerL"></div>
+       
+        <div class="home-content">
+            <div class="cover">
+                <?php
+
+                    $image_select1 = "SELECT cover_image FROM member WHERE username='$username'";
+                    $result1 = mysqli_query($conn, $image_select1);
+                    $image_row1 = mysqli_fetch_assoc($result1);
+                    $cover = $image_row1['cover_image'];
+                ?>
+                <img src="media/<?php echo $cover ?>" alt="">
+            </div>
+            <div class="overlayy">
+                <form class="hid_form" action='profile-image-change.php?username= '$username method='post' enctype='multipart/form-data'>
+                    <label id='update_profile2'> <i class='bx bx-upload ccc'></i>
+                        <input type='file' name='u_image' size='60' />
+                    </label><br><br><br><br>
+                    <button id='button_profile' name='update-cover' class='upp'>Update Cover</button>
+                </form>
+            </div>
+            <div class="profile-img">
+                <?php
+
+                    $image_select = "SELECT image FROM member WHERE username='$username'";
+                    $result2 = mysqli_query($conn, $image_select);
+                    $image_row = mysqli_fetch_assoc($result2);
+                    $avatar = $image_row['image'];
+
+                ?>
+                <img src="media/<?php echo $avatar ?>" alt="">
+                <div class="overlay">
+                    <form class="hid_form" action='profile-image-change.php?username='$username method='post' enctype='multipart/form-data'>
+                        <label id='update_profile'> <i class='bx bx-upload'></i>
+                            <input type='file' name='u_image' size='60' />
+                        </label><br><br><br><br>
+                        <button id='button_profile' name='update' class='upp'>Update Image</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="dwnpart">
             <div class="vboderdivider"></div>
             <div class="lsd">
                 <div class="note2"><h1>Profile</h1></div>
-
                 <div class="con1">
                     <div class="profcov">
                         <div class="aper">
-                            <div class="avatar">
-                                <img src="./media/pamod.jpg">
-                                <i class='bx bxs-edit-alt'></i>
+                            <div class="fulname">
+                                <p><?php echo $f_name." ".$l_name ?></p>
                             </div>
                             <div class="joined-date">
                                 <p>Joined since <?php echo $formatted_date ?></p>
-                            </div>
-                            <div class="fulname">
-                                <p><?php echo $f_name." ".$l_name ?></p>
                             </div>
                         </div>
                     </div>
@@ -125,7 +158,7 @@
                             <i class='bx bx-dumbbell'></i> AGE  <p> <i class='bx bxs-right-arrow'></i><?php echo $diff->format('%y'); ?></p>
                             <i class='bx bx-dumbbell'></i> LIVES IN <p> <i class='bx bxs-right-arrow'></i><?php echo $address ?></p>
                             <i class='bx bx-dumbbell'></i> CONTACT NO. <p> <i class='bx bxs-right-arrow'></i><?php echo $p_no ?></p>
-                            <i class='bx bx-dumbbell'></i> E-MAIL <p><i class='bx bxs-right-arrow'></i><?php echo $email ?></p>
+                            <!-- <i class='bx bx-dumbbell'></i> E-MAIL <p><i class='bx bxs-right-arrow'></i><?php echo $email ?></p> -->
                             </div>
                         </div>
                     </div>
@@ -146,9 +179,6 @@
                             <label for="" class="form__label">First Name</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
-                            <!-- <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation"></i>
-                            <i class="fas fa-exclamation-circle"></i> -->
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
@@ -156,9 +186,6 @@
                             <label for="" class="form__label">Last Name</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
-                            <!-- <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation"></i>
-                            <i class="fas fa-exclamation-circle"></i> -->
                             <small>Error message</small>
                         </div>
                     </div>
@@ -172,10 +199,6 @@
                                 </select>
                             </label>
                             <i class="fa fa-check"></i>
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <!-- <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation"></i>
-                            <i class="fas fa-exclamation-circle"></i> -->
                             <small>Error message</small>
                         </div>
                         <div class="form__div">
@@ -183,9 +206,6 @@
                             <label for="" class="form__label">Mobile Number</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
-                            <!-- <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation"></i>
-                            <i class="fas fa-exclamation-circle"></i> -->
                             <small>Error message</small>
                         </div>
                     </div>
@@ -193,8 +213,6 @@
                     <div class="form__div">
                         <input type="date" class="form__input" value=<?php echo $dob ?> id=" dateofbirth" placeholder=" " name="dob_cc" min="1920-10-01" max="2010-10-20">
                         <label for="" class="form__label">Date Of Birth</label>
-                        <!-- <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i> -->
                         <small>Error message</small>
                         <script>
                             $("input[type='date']").keydown(function(event) {
@@ -208,9 +226,6 @@
                         <label for="" class="form__label">Address</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
-                        <!-- <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation"></i>
-                        <i class="fas fa-exclamation-circle"></i> -->
                         <small>Error message</small>
                     </div>
                     <div class="inj__div">
@@ -218,9 +233,6 @@
                         <label for="" class="form__label">If you have any injury mention here...</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
-                        <!-- <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation"></i>
-                        <i class="fas fa-exclamation-circle"></i> -->
                         <small>Error message</small>
                     </div>
                     <br>
@@ -241,15 +253,13 @@
                         <label for="" class="form__label">Email</label>
                         <i class="fa fa-check"></i>
                         <i class="fas fa-exclamation-triangle"></i>
-                        <!-- <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i> -->
                         <small>Error message</small>
                     </div>
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="UPDATE EMAIL"  ></div>
                 </form>
  
-                <form action="membership.php" class="form" id="pw_form" method="POST">
+                <form action="./includes/update_pw.php" class="form" id="pw_form" method="POST">
                     <div class="topic"><h2><i class='bx bx-pen'></i>Change Password</h2></div>
                     <div class="form__div">
                             <input type="password" class="name_input" id="password" placeholder=" " name="current_pw">
