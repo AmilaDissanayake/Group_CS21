@@ -53,12 +53,13 @@
     width: 100%;
     min-height: 100vh;
     padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
+    /* padding-left: 50px;
+    padding-right: 50px; */
+
     padding-bottom: 50px;
     border: 1px solid rgb(244,244,244);
-    margin-top: 10px;
     border-radius: 0.5rem;
+    margin-top: 0px;
   }
 
 .separator .hr{
@@ -145,13 +146,19 @@
 }
 
 #main_address1, #select_div{
-  margin-left: 35%;
+  margin-left: 400px;
+}
+
+.main_class{
+  display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 
 #form_submit1{
-  margin-left: 45%;
+  margin-left: 550px;
   margin-top: 40px;
   width: 15%;
 }
@@ -189,6 +196,9 @@
     position: relative;
     height: 48px;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .inj__div {
@@ -537,6 +547,7 @@ option {
     line-height: 1.5em;
     color: rgb(24,24,24);
     text-align: center;
+    font-size: 25px;
     /* top: .5em; */
   }
   
@@ -608,6 +619,27 @@ option {
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
+    }
+
+
+    ul#results{
+      list-style: none;
+        width: 131px;
+        margin-left: 410px;
+        margin-top: -20px;
+        padding-bottom: 20px;
+        display: none;
+    }
+     
+    ul#results li a {
+      color: #000;
+        background: transparent;
+        display: block;
+        text-decoration: none;
+        padding-bottom: 5px;
+    }
+    ul#results li a:hover {
+      background: #aaa;
     }
 
   

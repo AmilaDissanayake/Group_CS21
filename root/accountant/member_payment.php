@@ -109,11 +109,15 @@ require "includes/db.php";
                                 $l_name = $payment_row2['l_name'];
                                 $phone_no = $payment_row2['phone_no'];
                                 $assign_trainer = $payment_row2['assign_trainer'];
-
-                                $sql3 = "SELECT username FROM trainer WHERE trainer_id = '".$assign_trainer."'";
-                                $result3 = mysqli_query($conn, $sql3);
-                                $payment_row3 = mysqli_fetch_assoc($result3);
-                                $trainer_name = $payment_row3['username'];
+                                if ($assign_trainer==1){
+                                    $sql3 = "SELECT username FROM trainer WHERE trainer_id = '$assign_trainer'";
+                                    $result3 = mysqli_query($conn, $sql3);
+                                    $payment_row3 = mysqli_fetch_assoc($result3);
+                                    $trainer_name = $payment_row3['username'];
+                                }
+                                else{
+                                    $trainer_name = "N/A";
+                                }
 
                                 $sql4 = "SELECT membership_type FROM membership WHERE member_id = $member_id";
                                 $result4 = mysqli_query($conn, $sql4);

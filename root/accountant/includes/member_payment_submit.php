@@ -21,6 +21,10 @@
 
             $member_id = $row2['member_id'];
 
+            if ($assigned_trainer==0){
+                $assigned_trainer = "N/A";
+            }
+
             $sql3 = "INSERT INTO payment(member_id, payment_amount, trainer_id, payment_type) VALUES('$member_id', '$amount', '$assigned_trainer', '$payment_type')";
             mysqli_query($conn, $sql3);
 
