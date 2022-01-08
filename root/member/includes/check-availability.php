@@ -3,10 +3,17 @@
 session_start();
 
 require "db.php";
+$username = $_SESSION['username'];
 
 $response = array('Main_Slot'=>'None', 'slot1'=>false, 'slot2'=>false, 'slot3'=>false, 'slot4'=>false, 'slot5'=>false, 'slot6'=>false, 'slot7'=>false, 'slot8'=>false, 'set'=>'None');
 
-$trainer_id = 1;
+
+$query = "SELECT * FROM member WHERE username = '".$username."'";
+$result = mysqli_query($conn, $query);
+$row= mysqli_fetch_assoc($result);
+
+$member_id = $row['member_id']; 
+$trainer_id = $row['assign_trainer'];
 
 if (isset($_POST['date'])) {
 
