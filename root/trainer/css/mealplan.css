@@ -221,6 +221,7 @@
   width: 100%;
   height: auto;
   display: flex;
+  margin-top: 70px;
 }
 
 .middle{
@@ -481,7 +482,7 @@
   transition: all 0.4 ease;
 }
 .devider1{
-  padding-bottom: 80px;
+  padding-bottom: 30px;
 }
 
 /* Responsive Media Query */
