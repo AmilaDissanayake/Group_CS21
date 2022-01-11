@@ -74,11 +74,35 @@
                     }
 
                     address1.addEventListener("input", getSearchResults);
+
+                    // $("#results li").click(function() {
+                    //     var a = $(this).attr("value");
+                    //     alert(a);
+                    // });
                 </script>
+
+
                 <div class="form__div" id="main_address1">
-                    <input type="text" class="form__input" id="address1" placeholder=" " name="email">
+                    <input type="text" class="form__input" id="address2" placeholder=" " name="email" readonly>
                     <label for="" class="form__label">Email</label>
                 </div>
+
+                <script>
+                    $('#address1').on('keyup', function() {
+                        var given_name = $(this).val();
+                        //alert(given_name);
+                        $.ajax({
+                            url: 'find-email.php',
+                            type: 'POST',
+                            data: {
+                                "myData": given_name
+                            }
+                        }).done(function(data) {
+                            $('#address2').val(data);
+                        });
+                    })
+                </script>
+
 
                 <div class="select__div" id="select_div">
 
