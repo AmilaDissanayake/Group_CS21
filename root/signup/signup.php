@@ -1,12 +1,13 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\SMTP;
+// use PHPMailer\PHPMailer\Exception;
 
 session_start();
 
 require "includes/db.php";
+// require_once 'phpqrcode/qrlib.php';
 
 
 // print_r($_POST);
@@ -83,53 +84,57 @@ if ($result0 && $result1 && $result3 && $result4) {
     $_SESSION['notification'] = "Account successfully created";
     $_SESSION['username'] = $username_bb;
 
-    require_once 'phpqrcode/qrlib.php';
+    // $sql1 = "SELECT member_id from member where username = '".$username_bb."'";
+    // $result1 = mysqli_query($conn,$sql1);
+    // $row1 = mysqli_fetch_assoc($result1);
 
-    $path = 'QRimages/';
-    $file = $path."$member_id"."468.png";
+    // $member_id = $row1['member_id'];
 
-    $text = "www.google.com";
+    // $path = 'QRimages/';
+    // $file = $path."$member_id"."468.png";
 
-    QRcode::png($text, $file, 'L', 10, 2);
+    // $text = "www.google.com";
 
-    "<cenetr><img src='".$file."'><center>";
+    // QRcode::png($text, $file, 'L', 10, 2);
 
-    $to = $email_bb;
-    $url= "https//:powerhouse.fitness.com";
-    $subject = "WELCOME TO THE POWER HOUSE";
+    // "<cenetr><img src='".$file."'><center>";
 
-    $message = '<p>Hi '.$username_bb.', <br>Thanks for joining POWER HOUSE FITNESS ACADEMY – we’re excited to have you on board! 
-    You’ve taken the first step towards achieving your fitness goals</p>';
-    $message .= '<p>You’ll find our opening times, class timetable, and a list of what to bring on our '.$url.'. 
-    If you have any questions, then please don’t hesitate to get in touch. 
-    Simply call us on +9477 823 4904 or reply to this email and we’ll respond asap.<br></p>';
-    $message.= '<p>Here is your QRcode</p>';
+    // $to = $email_bb;
+    // $url= "https//:powerhouse.fitness.com";
+    // $subject = "WELCOME TO THE POWER HOUSE";
 
-    require 'vendor/autoload.php';
+    // $message = '<p>Hi '.$username_bb.', <br>Thanks for joining POWER HOUSE FITNESS ACADEMY – we’re excited to have you on board! 
+    // You’ve taken the first step towards achieving your fitness goals</p>';
+    // $message .= '<p>You’ll find our opening times, class timetable, and a list of what to bring on our '.$url.'. 
+    // If you have any questions, then please don’t hesitate to get in touch. 
+    // Simply call us on +9477 823 4904 or reply to this email and we’ll respond asap.<br></p>';
+    // $message.= '<p>Here is your QRcode</p>';
 
-    $mail = new PHPMailer(true);
+    // require 'vendor/autoload.php';
 
-    // try {
-    $mail->SMTPDebug = 1;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'powerhouse.fitness.academy@gmail.com';                     //SMTP username
-    $mail->Password   = 'Power@123';                               //SMTP password
-    $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    // $mail = new PHPMailer(true);
 
-    //Recipients
-    $mail->setFrom('powerhouse.fitness.academy@gmail.com');
-    $mail->addAddress($to);     //Add a recipient
+    // // try {
+    // $mail->SMTPDebug = 1;                      //Enable verbose debug output
+    // $mail->isSMTP();                                            //Send using SMTP
+    // $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    // $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    // $mail->Username   = 'powerhouse.fitness.academy@gmail.com';                     //SMTP username
+    // $mail->Password   = 'Power@123';                               //SMTP password
+    // $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+    // $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = $subject;
-    $mail->Body    = $message;
-    $mail->addAttachment('images/'.$member_id.'468.png');
-    $mail->send();
-    echo 'Message has been sent';
+    // //Recipients
+    // $mail->setFrom('powerhouse.fitness.academy@gmail.com');
+    // $mail->addAddress($to);     //Add a recipient
+
+    // //Content
+    // $mail->isHTML(true);                                  //Set email format to HTML
+    // $mail->Subject = $subject;
+    // $mail->Body    = $message;
+    // $mail->addAttachment('images/'.$member_id.'468.png');
+    // $mail->send();
+    // echo 'Message has been sent';
 
     header('Location: ../member/dashboard.php');
     // echo "done";
