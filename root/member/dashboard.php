@@ -1,5 +1,9 @@
 <?php include "includes/check_login.php" ?>
 
+<?php 
+    require "includes/db.php";
+    $username = $_SESSION['username'];
+?>
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -23,28 +27,151 @@
         <?php include "includes/header.php" ?>
 
         <div class="welcomenote"><h1></h1></div>
-        <div class="dubar"></div>
+        <div class="dubar">
+        <?php 
+
+            date_default_timezone_set('Asia/Colombo');
+
+            $query1 = "SELECT * FROM member WHERE username = '".$username."'";
+            $result1 = mysqli_query($conn, $query1);
+            $row1 = mysqli_fetch_assoc($result1);
+
+            $member_id = $row1['member_id'];
+            $trainer_assignment = $row1['assign_trainer'];
+
+            $query2 = "SELECT * FROM membership  WHERE member_id = '".$member_id."'";
+            $result2 = mysqli_query($conn, $query2);
+            $row2 = mysqli_fetch_assoc($result2);
+
+            $membership_type = $row2['membership_type']; 
+            $joined_date = $row2['joined_date'];
+
+
+            if($membership_type==12){ 
+                $exp_date = date('Y-m-d',strtotime("+12 month", strtotime("$joined_date")));}
+            else if($membership_type==6){ 
+                $exp_date = date('Y-m-d',strtotime("+6 month", strtotime("$joined_date")));}
+            else if($membership_type==3){ 
+                $exp_date = date('Y-m-d',strtotime("+3 month", strtotime("$joined_date")));}
+            else if($membership_type==1){ 
+                $exp_date = date('Y-m-d',strtotime("+1 month", strtotime("$joined_date")));}
+
+            $date = date('Y-m-d');
+            $today = new DateTime($date);
+
+            $mem_date = new DateTime("$joined_date");
+            $membexp_date = new DateTime("$exp_date");
+
+            $mem_interval = $today->diff($membexp_date);
+
+            if($mem_date  == $today){
+
+                if($membership_type==12){
+                    $mem_interval->y = 00;
+                    $mem_interval->m = 12;
+                    $mem_interval->d = 00;
+                }                
+            } 
+
+            if($trainer_assignment == 0){
+                $flag = 0;
+            }else{
+                $flag = 1; 
+            }
+
+            $t_assign_d = "2021-03-24";
+            $t_exp_d = "2021-04-24";
+            $today = new DateTime("2021-03-30");
+            $t_assign_date = new DateTime("$t_assign_d");
+            $t_exp_date = new DateTime("$t_exp_d"); 
+
+            $tr_interval = $today->diff($t_exp_date);
+            ?>
+        </div>
         <div class="Hdivider"></div>
+        <?php 
+                if($trainer_assignment != 0){
+                    $trainer_id = $trainer_assignment;
+                    $assign_trainer_query = "SELECT * FROM trainer WHERE trainer_id = $trainer_id";
+                    $trainer_result = mysqli_query($conn, $assign_trainer_query);
+                    $trainer_row = mysqli_fetch_assoc($trainer_result);
+
+                    $trainer_f_name = $trainer_row['f_name'];
+                    $trainer_l_name = $trainer_row['l_name'];
+
+                    $rate_tr_query = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+                    $review_query = mysqli_query($conn, $rate_tr_query);
+                    
+                    $review_count = mysqli_num_rows($review_query);
+                    if ($review_count == 0) {
+                        $final_rating = 'No Reviews Yet';
+                    } else {
+                        $review_value = 0;
+                        while ($row6 = mysqli_fetch_assoc($review_query)) {
+                            $review_value += $row6['stars'];
+                        }
+                        $final_rating = $review_value / $review_count;
+                    } 
+
+
+                    $bookingflag = 0;
+                    $bk_date = "2021-10-24";
+                    $fixed_bk = new DateTime("$bk_date");
+
+
+                }                 
+        ?>
+
         <div class="member-stats">
             <div class="one">
-                <p class="value">11Months 21Days</p>
+                <p class="value"><?php echo "$mem_interval->m"  ?>Months <?php echo "$mem_interval->d" ?>Days</p>
                 <p class="name">Membership</p>
             </div>
+        <?php 
+            if($flag != 0){
+                echo "
+                <div class='two'>
+                    <p class='value'>"; echo"$tr_interval->d"; echo "Days</p>
+                    <p class='name'>Trainer</p>
+                </div>
 
-            <div class="two">
-                <p class="value">21 Days</p>
-                <p class="name">Trainer</p>
-            </div>
+                <div class='three'>
+                    <p class='value'>";echo $trainer_f_name;echo" ⭐$final_rating"; echo"</p>
+                    <p class='name'>Assign With</p>
+                </div>";
 
-            <div class="three">
-                <p class="value">Thusitha⭐5</p>
-                <p class="name">Assign With</p>
-            </div>
+                if($bookingflag != 0){
+                    echo"
+                    <div class='four'>
+                        <p class='value'>";echo $fixed_bk->format("d/m/Y"); echo"</p>
+                        <p class='name'>Booking Fixed on</p>
+                    </div>";}
+                else{
+                    echo"
+                    <div class='four'>
+                        <p class='value'>NO</p>
+                        <p class='name'>Fixed Bookings</p>
+                    </div>";
+                }
+            }else{
+                echo "
+                    <div class='two'>
+                        <p class='value'>NO</p>
+                        <p class='name'>Trainer</p>
+                    </div>
 
-            <div class="four">
-                <p class="value">21/10/2021</p>
-                <p class="name">Booking Fixed on</p>
-            </div>
+                    <div class='three'>
+                        <p class='value'>NO</p>
+                        <p class='name'>Assignment</p>
+                    </div>
+
+                    <div class='four'>
+                            <p class='value'>NO</p>
+                            <p class='name'>Bookings</p>
+                    </div>";
+            }
+        ?>
+            
         </div>
         <div class="Hdivider"></div>
         <div class="analy">
@@ -57,7 +184,7 @@
                         </div>
 
                         <div class="bmistatus">
-                            <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id="ob"> OBESITY</span></p>
+                            <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id=" bmi_c" class="ob"> OBESITY</span></p>
                             <div class="pgo">
                                 <a href="./progress.php#updatebmi" class="readmore_btn" id="readMore">UPDATE BMI</a>
                             </div>
@@ -70,7 +197,7 @@
                         <canvas id="canvas2"></canvas>
                     </div>
                     <div class="bmistatus">
-                        <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span > AVERAGE </span></p>
+                        <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span id=" bf_c" class="avg"> AVERAGE </span></p>
                         <div class="pgo">
                             <a href="./progress.php#updatebf" class="readmore_btn" id="readMore">UPDATE BODY FAT</a> 
                         </div>
@@ -78,7 +205,7 @@
                 </div>
                 <div class="vboderdivider"></div>
         </div> 
-        <div class="Hdivider"></div>
+        <div class="Hdivider"></div> 
         <div class="analy2">
             <div class="vboderdivider"></div>
                 <div class="rpanel">

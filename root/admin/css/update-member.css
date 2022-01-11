@@ -53,7 +53,7 @@
     outline: none;
     background: none;
     z-index: 1;
-    font-family: "Rubik";
+    font-family: "Azonix";
     width: 240px;
     height: 45px;
     padding-left: 10px;
@@ -67,7 +67,7 @@
     outline: none;
     background: none;
     z-index: 1;
-    font-family: "Rubik";
+    font-family: "Azonix";
     width: 240px;
     height: 45px;
     padding-left: 10px;
@@ -105,7 +105,7 @@
     outline: none;
     background: none;
     z-index: 1;
-    font-family: "Rubik";
+    font-family: "Azonix";
   }
   
   .injury {
@@ -121,7 +121,7 @@
     outline: none;
     background: none;
     z-index: 1;
-    font-family: "Rubik";
+    font-family: "Azonix";
   }
   
   textarea {
@@ -359,7 +359,7 @@
     font-weight: 400;
     font-size: 15px;
     color: #121317;
-    font-family: "Rubik";
+    font-family: "Azonix";
   }
   
   .remember label span {
@@ -373,7 +373,7 @@
     color: #121317;
     float: left;
     font-size: 15px;
-    font-family: "Rubik";
+    font-family: "Azonix";
     /* justify-content: center; */
   }
   
@@ -460,7 +460,7 @@
       margin-top: 10px;
     }
     .tr p{
-      font-family: 'Rubik';
+      font-family: 'Azonix';
       color: #121317;
       font-size: 15px;
       margin-top: 10px;
@@ -472,7 +472,7 @@
     .tr .tr_link a{
       text-decoration: none;
       color: #121317;
-      font-family: 'Rubik';
+      font-family: 'Azonix';
       
       font-size: 15px;
     }
@@ -493,7 +493,7 @@
   }
   
   .tr p {
-    font-family: "Rubik";
+    font-family: "Azonix";
     color: #121317;
     font-size: 15px;
     margin-top: 10px;
@@ -502,7 +502,7 @@
   
   .tr .tr_link {
     color: #121317;
-    font-family: "Rubik";
+    font-family: "Azonix";
   
     font-size: 15px;
   }
@@ -720,7 +720,7 @@
     justify-content: center;
     align-items: center;
     color: #86ff71;
-    font-family: 'Rubik';
+    font-family: 'Azonix';
     cursor: pointer;
     
   }
@@ -737,7 +737,7 @@
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-    font-family: 'Rubik';
+    font-family: 'Azonix';
     padding: 10px 10px 10px 10px;
   
     /* Position the tooltip text */
@@ -780,7 +780,7 @@
       font-weight: 400;
       font-size: 15px;
       color: #121317;
-      font-family: "Rubik";
+      font-family: "Azonix";
     }
   
     .container {
@@ -857,8 +857,8 @@
     /* Dashboard /////////////////////////////////////////////////////////*/
 
 
-    /* Googlefont Rubik CDN Link */
-/* Googlefont Rubik CDN Link */
+    /* Googlefont Azonix CDN Link */
+/* Googlefont Azonix CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -1029,7 +1029,7 @@
   font-size: 14px;
   color: #000000;
   padding: 0 15px;
-  font-family: 'Rubik';
+  font-family: 'Azonix';
 }
 .search-box .bx-search{
   position: absolute;
@@ -1460,7 +1460,7 @@ tbody tr{
     border: 0px solid rgba(255, 255, 255, .5);
     border-radius: 30px;
     background-color: #424244;
-    font-family: 'Rubik';
+    font-family: 'Azonix';
     color: #fff;
     font-size: 12px;
     letter-spacing: 1px;
@@ -1509,7 +1509,7 @@ table{
   border: 0px solid rgba(255, 255, 255, .5);
   border-radius: 30px;
   background-color: #86ff71;
-  font-family: 'Rubik';
+  font-family: 'Azonix';
   color: rgb(0, 0, 0);
   font-size: 15px;
   letter-spacing: 1px;
@@ -1530,6 +1530,12 @@ table{
 /* border: 2px solid #86ff71; */
 /* transform: scale(1.1); */
   transition: .4s ;
+}
+
+#username{
+    /* background-color: gray !important; */
+    color: #727375
+
 }
 
 
