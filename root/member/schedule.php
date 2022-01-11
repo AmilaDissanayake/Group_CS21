@@ -85,14 +85,13 @@
                     $out[$m]=$ex1;
                 }
 
-                    if($out[0][0]!='0'){$day1_flag=1;}else if($out[0][0]== '0'){$day1_flag=0;}else{$day1_flag=NULL;}
-                    if($out[1][0]!='0'){$day2_flag=1;}else if($out[1][0]== '0'){$day2_flag=0;}else{$day2_flag=NULL;}
-                    if($out[2][0]!='0'){$day3_flag=1;}else if($out[2][0]== '0'){$day3_flag=0;}else{$day3_flag=NULL;}
-                    if($out[3][0]!='0'){$day4_flag=1;}else if($out[3][0]== '0'){$day4_flag=0;}else{$day4_flag=NULL;}
-                    if($out[4][0]!='0'){$day5_flag=1;}else if($out[4][0]== '0'){$day5_flag=0;}else{$day5_flag=NULL;}
-                    if($out[5][0]!='0'){$day6_flag=1;}else if($out[5][0]== '0'){$day6_flag=0;}else{$day6_flag=NULL;}
-                    if($out[6][0]!='0'){$day7_flag=1;}else if($out[6][0]== '0'){$day7_flag=0;}else{$day7_flag=NULL;}
-                        // $day2_flag=0;$day3_flag=0;$day4_flag=0;$day5_flag=0; $day6_flag=0; $day7_flag=0;
+                    if($out[0]==''){$day1_flag=0;}else if($out[0][0]!='0'){$day1_flag=1;}else if($out[0][0]== '0'){$day1_flag=0;}
+                    if($out[1]==''){$day1_flag=0;}else if($out[1][0]!='0'){$day2_flag=1;}else if($out[1][0]== '0'){$day2_flag=0;}
+                    if($out[2]==''){$day1_flag=0;}else if($out[2][0]!='0'){$day3_flag=1;}else if($out[2][0]== '0'){$day3_flag=0;}
+                    if($out[3]==''){$day1_flag=0;}else if($out[3][0]!='0'){$day4_flag=1;}else if($out[3][0]== '0'){$day4_flag=0;}
+                    if($out[4]==''){$day1_flag=0;}else if($out[4][0]!='0'){$day5_flag=1;}else if($out[4][0]== '0'){$day5_flag=0;}
+                    if($out[5]==''){$day1_flag=0;}else if($out[5][0]!='0'){$day6_flag=1;}else if($out[5][0]== '0'){$day6_flag=0;}
+                    if($out[6]==''){$day1_flag=0;}else if($out[6][0]!='0'){$day7_flag=1;}else if($out[6][0]== '0'){$day7_flag=0;}
 
                 ?>
                 <div id="popup1" class="overlay">
@@ -138,43 +137,43 @@
                                             <td class='col_1' id='d1ex".$i."'>";if($day1_flag==1){
                                                 if($out[0][0] == ''){echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='1_".$i."1' placeholder='Muscle>' name='D1_".$i."1' value='' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D1_".$i."2' value=''";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D1_".$i."3' min ='1' max='10' value=''></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D1_".$i."4' min ='1' max='80' value=''></input> reps";}
                                                 else{echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='1_".$i."1' placeholder='Muscle>' name='D1_".$i."1' value='".$out[0][0]."' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D1_".$i."2' value='".$out[0][1]."' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D1_".$i."3' min ='1' max='10' value='".$out[0][2]."'></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D1_".$i."4' min ='1' max='80' value='".$out[0][3]."'></input> reps";}
-                                            }else if($day1_flag==0){echo"<b>Rest</b><input type='text' class='rest_input id='1_".$i."1' name='D1_".$i."1' value='0'> </input>";}             
+                                            }else if($day1_flag==0){echo"<b>Rest</b><input type='text' class='rest_input' id='1_".$i."1' name='D1_".$i."1' value='0'> </input>";}             
                                             echo "</td>";
 
                                             echo "<td class='col_2' id='d2ex".$i."'>";if($day2_flag==1){
                                                 if($out[1][0] == '') {echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='2_".$i."1' placeholder='Muscle>' name='D2_".$i."1' value='' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D2_".$i."2' value='' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D2_".$i."3' min ='1' max='10' value=''></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D2_".$i."4' min ='1' max='80' value=''></input> reps";}                  
                                                 else{echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='2_".$i."1' placeholder='Muscle>' name='D2_".$i."1' value='".$out[1][0]."'";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D2_".$i."2' value='".$out[1][1]."' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D2_".$i."3' min ='1' max='10' value='".$out[1][2]."'></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D2_".$i."4' min ='1' max='80' value='".$out[1][3]."'></input> reps";}
-                                            }else if($day2_flag==0){echo"<b>Rest</b><input type='text' class='rest_input id='2_".$i."1' name='D2_".$i."1' value='0'> </input>";}    
+                                            }else if($day2_flag==0){echo"<b>Rest</b><input type='text' class='rest_input' id='2_".$i."1' name='D2_".$i."1' value='0'> </input>";}    
                                             echo "</td>";
 
                                             echo "<td class='col_3' id='d3ex".$i."'>";if($day3_flag==1){
                                                 if($out[2][0] == '') { echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='3_".$i."1' placeholder='Muscle>' name='D3_".$i."1' value='' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D3_".$i."2' value='' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D3_".$i."3' min ='1' max='10' value=''></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D3_".$i."4' min ='1' max='80' value=''></input> reps";}
                                                 else{echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='3_".$i."1' placeholder='Muscle>' name='D3_".$i."1' value='".$out[2][0]."' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D3_".$i."2' value='".$out[2][1]."' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D3_".$i."3' min ='1' max='10' value='".$out[2][2]."'></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D3_".$i."4' min ='1' max='80' value='".$out[2][3]."'></input> reps";}
-                                            }else if($day3_flag==0){echo"<b>Rest</b><input type='text' class='rest_input id='3_".$i."1' name='D3_".$i."1' value='0'> </input>";}   
+                                            }else if($day3_flag==0){echo"<b>Rest</b><input type='text' class='rest_input' id='3_".$i."1' name='D3_".$i."1' value='0'> </input>";}   
                                             echo "</td>";
 
                                             echo "<td class='col_4' id='d4ex".$i."'>";if($day4_flag==1){
                                                 if($out[3][0] == ''){ echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='4_".$i."1' placeholder='Muscle>' name='D4_".$i."1' value='' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D4_".$i."2' value='' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D4_".$i."3' min ='1' max='10' value=''></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D4_".$i."4' min ='1' max='80' value=''></input> reps";}
                                                 else{echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='4_".$i."1' placeholder='Muscle>' name='D4_".$i."1' value='".$out[3][0]."' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D4_".$i."2' value='".$out[3][1]."' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D4_".$i."3' min ='1' max='10' value='".$out[3][2]."'></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D4_".$i."4' min ='1' max='80' value='".$out[3][3]."'></input> reps";}
-                                            }else if($day4_flag==0){echo"<b>Rest</b><input type='text' class='rest_input id='4_".$i."1' name='D4_".$i."1' value='0'> </input>";}    
+                                            }else if($day4_flag==0){echo"<b>Rest</b><input type='text' class='rest_input' id='4_".$i."1' name='D4_".$i."1' value='0'> </input>";}    
                                             echo "</td>";
 
                                             echo "<td class='col_5' id='d5ex".$i."'>";if($day5_flag==1){
                                                 if($out[4][0] == ''){echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='5_".$i."1' placeholder='Muscle>' name='D5_".$i."1' value='' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D5_".$i."2' value='' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D5_".$i."3' min ='1' max='10' value=''></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D5_".$i."4' min ='1' max='80' value=''></input> reps";}                                         
                                                 else{echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='5_".$i."1' placeholder='Muscle>' name='D5_".$i."1' value='".$out[4][0]."' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D5_".$i."2' value='".$out[4][1]."' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D5_".$i."3' min ='1' max='10' value='".$out[4][2]."'></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D5_".$i."4' min ='1' max='80' value='".$out[4][3]."'></input> reps";}
-                                            }else if($day5_flag==0){echo"<b>Rest</b><input type='text' class='rest_input id='5_".$i."1' name='D5_".$i."1' value='0'> </input>";}
+                                            }else if($day5_flag==0){echo"<b>Rest</b><input type='text' class='rest_input' id='5_".$i."1' name='D5_".$i."1' value='0'> </input>";}
                                             echo "</td>";
 
                                             echo "<td class='col_6' id='d6ex".$i."'>";if($day6_flag==1){
                                                 if($out[5][0] == ''){echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='6_".$i."1' placeholder='Muscle>' name='D6_".$i."1' value='' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D6_".$i."2' value='' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D6_".$i."3' min ='1' max='10' value=''></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D6_".$i."4' min ='1' max='80' value=''></input> reps";}
                                                 else{echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='6_".$i."1' placeholder='Muscle>' name='D6_".$i."1' value='".$out[5][0]."'";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D6_".$i."2' value='".$out[5][1]."' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D6_".$i."3' min ='1' max='10' value='".$out[5][2]."'></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D6_".$i."4' min ='1' max='80' value='".$out[5][3]."'></input> reps";}
-                                            }else if($day6_flag==0){echo"<b>Rest</b><input type='text' class='rest_input id='6_".$i."1' name='D6_".$i."1' value='0'> </input>";}    
+                                            }else if($day6_flag==0){echo"<b>Rest</b><input type='text' class='rest_input' id='6_".$i."1' name='D6_".$i."1' value='0'> </input>";}    
                                             echo "</td>";
 
                                             echo "<td class='col_7' id='d7ex".$i."'>";if($day7_flag==1){
                                                 if($out[6][0] == ''){echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='7_".$i."1' placeholder='Muscle>' name='D7_".$i."1' value='' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D7_".$i."2' value='' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D7_".$i."3' min ='1' max='10' value=''></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D7_".$i."4' min ='1' max='80' value=''></input> reps";}     
                                                 else{echo "<b><span class ='bpart'><input type='text' class='muscle_input' id='7_".$i."1' placeholder='Muscle>' name='D7_".$i."1' value='".$out[6][0]."' ";if($i <= 3){echo "required";}echo"></input></span><br><input type='text' class='exercise_input' id='1_".$i."2' placeholder='exercise' name='D7_".$i."2' value='".$out[6][1]."' ";if($i <= 3){echo "required";}echo"> </input> </b><br><input type='number' class='num_input' id='1_".$i."3' name='D7_".$i."3' min ='1' max='10' value='".$out[6][2]."'></input>  sets of &nbsp<input type='number' class='num_input' id='1_".$i."4' name='D7_".$i."4' min ='1' max='80' value='".$out[6][3]."'></input> reps";}
-                                            }else if($day7_flag==0){echo"<b>Rest</b><input type='text' class='rest_input id='7_".$i."1' name='D7_".$i."1' value='0'> </input>";}  
+                                            }else if($day7_flag==0){echo"<b>Rest</b><input type='text' class='rest_input' id='7_".$i."1' name='D7_".$i."1' value='0'> </input>";}  
                                             echo "</td>";
 
                                         echo "</tr>";
@@ -285,21 +284,23 @@
         function changemode(i) {                         
 
             var value = document.getElementById(i).checked;
-            // alert(i);
-            // alert(value);
+            alert(i);
+            alert(value);
             if (value === true){
                 for(j=1;j<=6;j++){
-                    if($j <= 3){
-                        document.getElementById("d"+i+"ex"+j).innerHTML= "<b><span class ='bpart'><input type='text' class='muscle_input' id='"+i+"_"+j+"1' placeholder='Muscle>' name='D"+i+"_"+j+"1' value='' required ></input></span><br><input type='text' class='exercise_input' id='"+i+"_"+j+"2' placeholder='exercise' name='D"+i+"_"+j+"2' value='' required> </input> </b><br><input type='number' class='num_input' id='"+i+"_"+j+"3' name='D"+i+"_"+j+"3' min ='1' max='10' value='1' required></input>  sets of <input type='number' class='num_input' id='"+i+"_"+j+"4' name='D"+i+"_"+j+"4' min ='1' max='80' value='1' required></input> reps";
+                    if(j <= 3){
+                        $("#d"+i+"ex"+j).empty();$("#d"+i+"ex"+j).append("<b><span class ='bpart'><input type='text' class='muscle_input' id='"+i+"_"+j+"1' placeholder='Muscle>' name='D"+i+"_"+j+"1' value='0' required ></input></span><br><input type='text' class='exercise_input' id='"+i+"_"+j+"2' placeholder='exercise' name='D"+i+"_"+j+"2' value='' required> </input> </b><br><input type='number' class='num_input' id='"+i+"_"+j+"3' name='D"+i+"_"+j+"3' min ='1' max='10' value='1' required></input>  sets of <input type='number' class='num_input' id='"+i+"_"+j+"4' name='D"+i+"_"+j+"4' min ='1' max='80' value='1' required></input> reps");
+                        // document.getElementById("d"+i+"ex"+j).innerHTML= "<b><span class ='bpart'><input type='text' class='muscle_input' id='"+i+"_"+j+"1' placeholder='Muscle>' name='D"+i+"_"+j+"1' value='0' required ></input></span><br><input type='text' class='exercise_input' id='"+i+"_"+j+"2' placeholder='exercise' name='D"+i+"_"+j+"2' value='' required> </input> </b><br><input type='number' class='num_input' id='"+i+"_"+j+"3' name='D"+i+"_"+j+"3' min ='1' max='10' value='1' required></input>  sets of <input type='number' class='num_input' id='"+i+"_"+j+"4' name='D"+i+"_"+j+"4' min ='1' max='80' value='1' required></input> reps";
                     }
                     else{
-                        document.getElementById("d"+i+"ex"+j).innerHTML= "<b><span class ='bpart'><input type='text' class='muscle_input' id='"+i+"_"+j+"1' placeholder='Muscle>' name='D"+i+"_"+j+"1' value='' ></input></span><br><input type='text' class='exercise_input' id='"+i+"_"+j+"2' placeholder='exercise' name='D"+i+"_"+j+"2' value='' > </input> </b><br><input type='number' class='num_input' id='"+i+"_"+j+"3' name='D"+i+"_"+j+"3' min ='1' max='10' value='1'></input>  sets of <input type='number' class='num_input' id='"+i+"_"+j+"4' name='D"+i+"_"+j+"4' min ='1' max='80' value='1'></input> reps";
+                        document.getElementById("d"+i+"ex"+j).innerHTML= "<b><span class ='bpart'><input type='text' class='muscle_input' id='"+i+"_"+j+"1' placeholder='Muscle>' name='D"+i+"_"+j+"1' value='0' ></input></span><br><input type='text' class='exercise_input' id='"+i+"_"+j+"2' placeholder='exercise' name='D"+i+"_"+j+"2' value='' > </input> </b><br><input type='number' class='num_input' id='"+i+"_"+j+"3' name='D"+i+"_"+j+"3' min ='1' max='10' value='1'></input>  sets of <input type='number' class='num_input' id='"+i+"_"+j+"4' name='D"+i+"_"+j+"4' min ='1' max='80' value='1'></input> reps";
                     }
                 }
             }else if(value === false){
                 for(j=1;j<=6;j++){
-                    document.getElementById("d"+i+"ex"+j).innerHTML="";
-                    document.getElementById("d"+i+"ex"+j).innerHTML= "<b>Rest</b><input type='text' class='rest_input' id='"+i+"_"+j+"1' name='D"+i+"_"+j+"1' value='0'> </input>";
+                    $("#d"+i+"ex"+j).empty();$("#d"+i+"ex"+j).append("<b>Rest</b><input type='text' class='rest_input' id='"+i+"_"+j+"1' name='D"+i+"_"+j+"1' value='0'> </input>");
+                    // document.getElementById("d"+i+"ex"+j).innerHTML="";
+                    // document.getElementById("d"+i+"ex"+j).innerHTML= "<b>Rest</b><input type='text' class='rest_input' id='"+i+"_"+j+"1' name='D"+i+"_"+j+"1' value='0'> </input>";
                    
                 }
             } 

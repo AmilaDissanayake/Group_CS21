@@ -1,5 +1,8 @@
 <?php include "includes/check_login.php" ?>
 
+<?php 
+    $username = $_SESSION['username'];
+?>
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -32,7 +35,12 @@
             $yesterday = date('Y-m-d',strtotime("-1 day", strtotime($date)));
             $overmaxdate = date('Y-m-d',strtotime("+8 day", strtotime($date)));
             $today = $date;
-            $member_id = 36;
+           
+            $query1 = "SELECT * FROM member WHERE username = '".$username."'";
+            $result1 = mysqli_query($conn, $query1);
+            $row1 = mysqli_fetch_assoc($result1);
+            
+            $member_id = $row1['member_id']; 
         ?>
         <div class="HdividerL">
             <script>
