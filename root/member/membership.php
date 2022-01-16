@@ -57,26 +57,66 @@
                 });
             </script>
         </div>
-        <?php
-            $mem_date = new DateTime("2021-03-24");
-            $membexp_date = new DateTime("2022-03-24");
-            $mem_interval = $mem_date->diff($membexp_date);
+        <?php 
 
-            if($mem_date->format("Y-m-d")  == "2021-03-24" && $membexp_date->format("Y-m-d") == "2022-03-24"){
-                $mem_interval->y = 00;
-                $mem_interval->m = 12;
-                $mem_interval->d = 00;
+            date_default_timezone_set('Asia/Colombo');
+            
+            $query1 = "SELECT * FROM member WHERE username = '".$username."'";
+            $result1 = mysqli_query($conn, $query1);
+            $row1 = mysqli_fetch_assoc($result1);
+
+            $member_id = $row1['member_id'];
+            $trainer_assignment = $row1['assign_trainer'];
+
+            $query2 = "SELECT * FROM membership  WHERE member_id = '".$member_id."'";
+            $result2 = mysqli_query($conn, $query2);
+            $row2 = mysqli_fetch_assoc($result2);
+
+            $membership_type = $row2['membership_type']; 
+            $joined_date = $row2['joined_date'];
+            
+
+            if($membership_type==12){ 
+                $exp_date = date('Y-m-d',strtotime("+12 month", strtotime("$joined_date")));}
+            else if($membership_type==6){ 
+                $exp_date = date('Y-m-d',strtotime("+6 month", strtotime("$joined_date")));}
+            else if($membership_type==3){ 
+                $exp_date = date('Y-m-d',strtotime("+3 month", strtotime("$joined_date")));}
+            else if($membership_type==1){ 
+                $exp_date = date('Y-m-d',strtotime("+1 month", strtotime("$joined_date")));}
+
+            $date = date('Y-m-d');
+            $today = new DateTime($date);
+
+            $mem_date = new DateTime("$joined_date");
+            $membexp_date = new DateTime("$exp_date");
+
+            $mem_interval = $today->diff($membexp_date);
+
+            if($mem_date  == $today){
+
+                if($membership_type==12){
+                    $mem_interval->y = 00;
+                    $mem_interval->m = 12;
+                    $mem_interval->d = 00;
+                }                
+            } 
+
+            if($trainer_assignment == 0){
+                $flag = 0;
+            }else{
+                $flag = 1; 
             }
-            $mem_type = 12; 
+            
+            $t_assign_d = "2021-03-24";
+            $t_exp_d = "2021-04-24";
+            $today = new DateTime("2021-03-30");
+            $t_assign_date = new DateTime("$t_assign_d");
+            $t_exp_date = new DateTime("$t_exp_d"); 
 
-            $t_assign_date = new DateTime("2021-03-24");
-            $t_exp_date = new DateTime("2021-04-24");
-            $tr_interval = $t_assign_date->diff($t_exp_date);
+            $tr_interval = $today->diff($t_exp_date);
             
-            // echo "difference " . $interval->y . " years, " . $interval->m." months, ".$interval->d." days "; 
             
-            // shows the total amount of days (not divided into years, months and days like above)
-            // echo "difference " . $interval->days . " days ";
         ?>
         <div class="board">
             <div class="vboderdivider"></div>
@@ -84,12 +124,11 @@
                 <div class="duhead"><h2>Membership</h2></div>   
                 <div class="mainbar">
                     <div class="duline1">
-                        <div class="typ1"><i class='bx bxs-hourglass-top'></i><h1><?php echo $mem_type ?> Month Membership</h1></div>
+                        <div class="typ1"><i class='bx bxs-hourglass-top'></i><h1><?php echo $membership_type ?> Month Membership</h1></div>
                         <div class="remain"><h2>MONTHS</h2><div class="time"><h1><?php echo $mem_interval->m ?></h1></div></div><div class="remain"><h2>DAYS</h2><div class="time"><h1><?php echo $mem_interval->d?></h1></div></div>
                     </div>   
                     <div class="duline2">
                         <?php 
-                            $flag = 0;
 
                             if($flag == 1){
                                 $icon = "'bx bxs-user-check'";
@@ -100,17 +139,41 @@
                             }
                         ?>
                         <div class="typ1"><i class=<?php echo $icon ?>></i><h1><?php echo $t_assign_status ?></h1></div>
-                        <div class="remain"><h2>DAYS</h2><div class="time"><h1><?php echo $tr_interval->days ?></h1></div></div>
+                        <?php if($flag != 0 ){ echo"<div class='remain'><h2>DAYS</h2><div class='time'><h1>$tr_interval->days</h1></div></div>";}?>
                     </div>    
                 </div>
-                <div class="duhead"></div>
+                <div class="duhead">
+                    <?php 
+
+                        $query3 = "SELECT * FROM extend_membership  WHERE member_id = '".$member_id."'";
+                        $result3 = mysqli_query($conn, $query3);
+
+                        if(!$result3){
+                            $result3 = mysqli_query($conn, $query3);
+                            $row3 = mysqli_fetch_assoc($result3);
+
+                            $membership_type = $row3['membership_type']; 
+
+                            echo " 
+                                <div class='success'>
+                                    <p><strong>ACTIVE $membership_type MONTH</strong> <i> EXTEND packge</i></p>
+                                </div>";
+                        }else{
+                            echo " 
+                                <div class='not_success'>
+                                    <p><strong>NO any ACTIVE </strong> <i> EXTEND packge</i></p>
+                                </div>";
+                        }
+
+                    ?>
+                </div>
             </div>
             <div class="vboderdivider"></div>
         </div>
         <div class="divid"></div>
         <?php 
-
-                    $trainer_id = 1;
+                if($trainer_assignment != 0){
+                    $trainer_id = $trainer_assignment;
                     $assign_trainer_query = "SELECT * FROM trainer WHERE trainer_id = $trainer_id";
                     $trainer_result = mysqli_query($conn, $assign_trainer_query);
                     $trainer_row = mysqli_fetch_assoc($trainer_result);
@@ -139,6 +202,7 @@
                         }
                         $final_rating = $review_value / $review_count;
                     } 
+                }                   
         ?>
         <div id="popup1" class="overlay">
             <div class="popup">
@@ -275,38 +339,59 @@
             <div class="hordivid"></div>
             <div class="tassign">
                 <div class="seltr">
-                    <div class="note2"><h1>Your Trainer</h1></div>
-                    <div class="adetails">
-                        <div class="astatus">
-                            <p><i class='bx bxs-flag'></i>Assign to the trainer <b>since</b> <i>21/06/2021</i> <b>till</b> <i>21/07/2021</i></p> 
-                        </div>
-                        <div class="aper">
-                            <div class="avatar">
-                                <img src="../media/trainers/<?php echo $trainer_image?>">
-                            </div>
-                            <div class="joined-date">
-                                <p>Assign with </p>
-                            </div>
-                            <div class="name">
-                                <p><?php echo $trainer_f_name." ".$trainer_l_name ?> ⭐<?php echo $final_rating?></p>
-                            </div>
-                            <div class="button-inner">
-                                <div class="about_button"><button class="about_btn" onclick="location.href='../trainer-profile/trainer-profile.php?trainer_id=<?php echo $trainer_id ?>'">PROFILE</button></div>
-                                <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $trainer_phone_no ?>'">CALL</button></div> 
-                            </div>
-                        <div class="stat">
-                            <div class="exp">
-                                <p><?php echo $diff->format('%y') . 'yrs'; ?><br>Expirience</p>
-                             </div>
-                            <div class="rate">
-                                <p><?php echo $trainer_rate ?>/=<br>Per Month</p>
-                            </div>
-                            <div class="review-count">
-                                <p><?php echo $review_count ?><br>Reviews</p>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+                    <?php 
+                        
+                        if($flag == 0){
+                            echo
+                            "<div class='note2'><h1>Trainer Assignment</h1></div> 
+                            <div class='adetails'>
+                                <div class='astatus'>
+                                    <p><i class='bx bxs-flag'></i>You can assign with trainers using below <b> trainer list</b> <i> ";echo"</i></p> 
+                                </div>
+                                <div class='aper'>
+                                    <div class='avatar'></div>
+                                </div>
+                            </div>";
+
+                        }else{
+                            echo
+                            "<div class='note2'><h1>Your Trainer</h1></div>
+                            <div class='adetails'>
+                                <div class='astatus'>
+                                    <p><i class='bx bxs-flag'></i>Assign to the trainer <b>since</b> <i>"; echo $t_assign_date->format("d/m/Y"); echo "</i> <b>till</b> <i>"; echo $t_exp_date->format("d/m/Y"); echo"</i></p> 
+                                </div>
+                                <div class='aper'>
+                                    <div class='avatar'>
+                                        <img src='../media/trainers/$trainer_image'>
+                                    </div>
+                                    <div class='joined-date'>
+                                        <p>Assign with </p>
+                                    </div>
+                                    <div class='name'>
+                                        <p>$trainer_f_name $trainer_l_name ⭐$final_rating</p>
+                                    </div>
+                                    <div class='button-inner'>
+                                        <div class='about_button'><button class='about_btn'"; echo 'onclick="'; echo "location.href='../trainer-profile/trainer-profile.php?trainer_id=$trainer_id'";echo '"';echo">PROFILE</button></div>
+                                        <div class='about_button'><button class='about_btn'"; echo 'onclick="'; echo "location.href='tel:$trainer_phone_no'"; echo '"'; echo ">CALL</button></div> 
+                                    </div>
+                                <div class='stat'>
+                                    <div class='exp'>
+                                        <p>";echo $diff->format('%y') . 'yrs'; echo"<br>Expirience</p>
+                                     </div>
+                                    <div class='rate'>
+                                        <p>$trainer_rate/=<br>Per Month</p>
+                                    </div>
+                                    <div class='review-count'>
+                                        <p>$review_count<br>Reviews</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>";
+                        }
+                      
+                    ?>
+
+                    
                     <div class="note2"><h1>Trainer List</h1></div>
                     <div class="trainer-div">
                         <table class="table-trainers">

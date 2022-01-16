@@ -11,15 +11,13 @@
         <input type="radio" name="rate" id="rate-2"><label for="rate-2" class="fas fa-star"></label>
         <input type="radio" name="rate" id="rate-1"><label for="rate-1" class="fas fa-star"></label>
         
-        <form action="#">
-          <!-- <header></header> -->
+        <form action="../make_a_rating.php" method="$_GET">
           <div class="textarea">
             <textarea cols="30" placeholder="Describe your experience.."></textarea>
           </div>
           <div class="btn">
             <button type="submit">Post</button>
           </div>
-          
         </form>
     </div>
 </div>

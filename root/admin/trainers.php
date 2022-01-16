@@ -85,30 +85,31 @@
             </div>
             <div class="search-bar">
                 <div class="search-box">
-                    <input type="text" placeholder="Search by name..." id="search">
+                    <input type="text" placeholder="Search by first name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
                 <div class="filter1">
-                    <select name="gender" id="" class="justselect">
-                        <option selected="selected">Gender</option>
-                        <option>Male</option>
-                        <option>Female</option>
+                    <select name="gender" id="gender" class="justselect">
+                        <option selected="selected" value="all">Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
                     </select>
                 </div>
 
                 <div class="filter2">
-                    <select name="rating" id="" class="justselect">
-                        <option selected="selected">Rating</option>
-                        <option>⭐5</option>
-                        <option>⭐4</option>
-                        <option>⭐3</option>
-                        <option>⭐2</option>
-                        <option>⭐1</option>
+                    <select name="rating" class="justselect" id="rating">
+                        <option selected="selected" value="all1">Rating</option>
+                        <option value="5">⭐5</option>
+                        <option value="4">⭐4</option>
+                        <option value="3">⭐3</option>
+                        <option value="2">⭐2</option>
+                        <option value="1">⭐1</option>
 
                     </select>
                 </div>
+                <div class="add_button"><button class="add_btn_filter" id="btn">Filter</button></div>
 
-                <div class="add_button"><button class="add_btn_filter" onclick="location.href='#'">Filter</button></div>
+                <!-- <div class="add_button"><button class="add_btn_filter" onclick="location.href='#'">Filter</button></div> -->
 
 
 
@@ -233,6 +234,47 @@
 
 
     <script src="js/justselect.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#search").keydown(function() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'trainer-search.php',
+                    data: {
+                        name: $("#search").val(),
+                    },
+                    success: function(data) {
+                        $("#output").html(data);
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function()
+
+            {
+
+
+                $('#btn').click(function() {
+                    // var gender = $('#gender :selected').val();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'trainer-filter.php',
+                        data: {
+                            gender: $('#gender :selected').val(),
+                            rating: $('#rating :selected').val(),
+                        },
+                        success: function(data) {
+                            $("#output").html(data);
+                        }
+                    });
+
+                });
+
+            });
+    </script>
 
 
 </body>

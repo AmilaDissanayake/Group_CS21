@@ -222,11 +222,40 @@
   color:rgb(64, 59, 59)
 }
 
-.bmistatus #ob{
+.bmistatus .ob{
   color: red;
+  margin-right: 30px;
+}
+.bmistatus .ov{
+  color: orange;
+  margin-right: 30px;
+}
+.bmistatus .hl{
+  color: green;
+  margin-right: 30px;
+}
+.bmistatus .un{
+  color: lightblue;
+  margin-right: 30px;
 }
 .bmistatus span {
+  margin-right: 90px;
+}
+.bmistatus .avg {
   color: orange;
+  margin-right: 90px;
+}
+.bmistatus .fit {
+  color: #86ff71;
+  margin-right: 90px;
+}
+.bmistatus .ath {
+  color: green;
+  margin-right: 90px;
+}
+.bmistatus .es {
+  color: lightblue;
+  margin-right: 90px;
 }
 .bmistatus a{
   text-decoration: none;

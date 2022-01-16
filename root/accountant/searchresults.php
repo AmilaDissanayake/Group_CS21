@@ -14,5 +14,5 @@ $search = $_GET['search'];
 $sql = "SELECT * FROM users WHERE username LIKE '$search%' LIMIT 5";
 $result = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_assoc($result)) {
-    echo "<li><a href='#'>" . $row['username'] . "</a>";
+    echo "<li value=" . $row['username'] . ">" . $row['username'] . "</a>";
 }

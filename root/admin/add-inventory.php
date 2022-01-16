@@ -7,7 +7,7 @@ if ($_SESSION['notification']) {
 }
 
 require "includes/db.php";
-$inventory_id = $_GET['inventory_id'];
+$inventory_id = $_POST['inventory_id'];
 
 $select_query = "SELECT quantity from inventory WHERE inventory_id = $inventory_id";
 $select_result = mysqli_query($conn, $select_query);

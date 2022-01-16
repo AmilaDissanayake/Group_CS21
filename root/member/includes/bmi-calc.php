@@ -38,12 +38,22 @@
     <div class="result">
         <div class="bmi">
             <div class="title">YOUR BMI</div>
-            <div class="val">0.00</div>
+            <div class="val" ><span id="bmi_val">0.00</span></div>
         </div>
 
         <div class="text">Your BMI status!</div>
-        <div class="recal">INSERT INTO ANALASIS</div>
+        <div class="recal" ><a onclick="getval()">INSERT INTO ANALASIS</a></div>
     </div>
 </div>
 
 </div><br><br>
+
+<script >
+
+function getval(){
+    var bmiin = document.getElementById("bmi_val").innerHTML;
+        alert(bmiin);
+    
+}
+
+</script>
