@@ -384,10 +384,6 @@
 
                                 button.val("SIGN UP & PAY" + " " + cost + "/=");
 
-
-
-
-
                             });
 
 
