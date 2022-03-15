@@ -83,7 +83,7 @@ request, you can ignore this e-mail.</p>
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'powerhouse.fitness.academy@gmail.com';                     //SMTP username
-    $mail->Password   = 'Power@123';                               //SMTP password
+    $mail->Password   = 'Power@1234';                               //SMTP password
     $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
     $mail->Port       = 587;
     $mail->isHTML(true);
