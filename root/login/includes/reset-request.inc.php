@@ -57,12 +57,20 @@ if (isset($_POST["reset-request-submit"])) {
     mysqli_close($conn);
 
     $to = $userEmail;
-    $subject = "Reset your password for POWER HOUSE";
+    $subject = "Reset your password of POWER HOUSE Account";
 
-    $message = '<p>We recieved a password reset request. The link to reset your password is below. If you did not make this 
-request, you can ignore this e-mail</p>';
-    $message .= '<p>Here is your password reset link: <br>';
-    $message .= '<a href="' . $url . '">' . $url . '</a></p>';
+
+    $message = '<html><head></head><body style="background-color:black;">
+    
+   
+<img src="cid:logo" height="100px" style="display:block; margin-left:auto; margin-right:auto; padding-top:40px">
+
+<p style="color:#CECECF; padding-left:100px; padding-right:100px; font-size:15px; text-align:center;">We recieved a password reset request. The link to reset your password is below. <br>If you did not make this 
+request, you can ignore this e-mail.</p>
+    
+   
+   <div style="text-align:center"><a href="' . $url . '"><button style="width:240px;height:40px; border:1px solid #86ff71;border-radius:30px; cursor: pointer; background-color:#86ff71; margin-top:20px;margin-bottom:40px; font-family:Bahnschrift" onclick="location.href=' . $url . '">REST PASSWORD</button></a></div></body></html>';
+
 
 
     require '../vendor/autoload.php';
@@ -77,7 +85,9 @@ request, you can ignore this e-mail</p>';
     $mail->Username   = 'powerhouse.fitness.academy@gmail.com';                     //SMTP username
     $mail->Password   = 'Power@1234';                               //SMTP password
     $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->Port       = 587;
+    $mail->isHTML(true);
+    $mail->addEmbeddedImage('logo.jpg', 'logo');                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
     $mail->setFrom('powerhouse.fitness.academy@gmail.com');
@@ -88,7 +98,7 @@ request, you can ignore this e-mail</p>';
     $mail->Subject = $subject;
     $mail->Body    = $message;
     $mail->send();
-    echo 'Message has been sent';
+    //echo 'Message has been sent';
     // } catch (Exception $e) {
     //     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     // }

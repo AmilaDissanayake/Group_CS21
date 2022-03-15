@@ -172,10 +172,10 @@
 
                 </div>
 
-                <div class="form__div" id="main_address1">
+                <!-- <div class="form__div" id="main_address1">
                     <input type="text" class="form__input" id="address1" placeholder=" " name="amount">
                     <label for="" class="form__label">Amount</label>
-                </div>
+                </div> -->
                 <div class="buttondiv">
                     <input type="submit" class="form__button" value="SUBMIT" name="form_submit" id="form_submit1">
                 </div>
@@ -221,6 +221,54 @@
         } else
             sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
     }
+
+
+    var selectedTrainer;
+                        var selectedMembership;
+                        var cost = 0;
+                        var temp1 = 0;
+                        var temp2 = 0;
+                        var button = $(".form__button");
+                        $(document).ready(function() {
+                            $("select#trainer").change(function() {
+
+                                selectedTrainer = $(this).find('option:selected').data('trainer');
+                                selectedTrainer = parseInt(selectedTrainer, 10);
+                                if (temp1 > 0) {
+                                    cost = cost - temp1;
+                                    cost = cost + selectedTrainer;
+                                } else {
+                                    cost = cost + selectedTrainer;
+                                }
+
+                                temp1 = selectedTrainer;
+
+                                button.val("SUBMIT" + " " + cost + "/=");
+
+                            });
+
+
+                        });
+
+                        $(document).ready(function() {
+                            $("select#membership1").change(function() {
+                                selectedMembership = $(this).children("option:selected").val();
+                                selectedMembership = parseInt(selectedMembership, 10);
+
+                                if (temp2 > 0) {
+                                    cost = cost - temp2;
+                                    cost = cost + selectedMembership;
+                                } else {
+                                    cost = cost + selectedMembership;
+                                }
+                                temp2 = selectedMembership;
+                                button.val("SUBMIT" + " " + cost + "/=");
+                            });
+
+                        });
+
+
+
 </script>
 <script type="text/javascript" src="./../signup/signup.js"></script>
 <script src="js/justselect.min.js"></script>
