@@ -7,6 +7,7 @@
 session_start();
 
 require "includes/db.php";
+// require_once 'phpqrcode/qrlib.php';
 
 
 // print_r($_POST);
@@ -83,7 +84,11 @@ if ($result0 && $result1 && $result3 && $result4) {
     $_SESSION['notification'] = "Account successfully created";
     $_SESSION['username'] = $username_bb;
 
-    // require_once 'phpqrcode/qrlib.php';
+    //$sql1 = "SELECT member_id from member where username = '".$username_bb."'";
+    // $result1 = mysqli_query($conn,$sql1);
+    // $row1 = mysqli_fetch_assoc($result1);
+
+    // $member_id = $row1['member_id'];
 
     // $path = 'QRimages/';
     // $file = $path."$member_id"."468.png";

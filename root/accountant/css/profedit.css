@@ -629,10 +629,13 @@ option {
     ul#results{
       list-style: none;
         width: 131px;
-        margin-left: 410px;
-        margin-top: -20px;
+        height:0%;
+        background-color: #F5F5F5;
+        margin-left: 400px;
+        margin-top: -28px;
         padding-bottom: 20px;
         display: none;
+        /* border: 1px solid rgb(0, 0, 0); */
     }
      
     ul#results li a {
@@ -640,10 +643,16 @@ option {
         background: transparent;
         display: block;
         text-decoration: none;
+        border-bottom: 1px solid rgb(0, 0, 0);
         padding-bottom: 5px;
+        text-align: center;
+        margin-left: -1px;
+        
     }
     ul#results li a:hover {
       background: #aaa;
+      background-color: #39ff14;
+      border-bottom: 1px solid rgb(0, 0, 0);
     }
 
   
