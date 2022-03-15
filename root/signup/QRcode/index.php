@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -6,7 +7,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require "../includes/db.php";
 
-$username = "hiran";
+$username = $_SESSION['username'];
 $sql1 = "SELECT member_id from member where username = '".$username."'";
 $result1 = mysqli_query($conn,$sql1);
 $row1 = mysqli_fetch_assoc($result1);
@@ -21,14 +22,14 @@ $userEmail = $row2['email'];
 
 require_once 'phpqrcode/qrlib.php';
 
-$path = 'images/';
+$path = 'QRimages/';
 $file = $path."$member_id"."468.png";
 
 $text = "www.google.com";
 
 QRcode::png($text, $file, 'L', 10, 2);
 
-echo "<cenetr><img src='".$file."'><center>";
+"<cenetr><img src='".$file."'><center>";
 
 $to = $userEmail;
     $url= "https//:powerhouse.fitness.com";
@@ -51,7 +52,7 @@ $to = $userEmail;
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'powerhouse.fitness.academy@gmail.com';                     //SMTP username
-    $mail->Password   = 'Power@123';                               //SMTP password
+    $mail->Password   = 'Power@1234';                               //SMTP password
     $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -63,8 +64,8 @@ $to = $userEmail;
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = $subject;
     $mail->Body    = $message;
-    $mail->addAttachment('images/'.$member_id.'468.png');
+    $mail->addAttachment('QRimages/'.$member_id.'468.png');
     $mail->send();
-    echo 'Message has been sent';
 
 ?>
+<script>window.location.assign('../../member/dashboard.php')</script>
