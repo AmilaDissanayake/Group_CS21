@@ -60,9 +60,82 @@ $row4 = mysqli_fetch_assoc($result4);
 
     <link rel="stylesheet" href="css/update-member.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/jquery-confirm.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="js/update-member.js"></script>
+    <style>
+        .jconfirm.jconfirm-my-theme .jconfirm-bg {
+            background-color: rgba(0, 0, 0, 0.2);
+
+        }
+
+        .jconfirm.jconfirm-my-theme .jconfirm-box {
+            background-color: #121317;
+            padding-top: 20px !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            padding-bottom: 20px !important;
+            border-radius: 5px !important;
+            /* border: #86ff71 3px solid !important; */
+
+        }
+
+        .jconfirm.jconfirm-my-theme .jconfirm-closeIcon {
+            color: white !important;
+        }
+
+        .jconfirm.jconfirm-my-theme .jconfirm-title {
+            color: #86ff71;
+            font-family: "Azonix" !important;
+        }
+
+        .jconfirm.jconfirm-my-theme .jconfirm-content {
+            color: #ffffff;
+            font-family: "Rubik" !important;
+        }
+
+        /* .jconfirm.jconfirm-my-theme .jconfirm-buttons {
+            background-color: #86ff71;
+            font-family: "Rubik" !important;
+            border-radius: 50px;
+            color: black;
+        } */
+
+        .hi {
+            background-color: transparent;
+            font-family: "Azonix" !important;
+            border-radius: 50px !important;
+            color: white;
+            border: #89898B 2px solid !important;
+        }
+
+        .hi :hover {
+
+            border: #86ff71 2px solid !important;
+            /* transition: 0.5s; */
+
+        }
+
+        .jconfirm.jconfirm-my-theme .jconfirm-box.loading {}
+
+        .jconfirm.jconfirm-my-theme .jconfirm-box.loading:before {}
+
+        .jconfirm.jconfirm-my-theme .jconfirm-box.loading:after {}
+
+        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-closeIcon {}
+
+        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-title-c {}
+
+        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-content-pane {}
+
+        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-content {}
+
+        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-buttons {}
+
+        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-buttons button {}
+    </style>
+
 </head>
 
 <body>
@@ -70,6 +143,7 @@ $row4 = mysqli_fetch_assoc($result4);
     <section class="home-section">
 
         <?php include "includes/header.php" ?>
+        <script src="js/jquery-confirm.min.js"></script>
         <script>
             function nn() {
                 $('.alert').addClass("show");
@@ -388,7 +462,76 @@ $row4 = mysqli_fetch_assoc($result4);
 
                         <div class="buttondiv"><input type="button" class="form__button" value="UPDATE MEMBER" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
-                        <div class="buttondiv" id="delete_submit"><input type="button" class="form__button" value="DELETE MEMBER" onclick="go()"></div>
+                        <div class="buttondiv" id="delete_submit"><input type="button" class="form__button" value="DELETE MEMBER"></div>
+                        <script>
+                            function go() {
+                                document.getElementById("delete_form").submit();
+                            }
+                            // var $btn = $('.btn-calendar').pignoseCalendar({
+                            //     // apply: onApplyHandler,
+                            //     modal: true, // It means modal will be showed when you click the target button.
+                            //     buttons: true
+                            // });
+
+
+
+                            // $(document).ready(function(e) {
+                            //     // var btn = $(".btnm");
+                            //     // var clickHandler = btn[0].onclick;
+
+                            //     // for (i = 0; i < 7; i++) {
+                            //     //     btn[i].onclick = false;
+
+
+                            // }
+                            // var clickHandler = btn[1].onclick;
+                            // btn[1].onclick = false;
+                            $('#delete_submit').on('click', function() {
+                                //var clickHandler = btn[i].onclick;
+                                // event.preventDefault();
+                                //event.stopPropagation();
+                                // var id = $(this).attr('id'); // $(this) refers to button that was clicked
+                                //alert(id);
+                                $.confirm({
+                                    title: 'Confirm',
+                                    animateFromElement: false,
+                                    animation: 'RotateX',
+                                    closeAnimation: 'RotateX',
+                                    content: 'Are you sure you want to remove the member permenantly? This action cannot be undone and all the member data including mebership & payments details will be deleted!',
+                                    boxWidth: '30%',
+                                    theme: 'my-theme',
+                                    useBootstrap: false,
+                                    // closeIcon: true,
+                                    buttons: {
+                                        Confirm: {
+                                            btnClass: 'hi',
+                                            action: function() {
+                                                // clickHandler.call(this, event);
+                                                go();
+                                            }
+                                        },
+                                        Cancel: {
+                                            btnClass: 'hi', // multiple classes.
+
+                                        },
+                                    }
+                                });
+                            });
+                            // });
+                            // $(document).ajaxStop(function() {
+                            //     //window.setTimeout(nn, 3000);
+                            //     //nn();
+
+                            //     $(document).ready(function() {
+                            //         setTimeout(function() {
+                            //             //alert('Reloading Page');
+                            //             location.reload(true);
+                            //         }, 1000);
+                            //     });
+
+
+                            // });
+                        </script>
 
                         <!-- <button value="DELETE MEMBER" id="delete_submit"></button> -->
 
@@ -481,11 +624,6 @@ $row4 = mysqli_fetch_assoc($result4);
                                     }
                                 });
                             });
-
-
-                            function go() {
-                                document.getElementById("delete_form").submit();
-                            }
                         </script>
 
 

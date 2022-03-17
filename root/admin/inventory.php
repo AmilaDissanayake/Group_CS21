@@ -496,7 +496,6 @@
 
 
         </div>
-        <button class="example1">Click Me</button>
 
 
     </section>
