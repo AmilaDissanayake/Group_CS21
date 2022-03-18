@@ -109,7 +109,7 @@ require "includes/db.php";
                                 $l_name = $payment_row2['l_name'];
                                 $phone_no = $payment_row2['phone_no'];
                                 $assign_trainer = $payment_row2['assign_trainer'];
-                                if ($assign_trainer==1){
+                                if ($assign_trainer >= 1){
                                     $sql3 = "SELECT username FROM trainer WHERE trainer_id = '$assign_trainer'";
                                     $result3 = mysqli_query($conn, $sql3);
                                     $payment_row3 = mysqli_fetch_assoc($result3);

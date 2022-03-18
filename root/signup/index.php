@@ -194,7 +194,7 @@
 
 
                         <label>
-                            <select id="membership" class="form_input" required name="membership_cc">
+                            <select id="membership1" class="form_input" required name="membership_cc">
                                 <option value="" disabled selected> Select Your Membership </option>
                                 <option value=2500> One Month 2500/=
                                 </option>
@@ -367,7 +367,7 @@
                             $("select#trainer").change(function() {
 
                                 selectedTrainer = $(this).find('option:selected').data('trainer');
-                                // alert($(this).find(':selected').data('trainerRate'));
+                                 //alert($(this).find(':selected').data('trainerRate'));
                                 selectedTrainer = parseInt(selectedTrainer, 10);
                                 if (temp1 > 0) {
                                     cost = cost - temp1;
@@ -384,17 +384,13 @@
 
                                 button.val("SIGN UP & PAY" + " " + cost + "/=");
 
-
-
-
-
                             });
 
 
                         });
 
                         $(document).ready(function() {
-                            $("select#membership").change(function() {
+                            $("select#membership1").change(function() {
                                 selectedMembership = $(this).children("option:selected").val();
                                 selectedMembership = parseInt(selectedMembership, 10);
 

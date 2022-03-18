@@ -37,12 +37,12 @@
                     <label for="" class="form__label">Username</label>
 
                 </div>
-                <ul id="results">
+                <!-- <ul id="results">
                     <li><a href="#">India</a>
                     <li><a href="#">US</a>
                     <li><a href="#">UK</a>
                     <li><a href="#">Australia</a>
-                </ul>
+                </ul> -->
                 <script type="text/javascript">
                     var results = document.getElementById("results");
                     var search = document.getElementById("address1");
@@ -74,11 +74,35 @@
                     }
 
                     address1.addEventListener("input", getSearchResults);
+
+                    // $("#results li").click(function() {
+                    //     var a = $(this).attr("value");
+                    //     alert(a);
+                    // });
                 </script>
+
+
                 <div class="form__div" id="main_address1">
-                    <input type="text" class="form__input" id="address1" placeholder=" " name="email">
+                    <input type="text" class="form__input" id="address2" placeholder=" " name="email" readonly>
                     <label for="" class="form__label">Email</label>
                 </div>
+
+                <script>
+                    $('#address1').on('keyup', function() {
+                        var given_name = $(this).val();
+                        //alert(given_name);
+                        $.ajax({
+                            url: 'find-email.php',
+                            type: 'POST',
+                            data: {
+                                "myData": given_name
+                            }
+                        }).done(function(data) {
+                            $('#address2').val(data);
+                        });
+                    })
+                </script>
+
 
                 <div class="select__div" id="select_div">
 
@@ -135,25 +159,25 @@
                     <label>
                         <select id="membership1" class="form_input" required name="membership_type">
                             <option value="" disabled selected> Membership Type </option>
-                            <option value=1> One Month 2500/=
+                            <option value=2500> One Month 2500/=
                             </option>
-                            <option value=3> Three Months 7000/=
+                            <option value=7000> Three Months 7000/=
                             </option>
-                            <option value=6> Six Months 13500/=
+                            <option value=13500> Six Months 13500/=
                             </option>
-                            <option value=12> One Year 20000/=
+                            <option value=20000> One Year 20000/=
                             </option>
                         </select>
                     </label>
 
                 </div>
-
-                <div class="form__div" id="main_address1">
-                    <input type="text" class="form__input" id="address1" placeholder=" " name="amount">
-                    <label for="" class="form__label">Amount</label>
-                </div>
+<!-- 
+                <div class="form__div" id="main_address1" > -->
+                    <input type="text" type="hidden" class="form__input" id="amount_pass" placeholder=" " name="amount">
+                    <!-- <label for="" class="form__label">Amount</label>
+                </div> -->
                 <div class="buttondiv">
-                    <input type="submit" class="form__button" value="SUBMIT" name="form_submit" id="form_submit1">
+                    <input type="submit" class="form__button" value="PAY" name="form_submit" id="form_submit1">
                 </div>
 
             </form>
@@ -197,6 +221,61 @@
         } else
             sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
     }
+
+
+                        var selectedTrainer;
+                        var selectedMembership;
+                        var cost = 0;
+                        var temp1 = 0;
+                        var temp2 = 0;
+                        var button = $(".form__button");
+                        $(document).ready(function() {
+                            $("select#trainer").change(function() {
+                                temp1 = selectedTrainer;
+                                selectedTrainer = $(this).find('option:selected').data('trainer');
+                                selectedTrainer = parseInt(selectedTrainer, 10);
+                                if (temp1 > 0) {
+                                    cost = cost - temp1;
+                                    cost = cost + selectedTrainer;
+                                } else {
+                                    cost = cost + selectedTrainer;
+                                }
+
+                                
+
+                                button.val("PAY" + " " + cost + "/=");
+
+                            });
+
+                            $("#amount_pass").val(cost);
+
+
+                        });
+
+                        $(document).ready(function() {
+                            $("select#membership1").change(function() {
+                                selectedMembership = $(this).children("option:selected").val();
+                                selectedMembership = parseInt(selectedMembership, 10);
+                               
+                                if (temp2 > 0) {
+                                    cost = cost - temp2;
+                                    cost = cost + selectedMembership;
+                                } else {
+                                    cost = cost + selectedMembership;
+                                }
+                                temp2 = selectedMembership;
+                                
+                                button.val("PAY" + " " + cost + "/=");
+
+                                $("#amount_pass").val(cost);
+
+
+                            });
+
+                        });
+
+
+
 </script>
 <script type="text/javascript" src="./../signup/signup.js"></script>
 <script src="js/justselect.min.js"></script>

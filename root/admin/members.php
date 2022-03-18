@@ -9,6 +9,10 @@
 
     <link rel="stylesheet" href="css/dashboard.css">
     <link href="css/justselect.css" rel="stylesheet" />
+    <link href="css/nice-select2.scss" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,13 +66,44 @@
 
         <div class="home-content">
             <div class="member-stats">
+
+                <?php
+
+                include 'includes/db.php';
+                $count_sql1 = "SELECT COUNT(username) FROM users WHERE user_type = 'member'";
+                $count_result1 = mysqli_query($conn, $count_sql1);
+                $count_row1 = mysqli_fetch_array($count_result1);
+
+                $count_total1 = $count_row1[0] + 1;
+
+                $count_sql2 = "SELECT * FROM member";
+                $count_result2 = mysqli_query($conn, $count_sql2);
+                $new_members = 0;
+                $today = time();
+                while ($count_row2 = mysqli_fetch_assoc($count_result2)) {
+
+                    $my_date = strtotime($count_row2['joined_date']);
+                    $date_difference = $today - $my_date;
+                    if ($date_difference > 30) {
+                        $new_members++;
+                    }
+                }
+
+
+
+
+
+
+
+
+                ?>
                 <div class="one">
-                    <p class="value">255</p>
+                    <p class="value"><?php echo $count_total1 ?></p>
                     <p class="name">Total Members</p>
                 </div>
 
                 <div class="two">
-                    <p class="value">5+</p>
+                    <p class="value"><?php echo $new_members ?>+</p>
                     <p class="name">This Month</p>
                 </div>
 
@@ -85,11 +120,11 @@
             </div>
             <div class="search-bar">
                 <div class="search-box">
-                    <input type="text" placeholder="Search by name..." id="search">
+                    <input type="text" placeholder="Search by first name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
                 <div class="filter1">
-                    <select name="Membership" class="justselectt" id="membership">
+                    <select name="Membership" class="justselect" id="membership">
                         <option selected="selected" value=all1>Membership</option>
                         <option value="valid">Membership Valid</option>
                         <option value="invalid">Membership Expired</option>
@@ -97,7 +132,7 @@
                 </div>
 
                 <div class="filter2">
-                    <select name="Membership" class="justselectt" id="gender">
+                    <select name="Membership" class="justselect" id="gender">
                         <option selected="selected" value="all">Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -110,6 +145,9 @@
                 <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Member</button></div>
 
             </div>
+
+
+
 
             <div class="member-list">
                 <table class="table table-hover">
@@ -131,7 +169,7 @@
                     <tbody id="output">
                         <?php
 
-                        include 'includes/db.php';
+
 
                         // echo "asfsdfd";
 
@@ -214,7 +252,7 @@
 
 
 
-    <script src="js/justselect.min.js"></script>
+    <script src="js/justselect.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#search").keydown(function() {
@@ -233,6 +271,8 @@
     </script>
 
     <script src="js/justselect.min.js"></script>
+    <script src="js/jquery.nice-select2.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function()
 

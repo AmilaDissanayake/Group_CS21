@@ -1,9 +1,11 @@
 <?php
-
 session_start();
+?>
 
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+<?php
 require "includes/db.php";
-
 
 // print_r($_POST);
 
@@ -78,9 +80,28 @@ $result4 = mysqli_query($conn, $membership_insert);
 if ($result0 && $result1 && $result3 && $result4) {
     $_SESSION['notification'] = "Account successfully created";
     $_SESSION['username'] = $username_bb;
-    header('Location: ../member/dashboard.php');
-    // echo "done";
+?>
+
+    <!-- <script type="text/javascript">
+                $(document).ready(function(){
+                function QR(){
+                $.ajax({
+                    type: "POST",
+                    url: "QRcode/index.php",
+                    // data: dataString,
+                    success: function() {
+                        window.location = '../member/dashboard.php'; 
+                    },
+                });
+            }
+            QR();
+        }); -->
+    
+    </script>
+<?php
+     header('Location: QRcode/index.php');
 } else {
-    // header("Location: index.php");
+    header("Location: index.php");
     echo die(mysqli_error($conn));
 }
+?>
