@@ -45,7 +45,6 @@
     </div>
 
     <?php 
-        // $username = "pamodha98";
         $query1 = "SELECT * FROM member WHERE username = '".$username."'";
         $result1 = mysqli_query($conn, $query1);
         $row1 = mysqli_fetch_assoc($result1);

@@ -830,6 +830,7 @@ border: 0px solid #121317;
 
 .popup {
   margin: 70px auto;
+  margin-top: 130px;
   padding: 20px;
   background: #000;
   z-index: 1000;

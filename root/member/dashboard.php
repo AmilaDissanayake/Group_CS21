@@ -77,15 +77,16 @@
                 $flag = 0;
             }else{
                 $flag = 1; 
+                $t_assign_d = "2021-03-24";
+                $t_exp_d = "2021-04-24";
+                $today = new DateTime("2021-03-30");
+                $t_assign_date = new DateTime("$t_assign_d");
+                $t_exp_date = new DateTime("$t_exp_d"); 
+    
+                $tr_interval = $today->diff($t_exp_date);
             }
 
-            $t_assign_d = "2021-03-24";
-            $t_exp_d = "2021-04-24";
-            $today = new DateTime("2021-03-30");
-            $t_assign_date = new DateTime("$t_assign_d");
-            $t_exp_date = new DateTime("$t_exp_d"); 
-
-            $tr_interval = $today->diff($t_exp_date);
+           
             ?>
         </div>
         <div class="Hdivider"></div>
@@ -113,31 +114,60 @@
                         $final_rating = $review_value / $review_count;
                     } 
 
+                   $query2 = "SELECT * FROM book  WHERE member_id = '".$member_id."' AND date >='".$date."' LIMIT 2"; 
+                   $result2 = mysqli_query($conn, $query2);
+                   $current_time = date("H:i:s");  
 
-                    $bookingflag = 0;
-                    $bk_date = "2021-10-24";
-                    $fixed_bk = new DateTime("$bk_date");
+                    if(mysqli_num_rows($result2) != 0){
+                        $result2 = mysqli_query($conn, $query2);
+                        $row2 = mysqli_fetch_assoc($result2);
 
+                        $bk_date = $row2['date'];
+                        $bk_time = $row2['time'];
+                        $fixed_bk = new DateTime("$bk_date");
+                        $exp_time = date('H:i:s',strtotime("+2 hours", strtotime("$bk_time")));
+
+                        if($exp_time > $current_time){
+                            $bookingflag = 1;
+                        }else if(mysqli_num_rows($result2) == 2){
+                            
+                            $query3 = "SELECT * FROM book  WHERE member_id = '".$member_id."' AND date >'".$date."' LIMIT 1"; 
+                            $result3 = mysqli_query($conn, $query3);
+                            
+                            $row2 = mysqli_fetch_assoc($result2);
+
+                            $bk_date = $row2['date'];
+                            $bk_time = $row2['time'];
+                            $fixed_bk = new DateTime("$bk_date");
+                            $exp_time = date('H:i:s',strtotime("+2 hours", strtotime("$bk_time")));
+                            $bookingflag = 1;
+                        }else{
+                            $bookingflag = 0;   
+                        }
+                                              
+                    }else{
+                        $bookingflag = 0;
+                    }
 
                 }                 
         ?>
 
         <div class="member-stats">
             <div class="one">
-                <p class="value"><?php echo "$mem_interval->m"  ?>Months <?php echo "$mem_interval->d" ?>Days</p>
+                <p class="value"><?php echo "$mem_interval->m"  ?><span id="mon_tg"> Months</span> <?php echo "$mem_interval->d" ?><span id="mon_tg"> Days</span></p>
                 <p class="name">Membership</p>
             </div>
         <?php 
             if($flag != 0){
                 echo "
                 <div class='two'>
-                    <p class='value'>"; echo"$tr_interval->d"; echo "Days</p>
+                    <p class='value'>"; echo"$tr_interval->d"; echo "<span id='mon_tg'> Days</span></p>
                     <p class='name'>Trainer</p>
                 </div>
 
                 <div class='three'>
                     <p class='value'>";echo $trainer_f_name;echo" ⭐$final_rating"; echo"</p>
-                    <p class='name'>Assign With</p>
+                    <p class='name'>Assigned With</p>
                 </div>";
 
                 if($bookingflag != 0){

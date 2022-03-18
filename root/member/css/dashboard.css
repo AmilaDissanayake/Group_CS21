@@ -64,7 +64,10 @@
   border: 1px #e5e5e5 solid;
   /* border-radius: 5px; */
 }
-
+#mon_tg{
+  font-size: 22px;
+  font-family: 'Azonix';
+}
 .member-stats .one{
   width: 25%;
   text-align: center;

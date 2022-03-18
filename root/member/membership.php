@@ -129,7 +129,6 @@
                     </div>   
                     <div class="duline2">
                         <?php 
-
                             if($flag == 1){
                                 $icon = "'bx bxs-user-check'";
                                 $t_assign_status = "Trainer Assignment";
