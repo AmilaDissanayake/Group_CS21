@@ -10,6 +10,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
+<?php
+// include "includes/db.php";
+//session_start();
+
+$username = $_SESSION['username'];
+$user_type = $_SESSION['user_type'];
+
+$image_sql = "SELECT image FROM $user_type WHERE username = '$username'";
+$image_sql_run = mysqli_query($conn, $image_sql,);
+$row = mysqli_fetch_array($image_sql_run);
+
+$image = $row[0];
+
+
+
+?>
+
 <nav>
     <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
@@ -27,7 +44,7 @@
     </div>
 
     <div class="header-img">
-        <img src="./media/dinuka.jpg" alt=" no image">
+        <a href="./profile.php"><img src="./media/admins/<?php echo $image ?>" alt=" no image"></a>
     </div>
 </nav>
 

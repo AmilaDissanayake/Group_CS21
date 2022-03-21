@@ -1,8 +1,9 @@
 <?php
+include "includes/check_login.php";
 
-session_start();
+//session_start();
 unset($_SESSION['notification']);
-include "includes/db.php";
+//include "includes/db.php";
 
 
 

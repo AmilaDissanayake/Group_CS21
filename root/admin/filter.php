@@ -1,6 +1,7 @@
 <?php
+include "includes/check_login.php";
 
-require "includes/db.php";
+//require "includes/db.php";
 $gender = $_POST['gender'];
 $membership = $_POST['membership'];
 $sql;

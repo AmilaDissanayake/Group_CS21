@@ -1,5 +1,8 @@
-<?php session_start(); ?>
-<?php include "includes/db.php" ?>
+
+<?php
+include "includes/check_login.php";
+//include "includes/db.php" 
+?>
 <?php $username = $_SESSION['username'] ?>
 
 <?php
@@ -11,7 +14,7 @@ if (isset($_POST['update'])) {
 
     if ($u_image == '') {
         echo "<script>alert('Please Select Profile Image on clicking on your profile image')</script>";
-        echo "<script>window.open('new-profile.php?u_id=$user_id' , '_self')</script>";
+        echo "<script>window.open('profile.php?u_id=$user_id' , '_self')</script>";
         exit();
     } else {
         move_uploaded_file($image_tmp, "media/$u_image");
@@ -23,7 +26,7 @@ if (isset($_POST['update'])) {
             // echo "<script>alert('Your Profile Updated')</script>";
             // echo "<script>window.open('new-profile.php?u_id=$username' , '_self')</script>";
             $_SESSION['notification'] = "Profile Updated!";
-            header('Location: new-profile.php');
+            header('Location: profile.php');
         }
     }
 }
@@ -36,7 +39,7 @@ if (isset($_POST['update-cover'])) {
 
     if ($u_image == '') {
         echo "<script>alert('Please Select Profile Image on clicking on your profile image')</script>";
-        echo "<script>window.open('new-profile.php?u_id=$user_id' , '_self')</script>";
+        echo "<script>window.open('profile.php?u_id=$user_id' , '_self')</script>";
         exit();
     } else {
         move_uploaded_file($image_tmp, "media/$u_image");
@@ -48,7 +51,7 @@ if (isset($_POST['update-cover'])) {
             // echo "<script>alert('Your Profile Updated')</script>";
             // echo "<script>window.open('new-profile.php?u_id=$username' , '_self')</script>";
             $_SESSION['notification'] = "Profile Updated!";
-            header('Location: new-profile.php');
+            header('Location: profile.php');
         }
     }
 }

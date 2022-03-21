@@ -56,7 +56,7 @@
         <span class="fade-effect1"></span>
 
         <li>
-            <a href="#" class=btn-calendar">
+            <a href="./close-times.php" class=btn-calendar">
                 <i class='bx bx-time'></i>
                 <span class="links_name">Open/Close Times</span>
             </a>

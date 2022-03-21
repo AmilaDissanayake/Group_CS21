@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+include "includes/check_login.php";
 include 'includes/db.php';
 
 $username = $_GET['username'];

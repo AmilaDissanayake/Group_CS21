@@ -1,7 +1,8 @@
 <?php
+include "includes/check_login.php";
 
 //session_start();
-include 'includes/db.php';
+//include 'includes/db.php';
 
 ?>
 
