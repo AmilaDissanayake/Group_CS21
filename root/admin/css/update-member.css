@@ -35,7 +35,7 @@
   }
   .form__title {
     font-weight: 400;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
     color: #121317;
     border-bottom: 3px solid #121317;
     font-family: "Azonix";
@@ -1488,7 +1488,7 @@ table{
 
 .member-list .avatar img{
   width: 40px;
-  border-radius: 40px;
+  border-radius: 100px;
   margin-right: 5px;
 }
 
@@ -1536,6 +1536,21 @@ table{
     /* background-color: gray !important; */
     color: #727375
 
+}
+
+.pic{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+  
+}
+
+
+.pic img{
+  border-radius: 300px;
+  width: 40%;
+  border: solid 3px #86ff71;
 }
 
 

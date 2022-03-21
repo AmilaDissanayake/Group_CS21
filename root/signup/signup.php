@@ -22,7 +22,7 @@ $password_bb = password_hash($_POST['password_cc'], PASSWORD_DEFAULT);
 $membership_bb = $_POST['membership_cc'];
 $trainer_bb = $_POST['trainer_cc'];
 $amount = $_COOKIE['amount'];
-
+ 
 
 
 if ($trainer_bb > 0) {

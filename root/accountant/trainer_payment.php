@@ -29,12 +29,12 @@
 
         <div class="home-content">
             <div class="search-bar">
-                <div class="search-box">
+                <div class="search-box" id="search-bar">
                     <input type="text" placeholder="Search by name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
                 <div class="search-box">
-                    <button class="see-more2" >+ ADD PAYMENT</button>
+                    <button class="see-more2"><a href="member_payment_form.php">+ ADD PAYMENT</a></button>
                 </div>
             </div>
 

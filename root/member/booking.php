@@ -89,7 +89,7 @@
                                 <script>
 
                                     function slot_update(respo){
-                                        if(respo.slot1 == true){var i = 1; $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot1== false){var i = 1; $('#time_slot option[value='+i+']').prop('disabled',true);}
+                                        if(respo.slot1== true){var i = 1; $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot1== false){var i = 1; $('#time_slot option[value='+i+']').prop('disabled',true);}
                                         if(respo.slot2== true){var i = 2;  $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot2== false){var i = 2 ; $('#time_slot option[value='+i+']').prop('disabled',true);}
                                         if(respo.slot3== true){var i = 3;  $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot3== false){var i = 3 ; $('#time_slot option[value='+i+']').prop('disabled',true);}
                                         if(respo.slot4== true){var i = 4;  $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot4== false){var i = 4 ; $('#time_slot option[value='+i+']').prop('disabled',true);}
@@ -104,7 +104,7 @@
                                             var date = $("#bk_date").val();
                                              
                                             if (date != '') {
-                                                alert(date);
+                                                // alert(date);
                                                 $.ajax({
                                                     url: './includes/check-availability.php',
                                                     type: 'post',

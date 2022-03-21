@@ -106,7 +106,7 @@
 
 
                 <div class="add_button"><button class="add_btn_filter" onclick="location.href='#'">Filter</button></div>
-                <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Accountant</button></div>
+                <div class="add_button"><button class="add_btn" onclick="location.href='add-accountant.php'">Add Accountant</button></div>
 
             </div>
 
@@ -135,6 +135,11 @@
                         $result = mysqli_query($conn, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
+                                $username = $row['username'];
+                                $button = 'location.href="update-accountant.php?username=' . $username . '"';
+
+                                $action = '<div class="row-action">
+                                <div class="about_button"><button class="about_btn" onclick= ' . $button . '>View/Update/Delete</button></div>';
 
 
 
@@ -145,7 +150,7 @@
 
                                 <tr>
                                     <td>
-                                        <div class="first-column"><span class="avatar"><img src="../media/accountants/<?php echo $row['image'] ?>"></span><?php echo " " . $row['f_name'] . " " . $row['l_name'] ?></div>
+                                        <div class="first-column"><span class="avatar"><img src="../accountant/media/accountants/<?php echo $row['image'] ?>"></span><?php echo " " . $row['f_name'] . " " . $row['l_name'] ?></div>
                                     </td>
                                     <td><?php echo $row['username'] ?> </td>
                                     <td><?php echo $row['phone_no'] ?> </td>
@@ -153,10 +158,7 @@
                                     <!-- <td><?php echo  $row2['membership_type'] . ' months' ?> </td>
                                     <td><?php echo  $expireMembership ?> </td> -->
                                     <td>
-                                        <div class="row-action">
-                                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">View/Update/Delete</button></div>
-                                            <!-- <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Delete</button></div> -->
-                                        </div>
+                                        <?php echo $action ?>
                                     </td>
 
 

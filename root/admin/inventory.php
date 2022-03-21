@@ -141,18 +141,54 @@
 
         <div class="home-content">
             <div class="member-stats">
+
+                <?php
+
+                include 'includes/db.php';
+                $count_sql1 = "SELECT SUM(quantity) FROM inventory";
+                $count_result1 = mysqli_query($conn, $count_sql1);
+                $count_row1 = mysqli_fetch_array($count_result1);
+
+                $count_total1 = $count_row1[0];
+
+                $count_sql2 = "SELECT SUM(quantity) FROM inventory WHERE name LIKE 'Dumbbell%'";
+                $count_result2 = mysqli_query($conn, $count_sql2);
+                $count_row2 = mysqli_fetch_array($count_result2);
+                $count_total2 = $count_row2[0];
+
+                $count_sql3 = "SELECT SUM(quantity) FROM inventory WHERE name LIKE 'Weight%'";
+                $count_result3 = mysqli_query($conn, $count_sql3);
+                $count_row3 = mysqli_fetch_array($count_result3);
+                $count_total3 = $count_row3[0];
+                //$new_trainers = 0;
+                //$count_sql2 = "SELECT DATEDIFF(NOW(),joined_date) FROM trainer";
+                // $count_result2 = mysqli_query($conn, $count_sql2);
+
+                // $count_sql2 = "SELECT * FROM trainer";
+                // $count_result2 = mysqli_query($conn, $count_sql2);
+                // $new_trainers = 0;
+                // $count_sql2 = "SELECT DATEDIFF(NOW(),joined_date) FROM trainer";
+                // $count_result2 = mysqli_query($conn, $count_sql2);
+                // // $new_members = 0;
+                // // $time = strtotime('10/16/2003');
+
+                // // $newformat = date('Y-m-d', $time);
+                // while ($count_row2 = mysqli_fetch_array($count_result2)) {
+                // }
+
+                ?>
                 <div class="one">
-                    <p class="value">60</p>
+                    <p class="value"><?php echo $count_total1 ?></p>
                     <p class="name">Total Equipments</p>
                 </div>
 
                 <div class="two">
-                    <p class="value">20</p>
-                    <p class="name">Total Dumbells</p>
+                    <p class="value"><?php echo $count_total2 ?></p>
+                    <p class="name">Total Dumbbells</p>
                 </div>
 
                 <div class="three">
-                    <p class="value">20</p>
+                    <p class="value"><?php echo $count_total3 ?></p>
                     <p class="name">Total Plates</p>
                 </div>
 
@@ -206,7 +242,7 @@
                     <tbody id="output">
                         <?php
 
-                        require "includes/db.php";
+                        // require "includes/db.php";
                         $sql = "SELECT * FROM inventory";
                         $result = mysqli_query($conn, $sql);
                         if (mysqli_num_rows($result) > 0) {
@@ -280,29 +316,42 @@
                                 var id = $(this).attr('id'); // $(this) refers to button that was clicked
                                 //alert(id);
                                 $.confirm({
+                                    //title: 'Prompt!',
+                                    content: 'Are you sure you want to incarese the quantity by 1?<br><br>' +
+                                        '<form action="" class="formName">' +
+                                        '<div class="form-group">' +
+                                        '<label>Enter PIN</label><br><br>' +
+                                        '<input type="text" placeholder="PIN" class="name form-control" required />' +
+                                        '</div>' +
+                                        '</form>',
                                     title: 'Confirm',
                                     animateFromElement: false,
                                     animation: 'RotateX',
                                     closeAnimation: 'RotateX',
-                                    content: 'Are you sure you want to increase the quantity by 1?',
+                                    //content: 'Are you sure you want to remove the equipment? This action cannot be undone!',
                                     boxWidth: '30%',
                                     theme: 'my-theme',
                                     useBootstrap: false,
-                                    // closeIcon: true,
                                     buttons: {
-                                        Confirm: {
+                                        formSubmit: {
+                                            text: 'Confirm',
                                             btnClass: 'hi',
                                             action: function() {
-                                                // clickHandler.call(this, event);
+                                                var name = this.$content.find('.name').val();
+                                                if (!name) {
+                                                    // $.alert('provide a valid PIN');
+                                                    return false;
+                                                }
                                                 $.ajax({
                                                     url: "add-inventory.php",
                                                     type: "POST",
                                                     data: {
                                                         'inventory_id': id,
+                                                        'pin': name,
                                                         'ajax': true
                                                     },
-                                                    success: function(response) {
-                                                        document.getElementById("hola").innerHTML = "Added 1 Equipment";
+                                                    success: function(data) {
+                                                        document.getElementById("hola").innerHTML = data;
                                                         nn();
 
 
@@ -314,10 +363,21 @@
                                                 });
                                             }
                                         },
-                                        Cancel: {
-                                            btnClass: 'hi', // multiple classes.
-
-                                        },
+                                        cancel: {
+                                            btnClass: 'hi',
+                                            function() {
+                                                //close
+                                            },
+                                        }
+                                    },
+                                    onContentReady: function() {
+                                        // bind to events
+                                        var jc = this;
+                                        this.$content.find('form').on('submit', function(e) {
+                                            // if the user submits the form by pressing enter in the field.
+                                            e.preventDefault();
+                                            jc.$$formSubmit.trigger('click'); // reference the button and click it
+                                        });
                                     }
                                 });
                             });
@@ -363,29 +423,42 @@
                                 var id = $(this).attr('id'); // $(this) refers to button that was clicked
                                 //alert(id);
                                 $.confirm({
+                                    //title: 'Prompt!',
+                                    content: 'Are you sure you want to decrease the quantity by 1?<br><br>' +
+                                        '<form action="" class="formName">' +
+                                        '<div class="form-group">' +
+                                        '<label>Enter PIN</label><br><br>' +
+                                        '<input type="text" placeholder="PIN" class="name form-control" required />' +
+                                        '</div>' +
+                                        '</form>',
                                     title: 'Confirm',
                                     animateFromElement: false,
                                     animation: 'RotateX',
                                     closeAnimation: 'RotateX',
-                                    content: 'Are you sure you want to reduce the quantity by 1?',
+                                    //content: 'Are you sure you want to remove the equipment? This action cannot be undone!',
                                     boxWidth: '30%',
                                     theme: 'my-theme',
                                     useBootstrap: false,
-                                    // closeIcon: true,
                                     buttons: {
-                                        Confirm: {
+                                        formSubmit: {
+                                            text: 'Confirm',
                                             btnClass: 'hi',
                                             action: function() {
-                                                // clickHandler.call(this, event);
+                                                var name = this.$content.find('.name').val();
+                                                if (!name) {
+                                                    // $.alert('provide a valid PIN');
+                                                    return false;
+                                                }
                                                 $.ajax({
                                                     url: "remove-inventory.php",
                                                     type: "POST",
                                                     data: {
                                                         'inventory_id': id,
+                                                        'pin': name,
                                                         'ajax': true
                                                     },
-                                                    success: function(response) {
-                                                        document.getElementById("hola").innerHTML = "Removed 1 Equipment";
+                                                    success: function(data) {
+                                                        document.getElementById("hola").innerHTML = data;
                                                         nn();
 
 
@@ -397,10 +470,21 @@
                                                 });
                                             }
                                         },
-                                        Cancel: {
-                                            btnClass: 'hi', // multiple classes.
-
-                                        },
+                                        cancel: {
+                                            btnClass: 'hi',
+                                            function() {
+                                                //close
+                                            },
+                                        }
+                                    },
+                                    onContentReady: function() {
+                                        // bind to events
+                                        var jc = this;
+                                        this.$content.find('form').on('submit', function(e) {
+                                            // if the user submits the form by pressing enter in the field.
+                                            e.preventDefault();
+                                            jc.$$formSubmit.trigger('click'); // reference the button and click it
+                                        });
                                     }
                                 });
                             });
@@ -425,30 +509,85 @@
                                 //event.stopPropagation();
                                 var id = $(this).attr('id'); // $(this) refers to button that was clicked
                                 //alert(id);
+                                // $.confirm({
+                                //     title: 'Confirm',
+                                //     animateFromElement: false,
+                                //     animation: 'RotateX',
+                                //     closeAnimation: 'RotateX',
+                                //     content: 'Are you sure you want to remove the equipment? This action cannot be undone!',
+                                //     boxWidth: '30%',
+                                //     theme: 'my-theme',
+                                //     useBootstrap: false,
+                                //     // closeIcon: true,
+                                //     buttons: {
+                                //         Confirm: {
+                                //             btnClass: 'hi',
+                                //             action: function() {
+                                //                 // clickHandler.call(this, event);
+                                //                 $.ajax({
+                                //                     url: "remove-inventory-all.php",
+                                //                     type: "POST",
+                                //                     data: {
+                                //                         'inventory_id': id,
+                                //                         'ajax': true
+                                //                     },
+                                //                     success: function(response) {
+                                //                         document.getElementById("hola").innerHTML = "Removed The Equipment";
+                                //                         nn();
+
+
+                                //                         // You will get response from your PHP page (what you echo or print)
+                                //                     },
+                                //                     error: function(jqXHR, textStatus, errorThrown) {
+                                //                         console.log(textStatus, errorThrown);
+                                //                     }
+                                //                 });
+                                //             }
+                                //         },
+                                //         Cancel: {
+                                //             btnClass: 'hi', // multiple classes.
+
+                                //         },
+                                //     }
+                                // });
+
                                 $.confirm({
+                                    //title: 'Prompt!',
+                                    content: 'Are you sure you want to remove the equipment? This action cannot be undone!<br><br>' +
+                                        '<form action="" class="formName">' +
+                                        '<div class="form-group">' +
+                                        '<label>Enter PIN</label><br><br>' +
+                                        '<input type="text" placeholder="PIN" class="name form-control" required />' +
+                                        '</div>' +
+                                        '</form>',
                                     title: 'Confirm',
                                     animateFromElement: false,
                                     animation: 'RotateX',
                                     closeAnimation: 'RotateX',
-                                    content: 'Are you sure you want to remove the equipment? This action cannot be undone!',
+                                    //content: 'Are you sure you want to remove the equipment? This action cannot be undone!',
                                     boxWidth: '30%',
                                     theme: 'my-theme',
                                     useBootstrap: false,
-                                    // closeIcon: true,
                                     buttons: {
-                                        Confirm: {
+                                        formSubmit: {
+                                            text: 'Confirm',
                                             btnClass: 'hi',
                                             action: function() {
-                                                // clickHandler.call(this, event);
+                                                var name = this.$content.find('.name').val();
+                                                if (!name) {
+                                                    // $.alert('provide a valid PIN');
+                                                    return false;
+                                                }
                                                 $.ajax({
                                                     url: "remove-inventory-all.php",
                                                     type: "POST",
                                                     data: {
                                                         'inventory_id': id,
+                                                        'pin': name,
                                                         'ajax': true
                                                     },
-                                                    success: function(response) {
-                                                        document.getElementById("hola").innerHTML = "Removed The Equipment";
+                                                    success: function(data) {
+                                                        document.getElementById("hola").innerHTML = data;
                                                         nn();
 
 
@@ -460,10 +599,21 @@
                                                 });
                                             }
                                         },
-                                        Cancel: {
-                                            btnClass: 'hi', // multiple classes.
-
-                                        },
+                                        cancel: {
+                                            btnClass: 'hi',
+                                            function() {
+                                                //close
+                                            },
+                                        }
+                                    },
+                                    onContentReady: function() {
+                                        // bind to events
+                                        var jc = this;
+                                        this.$content.find('form').on('submit', function(e) {
+                                            // if the user submits the form by pressing enter in the field.
+                                            e.preventDefault();
+                                            jc.$$formSubmit.trigger('click'); // reference the button and click it
+                                        });
                                     }
                                 });
                             });

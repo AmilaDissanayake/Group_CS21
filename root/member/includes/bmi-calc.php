@@ -48,12 +48,3 @@
 
 </div><br><br>
 
-<script >
-
-function getval(){
-    var bmiin = document.getElementById("bmi_val").innerHTML;
-        alert(bmiin);
-    
-}
-
-</script>
