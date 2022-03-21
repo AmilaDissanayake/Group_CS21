@@ -13,7 +13,10 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="css/membership.css">
+    <link rel="stylesheet" href="css/rate.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -106,16 +109,22 @@
                 $flag = 0;
             }else{
                 $flag = 1; 
-            }
-            
-            $t_assign_d = "2021-03-24";
-            $t_exp_d = "2021-04-24";
-            $today = new DateTime("2021-03-30");
-            $t_assign_date = new DateTime("$t_assign_d");
-            $t_exp_date = new DateTime("$t_exp_d"); 
 
-            $tr_interval = $today->diff($t_exp_date);
-            
+                $assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_assignment ORDER BY assignment_id DESC;";
+                $assignment_result = mysqli_query($conn, $assignment_query);
+                $assignment_row = mysqli_fetch_assoc($assignment_result);
+              
+                $t_assign_d = $assignment_row['start_date'];
+                $t_exp_d = $assignment_row['end_date'];
+                $date = date('Y-m-d');
+    
+                $today = new DateTime($date);
+                $t_assign_date = new DateTime($t_assign_d);
+                $t_exp_date = new DateTime($t_exp_d); 
+    
+              
+                $tr_interval = $today->diff($t_exp_date);
+            }     
             
         ?>
         <div class="board">
@@ -138,7 +147,7 @@
                             }
                         ?>
                         <div class="typ1"><i class=<?php echo $icon ?>></i><h1><?php echo $t_assign_status ?></h1></div>
-                        <?php if($flag != 0 ){ echo"<div class='remain'><h2>DAYS</h2><div class='time'><h1>$tr_interval->days</h1></div></div>";}?>
+                        <?php if($flag != 0 ){ echo"<div class='remain'><h2>DAYS</h2><div class='time'><h1>";if($tr_interval->m == 1){echo"30";}else{echo"$tr_interval->d";}echo"</h1></div></div>";}?>
                     </div>    
                 </div>
                 <div class="duhead">
@@ -258,6 +267,34 @@
                 </div>
             </div>
         </div>
+        <div id="rate_popup" class="overlay">
+        <div class="container">
+            <div class="post">
+                <div class="text">Thanks for rating!</div>
+                <div class="edit">EDIT</div>
+            </div>
+            <div class="star-widget">
+                    <input type="radio" name="rate" id="rate-5" onclick="changerate(5);"><label for="rate-5" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-4" onclick="changerate(4);"><label for="rate-4" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-3" onclick="changerate(3);"><label for="rate-3" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-2" onclick="changerate(2);"><label for="rate-2" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-1" onclick="changerate(1);" ><label for="rate-1" class="fas fa-star"></label>
+                
+                    <form  action="making_rating.php" id="rating_form" method="POST">
+                        <header></header>
+                    <div class="textarea">
+                        <input type="hidden" id="trainer_id_f" name="trainer" value=<?php echo $trainer_id ?>>
+                        <input type="hidden" id="trainer_rate" name="rating">
+                        <textarea cols="30" placeholder="Describe your experience.." id="desc_txtb" name="review" required></textarea>
+                    </div>
+                    <div class="btn">
+                        <button type="submit">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        </div>
         <div class="btmsec">
             <div class="vboderdivider"></div>
             <div class="meship">
@@ -372,7 +409,8 @@
                                     <div class='button-inner'>
                                         <div class='about_button'><button class='about_btn'"; echo 'onclick="'; echo "location.href='../trainer-profile/trainer-profile.php?trainer_id=$trainer_id'";echo '"';echo">PROFILE</button></div>
                                         <div class='about_button'><button class='about_btn'"; echo 'onclick="'; echo "location.href='tel:$trainer_phone_no'"; echo '"'; echo ">CALL</button></div> 
-                                    </div>
+                                        <div class='about_button'><button class='about_btn'"; echo 'onclick="'; echo "location.href='#rate_popup'";echo '"';echo">Rate ></button></div>
+                                        </div>
                                 <div class='stat'>
                                     <div class='exp'>
                                         <p>";echo $diff->format('%y') . 'yrs'; echo"<br>Expirience</p>
@@ -444,7 +482,7 @@
                                     <td>
                                         <div class="row-action">
                                             <button class="about_btn" onclick="location.href='../trainer-profile/trainer-profile.php?trainer_id=<?php echo $trainer_id ?>'">Profile</button>
-                                            <button class="about_btn" onclick=<?php if($flag == 1){ echo("location.href='#popup1'");}else{ echo"check_tr($trainer_id,'$t_fname',$final_rating,'$t_lname','$image',$rate,$exp,$review_count);";} ?>>Select</button> 
+                                            <button class="about_btn" onclick=<?php if($flag == 1){ echo("location.href='#popup1'");}else{ echo"check_tr($trainer_id,'$t_fname',$final_rating,'$t_lname','$image',$rate,$exp,$review_count);";} ?>>Select</button>  
                                         </div>
                                     </td>
                                 </tr>
@@ -466,11 +504,15 @@
 
     <?php include "includes/footer.php" ?>
 
-
-    
     <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
 
     <script>   
+        var i;
+        function changerate(i) {                         
+            var tr_rate = document.getElementById("trainer_rate")
+            tr_rate.value = i;  
+        }
+
         var cost = 0; 
         var pack; 
         $("#mon1").click(function(){
