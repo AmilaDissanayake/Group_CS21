@@ -55,7 +55,7 @@
                 <div class="indc1" >
                     <h2>Weekly Progress</h2>
                     <?php 
-
+                        date_default_timezone_set('Asia/Colombo');
                         $query1 = "SELECT * FROM member WHERE username = '".$username."'";
                         $result1 = mysqli_query($conn, $query1);
                         $row1 = mysqli_fetch_assoc($result1);
@@ -78,17 +78,64 @@
                         }
 
                         if($out[0]==''){$day1_flag=0;}else if($out[0][0]!='0'){$day1_flag=1;}else if($out[0][0]== '0'){$day1_flag=0;}
-                        if($out[1]==''){$day1_flag=0;}else if($out[1][0]!='0'){$day2_flag=1;}else if($out[1][0]== '0'){$day2_flag=0;}
-                        if($out[2]==''){$day1_flag=0;}else if($out[2][0]!='0'){$day3_flag=1;}else if($out[2][0]== '0'){$day3_flag=0;}
-                        if($out[3]==''){$day1_flag=0;}else if($out[3][0]!='0'){$day4_flag=1;}else if($out[3][0]== '0'){$day4_flag=0;}
-                        if($out[4]==''){$day1_flag=0;}else if($out[4][0]!='0'){$day5_flag=1;}else if($out[4][0]== '0'){$day5_flag=0;}
-                        if($out[5]==''){$day1_flag=0;}else if($out[5][0]!='0'){$day6_flag=1;}else if($out[5][0]== '0'){$day6_flag=0;}
-                        if($out[6]==''){$day1_flag=0;}else if($out[6][0]!='0'){$day7_flag=1;}else if($out[6][0]== '0'){$day7_flag=0;}
+                        if($out[1]==''){$day2_flag=0;}else if($out[1][0]!='0'){$day2_flag=1;}else if($out[1][0]== '0'){$day2_flag=0;}
+                        if($out[2]==''){$day3_flag=0;}else if($out[2][0]!='0'){$day3_flag=1;}else if($out[2][0]== '0'){$day3_flag=0;}
+                        if($out[3]==''){$day4_flag=0;}else if($out[3][0]!='0'){$day4_flag=1;}else if($out[3][0]== '0'){$day4_flag=0;}
+                        if($out[4]==''){$day5_flag=0;}else if($out[4][0]!='0'){$day5_flag=1;}else if($out[4][0]== '0'){$day5_flag=0;}
+                        if($out[5]==''){$day6_flag=0;}else if($out[5][0]!='0'){$day6_flag=1;}else if($out[5][0]== '0'){$day6_flag=0;}
+                        if($out[6]==''){$day7_flag=0;}else if($out[6][0]!='0'){$day7_flag=1;}else if($out[6][0]== '0'){$day7_flag=0;}
 
                         $total_workout_days = $day1_flag + $day2_flag + $day3_flag + $day4_flag + $day5_flag + $day6_flag + $day7_flag;
 
                     ?>
                     <div class="protick" >
+
+                    <?php 
+                        $query2 = "SELECT * FROM membership WHERE member_id = '".$member_id."'";
+                        $result2 = mysqli_query($conn, $query2);
+                        $row2 = mysqli_fetch_assoc($result2);
+                        
+    
+                        $package_type = $row2['membership_type'];
+
+                        $cur_date = date('Y-m-d');
+                        $today_at = new DateTime("$cur_date");
+                        $point_date = date('0000-00-00');
+                        $today_from = new DateTime("$point_date");
+                        $day_interval = $today_from->diff($today_at);
+
+                        if($day_interval->d <= 7){
+                            $active_week = 1;
+                        }else if($day_interval->d <= 14){
+                            $active_week = 2;
+                        }else if($day_interval->d <= 21){
+                            $active_week = 3;
+                        }else if($day_interval->d <= 28){
+                            $active_week = 4;
+                        }
+
+                        $active_month=$day_interval->m;
+                        //to store the attendance for each package there will be different databases and the relavent member details will be store in the attendance column in a 2D array
+                        //Attendance 2D array will be declare and initialized when a new member is inserted to the member tables
+                        //2D array consist of n+1 number of tuples where 1st one is for the current week progress and others are to indicates the monthe and that relavent tuple will include with the 5 elements where opening 4 are use to store the weelky progress and last one is for the monthly progress status
+
+                        $find_attendance = "SELECT * FROM {$package_type}m_package_progress WHERE member_id='$member_id';";
+                        $attendance_result = mysqli_query($conn, $find_attendance);
+
+                        $result_row = mysqli_fetch_assoc($attendance_result);
+                        $attendace = $result_row['attendance'];
+                        $bmi_values = $result_row['bmi_values'];
+                        $bf_values = $result_row['bf_values'];
+    
+                        
+                        $full_attendance = json_decode($attendace);
+                        $full_bmi = json_decode($bmi_values);
+                        $full_bf = json_decode($bf_values);
+                        // if($full_bf[0] == ''){$msg="HI";}else{$msg="So";}
+                        // echo $msg;
+                        // print_r($full_attendance);
+                        // $attendance_set[$m]=$full_attendance;
+                    ?>
                     <div <?php if($total_workout_days< 5) {echo('class="wdetails"');}else{echo('class="wdetails2"');}?>>
                             
                             <?php 
@@ -245,13 +292,7 @@
                         <h2>Monthly Attendance</h2>
                         <div class="monthviewlst">
                             <?php 
-                            
-                            $query2 = "SELECT * FROM membership WHERE member_id = '".$member_id."'";
-                            $result2 = mysqli_query($conn, $query2);
-                            $row2 = mysqli_fetch_assoc($result2);
-                            
-         
-                            $package_type = $row2['membership_type'];
+                        
 
                             if($package_type == 12){
                                 echo(
@@ -373,15 +414,48 @@
                 tag.className = 'stag';
                 tag.innerText = 'COMPLETED';
 
-             
+                go_for_progress(i,true);
             }else{
                 tag.className = 'stag_not';
                 tag.innerText = 'NOT COMPLETED';
-              
+                go_for_progress(i,false);
             }  
         } 
         
-  
+        function go_for_progress(i,j){
+            var day = i;
+            var state = j;
+                                             
+            if (day != '' && state != '') {
+                alert(day);
+                alert(state);
+                $.ajax({
+                    url: './includes/update_attendance.php',
+                    type: 'post',
+                    data: {
+                        day:day,
+                        state:state
+                    },
+                    dataType:'json',
+                    success: function(respo) {
+                        console.log("success");
+                        // $('#day').text("in "+date);
+                        // $('#input_date').val(date)
+                        // if( respo.set == 'None'){  
+                        // }else if( respo.set == 'Done'){
+                        //        
+                        //     if (respo.Main_Slot== "All day") {
+                        //     } else if ( respo.Main_Slot == "Morning"){
+                        //     }else if ( respo.Main_Slot == "Evening"){
+                        //     }
+                        // }
+                    },
+                    error: function(){
+                        console.log("error");
+                    }
+                });
+            }
+        }
         
 </script>
 
@@ -476,17 +550,6 @@
         var dtx = document.getElementById("dchart").getContext("2d");
         window.myLine = new Chart(dtx, config2);
     </script>
-
-    <script >
-
-        function getval(){
-            var bmi = document.getElementById("bmi_val");
-                alert(bmi);
-            
-        }
-        
-    </script>
-
 
 </body>
 

@@ -77,16 +77,25 @@
                 $flag = 0;
             }else{
                 $flag = 1; 
+
+                $assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_assignment ORDER BY assignment_id DESC;";
+                $assignment_result = mysqli_query($conn, $assignment_query);
+                $assignment_row = mysqli_fetch_assoc($assignment_result);
+              
+                $t_assign_d = $assignment_row['start_date'];
+                $t_exp_d = $assignment_row['end_date'];
+                $date = date('Y-m-d');
+
+                $today = new DateTime($date);
+                $t_assign_date = new DateTime($t_assign_d);
+                $t_exp_date = new DateTime($t_exp_d); 
+
+              
+                $tr_interval = $today->diff($t_exp_date);
             }
 
-            $t_assign_d = "2021-03-24";
-            $t_exp_d = "2021-04-24";
-            $today = new DateTime("2021-03-30");
-            $t_assign_date = new DateTime("$t_assign_d");
-            $t_exp_date = new DateTime("$t_exp_d"); 
-
-            $tr_interval = $today->diff($t_exp_date);
             ?>
+
         </div>
         <div class="Hdivider"></div>
         <?php 
@@ -113,31 +122,58 @@
                         $final_rating = $review_value / $review_count;
                     } 
 
+                   $query2 = "SELECT * FROM book  WHERE member_id = '".$member_id."' AND date >='".$date."' LIMIT 2"; 
+                   $result2 = mysqli_query($conn, $query2);
+                   $current_time = date("H:i:s");  
 
-                    $bookingflag = 0;
-                    $bk_date = "2021-10-24";
-                    $fixed_bk = new DateTime("$bk_date");
+                    if(mysqli_num_rows($result2) != 0){
+                        $result2 = mysqli_query($conn, $query2);
+                        $row2 = mysqli_fetch_assoc($result2);
 
+                        $bk_date = $row2['date'];
+                        $bk_time = $row2['time'];
+                        $fixed_bk = new DateTime("$bk_date");
+                        $exp_time = date('H:i:s',strtotime("+2 hours", strtotime("$bk_time")));
 
+                        if($exp_time > $current_time){
+                            $bookingflag = 1;
+                        }else if(mysqli_num_rows($result2) == 2){
+                            
+                            $query3 = "SELECT * FROM book  WHERE member_id = '".$member_id."' AND date >'".$date."' LIMIT 1"; 
+                            $result3 = mysqli_query($conn, $query3);
+                            
+                            $row2 = mysqli_fetch_assoc($result2);
+
+                            $bk_date = $row2['date'];
+                            $bk_time = $row2['time'];
+                            $fixed_bk = new DateTime("$bk_date");
+                            $exp_time = date('H:i:s',strtotime("+2 hours", strtotime("$bk_time")));
+                            $bookingflag = 1;
+                        }else{
+                            $bookingflag = 0;   
+                        }                          
+                    }else{
+                        $bookingflag = 0;
+                    }
                 }                 
         ?>
 
         <div class="member-stats">
             <div class="one">
-                <p class="value"><?php echo "$mem_interval->m"  ?>Months <?php echo "$mem_interval->d" ?>Days</p>
+                <p class="value"><?php echo "$mem_interval->m"  ?><span id="mon_tg"> Months</span> <?php echo "$mem_interval->d" ?><span id="mon_tg"> Days</span></p>
                 <p class="name">Membership</p>
             </div>
         <?php 
             if($flag != 0){
                 echo "
                 <div class='two'>
-                    <p class='value'>"; echo"$tr_interval->d"; echo "Days</p>
+                    <p class='value'>"; if($tr_interval->m == 1){echo"30";}else{echo"$tr_interval->d";} echo "<span id='mon_tg'> Days</span></p>
                     <p class='name'>Trainer</p>
                 </div>
 
                 <div class='three'>
                     <p class='value'>";echo $trainer_f_name;echo" ⭐$final_rating"; echo"</p>
-                    <p class='name'>Assign With</p>
+                    <p class='name'>Assigned With</p>
                 </div>";
 
                 if($bookingflag != 0){
@@ -237,15 +273,36 @@
                             <div class="comwork">
                             <h2>UPCOMING DAY</h2>
                             <div class="wlist">
-                                <ul>
-                                    <li>Bench Press</li>
-                                    <li>Incline</li>
-                                    <li>shoulders</li>
-                                    <li>Latteral</li>
-                                    <li>Bench Press</li>
-                                    <li>Incline</li>
-                                    <li>shoulders</li>
-                                    <li>Latteral</li>
+                            <ul>
+                            <?php 
+
+
+                            for($i=1; $i<=6 ; $i++){
+                                $cur_point = 3;
+                                for($m=0;$m<=6;$m++){ 
+                                    $cur_point = $cur_point + 1;
+
+                                    if ($cur_point > 6){
+                                        $cur_point = $cur_point % 6;   
+                                    }
+
+                                    $week=array("day1_ex$i","day2_ex$i","day3_ex$i","day4_ex$i","day5_ex$i","day6_ex$i","day7_ex$i");
+
+                                    $column = $week[$cur_point];
+                                    $find = "SELECT $column FROM schedule WHERE member_id='$member_id';";   
+                                    $result2 = mysqli_query($conn, $find);
+                
+                                    $row = mysqli_fetch_assoc($result2);
+                                    $en_rs = $row["$week[$cur_point]"];
+
+                                    $ex1 = unserialize(base64_decode($en_rs));
+                                    $out=$ex1;
+                                    if($out == ''){continue;}
+                                    else if($out[0] == '0'){continue;}
+                                    else if($out[0] != '0'){echo "<b><li><i class='bx bx-dumbbell bx-rotate-90' ></i>&nbsp";echo $out[0];echo"</li></b>";break;}
+                                }    
+                            }
+                            ?>
                                 </ul>
                             </div>
                             <div class="bt"><a href="./schedule.php" class="readmore_btn" id="readM">View More</a></div>

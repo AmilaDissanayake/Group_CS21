@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
+
+#rate_popup{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-html,body{
+#rate_popup{
   display: grid;
   height: 100%;
   place-items: center;
@@ -16,6 +17,7 @@ html,body{
   z-index: 10;
   position: absolute;
   width: 400px;
+  /* height: 102px; */
   background: rgb(24,24,24);
   padding: 20px 30px;
   border: 1px solid #444;
@@ -47,6 +49,8 @@ html,body{
 }
 .container .star-widget input{
   display: none;
+  width: 325px;
+  height: 60px;
 }
 .star-widget label{
   font-size: 40px;
@@ -55,6 +59,8 @@ html,body{
   float: right;
   transition: all 0.2s ease;
 }
+
+
 input:not(:checked) ~ label:hover,
 input:not(:checked) ~ label:hover ~ label{
   color: #fd4;
@@ -66,33 +72,33 @@ input#rate-5:checked ~ label{
   color: #fe7;
   text-shadow: 0 0 20px #952;
 }
-#rate-1:checked ~ form header:before{
+#rate-1:checked ~ #rating_form header:after{
   content: "VERY BAD SUPPORT";
   color: red;
 }
-#rate-2:checked ~ form header:before{
+#rate-2:checked ~ #rating_form header:after{
   content: "BAD SUPPORT";
   color: rosybrown;
 }
-#rate-3:checked ~ form header:before{
+#rate-3:checked ~ #rating_form header:after{
   content: "AVERAGE SUPPORT ";
   color: orange;
 }
-#rate-4:checked ~ form header:before{
+#rate-4:checked ~ #rating_form header:after{
   content: "GOOD SUPPORT ";
   color: #30fa1d;
 }
-#rate-5:checked ~ form header:before{
+#rate-5:checked ~ #rating_form header:after{
   content: "SUPERB SUPPORT ";
   color:blue;
 }
-.container form{
+.container #rating_form{
   display: none;
 }
-input:checked ~ form{
+input:checked ~ #rating_form {
   display: block;
 }
-form header{
+#rating_form header {
   width: 100%;
   font-size: 25px;
   color: #fe7;
@@ -101,12 +107,12 @@ form header{
   text-align: center;
   transition: all 0.2s ease;
 }
-form .textarea{
+#rating_form .textarea{
   height: 100px;
   width: 100%;
   overflow: hidden;
 }
-form .textarea textarea{
+#rating_form .textarea textarea{
   height: 100%;
   width: 100%;
   outline: none;
@@ -120,12 +126,12 @@ form .textarea textarea{
 .textarea textarea:focus{
   border-color: #444;
 }
-form .btn{
+#rating_form .btn{
   height: 45px;
   width: 100%;
   margin: 15px 0;
 }
-form .btn button{
+#rating_form .btn button{
   height: 100%;
   width: 100%;
   border: 1px solid #444;
@@ -138,6 +144,6 @@ form .btn button{
   cursor: pointer;
   transition: all 0.3s ease;
 }
-form .btn button:hover{
+#rating_form .btn button:hover{
   background: #1b1b1b;
 }

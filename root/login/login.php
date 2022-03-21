@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
                     $query3 = "SELECT * FROM extend_membership  WHERE member_id = '".$member_id."'";
                     $result3 = mysqli_query($conn, $query3);
                     
-                    if(!$result3){
+                    if($result3 !=0){
                         $result3 = mysqli_query($conn, $query3);
                         $row3 = mysqli_fetch_assoc($result3);
                         

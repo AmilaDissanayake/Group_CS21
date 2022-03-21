@@ -5,7 +5,17 @@
         $username = $_POST['username'];
         $email = $_POST['email'];
         $assigned_trainer = $_POST['assigned_trainer'];
-        $membership_type = $_POST['membership_type'];
+        $mem_type = $_POST['membership_type'];
+
+        if($mem_type == 2500){
+            $membership_type = 1;
+        }else if($mem_type == 7000){
+            $membership_type = 3;
+        }else if($mem_type == 13500){
+            $membership_type = 6;
+        }else{
+            $membership_type = 12;
+        }
         $amount = $_POST['amount'];
         $payment_type = 'cash';
 
@@ -28,14 +38,15 @@
             $sql3 = "INSERT INTO payment(member_id, payment_amount, trainer_id, payment_type) VALUES('$member_id', '$amount', '$assigned_trainer', '$payment_type')";
             mysqli_query($conn, $sql3);
 
-            $sql4 = "INSERT INTO membership(member_id, membership_type) VALUES ('$member_id', '$membership_type')";
+            
+            
+            $sql4 = "UPDATE membership SET member_id='$member_id', membership_type='$membership_type' WHERE member_id='$member_id'";
             mysqli_query($conn, $sql4);
-        }
-        
         if ($result1 && $result2) {
             $_SESSION['notification'] = "Payment successfully";
             // $_SESSION['username'] = $username_bb;
             header("location:../member_payment.php");
             // echo "done";
+            }
         }
     }
