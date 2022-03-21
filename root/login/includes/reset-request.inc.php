@@ -72,7 +72,6 @@ request, you can ignore this e-mail.</p>
    <div style="text-align:center"><a href="' . $url . '"><button style="width:240px;height:40px; border:1px solid #86ff71;border-radius:30px; cursor: pointer; background-color:#86ff71; margin-top:20px;margin-bottom:40px; font-family:Bahnschrift" onclick="location.href=' . $url . '">REST PASSWORD</button></a></div></body></html>';
 
 
-
     require '../vendor/autoload.php';
 
     $mail = new PHPMailer(true);
