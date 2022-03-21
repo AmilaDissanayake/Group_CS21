@@ -7,7 +7,7 @@ $username = $_GET['username'];
 
 
 
-$sql = "SELECT * FROM member WHERE username = '$username'";
+$sql = "SELECT * FROM accountant WHERE username = '$username'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -19,31 +19,31 @@ $f_name = $row['f_name'];
 $l_name = $row['l_name'];
 $phone_no = $row['phone_no'];
 $address = $row['address'];
-$dob = $row['dob'];
+//$dob = $row['dob'];
 $gender = $row['gender'];
-$inj = $row['injuries'];
+//$inj = $row['injuries'];
 $email = $row2['email'];
 $image = $row['image'];
-$member_id = $row['member_id'];
-$assign_trainer = $row['assign_trainer'];
+$accountant_id = $row['accountant_id'];
+//$assign_trainer = $row['assign_trainer'];
 
-$sql3 = "SELECT * FROM membership WHERE member_id = '$member_id'";
-$result3 = mysqli_query($conn, $sql3);
-$row3 = mysqli_fetch_assoc($result3);
+// $sql3 = "SELECT * FROM membership WHERE member_id = '$member_id'";
+// $result3 = mysqli_query($conn, $sql3);
+// $row3 = mysqli_fetch_assoc($result3);
 
-$membership_type = $row3['membership_type'];
+// $membership_type = $row3['membership_type'];
 
-$trainer;
-$sql4;
+// $trainer;
+// $sql4;
 
-if ($assign_trainer == 0) {
-    $trainer = 0;
-} else {
-    $sql4 = "SELECT trainer_id FROM assignment WHERE member_id = '$member_id'";
-}
+// if ($assign_trainer == 0) {
+//     $trainer = 0;
+// } else {
+//     $sql4 = "SELECT trainer_id FROM assignment WHERE member_id = '$member_id'";
+// }
 
-$result4 = mysqli_query($conn, $sql4);
-$row4 = mysqli_fetch_assoc($result4);
+// $result4 = mysqli_query($conn, $sql4);
+// $row4 = mysqli_fetch_assoc($result4);
 
 
 
@@ -184,18 +184,18 @@ $row4 = mysqli_fetch_assoc($result4);
         <div class="home-content">
             <div class="login">
                 <div class="l-form">
-                    <form hidden class="form" id="delete_form" action="delete-member.php" method="POST">
+                    <form hidden class="form" id="delete_form" action="delete-accountant.php" method="POST">
                         <input type="text" id="h-username" value="<?php echo $username ?>" name="username">
                     </form>
-                    <form action="update-member-php.php" class="form" id="signup_form" method="POST">
-                        <h1 class="form__title">Update MEMBER</h1>
+                    <form action="update-accountant-php.php" class="form" id="signup_form" method="POST">
+                        <h1 class="form__title">Update ACCOUNTANT</h1>
                         <div class="pic">
-                            <img src="../member/media/members/<?php echo $image ?>" alt="">
+                            <img src="../accountant/media/accountants/<?php echo $image ?>" alt="">
                         </div>
 
                         <div class="separator">
                             <hr class="hr-left1" />
-                            <span class="hr-text">MEMBER DETAILS</span>
+                            <span class="hr-text">ACCOUNTANT DETAILS</span>
                             <hr class="hr-right1" />
                         </div><br>
 
@@ -242,29 +242,18 @@ $row4 = mysqli_fetch_assoc($result4);
                                 <small>Error message</small>
                             </div>
                             <div class="form__div">
-                                <input type="text" class="name_input2" id="mnumber" placeholder=" " value="<?php echo 0 . $phone_no ?>" name="phone_no_cc">
+                                <input type="text" class="name_input2" id="mnumber" placeholder=" " value="<?php echo $phone_no ?>" name="phone_no_cc">
                                 <label for="" class="form__label">Mobile Number</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>
-                                <!-- <i class="fas fa-check-circle"></i>
+                                <!-- <i class="fas fa-Fdelecheck-circle"></i>
                             <i class="fas fa-exclamation"></i>
                             <i class="fas fa-exclamation-circle"></i> -->
                                 <small>Error message</small>
                             </div>
                         </div>
 
-                        <div class="form__div">
-                            <input type="date" class="form__input" value="<?php echo $dob ?>" id=" dateofbirth" placeholder=" " name="dob_cc" min="1920-10-01" max="2010-10-20">
-                            <label for="" class="form__label">Date Of Birth</label>
-                            <!-- <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i> -->
-                            <small>Error message</small>
-                            <script>
-                                $("input[type='date']").keydown(function(event) {
-                                    event.preventDefault();
-                                });
-                            </script>
-                        </div>
+
 
                         <div class="form__div">
                             <input type="text" class="form__input" id="address" placeholder=" " name="address_cc" value="<?php echo $address ?>">
@@ -276,16 +265,7 @@ $row4 = mysqli_fetch_assoc($result4);
                         <i class="fas fa-exclamation-circle"></i> -->
                             <small>Error message</small>
                         </div>
-                        <div class="inj__div">
-                            <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries_cc" value="<?php echo $inj ?>"></textarea>
-                            <label for="" class="form__label">If you have any injury mention here...</label>
-                            <i class="fa fa-check"></i>
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <!-- <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation"></i>
-                        <i class="fas fa-exclamation-circle"></i> -->
-                            <small>Error message</small>
-                        </div>
+
                         <br>
 
                         <div class="separator">
@@ -346,107 +326,7 @@ $row4 = mysqli_fetch_assoc($result4);
                             <span class="checkmark"></span>
                         </label> -->
 
-                        <div class="select__div">
 
-
-                            <label>
-                                <select id="membership" class="form_input" required name="membership_cc" disabled>
-                                    <option value="" disabled> Select Your Membership </option>
-                                    <option value=2500 <?php if ($membership_type == 1) {
-                                                            echo "selected";
-                                                        } ?>> One Month 2500/=
-                                    </option>
-                                    <option value=7000 <?php if ($membership_type == 3) {
-                                                            echo "selected";
-                                                        } ?>> Three Months 7000/=
-                                    </option>
-                                    <option value=13500 <?php if ($membership_type == 6) {
-                                                            echo "selected";
-                                                        } ?>> Six Months 13500/=
-                                    </option>
-                                    <option value=20000 <?php if ($membership_type == 12) {
-                                                            echo "selected";
-                                                        } ?>> One Year 20000/=
-                                    </option>
-
-
-
-
-                                </select>
-                            </label>
-
-                        </div>
-                        <br>
-
-                        <div class="separator">
-                            <hr class="hr-left2" />
-                            <span class="hr-text">TRAINER DETAILS</span>
-
-
-                            <hr class="hr-right2" />
-                        </div>
-                        <!-- <div class="tooltip"><i class="fas fa-exclamation-circle"></i>
-                            <span class="tooltiptext">You can select a trainer here if you like. Please note that trainer will be assigned only for a month. After one month you can select the same trainer again or a seperate trainer. Trainer cannot be changeg after assignment.</span>
-                        </div> -->
-
-                        <br>
-
-
-                        <div class="select__div">
-
-
-                            <label>
-                                <select id="trainer" class="form_input" required name="trainer_cc" disabled>
-                                    <option value=""> Select Your Trainer </option>
-                                    <?php
-
-                                    require "includes/db.php";
-
-                                    $query = "SELECT * FROM trainer";
-
-                                    $select_query = mysqli_query($conn, $query);
-
-                                    while ($row = mysqli_fetch_assoc($select_query)) {
-                                        $f_name = $row['f_name'];
-                                        $l_name = $row['l_name'];
-
-                                        $trainer_id = $row['trainer_id'];
-
-                                        $rate = $row['rate'];
-                                        // $rate = (int)$rate;
-
-
-                                        $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
-                                        $review_query = mysqli_query($conn, $query2);
-                                        $review_count = mysqli_num_rows($review_query);
-                                        $review_value = 0;
-
-                                        while ($review_row = mysqli_fetch_assoc($review_query)) {
-                                            $review_value += $review_row['stars'];
-                                        }
-
-
-                                        // $select_query = mysqli_query($connection, $query);
-
-                                    ?>
-
-                                        <option value=<?php echo $trainer_id ?> <?php if ($trainer_id == $row4['trainer_id']) {
-                                                                                    echo "selected";
-                                                                                } ?> data-trainer=<?php echo $rate ?>>
-                                            <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count ?></option>
-
-
-                                    <?php } ?>
-                                    <option value=0 data-trainer=0 <?php if ($trainer_id == 0) {
-                                                                        echo "selected";
-                                                                    } ?>>No Trainer</option>
-                                </select>
-                            </label>
-                            <!-- <span class="tr"><br>
-                                <p> See trainer details<span class="tr_link"><a href="../trainers.php" target="_blank">&nbsphere</a></span> </p>
-                            </span> -->
-
-                        </div>
 
                         <!-- <div class="remember">
                             <label class="container"> Member accepts the <span>Terms of Use</span> & <span>Privacy
@@ -461,9 +341,9 @@ $row4 = mysqli_fetch_assoc($result4);
 
 
 
-                        <div class="buttondiv"><input type="button" class="form__button" value="UPDATE MEMBER" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+                        <div class="buttondiv"><input type="button" class="form__button" value="UPDATE ACCOUNTANT" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
-                        <div class="buttondiv" id="delete_submit"><input type="button" class="form__button" value="DELETE MEMBER"></div>
+                        <div class="buttondiv" id="delete_submit"><input type="button" class="form__button" value="DELETE ACCOUNTANT"></div>
                         <script>
                             function go() {
                                 document.getElementById("delete_form").submit();
@@ -498,7 +378,7 @@ $row4 = mysqli_fetch_assoc($result4);
                                     animateFromElement: false,
                                     animation: 'RotateX',
                                     closeAnimation: 'RotateX',
-                                    content: 'Are you sure you want to remove the member permenantly? This action cannot be undone and all the member data including mebership & payments details will be deleted!',
+                                    content: 'Are you sure you want to remove the accountant permenantly? This action cannot be undone!',
                                     boxWidth: '30%',
                                     theme: 'my-theme',
                                     useBootstrap: false,
@@ -576,16 +456,16 @@ $row4 = mysqli_fetch_assoc($result4);
 
                         <script>
                             function submitFunction() {
-                                var result = checkInputs();
+                                //var result = checkInputs();
 
-                                if (result == true) {
-                                    // e.preventDefault();
-                                    document.getElementById("signup_form").submit();
+                                //if (result == true) {
+                                // e.preventDefault();
+                                document.getElementById("signup_form").submit();
 
-                                    // document.getElementById("signup_form").submit();
+                                // document.getElementById("signup_form").submit();
 
-                                    // }
-                                }
+                                // }
+                                //}
                             }
 
                             function deleteFunction() {
@@ -614,7 +494,7 @@ $row4 = mysqli_fetch_assoc($result4);
                                     {
                                         $.ajax({
                                             type: 'POST',
-                                            url: 'delete-member.php',
+                                            url: 'delete-accountant.php',
                                             dataType: "html",
                                             data: '<?php echo $username ?>',
 

@@ -13,7 +13,7 @@ $gender_bb  = filter_var($_POST['gender_cc'], FILTER_SANITIZE_STRING);
 $phone_no_bb = filter_var($_POST['phone_no_cc'], FILTER_SANITIZE_NUMBER_INT);
 $dob_bb = $_POST['dob_cc'];
 $address_bb = filter_var($_POST['address_cc'], FILTER_SANITIZE_STRING);
-$injuries_bb = filter_var($_POST['injuries_cc'], FILTER_SANITIZE_STRING);
+//$injuries_bb = filter_var($_POST['injuries_cc'], FILTER_SANITIZE_STRING);
 $email_bb = filter_var($_POST['email_cc'], FILTER_SANITIZE_EMAIL);
 $username_bb = $_POST['username_cc'];
 // $password_bb = password_hash($_POST['password_cc'], PASSWORD_DEFAULT);
@@ -55,7 +55,7 @@ $user_update = "UPDATE users SET email = '$email_bb' WHERE username = '$username
 
 $result0 = mysqli_query($conn, $user_update);
 
-$member_update = "UPDATE member SET f_name = '$f_name_bb' , l_name= '$l_name_bb' , gender = '$gender_bb', address = '$address_bb' , injuries = '$injuries_bb' , phone_no = '$phone_no_bb' WHERE username = '$username_bb'";
+$member_update = "UPDATE accountant SET f_name = '$f_name_bb' , l_name= '$l_name_bb' , gender = '$gender_bb', address = '$address_bb' , phone_no = '$phone_no_bb' WHERE username = '$username_bb'";
 // echo 'query check done';
 
 $result1 = mysqli_query($conn, $member_update);
@@ -78,7 +78,7 @@ $result1 = mysqli_query($conn, $member_update);
 if ($result0 && $result1) {
     $_SESSION['notification'] = "Details updated successfully!";
     // $_SESSION['username'] = $username_bb;
-    header("Location: update-member.php?username=$username_bb");
+    header("Location: update-accountant.php?username=$username_bb");
     // echo "done";
 } else {
     //header("Location: index.php");

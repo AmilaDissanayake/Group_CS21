@@ -7,7 +7,7 @@ $username = $_GET['username'];
 
 
 
-$sql = "SELECT * FROM member WHERE username = '$username'";
+$sql = "SELECT * FROM trainer WHERE username = '$username'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -20,30 +20,33 @@ $l_name = $row['l_name'];
 $phone_no = $row['phone_no'];
 $address = $row['address'];
 $dob = $row['dob'];
-$gender = $row['gender'];
-$inj = $row['injuries'];
-$email = $row2['email'];
 $image = $row['image'];
-$member_id = $row['member_id'];
-$assign_trainer = $row['assign_trainer'];
+$rate = $row['rate'];
+$qualifications = $row['qualifications'];
+$gender = $row['gender'];
+$assigned_members = $row['assigned_members'];
+//$inj = $row['injuries'];
+$email = $row2['email'];
+$trainer_id = $row['trainer_id'];
+//$assign_trainer = $row['assign_trainer'];
 
-$sql3 = "SELECT * FROM membership WHERE member_id = '$member_id'";
-$result3 = mysqli_query($conn, $sql3);
-$row3 = mysqli_fetch_assoc($result3);
+//$sql3 = "SELECT * FROM membership WHERE member_id = '$member_id'";
+//$result3 = mysqli_query($conn, $sql3);
+//$row3 = mysqli_fetch_assoc($result3);
 
-$membership_type = $row3['membership_type'];
+//$membership_type = $row3['membership_type'];
 
-$trainer;
-$sql4;
+// $trainer;
+// $sql4;
 
-if ($assign_trainer == 0) {
-    $trainer = 0;
-} else {
-    $sql4 = "SELECT trainer_id FROM assignment WHERE member_id = '$member_id'";
-}
+// if ($assign_trainer == 0) {
+//     $trainer = 0;
+// } else {
+//     $sql4 = "SELECT trainer_id FROM assignment WHERE member_id = '$member_id'";
+// }
 
-$result4 = mysqli_query($conn, $sql4);
-$row4 = mysqli_fetch_assoc($result4);
+// $result4 = mysqli_query($conn, $sql4);
+// $row4 = mysqli_fetch_assoc($result4);
 
 
 
@@ -184,13 +187,13 @@ $row4 = mysqli_fetch_assoc($result4);
         <div class="home-content">
             <div class="login">
                 <div class="l-form">
-                    <form hidden class="form" id="delete_form" action="delete-member.php" method="POST">
+                    <form hidden class="form" id="delete_form" action="delete-trainer.php" method="POST">
                         <input type="text" id="h-username" value="<?php echo $username ?>" name="username">
                     </form>
-                    <form action="update-member-php.php" class="form" id="signup_form" method="POST">
-                        <h1 class="form__title">Update MEMBER</h1>
+                    <form action="update-trainer-php.php" class="form" id="signup_form" method="POST">
+                        <h1 class="form__title">Update TRAINER</h1>
                         <div class="pic">
-                            <img src="../member/media/members/<?php echo $image ?>" alt="">
+                            <img src="../trainer/media/trainers/<?php echo $image ?>" alt="">
                         </div>
 
                         <div class="separator">
@@ -277,8 +280,8 @@ $row4 = mysqli_fetch_assoc($result4);
                             <small>Error message</small>
                         </div>
                         <div class="inj__div">
-                            <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder=" " name="injuries_cc" value="<?php echo $inj ?>"></textarea>
-                            <label for="" class="form__label">If you have any injury mention here...</label>
+                            <textarea type="text" cols="40" rows="5" class="injury" id="inj" placeholder="" name="injuries_cc" value=""><?php echo $qualifications ?></textarea>
+                            <label for="" class="form__label">Qualifications</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
                             <!-- <i class="fas fa-check-circle"></i>
@@ -346,7 +349,7 @@ $row4 = mysqli_fetch_assoc($result4);
                             <span class="checkmark"></span>
                         </label> -->
 
-                        <div class="select__div">
+                        <!-- <div class="select__div">
 
 
                             <label>
@@ -375,7 +378,7 @@ $row4 = mysqli_fetch_assoc($result4);
                                 </select>
                             </label>
 
-                        </div>
+                        </div> -->
                         <br>
 
                         <div class="separator">
@@ -392,61 +395,7 @@ $row4 = mysqli_fetch_assoc($result4);
                         <br>
 
 
-                        <div class="select__div">
 
-
-                            <label>
-                                <select id="trainer" class="form_input" required name="trainer_cc" disabled>
-                                    <option value=""> Select Your Trainer </option>
-                                    <?php
-
-                                    require "includes/db.php";
-
-                                    $query = "SELECT * FROM trainer";
-
-                                    $select_query = mysqli_query($conn, $query);
-
-                                    while ($row = mysqli_fetch_assoc($select_query)) {
-                                        $f_name = $row['f_name'];
-                                        $l_name = $row['l_name'];
-
-                                        $trainer_id = $row['trainer_id'];
-
-                                        $rate = $row['rate'];
-                                        // $rate = (int)$rate;
-
-
-                                        $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
-                                        $review_query = mysqli_query($conn, $query2);
-                                        $review_count = mysqli_num_rows($review_query);
-                                        $review_value = 0;
-
-                                        while ($review_row = mysqli_fetch_assoc($review_query)) {
-                                            $review_value += $review_row['stars'];
-                                        }
-
-
-                                        // $select_query = mysqli_query($connection, $query);
-
-                                    ?>
-
-                                        <option value=<?php echo $trainer_id ?> <?php if ($trainer_id == $row4['trainer_id']) {
-                                                                                    echo "selected";
-                                                                                } ?> data-trainer=<?php echo $rate ?>>
-                                            <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count ?></option>
-
-
-                                    <?php } ?>
-                                    <option value=0 data-trainer=0 <?php if ($trainer_id == 0) {
-                                                                        echo "selected";
-                                                                    } ?>>No Trainer</option>
-                                </select>
-                            </label>
-                            <!-- <span class="tr"><br>
-                                <p> See trainer details<span class="tr_link"><a href="../trainers.php" target="_blank">&nbsphere</a></span> </p>
-                            </span> -->
-
-                        </div>
 
                         <!-- <div class="remember">
                             <label class="container"> Member accepts the <span>Terms of Use</span> & <span>Privacy
@@ -461,9 +410,9 @@ $row4 = mysqli_fetch_assoc($result4);
 
 
 
-                        <div class="buttondiv"><input type="button" class="form__button" value="UPDATE MEMBER" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+                        <div class="buttondiv"><input type="button" class="form__button" value="UPDATE TRAINER" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
 
-                        <div class="buttondiv" id="delete_submit"><input type="button" class="form__button" value="DELETE MEMBER"></div>
+                        <div class="buttondiv" id="delete_submit"><input type="button" class="form__button" value="DELETE TRIANER"></div>
                         <script>
                             function go() {
                                 document.getElementById("delete_form").submit();
@@ -614,7 +563,7 @@ $row4 = mysqli_fetch_assoc($result4);
                                     {
                                         $.ajax({
                                             type: 'POST',
-                                            url: 'delete-member.php',
+                                            url: 'delete-trainer.php',
                                             dataType: "html",
                                             data: '<?php echo $username ?>',
 

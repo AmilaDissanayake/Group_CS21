@@ -62,23 +62,71 @@
 
         <div class="home-content">
             <div class="member-stats">
+
+                <?php
+
+                include 'includes/db.php';
+                $count_sql1 = "SELECT COUNT(username) FROM users WHERE user_type = 'trainer'";
+                $count_result1 = mysqli_query($conn, $count_sql1);
+                $count_row1 = mysqli_fetch_array($count_result1);
+
+                $count_total1 = $count_row1[0];
+
+                $count_sql2 = "SELECT * FROM trainer";
+                $count_result2 = mysqli_query($conn, $count_sql2);
+                $new_trainers = 0;
+                $count_sql2 = "SELECT DATEDIFF(NOW(),joined_date) FROM trainer";
+                $count_result2 = mysqli_query($conn, $count_sql2);
+                // $new_members = 0;
+                // $time = strtotime('10/16/2003');
+
+                // $newformat = date('Y-m-d', $time);
+                while ($count_row2 = mysqli_fetch_array($count_result2)) {
+
+                    // $my_date = date('Y-m-d', strtotime($count_row2['joined_date']));
+                    // //echo $my_date . " ";
+                    // $date1 = date_create("2013-03-15");
+                    // $date2 = date_create("2013-12-12");
+                    // $diff = date_diff($date1, $date2);
+                    // $final_range = round($date_difference / (60 * 60 * 24));
+                    // if ($final_range > 30) {
+                    //     echo $date_difference . " ";
+                    //     $new_members++;
+                    // }S
+
+                    if ($count_row2[0] < 30) {
+                        $new_trainers++;
+                    }
+                }
+
+                $count_sql3 = "SELECT COUNT(trainer_id) FROM trainer WHERE gender = 'male'";
+                $count_result3 = mysqli_query($conn, $count_sql3);
+                $count_row3 = mysqli_fetch_array($count_result3);
+                $count_total3 = $count_row3[0];
+
+                $count_sql4 = "SELECT COUNT(trainer_id) FROM trainer WHERE gender = 'female'";
+                $count_result4 = mysqli_query($conn, $count_sql4);
+                $count_row4 = mysqli_fetch_array($count_result4);
+                $count_total4 = $count_row4[0];
+
+                ?>
                 <div class="one">
-                    <p class="value">25</p>
+                    <p class="value"><?php echo $count_total1 ?></p>
                     <p class="name">Total Trainers</p>
                 </div>
 
                 <div class="two">
-                    <p class="value">5+</p>
+                    <p class="value"><?php echo $new_trainers ?>+</p>
                     <p class="name">This Month</p>
                 </div>
 
                 <div class="three">
-                    <p class="value">10</p>
+                    <p class="value"><?php echo $count_total3 ?></p>
                     <p class="name">Male</p>
                 </div>
 
                 <div class="four">
-                    <p class="value">15</p>
+                    <p class="value"><?php echo $count_total4 ?></p>
                     <p class="name">Female</p>
                 </div>
 
@@ -139,7 +187,7 @@
                     <tbody id="output">
                         <?php
 
-                        require "includes/db.php";
+                        //require "includes/db.php";
                         $sql = "SELECT * FROM trainer";
                         $result = mysqli_query($conn, $sql);
 
@@ -148,6 +196,7 @@
 
                                 $date = strtotime($row['joined_date']);
                                 $formattedValue = date("F Y", $date);
+                                $username = $row['username'];
 
 
                                 $query = "SELECT * FROM review WHERE trainer_id = $row[trainer_id]";
@@ -176,6 +225,12 @@
                                 //     $expired = "expired";
                                 // }
 
+                                $button = 'location.href="update-trainer.php?username=' . $username . '"';
+
+                                $action = '<div class="row-action">
+                                <div class="about_button"><button class="about_btn" onclick= ' . $button . '>View/Update/Delete</button></div>';
+
+
                         ?>
 
 
@@ -183,7 +238,7 @@
 
                                 <tr class=>
                                     <td>
-                                        <div class="first-column"><span class="avatar"><img src="../media/trainers/<?php echo $row['image'] ?>"></span><?php echo " " . $row['f_name'] . " " . $row['l_name'] ?></div>
+                                        <div class="first-column"><span class="avatar"><img src="../trainer/media/trainers/<?php echo $row['image'] ?>"></span><?php echo " " . $row['f_name'] . " " . $row['l_name'] ?></div>
                                     </td>
                                     <td><?php echo $row['username'] ?> </td>
                                     <td><?php echo $formattedValue ?> </td>
@@ -192,12 +247,7 @@
                                     <td><?php echo  $row['rate'] ?> </td>
                                     <td> ⭐ <?php echo  $final_rating ?> </td>
                                     <td> <?php echo  $row['assigned_members'] ?> </td>
-                                    <td>
-                                        <div class="row-action">
-                                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">View/Update/Delete</button></div>
-                                            <!-- <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Delete</button></div> -->
-                                        </div>
-                                    </td>
+                                    <td><?php echo $action ?></td>
 
 
 
