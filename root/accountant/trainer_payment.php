@@ -53,20 +53,30 @@
                     </thead>
                     <tbody id="output">
                         <?php
-                            $sql = "SELECT * FROM trainer";
-                            $result = mysqli_query($conn, $sql);
-                            while ($trainer_row = mysqli_fetch_assoc($result)) {
-                                $trainer_id = $trainer_row['trainer_id'];
+                            // $sql = "SELECT * FROM trainer";
+                            // $result = mysqli_query($conn, $sql);
+                            $sql2 = "SELECT * FROM trainer_payables";
+                            $result2 = mysqli_query($conn, $sql2);
+                            
+                            while ($trainer_row2 = mysqli_fetch_assoc($result2)) {
+                                $trainer_id = $trainer_row2['trainer_id'];
+                                $payment_amount = $trainer_row2['amount'];
+                                $payment_date = $trainer_row2['payment_date'];
+                                
+                                $sql = "SELECT * FROM trainer WHERE trainer_id = '".$trainer_id."'";
+                                $result = mysqli_query($conn, $sql);
+                                $trainer_row = mysqli_fetch_assoc($result);
+                                
+                                
+                                
                                 $f_name = $trainer_row['f_name'];
                                 $l_name = $trainer_row['l_name'];
                                 $phone_no = $trainer_row['phone_no'];
                                 $assigned_members = $trainer_row['assigned_members'];
                                 
-                                $sql2 = "SELECT * FROM trainer_payments WHERE trainer_id = '".$trainer_id."'";
-                                $result2 = mysqli_query($conn, $sql2);
-                                $trainer_row2 = mysqli_fetch_assoc($result2);
-                                $payment_amount = $trainer_row2['payment_amount'];
-                                $payment_date = $trainer_row2['payment_date'];
+                                
+                                
+                                
 
 
                         ?>

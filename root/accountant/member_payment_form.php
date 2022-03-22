@@ -108,7 +108,7 @@
 
 
                     <label>
-                        <select id="trainer" class="form_input" required name="assigned_trainer">
+                        <select id="trainer" class="form_input" id="pay_form" required name="assigned_trainer">
                             <option value="" disabled selected> Select Your Trainer </option>
                             <?php
 
@@ -186,6 +186,7 @@
         </div>
 
 
+         
 
 
 
@@ -231,6 +232,7 @@
                         var temp1 = 0;
                         var temp2 = 0;
                         var button = $(".form__button");
+
                         $(document).ready(function() {
                             $("select#trainer").change(function() {
                                 temp1 = selectedTrainer;
@@ -275,6 +277,14 @@
                             });
 
                         });
+            $(document).ready(function() {
+                $("#pay_form").submit(function(e){
+                    alert(cost);
+                    if(cost===0){
+                    e.preventDefault(e);
+                }
+            });
+        });
 
 
 
