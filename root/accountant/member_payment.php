@@ -123,8 +123,6 @@ require "includes/db.php";
                                 $result4 = mysqli_query($conn, $sql4);
                                 $payment_row4 = mysqli_fetch_assoc($result4);
                                 $membership_type = $payment_row4['membership_type'];
-
-
                         ?>
                         <tr>
                             <td><?php echo "$payment_id"?></td>

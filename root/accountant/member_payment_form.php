@@ -167,6 +167,8 @@
                             </option>
                             <option value=20000> One Year 20000/=
                             </option>
+                            <option value=0> Already have a membership
+                            </option>
                         </select>
                     </label>
 
