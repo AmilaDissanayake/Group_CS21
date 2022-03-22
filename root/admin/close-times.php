@@ -59,28 +59,26 @@ date_default_timezone_set("Asia/Colombo"); ?>
         </script>
 
         <div class="home-content">
-            <form action="includes/availability.php" method="POST">
-                <div class="calendar-input">
-                    <?php $Date = date("Y-m-d"); ?>
-                    <input type='Date' name="date" required min="<?php echo $Date; ?>" max="<?php echo date('Y-m-d', strtotime($Date . ' + 7 days')); ?>">
-                    <select name="time" id="" class="justselect">
-                        <option selected="selected">All day closed</option>
-                        <option>Morning closed</option>
-                        <option>Evening close</option>
-                    </select>
-                    <button type="submit" name="date-submit">SET</button>
-                </div>
-            </form>
+            <div class="upper">
+                <form action="includes/availability.php" method="POST">
+                    <div class="calendar-input">
+                        <?php $Date = date('Y-m-d', strtotime(' +1 day')); ?>
+                        <input type='Date' name="date" required min="<?php echo $Date; ?>" max="<?php echo date('Y-m-d', strtotime($Date . ' + 14 days')); ?>">
+                        <select name="time" id="" class="justselect">
+                            <option selected="selected">All day closed</option>
+                            <option>Morning closed</option>
+                            <option>Evening closed</option>
+                        </select>
+                        <button type="submit" name="date-submit" class="set_button">SET CLOSE TIME</button>
+                    </div>
+                </form>
+            </div>
             <div class="bottom-div">
-                <?php
-                $trainer_id = 1;
-                $sql1 = "DELETE from availability WHERE date < '$Date' AND trainer_id = $trainer_id";
-                mysqli_query($conn, $sql1);
-                ?>
+
                 <div id='calendar' class="calendar"></div>
                 <div class="calendar-table">
                     <div class="availability-header">
-                        <h1>AVAILABILITY</h1>
+                        <h1>Close Times</h1>
                     </div>
                     <div class="divider">
                         <span class="fade-effect2"> </span>
@@ -93,7 +91,7 @@ date_default_timezone_set("Asia/Colombo"); ?>
                         </tr>
 
                         <?php
-                        $sql_query = "SELECT * FROM availability Where trainer_id = '" . $trainer_id . "'";
+                        $sql_query = "SELECT * FROM close_times";
                         $result = mysqli_query($conn, $sql_query);
                         while ($availability_row = mysqli_fetch_assoc($result)) {
                             $date = $availability_row['date'];
@@ -114,7 +112,7 @@ date_default_timezone_set("Asia/Colombo"); ?>
                             var dates = [];
                         </script>
                         <?php
-                        $sql_query1 = "SELECT * FROM availability Where trainer_id = '" . $trainer_id . "'";
+                        $sql_query1 = "SELECT * FROM close_times";
                         $result1 = mysqli_query($conn, $sql_query1);
                         while ($availability_row1 = mysqli_fetch_assoc($result1)) {
                             $date1 = $availability_row1['date'];
