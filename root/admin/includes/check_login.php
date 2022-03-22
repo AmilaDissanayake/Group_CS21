@@ -1,5 +1,7 @@
 <?php session_start();
 
+include 'db.php';
+
 // include "db.php";
 
 if (!(isset($_SESSION['username']) && $_SESSION['user_type'] == 'admin')) {

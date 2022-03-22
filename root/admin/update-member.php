@@ -1,7 +1,7 @@
 <?php
 
-session_start();
-include 'includes/db.php';
+include "includes/check_login.php";
+
 
 $username = $_GET['username'];
 
@@ -23,6 +23,7 @@ $dob = $row['dob'];
 $gender = $row['gender'];
 $inj = $row['injuries'];
 $email = $row2['email'];
+$image = $row['image'];
 $member_id = $row['member_id'];
 $assign_trainer = $row['assign_trainer'];
 
@@ -189,7 +190,7 @@ $row4 = mysqli_fetch_assoc($result4);
                     <form action="update-member-php.php" class="form" id="signup_form" method="POST">
                         <h1 class="form__title">Update MEMBER</h1>
                         <div class="pic">
-                            <img src="../member/media/<?php echo $image ?>" alt="">
+                            <img src="../member/media/members/<?php echo $image ?>" alt="">
                         </div>
 
                         <div class="separator">
@@ -241,7 +242,7 @@ $row4 = mysqli_fetch_assoc($result4);
                                 <small>Error message</small>
                             </div>
                             <div class="form__div">
-                                <input type="text" class="name_input2" id="mnumber" placeholder=" " value="<?php echo $phone_no ?>" name="phone_no_cc">
+                                <input type="text" class="name_input2" id="mnumber" placeholder=" " value="<?php echo 0 . $phone_no ?>" name="phone_no_cc">
                                 <label for="" class="form__label">Mobile Number</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>

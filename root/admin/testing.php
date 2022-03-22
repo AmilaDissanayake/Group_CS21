@@ -30,6 +30,7 @@
 </script> -->
 
 <?php
+//include "includes/check_login.php";
 
 include 'includes/db.php';
 $count_sql1 = "SELECT COUNT(username) FROM users WHERE user_type = 'member'";

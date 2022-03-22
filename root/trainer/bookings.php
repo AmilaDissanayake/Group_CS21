@@ -76,12 +76,6 @@
             ?>
                 <h1 class="top-header">Today Bookings : <?php echo $count ?></h1>
             </div>
-            <div class="search-bar">
-                <div class="search-box">
-                    <input type="text" placeholder="Search by name..." id="search">
-                    <i class='bx bx-search'></i>
-                </div>
-            </div>
 
             <div class="members-div">
                 <table class="table-members">

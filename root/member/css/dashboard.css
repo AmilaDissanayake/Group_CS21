@@ -64,7 +64,10 @@
   border: 1px #e5e5e5 solid;
   /* border-radius: 5px; */
 }
-
+#mon_tg{
+  font-size: 22px;
+  font-family: 'Azonix';
+}
 .member-stats .one{
   width: 25%;
   text-align: center;
@@ -523,7 +526,7 @@
 
 .progcon .comwork h2 , .progcon .pchart h2{
   padding-top: 10px;
-  padding-bottom: 15px;
+  padding-bottom: 30px;
   color: rgb(24,24,24);
   font-family: 'Azonix';
   font-style:normal;
@@ -536,6 +539,8 @@
 }
 .progcon ul{
   list-style-type: none;
+  padding-bottom: 15px;
+  line-height: 24px;
 }
 
 .st{

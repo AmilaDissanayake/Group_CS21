@@ -1,3 +1,5 @@
+<?php include "includes/check_login.php"; ?>
+
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -221,7 +223,7 @@
                                     <option value="" disabled selected> Select Your Trainer </option>
                                     <?php
 
-                                    require "includes/db.php";
+                                    //require "includes/db.php";
 
                                     $query = "SELECT * FROM trainer";
 

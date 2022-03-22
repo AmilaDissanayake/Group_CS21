@@ -1,6 +1,8 @@
 <?php
 
-include 'includes/db.php';
+include "includes/check_login.php";
+
+//include 'includes/db.php';
 if (isset($_POST['name'])) {
     // echo "asfsdfd";
     $key = $_POST['name'];

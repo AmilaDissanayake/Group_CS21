@@ -1,8 +1,8 @@
 <?php
 
-session_start();
+include "includes/check_login.php";
 
-require "includes/db.php";
+//require "includes/db.php";
 
 
 // print_r($_POST);
@@ -78,7 +78,7 @@ $result1 = mysqli_query($conn, $member_update);
 if ($result0 && $result1) {
     $_SESSION['notification'] = "Details updated successfully!";
     // $_SESSION['username'] = $username_bb;
-    header("Location: update-member.php?username=hiran");
+    header("Location: update-member.php?username=$username_bb");
     // echo "done";
 } else {
     //header("Location: index.php");

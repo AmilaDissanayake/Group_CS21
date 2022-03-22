@@ -61,7 +61,7 @@ document.querySelector('.calculate .calc').onclick = function () {
     document.querySelector('.calculate .height input').value = height;
     document.querySelector('.calculate .height .val span').innerText = height;
 
-    document.querySelector('.result .bmi .val').innerText = bmi;
+    document.querySelector('.result .bmi .val #bmi_val').innerText = bmi;
 
     if (bmi < 18.5) {
         document.querySelector('.result .text').innerText = 'YOU ARE UNDERWEIGHT!';
@@ -91,3 +91,8 @@ document.querySelector('.result .recal').onclick = function () {
 //     offsetOpacity = 1200, //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
 //     scrollDuration = 700;
 
+function getval(){
+
+    var bmi2 = $("#bmi_val").text();
+        alert(bmi2);
+}

@@ -69,7 +69,7 @@
 
                 <?php
 
-                include 'includes/db.php';
+                // include 'includes/db.php';
                 $count_sql1 = "SELECT COUNT(username) FROM users WHERE user_type = 'member'";
                 $count_result1 = mysqli_query($conn, $count_sql1);
                 $count_row1 = mysqli_fetch_array($count_result1);
@@ -79,14 +79,66 @@
                 $count_sql2 = "SELECT * FROM member";
                 $count_result2 = mysqli_query($conn, $count_sql2);
                 $new_members = 0;
-                $today = time();
-                while ($count_row2 = mysqli_fetch_assoc($count_result2)) {
+                $count_sql2 = "SELECT DATEDIFF(NOW(),joined_date) FROM member";
+                $count_result2 = mysqli_query($conn, $count_sql2);
+                // $new_members = 0;
+                // $time = strtotime('10/16/2003');
 
-                    $my_date = strtotime($count_row2['joined_date']);
-                    $date_difference = $today - $my_date;
-                    if ($date_difference > 30) {
+                // $newformat = date('Y-m-d', $time);
+                while ($count_row2 = mysqli_fetch_array($count_result2)) {
+
+                    // $my_date = date('Y-m-d', strtotime($count_row2['joined_date']));
+                    // //echo $my_date . " ";
+                    // $date1 = date_create("2013-03-15");
+                    // $date2 = date_create("2013-12-12");
+                    // $diff = date_diff($date1, $date2);
+                    // $final_range = round($date_difference / (60 * 60 * 24));
+                    // if ($final_range > 30) {
+                    //     echo $date_difference . " ";
+                    //     $new_members++;
+                    // }S
+
+                    if ($count_row2[0] < 30) {
                         $new_members++;
                     }
+                }
+
+                $count_sql3 = "SELECT * FROM member";
+                $count_result3 = mysqli_query($conn, $count_sql3);
+                $expired_members = 0;
+                // $count_sql3 = "SELECT DATEDIFF(NOW(),joined_date) FROM member";
+                $count_result3 = mysqli_query($conn, $count_sql3);
+
+                while ($count_row3 = mysqli_fetch_array($count_result3)) {
+
+                    $member_id = $count_row3['member_id'];
+
+                    $count_sql31 = "SELECT * FROM membership WHERE member_id = $member_id";
+                    $count_result31 = mysqli_query($conn, $count_sql31);
+
+                    $row_31 = mysqli_fetch_assoc($count_result31);
+                    if ($row_31['status'] == 'invalid') {
+
+                        $expired_members++;
+                    }
+
+
+
+
+                    // $my_date = date('Y-m-d', strtotime($count_row2['joined_date']));
+                    // //echo $my_date . " ";
+                    // $date1 = date_create("2013-03-15");
+                    // $date2 = date_create("2013-12-12");
+                    // $diff = date_diff($date1, $date2);
+                    // $final_range = round($date_difference / (60 * 60 * 24));
+                    // if ($final_range > 30) {
+                    //     echo $date_difference . " ";
+                    //     $new_members++;
+                    // }S
+
+                    // if ($count_row2[0] < 30) {
+                    //     $new_members++;
+                    // }
                 }
 
 
@@ -108,7 +160,7 @@
                 </div>
 
                 <div class="three">
-                    <p class="value">10</p>
+                    <p class="value"><?php echo $expired_members ?></p>
                     <p class="name">Expired Memberships</p>
                 </div>
 

@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php include "includes/check_login.php"; ?>
+
+
 
 <html lang="en" dir="ltr">
 
