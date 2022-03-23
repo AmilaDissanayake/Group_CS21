@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include "includes/check_login.php"; ?>
 
 
 <!DOCTYPE html>
@@ -65,7 +65,7 @@
 
                 <?php
 
-                include 'includes/db.php';
+                //include 'includes/db.php';
                 $count_sql1 = "SELECT COUNT(username) FROM users WHERE user_type = 'trainer'";
                 $count_result1 = mysqli_query($conn, $count_sql1);
                 $count_row1 = mysqli_fetch_array($count_result1);

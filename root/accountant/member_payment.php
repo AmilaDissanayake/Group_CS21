@@ -83,7 +83,7 @@ require "includes/db.php";
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Phone Number</th>
-                            <th>Membership Type</th>
+                            <th>Description</th>
                             <th>Assigned Trainer</th>
                             <th>Payment Amount</th>
                             <th>Payment Date</th>
@@ -101,6 +101,7 @@ require "includes/db.php";
                                 $payment_amount = $payment_row['payment_amount'];
                                 $trainer_id = $payment_row['trainer_id'];
                                 $payment_type = $payment_row['payment_type'];
+                                $description = $payment_row['description'];
                                 
                                 $sql2 = "SELECT * FROM member WHERE member_id = $member_id";
                                 $result2 = mysqli_query($conn, $sql2);
@@ -119,19 +120,17 @@ require "includes/db.php";
                                     $trainer_name = "N/A";
                                 }
 
-                                $sql4 = "SELECT membership_type FROM membership WHERE member_id = $member_id";
-                                $result4 = mysqli_query($conn, $sql4);
-                                $payment_row4 = mysqli_fetch_assoc($result4);
-                                $membership_type = $payment_row4['membership_type'];
-
-
+                                // $sql4 = "SELECT membership_type FROM membership WHERE member_id = $member_id";
+                                // $result4 = mysqli_query($conn, $sql4);
+                                // $payment_row4 = mysqli_fetch_assoc($result4);
+                                // $membership_type = $payment_row4['membership_type'];
                         ?>
                         <tr>
                             <td><?php echo "$payment_id"?></td>
                             <td><?php echo "$f_name"?></td>
                             <td><?php echo "$l_name"?></td>
                             <td><?php echo "$phone_no"?></td>
-                            <td><?php echo "$membership_type"?> Month</td>
+                            <td><?php echo "$description"?></td>
                             <td><?php echo "$trainer_name"?></td>
                             <td><?php echo "$payment_amount"?></td>
                             <td><?php echo "$payment_date"?></td>

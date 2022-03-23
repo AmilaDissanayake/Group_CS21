@@ -41,19 +41,59 @@
                         $sum = $sum + $row['payment_amount'];    
                         }
                     ?> 
-                    <p class="value">Rs. <?php  print_r($sum);
+                    <p class="value">Rs. <?php  echo $sum;
                     }
+                    ?></p>
+                    <?php
+                        if (mysqli_num_rows($select_result) == 0) {
+                        ?> 
+                        <p class="value">Rs. <?php  echo $sum;
+                        }
                     ?></p>
                     <p class="name">Member Recievables</p>
                 </div>
 
                 <div class="two">
-                    <p class="value">rs. 30 000</p>
+                <?php $select_query = "SELECT tr_recievable_amount FROM trainer_receviables";
+                    $select_result = mysqli_query($conn, $select_query);
+                    $sum = 0;
+
+                    if (mysqli_num_rows($select_result) > 0) {
+                        while ($row = mysqli_fetch_assoc($select_result)) {
+                        $sum = $sum + $row['tr_recievable_amount'];    
+                        }
+                    ?> 
+                    <p class="value">Rs. <?php  print_r($sum);
+                    }
+                    ?></p>
+                    <?php
+                        if (mysqli_num_rows($select_result) == 0) {
+                        ?> 
+                        <p class="value">Rs. <?php  echo $sum;
+                        }
+                    ?></p>
                     <p class="name">Trainer Recievables</p>
                 </div>
 
                 <div class="three">
-                    <p class="value">rs. 25 000</p>
+                <?php $select_query = "SELECT amount FROM trainer_payables";
+                    $select_result = mysqli_query($conn, $select_query);
+                    $sum = 0;
+
+                    if (mysqli_num_rows($select_result) > 0) {
+                        while ($row = mysqli_fetch_assoc($select_result)) {
+                        $sum = $sum + $row['amount'];    
+                        }
+                    ?> 
+                    <p class="value">Rs. <?php  print_r($sum);
+                    }
+                    ?></p>
+                    <?php
+                        if (mysqli_num_rows($select_result) == 0) {
+                        ?> 
+                        <p class="value">Rs. <?php  echo $sum;
+                        }
+                    ?></p>
                     <p class="name">Trainer Payables</p>
                 </div>
 
@@ -63,7 +103,7 @@
                 </div> -->
                 
                 <div class="two">
-                    <p class="value">rs. 80 000</p>
+                    <p class="value">rs. 45 000</p>
                     <p class="name">Monthly Income</p>
                 </div>
 
@@ -87,7 +127,7 @@
                         <p class="name">Profit/Loss</p>
                     </div>
                     <div class="one1">
-                        <p class="value">Rs. 40 000</p>
+                        <p class="value">Rs. 20 000</p>
                         <p class="name">Amount</p>
                     </div>
                 </div>

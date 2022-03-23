@@ -683,7 +683,8 @@ table{
   backdrop-filter: blur(10px);
   outline: none;
   cursor: pointer;
-  /* margin-left: 150px; */
+  float: right;
+   margin-left: 935px; 
   /* border: solid 2px black */
   /* margin-left: auto; */
   /* order: 2; */
