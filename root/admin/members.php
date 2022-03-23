@@ -69,7 +69,7 @@
 
                 <?php
 
-                include 'includes/db.php';
+                // include 'includes/db.php';
                 $count_sql1 = "SELECT COUNT(username) FROM users WHERE user_type = 'member'";
                 $count_result1 = mysqli_query($conn, $count_sql1);
                 $count_row1 = mysqli_fetch_array($count_result1);

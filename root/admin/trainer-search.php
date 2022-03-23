@@ -1,6 +1,7 @@
 <?php
+include "includes/check_login.php";
 
-require "includes/db.php";
+//require "includes/db.php";
 $sql = "SELECT * FROM trainer WHERE f_name LIKE '" . $_POST['name'] . "%'";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {

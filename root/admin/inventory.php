@@ -144,7 +144,7 @@
 
                 <?php
 
-                include 'includes/db.php';
+                //include 'includes/db.php';
                 $count_sql1 = "SELECT SUM(quantity) FROM inventory";
                 $count_result1 = mysqli_query($conn, $count_sql1);
                 $count_row1 = mysqli_fetch_array($count_result1);
@@ -199,10 +199,7 @@
 
             </div>
             <div class="search-bar">
-                <div class="search-box">
-                    <input type="text" placeholder="Search by name..." id="search">
-                    <i class='bx bx-search'></i>
-                </div>
+
                 <!-- <div class="filter1">
                     <select name="Membership" id="" class="justselect">
                         <option selected="selected">Membership</option>

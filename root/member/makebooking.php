@@ -56,7 +56,7 @@ if( $sel_Time <= $time && date($date) == $today ){
         
         if ($result2) {
             $_SESSION['notification'] = "Successfully Completed the booking !";
-            header('Location: booking.php');
+            header('Location: booking.php');          
         } else {
             $_SESSION['notification'] = "Unable to do the booking !";
             echo die(mysqli_error($conn));

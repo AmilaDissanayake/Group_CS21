@@ -1,7 +1,8 @@
 <?php
+include "includes/check_login.php";
 
 //session_start();
-include 'includes/db.php';
+//include 'includes/db.php';
 
 ?>
 
@@ -169,7 +170,7 @@ include 'includes/db.php';
                             </div>
                         </div>
 
-                        <input type="file" class="custom-file-input" name="quipment_name">
+                        <input type="file" class="custom-file-input" name="quipment_name" required>
 
 
                         <div class="buttondiv"><input type="button" class="form__button" value="ADD NEW EQUIPMENT" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
@@ -181,7 +182,7 @@ include 'includes/db.php';
 
                     <script>
                         function submitFunction() {
-                            //var result = checkInputs();
+                            // var result = checkInputs();
 
                             //if (result == true) {
                             // e.preventDefault();

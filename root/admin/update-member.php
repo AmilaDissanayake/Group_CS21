@@ -1,9 +1,11 @@
 <?php
 
-session_start();
-include 'includes/db.php';
+include "includes/check_login.php";
+
 
 $username = $_GET['username'];
+
+//echo $username;
 
 
 
@@ -40,10 +42,11 @@ if ($assign_trainer == 0) {
     $trainer = 0;
 } else {
     $sql4 = "SELECT trainer_id FROM assignment WHERE member_id = '$member_id'";
+    $result4 = mysqli_query($conn, $sql4);
+    $row4 = mysqli_fetch_assoc($result4);
 }
 
-$result4 = mysqli_query($conn, $sql4);
-$row4 = mysqli_fetch_assoc($result4);
+
 
 
 

@@ -25,7 +25,7 @@ require_once 'phpqrcode/qrlib.php';
 $path = 'QRimages/';
 $file = $path."$member_id"."468.png";
 
-$text = "www.google.com";
+$text = "http://localhost/Group_CS21/root/admin/scanQR.php?memberID='.$member_id.'";
 
 QRcode::png($text, $file, 'L', 10, 2);
 
@@ -35,12 +35,18 @@ $to = $userEmail;
     $url= "https//:powerhouse.fitness.com";
     $subject = "WELCOME TO THE POWER HOUSE";
 
-    $message = '<p>Hi '.$username.', <br>Thanks for joining POWER HOUSE FITNESS ACADEMY – we’re excited to have you on board! 
-    You’ve taken the first step towards achieving your fitness goals</p>';
-    $message .= '<p>You’ll find our opening times, class timetable, and a list of what to bring on our '.$url.'. 
-    If you have any questions, then please don’t hesitate to get in touch. 
-    Simply call us on +9477 823 4904 or reply to this email and we’ll respond asap.<br></p>';
-    $message.= '<p>Here is your QRcode</p>';
+    $message = '<html><head></head><body style="background-color:black;">
+    
+   
+<img src="logo.jpg" height="100px" style="display:block; margin-left:auto; margin-right:auto; padding-top:40px">
+
+<p style="color:#CECECF; padding-left:100px; padding-right:100px; font-size:15px; text-align:center;">Hello '.$username.', <br>Thanks for joining POWER HOUSE 
+FITNESS ACADEMY – we’re excited to have you on board! You’ve taken the first step towards achieving your fitness goals. You’ll find our opening times, class timetable,
+ and a list of what to bring on our '.$url.'. If you have any questions, then please don’t hesitate to get in touch. 
+ Simply call us on <br>+9477 823 4904 or reply to this email and we’ll respond asap.<br></p>
+    
+ <img src="QRimages/'.$member_id.'468.png" height="80px" style="display:block; margin-left:auto; margin-right:auto; padding-top:40px">
+</body></html>';
 
     require 'vendor/autoload.php';
 
@@ -64,7 +70,7 @@ $to = $userEmail;
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = $subject;
     $mail->Body    = $message;
-    $mail->addAttachment('QRimages/'.$member_id.'468.png');
+    //$mail->addAttachment('QRimages/'.$member_id.'468.png');
     $mail->send();
 
 ?>

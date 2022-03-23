@@ -1,11 +1,13 @@
 <?php
 
-session_start();
+include "includes/check_login.php";
+
+//session_start();
 
 
 
 
-require "includes/db.php";
+//require "includes/db.php";
 $inventory_id = $_POST['inventory_id'];
 $pin = $_POST['pin'];
 

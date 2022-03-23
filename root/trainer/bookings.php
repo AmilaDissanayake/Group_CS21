@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -75,12 +76,6 @@
                     $count = mysqli_num_rows($result1);
             ?>
                 <h1 class="top-header">Today Bookings : <?php echo $count ?></h1>
-            </div>
-            <div class="search-bar">
-                <div class="search-box">
-                    <input type="text" placeholder="Search by name..." id="search">
-                    <i class='bx bx-search'></i>
-                </div>
             </div>
 
             <div class="members-div">
@@ -157,7 +152,7 @@
 
 
     </section>
-
+    <?php include "includes/footer.php" ?>
 
 </body>
 

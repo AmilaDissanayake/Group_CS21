@@ -38,6 +38,7 @@
 
                             <th>Name</th>
                             <th>Payment Date</th>
+                            <th>Pay/Recieve</th>
                             <th>Amount</th>
                         </tr>
                     </thead>
@@ -45,21 +46,25 @@
                         <tr>
                             <td>Navod</td>
                             <td>2021-10-10</td>
-                            <td>-1500.00</td>
+                            <td>Pay</td>
+                            <td>1500.00</td>
                         </tr>
                         <tr>
                             <td>Amila</td>
                             <td>2021-09-10</td>
+                            <td>Recieve</td>
                             <td>15000.00</td>
                         </tr>
                         <tr>
                             <td>Pamodha</td>
                             <td>2021-09-20</td>
-                            <td>-1500.00</td>
+                            <td>Pay</td>
+                            <td>1500.00</td>
                         </tr>
                         <tr>
                             <td>Bimsara</td>
                             <td>2021-07-10</td>
+                            <td>Recieve</td>
                             <td>1500.00</td>
                         </tr>
                     </tbody>
