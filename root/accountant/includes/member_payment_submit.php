@@ -13,8 +13,11 @@
             $membership_type = 3;
         }else if($mem_type == 13500){
             $membership_type = 6;
-        }else{
+        }else if($mem_type == 20000){
             $membership_type = 12;
+        }
+        else{
+            $membership_type = 0;
         }
         $amount = $_POST['amount'];
         $payment_type = 'cash';
@@ -34,19 +37,35 @@
             if ($assigned_trainer==0){
                 $assigned_trainer = "N/A";
             }
+            
+            if($assigned_trainer!=0 && $membership_type!=0){
+                $description = "Trainer Assignment & Renew Membership";
+            }
+            else if($assigned_trainer==0 && $membership_type!=0){
+                $description = "Renew Membership";
+            }
+            else{
+                $description = "Trainer Assignment";
+            }
+            
 
-            $sql3 = "INSERT INTO payment(member_id, payment_amount, trainer_id, payment_type) VALUES('$member_id', '$amount', '$assigned_trainer', '$payment_type')";
+            $sql3 = "INSERT INTO payment(member_id, description, payment_amount, trainer_id, payment_type) VALUES('$member_id', '$description', '$amount', '$assigned_trainer', '$payment_type')";
             mysqli_query($conn, $sql3);
 
             
-            
-            $sql4 = "UPDATE membership SET member_id='$member_id', membership_type='$membership_type' WHERE member_id='$member_id'";
-            mysqli_query($conn, $sql4);
-        if ($result1 && $result2) {
+            date_default_timezone_set('Asia/Colombo');
+            $date = date('Y-m-d');
+
+            $query4 = "UPDATE membership SET membership_type = '$membership_type', joined_date='$date' WHERE member_id = '".$member_id."'";
+            $result4 = mysqli_query($conn, $query4);                    
+
+        if ($result1 && $result2 && $result4) {
             $_SESSION['notification'] = "Payment successfully";
-            // $_SESSION['username'] = $username_bb;
             header("location:../member_payment.php");
-            // echo "done";
             }
+        else {
+                echo die(mysqli_error($conn));
+            }
+            
         }
     }
