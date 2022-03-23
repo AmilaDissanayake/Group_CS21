@@ -199,10 +199,7 @@
 
             </div>
             <div class="search-bar">
-                <div class="search-box">
-                    <input type="text" placeholder="Search by name..." id="search">
-                    <i class='bx bx-search'></i>
-                </div>
+
                 <!-- <div class="filter1">
                     <select name="Membership" id="" class="justselect">
                         <option selected="selected">Membership</option>

@@ -11,7 +11,6 @@ if (isset($_POST["reset-request-submit"])) {
 
     $userEmail = strtolower($_POST["email"]);
 
-
     $mail_query = " SELECT COUNT(*) AS cntUser FROM users WHERE email = '" . $userEmail . "'";
     $mail_result = mysqli_query($conn, $mail_query);
     $mail_row = mysqli_fetch_array($mail_result);
@@ -69,8 +68,7 @@ if (isset($_POST["reset-request-submit"])) {
 request, you can ignore this e-mail.</p>
     
    
-   <div style="text-align:center"><a href="' . $url . '"><button style="width:240px;height:40px; border:1px solid #86ff71;border-radius:30px; cursor: pointer; background-color:#86ff71; margin-top:20px;margin-bottom:40px; font-family:Bahnschrift" onclick="location.href=' . $url . '">REST PASSWORD</button></a></div></body></html>';
-
+   <div style="text-align:center"><a href="' . $url . '"><button style="width:240px;height:40px; border:1px solid #86ff71;border-radius:30px; cursor: pointer; background-color:#86ff71; margin-top:20px;margin-bottom:40px; font-family:Bahnschrift" onclick="location.href=' . $url . '">RESET PASSWORD</button></a></div></body></html>';
 
     require '../vendor/autoload.php';
 
@@ -97,13 +95,13 @@ request, you can ignore this e-mail.</p>
     $mail->Subject = $subject;
     $mail->Body    = $message;
     $mail->send();
-    //echo 'Message has been sent';
-    // } catch (Exception $e) {
-    //     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    // }
     $_SESSION["notification"] = "Please check your email inbox";
-    header("Location: ../forget-pw.php?reset=success");
+    ?>
+    <!-- header("Location: ../forget-pw.php?reset=success"); -->
+    <script>window.location.assign('../forget-pw.php?reset=success')</script>
+    <?php
 } else {
     $_SESSION["notification"] = "An error occured!";
     header("Location: ../forget-pw.php");
 }
+?>

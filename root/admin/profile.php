@@ -120,7 +120,7 @@ $username = $_SESSION['username'];
                 $avatar = $image_row['image'];
 
                 ?>
-                <img src="media/<?php echo $avatar ?>" alt="">
+                <img src="media/admins/<?php echo $avatar ?>" alt="">
                 <div class="overlay">
                     <form class="hid_form" action='profile-image-change.php?username=' $username method='post' enctype='multipart/form-data'>
                         <label id='update_profile'> <i class='bx bx-upload'></i>

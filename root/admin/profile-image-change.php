@@ -17,7 +17,7 @@ if (isset($_POST['update'])) {
         echo "<script>window.open('profile.php?u_id=$user_id' , '_self')</script>";
         exit();
     } else {
-        move_uploaded_file($image_tmp, "media/$u_image");
+        move_uploaded_file($image_tmp, "media/admins/$u_image");
         $update = "UPDATE admin SET image='$u_image' where username='admin'";
 
         $run = mysqli_query($conn, $update);

@@ -14,14 +14,32 @@
 // include "includes/db.php";
 //session_start();
 
-$username = $_SESSION['username'];
-$user_type = $_SESSION['user_type'];
+$my_username = $_SESSION['username'];
+$my_user_type = $_SESSION['user_type'];
 
-$image_sql = "SELECT image FROM $user_type WHERE username = '$username'";
-$image_sql_run = mysqli_query($conn, $image_sql,);
-$row = mysqli_fetch_array($image_sql_run);
+$my_image_sql = "SELECT image FROM $my_user_type WHERE username = '$my_username'";
+$my_image_sql_run = mysqli_query($conn, $my_image_sql);
+$my_row = mysqli_fetch_array($my_image_sql_run);
 
-$image = $row[0];
+$my_image = $my_row[0];
+
+$sql = "SELECT * FROM close_times";
+$result = mysqli_query($conn, $sql);
+$schedules = '';
+
+$schedule_array = array();
+while ($row = mysqli_fetch_assoc($result)) {
+
+    $schedules .= "{name: . '{$row["time_slot"]}' ., . date: . '{$row["date"]}' .}*";
+
+    //$schedule_array("name => $row[time_slot]", "date => $row[date]");
+}
+
+//echo $schedule_array;
+
+//$schedules = '[' . $schedules . ']';
+
+//echo $schedules;
 
 
 
@@ -44,38 +62,110 @@ $image = $row[0];
     </div>
 
     <div class="header-img">
-        <a href="./profile.php"><img src="./media/admins/<?php echo $image ?>" alt=" no image"></a>
+        <a href="./profile.php"><img src="./media/admins/<?php echo $my_image ?>" alt=" no image"></a>
     </div>
 </nav>
 
 <script>
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    var fortnightAway = new Date(Date.now() + 12096e5);
+
+    var dd2 = String(fortnightAway.getDate()).padStart(2, '0');
+    var mm2 = String(fortnightAway.getMonth() + 1).padStart(2, '0');
+    var yyyy2 = fortnightAway.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+    todayafter = yyyy2 + '-' + mm2 + '-' + dd2;
+
+    var javaScriptVar = "<?php echo $schedules; ?>";
+    //var outputstr = javaScriptVar.replace(/'/g, '');
+
+    dotsRemoved = javaScriptVar.replaceAll('.', '');
+    usingSplit = dotsRemoved.split('*');
+
+    // json object.
+    contents = '{"firstName":"John", "lastName":"Doe"}';
+
+    var myArray = [];
+
+    for (i in usingSplit) {
+
+        console.log(usingSplit[i]);
+
+        //var obj = JSON.parse(JSON.stringify(usingSplit[i]));
+        // console.log(obj);
+        // console.log(typeof(obj));
+        myArray.push(usingSplit[i]);
+
+    }
+
+    myArray.pop();
+
+    console.log(myArray)
+
+    var newArray = myArray.map(s => eval('null,' + s));
+
+    console.log(newArray);
+
+    // Option 1: through the use of an array.
+    // $jsonArray = json_decode($contents, true);
+
+    // var obj = {};
+    // for (var i = 0; i < usingSplit.length; i++) {
+    //     var split = usingSplit[i].split(':');
+    //     obj[usingSplit[0].trim()] = usingSplit[1].trim();
+    // }
+
     var $btn = $('.profile-details').pignoseCalendar({
-        // apply: onApplyHandler,
+        //apply: onApplyHandler,
         modal: true, // It means modal will be showed when you click the target button.
         buttons: false,
-        minDate: '2021-10-19',
+        minDate: today,
+        maxDate: todayafter,
         theme: 'dark',
-        schedules: [{
-            name: 'holiday',
-            date: '2021-10-21'
-        }, {
-            name: 'holiday',
-            date: '2021-10-26'
-        }, {
-            name: 'holiday',
-            date: '2021-10-22'
-        }],
-
+        schedules: newArray,
         scheduleOptions: {
 
             colors: {
-                holiday: '#000101',
-                seminar: '#5c6270',
-                meetup: '#ef8080',
+                'Full': '#FF0000',
+                'Morning': '#FFA500',
+                'Evening': '#FFFF00',
             }
         },
 
+        contents: {
 
-        // pickWeeks: true
+
+
+        },
+
+
+        select: function(date, context) {
+            console.log('events for this date', context.storage.schedules);
+        }
     });
+
+
+
+    //console.log(dotsRemoved);
+    //// console.log(typeof(usingSplit[0]));
+    //onsole.log(usingSplit[1]);
+
+    // var myJsonString = JSON.stringify(usingSplit);
+    //console.log(myArray);
+
+    // let data = ["{lat:-8.089057558100306,lng:112.15251445770264}", "{lat:-8.100954123313068,lng:112.15251445770264}", "{lat:-8.100954123313068,lng:112.1782636642456}", "{lat:-8.087867882261257,lng:112.17800617218018}", "{lat:-8.089057558100306,lng:112.15251445770264}"];
+
+
+
+    //console.log(myArray.map(s => eval('null,' + s)));
+    // var myJsonString2 = JSON.stringify(dotsRemoved);
+    // console.log(typeof(dotsRemoved))
+
+    // var removed = usingSplit.replace(/"/g, '');
+    //console.log($jsonArray)
 </script>

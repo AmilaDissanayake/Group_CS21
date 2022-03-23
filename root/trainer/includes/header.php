@@ -1,5 +1,3 @@
-
-
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" type="text/css" href="../trainer/includes/dist/css/pignose.calendar.css" />
 <link rel="stylesheet" type="text/css" href="../trainer/css/header.css" />
@@ -29,27 +27,34 @@
     </div>
 
     <div class="header-img">
-        <?php $image=$_SESSION['image']; ?>
+        <?php $image = $_SESSION['image']; ?>
         <img src="../media/trainers/<?php echo $image ?>" alt=" no image">
     </div>
 </nav>
 
 <script>
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+    //document.write(today);
     var $btn = $('.profile-details').pignoseCalendar({
         // apply: onApplyHandler,
         modal: true, // It means modal will be showed when you click the target button.
         buttons: false,
-        minDate: '2021-10-19',
+        minDate: '2022-03-21',
         theme: 'dark',
         schedules: [{
             name: 'holiday',
-            date: '2021-10-21'
+            date: '2022-10-21'
         }, {
             name: 'holiday',
-            date: '2021-10-26'
+            date: '2022-10-26'
         }, {
             name: 'holiday',
-            date: '2021-10-22'
+            date: '2022-10-22'
         }],
 
         scheduleOptions: {
