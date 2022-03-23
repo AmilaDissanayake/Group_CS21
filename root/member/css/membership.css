@@ -658,13 +658,11 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
   background-color: #eee;
 }
-
 .about_btn {
   position: relative;
   z-index: 10;
   width: 80px;
   margin: 3px;
-  /* height: 45px; */
   border: 0px solid rgba(255, 255, 255, .5);
   border-radius: 30px;
   background-color: #424244;
@@ -678,11 +676,14 @@ tbody tr:nth-child(even) {
   cursor: pointer;
   margin-right: 10px;
 }
-
+/* .overlay .about_btn2{
+  height: 30px;
+  font-family: 'Azonix';
+} */
 .about_btn:hover {
   color: rgba(255, 255, 255, 1);
-box-shadow: 0px 0px 10px 1px #121317;
-border: 0px solid #121317;
+  box-shadow: 0px 0px 10px 1px #121317;
+  border: 0px solid #121317;
   transition: .4s;
 }
 /* scrollbarscrollbar */

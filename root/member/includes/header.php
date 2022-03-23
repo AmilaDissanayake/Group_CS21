@@ -19,7 +19,7 @@
     </div>
 
     <div class="header-img">
-        <img src="./media/pamod.jpg" alt=" no image">
+        <img src="./media/members/pamod.jpg" alt=" no image">
     </div>
 </nav>
 
