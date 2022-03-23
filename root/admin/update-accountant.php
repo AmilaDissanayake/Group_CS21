@@ -1,7 +1,7 @@
 <?php
 
 include "includes/check_login.php";
-include 'includes/db.php';
+//include 'includes/db.php';
 
 $username = $_GET['username'];
 

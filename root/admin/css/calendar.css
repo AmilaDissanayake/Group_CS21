@@ -268,20 +268,43 @@ justify-content: center;
 .about_btn{
 position: relative;
 z-index: 10;
-width: 130px;
-height: 35px;
+width: 100px;
+height: 25px;
 border: 0px solid rgba(255, 255, 255, .5);
 border-radius: 30px;
-background-color: #86ff71;
+background-color: #141517;
 font-family: 'Rubik';
-color: black;
-font-size: 15px;
+
+font-size: 13px;
 letter-spacing: 1px;
 -webkit-backdrop-filter: blur(10px);
 backdrop-filter: blur(10px);
 outline: none;
+color: #86ff71;
 cursor: pointer;
 margin-right: 10px;
+}
+
+.fc-event-main{
+  background-color: #121317;
+  border: 0px !important;
+  border-radius: 50px !important;
+  padding: 3px !important;
+  text-align: center !important;
+  color: #86FF71;
+}
+
+.fc-h-event{
+  border: none !important;
+  border-radius: 20px !important;
+}
+
+.fc-daygrid-event{
+  white-space: normal !important;
+}
+
+.fc .fc-button-primary{
+  background-color: #121317 !important;
 }
 
 .about_btn:hover {

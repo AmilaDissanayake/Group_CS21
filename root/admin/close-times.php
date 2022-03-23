@@ -65,9 +65,9 @@ date_default_timezone_set("Asia/Colombo"); ?>
                         <?php $Date = date('Y-m-d', strtotime(' +1 day')); ?>
                         <input type='Date' name="date" required min="<?php echo $Date; ?>" max="<?php echo date('Y-m-d', strtotime($Date . ' + 14 days')); ?>">
                         <select name="time" id="" class="justselect">
-                            <option selected="selected">All day closed</option>
-                            <option>Morning closed</option>
-                            <option>Evening closed</option>
+                            <option selected="selected">Full</option>
+                            <option>Morning</option>
+                            <option>Evening</option>
                         </select>
                         <button type="submit" name="date-submit" class="set_button">SET CLOSE TIME</button>
                     </div>
@@ -96,13 +96,14 @@ date_default_timezone_set("Asia/Colombo"); ?>
                         while ($availability_row = mysqli_fetch_assoc($result)) {
                             $date = $availability_row['date'];
                             $time_slot = $availability_row['time_slot'];
+                            $time_id = $availability_row['close_time_id']
                         ?>
                             <tr>
                                 <td><?php echo "$date"; ?></td>
                                 <td><?php echo "$time_slot"; ?></td>
                                 <td>
                                     <div class="row-action">
-                                        <button class="about_btn" onclick="location.href='includes/remove-availability.php?time_id=<?php echo $availability_row['time_id']; ?>'">Remove</button>
+                                        <button class="about_btn" onclick="location.href='includes/remove-availability.php?close_time_id=<?php echo $time_id; ?>'">Remove</button>
                                     </div>
                                 </td>
                             </tr>
