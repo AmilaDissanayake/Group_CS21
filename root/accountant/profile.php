@@ -60,9 +60,9 @@ $username = $_SESSION['username'];
         $result1 = mysqli_query($conn, $query1);
         $row1 = mysqli_fetch_assoc($result1);
 
-        $member_id = $row1['member_id'];
         $f_name = $row1['f_name'];
         $l_name = $row1['l_name'];
+        // var_dump($row1);
 
         if ($row1['gender'] == 'male') {
             $gender = 'Male';
@@ -217,9 +217,8 @@ $username = $_SESSION['username'];
                         </div>
 
 
-
                         <div class="form__div">
-                            <input type="text" class="form__input" id="address" placeholder=" " name="address_cc" value=<?php echo $address ?>>
+                            <input type="text" class="form__input" id="address" placeholder=" " name="address_cc" value="<?php echo $address ?>">
                             <label for="" class="form__label">Address</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
