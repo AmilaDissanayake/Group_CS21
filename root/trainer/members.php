@@ -16,6 +16,7 @@ $assign_members = mysqli_num_rows($assign_query);
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="css/members.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -66,12 +67,6 @@ $assign_members = mysqli_num_rows($assign_query);
         <div class="home-content">
             <div class="header-div">
                 <h1 class="top-header">Assigned members : <?php echo $assign_members; ?></h1>
-            </div>
-            <div class="search-bar">
-                <div class="search-box">
-                    <input type="text" placeholder="Search by name..." id="search">
-                    <i class='bx bx-search'></i>
-                </div>
             </div>
 
             <div class="members-div">
@@ -142,7 +137,7 @@ $assign_members = mysqli_num_rows($assign_query);
 
 
     </section>
-
+    <?php include "includes/footer.php" ?>
 
 </body>
 

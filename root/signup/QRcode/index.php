@@ -25,7 +25,7 @@ require_once 'phpqrcode/qrlib.php';
 $path = 'QRimages/';
 $file = $path."$member_id"."468.png";
 
-$text = "www.google.com";
+$text = "http://localhost/Group_CS21/root/admin/scanQR.php?memberID='.$member_id.'";
 
 QRcode::png($text, $file, 'L', 10, 2);
 

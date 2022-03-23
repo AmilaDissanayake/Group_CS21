@@ -21,18 +21,20 @@ $trainer = $row1['assign_trainer'];
 if($trainer == 0){
     $trainer = "N/A";
 }
+date_default_timezone_set('Asia/Colombo');
+$date = date('Y-m-d');
 
 if($amount =='2500'){$membership_type=1;}else if($amount =='7000'){$membership_type=3;}else if($amount =='10000'){$membership_type=6;}else if($amount =='20000'){$membership_type=12;}   
 
 
-$payment_insert = "INSERT INTO payment (member_id, payment_amount, trainer_id, payment_type) VALUES('$member_id', '$amount', '$trainer','$payment_type');";
+$payment_insert = "INSERT INTO payment (member_id, description, payment_amount, trainer_id, payment_type) VALUES('$member_id', 'Renew Membership','$amount', '$trainer','$payment_type');";
 $result2 = mysqli_query($conn, $payment_insert);
 
-$query4 = "UPDATE membership SET membership_type = '$membership_type'  WHERE member_id = '".$member_id."'";
+$query4 = "UPDATE membership SET membership_type = '$membership_type', joined_date='$date' WHERE member_id = '".$member_id."'";
 $result4 = mysqli_query($conn, $query4);
 
 
-if ($result2) {
+if ($result1 && $result2 && $result4) {
     $_SESSION['notification'] = "Successfully Extended the period !";
     $_SESSION['subscription'] = "Valid";
     header('Location: membership.php');

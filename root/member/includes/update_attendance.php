@@ -26,6 +26,7 @@ $state =  $_POST['state'];
 
         }
 
+
     header('Content-Type: application/json');
     $respo = json_encode($response);
     echo $respo ;

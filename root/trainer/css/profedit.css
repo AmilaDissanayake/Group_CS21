@@ -49,37 +49,39 @@
   font-weight: 100;
 }
 
-  form {
-    width: 100%;
-    min-height: 100vh;
-    padding-top: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 20px;
-  }
+form {
+  width: 100%;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 0px solid rgba(95, 95, 95, 0.122);
+  margin-top: 10px;
+  border-radius: 0.5rem;
+}
 
 .separator .hr{
   color: rgb(24,24,24);
 }
 .name {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    align-self: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  align-self: center;
 }
   
 .name_input {
-    border: 1px solid rgb(24,24,24);
-    color: rgb(24,24,24);
-    outline: none;
-    background: none;
-    z-index: 1;
-    font-family: "Rubik";
-    width: 255px;
-    height: 45px;
-    padding-left: 10px;
-    margin-right: 20px;
-    font-size: 15px;
+  border: 1px solid rgb(24,24,24);
+  color: rgb(24,24,24);
+  outline: none;
+  background: none;
+  z-index: 1;
+  font-family: "Rubik";
+  width: 100%;
+  height: 45px;
+  padding-left: 10px;
+  margin-right: 20px;
+  font-size: 15px;
+  position: relative;
 }
   
   .name_input2 {
@@ -89,7 +91,7 @@
     background: none;
     z-index: 1;
     font-family: "Rubik";
-    width: 255px;
+    width: 100%;
     height: 45px;
     padding-left: 10px;
     /* margin-right: 20px; */
@@ -97,7 +99,7 @@
   }
   
   input[type="date"] {
-    width: 255px;
+    width: 240px;
   }
   
   input[type="date"]::-webkit-calendar-picker-indicator {
@@ -120,7 +122,7 @@
     height: 45px;
     font-size: 15px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 0px;
     border: 1px solid rgb(24,24,24);
     color: rgb(24,24,24);
     outline: none;
@@ -159,11 +161,13 @@
     position: relative;
     height: 48px;
     margin-bottom: 1.5rem;
+    width: 100%;
+    margin-right: 20px;
   }
   
   .inj__div {
     position: relative;
-    height: 80px;
+    height: 100px;
     margin-bottom: 1.5rem;
   }
   
@@ -183,15 +187,19 @@
     border-color: #e74c3c;
   }
   
-  .inj__div i,
-  .select__div i,
-  .form__div i {
-    visibility: hidden;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-  }
-  
+#wrong ,#right{
+  left: 215px;
+}
+
+.inj__div i,
+.select__div i,
+.form__div i {
+  visibility: hidden;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
+
   .form__div.success i.fa-check {
     color: #2ecc71;
     visibility: visible;
@@ -255,25 +263,23 @@ option {
     font-family: "Azonix";
 }
 .form__button {
-  /* margin-top: 30px; */
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  display: block;
   margin-left: auto;
   padding: 0.75rem 2rem;
   outline: none;
-  border-radius: 50px;
+  border: none;
   background-color: #86ff71;
   font-family: "Azonix";
   color: #000;
-  font-weight: bold;
-  font-size: 13px;
+  
+  font-size: 12px;
   cursor: pointer;
   transition: 0.5s;
-  width: 170px;
+  width: 180px;
   align-items: center;
-  border: none;
-
+  border-radius: 50px;
 }
   
 .buttondiv {
@@ -408,7 +414,7 @@ option {
     margin-bottom: 1.5rem;
     /* width: 100%; */
     font-size: 15px;
-    width: 500px;
+    width: 100%;
     margin-right: 20px;
   }
   
@@ -483,6 +489,12 @@ option {
       word-break: normal;
     }
   
+
+  .divider {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
   .separator {
     position: relative;
     width: 100%;
@@ -498,8 +510,8 @@ option {
     line-height: 1.5em;
     color: rgb(24,24,24);
     text-align: center;
-    padding-top: 15px;
-    font-size: 18px;
+    font-size: 20px;
+    padding-bottom: 20px;
     /* top: .5em; */
   }
   

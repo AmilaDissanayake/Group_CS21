@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/earning.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -90,6 +91,7 @@
     </div>
     </div>
     </section>
+    <?php include "includes/footer.php" ?>
     <script>
  AOS.init();
  // Chart.defaults.global.defaultFontFamily = "Rubic";

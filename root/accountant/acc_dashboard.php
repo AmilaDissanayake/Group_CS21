@@ -96,11 +96,6 @@
                     ?></p>
                     <p class="name">Trainer Payables</p>
                 </div>
-
-                <!-- <div class="four">
-                    <p class="value">rs.15 000</p>
-                    <p class="name">Other Payables</p>
-                </div> -->
                 
                 <div class="two">
                     <p class="value">rs. 45 000</p>
