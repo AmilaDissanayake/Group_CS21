@@ -57,12 +57,12 @@ $user_insert = "INSERT INTO users (email, username, password, user_type ) VALUES
 
 $result0 = mysqli_query($conn, $user_insert);
 
-$member_insert = "INSERT INTO member (f_name, l_name, gender, phone_no, dob, address, injuries,  username, assign_trainer ) VALUES ('$f_name_bb', '$l_name_bb', '$gender_bb', '$phone_no_bb', '$dob_bb', '$address_bb', '$injuries_bb', '$username_bb', '$trainer_bb);";
+$member_insert = "INSERT INTO member (f_name, l_name, gender, phone_no, dob, address, injuries,  username, assign_trainer ) VALUES ('$f_name_bb', '$l_name_bb', '$gender_bb', '$phone_no_bb', '$dob_bb', '$address_bb', '$injuries_bb', '$username_bb', '$trainer_bb');";
 // echo 'query check done';
 
 $result1 = mysqli_query($conn, $member_insert);
 
-$member_select = "SELECT member_id FROM member WHERE username = '$username_bb'";
+$member_select = "SELECT member_id FROM member WHERE username = '".$username_bb."'";
 
 $result2 = mysqli_query($conn, $member_select);
 $row2 = mysqli_fetch_array($result2);
@@ -80,25 +80,7 @@ $result4 = mysqli_query($conn, $membership_insert);
 if ($result0 && $result1 && $result3 && $result4) {
     $_SESSION['notification'] = "Account successfully created";
     $_SESSION['username'] = $username_bb;
-?>
 
-    <!-- <script type="text/javascript">
-                $(document).ready(function(){
-                function QR(){
-                $.ajax({
-                    type: "POST",
-                    url: "QRcode/index.php",
-                    // data: dataString,
-                    success: function() {
-                        window.location = '../member/dashboard.php'; 
-                    },
-                });
-            }
-            QR();
-        }); -->
-    
-    </script>
-<?php
      header('Location: QRcode/index.php');
 } else {
     header("Location: index.php");
