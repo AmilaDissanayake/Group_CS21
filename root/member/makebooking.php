@@ -2,11 +2,13 @@
 
 session_start();
 
-if ($_SESSION['notification']) {
+if (isset($_SESSION['notification'])) {
     unset($_SESSION['notification']);
 }
 
 require "includes/db.php";
+
+
 
 $username = $_SESSION['username'];
 $slot = $_POST['time_cc'];
@@ -19,7 +21,7 @@ $row1 = mysqli_fetch_assoc($result1);
 $member_id = $row1['member_id'];
 $trainer_id = $row1['assign_trainer'];
 
-$assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_assignment ORDER BY assignment_id DESC LIMIT 1;";
+$assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_id ORDER BY assignment_id DESC LIMIT 1;";
 $assignment_result = mysqli_query($conn, $assignment_query);
 $assignment_row = mysqli_fetch_assoc($assignment_result);
 
