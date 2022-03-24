@@ -22,9 +22,9 @@
 <body>
     <?php include "includes/sidebar.php" ?>
     <section class="home-section">
-
-        <?php include "includes/header.php" ?>
         <?php require "includes/db.php" ?>
+        <?php include "includes/header.php" ?>
+        
 
         <div class="welcomenote"><h1></h1></div>
 

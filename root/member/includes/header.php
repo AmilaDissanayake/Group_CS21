@@ -8,6 +8,14 @@
 <script type="text/javascript" src="../member/includes/dist/js/pignose.calendar.full.min.js"></script>
 
 <nav>
+<?php
+
+    $image_select = "SELECT image FROM member WHERE username='$username'";
+    $result2 = mysqli_query($conn, $image_select);
+    $image_row = mysqli_fetch_assoc($result2);
+    $avatar = $image_row['image'];
+
+?>
     <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
         <span class="dashboard">Dashboard</span>
@@ -19,7 +27,7 @@
     </div>
 
     <div class="header-img">
-        <img src="./media/members/pamod.jpg" alt=" no image">
+        <img src="./media/members/<?php echo $avatar ?>" alt=" no image">
     </div>
 </nav>
 

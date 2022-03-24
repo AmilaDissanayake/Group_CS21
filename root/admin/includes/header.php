@@ -144,11 +144,13 @@ while ($row = mysqli_fetch_assoc($result)) {
         },
 
 
-        select: function(date, context) {
-            console.log('events for this date', context.storage.schedules);
-        }
+        // select: function(date, context) {
+        //     alert('events for this date', toString(context.storage.schedules));
+        //     console.log('events for this date', toString(context.storage.schedules));
+        // }
     });
 
+    // document.getElementsByClassName("pignose-calendar-top-year").textContent += " This is the text from javascript.";
 
 
     //console.log(dotsRemoved);

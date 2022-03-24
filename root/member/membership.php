@@ -247,8 +247,6 @@
                 $tr_interval = $today->diff($t_exp_date);
             }  
             
-            $flag = 0
-            
         ?>
         <div class="board">
             <div class="vboderdivider"></div>

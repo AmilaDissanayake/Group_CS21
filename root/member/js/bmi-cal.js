@@ -99,6 +99,7 @@ function getval(){
     if(bmi2 != 0){
         $("#bmi_val_holder").text(bmi2);
         $("#intr_id").val(bmi2);
+        $("#bmi_pass").val(bmi2);
         var day = $("#day_hold").text();
 
         if(day >= 15){
