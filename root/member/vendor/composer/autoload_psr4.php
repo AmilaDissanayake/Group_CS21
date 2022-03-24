@@ -6,6 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'MessageBird\\' => array($vendorDir . '/messagebird/php-rest-api/src/MessageBird'),
-    'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
 );

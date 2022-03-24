@@ -19,10 +19,11 @@ $result2=mysqli_query($conn,$sql2);
 
 while($row2=mysqli_fetch_assoc($result2)){
     $member_id=$row2['member_id'];
-    $sql3 = "SELECT username FROM member where member_id='".$member_id."'";
+    $sql3 = "SELECT username,phone_no FROM member where member_id='".$member_id."'";
     $result3 = mysqli_query($conn, $sql3);
     $row3=mysqli_fetch_assoc($result3);
     $username=$row3['username'];
+    $phone_no= $row3['phone_no'];
 
     $sql4 = "SELECT email FROM users where username='".$username."'";
     $result4 = mysqli_query($conn, $sql4);
@@ -32,7 +33,7 @@ while($row2=mysqli_fetch_assoc($result2)){
     $to = $userEmail;
     $subject = "Booking cancelled";
 
-    $message = '<p>Please note that your booking for the POWER HOUSE has been cancelled by your trainer</p>';
+    $message = '<p>Please note that your booking for the POWER HOUSE (Date: '.$date.') has been cancelled by your trainer</p>';
     $message .= '<p>We are sorry about the inconvenience.';
     $message .= '<p>Thank you,<br>STAY WITH POWERHOUSE</p>';
 
@@ -61,6 +62,27 @@ while($row2=mysqli_fetch_assoc($result2)){
     $mail->Body    = $message;
     $mail->send();
     echo 'Message has been sent';
+
+    require_once('sms/autoload.php');
+
+    $api_instance = new NotifyLk\Api\SmsApi();
+    $user_id = "15842"; // string | API User ID - Can be found in your settings page.
+    $api_key = "lzjrr3jD4OsH4lbqVqPj"; // string | API Key - Can be found in your settings page.
+    $message = "Please note that your booking for the POWER HOUSE (Date: $date) has been cancelled by your trainer  "; // string | Text of the message. 320 chars max.
+    $to = "94$phone_no"; // string | Number to send the SMS. Better to use 9471XXXXXXX format.
+    $sender_id = "NotifyDEMO"; // string | This is the from name recipient will see as the sender of the SMS. Use \\\"NotifyDemo\\\" if you have not ordered your own sender ID yet.
+    $contact_fname = "Bim"; // string | Contact First Name - This will be used while saving the phone number in your Notify contacts (optional).
+    $contact_lname = "Sak"; // string | Contact Last Name - This will be used while saving the phone number in your Notify contacts (optional).
+    $contact_email = ""; // string | Contact Email Address - This will be used while saving the phone number in your Notify contacts (optional).
+    $contact_address = ""; // string | Contact Physical Address - This will be used while saving the phone number in your Notify contacts (optional).
+    $contact_group = 0; // int | A group ID to associate the saving contact with (optional).
+    $type = null; // string | Message type. Provide as unicode to support unicode (optional).
+
+    try {
+        $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id, $contact_fname, $contact_lname, $contact_email, $contact_address, $contact_group, $type);
+    } catch (Exception $e) {
+        echo 'Exception when calling SmsApi->sendSMS: ', $e->getMessage(), PHP_EOL;
+    }
     
     
 }
