@@ -12,9 +12,9 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="../admin/css/profile.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/profedit.css">
+    <link rel="stylesheet" href="../admin/css/profedit.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -107,7 +107,7 @@
                     <label id='update_profile2'> <i class='bx bx-upload ccc'></i>
                         <input type='file' name='u_image' size='60' />
                     </label><br><br><br><br>
-                    <button id='button_profile' name='update-cover' class='upp'>Update Cover</button>
+                    <button id='button_profile1' name='update-cover' class='upp2'>Update Cover</button>
                 </form>
             </div>
             <div class="profile-img">
@@ -119,13 +119,13 @@
                     $avatar = $image_row['image'];
 
                 ?>
-                <img src="media/<?php echo $avatar ?>" alt="">
+                <img src="media/members/<?php echo $avatar ?>" alt="">
                 <div class="overlay">
                     <form class="hid_form" action='profile-image-change.php?username='$username method='post' enctype='multipart/form-data'>
                         <label id='update_profile'> <i class='bx bx-upload'></i>
                             <input type='file' name='u_image' size='60' />
                         </label><br><br><br><br>
-                        <button id='button_profile' name='update' class='upp'>Update Image</button>
+                        <button id='button_profile2' name='update' class='upp2'>Update Image</button>
                     </form>
                 </div>
             </div>

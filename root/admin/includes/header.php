@@ -16,6 +16,7 @@
 
 $my_username = $_SESSION['username'];
 $my_user_type = $_SESSION['user_type'];
+$academy_open = 0;
 
 $my_image_sql = "SELECT image FROM $my_user_type WHERE username = '$my_username'";
 $my_image_sql_run = mysqli_query($conn, $my_image_sql);
@@ -40,6 +41,87 @@ while ($row = mysqli_fetch_assoc($result)) {
 //$schedules = '[' . $schedules . ']';
 
 //echo $schedules;
+
+
+
+date_default_timezone_set("Asia/Colombo");
+
+
+
+function isWithInTime($start, $end, $time)
+{
+    echo $start . $end . $time;
+    if (($time <= $start) && ($time >= $end)) {
+        echo 'OK';
+        //return TRUE;
+
+        $academy_open = 1;
+    } else {
+
+        // echo "not ok";
+
+        $academy_open = 0;
+    }
+}
+
+function isNotWithInTime($start, $end, $time)
+{
+
+    if (($time >= $start) && ($time <= $end)) {
+        // echo 'OK';
+        //return TRUE;
+
+        $academy_open = 0;
+    } else {
+
+        $academy_open = 1;
+    }
+}
+
+
+$today = date("Y-m-d");
+$today_time = strtotime($today);
+$sql2 = "SELECT * FROM close_times WHERE date = $today_time";
+$result2 = mysqli_query($conn, $sql2);
+if (mysqli_num_rows($result2) == 0) {
+
+    $nowDate = date("Y-m-d h:i:sa");
+    //echo '<br>' . $nowDate;
+    $start = 21600;
+    $end   = 79200;
+    $time = date("H:i:s", strtotime($nowDate));
+    isWithInTime($start, $end, $time);
+    echo "dfsdf";
+} else {
+    $row = mysqli_fetch_assoc($result2);
+
+    if ($row['time_slot'] == 'All') {
+        $academy_open = 0;
+    } elseif ($row['time_slot'] == 'Morning') {
+
+        $nowDate = date("Y-m-d h:i:sa");
+        $time = date("H:i:s", strtotime($nowDate));
+
+        $start = '06:00:00';
+        $end   = '12:00:00';
+
+        isWithInTime($start, $end, $time);
+    } elseif ($row['time_slot'] == 'Evening') {
+
+        $nowDate = date("Y-m-d h:i:sa");
+        $time = date("H:i:s", strtotime($nowDate));
+
+        $start = '14:00:00';
+        $end   = '22:00:00';
+
+        isWithInTime($start, $end, $time);
+    }
+
+    //echo "dfsdf333";
+}
+
+echo $academy_open;
+
 
 
 
@@ -144,11 +226,13 @@ while ($row = mysqli_fetch_assoc($result)) {
         },
 
 
-        select: function(date, context) {
-            console.log('events for this date', context.storage.schedules);
-        }
+        // select: function(date, context) {
+        //     alert('events for this date', toString(context.storage.schedules));
+        //     console.log('events for this date', toString(context.storage.schedules));
+        // }
     });
 
+    // document.getElementsByClassName("pignose-calendar-top-year").textContent += " This is the text from javascript.";
 
 
     //console.log(dotsRemoved);

@@ -344,7 +344,7 @@
                             <div class="rightdown"><img src="./media/macronutrient.png" alt=""></div>
                         </ul>
                     </div>
-                    <div class="rightbottom"><div class="intxt"><p><span class="tg">EXERCISE</span> is <span class="tg">KIGN</span>.<br><span class="tg">NUTRITION</span> is <span class="tg" >QUEEN</span>.<br>Put them together and you've got a <span class="tg">KINGDOM...!</span></p></div></div>
+                    <div class="rightbottom"><div class="intxt"><p><span class="tg">EXERCISE</span> is <span class="tg">KING</span>.<br><span class="tg">NUTRITION</span> is <span class="tg" >QUEEN</span>.<br>Put them together and you've got a <span class="tg">KINGDOM...!</span></p></div></div>
                 </div>
             </div>
             <div class="vboderdivider"></div>
