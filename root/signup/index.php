@@ -532,19 +532,20 @@
                                 // }
                                 //}
                             }
+                        }
 
-                            // form.addEventListener("submit", function(e) {
+                        // form.addEventListener("submit", function(e) {
 
-                            //     checkInputs();
-                            //     if (isValid == false) {
-                            //         e.preventDefault();
-                            //     } else if (isValid == true) {
-                            //         e.preventDefault();
-                            //         payhere.startPayment(payment);
+                        //     checkInputs();
+                        //     if (isValid == false) {
+                        //         e.preventDefault();
+                        //     } else if (isValid == true) {
+                        //         e.preventDefault();
+                        //         payhere.startPayment(payment);
 
-                            //     }
+                        //     }
 
-                            // });
+                        // });
                     </script>
 
 
