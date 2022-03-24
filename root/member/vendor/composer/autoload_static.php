@@ -4,27 +4,19 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7d5ae56aebfe01630bebf71cfe0a6397
+class ComposerStaticInit0bdd04183895ac6f13c7ceae51603b4c
 {
     public static $prefixLengthsPsr4 = array (
-        'M' => 
+        'P' => 
         array (
-            'MessageBird\\' => 12,
-        ),
-        'F' => 
-        array (
-            'Firebase\\JWT\\' => 13,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'MessageBird\\' => 
+        'PHPMailer\\PHPMailer\\' => 
         array (
-            0 => __DIR__ . '/..' . '/messagebird/php-rest-api/src/MessageBird',
-        ),
-        'Firebase\\JWT\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
     );
 
@@ -35,9 +27,9 @@ class ComposerStaticInit7d5ae56aebfe01630bebf71cfe0a6397
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7d5ae56aebfe01630bebf71cfe0a6397::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7d5ae56aebfe01630bebf71cfe0a6397::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit7d5ae56aebfe01630bebf71cfe0a6397::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0bdd04183895ac6f13c7ceae51603b4c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0bdd04183895ac6f13c7ceae51603b4c::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit0bdd04183895ac6f13c7ceae51603b4c::$classMap;
 
         }, null, ClassLoader::class);
     }

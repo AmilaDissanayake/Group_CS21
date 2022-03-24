@@ -33,7 +33,7 @@ while($row2=mysqli_fetch_assoc($result2)){
     $to = $userEmail;
     $subject = "Booking cancelled";
 
-    $message = '<p>Please note that your booking for the POWER HOUSE (Date : '.$date.') has been cancelled by your trainer</p>';
+    $message = '<p>Please note that your booking for the POWER HOUSE (Date: '.$date.') has been cancelled by your trainer</p>';
     $message .= '<p>We are sorry about the inconvenience.';
     $message .= '<p>Thank you,<br>STAY WITH POWERHOUSE</p>';
 
@@ -68,7 +68,7 @@ while($row2=mysqli_fetch_assoc($result2)){
     $api_instance = new NotifyLk\Api\SmsApi();
     $user_id = "15842"; // string | API User ID - Can be found in your settings page.
     $api_key = "lzjrr3jD4OsH4lbqVqPj"; // string | API Key - Can be found in your settings page.
-    $message = "Please note that your booking for the POWER HOUSE (Date : '.$date.') has been cancelled by your trainer  "; // string | Text of the message. 320 chars max.
+    $message = "Please note that your booking for the POWER HOUSE (Date: $date) has been cancelled by your trainer  "; // string | Text of the message. 320 chars max.
     $to = "94$phone_no"; // string | Number to send the SMS. Better to use 9471XXXXXXX format.
     $sender_id = "NotifyDEMO"; // string | This is the from name recipient will see as the sender of the SMS. Use \\\"NotifyDemo\\\" if you have not ordered your own sender ID yet.
     $contact_fname = "Bim"; // string | Contact First Name - This will be used while saving the phone number in your Notify contacts (optional).
