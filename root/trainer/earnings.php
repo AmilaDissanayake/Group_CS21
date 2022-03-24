@@ -1,4 +1,6 @@
-<?php include "includes/check_login.php" ?>
+<?php include "includes/check_login.php";
+require "includes/db.php";
+date_default_timezone_set("Asia/Colombo"); ?>
 
 <!DOCTYPE html>
 
@@ -18,8 +20,8 @@
 <body>
     <?php include "includes/sidebar.php" ?>
     <section class="home-section">
+    <?php include "includes/header.php" ?>
 
-        <?php include "includes/header.php" ?>
     <div class="home-content">
         <div class="trainer-stats">
             <div class="one">

@@ -17,8 +17,8 @@ if (isset($_POST['update'])) {
         echo "<script>window.open('profile.php?u_id=$user_id' , '_self')</script>";
         exit();
     } else {
-        move_uploaded_file($image_tmp, "media/admins/$u_image");
-        $update = "UPDATE admin SET image='$u_image' where username='admin'";
+        move_uploaded_file($image_tmp, "media/trainers/$u_image");
+        $update = "UPDATE trainer SET image='$u_image' where username='$username'";
 
         $run = mysqli_query($conn, $update);
 
@@ -43,7 +43,7 @@ if (isset($_POST['update-cover'])) {
         exit();
     } else {
         move_uploaded_file($image_tmp, "media/$u_image");
-        $update = "UPDATE admin SET cover_image='$u_image' where username='admin'";
+        $update = "UPDATE trainer SET cover_image='$u_image' where username='$username'";
 
         $run = mysqli_query($conn, $update);
 
