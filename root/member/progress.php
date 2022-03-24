@@ -28,10 +28,69 @@
 <body>
     <?php include "includes/sidebar.php" ?>
     <section class="home-section">
+    <?php 
+
+            date_default_timezone_set('Asia/Colombo');
+
+            $query1 = "SELECT * FROM member WHERE username = '".$username."'";
+            $result1 = mysqli_query($conn, $query1);
+            $row1 = mysqli_fetch_assoc($result1);
+
+            $member_id = $row1['member_id'];
+            $trainer_assignment = $row1['assign_trainer'];
+
+            $query2 = "SELECT * FROM membership  WHERE member_id = '".$member_id."'";
+            $result2 = mysqli_query($conn, $query2);
+            $row2 = mysqli_fetch_assoc($result2);
+
+            $membership_type = $row2['membership_type']; 
+            $joined_date = $row2['joined_date'];
+
+            if($membership_type==12){ 
+                $exp_date = date('Y-m-d',strtotime("+12 month", strtotime("$joined_date")));}
+            else if($membership_type==6){ 
+                $exp_date = date('Y-m-d',strtotime("+6 month", strtotime("$joined_date")));}
+            else if($membership_type==3){ 
+                $exp_date = date('Y-m-d',strtotime("+3 month", strtotime("$joined_date")));}
+            else if($membership_type==1){ 
+                $exp_date = date('Y-m-d',strtotime("+1 month", strtotime("$joined_date")));}
+
+            $point_date = date('Y-m-d',strtotime("$joined_date"));
+            $joinpoint_date = new DateTime("$point_date");
+
+            $date = date('Y-m-d');
+            $today = new DateTime($date);
+
+            $mem_interval = $today->diff($joinpoint_date);
+
+            switch ($mem_interval->m) {
+                case 0:$next_mon = 1;break;
+                case 1:$next_mon = 2;break;
+                case 2:$next_mon = 3;break;
+                case 3:$next_mon = 4;break;
+                case 4:$next_mon = 5;break;
+                case 5:$next_mon = 6;break;
+                case 6:$next_mon = 7;break;
+                case 7:$next_mon = 8;break;
+                case 8:$next_mon = 9;break;
+                case 9:$next_mon = 10;break;
+                case 10:$next_mon = 11;break;
+                case 11:$next_mon = 12;break;  
+            }
+            
+            $par1 = "+".$mem_interval->m." months";
+            $par2 = "+".$next_mon." months";
+            $current_month_start = date('Y-m-d',strtotime($par1, strtotime("$joined_date")));
+            $current_month_end = date('Y-m-d',strtotime($par2, strtotime("$joined_date")));
+
+                // echo $current_month_start, $current_month_end;
+
+                //$membership_type = 6;
+        ?>
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1></h1></div>
+        <div class="welcomenote"><h1><span id="mem_type"><?php echo $membership_type;?></span> MONTH MEMBERSHIP (<?php echo"$joined_date <-> $exp_date";?>)</h1>CURRENT ACTIVE MONTH -> <?php echo $mem_interval->m;?><br>PERIOD -> <?php  echo "[$current_month_start - $current_month_end]";?></div>
 
         <div class="HdividerL">            
             <script>
@@ -64,55 +123,7 @@
                 });
             </script>
         </div>
-        <?php 
 
-            date_default_timezone_set('Asia/Colombo');
-
-            $query1 = "SELECT * FROM member WHERE username = '".$username."'";
-            $result1 = mysqli_query($conn, $query1);
-            $row1 = mysqli_fetch_assoc($result1);
-
-            $member_id = $row1['member_id'];
-            $trainer_assignment = $row1['assign_trainer'];
-
-            $query2 = "SELECT * FROM membership  WHERE member_id = '".$member_id."'";
-            $result2 = mysqli_query($conn, $query2);
-            $row2 = mysqli_fetch_assoc($result2);
-
-            $membership_type = $row2['membership_type']; 
-            $joined_date = $row2['joined_date'];
-
-            $point_date = date('Y-m-d',strtotime("$joined_date"));
-            $joinpoint_date = new DateTime("$point_date");
-            
-            $date = date('Y-m-d');
-            $today = new DateTime($date);
-
-            $mem_interval = $today->diff($joinpoint_date);
-        
-            switch ($mem_interval->m) {
-                case 0:$next_mon = 1;break;
-                case 1:$next_mon = 2;break;
-                case 2:$next_mon = 3;break;
-                case 3:$next_mon = 4;break;
-                case 4:$next_mon = 5;break;
-                case 5:$next_mon = 6;break;
-                case 6:$next_mon = 7;break;
-                case 7:$next_mon = 8;break;
-                case 8:$next_mon = 9;break;
-                case 9:$next_mon = 10;break;
-                case 10:$next_mon = 11;break;
-                case 11:$next_mon = 12;break;  
-              }
-              
-            $par1 = "+".$mem_interval->m." months";
-            $par2 = "+".$next_mon." months";
-            $current_month_start = date('Y-m-d',strtotime($par1, strtotime("$joined_date")));
-            $current_month_end = date('Y-m-d',strtotime($par2, strtotime("$joined_date")));
-
-                // echo $current_month_start, $current_month_end;
-                $membership_type = 3;
-            ?>
         <div id="popup5" class="overlay">
             <div class="popup">
                 <h2>Sorry! <?php echo $username ?> </h2>
@@ -144,10 +155,10 @@
                             </div>
                             <div class="msg">So, Do you really want to proceed?</div><div class="later"><button class="about_btn" id="bmi_in">YES</button><button class="about_btn"onclick="location.href='#'" >NO</button></div>
                         </div>
-                        <form action="./includes/updatebmi.php" id="bmi_form" method="POST">
-                            <input type="hidden"  name="bmi_value" value="">
+                        <form action="./includes/updatebmi.php" id="bmi_form" method="GET">
+                            <input type="hidden"  id="bmi_pass" name="bmi_value" value="">
                             <input type="hidden"  name="cur_month" value="<?php echo $mem_interval->m ?>">
-                            <input type="hidden"  id="day_hold" name="cur_day" value="<?echo $mem_interval->d?>">
+                            <input type="hidden"  id="day_hold" name="cur_day" value="<?php echo $mem_interval->d?>">
                         </form>
                 </div>
             </div>
@@ -203,70 +214,125 @@
                             </thead>
 
                             <tbody id="output">
-                                <form action="update_bmi.php"  id="bmi_ful_form " method="POST">
+                                <form action="./includes/updatebmi.php"  id="bmi_ful_form " method="GET">
 
                                 <?php 
+
+                                        $package_table = $membership_type.'m_package_progress';
                         
-                                    if($membership_type == 12){
-                                        $months = [true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false];
-                                        $out = [35.56, 32.50, 32.60, 31.02, NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL];
+                                        $package_query = "SELECT * FROM $package_table WHERE member_id= '".$member_id."'";
+                                        $package_result = mysqli_query($conn, $package_query);
+                                        $pk_row = mysqli_fetch_assoc($package_result);
+
+                                        $bmi_value_list = $pk_row['bmi_values'];
+                                        $value_holder = json_decode($bmi_value_list);
+
+                                        if($mem_interval->d >= 15){
+                                            switch ($mem_interval->m) {
+                                                case 0:$limit = 0;break;
+                                                case 1:$limit = 0;break;
+                                                case 2:$limit = 1;break;
+                                                case 3:$limit = 2;break;
+                                                case 4:$limit = 3;break;
+                                                case 5:$limit = 4;break;
+                                                case 6:$limit = 5;break;
+                                                case 7:$limit = 6;break;
+                                                case 8:$limit = 7;break;
+                                                case 9:$limit = 8;break;
+                                                case 10:$limit = 9;break;
+                                                case 11:$limit = 10;break; 
+                                                case 12:$limit = 11;break; 
+                                              }
+                                        }else{
+                                            $limit = $mem_interval->m;
+                                        }
+
+                                        if($membership_type == 12){
+                                            $months = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
+                                        }else if($membership_type == 6){
+                                            $months = [false,false,false,false,false,false];
+                                        }else if($membership_type == 3){
+                                            $months = [false,false,false,false,false,false];
+                                        }else if($membership_type == 1){
+                                            $months = [false,false,false,false];
+                                        }
                                         
+                                        if($membership_type == 12 || $membership_type == 6){
+                                            for($i=0;$i<$limit;$i++){
+                                                $months[$i]=true;
+                                            }
+                                        }else if($membership_type == 3){
+                                            for($i=0;$i<($limit*2);$i++){
+                                                $months[$i]=true;
+                                            }
+                                        }else if($membership_type == 1){
+                                            if($limit == 1){
+                                                $months = [true,true,true,true];
+                                            }else if ($limit == 0){
+                                                $months = [false,false,false,false];
+                                            }   
+                                        }   
+
+                                    if($membership_type == 12){
+                                        $out = $value_holder;
                                         
                                         echo "<tr>";
-                                        for($i=1; $i<=12 ; $i++){ 
-                                           
+                                        for($i=1; $i<=12 ; $i++){
                                             echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='D1_".$i."1' value='";echo $out[$i-1];echo"' required";echo"></input></span>";
-                                                }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='D1_".$i."1' value='NULL'> </input>";}             
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
+                                                }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'></input>";}             
                                                 echo "</td>";     
                                         }
                                         echo "</tr>";
                                     }else if($membership_type ==6){
-                                        $months = [true,true,true,true,false,false];
-                                        $out = [35.56, 32.50, 32.60, 31.02, NULL,NULL];
-                                    
+                                        $out =$value_holder;
                                     
                                         echo "<tr>";
                                         for($i=1; $i<=6 ; $i++){ 
                                         
                                             echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='D1_".$i."1' value='";echo $out[$i-1];echo"' required";echo"></input></span>";
-                                                }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='D1_".$i."1' value='NULL'> </input>";}             
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
+                                                }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'> </input>";}             
                                                 echo "</td>";     
                                         }
                                         echo "</tr>";
                                     }else if($membership_type == 3){
-                                        $months = [true,true,true,true,false,false];
-                                        $out = [35.56, 32.50, 32.60, 31.02, NULL,NULL];
-                                    
+                                        $out = $value_holder;
                                     
                                         echo "<tr>";
                                         for($i=1; $i<=6 ; $i++){ 
                                         
                                             echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='D1_".$i."1' value='";echo $out[$i-1];echo"' required";echo"></input></span>";
-                                                }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='D1_".$i."1' value='NULL'> </input>";}             
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
+                                                }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'> </input>";}             
                                                 echo "</td>";     
                                         }
                                         echo "</tr>";
 
                                     }elseif($membership_type == 1){
-                                        $months = [true,true,true,true];
-                                        $out = [35.56, 32.50, 32.60, 31.02];
-                                    
+                                        $out =$value_holder;
                                     
                                         echo "<tr>";
                                         for($i=1; $i<=4 ; $i++){ 
                                         
                                             echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='D1_".$i."1' value='";echo $out[$i-1];echo"' required";echo"></input></span>";
-                                                }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='D1_".$i."1' value='NULL'> </input>";}             
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
+                                                }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'> </input>";}             
                                                 echo "</td>";     
                                         }
                                         echo "</tr>";
                                     }
-                                    
-                                
+                                    if($months[0]== false){ 
+                                        $label_val = "N/A";
+                                    }else{
+                                        if($membership_type == 12 || $membership_type == 6){
+                                            $label_val = $out[$limit - 1];
+                                        }else if($membership_type == 3){
+                                            $label_val = $out[($limit*2) - 1];
+                                        }else if($membership_type == 1){ 
+                                            $label_val = $out[3];
+                                        }
+                                    }
                                 ?>
                                 <tr>
                             </tbody>
@@ -295,7 +361,7 @@
                     <div class="bmip" id="weekprgs">
                         <canvas id="canvas"></canvas>
                     </div>
-                    <p class="category"><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id=" bmi_c" class="ob"> OBESITY</span> BMI value - 22<span class="l_tag">(Present)</span></p>
+                    <p class="category"><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id=" bmi_c" <?php if($label_val >= 30 ){echo "class='ob'";}else if($label_val < 30 && $label_val>=25 ){echo "class='ov'";}else if($label_val < 25 && $label_val >=18.5 ){echo "class='hl'";}else if($label_val < 18.5 ){echo "class='un'";}?> ><?php if($label_val >= 30 ){echo " OBESITY";}else if($label_val < 30 && $label_val>=25 ){echo "OVER WEIGHT";}else if($label_val < 25 && $label_val >=18.5 ){echo "HEALTHY";}else if($label_val < 18.5 ){echo "UNDER WEIGHT";}?></span> BMI value - <?php echo $label_val?><span class="l_tag">(Present)</span></p>
                 </div>
                 <div class="divider3" ></div>
                 <div class="indc1" >
@@ -703,6 +769,8 @@
                 });
             }
         }
+
+
         var form = document.getElementById("bmi_form");
 
         document.getElementById("bmi_in").addEventListener("click", function () {
@@ -720,6 +788,11 @@
 <script>
              AOS.init();
             // Chart.defaults.global.defaultFontFamily = "Rubic";
+
+           
+
+
+
              Chart.defaults.fontSize = 16;
              var chartColors = {
                 red: 'rgb(255, 99, 132)',
@@ -736,7 +809,7 @@
             }
 
 
-            var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+          // alert(periods);
             var config = {
                 type: 'line',
                 data: {
@@ -745,7 +818,7 @@
                 label: "BMI value",
                 backgroundColor: "#86ff71",
                 borderColor: "#86ff71",
-                data: [40, 38, 33, 30, 29, 25, 22, null, null, null, null],
+                data: [null, null, null, null, null, null, null, null, null, null, null, null],
                 fill: false,
                 }, ]
             },
@@ -793,6 +866,47 @@
 
 
             var ctx = document.getElementById("canvas").getContext("2d");
+       
+
+           var membership = $("mem_type").text;
+        //    console.log(membership);
+            // membership = 1;
+            // console.log(membership);
+            if(membership == 12){
+                config.data.labels= ["Month 01", "Month 02", "Month 03", "Month 04", "Month 05", "Month 06", "Month 07","Month 08","Month 09","Month 10","Month 11","Month 12"];
+            }else if(membership == 6){
+                config.data.labels= ["Month 01", "Month 02", "Month 03", "Month 04", "Month 05", "Month 06"];
+            }else if(membership == 3){
+                config.data.labels= ["Month01 1st 2-Weeks", "Month01 2nd 2-Weeks", "Month02 1st 2-Weeks", "Month02 2nd 2-Weeks", "Month03 1st 2-Weeks", "Month03 2nd 2-Weeks"];
+            }else if(membership == 1){
+                config.data.labels= ["Week 01", "Week 02", "Week 03", "Week 04"];
+            }
+
+
+            // config.data.datasets.data = bmi_val;
+
+            var val_set;
+
+        $(document).ready(function (){
+                    $.ajax({                                      
+                    url: './includes/get_bmivalues.php',              
+                    type: "post",          
+                    dataType: 'json',                
+                    success: function(respo) {
+                        console.log("success");
+                        val_set = respo;
+                        console.log(respo);
+                    },
+                    error: function(){
+                        console.log("error");
+                    }
+                });
+            });
+
+            console.log(val_set);
+            console.log(JSON.parse(val_set));
+            
+            // config.data.datasets.data = JSON.parse(val_set);
             window.myLine = new Chart(ctx, config);
             </script>     
     </section>
@@ -809,6 +923,11 @@
         window.myLine = new Chart(dtx, config2);
     </script>
 
+    <script>    
+        $( document ).ready(function() {
+            window.location.href = "#";
+        });
+    </script>
 </body>
 
 </html>
