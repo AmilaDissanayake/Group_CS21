@@ -219,7 +219,7 @@ $username = $_SESSION['username'];
 
 
                         <div class="form__div">
-                            <input type="text" class="form__input" id="address" placeholder=" " name="address_cc" value=<?php echo $address ?>>
+                            <input type="text" class="form__input" id="address" placeholder=" " name="address_cc" value="<?php echo $address ?>">
                             <label for="" class="form__label">Address</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>

@@ -286,6 +286,7 @@
                         </span>
                     </div>
 
+
                     <div class="remember">
 
                         <label class="container"> I accept the <span><a href="../includes/legal/terms.pdf">Terms of Use</a></span> & <span><a href="../includes/legal/privacy.pdf">Privacy
@@ -367,7 +368,7 @@
                             $("select#trainer").change(function() {
 
                                 selectedTrainer = $(this).find('option:selected').data('trainer');
-                                 //alert($(this).find(':selected').data('trainerRate'));
+                                //alert($(this).find(':selected').data('trainerRate'));
                                 selectedTrainer = parseInt(selectedTrainer, 10);
                                 if (temp1 > 0) {
                                     cost = cost - temp1;
@@ -458,13 +459,13 @@
 
                             var fname1 = document.getElementById('fname').value;
                             var lname1 = document.getElementById('lname').value;
-                            // const gender = document.getElementById('gender').value;
+                            const gender = document.getElementById('gender').value;
                             var mnumber1 = document.getElementById('mnumber').value;
-                            // const dob = document.getElementById('dob');
+                            const dob = document.getElementById('dateofbirth');
                             var address1 = document.getElementById('address').value;
-                            // const inj = document.getElementById('inj');
+                            const inj = document.getElementById('inj');
                             var email1 = document.getElementById('email').value;
-                            var membership1 = document.getElementById('membership').value;
+                            var membership1 = document.getElementById('membership1').value;
                             var trainer1 = document.getElementById('trainer').value;
 
                             var finalcost = selectedMembership + selectedTrainer;
@@ -520,7 +521,7 @@
                             var result = checkInputs();
 
                             if (result == true && unameval == true) {
-                                // e.preventDefault();
+                                //e.preventDefault();
                                 calctotal();
                                 payhere.startPayment(payment);
                                 // document.getElementById("signup_form").submit();
@@ -529,6 +530,7 @@
 
 
                                 // }
+                                //}
                             }
                         }
 

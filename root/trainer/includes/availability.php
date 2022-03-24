@@ -14,13 +14,19 @@ if(isset($_POST['date-submit'])){
     $slot = $_POST['time'];
     $currentTime = time();
 
-    if ($date !== date("Y-m-d")){
+    $sql1 = "SELECT * FROM close_times WHERE date = '".$date."'";
+    $result1 = mysqli_query($conn,$sql1);
+    $row1=mysqli_fetch_assoc($result1);
+
+    $time_slot=$row1['time_slot'];
+
+    if (($date !== date("Y-m-d")) && ($time_slot!=$slot) && ($time_slot != "All day")){
     $sql_query="INSERT INTO availability(trainer_id, date, time_slot) VALUES('$trainer_id','$date','$slot')";
     mysqli_query($conn,$sql_query);
     header("location: ../calendar.php");  
     $_SESSION['notification'] = "Successfully set availability";}
 
-    elseif (((int) date('H', $currentTime)) <= 06 && ($slot == "All day" || $slot == "Morning" || $slot == "Evening")){
+    elseif (((int) date('H', $currentTime)) <= 06 && ($slot == "All day" || $slot == "Morning" || $slot == "Evening") && ($time_slot!=$slot) && ($time_slot != "All day")){
     $sql_query="INSERT INTO availability(trainer_id, date, time_slot) VALUES('$trainer_id','$date','$slot')";
     mysqli_query($conn,$sql_query);
     header("location: ../calendar.php");  
