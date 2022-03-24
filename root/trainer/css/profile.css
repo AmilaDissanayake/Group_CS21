@@ -575,14 +575,14 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 473px;
+  left: 505px;
   right: 0;
   height: 190px;
   width: 190px;
   opacity: 1;
   transition: .3s ease;
   background-color: transparent;
-  margin-top: -75px;
+  margin-top: -72px;
   border-radius: 200px;
 }
 

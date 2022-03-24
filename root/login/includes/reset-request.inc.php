@@ -33,7 +33,7 @@ if (isset($_POST["reset-request-submit"])) {
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        echo "There was an error";
+        //echo "There was an error";
     } else {
         mysqli_stmt_bind_param($stmt, "s", $userEmail);
         mysqli_stmt_execute($stmt);
@@ -44,7 +44,7 @@ if (isset($_POST["reset-request-submit"])) {
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        echo "There was an error";
+        //echo "There was an error";
     } else {
         $hashedToken = password_hash($token, PASSWORD_DEFAULT);
         mysqli_stmt_bind_param($stmt, "ssss", $userEmail, $selector, $hashedToken, $expires);
@@ -96,10 +96,11 @@ request, you can ignore this e-mail.</p>
     $mail->Body    = $message;
     $mail->send();
     $_SESSION["notification"] = "Please check your email inbox";
-    ?>
-    <!-- header("Location: ../forget-pw.php?reset=success"); -->
-    <script>window.location.assign('../forget-pw.php?reset=success')</script>
-    <?php
+    header("Location: ../forget-pw.php?reset=success");
+?>
+
+    <!-- <script>window.location.assign('../forget-pw.php?reset=success')</script> -->
+<?php
 } else {
     $_SESSION["notification"] = "An error occured!";
     header("Location: ../forget-pw.php");

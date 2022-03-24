@@ -19,7 +19,7 @@ $phone_no_bb = filter_var($_POST['phone_no_cc'], FILTER_SANITIZE_NUMBER_INT);
 $address_bb = filter_var($_POST['address_cc'], FILTER_SANITIZE_STRING);
 //$injuries_bb = filter_var($_POST['injuries_cc'], FILTER_SANITIZE_STRING);
 
-$admin_insert = "UPDATE admin SET f_name = '$f_name_bb', l_name='$l_name_bb', gender='$gender_bb', phone_no='$phone_no_bb',  address='$address_bb' WHERE username = '$username';";
+$admin_insert = "UPDATE trainer SET f_name = '$f_name_bb', l_name='$l_name_bb', gender='$gender_bb', phone_no='$phone_no_bb',  address='$address_bb' WHERE username = '$username';";
 
 $result1 = mysqli_query($conn, $admin_insert);
 

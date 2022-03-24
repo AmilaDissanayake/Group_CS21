@@ -19,24 +19,24 @@ $row1 = mysqli_fetch_assoc($result1);
 $member_id = $row1['member_id'];
 $trainer_id = $row1['assign_trainer'];
 
-// $assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_assignment ORDER BY assignment_id DESC LIMIT 1;";
-// $assignment_result = mysqli_query($conn, $assignment_query);
-// $assignment_row = mysqli_fetch_assoc($assignment_result);
+$assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_assignment ORDER BY assignment_id DESC LIMIT 1;";
+$assignment_result = mysqli_query($conn, $assignment_query);
+$assignment_row = mysqli_fetch_assoc($assignment_result);
 
-// $t_assign_d = $assignment_row['start_date'];
-// $t_exp_d = $assignment_row['end_date'];
+$t_assign_d = $assignment_row['start_date'];
+$t_exp_d = $assignment_row['end_date'];
 
-// $check_date = new DateTime($date);
-// $t_assign_date = new DateTime($t_assign_d);
-// $t_exp_date = new DateTime($t_exp_d); 
+$check_date = new DateTime($date);
+$t_assign_date = new DateTime($t_assign_d);
+$t_exp_date = new DateTime($t_exp_d); 
 
 
-// $tr_interval = $check_date->diff($t_exp_date);
+$tr_interval = $check_date->diff($t_exp_date);
 
-// if($tr_interval->y > 0 || $tr_interval->m > 0 || $tr_interval->d >0){
-//     date_default_timezone_set('Asia/Colombo');
-//     $today = date('Y-m-d');
-//     $time = date('H:i:s');
+if($tr_interval->y > 0 || $tr_interval->m > 0 || $tr_interval->d >0){
+    date_default_timezone_set('Asia/Colombo');
+    $today = date('Y-m-d');
+    $time = date('H:i:s');
 
 
     if($slot == 1){ 
@@ -81,15 +81,15 @@ $trainer_id = $row1['assign_trainer'];
             header('Location: booking.php');
         }
     }
-// }else{
-//     if ($result2 && $assignment_result) {
-//         $_SESSION['notification'] = "Sorry! Booking is out of assignment period!";
-//         header('Location: booking.php');          
-//     } else {
-//         $_SESSION['notification'] = "Unable to do the booking !";
-//         echo die(mysqli_error($conn));
-//     }
-// }
+}else{
+    if ($result2 && $assignment_result) {
+        $_SESSION['notification'] = "Sorry! Booking is out of assignment period!";
+        header('Location: booking.php');          
+    } else {
+        $_SESSION['notification'] = "Unable to do the booking !";
+        echo die(mysqli_error($conn));
+    }
+}
 
 
 
