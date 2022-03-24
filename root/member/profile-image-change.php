@@ -1,11 +1,9 @@
-<?php 
-    
-    session_start();
 
-    include "includes/db.php" ;
-    $username = $_SESSION['username'] 
-
+<?php
+include "includes/check_login.php";
+include "includes/db.php" 
 ?>
+<?php $username = $_SESSION['username'] ?>
 
 <?php
 if (isset($_POST['update'])) {
@@ -19,7 +17,7 @@ if (isset($_POST['update'])) {
         echo "<script>window.open('profile.php?u_id=$user_id' , '_self')</script>";
         exit();
     } else {
-        move_uploaded_file($image_tmp, "media/$u_image");
+        move_uploaded_file($image_tmp, "media/members/$u_image");
         $update = "UPDATE member SET image='$u_image' where username='$username'";
 
         $run = mysqli_query($conn, $update);

@@ -789,8 +789,28 @@
              AOS.init();
             // Chart.defaults.global.defaultFontFamily = "Rubic";
 
-           
+            var val_set;
 
+            $(document).ready(function (){
+                    $.ajax({                                      
+                    url: './includes/get_bmivalues.php',              
+                    type: "post",          
+                    dataType: 'json',                
+                    success: function(respo) {
+                        console.log("success");
+                        val_set = JSON.parse(respo);
+                        val_set[55.5, 65.5, 30.5]
+                        chartload();
+                        console.log(respo);
+                    },
+                    error: function(){
+                        console.log("error");
+                    }
+                });
+            });
+
+          //  console.log(typeof(val_set));
+            function chartload(){
 
 
              Chart.defaults.fontSize = 16;
@@ -808,7 +828,7 @@
                 return (Math.random() > 0.5 ? 2.0 : 1.0) * Math.round(Math.random() * 100);
             }
 
-
+            // var val_set = ["25", "30.5", "60.5", null];
           // alert(periods);
             var config = {
                 type: 'line',
@@ -818,7 +838,7 @@
                 label: "BMI value",
                 backgroundColor: "#86ff71",
                 borderColor: "#86ff71",
-                data: [null, null, null, null, null, null, null, null, null, null, null, null],
+                data: val_set,
                 fill: false,
                 }, ]
             },
@@ -883,31 +903,26 @@
             }
 
 
-            // config.data.datasets.data = bmi_val;
+            // config.data.datasets.data = bmi_val
 
-            var val_set;
+ 
 
-        $(document).ready(function (){
-                    $.ajax({                                      
-                    url: './includes/get_bmivalues.php',              
-                    type: "post",          
-                    dataType: 'json',                
-                    success: function(respo) {
-                        console.log("success");
-                        val_set = respo;
-                        console.log(respo);
-                    },
-                    error: function(){
-                        console.log("error");
-                    }
-                });
-            });
+            
+            // var newArray = val_set.map(s => eval('null,'+s));
+            // console.log(newArray);
 
-            console.log(val_set);
-            console.log(JSON.parse(val_set));
+            // val_set=[50, null, null, null, null, null, null, null, null, null, null, null]
+            // var json = val_set;
+            // var obj = JSON.parse(json)
+            // // console.log(JSON.parse(val_set));
             
             // config.data.datasets.data = JSON.parse(val_set);
+
+            
+            // config.update();
             window.myLine = new Chart(ctx, config);
+
+        }
             </script>     
     </section>
 
