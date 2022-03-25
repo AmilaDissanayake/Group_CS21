@@ -58,7 +58,7 @@
         <span class="fade-effect1"></span>
 
         <li>
-            <a href="myprofile.php">
+            <a href="profile.php">
                 <i class='fas fa-user-alt'></i>
                 <span class="links_name">My Profile</span>
             </a>

@@ -49,46 +49,39 @@
   font-weight: 100;
 }
 
-  form {
-    width: 100%;
-    min-height: 100vh;
-    padding-top: 50px;
-    /* padding-left: 50px;
-    padding-right: 50px; */
-
-    padding-bottom: 50px;
-    border: 1px solid rgb(244,244,244);
-    border-radius: 0.5rem;
-    margin-top: 0px;
-  }
+form {
+  width: 100%;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 0px solid rgba(95, 95, 95, 0.122);
+  margin-top: 10px;
+  border-radius: 0.5rem;
+}
 
 .separator .hr{
   color: rgb(24,24,24);
 }
-
-.separator1 .hr{
-  color: rgb(24,24,24);
-}
-
 .name {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    align-self: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  align-self: center;
 }
   
 .name_input {
-    border: 1px solid rgb(24,24,24);
-    color: rgb(24,24,24);
-    outline: none;
-    background: none;
-    z-index: 1;
-    font-family: "Rubik";
-    width: 240px;
-    height: 45px;
-    padding-left: 10px;
-    margin-right: 20px;
-    font-size: 15px;
+  border: 1px solid rgb(24,24,24);
+  color: rgb(24,24,24);
+  outline: none;
+  background: none;
+  z-index: 1;
+  font-family: "Rubik";
+  width: 100%;
+  height: 45px;
+  padding-left: 10px;
+  margin-right: 20px;
+  font-size: 15px;
+  position: relative;
 }
   
   .name_input2 {
@@ -98,7 +91,7 @@
     background: none;
     z-index: 1;
     font-family: "Rubik";
-    width: 240px;
+    width: 100%;
     height: 45px;
     padding-left: 10px;
     /* margin-right: 20px; */
@@ -129,7 +122,7 @@
     height: 45px;
     font-size: 15px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 0px;
     border: 1px solid rgb(24,24,24);
     color: rgb(24,24,24);
     outline: none;
@@ -137,38 +130,6 @@
     z-index: 1;
     font-family: "Rubik";
   }
-#address1 {
-  width: 500px;
-}
-
-#address2 {
-  width: 500px;
-}
-
-#membership1{
-  width: 500px;
-}
-
-#main_address1, #select_div{
-  margin-left: 400px;
-}
-
-.main_class{
-  display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-#form_submit1{
-  margin-left: 550px;
-  margin-top: 40px;
-  width: 15%;
-}
-
-
-
   
   .injury {
     position: absolute;
@@ -200,9 +161,8 @@
     position: relative;
     height: 48px;
     margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    margin-right: 20px;
   }
   
   .inj__div {
@@ -227,15 +187,19 @@
     border-color: #e74c3c;
   }
   
-  .inj__div i,
-  .select__div i,
-  .form__div i {
-    visibility: hidden;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-  }
-  
+#wrong ,#right{
+  left: 215px;
+}
+
+.inj__div i,
+.select__div i,
+.form__div i {
+  visibility: hidden;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
+
   .form__div.success i.fa-check {
     color: #2ecc71;
     visibility: visible;
@@ -299,26 +263,27 @@ option {
     font-family: "Azonix";
 }
 .form__button {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   display: block;
   margin-left: auto;
   padding: 0.75rem 2rem;
   outline: none;
   border: none;
-  background-color: #39ff14;
+  background-color: #86ff71;
   font-family: "Azonix";
   color: #000;
-  font-weight: bold;
-  font-size: var(--normal-font-size);
+  
+  font-size: 12px;
   cursor: pointer;
   transition: 0.5s;
-  width: 250px;
+  width: 180px;
   align-items: center;
+  border-radius: 50px;
 }
   
 .buttondiv {
-  margin-top: 20px;
+  margin-top: 0px;
 }
   
   /*Input focus move up label*/
@@ -449,7 +414,7 @@ option {
     margin-bottom: 1.5rem;
     /* width: 100%; */
     font-size: 15px;
-    width: 500px;
+    width: 100%;
     margin-right: 20px;
   }
   
@@ -489,8 +454,7 @@ option {
       position: absolute;
       pointer-events: none;
     }
-
-
+   
   #uname_response{
       font-family: 'Azonix';
       font-size: 12px;
@@ -535,11 +499,6 @@ option {
     position: relative;
     width: 100%;
   }
-  .separator1 {
-    position: relative;
-    width: 100%;
-    padding-top: 100px;
-  }
   
 
 /*------------Horizontal Ruler-------------------*/
@@ -551,7 +510,8 @@ option {
     line-height: 1.5em;
     color: rgb(24,24,24);
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
+    padding-bottom: 20px;
     /* top: .5em; */
   }
   
@@ -624,37 +584,6 @@ option {
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
     }
-
-
-    ul#results{
-      list-style: none;
-        width: 131px;
-        height:0%;
-        background-color: #F5F5F5;
-        margin-left: 400px;
-        margin-top: -28px;
-        padding-bottom: 20px;
-        display: none;
-        /* border: 1px solid rgb(0, 0, 0); */
-    }
-     
-    ul#results li a {
-      color: #000;
-        background: transparent;
-        display: block;
-        text-decoration: none;
-        border-bottom: 1px solid rgb(0, 0, 0);
-        padding-bottom: 5px;
-        text-align: center;
-        margin-left: -1px;
-        
-    }
-    ul#results li a:hover {
-      background: #aaa;
-      background-color: #39ff14;
-      border-bottom: 1px solid rgb(0, 0, 0);
-    }
-
   
    
   

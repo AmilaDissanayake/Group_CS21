@@ -61,12 +61,12 @@
         <div class="result4">
             <div class="bmi4">
                 <div class="title4">YOUR BODY FAT</div>
-                <div class="val4">0.00</div>
+                <div class="val4"><span id="bf_val">0.00</span></div>
             </div>
 
             <div class="text4">Your Body Fat is normal!</div>
             <div class="recal4">RECALCULATE</div>
-            <div class="recal4">INSERT INTO THE ANALYSIS</div>
+            <div class="recal4"><a onclick="getvalbf()">INSERT INTO ANALASIS</a></div>
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <?php
 
-require "includes/db.php";
+//require "includes/db.php";
 ?>
 <?php require "includes/check_login.php"?>
 
