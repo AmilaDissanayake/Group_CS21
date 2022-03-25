@@ -156,9 +156,10 @@
 
 .home-section .home-content{
   position: relative;
-  padding-top: 104px;
+  padding-top: 75px;
   padding-left: 100px;
   padding-right: 100px;
+  padding-bottom: 40px;
 }
 .trainer-stats{
   display: flex;
