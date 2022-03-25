@@ -48,7 +48,16 @@ $rece_update = mysqli_query($conn, $tr_payment_insert);
 $assignment_update = "UPDATE member set assign_trainer=$trainer WHERE member_id=$member_id";
 $result4 = mysqli_query($conn, $assignment_update);
 
-if ($result2 && $result3 && $result4 && $tr_result && $rece_update) {
+$tr_query2 = "SELECT * FROM trainer WHERE trainer_id = '$trainer'";
+$tr_result2 = mysqli_query($conn, $tr_query2);
+$tr_row2 = mysqli_fetch_assoc($tr_result2);
+$count2 = $tr_row2['assigned_members'];
+$count2 += 1;
+
+$tr_payment_insert2 = "UPDATE trainer SET assigned_members = '$count2' WHERE trainer_id='$trainer';";
+$rece_update2 = mysqli_query($conn, $tr_payment_insert2);
+
+if ($result2 && $result3 && $result4 && $tr_result && $rece_update && $tr_result2 && $rece_update2) {
     $_SESSION['notification'] = "Successfully made the Assignment !";
     header('Location: membership.php');
 } else {

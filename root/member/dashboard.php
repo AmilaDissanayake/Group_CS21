@@ -92,8 +92,18 @@
     
                     $flag = 1;
                 }else{
+
                     $assignment_updatequery = "UPDATE member SET assign_trainer=0 WHERE member_id =$member_id;";
                     $newassign_result = mysqli_query($conn, $assignment_updatequery);
+
+                    $tr_query2 = "SELECT * FROM trainer WHERE trainer_id = '$trainer_assignment'";
+                    $tr_result2 = mysqli_query($conn, $tr_query2);
+                    $tr_row2 = mysqli_fetch_assoc($tr_result2);
+                    $count2 = $tr_row2['assigned_members'];
+                    $count2 -= 1;
+
+                    $tr_payment_insert2 = "UPDATE trainer SET assigned_members = '$count2' WHERE trainer_id='$trainer_assignment';";
+                    $rece_update2 = mysqli_query($conn, $tr_payment_insert2);
                     
                     $flag = 0;
                 }
