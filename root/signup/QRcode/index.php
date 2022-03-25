@@ -35,17 +35,21 @@ $to = $userEmail;
     $url= "https//:powerhouse.fitness.com";
     $subject = "WELCOME TO THE POWER HOUSE";
 
-    $message = '<html><head></head><body style="background-color:black;">
+    $message = '<html><head>
+    </head><body style="background-color:black;">
     
    
 <img src="cid:logo" height="100px" style="display:block; margin-left:auto; margin-right:auto; padding-top:40px">
 
-<p style="color:#CECECF; padding-left:100px; padding-right:100px; font-size:15px; text-align:center;">Hello '.$username.', <br>Thanks for joining POWER HOUSE 
+<p style="color:#CECECF; padding-left:100px; padding-right:100px; font-size:15px; text-align:center;">Hello '.$username.', Thanks for joining POWER HOUSE 
 FITNESS ACADEMY – we’re excited to have you on board! You’ve taken the first step towards achieving your fitness goals. You’ll find our opening times, class timetable,
  and a list of what to bring on our '.$url.'. If you have any questions, then please don’t hesitate to get in touch. 
- Simply call us on <br>+9477 823 4904 or reply to this email and we’ll respond asap.<br></p>
+ Simply call us on +9477 823 4904 or reply to this email and we’ll respond asap.
+
+ Please provide this QR code to the academy staff in case they require.
+ </p>
     
- <img src="QRimages/'.$member_id.'468.png" height="80px" style="display:block; margin-left:auto; margin-right:auto; padding-top:40px">
+ <img src="cid:qr" height="100px" style="display:block; margin-left:auto; margin-right:auto; padding-top:20px; padding-bottom:30px;">
 </body></html>';
 
     require 'vendor/autoload.php';
@@ -70,7 +74,8 @@ FITNESS ACADEMY – we’re excited to have you on board! You’ve taken the fir
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = $subject;
     $mail->Body    = $message;
-    //$mail->addAttachment('QRimages/'.$member_id.'468.png');
+    $mail->addEmbeddedImage('logo.jpg', 'logo');
+    $mail->addEmbeddedImage('QRimages/'.$member_id.'468.png', 'qr');
     $mail->send();
 
 ?>
