@@ -130,6 +130,32 @@ nav .profile-details i{
   color: #141517;
   font-size: 18px;
 }
+
+
+
+.profile-details2{
+  display: flex;
+  align-items: center;
+  background: #F5F6FA;
+  border: 2px solid red;
+  border-radius: 6px;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+  margin-left: 750px;
+  cursor: pointer;
+}
+
+
+
+
+.admin_name2{
+  font-size: 15px;
+  font-weight: 500;
+  color: red;
+  margin: 0 10px;
+  white-space: nowrap;
+}
 .alert .msg{
   padding: 0 20px;
   font-size: 15px;
