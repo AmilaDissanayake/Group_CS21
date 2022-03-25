@@ -417,9 +417,9 @@
                 you are.
             </p>
             <div class="icon">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="#" class="fa fa-whatsapp"></a>
+                <a href="https://www.facebook.com/pages/Powerhouse-Gym-Mirigama/265815320243223" class="fa fa-facebook"></a>
+                <a href="" class="fa fa-instagram"></a>
+                <a href="+94785619959" class="fa fa-whatsapp"></a>
 
             </div>
         </div>

@@ -245,6 +245,13 @@
                                 while ($row = mysqli_fetch_assoc($select_query)) {
                                     $f_name = $row['f_name'];
                                     $l_name = $row['l_name'];
+                                    $assignment_count = $row['assigned_members'];
+                                    $check_assignment = "";
+                                    $check_message = "";
+                                    if ($assignment_count >= 10) {
+                                        $check_assignment = "disabled";
+                                        $check_message = "| Member limit exeeded";
+                                    }
 
                                     $trainer_id = $row['trainer_id'];
 
@@ -273,8 +280,8 @@
 
                                 ?>
 
-                                    <option value=<?php echo $trainer_id ?> data-trainer=<?php echo $rate ?>>
-                                        <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count ?></option>
+                                    <option value=<?php echo $trainer_id ?> data-trainer=<?php echo $rate ?> <?php echo $check_assignment; ?>>
+                                        <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count  . " " . $check_message ?> </option>
 
 
                                 <?php } ?>
@@ -480,9 +487,14 @@
 
                             // Apply setCookie
                             setCookie('amount', finalcost2);
-                            // alert(finalcost2);
-                            // alert(typeof(finalcost2));
 
+                            var description;
+
+                            if (selectedTrainer > 0) {
+                                description = "New Membership(with trainer)";
+                            } else {
+                                description = "New Membership(only)";
+                            }
                             payment = {
                                 "sandbox": true,
                                 "merchant_id": "1218759", // Replace your Merchant ID
@@ -490,7 +502,7 @@
                                 "cancel_url": undefined, // Important
                                 "notify_url": "http://sample.com/notify",
                                 "order_id": "ItemNo12345",
-                                "items": membership1 + trainer1,
+                                "items": description,
                                 "amount": finalcost2,
                                 "currency": "LKR",
                                 "first_name": fname1,
