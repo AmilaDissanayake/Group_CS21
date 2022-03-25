@@ -23,12 +23,12 @@ $find_prog = "SELECT * FROM {$package_type}m_package_progress WHERE member_id='$
 $prog_result = mysqli_query($conn, $find_prog);
 $result_row = mysqli_fetch_assoc($prog_result);
 
-$bmi_values = $result_row['bmi_values'];
+$bf_values = $result_row['bf_values'];
 
 
 header('Content-Type: application/json');
-$respo = $bmi_values;
+$respo2 = $bf_values;
 
-echo json_encode($respo) ;
+echo json_encode($respo2) ;
 
 die;
