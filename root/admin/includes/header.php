@@ -17,6 +17,7 @@
 $my_username = $_SESSION['username'];
 $my_user_type = $_SESSION['user_type'];
 $academy_open = 0;
+$open_flag = 0;
 
 $my_image_sql = "SELECT image FROM $my_user_type WHERE username = '$my_username'";
 $my_image_sql_run = mysqli_query($conn, $my_image_sql);
@@ -48,79 +49,182 @@ date_default_timezone_set("Asia/Colombo");
 
 
 
-function isWithInTime($start, $end, $time)
-{
-    echo $start . $end . $time;
-    if (($time <= $start) && ($time >= $end)) {
-        echo 'OK';
-        //return TRUE;
+// function isWithInTime($start, $end, $time)
+// {
+//     //echo $start . $end . $time;
+//     if (($time > $start) && ($time < $end)) {
+//         echo 'OK';
+//         //return TRUE;
+//         global $academy_open;
 
-        $academy_open = 1;
-    } else {
+//         $academy_open = 1;
+//         //return true;
+//     } else {
+//         global $academy_open;
 
-        // echo "not ok";
+//         //echo "not ok";
 
-        $academy_open = 0;
-    }
-}
+//         $academy_open = 0;
+//         //return false;
+//     }
+// }
 
-function isNotWithInTime($start, $end, $time)
-{
+// function isNotWithInTime($start, $end, $time)
+// {
 
-    if (($time >= $start) && ($time <= $end)) {
-        // echo 'OK';
-        //return TRUE;
+//     if (($time > $start) && ($time < $end)) {
+//         // echo 'OK';
+//         //return TRUE;
 
-        $academy_open = 0;
-    } else {
+//         global $academy_open;
+//         $academy_open = 0;
+//     } else {
 
-        $academy_open = 1;
-    }
-}
+//         echo "jk";
+//         global $academy_open;
+//         $academy_open = 1;
+//     }
+// }
 
+// $nowDate = date("Y-m-d h:i:sa");
+
+// $time = date("H:i:s", strtotime($nowDate));
+
+// $today = date("2021-10-30 01:00:00");
+
+// $time2 = date("H:i:s", strtotime($today));
+
+// if ($time > $time2) {
+//     echo "ok";
+// } else {
+//     echo "not ok";
+// }
 
 $today = date("Y-m-d");
 $today_time = strtotime($today);
-$sql2 = "SELECT * FROM close_times WHERE date = $today_time";
+//echo $today_time;
+$sql2 = "SELECT * FROM close_times";
+
+
 $result2 = mysqli_query($conn, $sql2);
-if (mysqli_num_rows($result2) == 0) {
 
-    $nowDate = date("Y-m-d h:i:sa");
-    //echo '<br>' . $nowDate;
-    $start = 21600;
-    $end   = 79200;
-    $time = date("H:i:s", strtotime($nowDate));
-    isWithInTime($start, $end, $time);
-    echo "dfsdf";
-} else {
-    $row = mysqli_fetch_assoc($result2);
+$nowDate = date("Y-m-d h:i:sa");
+//echo '<br>' . $nowDate;
 
-    if ($row['time_slot'] == 'All') {
-        $academy_open = 0;
-    } elseif ($row['time_slot'] == 'Morning') {
+$start_time = date("2021-10-30 06:00:00");
+$end_time = date("2021-10-30 22:00:00");
 
-        $nowDate = date("Y-m-d h:i:sa");
-        $time = date("H:i:s", strtotime($nowDate));
+$start = date("H:i:s", strtotime($start_time));;
+$end   = date("H:i:s", strtotime($end_time));;;
+$time = date("H:i:s", strtotime($nowDate));
+if (($time > $start) && ($time < $end)) {
 
-        $start = '06:00:00';
-        $end   = '12:00:00';
+    if (mysqli_num_rows($result2) == 0) {
 
-        isWithInTime($start, $end, $time);
-    } elseif ($row['time_slot'] == 'Evening') {
+        // $nowDate = date("Y-m-d h:i:sa");
+        // //echo '<br>' . $nowDate;
 
-        $nowDate = date("Y-m-d h:i:sa");
-        $time = date("H:i:s", strtotime($nowDate));
+        // $start_time = date("2021-10-30 06:00:00");
+        // $end_time = date("2021-10-30 22:00:00");
 
-        $start = '14:00:00';
-        $end   = '22:00:00';
+        // $start = date("H:i:s", strtotime($start_time));;
+        // $end   = date("H:i:s", strtotime($end_time));;;
+        // $time = date("H:i:s", strtotime($nowDate));
+        // isWithInTime($start, $end, $time);
+        echo "dfsdf";
+        $academy_open = 1;
+    } else {
+        //echo "qq";
 
-        isWithInTime($start, $end, $time);
+        while ($row2 = mysqli_fetch_assoc($result2)) {
+
+            if ($today_time == strtotime($row2['date'])) {
+
+                $open_flag = 1;
+
+                if ($row2['time_slot'] == 'Full') {
+                    // echo "dd";
+                    $academy_open = 0;
+                    //echo $academy_open;
+                } elseif ($row2['time_slot'] == 'Morning') {
+
+                    $nowDate = date("Y-m-d h:i:sa");
+                    //echo '<br>' . $nowDate;
+
+                    //echo "df";
+
+                    $start_time = date("2021-10-30 06:00:00");
+                    $end_time = date("2021-10-30 14:00:00");
+
+                    $start = date("H:i:s", strtotime($start_time));;
+                    $end   = date("H:i:s", strtotime($end_time));;;
+                    $time = date("H:i:s", strtotime($nowDate));
+                    if (($time > $start) && ($time < $end)) {
+                        $academy_open = 0;
+                    } else {
+                        echo "sdfdg";
+                        $academy_open = 1;
+                    }
+                    //isNotWithInTime($start, $end, $time);
+                } elseif ($row2['time_slot'] == 'Evening') {
+
+                    $nowDate = date("Y-m-d h:i:sa");
+                    //echo '<br>' . $nowDate;
+
+                    $start_time = date("2021-10-30 14:00:00");
+                    $end_time = date("2021-10-30 22:00:00");
+
+                    $start = date("H:i:s", strtotime($start_time));;
+                    $end   = date("H:i:s", strtotime($end_time));;;
+                    $time = date("H:i:s", strtotime($nowDate));
+
+                    if (($time > $start) && ($time < $end)) {
+                        $academy_open = 0;
+                    } else {
+                        echo "sss";
+                        $academy_open = 1;
+                    }
+                }
+                // else {
+                // }
+            }
+            // else {
+
+            //     // $nowDate = date("Y-m-d h:i:sa");
+            //     // //echo '<br>' . $nowDate;
+
+            //     // $start_time = date("2021-10-30 06:00:00");
+            //     // $end_time = date("2021-10-30 22:00:00");
+
+            //     // $start = date("H:i:s", strtotime($start_time));;
+            //     // $end   = date("H:i:s", strtotime($end_time));;;
+            //     // $time = date("H:i:s", strtotime($nowDate));
+            //     // isWithInTime($start, $end, $time);
+            //     echo "ww";
+            //     $academy_open = 1;
+            // }
+        }
+        //$row = mysqli_fetch_assoc($result2);
+
+
+
+        //echo "dfsdf333";
+        if ($open_flag == 0) {
+            $academy_open = 1;
+        } else {
+            $open_flag = 0;
+        }
     }
-
-    //echo "dfsdf333";
+} else {
+    //echo "sdfdsf";
+    $academy_open = 0;
 }
 
-echo $academy_open;
+
+
+
+//$academy_open = 1;
+//echo $academy_open;
 
 
 
@@ -136,11 +240,11 @@ echo $academy_open;
                 <input type="text" placeholder="Search...">
                 <i class='bx bx-search'></i>
             </div> -->
-    <div class="profile-details">
+    <div class="profile-details" id="cv">
         <!--<img src="images/profile.jpg" alt="">-->
-        <span class='admin_name'> Academy is open today </span>
+        <span class='admin_name' id="open_id"> Academy is open now </span>
 
-        <i class='bx bx-chevron-down' class="btn-calendar"></i>
+        <i class='bx bx-chevron-down' class="btn-calendar" id="cvc"></i>
     </div>
 
     <div class="header-img">
@@ -149,6 +253,16 @@ echo $academy_open;
 </nav>
 
 <script>
+    var academy_open = "<?php print($academy_open); ?>";
+    if (academy_open == 0) {
+        document.getElementById("cv").classList.add('profile-details2');
+        document.getElementById("open_id").textContent = "Academy is closed now";
+        document.getElementById("open_id").classList.add('admin_name2');
+        document.getElementById("cvc").classList.add('icon2');
+
+    }
+
+
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!

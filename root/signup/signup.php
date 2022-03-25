@@ -22,7 +22,7 @@ $password_bb = password_hash($_POST['password_cc'], PASSWORD_DEFAULT);
 $membership_bb = $_POST['membership_cc'];
 $trainer_bb = $_POST['trainer_cc'];
 $amount = $_COOKIE['amount'];
- 
+
 
 
 if ($trainer_bb > 0) {
@@ -60,7 +60,7 @@ $member_insert = "INSERT INTO member (f_name, l_name, gender, phone_no, dob, add
 //echo 'query check done';
 $result1 = mysqli_query($conn, $member_insert);
 
-$member_select = "SELECT member_id FROM member WHERE username = '".$username_bb."'";
+$member_select = "SELECT member_id FROM member WHERE username = '" . $username_bb . "'";
 $result2 = mysqli_query($conn, $member_select);
 $row2 = mysqli_fetch_array($result2);
 $member_id = $row2['member_id'];
@@ -72,23 +72,23 @@ $membership_insert = "INSERT INTO membership (member_id, membership_type) VALUES
 $result4 = mysqli_query($conn, $membership_insert);
 
 if ($trainer_bb > 0) {
-// $tr_query = "SELECT * FROM trainer_receviables WHERE trainer_id = '".$trainer."'";
-// $tr_result = mysqli_query($conn, $tr_query);
-// $tr_row = mysqli_fetch_assoc($tr_result);
+    // $tr_query = "SELECT * FROM trainer_receviables WHERE trainer_id = '".$trainer."'";
+    // $tr_result = mysqli_query($conn, $tr_query);
+    // $tr_row = mysqli_fetch_assoc($tr_result);
 
-// $count = $tr_row['assignment_count'];
+    // $count = $tr_row['assignment_count'];
 
-date_default_timezone_set('Asia/Colombo');
-$date = date('Y-m-d');
-$exp_date = date('Y-m-d',strtotime("+30 day", strtotime("$date")));
+    date_default_timezone_set('Asia/Colombo');
+    $date = date('Y-m-d');
+    $exp_date = date('Y-m-d', strtotime("+30 day", strtotime("$date")));
 
-$assignment_insert = "INSERT INTO assignment (member_id, trainer_id, start_date, end_date) VALUES('$member_id','$trainer', '$date','$exp_date');";
-$result5 = mysqli_query($conn, $assignment_insert);
+    $assignment_insert = "INSERT INTO assignment (member_id, trainer_id, start_date, end_date) VALUES('$member_id','$trainer', '$date','$exp_date');";
+    $result5 = mysqli_query($conn, $assignment_insert);
 
-// $count = $count + 1;
+    // $count = $count + 1;
 
-// $tr_payment_insert = "UPDATE trainer_receviables SET assignment_count = '$count' WHERE trainer_id='$trainer';";
-// $rece_update = mysqli_query($conn, $tr_payment_insert);
+    // $tr_payment_insert = "UPDATE trainer_receviables SET assignment_count = '$count' WHERE trainer_id='$trainer';";
+    // $rece_update = mysqli_query($conn, $tr_payment_insert);
 
 }
 //echo $result;
@@ -97,7 +97,7 @@ if ($result0 && $result1 && $result3 && $result4 && $result5) {
     $_SESSION['notification'] = "Account successfully created";
     $_SESSION['username'] = $username_bb;
 
-     header('Location: QRcode/index.php');
+    header('Location: QRcode/index.php');
 } else {
     header("Location: index.php");
     echo die(mysqli_error($conn));
