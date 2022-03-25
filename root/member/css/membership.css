@@ -59,6 +59,8 @@
   align-content: center;
   align-items: center; */
   background-color: #86ff71;
+  border-radius: 15px;
+  width: 100% !important;
 }
 
 .duhead2{
@@ -87,6 +89,7 @@
   font-size: 34px;
   color: black;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 .situation, .opinion{
   text-align: center;
@@ -244,7 +247,7 @@
 }
 .HdividerL{
   width: 100%;
-  height: 70px;
+  height: 30px;
 }
 .vboderdivider{
   width: 4%;
@@ -264,24 +267,31 @@
 
 .btmsec{
     width: 100%;
-    height: 800px;
+    height: 1000px;
     background-color: white;
     display: flex;
+    border-radius: 15px !important;
 }
 
 .btmsec .meship{
     width: 60%;
-    height: 100%;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.ren{
+  border-radius: 15px;
 }
 
 .btmsec .tassign{
     width: 39%;
     height: 100%;
+    border-radius: 15px;
 }
 
 .amount{
   width: 100%;
-  text-align: right;
+  text-align: center;
   padding: 20px;
   padding-bottom: 0;
   font-size: 25px;
@@ -289,7 +299,7 @@
 }
 
 .selpack{
-  padding-top: 60px;
+  
   width: 100%;
   align-items: center;
   align-content: center;
@@ -595,8 +605,8 @@
   width: calc(100%-10px);
   font-size: 16px;
   height: 330px;
-  padding-left: 10px;
-  margin-right: 10px;
+  padding-left: 20px;
+  margin-right: 20px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -611,7 +621,7 @@
   font-size: 16px;
   padding-left: 10px;
   padding-bottom: 10px;
-  height: 240px;
+  height: 340px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -661,8 +671,9 @@ tbody tr:nth-child(even) {
 .about_btn {
   position: relative;
   z-index: 10;
-  width: 80px;
+  width: 100px;
   margin: 3px;
+  padding: 3px;
   border: 0px solid rgba(255, 255, 255, .5);
   border-radius: 30px;
   background-color: #424244;
@@ -765,6 +776,7 @@ tbody tr:nth-child(even) {
 .button-inner{
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .adetails .stat, .stat{
@@ -786,6 +798,8 @@ tbody tr:nth-child(even) {
   display: flex;
   justify-content: center;
   border-right: 2px solid #121317 ;
+  padding-top:8px;
+  padding-bottom: 8px;
 }
 .stat .exp p ,.stat .rate p,.stat .review-count p{
   text-align: center;
@@ -795,9 +809,13 @@ tbody tr:nth-child(even) {
 .adetails .stat .rate,.stat .rate{
   width: 33%;
   border-right: 2px solid #121317 ;
+  padding-top:8px;
+  padding-bottom: 8px;
 }
 .adetails .stat .review-count,.stat .review-count{
   width: 33%;
+  padding-top:8px;
+  padding-bottom: 8px;
 }
 
 /*------------------- popup ---------------------*/
