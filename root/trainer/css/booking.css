@@ -168,6 +168,7 @@ position: relative;
 padding-top: 104px;
 padding-left: 100px;
 padding-right: 100px;
+padding-bottom: 50px;
 }
 
 @media (max-width: 1240px) {
@@ -228,9 +229,11 @@ padding: 8px;
 }
 
 th{
-padding: 8px;
-text-decoration: none;
-margin-bottom: 10px;
+  padding-left: 20px;
+  padding-bottom: 8px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  /* padding-left: 40px; */
 }
 
 thead {
@@ -249,9 +252,10 @@ tbody tr:nth-child(even) {
 background-color: #eee;
 }
 .top-header{
-color:#999999;
-font-family: 'Rubik';
-font-size: 30px;
+  color:#121317;
+  font-family: 'Rubik';
+  font-size: 30px;
+  font-weight: 500;
 }
 .header-div{
 display: flex;
@@ -272,13 +276,24 @@ border: none;
   margin-right: 5px;
 }
 .members-div{
-padding: 20px 0px 20px 0px;
-margin-top: 25px;
-background-color: white;
+  padding: 10px 0px 0px 0px;
+  
+  background-color: white;
+  border: 1px #e5e5e5 solid;
+  border-radius: 3px;
 }
 .table-members tr th{
-font-size: 20px;
-text-align: left;
+  font-size: 17px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.fc-toolbar-title{
+  font-weight: 500 !important;
+}
+
+.table-members tr td{
+  padding-left: 20px;
 }
 .row-action{
 display: flex;

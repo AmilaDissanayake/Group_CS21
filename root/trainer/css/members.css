@@ -260,9 +260,11 @@ nav .profile-details i{
   }
   
   th{
-    padding: 8px;
+    padding-left: 20px;
+    padding-bottom: 8px;
     text-decoration: none;
     margin-bottom: 10px;
+    /* padding-left: 40px; */
   }
   
   thead {
@@ -281,9 +283,10 @@ nav .profile-details i{
     background-color: #eee;
   }
   .top-header{
-    color:#999999;
+    color:#121317;
     font-family: 'Rubik';
     font-size: 30px;
+    font-weight: 500;
   }
   .header-div{
     display: flex;
@@ -295,14 +298,27 @@ nav .profile-details i{
     border: none;
     
   }
+
+  .xcv{
+    margin-top: 20px;
+    padding-top: 20px;
+   
+  }
   .members-div{
-    padding: 20px 0px 20px 0px;
-    margin-top: 25px;
+    padding: 10px 0px 0px 0px;
+    
     background-color: white;
+    border: 1px #e5e5e5 solid;
+    border-radius: 3px;
   }
   .table-members tr th{
-    font-size: 20px;
+    font-size: 17px;
     text-align: left;
+    font-weight: 500;
+  }
+
+  .table-members tr td{
+    padding-left: 20px;
   }
   .row-action{
     display: flex;

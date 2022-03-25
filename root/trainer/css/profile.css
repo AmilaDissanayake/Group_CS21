@@ -443,15 +443,19 @@
   padding: 20px;
   padding-left: 20px;
   background-color: white;
-  border-radius: 15px;
+  
+  border: 1px #e5e5e5 solid;
+    border-radius: 3px;
 }
 .dwnpart .rsd{
   height: 100%;
   width: calc(60% - 20px);
   padding: 20px;
   padding-right: 20px;
-  border-radius: 15px;
+ 
   background-color: white;
+  border: 1px #e5e5e5 solid;
+    border-radius: 3px;
 }
 
 .lsd .con1{
@@ -554,8 +558,10 @@
 }
 .cover img{
   width: 100%;
-  border-radius: 10px;
+ 
   height: 300px;
+  border: 1px #e5e5e5 solid;
+    border-radius: 3px;
 }
 .profile-img{
   width: 100%;

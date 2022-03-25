@@ -45,18 +45,7 @@ body{
     cursor: pointer;
   }
 
-  .profile-details2{
-    display: flex;
-    align-items: center;
-    background: #F5F6FA;
-    border: 2px solid red;
-    border-radius: 6px;
-    height: 50px;
-    min-width: 190px;
-    padding: 0 15px 0 2px;
-    margin-left: 750px;
-    cursor: pointer;
-  }
+  
 
   nav .profile-details img{
     height: 40px;
@@ -79,15 +68,30 @@ body{
     margin: 0 10px;
     white-space: nowrap;
   }
+
+  .profile-details2{
+    display: flex;
+    align-items: center;
+    background: #F5F6FA;
+    border: 2px solid red;
+    border-radius: 6px;
+    height: 50px;
+    min-width: 190px;
+    padding: 0 15px 0 2px;
+    margin-left: 750px;
+    cursor: pointer;
+  }
+
+  nav .profile-details2 i{
+    font-size: 25px;
+    color: red !important;
+  }
   nav .profile-details i{
     font-size: 25px;
     color: #5AC400;
   }
 
-  nav .profile-details2 i{
-    font-size: 25px;
-    color: red;
-  }
+
 
 
   .alert{
@@ -161,7 +165,7 @@ body{
   }
 
   .icon2{
-    color: red;
+    color: red !important;
   }
   .alert .close-btn{
     position: absolute;

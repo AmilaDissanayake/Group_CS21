@@ -71,7 +71,7 @@ $assign_members = mysqli_num_rows($assign_query);
 
             <div class="members-div">
                 <table class="table-members">
-                    <tr>
+                    <tr class="xcv">
                         <th>Name</th>
                         <th>Age</th>
                         <th>Gender</th>
@@ -81,10 +81,10 @@ $assign_members = mysqli_num_rows($assign_query);
                         <th></th>
                     </tr>
                     <?php
-                    $sql2 = "SELECT * FROM member WHERE assign_trainer = '".$trainer_id."'";
-                    $result2 = mysqli_query($conn,$sql2);
-                    while($member_row=mysqli_fetch_assoc($result2)){
-                        $member_id= $member_row['member_id'];
+                    $sql2 = "SELECT * FROM member WHERE assign_trainer = '" . $trainer_id . "'";
+                    $result2 = mysqli_query($conn, $sql2);
+                    while ($member_row = mysqli_fetch_assoc($result2)) {
+                        $member_id = $member_row['member_id'];
                         $f_name = $member_row['f_name'];
                         $l_name = $member_row['l_name'];
                         $image = $member_row['image'];
@@ -95,21 +95,25 @@ $assign_members = mysqli_num_rows($assign_query);
                         $today = date("Y-m-d");
                         $diff = date_diff(date_create($dob), date_create($today));
                     ?>
-                    <tr>
-                        <td><div class="first-column"><span class="avatar"><img src="../media/members/<?php echo $image ?>"></span><?php echo " " . $f_name . " " . $l_name ?></div></td>
-                        <td><?php echo $diff->format('%y'); ?></td>
-                        <td><?php echo $gender; ?></td>
-                        <td><?php echo $contact; ?></td>
-                        <td><?php echo $injury; ?></td>
-                        <td><div class="row-action">
-                            <button class="about_btn1" onclick="location.href='meal_plan.php?member_id=<?php echo $member_id;?>'">Meal Plan and Schedule</button> 
-                            </div>
-                        </td>
-                        <td><div class="row-action">
-                            <button class="about_btn1" onclick="location.href='progress.php?member_id=<?php echo $member_id;?>'">Progress</button> 
-                            </div>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                <div class="first-column"><span class="avatar"><img src="../media/members/<?php echo $image ?>"></span><?php echo " " . $f_name . " " . $l_name ?></div>
+                            </td>
+                            <td><?php echo $diff->format('%y'); ?></td>
+                            <td><?php echo $gender; ?></td>
+                            <td><?php echo $contact; ?></td>
+                            <td><?php echo $injury; ?></td>
+                            <td>
+                                <div class="row-action">
+                                    <button class="about_btn1" onclick="location.href='meal_plan.php?member_id=<?php echo $member_id; ?>'">Meal Plan and Schedule</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="row-action">
+                                    <button class="about_btn1" onclick="location.href='progress.php?member_id=<?php echo $member_id; ?>'">Progress</button>
+                                </div>
+                            </td>
+                        </tr>
                     <?php } ?>
                 </table>
             </div>

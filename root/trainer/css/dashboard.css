@@ -363,9 +363,9 @@ transition: .4s;
   width: 35%;
   background-color: #FFFFFF;
   border: 1px #e5e5e5 solid;
+  border-radius: 3px;
   padding: 30px 20px 30px 20px;
   height: 80%;
-  border-radius: 3px;
   margin-bottom: 20px;
 }
 
