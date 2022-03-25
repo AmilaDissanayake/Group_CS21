@@ -26,12 +26,12 @@
 
 
         <div class="home-content">
-            <div class="search-bar">
+            <!-- <div class="search-bar">
                 <div class="search-box" id="search-bar">
                     <input type="text" placeholder="Search by name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
-            </div>
+            </div> -->
 
                 <div class="separator1" style="margin-top:50px; margin-bottom:20px; text-decoration:underline;">
                     <span class="hr-text" >RECIEVABLES</span>

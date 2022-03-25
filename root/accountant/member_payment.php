@@ -71,8 +71,6 @@
 
                 <div class="search-container">
 
-	<input type="text" placeholder="Search by item name...." name="search" id="search" onkeyup="search_item();">
-	<button type="submit"><i class="fas fa-search"></i></button>
 
 </div>
 

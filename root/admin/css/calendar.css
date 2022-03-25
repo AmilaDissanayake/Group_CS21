@@ -285,6 +285,17 @@ cursor: pointer;
 margin-right: 10px;
 }
 
+.about_btn:hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px 1px #86ff71;
+  border: 0px solid #86ff71;
+  transition: .4s;
+  }
+
+  .fc .fc-toolbar-title{
+    font-weight: 100 !important;
+  }
+
 .fc-event-main{
   background-color: #121317;
   border: 0px !important;
@@ -307,12 +318,6 @@ margin-right: 10px;
   background-color: #121317 !important;
 }
 
-.about_btn:hover {
-color: rgba(255, 255, 255, 1);
-box-shadow: 0px 0px 10px 1px #86ff71;
-border: 0px solid #86ff71;
-transition: .4s;
-}
 .calendar{
   padding-top: 50px;
   padding-bottom: 50px;

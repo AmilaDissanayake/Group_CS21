@@ -153,7 +153,7 @@
 
                     <div class="one">
                         <p class="value"> <?php  echo $temp ?></p>
-                        <p class="name">Profit/Loss</p>
+                        <p class="name">Profit</p>
                     </div>
                     <div class="one1">
 
