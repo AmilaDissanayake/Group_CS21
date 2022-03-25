@@ -33,9 +33,9 @@
                     <input type="text" placeholder="Search by name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
-                <div class="search-box">
+                <!-- <div class="search-box">
                     <button class="see-more2"><a href="member_payment_form.php">+ ADD PAYMENT</a></button>
-                </div>
+                </div> -->
             </div>
             
 
@@ -47,7 +47,7 @@
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Phone Number</th>
-                            <th>Assigned Members</th>
+                            <th>Completed Members</th>
                             <!-- <th>Payment Date</th> -->
                             <th>Payment Amount</th>
                             <th> </th>
@@ -71,12 +71,12 @@
                         $sql2 = "SELECT * FROM trainer_payables";
                         $result2 = mysqli_query($conn, $sql2);
 
-                        if(empty(mysqli_fetch_assoc($result1))){
-                            $text="text";
-                        }
-                        else{
-                            $text="";
-                        }
+                        // if(empty(mysqli_fetch_assoc($result1))){
+                        //     $text="text";
+                        // }
+                        // else{
+                        //     $text="";
+                        // }
                        
 
                         
@@ -110,9 +110,6 @@
                         ?>
                         
                         
-
-
-
                             <tr>
                                 <td><?php echo "$trainer_id" ?></td>
                                 <td><?php echo "$f_name" ?></td>
@@ -131,7 +128,7 @@
                         <?php } ?>
                         <tr>
                                 
-                                <td><?php echo "$text"  ?></td>
+                                <!-- <td><?php echo "$text"  ?></td> -->
                             </tr>
                     </tbody>
                 </table>

@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/profedit.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -25,11 +27,15 @@
 
         <div class="home-content">
             <div class="search-bar">
-                <div class="search-box">
+                <div class="search-box" id="search-bar">
                     <input type="text" placeholder="Search by name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
             </div>
+
+                <div class="separator1" style="margin-top:50px; margin-bottom:20px; text-decoration:underline;">
+                    <span class="hr-text" >RECIEVABLES</span>
+                </div>
 
 
             <div class="member-list">
@@ -101,10 +107,9 @@
             </div>
 
 
-
-
-
-
+            <div class="separator1" style="margin-top:50px; margin-bottom:20px; text-decoration:underline;">
+                    <span class="hr-text">PAYABLES</span>
+                </div>
 
             <div class="member-list">
                 <table class="table table-hover">

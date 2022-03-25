@@ -270,6 +270,7 @@
             window.location.href = "#";
         });
     </script>
+    <?php include "includes/footer.php" ?>
 </body>
 
 </html>

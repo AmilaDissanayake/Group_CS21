@@ -8,16 +8,26 @@ FOR EACH ROW
     	DECLARE membership_type INT;
     	SET @membership_type = (SELECT membership_type FROM membership WHERE membership.member_id=NEW.member_id);
     	IF(membership_type = 1) THEN 
-    		INSERT INTO `1m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
+    		INSERT INTO `1m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null,null,null]]',
+'[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
     	END IF;
         IF(membership_type = 3) THEN 
-    		INSERT INTO `3m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
+    		INSERT INTO `3m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,
+'[[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]'
+,'[null,null,null,null,null,null,null,null,null,null,null,null]',
+'[null,null,null,null,null,null,null,null,null,null,null,null]');
     	END IF;
         IF(membership_type = 6) THEN 
-    		INSERT INTO `6m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
+    		INSERT INTO `6m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,
+'[[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]'
+,'[null,null,null,null,null,null,null,null,null,null,null,null]',
+'[null,null,null,null,null,null,null,null,null,null,null,null]');
     	END IF;
         IF(membership_type = 12) THEN
-	INSERT INTO 12m_package_progress (member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
+	INSERT INTO 12m_package_progress (member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,
+'[[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]',
+'[null,null,null,null,null,null,null,null,null,null,null,null]',
+'[null,null,null,null,null,null,null,null,null,null,null,null]');
     	END IF;
    END // 
 DELIMITER ;     
@@ -74,5 +84,87 @@ FOR EACH ROW
       END // 
 DELIMITER ;                                     
 
+
+ALTER TABLE schedule
+ALTER schedule.day1_ex1 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day1_ex2 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day1_ex3 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day1_ex4 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day1_ex5 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day1_ex6 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day2_ex1 SET DEFAULT 'YTo0OntpOjA7czo0OiJMZWdzIjtpOjE7czoxOToiYmFyYmVsbCBiYWNrIHNxdWF0cyI7aToyO3M6MToiNSI7aTozO3M6MToiNSI7fQ==';
+ALTER schedule.day2_ex2 SET DEFAULT 'YTo0OntpOjA7czo1OiJDaGVzdCI7aToxO3M6MjQ6ImZsYXQgYmFyYmVsbCBiZW5jaCBwcmVzcyI7aToyO3M6MDoiIjtpOjM7czowOiIiO30=';
+ALTER schedule.day2_ex3 SET DEFAULT 'YTo0OntpOjA7czo0OiJCYWNrIjtpOjE7czoxNzoic2VhdGVkIGNhYmxlIHJvd3MiO2k6MjtzOjA6IiI7aTozO3M6MDoiIjt9';
+ALTER schedule.day2_ex4 SET DEFAULT 'YTo0OntpOjA7czo5OiJTaG91bGRlcnMiO2k6MTtzOjMwOiJzZWF0ZWQgZHVtYmJlbGwgc2hvdWxkZXIgcHJlc3MiO2k6MjtzOjA6IiI7aTozO3M6MDoiIjt9';
+ALTER schedule.day2_ex5 SET DEFAULT 'YTo0OntpOjA7czo3OiJUcmljZXBzIjtpOjE7czoyNzoiY2FibGUgcm9wZSB0cmljZXAgcHVzaGRvd25zIjtpOjI7czowOiIiO2k6MztzOjA6IiI7fQ==';
+ALTER schedule.day2_ex6 SET DEFAULT 'YTo0OntpOjA7czo5OiJTaG91bGRlcnMiO2k6MTtzOjE0OiJsYXRlcmFsIHJhaXNlcyI7aToyO3M6MToiMyI7aTozO3M6MjoiMTIiO30=';
+ALTER schedule.day3_ex1 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day3_ex2 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day3_ex3 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day3_ex4 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day3_ex5 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day3_ex6 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day4_ex1 SET DEFAULT 'YTo0OntpOjA7czoxNToiQmFjay9oYW1zdHJpbmdzIjtpOjE7czoyOToiYmFyYmVsbCBvciB0cmFwIGJhciBkZWFkbGlmdHMiO2k6MjtzOjE6IjUiO2k6MztzOjE6IjUiO30=';
+ALTER schedule.day4_ex2 SET DEFAULT 'YTo0OntpOjA7czo0OiJCYWNrIjtpOjE7czoyNDoicHVsbHVwcyBvciBsYXQgcHVsbGRvd25zIjtpOjI7czoxOiI0IjtpOjM7czoxOiI4Ijt9';
+ALTER schedule.day4_ex3 SET DEFAULT YTo0OntpOjA7czo1OiJDaGVzdCI7aToxO3M6MzM6ImJhcmJlbGwgb3IgZHVtYmJlbGwgaW5jbGluZSBwcmVzcyI7aToyO3M6MToiNCI7aTozO3M6MToiOCI7fQ==';
+ALTER schedule.day4_ex4 SET DEFAULT 'YTo0OntpOjA7czo5OiJTaG91bGRlcnMiO2k6MTtzOjIyOiJtYWNoaW5lIHNob3VsZGVyIHByZXNzIjtpOjI7czoxOiI0IjtpOjM7czoxOiI4Ijt9';
+ALTER schedule.day4_ex5 SET DEFAULT 'YTo0OntpOjA7czo2OiJCaWNlcHMiO2k6MTtzOjMxOiJiYXJiZWxsIG9yIGR1bWJiZWxsIGJpY2VwIGN1cmxzIjtpOjI7czoxOiIzIjtpOjM7czoyOiIxMCI7fQ==';
+ALTER schedule.day4_ex6 SET DEFAULT 'YTo0OntpOjA7czo2OiJDYWx2ZXMiO2k6MTtzOjIwOiJzdGFuZGluZyBjYWxmIHJhaXNlcyI7aToyO3M6MToiMyI7aTozO3M6MjoiMTAiO30=';
+ALTER schedule.day5_ex1 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day5_ex2 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day5_ex3 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day5_ex4 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day5_ex5 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day5_ex6 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day6_ex1 SET DEFAULT 'YTo0OntpOjA7czo0OiJMZWdzIjtpOjE7czo5OiJsZWcgcHJlc3MiO2k6MjtzOjE6IjUiO2k6MztzOjE6IjUiO30=';
+ALTER schedule.day6_ex2 SET DEFAULT 'YTo0OntpOjA7czo0OiJCYWNrIjtpOjE7czoxMDoiVC1iYXIgcm93cyI7aToyO3M6MToiMyI7aTozO3M6MToiOCI7fQ==';
+ALTER schedule.day6_ex3 SET DEFAULT 'YTo0OntpOjA7czo1OiJDaGVzdCI7aToxO3M6Mjk6Im1hY2hpbmUgb3IgZHVtYmJlbGwgY2hlc3QgZmx5IjtpOjI7czoxOiIzIjtpOjM7czoxOiI4Ijt9';
+ALTER schedule.day6_ex4 SET DEFAULT 'YTo0OntpOjA7czo5OiJTaG91bGRlcnMiO2k6MTtzOjMxOiJvbmUtYXJtIGR1bWJiZWxsIHNob3VsZGVyIHByZXNzIjtpOjI7czoxOiIzIjtpOjM7czoxOiI4Ijt9';
+ALTER schedule.day6_ex5 SET DEFAULT 'YTo0OntpOjA7czo3OiJUcmljZXBzIjtpOjE7czozNzoiZHVtYmJlbGwgb3IgbWFjaGluZSB0cmljZXAgZXh0ZW5zaW9ucyI7aToyO3M6MToiMyI7aTozO3M6MjoiMTAiO30=';
+ALTER schedule.day6_ex6 SET DEFAULT 'YTo0OntpOjA7czozOiJBYnMiO2k6MTtzOjE2OiJkZWNsaW5lIGNydW5jaGVzIjtpOjI7czoxOiIzIjtpOjM7czoyOiIxMiI7fQ==';
+ALTER schedule.day7_ex1 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day7_ex2 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day7_ex3 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day7_ex4 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day7_ex5 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+ALTER schedule.day7_ex6 SET DEFAULT 'YToxOntpOjA7czoxOiIwIjt9';
+
+
+ALTER TABLE meal_plan
+ALTER meal_plan.monday_bkft SET DEFAULT 'Scrambled eggs with mushrooms and oatmeal';
+ALTER meal_plan.tuseday_bkft SET DEFAULT 'Protein pancakes with light-syrup, peanut butter and raspberries.';
+ALTER meal_plan.wednesday_bkft SET DEFAULT 'Chicken sausage with egg and roasted potatoes.';
+ALTER meal_plan.thursday_bkft SET DEFAULT 'Ground turkey, egg, cheese and salsa in a whole-grain tortilla.';
+ALTER meal_plan.friday_bkft SET DEFAULT 'Blueberries, strawberries and vanilla Greek yogurt on overnight oats.';
+ALTER meal_plan.saturday_bkft SET DEFAULT 'Ground turkey and egg with corn, bell peppers, cheese and salsa.';
+ALTER meal_plan.sunday_bkft SET DEFAULT 'Eggs sunny-side up and avocado toast','Low-fat cottage cheese with blueberries';
+ALTER meal_plan.monday_msnk SET DEFAULT 'Hard-boiled eggs and an apple.';
+ALTER meal_plan.tuseday_msnk SET DEFAULT 'Greek yogurt and almonds.';
+ALTER meal_plan.wednesday_msnk SET DEFAULT 'Yogurt with granola.';
+ALTER meal_plan.thursday_msnk SET DEFAULT 'Jerky and mixed nuts.';
+ALTER meal_plan.friday_msnk SET DEFAULT 'Can of tuna with crackers.';
+ALTER meal_plan.saturday_msnk SET DEFAULT 'Protein balls and almond butter.';
+ALTER meal_plan.sunday_msnk SET DEFAULT 'Venison burger, white rice and broccoli.';
+ALTER meal_plan.monday_lunch SET DEFAULT 'Sirloin steak, sweet potato and spinach salad with vinaigrette.';
+ALTER meal_plan.tuseday_lunch SET DEFAULT 'Turkey breast, basmati rice and mushrooms.';
+ALTER meal_plan.wednesday_lunch SET DEFAULT 'Chicken breast, baked potato, sour cream and broccoli.';
+ALTER meal_plan.thursday_lunch SET DEFAULT 'Tilapia fillets with lime juice, black and pinto beans and seasonal veggies.';
+ALTER meal_plan.friday_lunch SET DEFAULT 'Tilapia fillet, potato wedges and bell peppers.';
+ALTER meal_plan.saturday_lunch SET DEFAULT 'Pork tenderloin slices with roasted garlic potatoes and green beans.';
+ALTER meal_plan.sunday_lunch SET DEFAULT 'Chicken breast, baked potato, sour cream and broccoli.';
+ALTER meal_plan.monday_esnk SET DEFAULT 'Protein shake and a banana.';
+ALTER meal_plan.tuseday_esnk SET DEFAULT 'Protein shake and walnuts.';
+ALTER meal_plan.wednesday_esnk SET DEFAULT 'Protein shake and grapes.';
+ALTER meal_plan.thursday_esnk SET DEFAULT 'Protein shake and mixed berries.';
+ALTER meal_plan.friday_esnk SET DEFAULT 'Protein shake and watermelon.';
+ALTER meal_plan.saturday_esnk SET DEFAULT 'Protein shake and pear.';
+ALTER meal_plan.sunday_esnk SET DEFAULT 'Protein shake and strawberries.';
+ALTER meal_plan.monday_din SET DEFAULT 'Salmon, quinoa and asparagus.';
+ALTER meal_plan.tuseday_din SET DEFAULT 'Ground turkey and marinara sauce over pasta.';
+ALTER meal_plan.wednesday_din SET DEFAULT 'Mackerel, brown rice and salad leaves with vinaigrette.';
+ALTER meal_plan.thursday_din SET DEFAULT 'Stir-fry with chicken, egg, brown rice, broccoli, peas and carrots.';
+ALTER meal_plan.friday_din SET DEFAULT 'Ground beef with corn, brown rice, green peas and green beans.';
+ALTER meal_plan.saturday_din SET DEFAULT 'Diced beef with rice, black beans, bell peppers, cheese and pico de gallo.';
+ALTER meal_plan.sunday_din SET DEFAULT 'Turkey meatballs, marinara sauce and parmesan cheese over pasta.';
 
   

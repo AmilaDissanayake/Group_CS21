@@ -19,6 +19,13 @@
   font-family: "Azonix"; 
   font-weight: 500;
 }
+.note h1{
+  text-align: center;
+  font-size: 34px;
+  color: black;
+  padding-bottom: 30px;
+  /* padding-top: 50px; */
+}
 .dashcover{
   background-image: url("dashcover.jpg");
   background-repeat: no-repeat;
@@ -51,8 +58,8 @@
   width: auto;
 }
 .member-stats{
-  margin-left: 4.5%;
-  margin-right: 4.5%;
+  margin-left: 4.9%;
+  margin-right: 4.9%;
   display: flex;
   margin-top: 25px;
   margin-bottom: 20px;
@@ -192,7 +199,6 @@
   width: 50%;
   height: 500px;
   background-color:white;
-  border-radius: 10px;
 }
 
 .bmi{
@@ -862,8 +868,16 @@ nav .sidebar-button i{
   font-size: 22px;
   transition: all 0.4 ease;
 }
-
-
+.home-section nav .profile-details{
+  display: flex;
+  align-items: center;
+  background: #F5F6FA;
+  border: 2px solid #EFEEF1;
+  border-radius: 6px;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+}
 .header-img img{
   height: 40px;
   width: 40px;
