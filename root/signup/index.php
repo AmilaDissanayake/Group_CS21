@@ -480,9 +480,14 @@
 
                             // Apply setCookie
                             setCookie('amount', finalcost2);
-                            // alert(finalcost2);
-                            // alert(typeof(finalcost2));
 
+                            var description;
+
+                            if (selectedTrainer > 0){
+                                description = "New Membership(with trainer)";
+                            }else{
+                                description = "New Membership(only)";
+                            }
                             payment = {
                                 "sandbox": true,
                                 "merchant_id": "1218759", // Replace your Merchant ID
@@ -490,7 +495,7 @@
                                 "cancel_url": undefined, // Important
                                 "notify_url": "http://sample.com/notify",
                                 "order_id": "ItemNo12345",
-                                "items": membership1 + trainer1,
+                                "items": description,
                                 "amount": finalcost2,
                                 "currency": "LKR",
                                 "first_name": fname1,

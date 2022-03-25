@@ -18,7 +18,7 @@ if (isset($_POST['update'])) {
         exit();
     } else {
         move_uploaded_file($image_tmp, "media/$u_image");
-        $update = "UPDATE admin SET image='$u_image' where username='admin'";
+        $update = "UPDATE accountant SET image='$u_image' where username='$username'";
 
         $run = mysqli_query($conn, $update);
 
@@ -43,7 +43,7 @@ if (isset($_POST['update-cover'])) {
         exit();
     } else {
         move_uploaded_file($image_tmp, "media/$u_image");
-        $update = "UPDATE admin SET cover_image='$u_image' where username='admin'";
+        $update = "UPDATE accountant SET cover_image='$u_image' where username='$username'";
 
         $run = mysqli_query($conn, $update);
 

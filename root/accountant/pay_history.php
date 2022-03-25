@@ -31,47 +31,145 @@
                 </div>
             </div>
 
+
             <div class="member-list">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-
-                            <th>Name</th>
+                            <th>UserName</th>
                             <th>Payment Date</th>
-                            <th>Pay/Recieve</th>
-                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Payment Amount</th>
+                            <th>Payment Method</th>
                         </tr>
                     </thead>
-                    <tbody class="output" id="output">
-                        <tr>
-                            <td>Navod</td>
-                            <td>2021-10-10</td>
-                            <td>Pay</td>
-                            <td>1500.00</td>
-                        </tr>
-                        <tr>
-                            <td>Amila</td>
-                            <td>2021-09-10</td>
-                            <td>Recieve</td>
-                            <td>15000.00</td>
-                        </tr>
-                        <tr>
-                            <td>Pamodha</td>
-                            <td>2021-09-20</td>
-                            <td>Pay</td>
-                            <td>1500.00</td>
-                        </tr>
-                        <tr>
-                            <td>Bimsara</td>
-                            <td>2021-07-10</td>
-                            <td>Recieve</td>
-                            <td>1500.00</td>
-                        </tr>
+                    <tbody id="output">
+                        <?php
+
+
+                        $sql1 = "SELECT * FROM payment";
+                        $result1 = mysqli_query($conn, $sql1);
+
+                        // $sql = "SELECT * FROM trainer";
+                        // $result = mysqli_query($conn, $sql);
+                        $sql2 = "SELECT * FROM trainer_payables";
+                        $result2 = mysqli_query($conn, $sql2);
+
+                        
+
+                        while ($trainer_row2 = mysqli_fetch_assoc($result1) ) {
+                            
+
+                            $trainer_id = $trainer_row2['trainer_id'];
+
+                           
+                            $sql = "SELECT * FROM trainer WHERE trainer_id = '" . $trainer_id . "'";
+                            $result = mysqli_query($conn, $sql);
+                            $trainer_row = mysqli_fetch_assoc($result);
+
+                            $sql3 = "SELECT * FROM users WHERE username = '" . $trainer_row["username"] . "'";
+                            $result3 = mysqli_query($conn, $sql3);
+                            $trainer_row3 = mysqli_fetch_assoc($result3);
+
+                            
+
+                            $payment_date = $trainer_row2['payment_date'];
+                            $description = $trainer_row2['description'];
+                            
+                            $username=$trainer_row['username'];                            
+                            $payment_amount = $trainer_row2['payment_amount'];
+                            $payment_type=$trainer_row2['payment_type'];
+
+
+                        ?>
+                            <tr>
+                                
+                                <td><?php echo "$username" ?></td>
+                                <td><?php echo "$payment_date" ?></td>
+                                <td><?php echo "$description" ?></td>
+                                <td><?php echo "$payment_amount" ?></td>
+                                <td><?php echo "$payment_type" ?></td>
+                            </tr>
+
+                            <?php } ?>
+                            
+                        
                     </tbody>
                 </table>
 
 
             </div>
+
+
+
+
+
+
+
+            <div class="member-list">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            
+                            <th>USERNAME</th>
+                            <th>PAYMENT DATE</th>
+                            <th>Payment Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="output">
+                        <?php
+
+
+                        $sql1 = "SELECT * FROM trainer_receviables";
+                        $result1 = mysqli_query($conn, $sql1);
+
+                        // $sql = "SELECT * FROM trainer";
+                        // $result = mysqli_query($conn, $sql);
+                        $sql2 = "SELECT * FROM trainer_payables";
+                        $result2 = mysqli_query($conn, $sql2);
+
+                        
+
+                        while ($trainer_row2 = mysqli_fetch_assoc($result2)) {
+                            $trainer_id = $trainer_row2['trainer_id'];
+
+                           
+                            $sql = "SELECT * FROM trainer WHERE trainer_id = '" . $trainer_id . "'";
+                            $result = mysqli_query($conn, $sql);
+                            $trainer_row = mysqli_fetch_assoc($result);
+
+                            $sql3 = "SELECT * FROM users WHERE username = '" . $trainer_row["username"] . "'";
+                            $result3 = mysqli_query($conn, $sql3);
+                            $trainer_row3 = mysqli_fetch_assoc($result3);
+
+                            
+
+                            $f_name = $trainer_row['f_name'];
+                            $l_name = $trainer_row['l_name'];
+                            $payment_date = $trainer_row2['payment_date'];
+                            $username=$trainer_row['username'];
+
+                            $email=$trainer_row3['email'];
+                            $payment_amount = $trainer_row2['amount'];
+
+
+                        ?>
+
+
+
+                            <tr>
+                                
+                                <td><?php echo "$username" ?></td>
+                                <td><?php echo "$payment_date" ?></td>
+                                <td><?php echo "$payment_amount" ?></td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+
+
+            </div>
+
         </div>
 
         <script type="text/javascript">

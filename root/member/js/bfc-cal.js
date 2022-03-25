@@ -94,7 +94,7 @@ document.querySelector('.calculate4 .calc4').onclick = function () {
         document.querySelector('.calculate4 .age4 input').value = age;
         document.querySelector('.calculate4 .age4 .val4 span').innerText = age;
         
-        document.querySelector('.result4 .bmi4 .val4').innerText = bfc;
+        document.querySelector('.result4 .bmi4 .val4 #bf_val').innerText = bfc;
 
         if (bfc < 6) {
             document.querySelector('.result4 .text4').innerText = 'ESSENTIAL FAT!';
@@ -184,3 +184,21 @@ document.querySelector('.result4 .recal4').onclick = function () {
 }
 
 
+function getvalbf(){
+
+    var bf2 = $("#bf_val").text();
+    alert(bf2);
+
+    if(bf2 != 0){
+        $("#bf_val_holder").text(bf2);
+        $("#intr_id").val(bf2);
+        $("#bf_pass").val(bf2);
+        var day = $("#day_hold").text();
+
+        if(day >= 15){
+            window.location.href = "#popup5";
+        }else{
+            window.location.href = "#popup3bf";
+        }
+    }   
+}

@@ -38,7 +38,7 @@ $to = $userEmail;
     $message = '<html><head></head><body style="background-color:black;">
     
    
-<img src="logo.jpg" height="100px" style="display:block; margin-left:auto; margin-right:auto; padding-top:40px">
+<img src="cid:logo" height="100px" style="display:block; margin-left:auto; margin-right:auto; padding-top:40px">
 
 <p style="color:#CECECF; padding-left:100px; padding-right:100px; font-size:15px; text-align:center;">Hello '.$username.', <br>Thanks for joining POWER HOUSE 
 FITNESS ACADEMY – we’re excited to have you on board! You’ve taken the first step towards achieving your fitness goals. You’ll find our opening times, class timetable,
