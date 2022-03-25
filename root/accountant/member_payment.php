@@ -68,6 +68,15 @@
                     <input type="text" placeholder="Search by name..." id="search">
                     <i class='bx bx-search'></i>
                 </div>
+
+                <div class="search-container">
+
+	<input type="text" placeholder="Search by item name...." name="search" id="search" onkeyup="search_item();">
+	<button type="submit"><i class="fas fa-search"></i></button>
+
+</div>
+
+
                 <div class="search-box">
                     <button class="see-more2"><a href="member_payment_form.php">+ ADD PAYMENT</a></button>
                 </div>
@@ -167,6 +176,39 @@
 
 
 </body>
+
+
+
+<script>
+function search_item() {
+
+input = document.getElementById("search");
+filter = input.value.toUpperCase();
+table = document.getElementById("dataTable");
+
+tr = table.getElementsByTagName("tr");
+
+for (i = 0; i < tr.length; i++) {
+
+    td = tr[i].getElementsByTagName("td")[2];
+
+
+
+    if (td) {
+        txtValue = td.textContent || td.innerText;
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+
+}
+}
+
+</script>
+
 
 <script>
     let sidebar = document.querySelector(".sidebar");

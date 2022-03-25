@@ -8,16 +8,16 @@ FOR EACH ROW
     	DECLARE membership_type INT;
     	SET @membership_type = (SELECT membership_type FROM membership WHERE membership.member_id=NEW.member_id);
     	IF(membership_type = 1) THEN 
-    		INSERT INTO `1m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null],[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
+    		INSERT INTO `1m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
     	END IF;
         IF(membership_type = 3) THEN 
-    		INSERT INTO `3m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
+    		INSERT INTO `3m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
     	END IF;
         IF(membership_type = 6) THEN 
-    		INSERT INTO `6m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
+    		INSERT INTO `6m_package_progress`(member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
     	END IF;
         IF(membership_type = 12) THEN
-	INSERT INTO 12m_package_progress (member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
+	INSERT INTO 12m_package_progress (member_id,attendance,bmi_values,bf_values) VALUES (NEW.member_id,'[[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null],[null,null,null,null,null]]','[null,null,null,null,null,null,null,null,null,null,null,null]','[null,null,null,null,null,null,null,null,null,null,null,null]');
     	END IF;
    END // 
 DELIMITER ;     

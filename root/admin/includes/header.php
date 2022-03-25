@@ -17,6 +17,7 @@
 $my_username = $_SESSION['username'];
 $my_user_type = $_SESSION['user_type'];
 $academy_open = 0;
+$open_flag = 0;
 
 $my_image_sql = "SELECT image FROM $my_user_type WHERE username = '$my_username'";
 $my_image_sql_run = mysqli_query($conn, $my_image_sql);
@@ -130,26 +131,30 @@ if (($time > $start) && ($time < $end)) {
         // $end   = date("H:i:s", strtotime($end_time));;;
         // $time = date("H:i:s", strtotime($nowDate));
         // isWithInTime($start, $end, $time);
-        // echo "dfsdf";
+        echo "dfsdf";
         $academy_open = 1;
     } else {
+        //echo "qq";
 
         while ($row2 = mysqli_fetch_assoc($result2)) {
 
             if ($today_time == strtotime($row2['date'])) {
 
+                $open_flag = 1;
+
                 if ($row2['time_slot'] == 'Full') {
-                    echo "dd";
+                    // echo "dd";
                     $academy_open = 0;
+                    //echo $academy_open;
                 } elseif ($row2['time_slot'] == 'Morning') {
 
                     $nowDate = date("Y-m-d h:i:sa");
                     //echo '<br>' . $nowDate;
 
-                    echo "df";
+                    //echo "df";
 
                     $start_time = date("2021-10-30 06:00:00");
-                    $end_time = date("2021-10-30 12:00:00");
+                    $end_time = date("2021-10-30 14:00:00");
 
                     $start = date("H:i:s", strtotime($start_time));;
                     $end   = date("H:i:s", strtotime($end_time));;;
@@ -157,6 +162,7 @@ if (($time > $start) && ($time < $end)) {
                     if (($time > $start) && ($time < $end)) {
                         $academy_open = 0;
                     } else {
+                        echo "sdfdg";
                         $academy_open = 1;
                     }
                     //isNotWithInTime($start, $end, $time);
@@ -175,31 +181,39 @@ if (($time > $start) && ($time < $end)) {
                     if (($time > $start) && ($time < $end)) {
                         $academy_open = 0;
                     } else {
+                        echo "sss";
                         $academy_open = 1;
                     }
                 }
                 // else {
                 // }
-            } else {
-
-                // $nowDate = date("Y-m-d h:i:sa");
-                // //echo '<br>' . $nowDate;
-
-                // $start_time = date("2021-10-30 06:00:00");
-                // $end_time = date("2021-10-30 22:00:00");
-
-                // $start = date("H:i:s", strtotime($start_time));;
-                // $end   = date("H:i:s", strtotime($end_time));;;
-                // $time = date("H:i:s", strtotime($nowDate));
-                // isWithInTime($start, $end, $time);
-                $academy_open = 1;
             }
+            // else {
+
+            //     // $nowDate = date("Y-m-d h:i:sa");
+            //     // //echo '<br>' . $nowDate;
+
+            //     // $start_time = date("2021-10-30 06:00:00");
+            //     // $end_time = date("2021-10-30 22:00:00");
+
+            //     // $start = date("H:i:s", strtotime($start_time));;
+            //     // $end   = date("H:i:s", strtotime($end_time));;;
+            //     // $time = date("H:i:s", strtotime($nowDate));
+            //     // isWithInTime($start, $end, $time);
+            //     echo "ww";
+            //     $academy_open = 1;
+            // }
         }
         //$row = mysqli_fetch_assoc($result2);
 
 
 
         //echo "dfsdf333";
+        if ($open_flag == 0) {
+            $academy_open = 1;
+        } else {
+            $open_flag = 0;
+        }
     }
 } else {
     //echo "sdfdsf";

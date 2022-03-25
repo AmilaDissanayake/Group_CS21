@@ -245,6 +245,13 @@
                                 while ($row = mysqli_fetch_assoc($select_query)) {
                                     $f_name = $row['f_name'];
                                     $l_name = $row['l_name'];
+                                    $assignment_count = $row['assigned_members'];
+                                    $check_assignment = "";
+                                    $check_message = "";
+                                    if ($assignment_count >= 10) {
+                                        $check_assignment = "disabled";
+                                        $check_message = "| Member limit exeeded";
+                                    }
 
                                     $trainer_id = $row['trainer_id'];
 
@@ -273,8 +280,8 @@
 
                                 ?>
 
-                                    <option value=<?php echo $trainer_id ?> data-trainer=<?php echo $rate ?>>
-                                        <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count ?></option>
+                                    <option value=<?php echo $trainer_id ?> data-trainer=<?php echo $rate ?> <?php echo $check_assignment; ?>>
+                                        <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count  . " " . $check_message ?> </option>
 
 
                                 <?php } ?>
@@ -483,9 +490,9 @@
 
                             var description;
 
-                            if (selectedTrainer > 0){
+                            if (selectedTrainer > 0) {
                                 description = "New Membership(with trainer)";
-                            }else{
+                            } else {
                                 description = "New Membership(only)";
                             }
                             payment = {
