@@ -84,14 +84,13 @@
             $current_month_start = date('Y-m-d',strtotime($par1, strtotime("$joined_date")));
             $current_month_end = date('Y-m-d',strtotime($par2, strtotime("$joined_date")));
 
-                // echo $current_month_start, $current_month_end;
-
-                //$membership_type = 6;
+            // echo $current_month_start, $current_month_end;
+            //$membership_type = 6;
         ?>
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1><span id="mem_type"><?php echo $membership_type;?></span> MONTH MEMBERSHIP (<?php echo"$joined_date <-> $exp_date";?>)</h1>CURRENT ACTIVE MONTH -> <?php echo $mem_interval->m;?><br>PERIOD -> <?php  echo "[$current_month_start - $current_month_end]";?></div>
+        <div class="welcomenote"><h1><span id="mem_type"><?php echo $membership_type;?></span> MONTH MEMBERSHIP (<?php echo"$joined_date <-> $exp_date";?>)</h1>CURRENT ACTIVE MONTH -> <?php echo $next_mon;?><br>PERIOD -> <?php  echo "[$current_month_start - $current_month_end]";?></div>
 
         <div class="HdividerL">            
             <script>
@@ -252,9 +251,8 @@
                                 $bmi_value_list = $pk_row['bmi_values'];
                                 $value_holder = json_decode($bmi_value_list);
 
-                                if($mem_interval->d >= 15){
-                                    switch ($mem_interval->m) {
-                                        case 0:$limit = 0;break;
+                                if($mem_interval->d <= 15){
+                                    switch ($next_mon) {
                                         case 1:$limit = 0;break;
                                         case 2:$limit = 1;break;
                                         case 3:$limit = 2;break;
@@ -269,7 +267,7 @@
                                         case 12:$limit = 11;break; 
                                         }
                                 }else{
-                                    $limit = $mem_interval->m;
+                                    $limit = $next_mon;
                                 }
 
                                 if($membership_type == 12){
@@ -351,7 +349,7 @@
                                 $label_val = "N/A";
                             }else{
                                 if($membership_type == 12 || $membership_type == 6){
-                                    $label_val = $out[$limit - 1];
+                                    if($limit > 0){$label_val = $out[$limit - 1];}
                                 }else if($membership_type == 3){
                                     $label_val = $out[($limit*2) - 1];
                                 }else if($membership_type == 1){ 
@@ -568,7 +566,7 @@
                     <div class="bmip" id="weekprgs">
                         <canvas id="canvas"></canvas>
                     </div>
-                    <p class="category"><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id=" bmi_c" <?php if($label_val >= 30 ){echo "class='ob'";}else if($label_val < 30 && $label_val>=25 ){echo "class='ov'";}else if($label_val < 25 && $label_val >=18.5 ){echo "class='hl'";}else if($label_val < 18.5 ){echo "class='un'";}?> ><?php if($label_val >= 30 ){echo " OBESITY";}else if($label_val < 30 && $label_val>=25 ){echo "OVER WEIGHT";}else if($label_val < 25 && $label_val >=18.5 ){echo "HEALTHY";}else if($label_val < 18.5 ){echo "UNDER WEIGHT";}?></span> BMI value - <?php echo $label_val?><span class="l_tag">(Present)</span></p>
+                    <p class="category"><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id=" bmi_c" <?php if($label_val >= 30 ){echo "class='ob'";}else if($label_val < 30 && $label_val>=25 ){echo "class='ov'";}else if($label_val < 25 && $label_val >=18.5 ){echo "class='hl'";}else if($label_val == 'N/A'){echo "class='nm'";}else if($label_val < 18.5 ){echo "class='un'";}?> ><?php if($label_val >= 30 ){echo " OBESITY";}else if($label_val < 30 && $label_val>=25 ){echo "OVER WEIGHT";}else if($label_val < 25 && $label_val >=18.5 ){echo "HEALTHY";}else if($label_val == 'N/A'){echo "N/A";}else if($label_val < 18.5 ){echo "UNDER WEIGHT";}?></span> BMI value - <?php echo $label_val?><span class="l_tag">(Present)</span></p>
                 </div>
                 <div class="divider3" ></div>
                 <div class="indc1" >
@@ -624,13 +622,13 @@
                         $day_interval = $today_from->diff($today_at);
 
                         if($day_interval->d <= 7){
-                            $active_week = 1;
-                        }else if($day_interval->d <= 14){
-                            $active_week = 2;
-                        }else if($day_interval->d <= 21){
-                            $active_week = 3;
-                        }else if($day_interval->d <= 28){
                             $active_week = 4;
+                        }else if($day_interval->d <= 14){
+                            $active_week = 3;
+                        }else if($day_interval->d <= 21){
+                            $active_week = 2;
+                        }else if($day_interval->d <= 28){
+                            $active_week = 1;
                         }
 
                         $active_month=$day_interval->m;
@@ -886,22 +884,26 @@
                                     echo'<div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
                                     // <div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
                                     // <div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                                echo'</ul>
-                            </div>';
                                 }
+                                    echo'</ul>
+                            </div>';
+                             
                             }else if($package_type == 1){
+
                                 echo'<div class="wdetails">
                                 <ul>';
-                                    echo'<div class="itemcon"><li class="plist"><p class="month"> WEEK 01</p>';if($active_week >= 1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
-                                    echo';<div class="itemcon"><li class="plist"><p class="month"> WEEK 02</p>';if($active_week >= 2){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
+                                    echo'<div class="itemcon"><li class="plist"><p class="month"> WEEK 01</p>';if($active_week >= 1){ if($attend[0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
+                                    echo'<div class="itemcon"><li class="plist"><p class="month"> WEEK 02</p>';if($active_week >= 2){ if($attend[1] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
                                 echo'</ul>
                                 </div>
                                 <div class="wdetails">   
                                 <ul>';
-                                    echo'<div class="itemcon"><li class="plist"><p class="month"> WEEK 03</p>';if($active_week >= 3){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
-                                    echo'<div class="itemcon"><li class="plist"><p class="month"> WEEK 04</p>';if($active_week = 4){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
+                                    echo'<div class="itemcon"><li class="plist"><p class="month"> WEEK 03</p>';if($active_week >= 3){ if($attend[2] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
+                                    echo'<div class="itemcon"><li class="plist"><p class="month"> WEEK 04</p>';if($active_week == 4){ if($attend[3] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
                                 echo'</ul>
                             </div>';
+
+                        
                         }
                             ?>
 
@@ -921,12 +923,14 @@
                     <?php 
                         if($gender == 'female'){
                             if($label_val2 >= 31 ){echo "class='ob'";}
+                            else if($label_val2 == "N/A"){echo "class='nm'";}
                             else if($label_val2 < 31 && $label_val2>=25 ){echo "class='avg'";}
                             else if($label_val2 < 25 && $label_val2 >=21 ){echo "class='fit'";}
                             else if($label_val2 < 21 && $label_val2 >=14 ){echo "class='ath'";}
                             else if($label_val2 < 14 && $label_val2 >=10){echo "class='es'";}
                         }else if( $gender == 'male'){
                             if($label_val2 >= 25 ){echo "class='ob'";}
+                            else if($label_val2 == "N/A"){echo "class='nm'";}
                             else if($label_val2 < 25 && $label_val2>=18 ){echo "class='avg'";}
                             else if($label_val2 < 18 && $label_val2 >=14 ){echo "class='fit'";}
                             else if($label_val2 < 14 && $label_val2 >=6){echo "class='ath'";}
@@ -937,16 +941,19 @@
 
                         if($gender == 'female'){
                                 if($label_val2 >= 31 ){echo "OBESE";}
+                                else if($label_val2 == "N/A"){echo "N/A";}
                                 else if($label_val2 < 31 && $label_val2>=25 ){echo "AVERAGE";}
                                 else if($label_val2 < 25 && $label_val2 >=21 ){echo "FITNESS";}
                                 else if($label_val2 < 21 && $label_val2 >=14 ){echo "ATHLETES";}
                                 else if($label_val2 < 14 && $label_val2 >=10){echo "ESSANTIAL FAT";}
                         }else if( $gender == 'male'){
                                 if($label_val2 >= 25 ){echo "OBESE";}
+                                else if($label_val2 == "N/A"){echo "N/A";}
                                 else if($label_val2 < 25 && $label_val2>=18 ){echo "AVERAGE";}
                                 else if($label_val2 < 18 && $label_val2 >=14 ){echo "FITNESS";}
                                 else if($label_val2 < 14 && $label_val2 >=6){echo "ATHLETES";}
                                 else if($label_val2 < 6 && $label_val2 >=2){echo "ESSANTIAL FAT";}
+                               
                         }     
                     
                     ?>
