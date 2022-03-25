@@ -76,22 +76,27 @@
             if($trainer_assignment == 0){
                 $flag = 0;
             }else{
-                $flag = 1; 
-
-                $assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_assignment ORDER BY assignment_id DESC;";
+                $assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_assignment ORDER BY assignment_id DESC LIMIT 1;";
                 $assignment_result = mysqli_query($conn, $assignment_query);
-                $assignment_row = mysqli_fetch_assoc($assignment_result);
-              
+                $assignment_row = mysqli_fetch_assoc($assignment_result); 
+    
                 $t_assign_d = $assignment_row['start_date'];
                 $t_exp_d = $assignment_row['end_date'];
                 $date = date('Y-m-d');
 
-                $today = new DateTime($date);
-                $t_assign_date = new DateTime($t_assign_d);
-                $t_exp_date = new DateTime($t_exp_d); 
-
-              
-                $tr_interval = $today->diff($t_exp_date);
+                if( $t_exp_d > $date){
+                    $today = new DateTime($date);
+                    $t_assign_date = new DateTime($t_assign_d);
+                    $t_exp_date = new DateTime($t_exp_d); 
+                    $tr_interval = $today->diff($t_exp_date);
+    
+                    $flag = 1;
+                }else{
+                    $assignment_updatequery = "UPDATE member SET assign_trainer=0 WHERE member_id =$member_id;";
+                    $newassign_result = mysqli_query($conn, $assignment_updatequery);
+                    
+                    $flag = 0;
+                }
             }
 
             ?>
