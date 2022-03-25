@@ -106,7 +106,7 @@ $assign_members = mysqli_num_rows($assign_query);
                             </div>
                         </td>
                         <td><div class="row-action">
-                            <button class="about_btn1" onclick="location.href='members.php'">Progress</button> 
+                            <button class="about_btn1" onclick="location.href='progress.php?member_id=<?php echo $member_id;?>'">Progress</button> 
                             </div>
                         </td>
                     </tr>

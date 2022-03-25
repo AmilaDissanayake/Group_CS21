@@ -33,10 +33,11 @@
     height: 35vh;
 }
 .content h2{
-    padding-bottom: 10px;
+    padding-bottom: 40px;
     font-size: 36px;
     font-weight: 500;
     font-family: "Azonix";
+    padding-top: 40px;
 }
 .contactform{
    text-align: center;
@@ -51,7 +52,8 @@
     flex-direction: column;
     height: 60vh;
     justify-content: center;
-    padding-left: 90px;
+    padding-left: 250px;
+    padding-bottom: 140px;
 }
 .contactInfo .box{
     position: relative;
@@ -85,9 +87,10 @@
 .contactform h2{
     color: white;
     text-align: center;
-    padding-bottom: 40px;
+    padding-bottom: 70px;
     font-weight: 500;
     font-size: 36px;
+    padding-top: 40px;
 }
 .contactform .inputbox{
     position: relative;
@@ -131,6 +134,4 @@
 .contactform input[type="submit"]:hover{
     background: rgba(17, 204, 48, 0.897);
 }
-.contactform input[type="submit"]:active{
-    /* background: #7FFFD4; */
-}
+
