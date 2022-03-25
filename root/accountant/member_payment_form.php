@@ -112,7 +112,7 @@
                             <option value="" disabled selected> Select Your Trainer </option>
                             <?php
 
-                            require "includes/db.php";
+                            
 
                             $query = "SELECT * FROM trainer";
 

@@ -1,7 +1,7 @@
 <?php include "includes/check_login.php" ?>
 
 <?php
-require "includes/db.php";
+//require "includes/db.php";
 $username = $_SESSION['username'];
 ?>
 

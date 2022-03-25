@@ -65,23 +65,43 @@ include "includes/check_login.php";
 // include "includes/db.php";
 //session_start();
 
-$username = $_SESSION['username'];
-$user_type = $_SESSION['user_type'];
+// $username = $_SESSION['username'];
+// $user_type = $_SESSION['user_type'];
 
-$image_sql = "SELECT image FROM $user_type WHERE username = '$username'";
-$image_sql_run = mysqli_query($conn, $image_sql,);
-$row = mysqli_fetch_array($image_sql_run);
+// $image_sql = "SELECT image FROM $user_type WHERE username = '$username'";
+// $image_sql_run = mysqli_query($conn, $image_sql,);
+// $row = mysqli_fetch_array($image_sql_run);
 
-$image = $row[0];
+// $image = $row[0];
 
-$sql = "SELECT * FROM close_times";
-$result = mysqli_query($conn, $sql);
-while ($row = mysqli_fetch_assoc($result)) {
+// $sql = "SELECT * FROM close_times";
+// $result = mysqli_query($conn, $sql);
+// while ($row = mysqli_fetch_assoc($result)) {
 
-    $schedules .= "'{name:' . {$row["time_slot"]} .',' . 'date:' . {$row["date"]} . '},' ";
+//     $schedules .= "'{name:' . {$row["time_slot"]} .',' . 'date:' . {$row["date"]} . '},' ";
+// }
+
+// echo $schedules;
+date_default_timezone_set("Asia/Colombo");
+$nowDate = date("Y-m-d h:i:sa");
+//echo '<br>' . $nowDate;
+$start = '12:39:35';
+$end   = '24:39:35';
+$time = date("H:i:s", strtotime($nowDate));
+isWithInTime($start, $end, $time);
+
+
+function isWithInTime($start, $end, $time)
+{
+
+    if (($time >= $start) && ($time <= $end)) {
+        echo 'OK';
+        return TRUE;
+    } else {
+        echo 'Not OK';
+        return FALSE;
+    }
 }
-
-echo $schedules;
 
 
 

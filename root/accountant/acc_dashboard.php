@@ -23,16 +23,21 @@
     <section class="home-section">
 
         <?php include "includes/header.php" ?>
+        <?php
+        $mydate=date("y-m-d");
+        $month=date('m',strtotime($mydate));
+        $year=date('y',strtotime($mydate));
+        ?>
 
 
         
 
         <div class="home-content">
-        <?php require "includes/db.php"; ?>
+        
         
             <div class="member-stats">
                 <div class="one">
-                    <?php $select_query = "SELECT payment_amount FROM payment";
+                    <?php $select_query = "SELECT payment_amount FROM payment where payment_date>='$year-$month-01'";
                     $select_result = mysqli_query($conn, $select_query);
                     $sum = 0;
 
@@ -56,51 +61,60 @@
                 <div class="two">
                 <?php $select_query = "SELECT tr_recievable_amount FROM trainer_receviables";
                     $select_result = mysqli_query($conn, $select_query);
-                    $sum = 0;
+                    $sum2 = 0;
 
                     if (mysqli_num_rows($select_result) > 0) {
                         while ($row = mysqli_fetch_assoc($select_result)) {
-                        $sum = $sum + $row['tr_recievable_amount'];    
+                        $sum2 = $sum2 + $row['tr_recievable_amount'];    
                         }
                     ?> 
-                    <p class="value">Rs. <?php  print_r($sum);
+                    <p class="value">Rs. <?php  print_r($sum2);
                     }
                     ?></p>
                     <?php
                         if (mysqli_num_rows($select_result) == 0) {
                         ?> 
-                        <p class="value">Rs. <?php  echo $sum;
+                        <p class="value">Rs. <?php  echo $sum2;
                         }
                     ?></p>
                     <p class="name">Trainer Recievables</p>
                 </div>
 
                 <div class="three">
-                <?php $select_query = "SELECT amount FROM trainer_payables";
+                <?php $select_query = "SELECT amount FROM trainer_payables where payment_date>='$year-$month-01'";
                     $select_result = mysqli_query($conn, $select_query);
-                    $sum = 0;
+                    $sum3 = 0;
 
                     if (mysqli_num_rows($select_result) > 0) {
                         while ($row = mysqli_fetch_assoc($select_result)) {
-                        $sum = $sum + $row['amount'];    
+                        $sum3 = $sum3 + $row['amount'];    
                         }
                     ?> 
-                    <p class="value">Rs. <?php  print_r($sum);
+                    <p class="value">Rs. <?php  print_r($sum3);
                     }
                     ?></p>
                     <?php
                         if (mysqli_num_rows($select_result) == 0) {
                         ?> 
-                        <p class="value">Rs. <?php  echo $sum;
+                        <p class="value">Rs. <?php  echo $sum3;
                         }
                     ?></p>
                     <p class="name">Trainer Payables</p>
                 </div>
-                
-                <div class="two">
-                    <p class="value">rs. 45 000</p>
+
+
+                <div class="one">
+                    
+                    <p class="value">Rs. <?php  echo $sum+$sum2;
+                    
+                    ?></p>
                     <p class="name">Monthly Income</p>
                 </div>
+                
+                <!-- <div class="two">
+                    <p class="value">rs. 45 000</p>
+                    <p class="name">Monthly Income</p>
+                </div> -->
 
                 
             
@@ -117,12 +131,39 @@
             <div class="bmi2">
                 
                 <div class="member-stats2">
+
+                <?php  
+
+                    if($sum+$sum2-$sum3<0){
+                        $totalsum=-($sum+$sum2-$sum3);
+                        $temp="Loss";
+
+                        
+                    }
+                    elseif($sum+$sum2-$sum3==0){
+                        $totalsum=($sum+$sum2-$sum3);
+                        $temp= "No Profit";
+                    }
+                    else{
+                        $totalsum=($sum+$sum2-$sum3);
+                        $temp="Profit";
+                    }
+                    
+                    ?>
+
                     <div class="one">
-                        <p class="value">Profit</p>
+                        <p class="value"> <?php  echo $temp ?></p>
                         <p class="name">Profit/Loss</p>
                     </div>
                     <div class="one1">
-                        <p class="value">Rs. 20 000</p>
+
+                    
+
+                        <p class="value">Rs. <?php  echo $totalsum;
+                    
+                    ?></p>
+
+
                         <p class="name">Amount</p>
                     </div>
                 </div>

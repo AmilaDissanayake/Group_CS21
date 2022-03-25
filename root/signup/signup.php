@@ -62,7 +62,7 @@ $member_insert = "INSERT INTO member (f_name, l_name, gender, phone_no, dob, add
 
 $result1 = mysqli_query($conn, $member_insert);
 
-$member_select = "SELECT member_id FROM member WHERE username = '$username_bb'";
+$member_select = "SELECT member_id FROM member WHERE username = '".$username_bb."'";
 
 $result2 = mysqli_query($conn, $member_select);
 $row2 = mysqli_fetch_array($result2);
@@ -99,25 +99,7 @@ $result5 = mysqli_query($conn, $assignment_insert);
 if ($result0 && $result1 && $result3 && $result4 && $result5) {
     $_SESSION['notification'] = "Account successfully created";
     $_SESSION['username'] = $username_bb;
-?>
 
-    <!-- <script type="text/javascript">
-                $(document).ready(function(){
-                function QR(){
-                $.ajax({
-                    type: "POST",
-                    url: "QRcode/index.php",
-                    // data: dataString,
-                    success: function() {
-                        window.location = '../member/dashboard.php'; 
-                    },
-                });
-            }
-            QR();
-        });
-    
-    </script> -->
-<?php
      header('Location: QRcode/index.php');
 } else {
     header("Location: index.php");
