@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,9 +15,7 @@
                     <div class="content">
                         <h2>Contact US</h2>
                         <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                            Cum excepturi sed sequi, cumque ut similique minus quo, nostrum asperiores impedit, 
-                            obcaecati adipisci magni. Veritatis aspernatur consequuntur impedit. Quod, tempora omnis?
+                            Contact us if you have any question or feedback about our POWER HOUSE Fitness academy. We would be happy to answer your questions.                          
                         </p>
                     </div>
                 <div class="contactInfo">
@@ -43,7 +45,7 @@
                     </div>
                 </div>
                     <div class="contactform">
-                        <form>
+                        <form action="contact.php" method="POST">
                             <h2>Send message</h2>
                             <div class="inputbox">
                                 <input type="text" name="name" required="required" placeholder="Your name">
@@ -52,10 +54,10 @@
                                 <input type="text" name="email" required="required" placeholder="Your Email">
                             </div>
                             <div class="inputbox">
-                                <textarea required="required" placeholder="Type your message"></textarea>
+                                <textarea required="required" placeholder="Type your message" name="msg"></textarea>
                             </div>
                             <div>
-                               <input type="submit" value="Send">
+                               <input type="submit" value="Send" name="contact_form">
                             </div>
                         </form>
                     </div>   
