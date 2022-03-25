@@ -90,7 +90,7 @@ if ($trainer_bb > 0) {
     $tr_payment_insert = "UPDATE trainer_receviables SET assignment_count = '$count' WHERE trainer_id='$trainer_bb';";
     $rece_update = mysqli_query($conn, $tr_payment_insert);
 
-    $tr_query2 = "SELECT * FROM trainer WHERE trainer_id = '" . $trainer . "'";
+    $tr_query2 = "SELECT * FROM trainer WHERE trainer_id = '$trainer_bb'";
     $tr_result2 = mysqli_query($conn, $tr_query2);
     $tr_row2 = mysqli_fetch_assoc($tr_result2);
     $count2 = $tr_row2['assigned_members'];

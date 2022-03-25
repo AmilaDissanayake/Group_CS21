@@ -76,22 +76,37 @@
             if($trainer_assignment == 0){
                 $flag = 0;
             }else{
-                $flag = 1; 
-
-                $assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_assignment ORDER BY assignment_id DESC;";
+                $assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_assignment ORDER BY assignment_id DESC LIMIT 1;";
                 $assignment_result = mysqli_query($conn, $assignment_query);
-                $assignment_row = mysqli_fetch_assoc($assignment_result);
-              
+                $assignment_row = mysqli_fetch_assoc($assignment_result); 
+    
                 $t_assign_d = $assignment_row['start_date'];
                 $t_exp_d = $assignment_row['end_date'];
                 $date = date('Y-m-d');
 
-                $today = new DateTime($date);
-                $t_assign_date = new DateTime($t_assign_d);
-                $t_exp_date = new DateTime($t_exp_d); 
+                if( $t_exp_d > $date){
+                    $today = new DateTime($date);
+                    $t_assign_date = new DateTime($t_assign_d);
+                    $t_exp_date = new DateTime($t_exp_d); 
+                    $tr_interval = $today->diff($t_exp_date);
+    
+                    $flag = 1;
+                }else{
 
-              
-                $tr_interval = $today->diff($t_exp_date);
+                    $assignment_updatequery = "UPDATE member SET assign_trainer=0 WHERE member_id =$member_id;";
+                    $newassign_result = mysqli_query($conn, $assignment_updatequery);
+
+                    $tr_query2 = "SELECT * FROM trainer WHERE trainer_id = '$trainer_assignment'";
+                    $tr_result2 = mysqli_query($conn, $tr_query2);
+                    $tr_row2 = mysqli_fetch_assoc($tr_result2);
+                    $count2 = $tr_row2['assigned_members'];
+                    $count2 -= 1;
+
+                    $tr_payment_insert2 = "UPDATE trainer SET assigned_members = '$count2' WHERE trainer_id='$trainer_assignment';";
+                    $rece_update2 = mysqli_query($conn, $tr_payment_insert2);
+                    
+                    $flag = 0;
+                }
             }
 
             ?>
