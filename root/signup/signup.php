@@ -72,26 +72,74 @@ $membership_insert = "INSERT INTO membership (member_id, membership_type) VALUES
 $result4 = mysqli_query($conn, $membership_insert);
 
 if ($trainer_bb > 0) {
-    // $tr_query = "SELECT * FROM trainer_receviables WHERE trainer_id = '".$trainer."'";
-    // $tr_result = mysqli_query($conn, $tr_query);
-    // $tr_row = mysqli_fetch_assoc($tr_result);
+    $tr_query = "SELECT * FROM trainer_receviables WHERE trainer_id = '" . $trainer_bb . "'";
+    $tr_result = mysqli_query($conn, $tr_query);
+    $tr_row = mysqli_fetch_assoc($tr_result);
 
-    // $count = $tr_row['assignment_count'];
+    $count = $tr_row['assignment_count'];
 
     date_default_timezone_set('Asia/Colombo');
     $date = date('Y-m-d');
     $exp_date = date('Y-m-d', strtotime("+30 day", strtotime("$date")));
 
-    $assignment_insert = "INSERT INTO assignment (member_id, trainer_id, start_date, end_date) VALUES('$member_id','$trainer', '$date','$exp_date');";
+    $assignment_insert = "INSERT INTO assignment (member_id, trainer_id, start_date, end_date) VALUES('$member_id','$trainer_bb', '$date','$exp_date');";
     $result5 = mysqli_query($conn, $assignment_insert);
 
-    // $count = $count + 1;
+    $count = $count + 1;
 
-    // $tr_payment_insert = "UPDATE trainer_receviables SET assignment_count = '$count' WHERE trainer_id='$trainer';";
-    // $rece_update = mysqli_query($conn, $tr_payment_insert);
+    $tr_payment_insert = "UPDATE trainer_receviables SET assignment_count = '$count' WHERE trainer_id='$trainer_bb';";
+    $rece_update = mysqli_query($conn, $tr_payment_insert);
 
+    $tr_query2 = "SELECT * FROM trainer WHERE trainer_id = '$trainer_bb'";
+    $tr_result2 = mysqli_query($conn, $tr_query2);
+    $tr_row2 = mysqli_fetch_assoc($tr_result2);
+    $count2 = $tr_row2['assigned_members'];
+    $count2 += 1;
+
+    $tr_payment_insert2 = "UPDATE trainer SET assigned_members = '$count2' WHERE trainer_id='$trainer_bb';";
+    $rece_update2 = mysqli_query($conn, $tr_payment_insert2);
 }
 //echo $result;
+
+// if ($membership_type == 1) {
+//     $peogress_sql = "INSERT INTO 1m_package_progrss (member_id) VALUES ('$member_id');";
+//     $progress_sql_result = mysqli_query($conn, $progress_sql);
+// }
+
+switch ($membership_type) {
+    case 1:
+        $progress_sql = "INSERT INTO 1m_package_progress (member_id) VALUES ('$member_id');";
+        $progress_sql_result = mysqli_query($conn, $progress_sql);
+        break;
+
+    case 3:
+        $progress_sql = "INSERT INTO 3m_package_progress (member_id) VALUES ('$member_id');";
+        $progress_sql_result = mysqli_query($conn, $progress_sql);
+        break;
+
+    case 6:
+        $progress_sql = "INSERT INTO 6m_package_progress (member_id) VALUES ('$member_id');";
+        $progress_sql_result = mysqli_query($conn, $progress_sql);
+        break;
+
+    case 12:
+        $progress_sql = "INSERT INTO 12m_package_progress (member_id) VALUES ('$member_id');";
+        $progress_sql_result = mysqli_query($conn, $progress_sql);
+        break;
+}
+
+if ($trainer_bb > 0) {
+
+    $meal_plan_sql = "INSERT INTO meal_plan (member_id, trainer_id) VALUES ('$member_id' , '$trainer_bb');";
+    $meal_plan_sql_result = mysqli_query($conn, $meal_plan_sql);
+} else {
+
+    $meal_plan_sql = "INSERT INTO meal_plan (member_id) VALUES ('$member_id');";
+    $meal_plan_sql_result = mysqli_query($conn, $meal_plan_sql);
+}
+
+$schedule_insert = "INSERT INTO schedule (member_id) VALUES ('$member_id');";
+$scedule_insert_result = mysqli_query($conn, $schedule_insert);
 
 if ($result0 && $result1 && $result3 && $result4 && $result5) {
     $_SESSION['notification'] = "Account successfully created";

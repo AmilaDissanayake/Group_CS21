@@ -1,6 +1,7 @@
 <?php include "includes/check_login.php";
 require "includes/db.php";
-date_default_timezone_set("Asia/Colombo"); ?>
+date_default_timezone_set("Asia/Colombo");
+?>
 
 <!DOCTYPE html>
 
@@ -20,27 +21,53 @@ date_default_timezone_set("Asia/Colombo"); ?>
 <body>
     <?php include "includes/sidebar.php" ?>
     <section class="home-section">
-    <?php include "includes/header.php" ?>
+    <?php include "includes/header.php";
+
+    $username=$_SESSION['username'];
+
+    $sql="SELECT * FROM trainer WHERE username='".$username."'";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
+    $trainer_id=$row['trainer_id'];
+    
+    $sql1="SELECT * FROM member WHERE assign_trainer='".$trainer_id."'";
+    $result1 = mysqli_query($conn,$sql1);
+
+    $count_row1= mysqli_num_rows($result1);
+
+    $today=date("y-m-d");
+    $year = date('y',strtotime($today));
+
+    $sql2 = "SELECT * FROM assignment WHERE trainer_id='".$trainer_id."' AND start_date>='$year-01-01'";
+    $result2 = mysqli_query($conn,$sql2);
+    $row2 = mysqli_fetch_assoc($result2);
+
+    $rate=$row['rate'];
+    $month_earning=$rate*$count_row1;
+
+    $count_row2 = mysqli_num_rows($result2);
+
+    ?>
 
     <div class="home-content">
         <div class="trainer-stats">
             <div class="one">
-                <p class="value">15</p>
+                <p class="value"><?php echo $count_row1?></p>
                 <a class="name" href="members.php">Current members</a>
             </div>
 
             <div class="two">
-                <p class="value">46</p>
+                <p class="value"><?php echo $count_row2?></p>
                 <a href="earnings.php" class="name">Assigned members(This year)</a>
             </div>
 
             <div class="three">
-                <p class="value">25,000</p>
+                <p class="value"><?php echo $month_earning;?></p>
                 <a href="bookings.php" class="name">Earnings(This month)</a>
             </div>
 
             <div class="four">
-                <p class="value">200,000</p>
+                <p class="value"><?php echo $count_row2*$rate?></p>
                 <a href="calendar.php" class="name">Earnings(This year)</a>
             </div>
         </div>
@@ -94,82 +121,7 @@ date_default_timezone_set("Asia/Colombo"); ?>
     </div>
     </section>
     <?php include "includes/footer.php" ?>
-    <script>
- AOS.init();
- // Chart.defaults.global.defaultFontFamily = "Rubic";
- Chart.defaults.fontSize = 16;
- var chartColors = {
-     red: 'rgb(255, 99, 132)',
-     orange: 'rgb(255, 159, 64)',
-     yellow: 'rgb(255, 205, 86)',
-     green: 'rgb(75, 192, 192)',
-     blue: 'rgb(54, 162, 235)',
-     purple: 'rgb(153, 102, 255)',
-     grey: 'rgb(231,233,237)'
- };
-
- var randomScalingFactor = function() {
-     return (Math.random() > 0.5 ? 2.0 : 1.0) * Math.round(Math.random() * 100);
- }
- var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
- var config = {
-     type: 'bar',
-     data: {
-         labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September"],
-         datasets: [{
-             label: "earning chart",
-             backgroundColor: "#86ff71",
-             borderColor: "#86ff71",
-             data: [20, 30, 28, 27, 29, 25, 32, 34, 31],
-             fill: false,
-         }, ]
-     },
-     options: {
-         responsive: true,
-         maintainAspectRatio: true,
-         title: {
-             text: 'EARNING ANALYSIS',
-             fontSize: 19,
-             fontStyle: '600',
-             fontColor: 'black',
-             padding: 10,
-             display: true
-         },
-
-
-         legend: {
-             display: false
-         },
-         scales: {
-             yAxes: [{
-                 ticks: {
-                     beginAtZero: true,
-                 },
-                 gridLines: {
-                     display: true,
-                     zeroLineColor: 'green',
-                     color: "#e6e6e644",
-                     lineWidth: 1
-                 }
-             }],
-             xAxes: [{
-                 ticks: {
-                     beginAtZero: false
-                 },
-                 gridLines: {
-                     display: true,
-                     color: "#e6e6e644",
-                     lineWidth: 1
-                 }
-             }]
-         }
-     }
- };
-
-
- var ctx = document.getElementById("canvas").getContext("2d");
- window.myLine = new Chart(ctx, config);
-</script>
+    <script src="js/income_chart.js" type="text/javascript"></script>
 
     <script>
         let sidebar = document.querySelector(".sidebar");
