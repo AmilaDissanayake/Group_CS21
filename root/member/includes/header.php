@@ -252,13 +252,14 @@ if (($time > $start) && ($time < $end)) {
             <div class="red">
                 <p><i class="fas fa-circle "> </i>&nbsp All day closed</p>
             </div><br>
-            <div class="yellow">
-                <p><i class="fas fa-circle "> </i>&nbsp Morning Closed (2 P.M to 10 P.M)</p>
-
-            </div><br>
             <div class="orange">
-                <p><i class="fas fa-circle "> </i>&nbsp Evening Closed (6 A.M to 2 P.M)</p>
+                <p><i class="fas fa-circle "> </i>&nbsp Morning Closed (6 A.M to 2 P.M)</p>
+            </div><br>
+            <div class="yellow">
+                <p><i class="fas fa-circle "> </i>&nbsp Evening Closed (2 P.M to 10 P.M)</p>
             </div>
+
+
         </span>
     </div>
 
