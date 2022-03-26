@@ -1213,9 +1213,7 @@ $username = $_SESSION['username'];
                                     echo'<div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
                                 }
                                 echo '</span></div></li></div>';
-                                // <div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                                // <div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-        
+
                             echo '</ul>
                             </div>
                             <div class="wdetails_l">
@@ -1224,8 +1222,6 @@ $username = $_SESSION['username'];
                                     echo'<div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
                                 }
                                 echo '</span></div></li></div>';
-                                // <div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                                // <div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
                             echo '</ul>
                             </div>';
                         } else if ($package_type == 1) {
