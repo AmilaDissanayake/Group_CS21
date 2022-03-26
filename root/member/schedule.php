@@ -252,8 +252,7 @@
                                         }else{echo"<b>Rest</b>";}          
                                         echo "</td>";
                                     echo "</tr>";
-                                }
-                            
+                                    }
                             ?>
                                 
 
@@ -283,8 +282,8 @@
         function changemode(i) {                         
 
             var value = document.getElementById(i).checked;
-            alert(i);
-            alert(value);
+            //alert(i);
+            //alert(value);
             if (value === true){
                 for(j=1;j<=6;j++){
                     if(j <= 3){

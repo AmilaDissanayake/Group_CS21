@@ -1,7 +1,4 @@
 
-// let gender = 'male';
-// height = 50;
-
 document.querySelector('.calculate .gender .male').onclick = function () {
     gender = 'male';
     this.classList.add('active');
@@ -86,11 +83,6 @@ document.querySelector('.result .recal').onclick = function () {
     document.querySelector('.calculate').style.display = 'flex';
 }
 
-
-// var offset = 300, // browser window scroll (in pixels) after which the "back to top" link is shown
-//     offsetOpacity = 1200, //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-//     scrollDuration = 700;
-
 function getval() {
 
     var bmi2 = $("#bmi_val").text();
@@ -102,7 +94,7 @@ function getval() {
         $("#bmi_pass").val(bmi2);
         var day = $("#day_hold").text();
 
-        if (day <= 15) {
+        if(day <= 15){
             window.location.href = "#popup5";
         } else {
             window.location.href = "#popup3";
