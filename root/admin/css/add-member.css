@@ -17,7 +17,9 @@
     align-items: center;
     min-height: 100vh;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 3px;
+   
+    border: 1px #e5e5e5 solid;
   }
   
   form {

@@ -142,6 +142,7 @@ position: relative;
 padding-top: 104px;
 padding-left: 100px;
 padding-right: 100px;
+padding-bottom: 50px;
 }
 
 @media (max-width: 1240px) {
@@ -258,12 +259,13 @@ justify-content: center;
   transition: .4s;
 }
 .calendar-input{
-  width: 48%;
+  width: 49%;
   display: flex;
   justify-content: space-between;
   background-color: white;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 3px;
+    border: 1px #e5e5e5 solid;
 }
 .about_btn{
 position: relative;
@@ -293,7 +295,7 @@ margin-right: 10px;
   }
 
   .fc .fc-toolbar-title{
-    font-weight: 100 !important;
+    font-weight: 500 !important;
   }
 
 .fc-event-main{
@@ -327,7 +329,8 @@ margin-right: 10px;
   height: 100%;
   background-color: white;
   margin-top: 20px;
-  border-radius: 10px;
+  border-radius: 3px;
+    border: 1px #e5e5e5 solid;
 }
 .bottom-div{
 display: flex;
@@ -338,8 +341,10 @@ width: 100%;
   margin-left: 4%;
   background-color: white;
   margin-top: 20px;
-  border-radius: 10px;
+  
   height: 580px;
+  border-radius: 3px;
+    border: 1px #e5e5e5 solid;
 }
 .availability-header{
   width: 100%;
@@ -347,12 +352,14 @@ width: 100%;
   justify-content: center;
   padding-top: 20px;
   letter-spacing: 1px;
+  font-weight: 500;
 }
 .availability-header h1{
   color: black;
   font-family: 'rubik';
   letter-spacing: 1px;
   font-size: 28px;
+  font-weight: 500;
 }
 .divider{
   padding-top:10px;
