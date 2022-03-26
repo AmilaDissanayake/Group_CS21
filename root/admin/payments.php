@@ -48,7 +48,7 @@
                 </div>
 
             </div>
-            <div class="search-bar">
+            <!-- <div class="search-bar">
                 <div class="search-box">
                     <input type="text" placeholder="Search by name..." id="search">
                     <i class='bx bx-search'></i>
@@ -79,7 +79,7 @@
 
                 <!-- <div class="add_button"><button class="add_btn" onclick="location.href='add-member.php'">Add Trainer</button></div> -->
 
-            </div>
+            <!-- </div> -->
 
             <div class="member-list">
                 <table class="table table-hover">
@@ -95,7 +95,7 @@
                             <th>Amount</th>
                             <th>Date</th>
                             <th>Type</th>
-                            <th>Actions</th>
+                            <th>Description</th>
                         </tr>
                     </thead>
                     <tbody id="output">
@@ -111,9 +111,26 @@
                                 $member_result = mysqli_query($conn, $member_query);
                                 $member_row = mysqli_fetch_assoc($member_result);
 
-                                $trainer_query = "SELECT username, image FROM trainer WHERE trainer_id = $row[trainer_id];";
-                                $trainer_result = mysqli_query($conn, $trainer_query);
-                                $trainer_row = mysqli_fetch_assoc($trainer_result);
+                                $member_query = "SELECT username, image FROM member WHERE member_id = $row[member_id];";
+                                $member_result = mysqli_query($conn, $member_query);
+                                $member_row = mysqli_fetch_assoc($member_result);
+
+                                if ($row['trainer_id'] == 0) {
+
+                                    $trainer_ff = "No Trainer";
+                                } else {
+
+                                    $trainer_query = "SELECT username, image FROM trainer WHERE trainer_id = $row[trainer_id];";
+                                    $trainer_result = mysqli_query($conn, $trainer_query);
+                                    $trainer_row = mysqli_fetch_assoc($trainer_result);
+
+                                    $trainer_username = $trainer_row['username'];
+                                    $trainer_image = $trainer_row['image'];
+                                }
+
+                                // $trainer_query = "SELECT username, image FROM trainer WHERE trainer_id = $row[trainer_id];";
+                                // $trainer_result = mysqli_query($conn, $trainer_query);
+                                // $trainer_row = mysqli_fetch_assoc($trainer_result);
 
                                 // $dateMembership = $row2['joined_date'];
                                 // $membershipType = $row2['membership_type'];
@@ -134,19 +151,34 @@
 
                                     <td><?php echo $row['payment_id'] ?> </td>
                                     <td>
+
+
                                         <div class="first-column"><span class="avatar"><img src="../media/members/<?php echo $member_row['image'] ?>"></span><?php echo " " . $member_row['username'] ?></div>
                                     </td>
+
                                     <td>
-                                        <div class="first-column"><span class="avatar"><img src="../media/trainers/<?php echo $trainer_row['image'] ?>"></span><?php echo " " . $trainer_row['username'] ?></div>
+
+                                        <?php
+                                        if ($row['trainer_id'] == 0) {
+
+                                            echo "No trainer";
+                                        } else {
+
+                                            echo  "
+                                        <div class='first-column'><span class='avatar'><img src='../media/trainers/$trainer_image' </span> $trainer_username </div>
+                                    ";
+                                        }
+
+                                        ?>
+
                                     </td>
+
+
                                     <td><?php echo $row['payment_amount'] . " " .  "LKR" ?> </td>
                                     <td><?php echo  $row['payment_date'] ?> </td>
                                     <td><?php echo  $row['payment_type'] ?> </td>
                                     <td>
-                                        <div class="row-action">
-                                            <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">View/Update/Delete</button></div>
-                                            <!-- <div class="about_button"><button class="about_btn" onclick="location.href='tel:<?php echo $phone_no ?>'">Delete</button></div> -->
-                                        </div>
+                                        <?php echo  $row['description'] ?>
                                     </td>
 
 
