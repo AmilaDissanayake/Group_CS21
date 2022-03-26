@@ -96,19 +96,25 @@
 
     var bftx = document.getElementById("canvas2").getContext("2d");
 
-    var membership = $("mem_type").text;
-
-    if(membership == 12){
-            config3.data.labels= ["Month 01", "Month 02", "Month 03", "Month 04", "Month 05", "Month 06", "Month 07","Month 08","Month 09","Month 10","Month 11","Month 12"];
-        }else if(membership == 6){
-            config3.data.labels= ["Month 01", "Month 02", "Month 03", "Month 04", "Month 05", "Month 06"];
-        }else if(membership == 3){
-            config3.data.labels= ["Month01 1st 2-Weeks", "Month01 2nd 2-Weeks", "Month02 1st 2-Weeks", "Month02 2nd 2-Weeks", "Month03 1st 2-Weeks", "Month03 2nd 2-Weeks"];
-        }else if(membership == 1){
-            config3.data.labels= ["Week 01", "Week 02", "Week 03", "Week 04"];
+    $.ajax({
+        type: "POST",
+        url: "./includes/get_memtype.php",
+        success: function(response)
+        {
+            
+            membership = response; 
+            if(membership == 12){
+                config3.data.labels= ["Month 01", "Month 02", "Month 03", "Month 04", "Month 05", "Month 06", "Month 07","Month 08","Month 09","Month 10","Month 11","Month 12"];
+            }else if(membership == 6){
+                config3.data.labels= ["Month 01", "Month 02", "Month 03", "Month 04", "Month 05", "Month 06"];
+            }else if(membership == 3){
+                config3.data.labels= ["Month01 1st 2-Weeks", "Month01 2nd 2-Weeks", "Month02 1st 2-Weeks", "Month02 2nd 2-Weeks", "Month03 1st 2-Weeks", "Month03 2nd 2-Weeks"];
+            }else if(membership == 1){
+                config3.data.labels= ["Week 01", "Week 02", "Week 03", "Week 04"];
+            }
+    
+            window.myLine = new Chart(bftx, config3);
         }
-
-    window.myLine = new Chart(bftx, config3);
-
+    });
 
     }

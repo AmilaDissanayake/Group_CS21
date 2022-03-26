@@ -42,7 +42,7 @@ if(isset($_POST['date-submit'])){
             }
             else{
                 header("location: ../calendar.php");  
-                $_SESSION['notification'] = "Please select a valid time-slot";
+                $_SESSION['notification'] = "Academy is closed!";
             }
         }
     elseif($time_slot==''){
@@ -72,7 +72,7 @@ if(isset($_POST['date-submit'])){
     }
     else{
         header("location: ../calendar.php");  
-        $_SESSION['notification'] = "Please select a valid time-slot";
+        $_SESSION['notification'] = "Academy is closed!";
     }
 }
 

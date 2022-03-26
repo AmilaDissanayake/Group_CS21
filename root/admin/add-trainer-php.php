@@ -36,7 +36,16 @@ $trainer_insert = "INSERT INTO trainer (f_name, l_name, gender, phone_no, dob, a
 
 $result1 = mysqli_query($conn, $trainer_insert);
 
-// $member_select = "SELECT member_id FROM member WHERE username = '$username_bb'";
+$traine_select = "SELECT trainer_id FROM trainer WHERE username = '" . $username_bb . "'";
+$result1 = mysqli_query($conn, $traine_select);
+$row1 = mysqli_fetch_assoc($result1);
+
+$trainer_id = $row1['trainer_id'];
+
+$trainer_recievable = "INSERT INTO trainer_receviables (trainer_id) VALUES ('$trainer_id')";
+
+mysqli_query($conn, $trainer_recievable);
+
 
 // $result2 = mysqli_query($conn, $member_select);
 // $row2 = mysqli_fetch_array($result2);

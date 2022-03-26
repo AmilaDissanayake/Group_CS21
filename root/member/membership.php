@@ -201,6 +201,8 @@ $username = $_SESSION['username'];
         $membership_type = $row2['membership_type'];
         $joined_date = $row2['joined_date'];
 
+        $exp_date;
+
 
         if ($membership_type == 12) {
             $exp_date = date('Y-m-d', strtotime("+12 month", strtotime("$joined_date")));

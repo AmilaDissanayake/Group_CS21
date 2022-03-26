@@ -244,12 +244,7 @@ text-decoration: none;
 margin-bottom: 10px;
 font-family: 'rubik';
 font-size: 20px;
-}
-tbody tr:nth-child(even) {
-background-color: #fff;
-}
-tbody tr:nth-child(odd) {
-background-color: #eee;
+background-color:#e5e5e5;
 }
 .earning-table
 {
@@ -316,11 +311,18 @@ text-decoration: none;
 .earning-chart{
 background-color: white;
 width: 48%;
-padding: 80px 30px 80px 30px;
-height: 480px;
+padding: 30px 30px 80px 30px;
+height: 600px;
+justify-content: center;
+align-items: center;
 
 border: 1px #e5e5e5 solid;
     border-radius: 3px;
+}
+.earning-chart h1{
+  align-items: center;
+  text-align: center;
+  padding-bottom: 80px;
 }
 .chart-div{
   width: 100%;
@@ -344,4 +346,8 @@ border-radius: 50px;
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 background: #86ff71; 
+}
+.chartjs-render-monitor{
+  height: 300px !important;
+  background-color: black;
 }

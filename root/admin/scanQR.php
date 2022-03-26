@@ -1,5 +1,5 @@
 <?php include "includes/check_login.php";
-require "includes/db.php";
+
 date_default_timezone_set("Asia/Colombo");
 ?>
 
@@ -18,7 +18,7 @@ date_default_timezone_set("Asia/Colombo");
 </head>
 
 <body>
-    <?php include "includes/sidebar.php"?>
+    <?php include "includes/sidebar.php" ?>
     <section class="home-section">
 
         <?php include "includes/header.php";
@@ -47,24 +47,25 @@ date_default_timezone_set("Asia/Colombo");
         $trainer_f_name = $row1['f_name'];
         $trainer_l_name = $row1['l_name'];
 
-        $query2 = "SELECT * FROM membership  WHERE member_id = '".$member_id."'";
-            $result2 = mysqli_query($conn, $query2);
-            $row2 = mysqli_fetch_assoc($result2);
+        $query2 = "SELECT * FROM membership  WHERE member_id = '" . $member_id . "'";
+        $result2 = mysqli_query($conn, $query2);
+        $row2 = mysqli_fetch_assoc($result2);
 
-            $membership_type = $row2['membership_type']; 
-            $joined_date = $row2['joined_date'];
-            
+        $membership_type = $row2['membership_type'];
+        $joined_date = $row2['joined_date'];
 
-            if($membership_type==12){ 
-                $exp_date = date('Y-m-d',strtotime("+12 month", strtotime("$joined_date")));}
-            else if($membership_type==6){ 
-                $exp_date = date('Y-m-d',strtotime("+6 month", strtotime("$joined_date")));}
-            else if($membership_type==3){ 
-                $exp_date = date('Y-m-d',strtotime("+3 month", strtotime("$joined_date")));}
-            else if($membership_type==1){ 
-                $exp_date = date('Y-m-d',strtotime("+1 month", strtotime("$joined_date")));}
 
-            $today = date('Y-m-d');
+        if ($membership_type == 12) {
+            $exp_date = date('Y-m-d', strtotime("+12 month", strtotime("$joined_date")));
+        } else if ($membership_type == 6) {
+            $exp_date = date('Y-m-d', strtotime("+6 month", strtotime("$joined_date")));
+        } else if ($membership_type == 3) {
+            $exp_date = date('Y-m-d', strtotime("+3 month", strtotime("$joined_date")));
+        } else if ($membership_type == 1) {
+            $exp_date = date('Y-m-d', strtotime("+1 month", strtotime("$joined_date")));
+        }
+
+        $today = date('Y-m-d');
         ?>
 
         <div class="home-content">
@@ -75,9 +76,9 @@ date_default_timezone_set("Asia/Colombo");
                         <img id="image" src="../member/media/members/<?php echo $image ?>" alt="">
                     </div>
                     <div class="separator">
-                            <hr class="hr-left1" />
-                            <span class="hr-text">PERSONAL DETAILS</span>
-                            <hr class="hr-right1" />
+                        <hr class="hr-left1" />
+                        <span class="hr-text">PERSONAL DETAILS</span>
+                        <hr class="hr-right1" />
                     </div>
                     <div class="details">
                         <p><span>NAME</span> - <?php echo "$f_name $l_name" ?></p>
@@ -90,27 +91,28 @@ date_default_timezone_set("Asia/Colombo");
                         <p><span>ASSIGNED TRAINER</span> - <?php echo "$trainer_f_name $trainer_l_name" ?></p>
                     </div>
                     <div class="separator">
-                            <hr class="hr-left2" />
-                            <span class="hr-text">MEMBERSHIP DETAILS</span>
-                            <hr class="hr-right2" />
+                        <hr class="hr-left2" />
+                        <span class="hr-text">MEMBERSHIP DETAILS</span>
+                        <hr class="hr-right2" />
                     </div>
                     <div id="check2" class="check">
-                        <?php if($exp_date>=$today){
+                        <?php if ($exp_date >= $today) {
                             echo "VALID MEMBERSHIP"; ?>
-                            <script>document.getElementById('check2').style.backgroundColor='#86ff71';
-                            document.getElementById('main-div').style.border='2px solid #86ff71';
-                            document.getElementById('image').style.border='3px solid #86ff71';
-                        </script>
+                            <script>
+                                document.getElementById('check2').style.backgroundColor = '#86ff71';
+                                document.getElementById('main-div').style.border = '2px solid #86ff71';
+                                document.getElementById('image').style.border = '3px solid #86ff71';
+                            </script>
                         <?php
-                        }
-                        else{
-                            echo "EXPIRED MEMBERSHIP";?>
-                            <script>document.getElementById('check2').style.backgroundColor='#f54a44';
-                            document.getElementById('main-div').style.border='2px solid #f54a44';
-                            document.getElementById('image').style.border='3px solid #f54a44';
-                        </script>
-                            <?php
-                        }?>
+                        } else {
+                            echo "EXPIRED MEMBERSHIP"; ?>
+                            <script>
+                                document.getElementById('check2').style.backgroundColor = '#f54a44';
+                                document.getElementById('main-div').style.border = '2px solid #f54a44';
+                                document.getElementById('image').style.border = '3px solid #f54a44';
+                            </script>
+                        <?php
+                        } ?>
                     </div>
                 </div>
             </div>
