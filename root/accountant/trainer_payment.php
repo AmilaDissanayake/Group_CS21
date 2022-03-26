@@ -30,7 +30,7 @@
         <div class="home-content">
             <div class="search-bar">
                 <div class="search-box" id="search-bar">
-                    <input type="text" placeholder="Search by name..." id="search">
+                    <input type="text" placeholder="Search by name..." id="search-1" onkeyup="searchPayee('search-1','output-1')">
                     <i class='bx bx-search'></i>
                 </div>
                 <!-- <div class="search-box">
@@ -42,18 +42,28 @@
             <div class="member-list">
                 <table class="table table-hover">
                     <thead>
-                        <tr>
-                            <th>Trainer ID</th>
+                        
+
+                        <th style="display:flex ;"><p style="width: 120px;">Trainer ID</p>
+                          <p style="width: 170px;"> Firstname</p>
+                           <p style="width: 170px;">Lastname</p>
+                           <p style="width: 120px;">Phone Number</p>
+                           <p style="width: 170px;">Completed Members</p>
+                           <p style="width: 100px;">Payment Amount</p>
+                           <p style="width: 100px;"></p>
+                        </th>
+
+                            <!-- <th>Trainer ID</th>
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Phone Number</th>
-                            <th>Completed Members</th>
+                            <th>Completed Members</th> -->
                             <!-- <th>Payment Date</th> -->
-                            <th>Payment Amount</th>
-                            <th> </th>
+                            <!-- <th>Payment Amount</th>
+                            <th> </th> -->
                         </tr>
                     </thead>
-                    <tbody id="output">
+                    <tbody id="output-1" style = "display:block; max-height: 300px;  overflow-y:scroll; overflow-x:hidden; ">
 
                     <?php
         $mydate=date("y-m-d");
@@ -111,14 +121,14 @@
                         
                         
                             <tr>
-                                <td><?php echo "$trainer_id" ?></td>
-                                <td><?php echo "$f_name" ?></td>
-                                <td><?php echo "$l_name" ?></td>
-                                <td><?php echo "$phone_no" ?></td>
-                                <td><?php echo "$assigned_members" ?></td>
+                                <td  style="width:200px"><?php echo "$trainer_id" ?></td>
+                                <td style="width:200px"><?php echo "$f_name" ?></td>
+                                <td style="width:200px"><?php echo "$l_name" ?></td>
+                                <td style="width:200px"><?php echo "$phone_no" ?></td>
+                                <td style="width:200px"><?php echo "$assigned_members" ?></td>
                                 <!-- <td><?php echo "$payment_date" ?></td> -->
-                                <td><?php echo "$payment_amount" ?></td>
-                                <td> <button type="button" class="hero_btn" style="width:100px ; heigth:20px; padding:0px; margin:0px ;font-size: 13px;" onclick="location.href='trainer_payment_form.php?username=<?=$username?>&&payment_amount=<?=$payment_amount?>&&email=<?=$email?>'">Pay Now</button> </td>
+                                <td style="width:200px"><?php echo "$payment_amount" ?></td>
+                                <td style="width:200px"> <button type="button" class="hero_btn" style="width:100px ; heigth:20px; padding:0px; margin:0px ;font-size: 13px;" onclick="location.href='trainer_payment_form.php?username=<?=$username?>&&payment_amount=<?=$payment_amount?>&&email=<?=$email?>'">Pay Now</button> </td>
                                 
                             </tr>
                             
@@ -136,24 +146,37 @@
 
             </div>
 
-
-
-
-
-
+            <div class="search-bar" style = "margin-top:30px;">
+                <div class="search-box" id="search-bar">
+                    <input type="text" placeholder="Search by name..." id="search-2" onkeyup="searchPayee('search-2','output-2')">
+                    <i class='bx bx-search'></i>
+                </div>
+                <!-- <div class="search-box">
+                    <button class="see-more2"><a href="member_payment_form.php">+ ADD PAYMENT</a></button>
+                </div> -->
+            </div>
 
             <div class="member-list">
                 <table class="table table-hover">
                     <thead>
+
+                    
                         <tr>
-                            <th>Trainer ID</th>
+
+                        <th style="display:flex ;"><p style="width:190px;">Trainer ID</p>
+                          <p style="width: 220px;"> Firstname</p>
+                           <p style="width: 230px;">Lastname</p>
+                           <p style="width: 220px;">Phone Number</p>
+                           <p style="width: 100px;">Payment Amount</p>
+                        </th>
+                            <!-- <th>Trainer ID</th>
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Phone Number</th>
-                            <th>Payment Amount</th>
+                            <th>Payment Amount</th> -->
                         </tr>
                     </thead>
-                    <tbody id="output">
+                    <tbody id="output-2"  style = "display:block; max-height: 300px;  overflow-y:scroll; overflow-x:hidden;">
                         <?php
 
 
@@ -195,11 +218,11 @@
 
 
                             <tr>
-                                <td><?php echo "$trainer_id" ?></td>
-                                <td><?php echo "$f_name" ?></td>
-                                <td><?php echo "$l_name" ?></td>
-                                <td><?php echo "$phone_no" ?></td>
-                                <td><?php echo "$payment_amount" ?></td>
+                                <td  style="width:300px"><?php echo "$trainer_id" ?></td>
+                                <td style="width:300px"><?php echo "$f_name" ?></td>
+                                <td style="width:300px"><?php echo "$l_name" ?></td>
+                                <td style="width:300px"><?php echo "$phone_no" ?></td>
+                                <td style="width:300px"><?php echo "$payment_amount" ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -240,6 +263,23 @@
             sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
         } else
             sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    } 
+
+    function searchPayee(search_id,tbody){
+        var input = document.getElementById(search_id);
+        var filter = input.value.toUpperCase();
+        var tbody = document.getElementById(tbody);
+        var row = tbody.getElementsByTagName("tr");
+        for(let i = 0;i < row.length; i++){
+            var td = row[i].getElementsByTagName('td')[1];
+            var txtValue = td.textContent || td.innerText;
+            if(txtValue.toUpperCase().indexOf(filter) > -1){
+                row[i].style.display = "";
+            }
+            else{
+                row[i].style.display = "none";
+            }
+        }
     }
 </script>
 
