@@ -341,8 +341,8 @@ if (($time > $start) && ($time < $end)) {
 
             colors: {
                 'Full': '#FF0000',
-                'Morning': '#FFFF00',
-                'Evening': '#FFA500',
+                'Morning': '#FFA500',
+                'Evening': '#FFFF00',
             }
         },
 
