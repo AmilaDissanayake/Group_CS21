@@ -65,7 +65,7 @@
         <div class="home-content">
             <div class="search-bar">
                 <div class="search-box" id="search-bar">
-                    <input type="text" placeholder="Search by name..." id="search">
+                    <input type="text" placeholder="Search by name..." id="search" onkeyup="searchUser()">
                     <i class='bx bx-search'></i>
                 </div>
 
@@ -167,6 +167,10 @@
                     });
                 });
             });
+
+        
+
+
         </script>
 
     </section>
@@ -177,33 +181,26 @@
 
 
 
-<script>
-function search_item() {
+<script> 
 
-input = document.getElementById("search");
-filter = input.value.toUpperCase();
-table = document.getElementById("dataTable");
-
-tr = table.getElementsByTagName("tr");
-
-for (i = 0; i < tr.length; i++) {
-
-    td = tr[i].getElementsByTagName("td")[2];
-
-
-
-    if (td) {
-        txtValue = td.textContent || td.innerText;
-
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-        } else {
-            tr[i].style.display = "none";
+    function searchUser(){
+        var input = document.getElementById("search");
+        var filter = input.value.toUpperCase();
+        var tbody = document.getElementById("output");
+        var row = tbody.getElementsByTagName("tr");
+        for(let i = 0;i < row.length; i++){
+            var td = row[i].getElementsByTagName('td')[1];
+            var txtValue = td.textContent || td.innerText;
+            if(txtValue.toUpperCase().indexOf(filter) > -1){
+                row[i].style.display = "";
+            }
+            else{
+                row[i].style.display = "none";
+            }
         }
+
     }
 
-}
-}
 
 </script>
 
