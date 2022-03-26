@@ -168,6 +168,7 @@ position: relative;
 padding-top: 104px;
 padding-left: 100px;
 padding-right: 100px;
+padding-bottom: 50px;
 }
 
 @media (max-width: 1240px) {
@@ -223,8 +224,10 @@ background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(#ffffff39), 
  background-color: white;
  width: 48%;
  margin-left: 4%;
- border-radius: 10px;
+
  padding: 20px 3% 20px 3%;
+ border: 1px #e5e5e5 solid;
+    border-radius: 3px;
 }
 table {
 border-collapse: collapse;
@@ -315,7 +318,9 @@ background-color: white;
 width: 48%;
 padding: 80px 30px 80px 30px;
 height: 480px;
-border-radius: 10px;
+
+border: 1px #e5e5e5 solid;
+    border-radius: 3px;
 }
 .chart-div{
   width: 100%;

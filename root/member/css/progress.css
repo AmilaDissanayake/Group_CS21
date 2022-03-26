@@ -336,6 +336,10 @@
   color: lightblue;
   margin-right: 90px;
 }
+.category .nm {
+  color:rgb(64, 59, 59);
+  margin-right: 90px;
+}
 .l_tag{
   font-size: 15px;
   width: 150px;
