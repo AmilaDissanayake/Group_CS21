@@ -47,11 +47,16 @@ $url = "http://localhost/Group_CS21/root/member/mealplan.php";
 $to = $userEmail;
     $subject = "Meal plan and schedule updated";
 
-    $message = '<p>Please note that your Meal plan and schedule has been updated by your trainer</p>';
-    $message .= '<p>Please check the updated meal plan and schedule.';
-    $message .= '<a href="' . $url . '">' . $url . '</a></p>';
-    $message .= '<p>Thank you,<br>STAY WITH POWERHOUSE</p>';
+    $message = '<html><head>
+    </head><body style="background-color:black;">
+    
+   
+<img src="cid:logo" height="100px" style="display:block; margin-left:auto; margin-right:auto; padding-top:40px">
 
+<p style="color:#CECECF; padding-left:100px; padding-right:100px; padding-bottom:50px; font-size:15px; text-align:center;">Please note that your Meal plan and schedule has been updated by your trainer.  
+Please check the updated meal plan and schedule. Thank you, STAY WITH POWERHOUSE. '.$url.'.
+ </p>
+</body></html>';
 
     require 'vendor/autoload.php';
 
@@ -75,11 +80,12 @@ $to = $userEmail;
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = $subject;
     $mail->Body    = $message;
+    $mail->addEmbeddedImage('logo.jpg', 'logo');
     $mail->send();
     echo 'Message has been sent';
 
 if ($result2) {
-    $_SESSION['notification'] = "Successfully UPDATED the meal plan !";
+    $_SESSION['notification'] = "Successfully UPDATED the meal plan!";
     header('location: meal_plan.php?member_id='.$member_id.'');
 } else {
     echo die(mysqli_error($conn));

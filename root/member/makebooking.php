@@ -91,9 +91,15 @@ if($tr_interval->y > 0 || $tr_interval->m > 0 || $tr_interval->d >0){
                     $to = $userEmail;
                     $subject = "You have a new booking";
 
-                    $message = '<p>Please note that you have a new booking for the POWER HOUSE (Date: '.$date.') from '.$username.'</p>';
-                    $message .= '<p>Thank you,<br>STAY WITH POWERHOUSE</p>';
+                    $message = '<html><head>
+    </head><body style="background-color:black;">
+    
+   
+<img src="cid:logo" height="100px" style="display:block; margin-left:auto; margin-right:auto; padding-top:40px">
 
+<p style="color:#CECECF; padding-left:100px; padding-right:100px; padding-bottom:50px; font-size:15px; text-align:center;">Please note that you have a new booking for the POWER HOUSE (Date: '.$date.') from '.$username.'. Thank you, STAY WITH POWERHOUSE.
+ </p>
+</body></html>';
 
                     require 'vendor/autoload.php';
 
@@ -117,6 +123,7 @@ if($tr_interval->y > 0 || $tr_interval->m > 0 || $tr_interval->d >0){
                     $mail->isHTML(true);                                  //Set email format to HTML
                     $mail->Subject = $subject;
                     $mail->Body    = $message;
+                    $mail->addEmbeddedImage('logo.jpg', 'logo');
                     $mail->send();
                     echo 'Message has been sent';
 
