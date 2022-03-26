@@ -28,89 +28,65 @@ $username = $_SESSION['username'];
 <body>
     <?php include "includes/sidebar.php" ?>
     <section class="home-section">
-        <?php
+    <?php 
 
-        date_default_timezone_set('Asia/Colombo');
+            date_default_timezone_set('Asia/Colombo');
 
-        $query1 = "SELECT * FROM member WHERE username = '" . $username . "'";
-        $result1 = mysqli_query($conn, $query1);
-        $row1 = mysqli_fetch_assoc($result1);
+            $query1 = "SELECT * FROM member WHERE username = '".$username."'";
+            $result1 = mysqli_query($conn, $query1);
+            $row1 = mysqli_fetch_assoc($result1);
 
-        $member_id = $row1['member_id'];
-        $trainer_assignment = $row1['assign_trainer'];
-        $gender = $row1['gender'];
+            $member_id = $row1['member_id'];
+            $trainer_assignment = $row1['assign_trainer'];
+            $gender = $row1['gender'];
 
-        $query2 = "SELECT * FROM membership  WHERE member_id = '" . $member_id . "'";
-        $result2 = mysqli_query($conn, $query2);
-        $row2 = mysqli_fetch_assoc($result2);
+            $query2 = "SELECT * FROM membership  WHERE member_id = '".$member_id."'";
+            $result2 = mysqli_query($conn, $query2);
+            $row2 = mysqli_fetch_assoc($result2);
 
-        $membership_type = $row2['membership_type'];
-        $joined_date = $row2['joined_date'];
+            $membership_type = $row2['membership_type']; 
+            $joined_date = $row2['joined_date'];
 
-        if ($membership_type == 12) {
-            $exp_date = date('Y-m-d', strtotime("+12 month", strtotime("$joined_date")));
-        } else if ($membership_type == 6) {
-            $exp_date = date('Y-m-d', strtotime("+6 month", strtotime("$joined_date")));
-        } else if ($membership_type == 3) {
-            $exp_date = date('Y-m-d', strtotime("+3 month", strtotime("$joined_date")));
-        } else if ($membership_type == 1) {
-            $exp_date = date('Y-m-d', strtotime("+1 month", strtotime("$joined_date")));
-        }
+            if($membership_type==12){ 
+                $exp_date = date('Y-m-d',strtotime("+12 month", strtotime("$joined_date")));}
+            else if($membership_type==6){ 
+                $exp_date = date('Y-m-d',strtotime("+6 month", strtotime("$joined_date")));}
+            else if($membership_type==3){ 
+                $exp_date = date('Y-m-d',strtotime("+3 month", strtotime("$joined_date")));}
+            else if($membership_type==1){ 
+                $exp_date = date('Y-m-d',strtotime("+1 month", strtotime("$joined_date")));}
 
-        $point_date = date('Y-m-d', strtotime("$joined_date"));
-        $joinpoint_date = new DateTime("$point_date");
+            $point_date = date('Y-m-d',strtotime("$joined_date"));
+            $joinpoint_date = new DateTime("$point_date");
 
-        $date = date('Y-m-d');
-        $today = new DateTime($date);
+            $date = date('Y-m-d');
+            $today = new DateTime($date);
+            
 
-        $mem_interval = $today->diff($joinpoint_date);
+            $mem_interval = $today->diff($joinpoint_date);
 
-        switch ($mem_interval->m) {
-            case 0:
-                $next_mon = 1;
-                break;
-            case 1:
-                $next_mon = 2;
-                break;
-            case 2:
-                $next_mon = 3;
-                break;
-            case 3:
-                $next_mon = 4;
-                break;
-            case 4:
-                $next_mon = 5;
-                break;
-            case 5:
-                $next_mon = 6;
-                break;
-            case 6:
-                $next_mon = 7;
-                break;
-            case 7:
-                $next_mon = 8;
-                break;
-            case 8:
-                $next_mon = 9;
-                break;
-            case 9:
-                $next_mon = 10;
-                break;
-            case 10:
-                $next_mon = 11;
-                break;
-            case 11:
-                $next_mon = 12;
-                break;
-        }
+            switch ($mem_interval->m) {
+                case 0:$next_mon = 1;break;
+                case 1:$next_mon = 2;break;
+                case 2:$next_mon = 3;break;
+                case 3:$next_mon = 4;break;
+                case 4:$next_mon = 5;break;
+                case 5:$next_mon = 6;break;
+                case 6:$next_mon = 7;break;
+                case 7:$next_mon = 8;break;
+                case 8:$next_mon = 9;break;
+                case 9:$next_mon = 10;break;
+                case 10:$next_mon = 11;break;
+                case 11:$next_mon = 12;break;  
+            }
+            
+            $par1 = "+".$mem_interval->m." months";
+            $par2 = "+".$next_mon." months";
+            $current_month_start = date('Y-m-d',strtotime($par1, strtotime("$joined_date")));
+            $current_month_end = date('Y-m-d',strtotime($par2, strtotime("$joined_date")));
 
-        $par1 = "+" . $mem_interval->m . " months";
-        $par2 = "+" . $next_mon . " months";
-        $current_month_start = date('Y-m-d', strtotime($par1, strtotime("$joined_date")));
-        $current_month_end = date('Y-m-d', strtotime($par2, strtotime("$joined_date")));
-
-        // echo $current_month_start, $current_month_end;
-        //$membership_type = 6;
+            // echo $current_month_start, $current_month_end;
+            //$membership_type = 6;
         ?>
 
         <?php include "includes/header.php" ?>
@@ -506,65 +482,40 @@ $username = $_SESSION['username'];
                                     <th >4th WEEK</th>";
                                     }
 
-                                    ?>
-                                </tr>
-                            </thead>
+                            ?>
+                        </tr>
+                    </thead>
 
-                            <tbody id="output">
-                                <form action="./includes/updatebf.php" id="bf_ful_form " method="GET">
+                    <tbody id="output">
+                        <form action="./includes/updatebf.php"  id="bf_ful_form " method="GET">
 
-                                    <?php
+                        <?php 
 
-                                    $package_table = $membership_type . 'm_package_progress';
 
-                                    $package_query = "SELECT * FROM $package_table WHERE member_id= '" . $member_id . "'";
-                                    $package_result = mysqli_query($conn, $package_query);
-                                    $pk_row = mysqli_fetch_assoc($package_result);
+                                $package_table = $membership_type.'m_package_progress';
+                
+                                $package_query = "SELECT * FROM $package_table WHERE member_id= '".$member_id."'";
+                                $package_result = mysqli_query($conn, $package_query);
+                                $pk_row = mysqli_fetch_assoc($package_result);
 
-                                    $bf_value_list = $pk_row['bf_values'];
-                                    $value_holder = json_decode($bf_value_list);
+                                $bf_value_list = $pk_row['bf_values'];
+                                $value_holder = json_decode($bf_value_list);
 
-                                    if ($mem_interval->d >= 15) {
-                                        switch ($mem_interval->m) {
-                                            case 0:
-                                                $limit = 0;
-                                                break;
-                                            case 1:
-                                                $limit = 0;
-                                                break;
-                                            case 2:
-                                                $limit = 1;
-                                                break;
-                                            case 3:
-                                                $limit = 2;
-                                                break;
-                                            case 4:
-                                                $limit = 3;
-                                                break;
-                                            case 5:
-                                                $limit = 4;
-                                                break;
-                                            case 6:
-                                                $limit = 5;
-                                                break;
-                                            case 7:
-                                                $limit = 6;
-                                                break;
-                                            case 8:
-                                                $limit = 7;
-                                                break;
-                                            case 9:
-                                                $limit = 8;
-                                                break;
-                                            case 10:
-                                                $limit = 9;
-                                                break;
-                                            case 11:
-                                                $limit = 10;
-                                                break;
-                                            case 12:
-                                                $limit = 11;
-                                                break;
+                                if($mem_interval->d >= 15){
+                                    switch ($mem_interval->m) {
+                                        case 0:$limit = 0;break;
+                                        case 1:$limit = 0;break;
+                                        case 2:$limit = 1;break;
+                                        case 3:$limit = 2;break;
+                                        case 4:$limit = 3;break;
+                                        case 5:$limit = 4;break;
+                                        case 6:$limit = 5;break;
+                                        case 7:$limit = 6;break;
+                                        case 8:$limit = 7;break;
+                                        case 9:$limit = 8;break;
+                                        case 10:$limit = 9;break;
+                                        case 11:$limit = 10;break; 
+                                        case 12:$limit = 11;break; 
                                         }
                                     } else {
                                         $limit = $mem_interval->m;
@@ -839,7 +790,24 @@ $username = $_SESSION['username'];
                             $active_week = 1;
                         }
 
-                        $active_month = $day_interval->m;
+                        $date = date('Y-m-d');
+                        $today = new DateTime($date);
+
+                        $point_date = date('Y-m-d',strtotime("$joined_date"));
+                        $joinpoint_date = new DateTime("$point_date");
+
+                        $mem_interval2 = $today->diff($joinpoint_date);
+
+                        if($mem_interval2->d <= 7){
+                            $active_week2 = 1;
+                        }else if($mem_interval2->d <= 14){
+                            $active_week2 = 2;
+                        }else if($mem_interval2->d <= 21){
+                            $active_week2 = 3;
+                        }else if($mem_interval2->d <= 31){
+                            $active_week2 = 4;
+                        }
+                        $active_month=$day_interval->m;
                         //to store the attendance for each package there will be different databases and the relavent member details will be store in the attendance column in a 2D array
                         //Attendance 2D array will be declare and initialized when a new member is inserted to the member tables
                         //2D array consist of n+1 number of tuples where 1st one is for the current week progress and others are to indicates the monthe and that relavent tuple will include with the 5 elements where opening 4 are use to store the weelky progress and last one is for the monthly progress status
@@ -869,127 +837,221 @@ $username = $_SESSION['username'];
 
                             <?php
 
-                            if ($total_workout_days == 2) {
-                                echo ('<ul>
-                                        <div class="itemcon">
+                                $total_per = $full_attendance[$next_mon - 1][$active_week2];
+
+                                $active_day_count = ($total_per/100)*$total_workout_days;
+
+                                $d_count = (int)$active_day_count;
+
+                                //echo $d_count;
+
+                                if($total_workout_days== 2){
+                                   
+                                        echo'<ul>';
+                                    echo(
+                                        '<div class="itemcon">
                                             <li class="plist">  
-                                                <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div class="stag_not" id="tg_d1"><span>NOT COMPLETED</span></div>
-                                            </li>  
-                                        </div>
-                                        <div class="itemcon">
-                                        <li class="plist">
-                                                <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
-                                            </li>
-                                        </div>
-                                        </ul>');
-                            } else if ($total_workout_days == 3) {
-                                echo ('<ul>
-                                        <div class="itemcon">
+                                                <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div');if($d_count >= 1){ echo" class='stag' id='tg_d1' ><span>COMPLETED</span></div>";}else{ echo" class='stag_not' id='tg_d1' ><span>NOT COMPLETED</span></div>";}
+                                            echo('</li>  
+                                        </div>=');
+                                    echo(
+                                        '<div class="itemcon">
                                             <li class="plist">  
-                                                <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div class="stag_not" id="tg_d1"><span>NOT COMPLETED</span></div>
-                                            </li>  
-                                        </div>
-                                        <div class="itemcon">
-                                        <li class="plist">
-                                                <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
-                                            </li>
-                                        </div>
-                                        <div class="itemcon">
-                                            <li class="plist">
-                                                <input type="checkbox"id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
-                                            </li>
-                                        </div>
-                                        </ul>');
-                            } else if ($total_workout_days == 4) {
-                                echo ('
-                                        <ul>
-                                        <div class="itemcon">
+                                                <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div');if($d_count >= 2){ echo" class='stag' id='tg_d2' ><span>COMPLETED</span></div>";}else{ echo" class='stag_not' id='tg_d2' ><span>NOT COMPLETED</span></div>";}
+                                            echo('</li>  
+                                        </div>');
+                                        // <div class="itemcon">
+                                        // <li class="plist">
+                                        //         <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
+                                        //     </li>
+                                        // </div>
+                                        echo('</ul>');
+                                }else if($total_workout_days== 3){
+                                    echo("<ul>");
+                                    echo(
+                                        "<div class='itemcon'>
+                                            <li class='plist'>  
+                                                <input type='checkbox' id='ck_d1' onclick='tick_check(1);'");if($d_count >= 1){echo(" checked ");}echo("><p> DAY 1</p> <div");if($d_count >= 1){ echo(" class='stag' id='tg_d1'><span>COMPLETED</span></div>");}else{ echo(" class='stag_not' id='tg_d1'><span>NOT COMPLETED</span></div>");}
+                                            echo("</li>  
+                                        </div>");
+                                    echo(
+                                        "<div class='itemcon'>
+                                            <li class='plist'>  
+                                                <input type='checkbox' id='ck_d2' onclick='tick_check(2);'");if($d_count >= 2){echo(" checked ");}echo("><p> DAY 2</p> <div");if($d_count >= 2){ echo(" class='stag' id='tg_d2' ><span>COMPLETED</span></div>");}else{ echo(" class='stag_not' id='tg_d2'><span>NOT COMPLETED</span></div>");}
+                                            echo("</li>  
+                                        </div>");
+                                    echo(
+                                        "<div class='itemcon'>
+                                            <li class='plist'>  
+                                                <input type='checkbox' id='ck_d3' onclick='tick_check(3);' ");if($d_count >= 3){echo(" checked ");}echo("><p> DAY 3</p> <div");if($d_count >= 3){ echo(" class='stag' id='tg_d3' ><span>COMPLETED</span></div>");}else{ echo(" class='stag_not' id='tg_d3'><span>NOT COMPLETED</span></div>");}
+                                            echo("</li>  
+                                        </div>");
+                                       echo("</ul>");
+                                }else if($total_workout_days== 4){
+                                    echo'<ul>';
+                                    echo(
+                                        '<div class="itemcon">
                                             <li class="plist">  
-                                                <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div class="stag_not" id="tg_d1"><span>NOT COMPLETED</span></div>
-                                            </li>  
-                                        </div>
-                                        <div class="itemcon">
-                                        <li class="plist">
-                                                <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
-                                            </li>
-                                        </div>
-                                        <div class="itemcon">
-                                            <li class="plist">
-                                                <input type="checkbox"id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
-                                            </li>
-                                        </div>
-                                        <div class="itemcon">
-                                            <li class="plist">
-                                                <input type="checkbox" id="ck_d4" onclick="tick_check(4);"><p> DAY 4</p> <div class="stag_not" id="tg_d4"><span>NOT COMPLETED</span></div>
-                                            </li>
-                                        </div>
-                                        </ul>');
-                            } else if ($total_workout_days == 5) {
-                                echo ('<ul>
-                                            <div class="itemcon">
-                                                <li class="plist">  
-                                                    <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div class="stag_not" id="tg_d1"><span>NOT COMPLETED</span></div>
-                                                </li>  
-                                            </div>
-                                            <div class="itemcon">
-                                            <li class="plist">
-                                                    <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
-                                                </li>
-                                            </div>
-                                            <div class="itemcon">
-                                                <li class="plist">
-                                                    <input type="checkbox"id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
-                                                </li>
-                                            </div>
-                                            <div class="itemcon">
-                                                <li class="plist">
-                                                    <input type="checkbox" id="ck_d4" onclick="tick_check(4);"><p> DAY 4</p> <div class="stag_not" id="tg_d4"><span>NOT COMPLETED</span></div>
-                                                </li>
-                                            </div>
-                                            <div class="itemcon">
-                                                <li class="plist">
-                                                    <input type="checkbox" id="ck_d5" onclick="tick_check(5);"><p> DAY 5</p> <div class="stag_not" id="tg_d5"><span>NOT COMPLETED</span></div>
-                                                </li>
-                                            </div>
-                                        </ul>');
-                            } else if ($total_workout_days == 6) {
-                                echo ('<div class="itmain">
-                                        <ul>
-                                        <div class="itemcon2">
+                                                <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div');if($d_count >= 1){ echo"class='stag' id='tg_d1'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d1'><span>NOT COMPLETED</span></div>";}
+                                            echo('</li>  
+                                        </div>');
+                                    echo(
+                                        '<div class="itemcon">
                                             <li class="plist">  
-                                                <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div class="stag_not" id="tg_d1"><span>NOT COMPLETED</span></div>
-                                            </li>  
-                                        </div>
-                                        <div class="itemcon2">
-                                        <li class="plist">
-                                                <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
-                                            </li>
-                                        </div>
-                                        <div class="itemcon2">
-                                            <li class="plist">
-                                                <input type="checkbox"id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
-                                            </li>
-                                        </div>
-                                        </ul></div>
-                                        <div class="itmain">
-                                        <ul>
-                                        <div class="itemcon2">
-                                            <li class="plist">
-                                                <input type="checkbox" id="ck_d4" onclick="tick_check(4);"><p> DAY 4</p> <div class="stag_not" id="tg_d4"><span>NOT COMPLETED</span></div>
-                                            </li>
-                                        </div>
-                                        <div class="itemcon2">
-                                        <li class="plist">
-                                            <input type="checkbox" id="ck_d5" onclick="tick_check(5);"><p> DAY 5</p> <div class="stag_not" id="tg_d5"><span>NOT COMPLETED</span></div>
-                                        </li>
-                                        </div>
-                                        <div class="itemcon2">
-                                        <li class="plist">
-                                            <input type="checkbox" id="ck_d6" onclick="tick_check(6);"><p> DAY 6</p> <div class="stag_not" id="tg_d6"><span>NOT COMPLETED</span></div>
-                                        </li>
-                                        </div>
-                                        </ul></div>');
-                            }
+                                                <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div');if($d_count >= 2){ echo"class='stag' id='tg_d2'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d2'><span>NOT COMPLETED</span></div>";}
+                                            echo('</li>  
+                                        </div>');
+                                    echo(
+                                        '<div class="itemcon">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div');if($d_count >= 3){ echo"class='stag' id='tg_d3'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d3'><span>NOT COMPLETED</span></div>";}
+                                            echo('</li>  
+                                        </div>');
+                                    echo(
+                                        '<div class="itemcon">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d4" onclick="tick_check(4);"><p> DAY 4</p> <div');if($d_count >= 4){ echo"class='stag' id='tg_d4'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d4'><span>NOT COMPLETED</span></div>";}
+                                            echo('</li>  
+                                        </div>');
+                                       echo('</ul>');
+                                }else if($total_workout_days== 5){
+                                    echo'<ul>';
+                                    echo(
+                                        '<div class="itemcon">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div');if($d_count >= 1){ echo"class='stag' id='tg_d1'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d1'><span>NOT COMPLETED</span></div>";}
+                                            echo('</li>  
+                                        </div>');
+                                    echo(
+                                        '<div class="itemcon">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div');if($d_count >= 2){ echo"class='stag' id='tg_d2'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d2'><span>NOT COMPLETED</span></div>";}
+                                            echo('</li>  
+                                        </div>');
+                                    echo(
+                                        '<div class="itemcon">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div');if($d_count >= 3){ echo"class='stag' id='tg_d3'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d3'><span>NOT COMPLETED</span></div>";}
+                                            echo('</li>  
+                                        </div>');
+                                    echo(
+                                        '<div class="itemcon">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d4" onclick="tick_check(4);"><p> DAY 4</p> <div');if($d_count >= 4){ echo"class='stag' id='tg_d4'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d4'><span>NOT COMPLETED</span></div>";}
+                                            echo('</li>  
+                                        </div>');
+                                    echo(
+                                        '<div class="itemcon">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d5" onclick="tick_check(5);"><p> DAY 5</p> <div');if($d_count >= 5){ echo"class='stag' id='tg_d5'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d5'><span>NOT COMPLETED</span></div>";}
+                                            echo('</li>  
+                                        </div>');
+                                       echo('</ul>');
+                                    // echo(
+                                    //     '<ul>
+                                    //         <div class="itemcon">
+                                    //             <li class="plist">  
+                                    //                 <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div class="stag_not" id="tg_d1"><span>NOT COMPLETED</span></div>
+                                    //             </li>  
+                                    //         </div>
+                                    //         <div class="itemcon">
+                                    //         <li class="plist">
+                                    //                 <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
+                                    //             </li>
+                                    //         </div>
+                                    //         <div class="itemcon">
+                                    //             <li class="plist">
+                                    //                 <input type="checkbox"id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
+                                    //             </li>
+                                    //         </div>
+                                    //         <div class="itemcon">
+                                    //             <li class="plist">
+                                    //                 <input type="checkbox" id="ck_d4" onclick="tick_check(4);"><p> DAY 4</p> <div class="stag_not" id="tg_d4"><span>NOT COMPLETED</span></div>
+                                    //             </li>
+                                    //         </div>
+                                    //         <div class="itemcon">
+                                    //             <li class="plist">
+                                    //                 <input type="checkbox" id="ck_d5" onclick="tick_check(5);"><p> DAY 5</p> <div class="stag_not" id="tg_d5"><span>NOT COMPLETED</span></div>
+                                    //             </li>
+                                    //         </div>
+                                    //     </ul>');
+                                }else if($total_workout_days== 6){
+
+                                    echo('<div class="itmain">
+                                        <ul>');
+                                        echo('<div class="itemcon2">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div'); if($d_count >= 1){ echo"class='stag' id='tg_d1'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d1'><span>NOT COMPLETED</span></div>";}
+                                            echo("</li>  
+                                        </div>");
+                                        echo('<div class="itemcon2">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div'); if($d_count >= 2){ echo"class='stag' id='tg_d2'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d2'><span>NOT COMPLETED</span></div>";}
+                                            echo("</li>  
+                                        </div>");
+                                        echo('<div class="itemcon2">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 3</p> <div'); if($d_count >= 3){ echo"class='stag' id='tg_d3'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d3'><span>NOT COMPLETED</span></div>";}
+                                            echo("</li>  
+                                        </div>");
+                                        // <div class="itemcon2">
+                                        // <li class="plist">
+                                        //         <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
+                                        //     </li>
+                                        // </div>
+                                        // <div class="itemcon2">
+                                        //     <li class="plist">
+                                        //         <input type="checkbox"id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
+                                        //     </li>
+                                        // </div>
+                                        echo("</ul></div>");
+                                        echo('<div class="itmain">
+                                        <ul>');
+                                        echo('<div class="itemcon2">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d4" onclick="tick_check(4);"><p> DAY 4</p> <div'); if($d_count >= 1){ echo"class='stag' id='tg_d4'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d4'><span>NOT COMPLETED</span></div>";}
+                                            echo("</li>  
+                                        </div>");
+                                        echo('<div class="itemcon2">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d5" onclick="tick_check(5);"><p> DAY 5</p> <div'); if($d_count >= 2){ echo"class='stag' id='tg_d5'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d5'><span>NOT COMPLETED</span></div>";}
+                                            echo("</li>  
+                                        </div>");
+                                        echo('<div class="itemcon2">
+                                            <li class="plist">  
+                                                <input type="checkbox" id="ck_d6" onclick="tick_check(6);"><p> DAY 6</p> <div'); if($d_count >= 3){ echo"class='stag' id='tg_d6'><span>COMPLETED</span></div>";}else{ echo"class='stag_not' id='tg_d6'><span>NOT COMPLETED</span></div>";}
+                                            echo("</li>  
+                                        </div>");
+                                        // <div class="itemcon2">
+                                        // <li class="plist">
+                                        //         <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
+                                        //     </li>
+                                        // </div>
+                                        // <div class="itemcon2">
+                                        //     <li class="plist">
+                                        //         <input type="checkbox"id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
+                                        //     </li>
+                                        // </div>
+                                        echo("</ul></div>");
+                                        // <div class="itmain">
+                                        // <ul>
+                                        // <div class="itemcon2">
+                                        //     <li class="plist">
+                                        //         <input type="checkbox" id="ck_d4" onclick="tick_check(4);"><p> DAY 4</p> <div class="stag_not" id="tg_d4"><span>NOT COMPLETED</span></div>
+                                        //     </li>
+                                        // </div>
+                                        // <div class="itemcon2">
+                                        // <li class="plist">
+                                        //     <input type="checkbox" id="ck_d5" onclick="tick_check(5);"><p> DAY 5</p> <div class="stag_not" id="tg_d5"><span>NOT COMPLETED</span></div>
+                                        // </li>
+                                        // </div>
+                                        // <div class="itemcon2">
+                                        // <li class="plist">
+                                        //     <input type="checkbox" id="ck_d6" onclick="tick_check(6);"><p> DAY 6</p> <div class="stag_not" id="tg_d6"><span>NOT COMPLETED</span></div>
+                                        // </li>
+                                        // </div>
+                                        // </ul></div>');
+                                }
                             ?>
 
                         </div>
@@ -1147,40 +1209,23 @@ $username = $_SESSION['username'];
 
                             echo '<div class="wdetails_l">
                                 <ul>';
-                            for ($i = 0; $i < 3; $i++) {
-                                echo '<div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p>';
-                                if ($mem_interval->m > $i + 1) {
-                                    if ($attend[$i][0] > 65) {
-                                        echo '<div class="stag_good"><span class="stat1">GOOD';
-                                    } else {
-                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
-                                    }
-                                } else {
-                                    echo '<div class="stag_not_good"><span class="stat2">N/A';
+                                for($i=0;$i<3;$i++){
+                                    echo'<div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
                                 }
                                 echo '</span></div></li></div>';
                                 // <div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
                                 // <div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                            }
+        
                             echo '</ul>
                             </div>
                             <div class="wdetails_l">
                                 <ul>';
-                            for ($i = 0; $i < 3; $i++) {
-                                echo '<div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p>';
-                                if ($mem_interval->m > $i + 1) {
-                                    if ($attend[$i][0] > 65) {
-                                        echo '<div class="stag_good"><span class="stat1">GOOD';
-                                    } else {
-                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
-                                    }
-                                } else {
-                                    echo '<div class="stag_not_good"><span class="stat2">N/A';
+                                for($i=0;$i<3;$i++){
+                                    echo'<div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
                                 }
                                 echo '</span></div></li></div>';
                                 // <div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
                                 // <div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
-                            }
                             echo '</ul>
                             </div>';
                         } else if ($package_type == 1) {
@@ -1342,8 +1387,8 @@ $username = $_SESSION['username'];
                 tag.className = 'stag';
                 tag.innerText = 'COMPLETED';
 
-                go_for_progress(i, true);
-            } else {
+                go_for_progress(i,true);
+            }else if(checkbox.checked == false){
                 tag.className = 'stag_not';
                 tag.innerText = 'NOT COMPLETED';
                 go_for_progress(i, false);
@@ -1353,10 +1398,29 @@ $username = $_SESSION['username'];
         function go_for_progress(i, j) {
             var day = i;
             var state = j;
+                                             
+            if (day != '' && state != ''){
+                console.log(day);
+                console.log(state);
+                $.ajax({
+                    url: './includes/update_attendance.php',
+                    type: 'post',
+                    data: {
+                        day:day,
+                        state:state
+                    },
+                    dataType:'json',
+                    success: function() {
+                        console.log("success");
+                    },
+                    error: function(){
+                        console.log("error");
+                    }
+                });
+            }else if ( state == false){
+                console.log(day);
+                console.log(state);
 
-            if (day != '' && state != '') {
-                // alert(day);
-                // alert(state);
                 $.ajax({
                     url: './includes/update_attendance.php',
                     type: 'post',
@@ -1367,16 +1431,6 @@ $username = $_SESSION['username'];
                     dataType: 'json',
                     success: function(respo) {
                         console.log("success");
-                        // $('#day').text("in "+date);
-                        // $('#input_date').val(date)
-                        // if( respo.set == 'None'){  
-                        // }else if( respo.set == 'Done'){
-                        //        
-                        //     if (respo.Main_Slot== "All day") {
-                        //     } else if ( respo.Main_Slot == "Morning"){
-                        //     }else if ( respo.Main_Slot == "Evening"){
-                        //     }
-                        // }
                     },
                     error: function() {
                         console.log("error");

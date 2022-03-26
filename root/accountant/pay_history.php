@@ -28,7 +28,7 @@
         <div class="home-content">
 
         
-            <div class="separator1" style="margin-top:50px; margin-bottom:20px; text-decoration:underline;">
+            <div class="separator1" style="margin-bottom:20px; text-decoration:underline;">
                 <span class="hr-text" >RECIEVABLES</span>
             </div>
 

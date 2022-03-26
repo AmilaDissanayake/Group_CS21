@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/profedit.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -23,11 +24,11 @@
     <section class="home-section">
 
         <?php include "includes/header.php" ?>
-
-
-
-
+        
         <div class="home-content">
+            <div class="separator1" style="margin-bottom:20px; text-decoration:underline;">
+                <span class="hr-text" >TO BE PAID</span>
+            </div>
             <div class="search-bar">
                 <div class="search-box" id="search-bar">
                     <input type="text" placeholder="Search by name..." id="search-1" onkeyup="searchPayee('search-1','output-1')">
@@ -145,7 +146,9 @@
 
 
             </div>
-
+            <div class="separator1" style="margin-top:50px; margin-bottom:20px; text-decoration:underline;">
+                <span class="hr-text" >PAYMENTS</span>
+            </div>
             <div class="search-bar" style = "margin-top:30px;">
                 <div class="search-box" id="search-bar">
                     <input type="text" placeholder="Search by name..." id="search-2" onkeyup="searchPayee('search-2','output-2')">
@@ -214,8 +217,6 @@
 
 
                         ?>
-
-
 
                             <tr>
                                 <td  style="width:300px"><?php echo "$trainer_id" ?></td>

@@ -195,7 +195,11 @@ function getvalbf() {
         $("#bf_pass").val(bf2);
         var day = $("#day_hold").text();
 
+<<<<<<< HEAD
+        if(day <= 15){
+=======
         if (day <= 15) {
+>>>>>>> 6f4226c629597775becb3272a4e4acb14588b82e
             window.location.href = "#popup5";
         } else {
             window.location.href = "#popup3bf";
