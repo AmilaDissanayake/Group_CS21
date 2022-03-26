@@ -170,13 +170,10 @@
                           <p style="width: 220px;"> Firstname</p>
                            <p style="width: 230px;">Lastname</p>
                            <p style="width: 220px;">Phone Number</p>
+                           <!-- <p style="width: 220px;">Payment Date</p> -->
                            <p style="width: 100px;">Payment Amount</p>
                         </th>
-                            <!-- <th>Trainer ID</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Phone Number</th>
-                            <th>Payment Amount</th> -->
+
                         </tr>
                     </thead>
                     <tbody id="output-2"  style = "display:block; max-height: 300px;  overflow-y:scroll; overflow-x:hidden;">
@@ -186,12 +183,8 @@
                         $sql1 = "SELECT * FROM trainer_receviables";
                         $result1 = mysqli_query($conn, $sql1);
 
-                        // $sql = "SELECT * FROM trainer";
-                        // $result = mysqli_query($conn, $sql);
                         $sql2 = "SELECT * FROM trainer_payables  WHERE payment_date >='$year-$month-01'";
                         $result2 = mysqli_query($conn, $sql2);
-
-                        
 
                         while ($trainer_row2 = mysqli_fetch_assoc($result2)) {
                             $trainer_id = $trainer_row2['trainer_id'];

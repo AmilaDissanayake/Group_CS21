@@ -47,6 +47,77 @@ date_default_timezone_set("Asia/Colombo");
 
     $count_row2 = mysqli_num_rows($result2);
 
+    //Earning chart
+$query1 = "SELECT * FROM trainer WHERE username = '".$username."'";
+$result1 = mysqli_query($conn, $query1);
+$row1 = mysqli_fetch_assoc($result1);
+
+$trainer_id = $row1['trainer_id'];
+
+$response = [0,0,0,0,0,0,0,0,0,0,0,0];
+
+date_default_timezone_set('Asia/Colombo');
+$date = date("Y");
+
+$query2 = "SELECT * FROM payment WHERE YEAR(payment_date) = $date AND trainer_id = $trainer_id ;";
+$result2 = mysqli_query($conn, $query2);
+
+$query3 = "SELECT * FROM trainer WHERE trainer_id = $trainer_id ;";
+$result3 = mysqli_query($conn, $query3);
+$row3 = mysqli_fetch_assoc($result3);
+$rate = $row3['rate'];
+
+
+while ($row2 = mysqli_fetch_assoc($result2)) {
+
+$amount = $rate*0.8;
+
+$temp_date = $row2['payment_date'];
+
+$month = date("m",strtotime($temp_date));
+
+$m = (int)$month;
+switch ($m) {
+    case 1:
+        $response[0] = $amount+$response[0];
+      break;
+    case 2:
+        $response[1] = $amount+$response[1];
+      break;
+    case 3:
+        $response[2] = $amount+$response[2];
+      break;
+    case 4:
+        $response[3] = $amount+$response[3];
+      break;
+    case 5:
+        $response[4] = $amount+$response[4];
+      break;
+    case 6:
+        $response[5] = $amount+$response[5];
+      break;
+    case 7:
+        $response[6] = $amount+$response[6];
+      break;
+    case 8:
+        $response[7] = $amount+$response[7];
+      break;
+    case 9:
+        $response[8] = $amount+$response[8];
+      break;
+    case 10:
+        $response[9] = $amount+$response[9];
+      break;
+    case 11:
+        $response[10] = $amount+$response[10];
+      break;
+    case 12:
+        $response[11] = $amount+$response[11];
+      break;
+  }
+
+}
+
     ?>
 
     <div class="home-content">
@@ -73,7 +144,8 @@ date_default_timezone_set("Asia/Colombo");
         </div>
     <div class="chart-div">
         <div class="earning-chart">
-                     <canvas id="canvas"></canvas>
+            <h1>EARNING ANALYSIS</h1>
+            <canvas id="canvas"></canvas>
         </div>
         <div id="wrapper" class="table-div">
 
@@ -83,36 +155,18 @@ date_default_timezone_set("Asia/Colombo");
             <th>Month</th>
             <th style="width:200px;">Your Earning</th>
             </tr>
-
-            <tr onclick="show_hide_row('hidden_row1');"><td>JANUARY</td><td>25,000</td></tr>
-            <tr id="hidden_row1" class="hidden_row">
-                <td>Amila</td>
-                <td>2500</td>
-            </tr>
-
-            <tr onclick="show_hide_row('hidden_row2');"><td>FEBRUARY</td><td>29,000</td></tr>
-            <tr id="hidden_row2" class="hidden_row">
-                <td>Bimsara</td>
-                <td>2500</td>
-            </tr>
-
-            <tr onclick="show_hide_row('hidden_row3');"><td>MARCH</td><td>32,000</td></tr>
-            <tr id="hidden_row3" class="hidden_row">
-                <td>Navod</td>
-                <td>2500</td>
-            </tr>
-
-            <tr onclick="show_hide_row('hidden_row4');"><td>APRIL</td><td>22,000</td></tr>
-            <tr id="hidden_row4" class="hidden_row">
-                <td>Pamodha</td>
-                <td>2500</td>
-            </tr>
-
-            <tr onclick="show_hide_row('hidden_row5');"><td>JUNE</td><td>40,000</td></tr>
-            <tr id="hidden_row5" class="hidden_row">
-                <td>Sandunika</td>
-                <td>2500</td>
-            </tr>
+            <tr><td>JANUARY</td><td><?php echo $response[0]; ?></td></tr>
+            <tr><td>FEBRUARY</td><td><?php echo $response[1]; ?></td></tr>
+            <tr><td>MARCH</td><td><?php echo $response[2]; ?></td></tr>
+            <tr><td>APRIL</td><td><?php echo $response[3]; ?></td></tr>
+            <tr><td>MAY</td><td><?php echo $response[4]; ?></td></tr>
+            <tr><td>JUNE</td><td><?php echo $response[5]; ?></td></tr>
+            <tr><td>JULY</td><td><?php echo $response[6]; ?></td></tr>
+            <tr><td>AUGUST</td><td><?php echo $response[7]; ?></td></tr>
+            <tr><td>SEPTEMBER</td><td><?php echo $response[8]; ?></td></tr>
+            <tr><td>OCTOBER</td><td><?php echo $response[9]; ?></td></tr>
+            <tr><td>NOVEMBER</td><td><?php echo $response[10]; ?></td></tr>
+            <tr><td>DECEMBER</td><td><?php echo $response[11]; ?></td></tr>
 
             </table>
 
@@ -135,5 +189,4 @@ date_default_timezone_set("Asia/Colombo");
         }
     </script>
 </body>
-<script type="text/javascript" src="js/earning.js"></script>
 </html>
