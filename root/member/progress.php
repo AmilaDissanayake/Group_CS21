@@ -1,8 +1,8 @@
 <?php include "includes/check_login.php" ?>
 
-<?php 
-    require "includes/db.php";
-    $username = $_SESSION['username'];
+<?php
+require "includes/db.php";
+$username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -91,26 +91,28 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1><span id="mem_type"><?php echo $membership_type;?></span> MONTH MEMBERSHIP (<?php echo"$joined_date <-> $exp_date";?>)</h1>CURRENT ACTIVE MONTH -> <?php echo $next_mon;?><br>PERIOD -> <?php  echo "[$current_month_start - $current_month_end]";?></div>
+        <div class="welcomenote">
+            <h1><span id="mem_type"><?php echo $membership_type; ?></span> Month Membership<br><span class="jkl"> <?php echo "$joined_date To $exp_date"; ?><br>Current Active Month - <?php echo $next_mon; ?><br>Period -> <?php echo "[$current_month_start - $current_month_end]"; ?></span></h1>
+        </div>
 
-        <div class="HdividerL">            
+        <div class="HdividerL">
             <script>
                 function nn() {
                     $('.alert').addClass("show");
                     $('.alert').removeClass("hide");
                     $('.alert').addClass("showAlert");
-                        setTimeout(function bb() {
+                    setTimeout(function bb() {
                         $('.alert').removeClass("show");
                         $('.alert').addClass("hide");
-                        }, 4000);
-                    };
+                    }, 4000);
+                };
             </script>
             <div class="alert hide">
                 <?php
-                    if (isset($_SESSION['notification'])) {
-                        $notification = $_SESSION['notification'];
-                        echo '<script type="text/javascript">nn();</script>';
-                    }
+                if (isset($_SESSION['notification'])) {
+                    $notification = $_SESSION['notification'];
+                    echo '<script type="text/javascript">nn();</script>';
+                }
                 ?>
                 <span class="msg"><?php echo $notification ?></span>
                 <div class="close-btn">
@@ -133,7 +135,8 @@
                     <div class="aper">
                         <div class="stat">
                             <div class="rate">
-                                <div class="msg">You can <b>only</b> use this option <b>after 15 Days</b> from <span class="highlight"><?php echo $current_month_start?></span> for this month duration.</div><div class="later">Try again later.</div>
+                                <div class="msg">You can <b>only</b> use this option <b>after 15 Days</b> from <span class="highlight"><?php echo $current_month_start ?></span> for this month duration.</div>
+                                <div class="later">Try again later.</div>
                             </div>
                         </div>
                     </div>
@@ -144,23 +147,24 @@
             <div class="popup">
                 <h2>Hi <?php echo $username ?> </h2>
                 <a class="close" href="#">&times;</a>
-                <div class="content"> 
-                        <div class="aper">
-                            <div class="stat">
-                                <div class="rate">
-                                    <p>You can add <span id="bmi_val_holder" class="highlight"></span> as the <span class="highlight">BMI VALUE</span> for <span class="highlight">THIS MONTH.</span></p>
-                                </div>
+                <div class="content">
+                    <div class="aper">
+                        <div class="stat">
+                            <div class="rate">
+                                <p>You can add <span id="bmi_val_holder" class="highlight"></span> as the <span class="highlight">BMI VALUE</span> for <span class="highlight">THIS MONTH.</span></p>
                             </div>
-                            <div class="avatar">
-                                <img src="media/stat.png" >
-                            </div>
-                            <div class="msg">So, Do you really want to proceed?</div><div class="later"><button class="about_btn" id="bmi_in">YES</button><button class="about_btn"onclick="location.href='#'" >NO</button></div>
                         </div>
-                        <form action="./includes/updatebmi.php" id="bmi_form" method="GET">
-                            <input type="hidden"  id="bmi_pass" name="bmi_value" value="">
-                            <input type="hidden"  name="cur_month" value="<?php echo $mem_interval->m ?>">
-                            <input type="hidden"  id="day_hold" name="cur_day" value="<?php echo $mem_interval->d?>">
-                        </form>
+                        <div class="avatar">
+                            <img src="media/stat.png">
+                        </div>
+                        <div class="msg">So, Do you really want to proceed?</div>
+                        <div class="later"><button class="about_btn" id="bmi_in">YES</button><button class="about_btn" onclick="location.href='#'">NO</button></div>
+                    </div>
+                    <form action="./includes/updatebmi.php" id="bmi_form" method="GET">
+                        <input type="hidden" id="bmi_pass" name="bmi_value" value="">
+                        <input type="hidden" name="cur_month" value="<?php echo $mem_interval->m ?>">
+                        <input type="hidden" id="day_hold" name="cur_day" value="<?php echo $mem_interval->d ?>">
+                    </form>
                 </div>
             </div>
         </div>
@@ -168,23 +172,24 @@
             <div class="popup">
                 <h2>Hi <?php echo $username ?> </h2>
                 <a class="close" href="#">&times;</a>
-                <div class="content"> 
-                        <div class="aper">
-                            <div class="stat">
-                                <div class="rate">
-                                    <p>You can add <span id="bf_val_holder" class="highlight"></span> as the <span class="highlight">BODY FAT VALUE</span> for <span class="highlight">THIS MONTH.</span></p>
-                                </div>
+                <div class="content">
+                    <div class="aper">
+                        <div class="stat">
+                            <div class="rate">
+                                <p>You can add <span id="bf_val_holder" class="highlight"></span> as the <span class="highlight">BODY FAT VALUE</span> for <span class="highlight">THIS MONTH.</span></p>
                             </div>
-                            <div class="avatar">
-                                <img src="media/stat.png" >
-                            </div>
-                            <div class="msg">So, Do you really want to proceed?</div><div class="later"><button class="about_btn" id="bf_in">YES</button><button class="about_btn"onclick="location.href='#'" >NO</button></div>
                         </div>
-                        <form action="./includes/updatebf.php" id="bf_form" method="GET">
-                            <input type="hidden"  id="bf_pass" name="bf_value" value="">
-                            <input type="hidden"  name="cur_month" value="<?php echo $mem_interval->m ?>">
-                            <input type="hidden"  id="day_hold" name="cur_day" value="<?php echo $mem_interval->d?>">
-                        </form>
+                        <div class="avatar">
+                            <img src="media/stat.png">
+                        </div>
+                        <div class="msg">So, Do you really want to proceed?</div>
+                        <div class="later"><button class="about_btn" id="bf_in">YES</button><button class="about_btn" onclick="location.href='#'">NO</button></div>
+                    </div>
+                    <form action="./includes/updatebf.php" id="bf_form" method="GET">
+                        <input type="hidden" id="bf_pass" name="bf_value" value="">
+                        <input type="hidden" name="cur_month" value="<?php echo $mem_interval->m ?>">
+                        <input type="hidden" id="day_hold" name="cur_day" value="<?php echo $mem_interval->d ?>">
+                    </form>
                 </div>
             </div>
         </div>
@@ -193,14 +198,20 @@
                 <h2>Hi <?php echo $username ?>! You may edit your BMI values now. </h2>
                 <a class="close" href="#">&times;</a>
 
-                <h3><i class="fas fa-exclamation-circle"></i><?php if($membership_type== 1){echo"You can update values of whole MONTH";}else{echo "You can only update values till MONTH";  echo $mem_interval->m;echo".</h3>";}?>
-                <div class="content">
-                <table class="table table-hover">
-                    <thead>
-                        <tr><?php 
-                                        
-                            if($membership_type ==12){
-                                echo "<th >MONTH 01</th>
+                <h3><i class="fas fa-exclamation-circle"></i><?php if ($membership_type == 1) {
+                                                                    echo "You can update values of whole MONTH";
+                                                                } else {
+                                                                    echo "You can only update values till MONTH";
+                                                                    echo $mem_interval->m;
+                                                                    echo ".</h3>";
+                                                                } ?>
+                    <div class="content">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr><?php
+
+                                    if ($membership_type == 12) {
+                                        echo "<th >MONTH 01</th>
                                     <th >MONTH 02</th>
                                     <th >MONTH 03</th> 
                                     <th >MONTH 04</th>
@@ -211,162 +222,213 @@
                                     <th >MONTH 09</th>
                                     <th >MONTH 10</th>
                                     <th >MONTH 11</th>
-                                    <th >MONTH 12</th>"; 
-                            }else if($membership_type == 6){  
-                                echo "<th >MONTH 01</th>
+                                    <th >MONTH 12</th>";
+                                    } else if ($membership_type == 6) {
+                                        echo "<th >MONTH 01</th>
                                     <th >MONTH 02</th>
                                     <th >MONTH 03</th> 
                                     <th >MONTH 04</th>
                                     <th >MONTH 05</th>
                                     <th 2'>MONTH 06</th>";
-                            }else if($membership_type == 3){
-                                echo "<th>MONTH 01<br>1st 2-WEEKS</th>
+                                    } else if ($membership_type == 3) {
+                                        echo "<th>MONTH 01<br>1st 2-WEEKS</th>
                                     <th >MONTH 01<br>2nd 2-WEEKS</th>
                                     <th >MONTH 02<br>1st 2-WEEKS</th> 
                                     <th >MONTH 02<br>2nd 2-WEEKS</th>
                                     <th >MONTH 03<br>1st 2-WEEKS</th>
                                     <th >MONTH 03<br>2nd 2-WEEKS</th>";
-                            }
-                            else {
-                                echo "<th >1st WEEK</th>
+                                    } else {
+                                        echo "<th >1st WEEK</th>
                                     <th clas>2nd WEEK</th>
                                     <th >3rd WEEK</th> 
                                     <th >4th WEEK</th>";
-                            }
+                                    }
 
-                            ?>
-                        </tr>
-                    </thead>
+                                    ?>
+                                </tr>
+                            </thead>
 
-                    <tbody id="output">
-                        <form action="./includes/updatebmi.php"  id="bmi_ful_form " method="GET">
+                            <tbody id="output">
+                                <form action="./includes/updatebmi.php" id="bmi_ful_form " method="GET">
 
-                        <?php 
+                                    <?php
 
-                                $package_table = $membership_type.'m_package_progress';
-                
-                                $package_query = "SELECT * FROM $package_table WHERE member_id= '".$member_id."'";
-                                $package_result = mysqli_query($conn, $package_query);
-                                $pk_row = mysqli_fetch_assoc($package_result);
+                                    $package_table = $membership_type . 'm_package_progress';
 
-                                $bmi_value_list = $pk_row['bmi_values'];
-                                $value_holder = json_decode($bmi_value_list);
+                                    $package_query = "SELECT * FROM $package_table WHERE member_id= '" . $member_id . "'";
+                                    $package_result = mysqli_query($conn, $package_query);
+                                    $pk_row = mysqli_fetch_assoc($package_result);
 
-                                if($mem_interval->d <= 15){
-                                    switch ($next_mon) {
-                                        case 1:$limit = 0;break;
-                                        case 2:$limit = 1;break;
-                                        case 3:$limit = 2;break;
-                                        case 4:$limit = 3;break;
-                                        case 5:$limit = 4;break;
-                                        case 6:$limit = 5;break;
-                                        case 7:$limit = 6;break;
-                                        case 8:$limit = 7;break;
-                                        case 9:$limit = 8;break;
-                                        case 10:$limit = 9;break;
-                                        case 11:$limit = 10;break; 
-                                        case 12:$limit = 11;break; 
+                                    $bmi_value_list = $pk_row['bmi_values'];
+                                    $value_holder = json_decode($bmi_value_list);
+
+                                    if ($mem_interval->d <= 15) {
+                                        switch ($next_mon) {
+                                            case 1:
+                                                $limit = 0;
+                                                break;
+                                            case 2:
+                                                $limit = 1;
+                                                break;
+                                            case 3:
+                                                $limit = 2;
+                                                break;
+                                            case 4:
+                                                $limit = 3;
+                                                break;
+                                            case 5:
+                                                $limit = 4;
+                                                break;
+                                            case 6:
+                                                $limit = 5;
+                                                break;
+                                            case 7:
+                                                $limit = 6;
+                                                break;
+                                            case 8:
+                                                $limit = 7;
+                                                break;
+                                            case 9:
+                                                $limit = 8;
+                                                break;
+                                            case 10:
+                                                $limit = 9;
+                                                break;
+                                            case 11:
+                                                $limit = 10;
+                                                break;
+                                            case 12:
+                                                $limit = 11;
+                                                break;
                                         }
-                                }else{
-                                    $limit = $next_mon;
-                                }
-
-                                if($membership_type == 12){
-                                    $months = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
-                                }else if($membership_type == 6){
-                                    $months = [false,false,false,false,false,false];
-                                }else if($membership_type == 3){
-                                    $months = [false,false,false,false,false,false];
-                                }else if($membership_type == 1){
-                                    $months = [false,false,false,false];
-                                }
-                                
-                                if($membership_type == 12 || $membership_type == 6){
-                                    for($i=0;$i<$limit;$i++){
-                                        $months[$i]=true;
+                                    } else {
+                                        $limit = $next_mon;
                                     }
-                                }else if($membership_type == 3){
-                                    for($i=0;$i<($limit*2);$i++){
-                                        $months[$i]=true;
+
+                                    if ($membership_type == 12) {
+                                        $months = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+                                    } else if ($membership_type == 6) {
+                                        $months = [false, false, false, false, false, false];
+                                    } else if ($membership_type == 3) {
+                                        $months = [false, false, false, false, false, false];
+                                    } else if ($membership_type == 1) {
+                                        $months = [false, false, false, false];
                                     }
-                                }else if($membership_type == 1){
-                                    if($limit == 1){
-                                        $months = [true,true,true,true];
-                                    }else if ($limit == 0){
-                                        $months = [false,false,false,false];
-                                    }   
-                                }   
 
-                            if($membership_type == 12){
-                                $out = $value_holder;
-                                
-                                echo "<tr>";
-                                for($i=1; $i<=12 ; $i++){
-                                    echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                        echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
-                                        }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'></input>";}             
-                                        echo "</td>";     
-                                }
-                                echo "</tr>";
-                            }else if($membership_type ==6){
-                                $out =$value_holder;
-                            
-                                echo "<tr>";
-                                for($i=1; $i<=6 ; $i++){ 
-                                
-                                    echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                        echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
-                                        }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'> </input>";}             
-                                        echo "</td>";     
-                                }
-                                echo "</tr>";
-                            }else if($membership_type == 3){
-                                $out = $value_holder;
-                            
-                                echo "<tr>";
-                                for($i=1; $i<=6 ; $i++){ 
-                                
-                                    echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                        echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
-                                        }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'> </input>";}             
-                                        echo "</td>";     
-                                }
-                                echo "</tr>";
+                                    if ($membership_type == 12 || $membership_type == 6) {
+                                        for ($i = 0; $i < $limit; $i++) {
+                                            $months[$i] = true;
+                                        }
+                                    } else if ($membership_type == 3) {
+                                        for ($i = 0; $i < ($limit * 2); $i++) {
+                                            $months[$i] = true;
+                                        }
+                                    } else if ($membership_type == 1) {
+                                        if ($limit == 1) {
+                                            $months = [true, true, true, true];
+                                        } else if ($limit == 0) {
+                                            $months = [false, false, false, false];
+                                        }
+                                    }
 
-                            }elseif($membership_type == 1){
-                                $out =$value_holder;
-                            
-                                echo "<tr>";
-                                for($i=1; $i<=4 ; $i++){ 
-                                
-                                    echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                        echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
-                                        }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'> </input>";}             
-                                        echo "</td>";     
-                                }
-                                echo "</tr>";
-                            }
-                            if($months[0]== false){ 
-                                $label_val = "N/A";
-                            }else{
-                                if($membership_type == 12 || $membership_type == 6){
-                                    if($limit > 0){$label_val = $out[$limit - 1];}
-                                }else if($membership_type == 3){
-                                    $label_val = $out[($limit*2) - 1];
-                                }else if($membership_type == 1){ 
-                                    $label_val = $out[3];
-                                }
-                            }
-                        ?>
-                        <tr>
-                    </tbody>
-                </table>
-                    <div class="fixT">
-                        <button class="check_btn" id="tbook" type="submit" name="time-submit" onclick="">SAVE VALUES</button>
+                                    if ($membership_type == 12) {
+                                        $out = $value_holder;
+
+                                        echo "<tr>";
+                                        for ($i = 1; $i <= 12; $i++) {
+                                            echo "<td class='col_1' id='d1ex" . $i . "'>";
+                                            if ($months[$i - 1]) {
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_" . $i . "1' placeholder='BMI value>' name='M1_" . $i . "1' value='";
+                                                echo $out[$i - 1];
+                                                echo "' required min=10";
+                                                echo "></input></span>";
+                                            } else {
+                                                echo "<b>N/A</b><input type='text' class='rest_input' id='1_" . $i . "1' name='M1_" . $i . "1' value='NULL'></input>";
+                                            }
+                                            echo "</td>";
+                                        }
+                                        echo "</tr>";
+                                    } else if ($membership_type == 6) {
+                                        $out = $value_holder;
+
+                                        echo "<tr>";
+                                        for ($i = 1; $i <= 6; $i++) {
+
+                                            echo "<td class='col_1' id='d1ex" . $i . "'>";
+                                            if ($months[$i - 1]) {
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_" . $i . "1' placeholder='BMI value>' name='M1_" . $i . "1' value='";
+                                                echo $out[$i - 1];
+                                                echo "' required min=10";
+                                                echo "></input></span>";
+                                            } else {
+                                                echo "<b>N/A</b><input type='text' class='rest_input' id='1_" . $i . "1' name='M1_" . $i . "1' value='NULL'> </input>";
+                                            }
+                                            echo "</td>";
+                                        }
+                                        echo "</tr>";
+                                    } else if ($membership_type == 3) {
+                                        $out = $value_holder;
+
+                                        echo "<tr>";
+                                        for ($i = 1; $i <= 6; $i++) {
+
+                                            echo "<td class='col_1' id='d1ex" . $i . "'>";
+                                            if ($months[$i - 1]) {
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_" . $i . "1' placeholder='BMI value>' name='M1_" . $i . "1' value='";
+                                                echo $out[$i - 1];
+                                                echo "' required min=10";
+                                                echo "></input></span>";
+                                            } else {
+                                                echo "<b>N/A</b><input type='text' class='rest_input' id='1_" . $i . "1' name='M1_" . $i . "1' value='NULL'> </input>";
+                                            }
+                                            echo "</td>";
+                                        }
+                                        echo "</tr>";
+                                    } elseif ($membership_type == 1) {
+                                        $out = $value_holder;
+
+                                        echo "<tr>";
+                                        for ($i = 1; $i <= 4; $i++) {
+
+                                            echo "<td class='col_1' id='d1ex" . $i . "'>";
+                                            if ($months[$i - 1]) {
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_" . $i . "1' placeholder='BMI value>' name='M1_" . $i . "1' value='";
+                                                echo $out[$i - 1];
+                                                echo "' required min=10";
+                                                echo "></input></span>";
+                                            } else {
+                                                echo "<b>N/A</b><input type='text' class='rest_input' id='1_" . $i . "1' name='M1_" . $i . "1' value='NULL'> </input>";
+                                            }
+                                            echo "</td>";
+                                        }
+                                        echo "</tr>";
+                                    }
+                                    if ($months[0] == false) {
+                                        $label_val = "N/A";
+                                    } else {
+                                        if ($membership_type == 12 || $membership_type == 6) {
+                                            if ($limit > 0) {
+                                                $label_val = $out[$limit - 1];
+                                            }
+                                        } else if ($membership_type == 3) {
+                                            $label_val = $out[($limit * 2) - 1];
+                                        } else if ($membership_type == 1) {
+                                            $label_val = $out[3];
+                                        }
+                                    }
+                                    ?>
+                                    <tr>
+                            </tbody>
+                        </table>
+                        <div class="fixT">
+                            <button class="check_btn" id="tbook" type="submit" name="time-submit" onclick="">SAVE VALUES</button>
+                        </div>
+                        <div class="msg" id="pop2tr_name">
+                            <p></p>
+                        </div>
+                        <div class="later">NOTE:If you are assign with a trainer ,that specific trainer can view these values.</div>
+                        </form>
                     </div>
-                    <div class="msg" id="pop2tr_name"><p></p></div><div class="later">NOTE:If you are assign with a trainer ,that specific trainer can view these values.</div>
-                </form>
-                </div>
             </div>
         </div>
         <div id="popup1bf" class="overlay_2">
@@ -374,14 +436,20 @@
                 <h2>Hi <?php echo $username ?>! You may edit your BOADY FAT values now. </h2>
                 <a class="close" href="#">&times;</a>
 
-                <h3><i class="fas fa-exclamation-circle"></i><?php if($membership_type== 1){echo"You can update values of whole MONTH";}else{echo "You can only update values till MONTH";  echo $mem_interval->m;echo".</h3>";}?>
-                <div class="content">
-                <table class="table table-hover">
-                    <thead>
-                        <tr><?php 
-                                        
-                            if($membership_type ==12){
-                                echo "<th >MONTH 01</th>
+                <h3><i class="fas fa-exclamation-circle"></i><?php if ($membership_type == 1) {
+                                                                    echo "You can update values of whole MONTH";
+                                                                } else {
+                                                                    echo "You can only update values till MONTH";
+                                                                    echo $mem_interval->m;
+                                                                    echo ".</h3>";
+                                                                } ?>
+                    <div class="content">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr><?php
+
+                                    if ($membership_type == 12) {
+                                        echo "<th >MONTH 01</th>
                                     <th >MONTH 02</th>
                                     <th >MONTH 03</th> 
                                     <th >MONTH 04</th>
@@ -392,28 +460,27 @@
                                     <th >MONTH 09</th>
                                     <th >MONTH 10</th>
                                     <th >MONTH 11</th>
-                                    <th >MONTH 12</th>"; 
-                            }else if($membership_type == 6){  
-                                echo "<th >MONTH 01</th>
+                                    <th >MONTH 12</th>";
+                                    } else if ($membership_type == 6) {
+                                        echo "<th >MONTH 01</th>
                                     <th >MONTH 02</th>
                                     <th >MONTH 03</th> 
                                     <th >MONTH 04</th>
                                     <th >MONTH 05</th>
                                     <th 2'>MONTH 06</th>";
-                            }else if($membership_type == 3){
-                                echo "<th>MONTH 01<br>1st 2-WEEKS</th>
+                                    } else if ($membership_type == 3) {
+                                        echo "<th>MONTH 01<br>1st 2-WEEKS</th>
                                     <th >MONTH 01<br>2nd 2-WEEKS</th>
                                     <th >MONTH 02<br>1st 2-WEEKS</th> 
                                     <th >MONTH 02<br>2nd 2-WEEKS</th>
                                     <th >MONTH 03<br>1st 2-WEEKS</th>
                                     <th >MONTH 03<br>2nd 2-WEEKS</th>";
-                            }
-                            else {
-                                echo "<th >1st WEEK</th>
+                                    } else {
+                                        echo "<th >1st WEEK</th>
                                     <th clas>2nd WEEK</th>
                                     <th >3rd WEEK</th> 
                                     <th >4th WEEK</th>";
-                            }
+                                    }
 
                             ?>
                         </tr>
@@ -450,171 +517,261 @@
                                         case 11:$limit = 10;break; 
                                         case 12:$limit = 11;break; 
                                         }
-                                }else{
-                                    $limit = $mem_interval->m;
-                                }
-
-                                if($membership_type == 12){
-                                    $months = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
-                                }else if($membership_type == 6){
-                                    $months = [false,false,false,false,false,false];
-                                }else if($membership_type == 3){
-                                    $months = [false,false,false,false,false,false];
-                                }else if($membership_type == 1){
-                                    $months = [false,false,false,false];
-                                }
-                                
-                                if($membership_type == 12 || $membership_type == 6){
-                                    for($i=0;$i<$limit;$i++){
-                                        $months[$i]=true;
+                                    } else {
+                                        $limit = $mem_interval->m;
                                     }
-                                }else if($membership_type == 3){
-                                    for($i=0;$i<($limit*2);$i++){
-                                        $months[$i]=true;
+
+                                    if ($membership_type == 12) {
+                                        $months = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+                                    } else if ($membership_type == 6) {
+                                        $months = [false, false, false, false, false, false];
+                                    } else if ($membership_type == 3) {
+                                        $months = [false, false, false, false, false, false];
+                                    } else if ($membership_type == 1) {
+                                        $months = [false, false, false, false];
                                     }
-                                }else if($membership_type == 1){
-                                    if($limit == 1){
-                                        $months = [true,true,true,true];
-                                    }else if ($limit == 0){
-                                        $months = [false,false,false,false];
-                                    }   
-                                }   
 
-                            if($membership_type == 12){
-                                $out = $value_holder;
-                                
-                                echo "<tr>";
-                                for($i=1; $i<=12 ; $i++){
-                                    echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                        echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
-                                        }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'></input>";}             
-                                        echo "</td>";     
-                                }
-                                echo "</tr>";
-                            }else if($membership_type ==6){
-                                $out =$value_holder;
-                            
-                                echo "<tr>";
-                                for($i=1; $i<=6 ; $i++){ 
-                                
-                                    echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                        echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
-                                        }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'> </input>";}             
-                                        echo "</td>";     
-                                }
-                                echo "</tr>";
-                            }else if($membership_type == 3){
-                                $out = $value_holder;
-                            
-                                echo "<tr>";
-                                for($i=1; $i<=6 ; $i++){ 
-                                
-                                    echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                        echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
-                                        }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'> </input>";}             
-                                        echo "</td>";     
-                                }
-                                echo "</tr>";
+                                    if ($membership_type == 12 || $membership_type == 6) {
+                                        for ($i = 0; $i < $limit; $i++) {
+                                            $months[$i] = true;
+                                        }
+                                    } else if ($membership_type == 3) {
+                                        for ($i = 0; $i < ($limit * 2); $i++) {
+                                            $months[$i] = true;
+                                        }
+                                    } else if ($membership_type == 1) {
+                                        if ($limit == 1) {
+                                            $months = [true, true, true, true];
+                                        } else if ($limit == 0) {
+                                            $months = [false, false, false, false];
+                                        }
+                                    }
 
-                            }elseif($membership_type == 1){
-                                $out =$value_holder;
-                            
-                                echo "<tr>";
-                                for($i=1; $i<=4 ; $i++){ 
-                                
-                                    echo "<td class='col_1' id='d1ex".$i."'>";if($months[$i-1]){
-                                        echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_".$i."1' placeholder='BMI value>' name='M1_".$i."1' value='";echo $out[$i-1];echo"' required min=10";echo"></input></span>";
-                                        }else{echo"<b>N/A</b><input type='text' class='rest_input' id='1_".$i."1' name='M1_".$i."1' value='NULL'> </input>";}             
-                                        echo "</td>";     
-                                }
-                                echo "</tr>";
-                            }
-                            if($months[0]== false){ 
-                                $label_val2 = "N/A";
-                            }else{
-                                if($membership_type == 12 || $membership_type == 6){
-                                    $label_val2 = $out[$limit - 1];
-                                }else if($membership_type == 3){
-                                    $label_val2 = $out[($limit*2) - 1];
-                                }else if($membership_type == 1){ 
-                                    $label_val2 = $out[3];
-                                }
-                            }
-                        ?>
-                        <tr>
-                    </tbody>
-                </table>
-                    <div class="fixT">
-                        <button class="check_btn" id="tbook" type="submit" name="time-submit" onclick="">SAVE VALUES</button>
+                                    if ($membership_type == 12) {
+                                        $out = $value_holder;
+
+                                        echo "<tr>";
+                                        for ($i = 1; $i <= 12; $i++) {
+                                            echo "<td class='col_1' id='d1ex" . $i . "'>";
+                                            if ($months[$i - 1]) {
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_" . $i . "1' placeholder='BMI value>' name='M1_" . $i . "1' value='";
+                                                echo $out[$i - 1];
+                                                echo "' required min=10";
+                                                echo "></input></span>";
+                                            } else {
+                                                echo "<b>N/A</b><input type='text' class='rest_input' id='1_" . $i . "1' name='M1_" . $i . "1' value='NULL'></input>";
+                                            }
+                                            echo "</td>";
+                                        }
+                                        echo "</tr>";
+                                    } else if ($membership_type == 6) {
+                                        $out = $value_holder;
+
+                                        echo "<tr>";
+                                        for ($i = 1; $i <= 6; $i++) {
+
+                                            echo "<td class='col_1' id='d1ex" . $i . "'>";
+                                            if ($months[$i - 1]) {
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_" . $i . "1' placeholder='BMI value>' name='M1_" . $i . "1' value='";
+                                                echo $out[$i - 1];
+                                                echo "' required min=10";
+                                                echo "></input></span>";
+                                            } else {
+                                                echo "<b>N/A</b><input type='text' class='rest_input' id='1_" . $i . "1' name='M1_" . $i . "1' value='NULL'> </input>";
+                                            }
+                                            echo "</td>";
+                                        }
+                                        echo "</tr>";
+                                    } else if ($membership_type == 3) {
+                                        $out = $value_holder;
+
+                                        echo "<tr>";
+                                        for ($i = 1; $i <= 6; $i++) {
+
+                                            echo "<td class='col_1' id='d1ex" . $i . "'>";
+                                            if ($months[$i - 1]) {
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_" . $i . "1' placeholder='BMI value>' name='M1_" . $i . "1' value='";
+                                                echo $out[$i - 1];
+                                                echo "' required min=10";
+                                                echo "></input></span>";
+                                            } else {
+                                                echo "<b>N/A</b><input type='text' class='rest_input' id='1_" . $i . "1' name='M1_" . $i . "1' value='NULL'> </input>";
+                                            }
+                                            echo "</td>";
+                                        }
+                                        echo "</tr>";
+                                    } elseif ($membership_type == 1) {
+                                        $out = $value_holder;
+
+                                        echo "<tr>";
+                                        for ($i = 1; $i <= 4; $i++) {
+
+                                            echo "<td class='col_1' id='d1ex" . $i . "'>";
+                                            if ($months[$i - 1]) {
+                                                echo "<b><span class ='bpart'><input type='number' step=0.01 class='muscle_input' id='1_" . $i . "1' placeholder='BMI value>' name='M1_" . $i . "1' value='";
+                                                echo $out[$i - 1];
+                                                echo "' required min=10";
+                                                echo "></input></span>";
+                                            } else {
+                                                echo "<b>N/A</b><input type='text' class='rest_input' id='1_" . $i . "1' name='M1_" . $i . "1' value='NULL'> </input>";
+                                            }
+                                            echo "</td>";
+                                        }
+                                        echo "</tr>";
+                                    }
+                                    if ($months[0] == false) {
+                                        $label_val2 = "N/A";
+                                    } else {
+                                        if ($membership_type == 12 || $membership_type == 6) {
+                                            $label_val2 = $out[$limit - 1];
+                                        } else if ($membership_type == 3) {
+                                            $label_val2 = $out[($limit * 2) - 1];
+                                        } else if ($membership_type == 1) {
+                                            $label_val2 = $out[3];
+                                        }
+                                    }
+                                    ?>
+                                    <tr>
+                            </tbody>
+                        </table>
+                        <div class="fixT">
+                            <button class="check_btn" id="tbook" type="submit" name="time-submit" onclick="">SAVE VALUES</button>
+                        </div>
+                        <div class="msg" id="pop2tr_name">
+                            <p></p>
+                        </div>
+                        <div class="later">NOTE:If you are assign with a trainer ,that specific trainer can view these values.</div>
+                        </form>
                     </div>
-                    <div class="msg" id="pop2tr_name"><p></p></div><div class="later">NOTE:If you are assign with a trainer ,that specific trainer can view these values.</div>
-                </form>
-                </div>
             </div>
         </div>
         <div class="analy">
-             <div class="vboderdivider"></div>
-            <div class="rpanel">           
+            <div class="vboderdivider"></div>
+            <div class="rpanel">
                 <div class="pan" id="updatebmi">
                     <?php include "./includes/bmi-calc.php" ?>
-                </div>           
+                </div>
             </div>
 
             <div class="divider"></div>
             <div class="left">
                 <div class="lpanel">
-                    <div class="btag"><p>BMI STATISTICS</p></div>
-                    <div class="manage_btn"><button  id="bmi_btn" class="about_btn2">BMI value Editor</button></div>
+                    <div class="btag">
+                        <p>BMI STATISTICS</p>
+                    </div>
+                    <div class="manage_btn"><button id="bmi_btn" class="about_btn2">BMI value Editor</button></div>
                     <div class="bmip" id="weekprgs">
                         <canvas id="canvas"></canvas>
                     </div>
-                    <p class="category"><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id=" bmi_c" <?php if($label_val >= 30 ){echo "class='ob'";}else if($label_val < 30 && $label_val>=25 ){echo "class='ov'";}else if($label_val < 25 && $label_val >=18.5 ){echo "class='hl'";}else if($label_val == 'N/A'){echo "class='nm'";}else if($label_val < 18.5 ){echo "class='un'";}?> ><?php if($label_val >= 30 ){echo " OBESITY";}else if($label_val < 30 && $label_val>=25 ){echo "OVER WEIGHT";}else if($label_val < 25 && $label_val >=18.5 ){echo "HEALTHY";}else if($label_val == 'N/A'){echo "N/A";}else if($label_val < 18.5 ){echo "UNDER WEIGHT";}?></span> BMI value - <?php echo $label_val?><span class="l_tag">(Present)</span></p>
+                    <p class="category"><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt'></i><span id=" bmi_c" <?php if ($label_val >= 30) {
+                                                                                                                                                echo "class='ob'";
+                                                                                                                                            } else if ($label_val < 30 && $label_val >= 25) {
+                                                                                                                                                echo "class='ov'";
+                                                                                                                                            } else if ($label_val < 25 && $label_val >= 18.5) {
+                                                                                                                                                echo "class='hl'";
+                                                                                                                                            } else if ($label_val == 'N/A') {
+                                                                                                                                                echo "class='nm'";
+                                                                                                                                            } else if ($label_val < 18.5) {
+                                                                                                                                                echo "class='un'";
+                                                                                                                                            } ?>><?php if ($label_val >= 30) {
+                                                                                                                                                        echo " OBESITY";
+                                                                                                                                                    } else if ($label_val < 30 && $label_val >= 25) {
+                                                                                                                                                        echo "OVER WEIGHT";
+                                                                                                                                                    } else if ($label_val < 25 && $label_val >= 18.5) {
+                                                                                                                                                        echo "HEALTHY";
+                                                                                                                                                    } else if ($label_val == 'N/A') {
+                                                                                                                                                        echo "N/A";
+                                                                                                                                                    } else if ($label_val < 18.5) {
+                                                                                                                                                        echo "UNDER WEIGHT";
+                                                                                                                                                    } ?></span> BMI value - <?php echo $label_val ?><span class="l_tag">(Present)</span></p>
                 </div>
-                <div class="divider3" ></div>
-                <div class="indc1" >
+                <div class="divider3"></div>
+                <div class="indc1">
                     <h2>Weekly Progress</h2>
-                    <?php 
-                        date_default_timezone_set('Asia/Colombo');
-                        $query1 = "SELECT * FROM member WHERE username = '".$username."'";
-                        $result1 = mysqli_query($conn, $query1);
-                        $row1 = mysqli_fetch_assoc($result1);
-                        
-                        $member_id = $row1['member_id']; 
+                    <?php
+                    date_default_timezone_set('Asia/Colombo');
+                    $query1 = "SELECT * FROM member WHERE username = '" . $username . "'";
+                    $result1 = mysqli_query($conn, $query1);
+                    $row1 = mysqli_fetch_assoc($result1);
 
-                        
-                        for($m=0;$m<=6;$m++){ 
-                            $week=array("day1_ex1","day2_ex1","day3_ex1","day4_ex1","day5_ex1","day6_ex1","day7_ex1");
+                    $member_id = $row1['member_id'];
 
-                            $column = $week[$m];
-                            $find = "SELECT $column FROM schedule WHERE member_id='$member_id';";
-                            $result2 = mysqli_query($conn, $find);
 
-                            $row = mysqli_fetch_assoc($result2);
-                            $en_rs = $row["$week[$m]"];
-        
-                            $ex1 = unserialize(base64_decode($en_rs));
-                            $out[$m]=$ex1;
-                        }
+                    for ($m = 0; $m <= 6; $m++) {
+                        $week = array("day1_ex1", "day2_ex1", "day3_ex1", "day4_ex1", "day5_ex1", "day6_ex1", "day7_ex1");
 
-                        if($out[0]==''){$day1_flag=0;}else if($out[0][0]!='0'){$day1_flag=1;}else if($out[0][0]== '0'){$day1_flag=0;}
-                        if($out[1]==''){$day2_flag=0;}else if($out[1][0]!='0'){$day2_flag=1;}else if($out[1][0]== '0'){$day2_flag=0;}
-                        if($out[2]==''){$day3_flag=0;}else if($out[2][0]!='0'){$day3_flag=1;}else if($out[2][0]== '0'){$day3_flag=0;}
-                        if($out[3]==''){$day4_flag=0;}else if($out[3][0]!='0'){$day4_flag=1;}else if($out[3][0]== '0'){$day4_flag=0;}
-                        if($out[4]==''){$day5_flag=0;}else if($out[4][0]!='0'){$day5_flag=1;}else if($out[4][0]== '0'){$day5_flag=0;}
-                        if($out[5]==''){$day6_flag=0;}else if($out[5][0]!='0'){$day6_flag=1;}else if($out[5][0]== '0'){$day6_flag=0;}
-                        if($out[6]==''){$day7_flag=0;}else if($out[6][0]!='0'){$day7_flag=1;}else if($out[6][0]== '0'){$day7_flag=0;}
+                        $column = $week[$m];
+                        $find = "SELECT $column FROM schedule WHERE member_id='$member_id';";
+                        $result2 = mysqli_query($conn, $find);
 
-                        $total_workout_days = $day1_flag + $day2_flag + $day3_flag + $day4_flag + $day5_flag + $day6_flag + $day7_flag;
+                        $row = mysqli_fetch_assoc($result2);
+                        $en_rs = $row["$week[$m]"];
+
+                        $ex1 = unserialize(base64_decode($en_rs));
+                        $out[$m] = $ex1;
+                    }
+
+                    if ($out[0] == '') {
+                        $day1_flag = 0;
+                    } else if ($out[0][0] != '0') {
+                        $day1_flag = 1;
+                    } else if ($out[0][0] == '0') {
+                        $day1_flag = 0;
+                    }
+                    if ($out[1] == '') {
+                        $day2_flag = 0;
+                    } else if ($out[1][0] != '0') {
+                        $day2_flag = 1;
+                    } else if ($out[1][0] == '0') {
+                        $day2_flag = 0;
+                    }
+                    if ($out[2] == '') {
+                        $day3_flag = 0;
+                    } else if ($out[2][0] != '0') {
+                        $day3_flag = 1;
+                    } else if ($out[2][0] == '0') {
+                        $day3_flag = 0;
+                    }
+                    if ($out[3] == '') {
+                        $day4_flag = 0;
+                    } else if ($out[3][0] != '0') {
+                        $day4_flag = 1;
+                    } else if ($out[3][0] == '0') {
+                        $day4_flag = 0;
+                    }
+                    if ($out[4] == '') {
+                        $day5_flag = 0;
+                    } else if ($out[4][0] != '0') {
+                        $day5_flag = 1;
+                    } else if ($out[4][0] == '0') {
+                        $day5_flag = 0;
+                    }
+                    if ($out[5] == '') {
+                        $day6_flag = 0;
+                    } else if ($out[5][0] != '0') {
+                        $day6_flag = 1;
+                    } else if ($out[5][0] == '0') {
+                        $day6_flag = 0;
+                    }
+                    if ($out[6] == '') {
+                        $day7_flag = 0;
+                    } else if ($out[6][0] != '0') {
+                        $day7_flag = 1;
+                    } else if ($out[6][0] == '0') {
+                        $day7_flag = 0;
+                    }
+
+                    $total_workout_days = $day1_flag + $day2_flag + $day3_flag + $day4_flag + $day5_flag + $day6_flag + $day7_flag;
 
                     ?>
-                    <div class="protick" >
+                    <div class="protick">
 
-                    <?php 
-                        $query2 = "SELECT * FROM membership WHERE member_id = '".$member_id."'";
+                        <?php
+                        $query2 = "SELECT * FROM membership WHERE member_id = '" . $member_id . "'";
                         $result2 = mysqli_query($conn, $query2);
                         $row2 = mysqli_fetch_assoc($result2);
-                        
-    
+
+
                         $package_type = $row2['membership_type'];
 
                         $cur_date = date('Y-m-d');
@@ -623,13 +780,13 @@
                         $today_from = new DateTime("$point_date");
                         $day_interval = $today_from->diff($today_at);
 
-                        if($day_interval->d <= 7){
+                        if ($day_interval->d <= 7) {
                             $active_week = 4;
-                        }else if($day_interval->d <= 14){
+                        } else if ($day_interval->d <= 14) {
                             $active_week = 3;
-                        }else if($day_interval->d <= 21){
+                        } else if ($day_interval->d <= 21) {
                             $active_week = 2;
-                        }else if($day_interval->d <= 28){
+                        } else if ($day_interval->d <= 28) {
                             $active_week = 1;
                         }
 
@@ -662,8 +819,8 @@
                         $attendace = $result_row['attendance'];
                         $bmi_values = $result_row['bmi_values'];
                         $bf_values = $result_row['bf_values'];
-    
-                        
+
+
                         $full_attendance = json_decode($attendace);
                         $full_bmi = json_decode($bmi_values);
                         $full_bf = json_decode($bf_values);
@@ -671,10 +828,14 @@
                         // echo $msg;
                         // print_r($full_attendance);
                         // $attendance_set[$m]=$full_attendance;
-                    ?>
-                    <div <?php if($total_workout_days< 5) {echo('class="wdetails"');}else{echo('class="wdetails2"');}?>>
-                            
-                            <?php 
+                        ?>
+                        <div <?php if ($total_workout_days < 5) {
+                                    echo ('class="wdetails"');
+                                } else {
+                                    echo ('class="wdetails2"');
+                                } ?>>
+
+                            <?php
 
                                 $total_per = $full_attendance[$next_mon - 1][$active_week2];
 
@@ -726,24 +887,6 @@
                                             echo("</li>  
                                         </div>");
                                        echo("</ul>");
-                                    // echo(
-                                    //     '<ul>
-                                    //     <div class="itemcon">
-                                    //         <li class="plist">  
-                                    //             <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div class="stag_not" id="tg_d1"><span>NOT COMPLETED</span></div>
-                                    //         </li>  
-                                    //     </div>
-                                    //     <div class="itemcon">
-                                    //     <li class="plist">
-                                    //             <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
-                                    //         </li>
-                                    //     </div>
-                                    //     <div class="itemcon">
-                                    //         <li class="plist">
-                                    //             <input type="checkbox"id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
-                                    //         </li>
-                                    //     </div>
-                                    //     </ul>');
                                 }else if($total_workout_days== 4){
                                     echo'<ul>';
                                     echo(
@@ -771,29 +914,6 @@
                                             echo('</li>  
                                         </div>');
                                        echo('</ul>');
-                                    // echo(
-                                    //     '<ul>
-                                    //     <div class="itemcon">
-                                    //         <li class="plist">  
-                                    //             <input type="checkbox" id="ck_d1" onclick="tick_check(1);"><p> DAY 1</p> <div class="stag_not" id="tg_d1"><span>NOT COMPLETED</span></div>
-                                    //         </li>  
-                                    //     </div>
-                                    //     <div class="itemcon">
-                                    //     <li class="plist">
-                                    //             <input type="checkbox" id="ck_d2" onclick="tick_check(2);"><p> DAY 2</p> <div class="stag_not" id="tg_d2"><span>NOT COMPLETED</span></div>
-                                    //         </li>
-                                    //     </div>
-                                    //     <div class="itemcon">
-                                    //         <li class="plist">
-                                    //             <input type="checkbox"id="ck_d3" onclick="tick_check(3);"><p> DAY 3</p> <div class="stag_not" id="tg_d3"><span>NOT COMPLETED</span></div>
-                                    //         </li>
-                                    //     </div>
-                                    //     <div class="itemcon">
-                                    //         <li class="plist">
-                                    //             <input type="checkbox" id="ck_d4" onclick="tick_check(4);"><p> DAY 4</p> <div class="stag_not" id="tg_d4"><span>NOT COMPLETED</span></div>
-                                    //         </li>
-                                    //     </div>
-                                    //     </ul>');
                                 }else if($total_workout_days== 5){
                                     echo'<ul>';
                                     echo(
@@ -933,11 +1053,11 @@
                                         // </ul></div>');
                                 }
                             ?>
-                            
+
                         </div>
-                        <div class="wp"> 
+                        <div class="wp">
                             <canvas id="dchart"></canvas>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div class="divider3"></div>
@@ -946,71 +1066,140 @@
         </div>
         <div class="analy2">
             <div class="vboderdivider"></div>
-            <div class="rpanel">           
+            <div class="rpanel">
                 <div class="pan" id="updatebf">
                     <?php include "./includes/bfc-calc.php" ?>
-                </div>           
+                </div>
             </div>
 
             <div class="divider"></div>
             <div class="left">
-                    <div class="indc1">
-                        <h2>Monthly Attendance</h2>
-                        <div class="monthviewlst">
-                            <?php 
+                <div class="indc1">
+                    <h2>Monthly Attendance</h2>
+                    <div class="monthviewlst">
+                        <?php
 
-                            $attend = $full_attendance;
-                            if($package_type == 12){
-                                    echo(
-                                '<div class="wdetails">
+                        $attend = $full_attendance;
+                        if ($package_type == 12) {
+                            echo ('<div class="wdetails">
                                     <ul>');
-                                    for($i=0;$i<3;$i++){
-                                        echo('<div class="itemcon"><li class="plist"><p class="month"> MONTH');echo $i+1;echo'</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
+                            for ($i = 0; $i < 3; $i++) {
+                                echo ('<div class="itemcon"><li class="plist"><p class="month"> MONTH');
+                                echo $i + 1;
+                                echo '</p>';
+                                if ($mem_interval->m > $i + 1) {
+                                    if ($attend[$i][0] > 65) {
+                                        echo '<div class="stag_good"><span class="stat1">GOOD';
+                                    } else {
+                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
                                     }
-                            echo('</ul>
-                                </div>
-                                <div class="wdetails">
-                                    <ul>');
-                                    for($i=3;$i<6;$i++){
-                                        echo('<div class="itemcon"><li class="plist"><p class="month"> MONTH');echo $i+1;echo'</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
-                                    }
-                            echo('</ul>
-                                </div>
-                                <div class="wdetails">
-                                    <ul>');
-                                    for($i=6;$i<9;$i++){
-                                        echo('<div class="itemcon"><li class="plist"><p class="month"> MONTH');echo $i+1;echo'</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
-                                    }
-                            echo(' </ul>
-                                </div>
-                                <div class="wdetails">
-                                    <ul>');
-                                    for($i=9;$i<12;$i++){
-                                        echo('<div class="itemcon"><li class="plist"><p class="month"> MONTH');echo $i+1;echo'</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
-                                    }
-                            echo('</ul>
-                                </div>');
+                                } else {
+                                    echo '<div class="stag_not_good"><span class="stat2">N/A';
+                                }
+                                echo '</span></div></li></div>';
                             }
-                        else if($package_type == 6){
-                            echo(
-                                '<div class="wdetails">
-                                    <ul>');
-                                    for($i=0;$i<3;$i++){
-                                        echo('<div class="itemcon"><li class="plist"><p class="month"> MONTH');echo $i+1;echo'</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
-                                    }
-                            echo('</ul>
+                            echo ('</ul>
                                 </div>
                                 <div class="wdetails">
                                     <ul>');
-                                    for($i=3;$i<6;$i++){
-                                        echo('<div class="itemcon"><li class="plist"><p class="month"> MONTH');echo $i+1;echo'</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
+                            for ($i = 3; $i < 6; $i++) {
+                                echo ('<div class="itemcon"><li class="plist"><p class="month"> MONTH');
+                                echo $i + 1;
+                                echo '</p>';
+                                if ($mem_interval->m > $i + 1) {
+                                    if ($attend[$i][0] > 65) {
+                                        echo '<div class="stag_good"><span class="stat1">GOOD';
+                                    } else {
+                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
                                     }
-                            echo('</ul>
+                                } else {
+                                    echo '<div class="stag_not_good"><span class="stat2">N/A';
+                                }
+                                echo '</span></div></li></div>';
+                            }
+                            echo ('</ul>
                                 </div>
                                 <div class="wdetails">
                                     <ul>');
-                            }else if($package_type == 3){
-                                echo'<div class="wdetails_s">
+                            for ($i = 6; $i < 9; $i++) {
+                                echo ('<div class="itemcon"><li class="plist"><p class="month"> MONTH');
+                                echo $i + 1;
+                                echo '</p>';
+                                if ($mem_interval->m > $i + 1) {
+                                    if ($attend[$i][0] > 65) {
+                                        echo '<div class="stag_good"><span class="stat1">GOOD';
+                                    } else {
+                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                    }
+                                } else {
+                                    echo '<div class="stag_not_good"><span class="stat2">N/A';
+                                }
+                                echo '</span></div></li></div>';
+                            }
+                            echo (' </ul>
+                                </div>
+                                <div class="wdetails">
+                                    <ul>');
+                            for ($i = 9; $i < 12; $i++) {
+                                echo ('<div class="itemcon"><li class="plist"><p class="month"> MONTH');
+                                echo $i + 1;
+                                echo '</p>';
+                                if ($mem_interval->m > $i + 1) {
+                                    if ($attend[$i][0] > 65) {
+                                        echo '<div class="stag_good"><span class="stat1">GOOD';
+                                    } else {
+                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                    }
+                                } else {
+                                    echo '<div class="stag_not_good"><span class="stat2">N/A';
+                                }
+                                echo '</span></div></li></div>';
+                            }
+                            echo ('</ul>
+                                </div>');
+                        } else if ($package_type == 6) {
+                            echo ('<div class="wdetails">
+                                    <ul>');
+                            for ($i = 0; $i < 3; $i++) {
+                                echo ('<div class="itemcon"><li class="plist"><p class="month"> MONTH');
+                                echo $i + 1;
+                                echo '</p>';
+                                if ($mem_interval->m > $i + 1) {
+                                    if ($attend[$i][0] > 65) {
+                                        echo '<div class="stag_good"><span class="stat1">GOOD';
+                                    } else {
+                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                    }
+                                } else {
+                                    echo '<div class="stag_not_good"><span class="stat2">N/A';
+                                }
+                                echo '</span></div></li></div>';
+                            }
+                            echo ('</ul>
+                                </div>
+                                <div class="wdetails">
+                                    <ul>');
+                            for ($i = 3; $i < 6; $i++) {
+                                echo ('<div class="itemcon"><li class="plist"><p class="month"> MONTH');
+                                echo $i + 1;
+                                echo '</p>';
+                                if ($mem_interval->m > $i + 1) {
+                                    if ($attend[$i][0] > 65) {
+                                        echo '<div class="stag_good"><span class="stat1">GOOD';
+                                    } else {
+                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                    }
+                                } else {
+                                    echo '<div class="stag_not_good"><span class="stat2">N/A';
+                                }
+                                echo '</span></div></li></div>';
+                            }
+                            echo ('</ul>
+                                </div>
+                                <div class="wdetails">
+                                    <ul>');
+                        } else if ($package_type == 3) {
+                            echo '<div class="wdetails_s">
                                 <ul>
                                     <div class="itemcon"><li class="plist"><p class="month">  MONTH 1 |</p></li></div>
                                     <div class="itemcon"><li class="plist"><p class="month">  MONTH 2 |</p></li></div>
@@ -1018,91 +1207,163 @@
                                 </ul>
                             </div>';
 
-                            echo'<div class="wdetails_l">
+                            echo '<div class="wdetails_l">
                                 <ul>';
                                 for($i=0;$i<3;$i++){
                                     echo'<div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
                                 }
-                                    echo'</ul>
+                                echo '</span></div></li></div>';
+                                // <div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                // <div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+        
+                            echo '</ul>
                             </div>
                             <div class="wdetails_l">
                                 <ul>';
                                 for($i=0;$i<3;$i++){
                                     echo'<div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
                                 }
-                                    echo'</ul>
+                                echo '</span></div></li></div>';
+                                // <div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                                // <div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p> <div class="stag_not_good"><span class="stat2"></span></div></li></div>
+                            echo '</ul>
                             </div>';
-                             
-                            }else if($package_type == 1){
+                        } else if ($package_type == 1) {
 
-                                echo'<div class="wdetails">
+                            echo '<div class="wdetails">
                                 <ul>';
-                                    echo'<div class="itemcon"><li class="plist"><p class="month"> WEEK 01</p>';if($active_week >= 1){ if($attend[0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
-                                    echo'<div class="itemcon"><li class="plist"><p class="month"> WEEK 02</p>';if($active_week >= 2){ if($attend[1] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
-                                echo'</ul>
+                            echo '<div class="itemcon"><li class="plist"><p class="month"> WEEK 01</p>';
+                            if ($active_week >= 1) {
+                                if ($attend[0] > 65) {
+                                    echo '<div class="stag_good"><span class="stat1">GOOD';
+                                } else {
+                                    echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                }
+                            } else {
+                                echo '<div class="stag_not_good"><span class="stat2">N/A';
+                            }
+                            echo '</span></div></li></div>';
+                            echo '<div class="itemcon"><li class="plist"><p class="month"> WEEK 02</p>';
+                            if ($active_week >= 2) {
+                                if ($attend[1] > 65) {
+                                    echo '<div class="stag_good"><span class="stat1">GOOD';
+                                } else {
+                                    echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                }
+                            } else {
+                                echo '<div class="stag_not_good"><span class="stat2">N/A';
+                            }
+                            echo '</span></div></li></div>';
+                            echo '</ul>
                                 </div>
                                 <div class="wdetails">   
                                 <ul>';
-                                    echo'<div class="itemcon"><li class="plist"><p class="month"> WEEK 03</p>';if($active_week >= 3){ if($attend[2] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
-                                    echo'<div class="itemcon"><li class="plist"><p class="month"> WEEK 04</p>';if($active_week == 4){ if($attend[3] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
-                                echo'</ul>
+                            echo '<div class="itemcon"><li class="plist"><p class="month"> WEEK 03</p>';
+                            if ($active_week >= 3) {
+                                if ($attend[2] > 65) {
+                                    echo '<div class="stag_good"><span class="stat1">GOOD';
+                                } else {
+                                    echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                }
+                            } else {
+                                echo '<div class="stag_not_good"><span class="stat2">N/A';
+                            }
+                            echo '</span></div></li></div>';
+                            echo '<div class="itemcon"><li class="plist"><p class="month"> WEEK 04</p>';
+                            if ($active_week == 4) {
+                                if ($attend[3] > 65) {
+                                    echo '<div class="stag_good"><span class="stat1">GOOD';
+                                } else {
+                                    echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                }
+                            } else {
+                                echo '<div class="stag_not_good"><span class="stat2">N/A';
+                            }
+                            echo '</span></div></li></div>';
+                            echo '</ul>
                             </div>';
-
-                        
                         }
-                            ?>
+                        ?>
 
-                        </div>  
-                        
                     </div>
+
+                </div>
                 <div class="divider3"></div>
                 <div class="dlpanel">
-                    <div class="btag"><p>BODY FAT STATISTICS</p></div>
-                    <div class="manage_btn"><button id="bf_btn"  class="about_btn2">BF value Editor</button></div>
+                    <div class="btag">
+                        <p>BODY FAT STATISTICS</p>
+                    </div>
+                    <div class="manage_btn"><button id="bf_btn" class="about_btn2">BF value Editor</button></div>
                     <div class="bfp">
                         <div class="bmip">
                             <canvas id="canvas2"></canvas>
-                        </div> 
+                        </div>
                     </div>
-                    <p class="category"><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span id=" bf_c" 
-                    <?php 
-                        if($gender == 'female'){
-                            if($label_val2 >= 31 ){echo "class='ob'";}
-                            else if($label_val2 == "N/A"){echo "class='nm'";}
-                            else if($label_val2 < 31 && $label_val2>=25 ){echo "class='avg'";}
-                            else if($label_val2 < 25 && $label_val2 >=21 ){echo "class='fit'";}
-                            else if($label_val2 < 21 && $label_val2 >=14 ){echo "class='ath'";}
-                            else if($label_val2 < 14 && $label_val2 >=10){echo "class='es'";}
-                        }else if( $gender == 'male'){
-                            if($label_val2 >= 25 ){echo "class='ob'";}
-                            else if($label_val2 == "N/A"){echo "class='nm'";}
-                            else if($label_val2 < 25 && $label_val2>=18 ){echo "class='avg'";}
-                            else if($label_val2 < 18 && $label_val2 >=14 ){echo "class='fit'";}
-                            else if($label_val2 < 14 && $label_val2 >=6){echo "class='ath'";}
-                            else if($label_val2 < 6 ){echo "class='es'";}
-                            } 
-                        ?> >
-                    <?php 
+                    <p class="category"><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt'></i><span id=" bf_c" <?php
+                                                                                                                                    if ($gender == 'female') {
+                                                                                                                                        if ($label_val2 >= 31) {
+                                                                                                                                            echo "class='ob'";
+                                                                                                                                        } else if ($label_val2 == "N/A") {
+                                                                                                                                            echo "class='nm'";
+                                                                                                                                        } else if ($label_val2 < 31 && $label_val2 >= 25) {
+                                                                                                                                            echo "class='avg'";
+                                                                                                                                        } else if ($label_val2 < 25 && $label_val2 >= 21) {
+                                                                                                                                            echo "class='fit'";
+                                                                                                                                        } else if ($label_val2 < 21 && $label_val2 >= 14) {
+                                                                                                                                            echo "class='ath'";
+                                                                                                                                        } else if ($label_val2 < 14 && $label_val2 >= 10) {
+                                                                                                                                            echo "class='es'";
+                                                                                                                                        }
+                                                                                                                                    } else if ($gender == 'male') {
+                                                                                                                                        if ($label_val2 >= 25) {
+                                                                                                                                            echo "class='ob'";
+                                                                                                                                        } else if ($label_val2 == "N/A") {
+                                                                                                                                            echo "class='nm'";
+                                                                                                                                        } else if ($label_val2 < 25 && $label_val2 >= 18) {
+                                                                                                                                            echo "class='avg'";
+                                                                                                                                        } else if ($label_val2 < 18 && $label_val2 >= 14) {
+                                                                                                                                            echo "class='fit'";
+                                                                                                                                        } else if ($label_val2 < 14 && $label_val2 >= 6) {
+                                                                                                                                            echo "class='ath'";
+                                                                                                                                        } else if ($label_val2 < 6) {
+                                                                                                                                            echo "class='es'";
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                    ?>>
+                            <?php
 
-                        if($gender == 'female'){
-                                if($label_val2 >= 31 ){echo "OBESE";}
-                                else if($label_val2 == "N/A"){echo "N/A";}
-                                else if($label_val2 < 31 && $label_val2>=25 ){echo "AVERAGE";}
-                                else if($label_val2 < 25 && $label_val2 >=21 ){echo "FITNESS";}
-                                else if($label_val2 < 21 && $label_val2 >=14 ){echo "ATHLETES";}
-                                else if($label_val2 < 14 && $label_val2 >=10){echo "ESSANTIAL FAT";}
-                        }else if( $gender == 'male'){
-                                if($label_val2 >= 25 ){echo "OBESE";}
-                                else if($label_val2 == "N/A"){echo "N/A";}
-                                else if($label_val2 < 25 && $label_val2>=18 ){echo "AVERAGE";}
-                                else if($label_val2 < 18 && $label_val2 >=14 ){echo "FITNESS";}
-                                else if($label_val2 < 14 && $label_val2 >=6){echo "ATHLETES";}
-                                else if($label_val2 < 6 && $label_val2 >=2){echo "ESSANTIAL FAT";}
-                               
-                        }     
-                    
-                    ?>
-                    </span> BF value - <?php echo $label_val2?><span class="l_tag">(Present)</span></p>
+                            if ($gender == 'female') {
+                                if ($label_val2 >= 31) {
+                                    echo "OBESE";
+                                } else if ($label_val2 == "N/A") {
+                                    echo "N/A";
+                                } else if ($label_val2 < 31 && $label_val2 >= 25) {
+                                    echo "AVERAGE";
+                                } else if ($label_val2 < 25 && $label_val2 >= 21) {
+                                    echo "FITNESS";
+                                } else if ($label_val2 < 21 && $label_val2 >= 14) {
+                                    echo "ATHLETES";
+                                } else if ($label_val2 < 14 && $label_val2 >= 10) {
+                                    echo "ESSANTIAL FAT";
+                                }
+                            } else if ($gender == 'male') {
+                                if ($label_val2 >= 25) {
+                                    echo "OBESE";
+                                } else if ($label_val2 == "N/A") {
+                                    echo "N/A";
+                                } else if ($label_val2 < 25 && $label_val2 >= 18) {
+                                    echo "AVERAGE";
+                                } else if ($label_val2 < 18 && $label_val2 >= 14) {
+                                    echo "FITNESS";
+                                } else if ($label_val2 < 14 && $label_val2 >= 6) {
+                                    echo "ATHLETES";
+                                } else if ($label_val2 < 6 && $label_val2 >= 2) {
+                                    echo "ESSANTIAL FAT";
+                                }
+                            }
+
+                            ?>
+                        </span> BF value - <?php echo $label_val2 ?><span class="l_tag">(Present)</span></p>
                 </div>
                 <div class="divider3"></div>
             </div>
@@ -1113,18 +1374,16 @@
 
     <?php include "includes/footer.php" ?>
 
-<script type="text/javascript" src="js/bmi-cal.js"></script>
-<script type="text/javascript" src="js/bfc-cal.js"></script>
+    <script type="text/javascript" src="js/bmi-cal.js"></script>
+    <script type="text/javascript" src="js/bfc-cal.js"></script>
 
-<script> 
+    <script>
+        function tick_check(i) {
 
-    
-        function tick_check(i){
+            var checkbox = document.getElementById("ck_d" + i);
+            var tag = document.getElementById("tg_d" + i);
 
-            var checkbox = document.getElementById("ck_d"+i);
-            var tag = document.getElementById("tg_d"+i);
-
-            if(checkbox.checked == true){
+            if (checkbox.checked == true) {
                 tag.className = 'stag';
                 tag.innerText = 'COMPLETED';
 
@@ -1132,11 +1391,11 @@
             }else if(checkbox.checked == false){
                 tag.className = 'stag_not';
                 tag.innerText = 'NOT COMPLETED';
-                go_for_progress(i,false);
-            }  
-        } 
-        
-        function go_for_progress(i,j){
+                go_for_progress(i, false);
+            }
+        }
+
+        function go_for_progress(i, j) {
             var day = i;
             var state = j;
                                              
@@ -1166,14 +1425,14 @@
                     url: './includes/update_attendance.php',
                     type: 'post',
                     data: {
-                        day:day,
-                        state:state
+                        day: day,
+                        state: state
                     },
-                    dataType:'json',
+                    dataType: 'json',
                     success: function(respo) {
                         console.log("success");
                     },
-                    error: function(){
+                    error: function() {
                         console.log("error");
                     }
                 });
@@ -1183,42 +1442,41 @@
 
         var form = document.getElementById("bmi_form");
 
-        document.getElementById("bmi_in").addEventListener("click", function () {
-        form.submit();
+        document.getElementById("bmi_in").addEventListener("click", function() {
+            form.submit();
         });
 
         var a = document.getElementById('bmi_btn');
 
-        a.addEventListener("click", function () {
+        a.addEventListener("click", function() {
             window.location.href = "#popup1";
         });
 
         var formbf = document.getElementById("bf_form");
 
-        document.getElementById("bf_in").addEventListener("click", function () {
-        formbf.submit();
+        document.getElementById("bf_in").addEventListener("click", function() {
+            formbf.submit();
         });
 
         var bf = document.getElementById('bf_btn');
 
-        bf.addEventListener("click", function () {
+        bf.addEventListener("click", function() {
             window.location.href = "#popup1bf";
         });
-        
-</script>
-    
+    </script>
+
     </section>
 
     <script src="js/bfchart.js" type="text/javascript"></script>
     <script src="js/bmichart.js" type="text/javascript"></script>
     <script src="js/progchart.js" type="text/javascript"></script>
-    <script >
+    <script>
         var dtx = document.getElementById("dchart").getContext("2d");
         window.myLine = new Chart(dtx, config2);
     </script>
 
-    <script>    
-        $( document ).ready(function() {
+    <script>
+        $(document).ready(function() {
             window.location.href = "#";
         });
     </script>

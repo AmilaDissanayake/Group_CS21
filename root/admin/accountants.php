@@ -84,8 +84,7 @@
             </div> -->
             <div class="search-bar">
                 <div class="search-box">
-                    <input type="text" placeholder="Search by name..." id="search">
-                    <i class='bx bx-search'></i>
+
                 </div>
                 <!-- <div class="filter1">
                     <select name="Membership" id="" class="justselect">
@@ -105,7 +104,7 @@
 
 
 
-                <div class="add_button"><button class="add_btn_filter" onclick="location.href='#'">Filter</button></div>
+                <!-- <div class="add_button"><button class="add_btn_filter" onclick="location.href='#'">Filter</button></div> -->
                 <div class="add_button"><button class="add_btn" onclick="location.href='add-accountant.php'">Add Accountant</button></div>
 
             </div>

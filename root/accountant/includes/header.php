@@ -60,6 +60,19 @@ $my_image = $my_row[0];
 
         <i class='bx bx-chevron-down' class="btn-calendar"></i>
     </div>
+    <div class="tooltip"><i class="fas fa-question-circle"></i>
+        <span class="tooltiptext">How to read the calendar?<br><br>You can check the close times of the academy within two weeks from today<br><br>
+            <div class="red">
+                <p><i class="fas fa-circle "> </i>&nbsp All day closed</p>
+            </div><br>
+            <div class="yellow">
+                <p><i class="fas fa-circle "> </i>&nbsp Morning Closed (6 A.M to 2 P.M)</p>
+            </div><br>
+            <div class="orange">
+                <p><i class="fas fa-circle "> </i>&nbsp Evening Closed (2 P.M to 10 P.M)</p>
+            </div>
+        </span>
+    </div>
 
     <div class="header-img">
         <a href="./profile.php"><img src="./media/accountants/<?php echo $my_image ?>" alt=" no image"></a>
