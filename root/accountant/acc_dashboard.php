@@ -99,7 +99,7 @@
                         <p class="value">Rs. <?php  echo $sum3;
                         }
                     ?></p>
-                    <p class="name">Trainer Payables</p>
+                    <p class="name">Trainer Payments</p>
                 </div>
 
 
@@ -152,8 +152,8 @@
                     ?>
 
                     <div class="one">
-                        <p class="value"> <?php  echo $temp ?></p>
-                        <p class="name">Profit</p>
+                        <p class="value"> <?php  echo "PROFIT" ?></p>
+                        <!-- <p class="name">Profit</p> -->
                     </div>
                     <div class="one1">
 
