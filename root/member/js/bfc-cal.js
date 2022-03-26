@@ -2,8 +2,8 @@
 // height = 50;
 
 function bmiV(height, weight) {
-    var bmi=(weight*10000)/(height*height);
-    return(bmi);
+    var bmi = (weight * 10000) / (height * height);
+    return (bmi);
 }
 
 
@@ -81,9 +81,9 @@ document.querySelector('.calculate4 .weight4 .val4 i.sub4').onclick = function (
 document.querySelector('.calculate4 .calc4').onclick = function () {
 
     if (document.getElementById('male4').checked) {
-        
 
-        let bfc = (-44.988+(0.503*age)+(3.172*bmiV(height, weight))-(0.026*bmiV(height, weight)*bmiV(height, weight))-(0.02*bmiV(height, weight)*age)+(0.00021*bmiV(height, weight)*bmiV(height, weight)*age)).toFixed(2);
+
+        let bfc = (-44.988 + (0.503 * age) + (3.172 * bmiV(height, weight)) - (0.026 * bmiV(height, weight) * bmiV(height, weight)) - (0.02 * bmiV(height, weight) * age) + (0.00021 * bmiV(height, weight) * bmiV(height, weight) * age)).toFixed(2);
         height = 50;
         weight = 10;
         age = 10;
@@ -93,7 +93,7 @@ document.querySelector('.calculate4 .calc4').onclick = function () {
         document.querySelector('.calculate4 .height4 .val4 span').innerText = height;
         document.querySelector('.calculate4 .age4 input').value = age;
         document.querySelector('.calculate4 .age4 .val4 span').innerText = age;
-        
+
         document.querySelector('.result4 .bmi4 .val4 #bf_val').innerText = bfc;
 
         if (bfc < 6) {
@@ -121,14 +121,14 @@ document.querySelector('.calculate4 .calc4').onclick = function () {
             document.querySelector('.result4 .bmi4 .val4').style.color = '#ffc107';
             document.querySelector('.result4 .text4').style.color = '#ffc107';
         }
-        
+
         //Male radio button is checked
 
     }
     else if (document.getElementById('female4').checked) {
 
 
-        let bfc = (-44.988+(0.503*age)+(10.689)+(3.172*bmiV(height, weight))-(0.026*bmiV(height, weight)*bmiV(height, weight))+(0.181*bmiV(height, weight))-(0.02*bmiV(height, weight)*age)-(0.005*bmiV(height, weight)*bmiV(height, weight))+(0.00021*bmiV(height, weight)*bmiV(height, weight)*age)).toFixed(2);
+        let bfc = (-44.988 + (0.503 * age) + (10.689) + (3.172 * bmiV(height, weight)) - (0.026 * bmiV(height, weight) * bmiV(height, weight)) + (0.181 * bmiV(height, weight)) - (0.02 * bmiV(height, weight) * age) - (0.005 * bmiV(height, weight) * bmiV(height, weight)) + (0.00021 * bmiV(height, weight) * bmiV(height, weight) * age)).toFixed(2);
         height = 50;
         weight = 10;
         age = 10;
@@ -138,16 +138,16 @@ document.querySelector('.calculate4 .calc4').onclick = function () {
         document.querySelector('.calculate4 .height4 .val4 span').innerText = height;
         document.querySelector('.calculate4 .age4 input').value = age;
         document.querySelector('.calculate4 .age4 .val4 span').innerText = age;
-        
+
 
 
         document.querySelector('.result4 .bmi4 .val4').innerText = bfc;
         //Female radio button is checked
 
         if (bfc < 14) {
-        document.querySelector('.result4 .text4').innerText = 'ESSENTIAL FAT!';
-        document.querySelector('.result4 .bmi4 .val4').style.color = '#3f51b5';
-        document.querySelector('.result4 .text4').style.color = '#3f51b5';
+            document.querySelector('.result4 .text4').innerText = 'ESSENTIAL FAT!';
+            document.querySelector('.result4 .bmi4 .val4').style.color = '#3f51b5';
+            document.querySelector('.result4 .text4').style.color = '#3f51b5';
         }
         else if (bfc > 13 && bfc < 21) {
             document.querySelector('.result4 .text4').innerText = 'ATHLETES!';
@@ -170,8 +170,8 @@ document.querySelector('.calculate4 .calc4').onclick = function () {
             document.querySelector('.result4 .text4').style.color = '#ffc107';
         }
     }
-    
-    
+
+
 
 
     document.querySelector('.calculate4').style.display = 'none';
@@ -184,21 +184,21 @@ document.querySelector('.result4 .recal4').onclick = function () {
 }
 
 
-function getvalbf(){
+function getvalbf() {
 
     var bf2 = $("#bf_val").text();
     alert(bf2);
 
-    if(bf2 != 0){
+    if (bf2 != 0) {
         $("#bf_val_holder").text(bf2);
         $("#intr_id").val(bf2);
         $("#bf_pass").val(bf2);
         var day = $("#day_hold").text();
 
-        if(day >= 15){
+        if (day <= 15) {
             window.location.href = "#popup5";
-        }else{
+        } else {
             window.location.href = "#popup3bf";
         }
-    }   
+    }
 }

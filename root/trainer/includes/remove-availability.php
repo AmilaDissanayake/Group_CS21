@@ -33,11 +33,17 @@ while($row2=mysqli_fetch_assoc($result2)){
     $to = $userEmail;
     $subject = "Booking cancelled";
 
-    $message = '<p>Please note that your booking for the POWER HOUSE (Date: '.$date.') has been cancelled by your trainer</p>';
-    $message .= '<p>We are sorry about the inconvenience.';
-    $message .= '<p>Thank you,<br>STAY WITH POWERHOUSE</p>';
+    $message = '<html><head>
+    </head><body style="background-color:black;">
+    
+   
+<img src="cid:logo" height="100px" style="display:block; margin-left:auto; margin-right:auto; padding-top:40px">
 
-
+<p style="color:#CECECF; padding-left:100px; padding-right:100px; padding-bottom:50px; font-size:15px; text-align:center;">Please note that your booking for the POWER HOUSE (Date : '.$date.' Time: '.$time.') has been cancelled by your trainer.  
+We are sorry about the inconvenience. Thank you, STAY WITH POWERHOUSE.
+ </p>
+</body></html>';
+    
     require '../vendor/autoload.php';
 
     $mail = new PHPMailer(true);
@@ -60,6 +66,7 @@ while($row2=mysqli_fetch_assoc($result2)){
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = $subject;
     $mail->Body    = $message;
+    $mail->addEmbeddedImage('logo.jpg', 'logo');
     $mail->send();
     echo 'Message has been sent';
 

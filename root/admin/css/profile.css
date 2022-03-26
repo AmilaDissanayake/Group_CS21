@@ -416,7 +416,7 @@
 }
 .home-section .home-content{
   position: relative;
-  padding-top: 70px;
+  
   padding-left: 75px;
   padding-right: 75px;
   padding-bottom: 50px;
@@ -443,14 +443,17 @@
   padding: 20px;
   padding-left: 20px;
   background-color: white;
-  border-radius: 15px;
+  border-radius: 3px;
+  border: 1px #e5e5e5 solid;
+  
 }
 .dwnpart .rsd{
   height: 100%;
   width: calc(60% - 20px);
   padding: 20px;
   padding-right: 20px;
-  border-radius: 15px;
+  border-radius: 3px;
+  border: 1px #e5e5e5 solid;
   background-color: white;
 }
 
@@ -554,7 +557,9 @@
 }
 .cover img{
   width: 100%;
-  border-radius: 10px;
+  border-radius: 3px;
+   
+  border: 1px #e5e5e5 solid;
   height: 300px;
 }
 .profile-img{
@@ -625,7 +630,7 @@
 
 #update_profile2 {
   position: relative;
-  top: 40px;
+  top:-27px;
   cursor: pointer;
   left: -25px;
   border-radius: 4px;
@@ -640,7 +645,7 @@ input[type="file"]{
 
 #button_profile1 {
   position: absolute;
-  top: 180px;
+ 
   left: 30%;
   cursor: pointer;
   transform: translate(-50%, -50%);

@@ -1,4 +1,4 @@
 <div class="copyrightText">
 
-    <p><span class="cp">&nbsp;POWER&nbsp; HOUSE&nbsp; FITNESS&nbsp; ALL RIGHTS RESERVED. </span></p>
+    <p><span class="cp">© 2022&nbsp;POWER&nbsp; HOUSE&nbsp; FITNESS&nbsp;</span></p>
 </div>

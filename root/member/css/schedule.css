@@ -57,7 +57,8 @@
   align-content: center;
   justify-content: center;
   width: calc(100% - 40px);
-  border-radius: 15px;
+  border-radius: 3px;
+  border: 1px #e5e5e5 solid;
 }
 
 /* .dashcover{

@@ -90,7 +90,9 @@
 .lsd img{
 
   width: 750px;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+  
+  border: 1px #e5e5e5 solid;
 
 }
 
@@ -243,7 +245,8 @@
   height: auto;
   padding: 20px;
   background-color: white;
-  border-radius: 15px;
+  border-radius: 3px;
+  border: 1px #e5e5e5 solid;
 }
 
 .dwnpart{
@@ -257,7 +260,8 @@
     /* padding: 20px;
     padding-left: 30px; */
     background-color: white;
-    border-radius: 15px;
+    border-radius: 3px;
+  border: 1px #e5e5e5 solid;
 }
 
 .dwnpart .rsd{
@@ -266,7 +270,8 @@
     padding: 20px;
     padding-right: 30px;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 3px;
+  border: 1px #e5e5e5 solid;
 }
 
 .note2 h1{

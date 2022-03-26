@@ -2,6 +2,100 @@ body{
     overflow-x: hidden;
 }
 
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 0px dotted black; /* If you want dots under the hoverable text */
+  /* margin-bottom: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #86ff71;
+  font-family: 'Rubik';
+  cursor: pointer;
+  
+}
+
+
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: #555;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-family: 'Rubik';
+  padding: 10px 10px 10px 10px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: -150px;
+  left: -350px;
+  /* left: 50%; */
+  /* margin-left: -60px; */
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip i{
+  color: #424244;
+}
+
+.red i {
+  color: red;
+}
+
+.red p{
+  color: red;
+  font-family: 'Rubik';
+  font-size: 13px;
+}
+
+.yellow i {
+  color: yellow;
+}
+
+.yellow p{
+  color: yellow;
+  font-family: 'Rubik';
+  font-size: 13px;
+}
+
+.orange i {
+  color: orange;
+}
+
+.orange p{
+  color: orange;
+  font-family: 'Rubik';
+  font-size: 13px;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 00%;
+  left: 75%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 
 .home-section nav .sidebar-button{
     display: flex;
