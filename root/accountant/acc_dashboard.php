@@ -167,7 +167,7 @@
                         <p class="name">Amount</p>
                     </div>
                 </div>
-                <button class="hero_btn" >More Reports >></button>
+                <!-- <button class="hero_btn" >More Reports >></button> -->
             </div>
         </div>
 
@@ -227,7 +227,7 @@ while ($trainer_row2 = mysqli_fetch_assoc($result1) ) {
             </div>
 
             <div class="bmi4">
-                <h2 class="recieve">PAYABLES</h2>
+                <h2 class="recieve">PAYMENTS</h2>
                 <table class="recieve-table">
                     <thead>
                         <tr>

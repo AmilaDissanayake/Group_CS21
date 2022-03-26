@@ -27,7 +27,7 @@
         
         <div class="home-content">
             <div class="separator1" style="margin-bottom:20px; text-decoration:underline;">
-                <span class="hr-text" >TO BE PAID</span>
+                <span class="hr-text" >PAYABLES</span>
             </div>
             <div class="search-bar">
                 <div class="search-box" id="search-bar">

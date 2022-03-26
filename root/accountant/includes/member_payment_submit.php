@@ -82,7 +82,30 @@
     
                 $sql3 = "INSERT INTO payment(member_id, description, payment_amount, trainer_id, payment_type) VALUES('$member_id', '$description', '$amount', '$assigned_trainer', '$payment_type')";
                 mysqli_query($conn, $sql3);
+
+
+
+
+                $sql5 = "SELECT * FROM trainer_receviables WHERE trainer_id = '".$assigned_trainer."' ";;
+                $result5=mysqli_query($conn, $sql5);
+                $row_trainer = mysqli_fetch_assoc($result5);
+                $assignment_count=$row_trainer["assignment_count"];
+                $total_amount=$row_trainer["tr_recievable_amount"];
+
+                if($result5){
+                    "UPDATE trainer_receviables SET assignment_count = '$assignment_count+1',  tr_recievable_amount = '".$total_amount+$amount."'";
+                $result4 = mysqli_query($conn, $query4);   
+                }
+
+                else{
+                    $sql4 = "INSERT INTO trainer_receviables(trainer_id, assignment_count, tr_recievable_amount)
+                VALUES('$assigned_trainer', '1', '$amount')";
+                mysqli_query($conn, $sql4);
     
+
+                }
+
+                
                 
                 date_default_timezone_set('Asia/Colombo');
                 $date = date('Y-m-d');
