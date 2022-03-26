@@ -26,30 +26,36 @@
 
 
         <div class="home-content">
-            <!-- <div class="search-bar">
+
+        
+            <div class="separator1" style="margin-top:50px; margin-bottom:20px; text-decoration:underline;">
+                <span class="hr-text" >RECIEVABLES</span>
+            </div>
+
+            <div class="search-bar">
                 <div class="search-box" id="search-bar">
-                    <input type="text" placeholder="Search by name..." id="search">
+                    <input type="text" placeholder="Search by name..." id="search-1" onkeyup="searchUsers('search-1','output-1')">
                     <i class='bx bx-search'></i>
                 </div>
-            </div> -->
-
-                <div class="separator1" style="margin-top:50px; margin-bottom:20px; text-decoration:underline;">
-                    <span class="hr-text" >RECIEVABLES</span>
-                </div>
-
+            </div>
 
             <div class="member-list">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>UserName</th>
+                        <th style="display:flex ;"><p style="width: 200px;">USERNAME</p>
+                          <p style="width: 200px;"> Payment Date</p>
+                           <p style="width: 200px;">Description</p>
+                           <p style="width: 200px;">Payment Amount</p>
+                           <p style="width: 200px;">Payment Method</p></th>
+                            <!-- <th>UserName</th>
                             <th>Payment Date</th>
                             <th>Description</th>
                             <th>Payment Amount</th>
-                            <th>Payment Method</th>
+                            <th>Payment Method</th> -->
                         </tr>
                     </thead>
-                    <tbody id="output">
+                    <tbody id="output-1" style = "display:block; max-height: 300px;  overflow-y:scroll; overflow-x:hidden;">
                         <?php
 
 
@@ -90,11 +96,11 @@
                         ?>
                             <tr>
                                 
-                                <td><?php echo "$username" ?></td>
-                                <td><?php echo "$payment_date" ?></td>
-                                <td><?php echo "$description" ?></td>
-                                <td><?php echo "$payment_amount" ?></td>
-                                <td><?php echo "$payment_type" ?></td>
+                                <td style="width:400px"><?php echo "$username" ?></td>
+                                <td style="width:400px"><?php echo "$payment_date" ?></td>
+                                <td style="width:400px"><?php echo "$description" ?></td>
+                                <td style="width:400px"><?php echo "$payment_amount" ?></td>
+                                <td style="width:600px"><?php echo "$payment_type" ?></td>
                             </tr>
 
                             <?php } ?>
@@ -106,22 +112,28 @@
 
             </div>
 
-
             <div class="separator1" style="margin-top:50px; margin-bottom:20px; text-decoration:underline;">
-                    <span class="hr-text">PAYABLES</span>
+                <span class="hr-text">PAYABLES</span>
+            </div>
+
+            <div class="search-bar">
+                <div class="search-box" id="search-bar">
+                    <input type="text" placeholder="Search by name..." id="search-2" onkeyup="searchUsers('search-2','output-2')">
+                    <i class='bx bx-search'></i>
                 </div>
+            </div>
 
             <div class="member-list">
-                <table class="table table-hover">
-                    <thead>
+                <table class="table table-hover"  style="width: 900px;" >
+                    <thead style="width: 900px;">
                         <tr>
                             
-                            <th>USERNAME</th>
-                            <th>PAYMENT DATE</th>
-                            <th>Payment Amount</th>
+                            <th style="display:flex ;"><p style="width: 300px;">USERNAME</p>  <p style="width: 300px;"> PAYMENT DATE</p> <p style="width: 300px;">Payment Amount</p></th>
+                            <!-- <th>PAYMENT DATE</th>
+                            <th>Payment Amount</th> -->
                         </tr>
                     </thead>
-                    <tbody id="output">
+                    <tbody id="output-2" style = "display:block; max-height: 300px; width:1000px; overflow-y:scroll; overflow-x:hidden;">
                         <?php
 
 
@@ -162,11 +174,10 @@
 
 
 
-                            <tr>
-                                
-                                <td><?php echo "$username" ?></td>
-                                <td><?php echo "$payment_date" ?></td>
-                                <td><?php echo "$payment_amount" ?></td>
+                            <tr >                                
+                                <td style="width:300px"><?php echo "$username" ?></td>
+                                <td style="width:300px"><?php echo "$payment_date" ?></td>
+                                <td style="width:300px"><?php echo "$payment_amount" ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -209,6 +220,23 @@
             sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
         } else
             sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    } 
+
+    function searchUsers(search_id,tbody){
+        var input = document.getElementById(search_id);
+        var filter = input.value.toUpperCase();
+        var tbody = document.getElementById(tbody);
+        var row = tbody.getElementsByTagName("tr");
+        for(let i = 0;i < row.length; i++){
+            var td = row[i].getElementsByTagName('td')[0];
+            var txtValue = td.textContent || td.innerText;
+            if(txtValue.toUpperCase().indexOf(filter) > -1){
+                row[i].style.display = "";
+            }
+            else{
+                row[i].style.display = "none";
+            }
+        }
     }
 </script>
 
