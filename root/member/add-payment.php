@@ -18,9 +18,9 @@ $row1 = mysqli_fetch_assoc($result1);
 
 $member_id = $row1['member_id'];
 $trainer = $row1['assign_trainer'];
-if($trainer == 0){
-    $trainer = "N/A";
-}
+// if($trainer == 0){
+//     $trainer = "N/A";
+// }
 date_default_timezone_set('Asia/Colombo');
 $date = date('Y-m-d');
 

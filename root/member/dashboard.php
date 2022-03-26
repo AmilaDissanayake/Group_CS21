@@ -43,6 +43,8 @@
             $result2 = mysqli_query($conn, $query2);
             $row2 = mysqli_fetch_assoc($result2);
 
+            $package_type = $row2['membership_type'];
+
             $membership_type = $row2['membership_type']; 
             $joined_date = $row2['joined_date'];
 
@@ -61,6 +63,46 @@
 
             $mem_date = new DateTime("$joined_date");
             $membexp_date = new DateTime("$exp_date");
+
+            $point_date = date('Y-m-d',strtotime("$joined_date"));
+            $joinpoint_date = new DateTime("$point_date");
+
+            $mem_interval2 = $today->diff($joinpoint_date);
+        
+            if($mem_interval2->d <= 7){
+                $active_week = 1;
+            }else if($mem_interval2->d <= 14){
+                $active_week = 2;
+            }else if($mem_interval2->d <= 21){
+                $active_week = 3;
+            }else if($mem_interval2->d <= 31){
+                $active_week = 4;
+            }
+        
+        
+            switch ($mem_interval2->m) {
+                case 0:$next_mon = 1;break;
+                case 1:$next_mon = 2;break;
+                case 2:$next_mon = 3;break;
+                case 3:$next_mon = 4;break;
+                case 4:$next_mon = 5;break;
+                case 5:$next_mon = 6;break;
+                case 6:$next_mon = 7;break;
+                case 7:$next_mon = 8;break;
+                case 8:$next_mon = 9;break;
+                case 9:$next_mon = 10;break;
+                case 10:$next_mon = 11;break;
+                case 11:$next_mon = 12;break;  
+            }
+
+            $find_attendance = "SELECT * FROM {$package_type}m_package_progress WHERE member_id='$member_id';";
+            $attendance_result = mysqli_query($conn, $find_attendance);
+        
+            $result_row = mysqli_fetch_assoc($attendance_result);
+            $attendace = $result_row['attendance'];
+        
+            $full_attendance = json_decode($attendace);
+            $perc_value = $full_attendance[$next_mon - 1][0];
 
             $mem_interval = $today->diff($membexp_date);
 
@@ -338,9 +380,9 @@
                     <div class="pchart">
                             <div class="weekpro">
                                 <h2>Monthly Attendance</h2>
-                                <div class="st">
-                                    <p>GOOD</p>
-                                </div>
+                                <div <?php 
+                                    if($perc_value > 65){echo"class='st'";}else{echo "class='st2'";}?>><p><?php if($perc_value > 65){echo"GOOD";}else{echo "BAD";}?></p></div>
+                            
                             </div>
                             <div class="bt"><a href="./progress.php#weekprgs" class="readmore_btn" id="readMore">View More</a></div>
                     </div>
