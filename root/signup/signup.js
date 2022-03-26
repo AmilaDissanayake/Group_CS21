@@ -163,13 +163,15 @@ function checkInputs() {
 	} else if (!isusername(usernameValue)) {
 		setErrorFor(username, 'User Name is Too Short');
 		usernameValid = false;
+	} else if (!isusername2(usernameValue)) {
+		setErrorFor(username, 'User Name can not have spaces');
+		usernameValid = false;
 	}else if (unameresponse.innerText == 'Not Available') {
 		setErrorFor(username, '');
 		usernameValid = false; 
 	}else {
 		setSuccessFor(username);
 		usernameValid = true;
-
 	}
 
 	if (password1Value === '') {
@@ -283,6 +285,14 @@ function isValidlen(mnumber) {
 
 function isusername(username) {
 	let invalidu = new RegExp('(?=.{6,})')
+	if (invalidu.test(username)) {
+		return true;
+	}
+	return false;
+}
+
+function isusername2(username) {
+	let invalidu = new RegExp('(?=.*[\s])')
 	if (invalidu.test(username)) {
 		return true;
 	}
