@@ -69,8 +69,6 @@ $count = mysqli_num_rows($result1);
         $result1 = mysqli_query($conn, $sql1);
 
         $count_row1 = mysqli_num_rows($result1);
-
-        $rate = $row['rate'];
         $month_earning = $rate * $count_row1;
         ?>
 
@@ -84,7 +82,7 @@ $count = mysqli_num_rows($result1);
 
                 <div class="two">
                     <p class="value"><?php echo $month_earning; ?></p>
-                    <a href="earnings.php" class="name">Earnings</a>
+                    <a href="earnings.php" class="name">Earnings(This month)</a>
                 </div>
 
                 <div class="three">
