@@ -27,7 +27,7 @@ $run = mysqli_query($conn, $sql1);
 if ($run) {
     // echo "<script>alert('Your Profile Updated')</script>";
     // echo "<script>window.open('new-profile.php?u_id=$username' , '_self')</script>";
-    $_SESSION['notification'] = "Equipment Added Successfully!";
+    // $_SESSION['notification'] = "Equipment Added Successfully!";
     header('Location: inventory.php');
 } else {
     mysqli_error($conn);

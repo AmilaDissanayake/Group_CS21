@@ -7,10 +7,10 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/trainer_payment_from.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/profedit.css">
+
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -33,7 +33,7 @@
 
 
                 <div class="form__div" id="main_address1">
-                    <input type="text" class="form__input" id="address1" name="username" placeholder=" " value=<?=$_GET["username"]?>>
+                    <input type="text" class="form__input" id="address1" name="username" placeholder=" " value=<?= $_GET["username"] ?>>
                     <label for="" class="form__label">Username</label>
 
                 </div>
@@ -83,7 +83,7 @@
 
 
                 <div class="form__div" id="main_address1">
-                    <input type="text" class="form__input" id="address2" placeholder=" " name="email" value=<?=$_GET["email"]?> readonly>
+                    <input type="text" class="form__input" id="address2" placeholder=" " name="email" value=<?= $_GET["email"] ?> readonly>
                     <label for="" class="form__label">Email</label>
                 </div>
 
@@ -105,7 +105,7 @@
 
 
                 <div class="form__div" id="main_address1">
-                    <input type="text" class="form__input" id="address2" placeholder=" " name="amount" value=<?=$_GET["payment_amount"]?>>
+                    <input type="text" class="form__input" id="address2" placeholder=" " name="amount" value=<?= $_GET["payment_amount"] ?>>
                     <label for="" class="form__label">Amount</label>
                 </div>
 
