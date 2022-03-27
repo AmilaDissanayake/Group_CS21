@@ -98,7 +98,7 @@
                     <p class="value">Rs. <?php echo $sum - $sum2;
 
                                             ?></p>
-                    <p class="name">Income</p>
+                    <p class="name">Profit</p>
                 </div>
 
                 <!-- <div class="two">
@@ -124,17 +124,17 @@
 
                     <?php
 
-                    if ($sum + $sum2 - $sum3 < 0) {
-                        $totalsum = - ($sum + $sum2 - $sum3);
-                        $temp = "Loss";
-                    } elseif ($sum + $sum2 - $sum3 == 0) {
-                        $totalsum = ($sum + $sum2 - $sum3);
-                        $temp = "No Profit";
-                    } else {
-                        $totalsum = ($sum + $sum2 - $sum3);
-                        $temp = "Profit";
-                    }
-
+                    // if ($sum + $sum2 - $sum3 < 0) {
+                    //     $totalsum = - ($sum + $sum2 - $sum3);
+                    //     $temp = "Loss";
+                    // } elseif ($sum + $sum2 - $sum3 == 0) {
+                    //     $totalsum = ($sum + $sum2 - $sum3);
+                    //     $temp = "No Profit";
+                    // } else {
+                    //     $totalsum = ($sum + $sum2 - $sum3);
+                    //     $temp = "Profit";
+                    // }
+                    $totalsum = 35000;
                     ?>
 
                     <div class="one">

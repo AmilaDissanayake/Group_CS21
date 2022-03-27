@@ -1,4 +1,4 @@
-<?php require "includes/check_login.php"?>
+<?php require "includes/check_login.php" ?>
 
 <!DOCTYPE html>
 
@@ -27,9 +27,9 @@
 
         <div class="home-content">
 
-        
+
             <div class="separator1" style="margin-bottom:20px; text-decoration:underline;">
-                <span class="hr-text" >RECIEVABLES</span>
+                <span class="hr-text">RECIEVABLES</span>
             </div>
 
             <div class="search-bar">
@@ -43,15 +43,16 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th style="display:flex ;"><p style="width: 200px;">USERNAME</p>
-                            <p style="width: 200px;"> Payment Date</p>
-                            <p style="width: 200px;">Description</p>
-                            <p style="width: 200px;">Payment Amount</p>
-                            <p style="width: 200px;">Payment Method</p>
+                            <th style="display:flex ;">
+                                <p style="width: 200px;">USERNAME</p>
+                                <p style="width: 200px;"> Payment Date</p>
+                                <p style="width: 200px;">Description</p>
+                                <p style="width: 200px;">Payment Amount</p>
+                                <p style="width: 200px;">Payment Method</p>
                             </th>
                         </tr>
                     </thead>
-                    <tbody id="output-1" style = "display:block; max-height: 300px;  overflow-y:scroll; overflow-x:hidden;">
+                    <tbody id="output-1" style="display:block; max-height: 300px;  overflow-y:scroll; overflow-x:hidden;">
                         <?php
 
 
@@ -63,45 +64,45 @@
                         $sql2 = "SELECT * FROM trainer_payables";
                         $result2 = mysqli_query($conn, $sql2);
 
-                        
 
-                        while ($trainer_row2 = mysqli_fetch_assoc($result1) ) {
-                            
+
+                        while ($trainer_row2 = mysqli_fetch_assoc($result1)) {
+
 
                             $trainer_id = $trainer_row2['trainer_id'];
+                            if ($trainer_id > 0) {
+                                $sql = "SELECT * FROM trainer WHERE trainer_id = '" . $trainer_id . "'";
+                                $result = mysqli_query($conn, $sql);
+                                $trainer_row = mysqli_fetch_assoc($result);
+                                $trainer_id_cc =  $trainer_row['username'];
 
-                           
-                            $sql = "SELECT * FROM trainer WHERE trainer_id = '" . $trainer_id . "'";
-                            $result = mysqli_query($conn, $sql);
-                            $trainer_row = mysqli_fetch_assoc($result);
-
-                            $sql3 = "SELECT * FROM users WHERE username = '" . $trainer_row["username"] . "'";
-                            $result3 = mysqli_query($conn, $sql3);
-                            $trainer_row3 = mysqli_fetch_assoc($result3);
-
-                            
-
-                            $payment_date = $trainer_row2['payment_date'];
-                            $description = $trainer_row2['description'];
-                            
-                            $username=$trainer_row['username'];                            
-                            $payment_amount = $trainer_row2['payment_amount'];
-                            $payment_type=$trainer_row2['payment_type'];
+                                $sql3 = "SELECT * FROM users WHERE username = '$trainer_id_cc'";
+                                $result3 = mysqli_query($conn, $sql3);
+                                $trainer_row3 = mysqli_fetch_assoc($result3);
 
 
+
+                                $payment_date = $trainer_row2['payment_date'];
+                                $description = $trainer_row2['description'];
+
+                                $username = $trainer_row['username'];
+                                $payment_amount = $trainer_row2['payment_amount'];
+                                $payment_type = $trainer_row2['payment_type'];
                         ?>
-                            <tr>
-                                
-                                <td style="width:400px"><?php echo "$username" ?></td>
-                                <td style="width:400px"><?php echo "$payment_date" ?></td>
-                                <td style="width:400px"><?php echo "$description" ?></td>
-                                <td style="width:400px"><?php echo "$payment_amount" ?></td>
-                                <td style="width:600px"><?php echo "$payment_type" ?></td>
-                            </tr>
+                                <tr>
 
-                            <?php } ?>
-                            
-                        
+                                    <td style="width:400px"><?php echo "$username" ?></td>
+                                    <td style="width:400px"><?php echo "$payment_date" ?></td>
+                                    <td style="width:400px"><?php echo "$description" ?></td>
+                                    <td style="width:400px"><?php echo "$payment_amount" ?></td>
+                                    <td style="width:600px"><?php echo "$payment_type" ?></td>
+                                </tr>
+
+                        <?php
+                            }
+                        } ?>
+
+
                     </tbody>
                 </table>
 
@@ -120,16 +121,20 @@
             </div>
 
             <div class="member-list">
-                <table class="table table-hover"  style="width: 900px;" >
+                <table class="table table-hover" style="width: 900px;">
                     <thead style="width: 900px;">
                         <tr>
-                            
-                            <th style="display:flex ;"><p style="width: 300px;">USERNAME</p>  <p style="width: 300px;"> PAYMENT DATE</p> <p style="width: 300px;">Payment Amount</p></th>
+
+                            <th style="display:flex ;">
+                                <p style="width: 300px;">USERNAME</p>
+                                <p style="width: 300px;"> PAYMENT DATE</p>
+                                <p style="width: 300px;">Payment Amount</p>
+                            </th>
                             <!-- <th>PAYMENT DATE</th>
                             <th>Payment Amount</th> -->
                         </tr>
                     </thead>
-                    <tbody id="output-2" style = "display:block; max-height: 300px; width:1000px; overflow-y:scroll; overflow-x:hidden;">
+                    <tbody id="output-2" style="display:block; max-height: 300px; width:1000px; overflow-y:scroll; overflow-x:hidden;">
                         <?php
 
 
@@ -141,12 +146,12 @@
                         $sql2 = "SELECT * FROM trainer_payables";
                         $result2 = mysqli_query($conn, $sql2);
 
-                        
+
 
                         while ($trainer_row2 = mysqli_fetch_assoc($result2)) {
                             $trainer_id = $trainer_row2['trainer_id'];
 
-                           
+
                             $sql = "SELECT * FROM trainer WHERE trainer_id = '" . $trainer_id . "'";
                             $result = mysqli_query($conn, $sql);
                             $trainer_row = mysqli_fetch_assoc($result);
@@ -155,14 +160,14 @@
                             $result3 = mysqli_query($conn, $sql3);
                             $trainer_row3 = mysqli_fetch_assoc($result3);
 
-                            
+
 
                             $f_name = $trainer_row['f_name'];
                             $l_name = $trainer_row['l_name'];
                             $payment_date = $trainer_row2['payment_date'];
-                            $username=$trainer_row['username'];
+                            $username = $trainer_row['username'];
 
-                            $email=$trainer_row3['email'];
+                            $email = $trainer_row3['email'];
                             $payment_amount = $trainer_row2['amount'];
 
 
@@ -170,7 +175,7 @@
 
 
 
-                            <tr >                                
+                            <tr>
                                 <td style="width:300px"><?php echo "$username" ?></td>
                                 <td style="width:300px"><?php echo "$payment_date" ?></td>
                                 <td style="width:300px"><?php echo "$payment_amount" ?></td>
@@ -216,20 +221,19 @@
             sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
         } else
             sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-    } 
+    }
 
-    function searchUsers(search_id,tbody){
+    function searchUsers(search_id, tbody) {
         var input = document.getElementById(search_id);
         var filter = input.value.toUpperCase();
         var tbody = document.getElementById(tbody);
         var row = tbody.getElementsByTagName("tr");
-        for(let i = 0;i < row.length; i++){
+        for (let i = 0; i < row.length; i++) {
             var td = row[i].getElementsByTagName('td')[0];
             var txtValue = td.textContent || td.innerText;
-            if(txtValue.toUpperCase().indexOf(filter) > -1){
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 row[i].style.display = "";
-            }
-            else{
+            } else {
                 row[i].style.display = "none";
             }
         }

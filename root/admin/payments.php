@@ -20,7 +20,79 @@
     <?php include "includes/sidebar.php" ?>
     <section class="home-section">
 
+
         <?php include "includes/header.php" ?>
+
+        <?php
+        $mydate = date("y-m-d");
+        $month = date('m', strtotime($mydate));
+        $year = date('y', strtotime($mydate));
+        ?>
+        <?php
+        $sum2 = 0;
+
+        $select_query = "SELECT * FROM payment";
+        $select_result = mysqli_query($conn, $select_query);
+        while ($row3 = mysqli_fetch_assoc($select_result)) {
+            $trainer_id = $row3['trainer_id'];
+            if ($trainer_id > 0) {
+                $sql4 = "SELECT * FROM trainer WHERE trainer_id = '$trainer_id';";
+                $select_result2 = mysqli_query($conn, $sql4);
+                $row4 = mysqli_fetch_assoc($select_result2);
+                $rate = $row4['rate'];
+                $sum2 = $sum2 + $rate;
+            }
+            // $count = $row3['assignment_count'];
+        } ?>
+
+        <?php $select_query = "SELECT payment_amount FROM payment";
+        $select_result = mysqli_query($conn, $select_query);
+        // where payment_date>='$year-$month-01
+        $sum = 0;
+
+        if (mysqli_num_rows($select_result) > 0) {
+            while ($row = mysqli_fetch_assoc($select_result)) {
+                $sum = $sum + $row['payment_amount'];
+            }
+        }
+        ?>
+
+
+
+        <?php $select_query = "SELECT payment_amount FROM payment WHERE payment_date>='$year-$month-01'";
+        $select_result = mysqli_query($conn, $select_query);
+        // where payment_date>='$year-$month-01
+        $sum3 = 0;
+
+        if (mysqli_num_rows($select_result) > 0) {
+            while ($row = mysqli_fetch_assoc($select_result)) {
+                $sum3 = $sum3 + $row['payment_amount'];
+            }
+        }
+        ?>
+
+        <?php
+        $sum4 = 0;
+
+        $select_query = "SELECT * FROM payment";
+        $select_result = mysqli_query($conn, $select_query);
+        while ($row3 = mysqli_fetch_assoc($select_result)) {
+            $trainer_id = $row3['trainer_id'];
+            if ($trainer_id > 0) {
+                $sql4 = "SELECT * FROM trainer WHERE trainer_id = '$trainer_id';";
+                $select_result2 = mysqli_query($conn, $sql4);
+                $row4 = mysqli_fetch_assoc($select_result2);
+                $rate = $row4['rate'];
+                $sum4 = $sum4 + $rate;
+            }
+            // $count = $row3['assignment_count'];
+        }
+
+        $sum5 = $sum4 * 0.2;
+
+        ?>
+
+
 
 
 
@@ -28,17 +100,17 @@
         <div class="home-content">
             <div class="member-stats">
                 <div class="one">
-                    <p class="value">LKR 50,000</p>
+                    <p class="value">LKR <?php echo $sum ?></p>
                     <p class="name">Total Recived</p>
                 </div>
 
                 <div class="two">
-                    <p class="value">LKR 30,000</p>
+                    <p class="value">LKR <?php echo $sum3 ?></p>
                     <p class="name">This Month</p>
                 </div>
 
                 <div class="three">
-                    <p class="value">LKR 100,000</p>
+                    <p class="value">LKR <?php echo $sum3 - ($sum4 - $sum5) ?></p>
                     <p class="name">Total Profit</p>
                 </div>
 

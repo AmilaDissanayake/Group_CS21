@@ -140,7 +140,7 @@
                         </div>
 
                         <div class="form__div" id="uname">
-                            <input type="text" class="form__input" id="username" placeholder=" " name="username_cc">
+                            <input type="text" class="form__input" id="username" placeholder="" name="username_cc" value="">
                             <label for="" class="form__label">Username</label>
                             <i class="fa fa-check"></i>
                             <i class="fas fa-exclamation-triangle"></i>
@@ -223,7 +223,7 @@
                                     <option value="" disabled selected> Select Your Trainer </option>
                                     <?php
 
-                                    //require "includes/db.php";
+                                    require "includes/db.php";
 
                                     $query = "SELECT * FROM trainer";
 
@@ -232,6 +232,13 @@
                                     while ($row = mysqli_fetch_assoc($select_query)) {
                                         $f_name = $row['f_name'];
                                         $l_name = $row['l_name'];
+                                        $assignment_count = $row['assigned_members'];
+                                        $check_assignment = "";
+                                        $check_message = "";
+                                        if ($assignment_count >= 10) {
+                                            $check_assignment = "disabled";
+                                            $check_message = "| Member limit exeeded";
+                                        }
 
                                         $trainer_id = $row['trainer_id'];
 
@@ -253,8 +260,8 @@
 
                                     ?>
 
-                                        <option value=<?php echo $trainer_id ?> data-trainer=<?php echo $rate ?>>
-                                            <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count ?></option>
+                                        <option value=<?php echo $trainer_id ?> data-trainer=<?php echo $rate ?> <?php echo $check_assignment; ?>>
+                                            <?php echo $f_name ?> <?php echo $l_name ?>&nbsp;⭐<?php echo $review_value / $review_count  . " " . $check_message ?></option>
 
 
                                     <?php } ?>
