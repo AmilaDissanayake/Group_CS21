@@ -14,7 +14,7 @@ $row1 = mysqli_fetch_assoc($result1);
 
 $member_id = $row1['member_id'];
 
-$sql2 = "SELECT email from users where username = '".$username."'";
+$sql2 = "SELECT email from users where username = $username";
 $result2 = mysqli_query($conn,$sql2);
 $row2 = mysqli_fetch_assoc($result2);
 
