@@ -27,7 +27,7 @@
         
         <div class="home-content">
             <div class="separator1" style="margin-bottom:20px; text-decoration:underline;">
-                <span class="hr-text" >TO BE PAID</span>
+                <span class="hr-text" >PAYABLES</span>
             </div>
             <div class="search-bar">
                 <div class="search-box" id="search-bar">
@@ -167,9 +167,9 @@
                         <tr>
 
                         <th style="display:flex ;"><p style="width:190px;">Trainer ID</p>
-                          <p style="width: 220px;"> Firstname</p>
-                           <p style="width: 230px;">Lastname</p>
+                          <p style="width: 220px;"> Name</p>
                            <p style="width: 220px;">Phone Number</p>
+                           <p style="width: 230px;">Payment Date</p>
                            <!-- <p style="width: 220px;">Payment Date</p> -->
                            <p style="width: 100px;">Payment Amount</p>
                         </th>
@@ -204,6 +204,7 @@
                             $l_name = $trainer_row['l_name'];
                             $phone_no = $trainer_row['phone_no'];
                             $username=$trainer_row['username'];
+                            $payment_date=$trainer_row2['payment_date'];
 
                             $email=$trainer_row3['email'];
                             $payment_amount = $trainer_row2['amount'];
@@ -212,10 +213,11 @@
                         ?>
 
                             <tr>
-                                <td  style="width:300px"><?php echo "$trainer_id" ?></td>
-                                <td style="width:300px"><?php echo "$f_name" ?></td>
-                                <td style="width:300px"><?php echo "$l_name" ?></td>
+                                <td  style="width:270px"><?php echo "$trainer_id" ?></td>
+                                <td style="width:300px"><?php echo "$f_name"." ".$l_name ?></td>
+                                
                                 <td style="width:300px"><?php echo "$phone_no" ?></td>
+                                <td style="width:300px"><?php echo "$payment_date" ?></td>
                                 <td style="width:300px"><?php echo "$payment_amount" ?></td>
                             </tr>
                         <?php } ?>

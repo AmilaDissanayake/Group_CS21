@@ -1091,7 +1091,7 @@ $username = $_SESSION['username'];
                                     if ($attend[$i][0] > 65) {
                                         echo '<div class="stag_good"><span class="stat1">GOOD';
                                     } else {
-                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                        echo '<div class="stag_not_good2"><span class="stat2">BAD';
                                     }
                                 } else {
                                     echo '<div class="stag_not_good"><span class="stat2">N/A';
@@ -1110,7 +1110,7 @@ $username = $_SESSION['username'];
                                     if ($attend[$i][0] > 65) {
                                         echo '<div class="stag_good"><span class="stat1">GOOD';
                                     } else {
-                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                        echo '<div class="stag_not_good2"><span class="stat2">BAD';
                                     }
                                 } else {
                                     echo '<div class="stag_not_good"><span class="stat2">N/A';
@@ -1129,7 +1129,7 @@ $username = $_SESSION['username'];
                                     if ($attend[$i][0] > 65) {
                                         echo '<div class="stag_good"><span class="stat1">GOOD';
                                     } else {
-                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                        echo '<div class="stag_not_good2"><span class="stat2">BAD';
                                     }
                                 } else {
                                     echo '<div class="stag_not_good"><span class="stat2">N/A';
@@ -1148,7 +1148,7 @@ $username = $_SESSION['username'];
                                     if ($attend[$i][0] > 65) {
                                         echo '<div class="stag_good"><span class="stat1">GOOD';
                                     } else {
-                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                        echo '<div class="stag_not_good2"><span class="stat2">BAD';
                                     }
                                 } else {
                                     echo '<div class="stag_not_good"><span class="stat2">N/A';
@@ -1168,7 +1168,7 @@ $username = $_SESSION['username'];
                                     if ($attend[$i][0] > 65) {
                                         echo '<div class="stag_good"><span class="stat1">GOOD';
                                     } else {
-                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                        echo '<div class="stag_not_good2"><span class="stat2">BAD';
                                     }
                                 } else {
                                     echo '<div class="stag_not_good"><span class="stat2">N/A';
@@ -1187,7 +1187,7 @@ $username = $_SESSION['username'];
                                     if ($attend[$i][0] > 65) {
                                         echo '<div class="stag_good"><span class="stat1">GOOD';
                                     } else {
-                                        echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                        echo '<div class="stag_not_good2"><span class="stat2">BAD';
                                     }
                                 } else {
                                     echo '<div class="stag_not_good"><span class="stat2">N/A';
@@ -1210,7 +1210,7 @@ $username = $_SESSION['username'];
                             echo '<div class="wdetails_l">
                                 <ul>';
                                 for($i=0;$i<3;$i++){
-                                    echo'<div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
+                                    echo'<div class="itemcon"><li class="plist"><p class="month_l"> 1st 2-WEEKS</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good2"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
                                 }
                                 echo '</span></div></li></div>';
 
@@ -1219,7 +1219,7 @@ $username = $_SESSION['username'];
                             <div class="wdetails_l">
                                 <ul>';
                                 for($i=0;$i<3;$i++){
-                                    echo'<div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
+                                    echo'<div class="itemcon"><li class="plist"><p class="month_l"> 2nd 2-WEEKS</p>'; if($mem_interval->m > $i+1){ if($attend[$i][0] > 65 ){echo'<div class="stag_good"><span class="stat1">GOOD';}else{echo'<div class="stag_not_good2"><span class="stat2">BAD';}}else{echo'<div class="stag_not_good"><span class="stat2">N/A';}echo'</span></div></li></div>';
                                 }
                                 echo '</span></div></li></div>';
                             echo '</ul>
@@ -1233,7 +1233,7 @@ $username = $_SESSION['username'];
                                 if ($attend[0] > 65) {
                                     echo '<div class="stag_good"><span class="stat1">GOOD';
                                 } else {
-                                    echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                    echo '<div class="stag_not_good2"><span class="stat2">BAD';
                                 }
                             } else {
                                 echo '<div class="stag_not_good"><span class="stat2">N/A';
@@ -1244,7 +1244,7 @@ $username = $_SESSION['username'];
                                 if ($attend[1] > 65) {
                                     echo '<div class="stag_good"><span class="stat1">GOOD';
                                 } else {
-                                    echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                    echo '<div class="stag_not_good2"><span class="stat2">BAD';
                                 }
                             } else {
                                 echo '<div class="stag_not_good"><span class="stat2">N/A';
@@ -1259,7 +1259,7 @@ $username = $_SESSION['username'];
                                 if ($attend[2] > 65) {
                                     echo '<div class="stag_good"><span class="stat1">GOOD';
                                 } else {
-                                    echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                    echo '<div class="stag_not_good2"><span class="stat2">BAD';
                                 }
                             } else {
                                 echo '<div class="stag_not_good"><span class="stat2">N/A';
@@ -1270,7 +1270,7 @@ $username = $_SESSION['username'];
                                 if ($attend[3] > 65) {
                                     echo '<div class="stag_good"><span class="stat1">GOOD';
                                 } else {
-                                    echo '<div class="stag_not_good"><span class="stat2">BAD';
+                                    echo '<div class="stag_not_good2"><span class="stat2">BAD';
                                 }
                             } else {
                                 echo '<div class="stag_not_good"><span class="stat2">N/A';

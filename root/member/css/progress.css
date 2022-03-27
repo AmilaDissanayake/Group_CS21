@@ -240,6 +240,14 @@
   padding: 5px;
   border-radius: 5px;
 }
+
+.itemcon .stag_not_good2{
+  background-color: red;
+  width: 40%;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
 .stag_good{
   background-color:#86ff71;
   width: 40%;

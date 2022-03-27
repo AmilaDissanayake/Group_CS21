@@ -43,16 +43,12 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th style="display:flex ;"><p style="width: 200px;">USERNAME</p>
-                          <p style="width: 200px;"> Payment Date</p>
-                           <p style="width: 200px;">Description</p>
-                           <p style="width: 200px;">Payment Amount</p>
-                           <p style="width: 200px;">Payment Method</p></th>
-                            <!-- <th>UserName</th>
-                            <th>Payment Date</th>
-                            <th>Description</th>
-                            <th>Payment Amount</th>
-                            <th>Payment Method</th> -->
+                            <th style="display:flex ;"><p style="width: 200px;">USERNAME</p>
+                            <p style="width: 200px;"> Payment Date</p>
+                            <p style="width: 200px;">Description</p>
+                            <p style="width: 200px;">Payment Amount</p>
+                            <p style="width: 200px;">Payment Method</p>
+                            </th>
                         </tr>
                     </thead>
                     <tbody id="output-1" style = "display:block; max-height: 300px;  overflow-y:scroll; overflow-x:hidden;">
@@ -113,7 +109,7 @@
             </div>
 
             <div class="separator1" style="margin-top:50px; margin-bottom:20px; text-decoration:underline;">
-                <span class="hr-text">PAYABLES</span>
+                <span class="hr-text">PAYMENTS</span>
             </div>
 
             <div class="search-bar">

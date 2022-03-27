@@ -20,127 +20,6 @@ $username = $_SESSION['username'];
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-    <!-- <link href="../css/justselect.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/jquery-confirm.min.css">
-    <script type="text/javascript" src="../js/jquery-confirm.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script> -->
-
-    <!-- <style>
-        .jconfirm.jconfirm-my-theme .jconfirm-bg {
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-        .jconfirm.jconfirm-my-theme .jconfirm-box {
-            background-color: #121317;
-            padding-top: 20px !important;
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-            padding-bottom: 20px !important;
-            border-radius: 5px !important;
-            /* border: #86ff71 3px solid !important; */
-        }
-        .jconfirm.jconfirm-my-theme .jconfirm-closeIcon {
-            color: white !important;
-        }
-        .jconfirm.jconfirm-my-theme .jconfirm-title {
-            color: #86ff71;
-            font-family: "Azonix" !important;
-        }
-        .jconfirm.jconfirm-my-theme .jconfirm-content {
-            color: #ffffff;
-            font-family: "Rubik" !important;
-        }
-        /* .jconfirm.jconfirm-my-theme .jconfirm-buttons {
-            background-color: #86ff71;
-            font-family: "Rubik" !important;
-            border-radius: 50px;
-            color: black;
-        } */
-
-        .hi {
-            background-color: transparent;
-            font-family: "Azonix" !important;
-            border-radius: 50px !important;
-            color: white;
-            border: #89898B 2px solid !important;
-        }
-        .hi :hover {
-            border: #86ff71 2px solid !important;
-            /* transition: 0.5s; */
-        }
-        .jconfirm.jconfirm-my-theme .jconfirm-box.loading {}
-
-        .jconfirm.jconfirm-my-theme .jconfirm-box.loading:before {}
-
-        .jconfirm.jconfirm-my-theme .jconfirm-box.loading:after {}
-
-        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-closeIcon {}
-
-        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-title-c {}
-
-        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-content-pane {}
-
-        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-content {}
-
-        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-buttons {}
-
-        .jconfirm.jconfirm-my-theme .jconfirm-box .jconfirm-buttons button {}
-    </style> -->
-    <script>
-        // $.fn.alertpopup =  function() {
-        //                         //var clickHandler = btn[i].onclick;
-        //                         // event.preventDefault();
-        //                         //event.stopPropagation();
-        //                         var id = $(this).attr('id'); // $(this) refers to button that was clicked
-        //                         //alert(id);
-        //                         $.confirm({
-        //                             title: 'Confirm',
-        //                             animateFromElement: false,
-        //                             animation: 'RotateX',
-        //                             closeAnimation: 'RotateX',
-        //                             content: 'Are you sure you want to increase the quantity by 1?',
-        //                             boxWidth: '30%',
-        //                             theme: 'my-theme',
-        //                             useBootstrap: false,
-        //                             // closeIcon: true,
-        //                             buttons: {
-        //                                 Confirm: {
-        //                                     btnClass: 'hi',
-        //                                     action: function() {
-        //                                         // clickHandler.call(this, event);
-        //                                         $.ajax({
-        //                                             url: "add-inventory.php",
-        //                                             type: "POST",
-        //                                             data: {
-        //                                                 'inventory_id': id,
-        //                                                 'ajax': true
-        //                                             },
-        //                                             success: function(response) {
-        //                                                 document.getElementById("hola").innerHTML = "Added 1 Equipment";
-        //                                                 nn();
-
-
-        //                                                 // You will get response from your PHP page (what you echo or print)
-        //                                             },
-        //                                             error: function(jqXHR, textStatus, errorThrown) {
-        //                                                 console.log(textStatus, errorThrown);
-        //                                             }
-        //                                         });
-        //                                     }
-        //                                 },
-        //                                 Cancel: {
-        //                                     btnClass: 'hi', // multiple classes.
-
-        //                                 },
-        //                             }
-        //                         });}
-
-        // });
-
-        // 
-    </script>
 </head>
 
 <body>
@@ -307,7 +186,7 @@ $username = $_SESSION['username'];
                     $query3 = "SELECT * FROM extend_membership  WHERE member_id = '" . $member_id . "'";
                     $result3 = mysqli_query($conn, $query3);
 
-                    if (!$result3) {
+                    if (mysqli_num_rows($result3) != 0) {
                         $result3 = mysqli_query($conn, $query3);
                         $row3 = mysqli_fetch_assoc($result3);
 
@@ -541,9 +420,6 @@ $username = $_SESSION['username'];
             <div class="hordivid"></div>
             <div class="tassign">
                 <div class="seltr">
-
-                    <!-- <div class="about_button"><button class="about_btnn btnm" id="try">test button</button></div> -->
-
                     <?php
 
                     if ($flag == 0) {
@@ -692,7 +568,7 @@ $username = $_SESSION['username'];
         </div>
         <div class="udetails">
             <div class="paralist" id="email"></div>
-            <form id="amount_form" action="add-payment.php" method="POST">
+            <form id="amount_form" action="extend_membership.php" method="POST">
                 <input type="text" id="passamount" name="amount" value="">
             </form>
         </div>
@@ -702,71 +578,6 @@ $username = $_SESSION['username'];
     <?php include "includes/footer.php" ?>
 
     <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
-
-    <!-- <script>
-            $('.btnm').on('click', function() {
-                                //var clickHandler = btn[i].onclick;
-                                // event.preventDefault();
-                                //event.stopPropagation();
-                                var id = $(this).attr('id'); // $(this) refers to button that was clicked
-                                //alert(id);
-                                $.confirm({
-                                    title: 'Confirm',
-                                    animateFromElement: false,
-                                    animation: 'RotateX',
-                                    closeAnimation: 'RotateX',
-                                    content: 'Are you sure you want to increase the quantity by 1?',
-                                    boxWidth: '30%',
-                                    theme: 'my-theme',
-                                    useBootstrap: false,
-                                    // closeIcon: true,
-                                    buttons: {
-                                        Confirm: {
-                                            btnClass: 'hi',
-                                            action: function() {
-                                                // clickHandler.call(this, event);
-                                                $.ajax({
-                                                    url: "add-inventory.php",
-                                                    type: "POST",
-                                                    data: {
-                                                        'inventory_id': id,
-                                                        'ajax': true
-                                                    },
-                                                    success: function(response) {
-                                                        document.getElementById("hola").innerHTML = "Added 1 Equipment";
-                                                        nn();
-
-
-                                                        // You will get response from your PHP page (what you echo or print)
-                                                    },
-                                                    error: function(jqXHR, textStatus, errorThrown) {
-                                                        console.log(textStatus, errorThrown);
-                                                    }
-                                                });
-                                            }
-                                        },
-                                        Cancel: {
-                                            btnClass: 'hi', // multiple classes.
-
-                                        },
-                                    }
-                                });
-                            });
-                            // });
-                            $(document).ajaxStop(function() {
-                                //window.setTimeout(nn, 3000);
-                                //nn();
-
-                                $(document).ready(function() {
-                                    setTimeout(function() {
-                                        //alert('Reloading Page');
-                                        location.reload(true);
-                                    }, 1000);
-                                });
-
-
-                            }); -->
-    </script>
     <script>
         var i;
 
