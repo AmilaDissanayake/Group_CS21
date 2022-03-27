@@ -99,7 +99,7 @@
                         <p class="value">Rs. <?php  echo $sum3;
                         }
                     ?></p>
-                    <p class="name">Trainer Payables</p>
+                    <p class="name">Trainer Payments</p>
                 </div>
 
 
@@ -152,8 +152,8 @@
                     ?>
 
                     <div class="one">
-                        <p class="value"> <?php  echo $temp ?></p>
-                        <p class="name">Profit</p>
+                        <p class="value"> <?php  echo "PROFIT" ?></p>
+                        <!-- <p class="name">Profit</p> -->
                     </div>
                     <div class="one1">
 
@@ -167,7 +167,7 @@
                         <p class="name">Amount</p>
                     </div>
                 </div>
-                <button class="hero_btn" >More Reports >></button>
+                <!-- <button class="hero_btn" >More Reports >></button> -->
             </div>
         </div>
 
@@ -184,38 +184,50 @@
                         </tr>
                     </thead>
                     <tbody id="output">
-                        <tr>
-                            <td>Kasun</td>
-                            <td>2021-10-10</td>
-                            <td>1500.00</td>
-                        </tr>
-                        <tr>
-                            <td>Nadun</td>
-                            <td>2021-09-10</td>
-                            <td>3000.00</td>
-                        </tr>
-                        <tr>
-                            <td>Udara</td>
-                            <td>2021-08-10</td>
-                            <td>1500.00</td>
-                        </tr>
-                        <tr>
-                            <td>Hasaranga</td>
-                            <td>2021-07-10</td>
-                            <td>3000.00</td>
-                        </tr>
-                        <tr>
-                            <td>Dinuka</td>
-                            <td>2021-08-10</td>
-                            <td>1500.00</td>
-                        </tr>
+
+                    <?php
+
+
+$sql1 = "SELECT * FROM payment ORDER BY payment_date DESC LIMIT 5";
+$result1 = mysqli_query($conn, $sql1);
+
+
+
+
+while ($trainer_row2 = mysqli_fetch_assoc($result1) ) {
+    
+
+    $member_id = $trainer_row2['member_id'];
+
+   
+    $sql = "SELECT * FROM member WHERE member_id = '" . $member_id . "'";
+    $result = mysqli_query($conn, $sql);
+    $trainer_row = mysqli_fetch_assoc($result);
+
+    
+
+    $payment_date = $trainer_row2['payment_date'];
+    $username=$trainer_row['username'];                            
+    $payment_amount = $trainer_row2['payment_amount'];
+
+
+?>
+    <tr>
+        
+        <td ><?php echo "$username" ?></td>
+        <td ><?php echo "$payment_date" ?></td>
+        <td ><?php echo "$payment_amount" ?></td>
+    </tr>
+
+    <?php } ?>
+
                     </tbody>
                 </table>
-                <button class="see-more" onclick="" >see more >></button>
+                <button class="see-more" onclick="location.href='pay_history.php'" >see more >></button>
             </div>
 
             <div class="bmi4">
-                <h2 class="recieve">PAYABLES</h2>
+                <h2 class="recieve">PAYMENTS</h2>
                 <table class="recieve-table">
                     <thead>
                         <tr>
@@ -226,34 +238,46 @@
                         </tr>
                     </thead>
                     <tbody id="output">
-                        <tr>
-                            <td>Thathsara</td>
-                            <td>2021-10-10</td>
-                            <td>1500.00</td>
-                        </tr>
-                        <tr>
-                            <td>Vimukthi</td>
-                            <td>2021-09-10</td>
-                            <td>3000.00</td>
-                        </tr>
-                        <tr>
-                            <td>Shehan</td>
-                            <td>2021-08-10</td>
-                            <td>1500.00</td>
-                        </tr>
-                        <tr>
-                            <td>Sampath</td>
-                            <td>2021-07-10</td>
-                            <td>3000.00</td>
-                        </tr>
-                        <tr>
-                            <td>Kusal</td>
-                            <td>2021-08-10</td>
-                            <td>1500.00</td>
-                        </tr>
+                    <?php
+
+
+$sql1 = "SELECT * FROM trainer_payables ORDER BY payment_date DESC LIMIT 5";
+$result1 = mysqli_query($conn, $sql1);
+
+
+
+
+while ($trainer_row2 = mysqli_fetch_assoc($result1) ) {
+    
+
+    $trainer_id = $trainer_row2['trainer_id'];
+
+   
+    $sql = "SELECT * FROM trainer WHERE trainer_id = '" . $trainer_id . "'";
+    $result = mysqli_query($conn, $sql);
+    $trainer_row = mysqli_fetch_assoc($result);
+
+    
+
+    $payment_date = $trainer_row2['payment_date'];
+    $username=$trainer_row['username'];                            
+    $payment_amount = $trainer_row2['amount'];
+
+
+?>
+    <tr>
+        
+        <td ><?php echo "$username" ?></td>
+        <td ><?php echo "$payment_date" ?></td>
+        <td ><?php echo "$payment_amount" ?></td>
+    </tr>
+
+    <?php } ?>
+
+                       
                     </tbody>
                 </table>
-                <button class="see-more" >see more >></button>
+                <button  onclick="location.href='pay_history.php'" class="see-more" >  see more >></button>
             </div>
         </div>
 

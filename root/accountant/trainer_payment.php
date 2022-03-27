@@ -27,7 +27,7 @@
         
         <div class="home-content">
             <div class="separator1" style="margin-bottom:20px; text-decoration:underline;">
-                <span class="hr-text" >TO BE PAID</span>
+                <span class="hr-text" >PAYABLES</span>
             </div>
             <div class="search-bar">
                 <div class="search-box" id="search-bar">
@@ -167,16 +167,13 @@
                         <tr>
 
                         <th style="display:flex ;"><p style="width:190px;">Trainer ID</p>
-                          <p style="width: 220px;"> Firstname</p>
-                           <p style="width: 230px;">Lastname</p>
+                          <p style="width: 220px;"> Name</p>
                            <p style="width: 220px;">Phone Number</p>
+                           <p style="width: 230px;">Payment Date</p>
+                           <!-- <p style="width: 220px;">Payment Date</p> -->
                            <p style="width: 100px;">Payment Amount</p>
                         </th>
-                            <!-- <th>Trainer ID</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Phone Number</th>
-                            <th>Payment Amount</th> -->
+
                         </tr>
                     </thead>
                     <tbody id="output-2"  style = "display:block; max-height: 300px;  overflow-y:scroll; overflow-x:hidden;">
@@ -186,12 +183,8 @@
                         $sql1 = "SELECT * FROM trainer_receviables";
                         $result1 = mysqli_query($conn, $sql1);
 
-                        // $sql = "SELECT * FROM trainer";
-                        // $result = mysqli_query($conn, $sql);
                         $sql2 = "SELECT * FROM trainer_payables  WHERE payment_date >='$year-$month-01'";
                         $result2 = mysqli_query($conn, $sql2);
-
-                        
 
                         while ($trainer_row2 = mysqli_fetch_assoc($result2)) {
                             $trainer_id = $trainer_row2['trainer_id'];
@@ -211,6 +204,7 @@
                             $l_name = $trainer_row['l_name'];
                             $phone_no = $trainer_row['phone_no'];
                             $username=$trainer_row['username'];
+                            $payment_date=$trainer_row2['payment_date'];
 
                             $email=$trainer_row3['email'];
                             $payment_amount = $trainer_row2['amount'];
@@ -219,10 +213,11 @@
                         ?>
 
                             <tr>
-                                <td  style="width:300px"><?php echo "$trainer_id" ?></td>
-                                <td style="width:300px"><?php echo "$f_name" ?></td>
-                                <td style="width:300px"><?php echo "$l_name" ?></td>
+                                <td  style="width:270px"><?php echo "$trainer_id" ?></td>
+                                <td style="width:300px"><?php echo "$f_name"." ".$l_name ?></td>
+                                
                                 <td style="width:300px"><?php echo "$phone_no" ?></td>
+                                <td style="width:300px"><?php echo "$payment_date" ?></td>
                                 <td style="width:300px"><?php echo "$payment_amount" ?></td>
                             </tr>
                         <?php } ?>

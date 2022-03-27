@@ -399,7 +399,7 @@ width: 100%;
 
 
 .calendar-input button{
-  margin-left: 100px;
+  margin-left: 80px;
   font: 'rubik';
   font-size: 16px;
   padding: 1px 30px 1px 30px;
@@ -420,4 +420,8 @@ width: 100%;
 .calendar-input button:hover{
   box-shadow: 0px 0px 10px 1px #141517;
   transition: .4s;
+}
+.justselect-wrapper {
+  position: relative;
+  width: 240px !important;
 }

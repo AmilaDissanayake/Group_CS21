@@ -23,6 +23,11 @@
     <section class="home-section">
 
         <?php include "includes/header.php" ?>
+        <?php
+        $mydate=date("y-m-d");
+        $month=date('m',strtotime($mydate));
+        $year=date('y',strtotime($mydate));
+        ?>
 
         <script>
             function nn() {
@@ -99,7 +104,7 @@
                     </thead>
                     <tbody class="output" id="output">
                         <?php
-                            $sql = "SELECT * FROM payment";
+                            $sql = "SELECT * FROM payment WHERE payment_date>='$year-$month-01'";
                             $result = mysqli_query($conn, $sql);
                             while ($payment_row = mysqli_fetch_assoc($result)) {
                                 $payment_id = $payment_row['payment_id'];

@@ -1,14 +1,14 @@
 <?php include "includes/check_login.php" ?>
 
-<?php 
-    require "includes/db.php";
-    $member_id=$_GET['member_id'];
-    $sql1="Select username,f_name,l_name FROM member WHERE member_id='".$member_id."'";
-    $result=mysqli_query($conn,$sql1);
-    $row=mysqli_fetch_assoc($result);
-    $username = $row['username'];
-    $f_name = $row['f_name'];
-    $l_name = $row['l_name'];
+<?php
+require "includes/db.php";
+$member_id = $_GET['member_id'];
+$sql1 = "SELECT username,f_name,l_name FROM member WHERE member_id='" . $member_id . "'";
+$result = mysqli_query($conn, $sql1);
+$row = mysqli_fetch_assoc($result);
+$username = $row['username'];
+$f_name = $row['f_name'];
+$l_name = $row['l_name'];
 ?>
 <!DOCTYPE html>
 
@@ -32,47 +32,53 @@
 
         <?php include "includes/header.php" ?>
 
-        <div class="welcomenote"><h1></h1></div>
+        <div class="welcomenote">
+            <h1></h1>
+        </div>
         <div class="dubar">
-        <?php 
+            <?php
 
             date_default_timezone_set('Asia/Colombo');
-        ?>
+            ?>
 
         </div>
         <div class="Hdivider"></div>
-            
+
         </div>
         <div class="Hdivider"></div>
         <div class="note">
-                    <h1><?php echo "$f_name $l_name"?> - Progress</h1>
+            <h1><?php echo "$f_name $l_name" ?> - Progress</h1>
         </div>
         <div class="analy">
-                <div class="vboderdivider"></div>
-                <div class="lpanel">
-                        <div class="btag"><p>BMI STATISTICS</p></div>
-                        
-                        <div class="bmi">
-                            <canvas id="canvas"></canvas>
-                        </div>
+            <div class="vboderdivider"></div>
+            <div class="lpanel">
+                <div class="btag">
+                    <p>BMI STATISTICS</p>
+                </div>
 
-                        <div class="bmistatus">
-                            <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id=" bmi_c" class="ob"> OBESITY</span></p>
-                        </div>
+                <div class="bmi">
+                    <canvas id="canvas"></canvas>
                 </div>
-                <div class="divider"></div>
-                <div class="lpanel">
-                    <div class="btag"><p>BODY FAT STATISTICS</p></div>
-                    <div class="bmi">
-                        <canvas id="canvas2"></canvas>
-                    </div>
-                    <div class="bmistatus">
-                        <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span id=" bf_c" class="avg"> AVERAGE </span></p>
-                    </div>
+
+                <div class="bmistatus">
+                    <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt'></i><span id=" bmi_c" class="ob"> OBESITY</span></p>
                 </div>
-                <div class="vboderdivider"></div>
-        </div> 
-        <div class="Hdivider"></div> 
+            </div>
+            <div class="divider"></div>
+            <div class="lpanel">
+                <div class="btag">
+                    <p>BODY FAT STATISTICS</p>
+                </div>
+                <div class="bmi">
+                    <canvas id="canvas2"></canvas>
+                </div>
+                <div class="bmistatus">
+                    <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt'></i><span id=" bf_c" class="avg"> AVERAGE </span></p>
+                </div>
+            </div>
+            <div class="vboderdivider"></div>
+        </div>
+        <div class="Hdivider"></div>
 
     </section>
     <?php include "includes/footer.php" ?>
@@ -81,7 +87,7 @@
     <script src="js/bfchart.js" type="text/javascript"></script>
 
     <script src="js/progchart.js" type="text/javascript"></script>
-    <script >
+    <script>
         var dtx = document.getElementById("dchart").getContext("2d");
         window.myLine = new Chart(dtx, config2);
     </script>
