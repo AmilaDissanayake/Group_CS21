@@ -1,16 +1,59 @@
+var perc = 33;
 
 AOS.init();
+
+
 Chart.defaults.fontSize = 16;
-    const type1 = ['D1','D2']; const  d_val1 = [1,1];  var  d_view1 = ['rgb(134, 255, 113)','rgba(24, 24, 24,0.3)']; 
-    const type2 = ['D1','D2','D3']; const  d_val2 = [1,1,1];   var  d_view2 = ['rgb(134, 255, 113)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)']; 
-    const type3 = ['D1','D2','D3','D4']; const  d_val3 = [1,1,1,1];  var d_view3 = ['rgb(134, 255, 113)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)']; 
-    const type4 = ['D1','D2','D3','D4','D5']; const  d_val4 = [1,1,1,1,1]; var d_view4 = ['rgb(134, 255, 113)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)']; 
-    const type5 = ['D1','D2','D3','D4','D5','D6']; const d_val5 = [1,1,1,1,1,1]; var  d_view5 = ['rgb(134, 255, 113)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)']; 
+
+const type1 = ['D1','D2']; const  d_val1 = [1,1];  var  d_view1 = ['rgb(134, 255, 113)','rgba(24, 24, 24,0.3)']; 
+const type2 = ['D1','D2','D3']; const  d_val2 = [1,1,1];   var  d_view2 = ['rgb(134, 255, 113)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)']; 
+const type3 = ['D1','D2','D3','D4']; const  d_val3 = [1,1,1,1];  var d_view3 = ['rgb(134, 255, 113)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)']; 
+const type4 = ['D1','D2','D3','D4','D5']; const  d_val4 = [1,1,1,1,1]; var d_view4 = ['rgb(134, 255, 113)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)']; 
+const type5 = ['D1','D2','D3','D4','D5','D6']; const d_val5 = [1,1,1,1,1,1]; var  d_view5 = ['rgb(134, 255, 113)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)','rgba(24, 24, 24,0.3)']; 
+
+    var d_6 = $('#ck_d6');
+    var d_5 = $('#ck_d5');
+    var d_4 = $('#ck_d4');
+    var d_3 = $('#ck_d3');
+    var d_2 = $('#ck_d2');
+
+    // var d_val = d_val2; 
+    // var d_view = d_view2;
+    // var d_type = type2;
+
+    if(d_6){
+      var d_val = d_val5; 
+      var d_view = d_view5;
+      var d_type = type5;
+    }else if (d_5){
+      var d_val = d_val4; 
+      var d_view = d_view4;
+      var d_type = type4;
+    }else if (d_4){
+      var d_val = d_val3; 
+      var d_view = d_view3;
+      var d_type = type3; 
+    }else if (d_3){
+      var d_val = d_val2; 
+      var d_view = d_view2;
+      var d_type = type2;
+    }else if (d_2){
+      var d_val = d_val1; 
+      var d_view = d_view1;
+      var d_type = type1;
+    }
+
     
+
+
+
+
     
     var d_val = d_val2; 
     var d_view = d_view2;
     var d_type = type2;
+
+
 var data = {
         labels: d_type,
         datasets: [{
@@ -54,21 +97,24 @@ Chart.pluginService.register({
       ctx.textBaseline = "middle";
       if (d_type == type1)
       {
-                var text = "25%",
+                var text = perc+"%",
                 textX = Math.round((width - ctx.measureText(text).width) / 2),
                 textY = (height / 2.2)+pad;
       }else if (d_type == type4 || d_type == type5){
-                var text = "25%",
+                var text = perc+"%",
                 textX = Math.round((width - ctx.measureText(text).width) / 2),
                 textY = (height / 1.84)+pad;
       }else {
-                var text = "25%",
+                var text = perc+"%",
                 textX = Math.round((width - ctx.measureText(text).width) / 2),
                 textY = (height / 2)+pad;
       }     
 
       ctx.fillText(text, textX, textY);
       ctx.save();
+
+
+
     } 
   }
 }); 
