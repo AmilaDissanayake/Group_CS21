@@ -5,35 +5,7 @@
     $username = $_POST['username'];
 
     if(isset($_POST['form_submit'])){
-        $query1 = "SELECT * FROM member WHERE username = '".$username."'";
-        $result1 = mysqli_query($conn, $query1);
-        $row1 = mysqli_fetch_assoc($result1);
-
-        $member_id = $row1['member_id'];
-
-        $query2 = "SELECT * FROM membership  WHERE member_id = '".$member_id."'";
-        $result2 = mysqli_query($conn, $query2);
-        $row2 = mysqli_fetch_assoc($result2);
-
-        $membership_type = $row2['membership_type']; 
-        $joined_date = $row2['joined_date'];
-         
-        if($membership_type==12){ 
-            $exp_date = date('Y-m-d',strtotime("+12 month", strtotime("$joined_date")));}
-        else if($membership_type==6){ 
-            $exp_date = date('Y-m-d',strtotime("+6 month", strtotime("$joined_date")));}
-        else if($membership_type==3){ 
-            $exp_date = date('Y-m-d',strtotime("+3 month", strtotime("$joined_date")));}
-        else if($membership_type==1){ 
-            $exp_date = date('Y-m-d',strtotime("+1 month", strtotime("$joined_date")));}
-
-        $date = date('Y-m-d');
-        $today = new DateTime($date);
-        $mem_date = new DateTime("$joined_date");
-        $expirey = new DateTime("$exp_date");// $expirey = "2021-12-01";
-         
-        if($today > $expirey ){
-
+ 
             $email = $_POST['email'];
             $assigned_trainer = $_POST['assigned_trainer'];
             $mem_type = $_POST['membership_type'];
@@ -124,33 +96,4 @@
             }
 
       
-        }else{
-            $query3 = "SELECT * FROM extend_membership  WHERE member_id = '".$member_id."'";
-            $result3 = mysqli_query($conn, $query3);
-            echo"$result";
-            if($result3 !=0){
-                $_SESSION['notification'] = "Unnessasry Payment!";
-                header("location:../member_payment.php");
-
-
-            }else{
-
-                $mem_type = $_POST['membership_type'];
-    
-                if($mem_type == 2500){
-                    $membership_type = 1;
-                }else if($mem_type == 7000){
-                    $membership_type = 3;
-                }else if($mem_type == 13500){
-                    $membership_type = 6;
-                }else if($mem_type == 20000){
-                    $membership_type = 12;
-                }
-
-            $query5 = "INSERT INTO extend_membership (member_id, membership_type) VALUES ('$member_id','$membership_type')";
-            $result5 = mysqli_query($conn, $query5);
         }
-
-     }
-
-    }
