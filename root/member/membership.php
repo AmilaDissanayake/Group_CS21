@@ -755,7 +755,7 @@ $username = $_SESSION['username'];
                         console.log("success");
                         if (response == "true") {
                             $('#intr_id').val(tr_id);
-                            alert(tr_id);
+                            //alert(tr_id);
                             $('#pop3tr_name').empty();
                             $('#pop3tr_name').append(fname + ' ' + lname + ' ⭐' + rating);
                             $('#pop3tr_image').empty();
