@@ -3,16 +3,19 @@
 session_start();
 
 require "db.php";
-$username = $_SESSION['username'];
+$member_id = $_SESSION['mem_id'];
+$sql1 = "SELECT username,f_name,l_name FROM member WHERE member_id='" . $member_id . "'";
+$result = mysqli_query($conn, $sql1);
+$row = mysqli_fetch_assoc($result);
+$username = $row['username'];
 
-
-$query1 = "SELECT * FROM member WHERE username = '".$username."'";
+$query1 = "SELECT * FROM member WHERE username = '" . $username . "'";
 $result1 = mysqli_query($conn, $query1);
-$row1= mysqli_fetch_assoc($result1);
+$row1 = mysqli_fetch_assoc($result1);
 
-$member_id = $row1['member_id']; 
+$member_id = $row1['member_id'];
 
-$query2 = "SELECT * FROM membership WHERE member_id = '".$member_id."'";
+$query2 = "SELECT * FROM membership WHERE member_id = '" . $member_id . "'";
 $result2 = mysqli_query($conn, $query2);
 $row2 = mysqli_fetch_assoc($result2);
 
@@ -29,6 +32,6 @@ $bmi_values = $result_row['bmi_values'];
 header('Content-Type: application/json');
 $respo = $bmi_values;
 
-echo json_encode($respo) ;
+echo json_encode($respo);
 
 die;

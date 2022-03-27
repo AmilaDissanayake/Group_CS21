@@ -9,6 +9,7 @@ $row = mysqli_fetch_assoc($result);
 $username = $row['username'];
 $f_name = $row['f_name'];
 $l_name = $row['l_name'];
+$_SESSION['mem_id'] = $member_id;
 ?>
 <!DOCTYPE html>
 
