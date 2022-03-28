@@ -18,7 +18,7 @@ $phone_no = $trainer_row['phone_no'];
 $qualifications = $trainer_row['qualifications'];
 $date_joined = date_registered($trainer_id);
 
-$query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+$query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id AND status=1";
 $review_query = mysqli_query($conn, $query2);
 
 $review_count = mysqli_num_rows($review_query);
@@ -105,7 +105,7 @@ $qualifies = explode(',', $qualifications);
             </div>
 
             <?php
-            $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+            $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id AND status=1";
             $review_query = mysqli_query($conn, $query2);
 
             while ($review_row = mysqli_fetch_assoc($review_query)) {

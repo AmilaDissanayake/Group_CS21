@@ -1,4 +1,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
 <div class="sidebar">
     <div class="logo-details">
         <p>PH</p>
@@ -14,7 +16,7 @@
         <div calss="divider">
             <span class="fade-effect1"></span>
         </div>
- 
+
         <div calss="divider">
             <span class="fade-effect1"></span>
         </div>
@@ -35,7 +37,7 @@
                 <span class="links_name">Progress</span>
             </a>
         </li>
-        
+
         <div calss="divider">
             <span class="fade-effect1"></span>
         </div>
@@ -48,14 +50,14 @@
 
 
         <span class="fade-effect1"></span>
-        
+
         <li>
             <a href="./mealplan.php">
-            <i class='bx bxs-food-menu'></i>
+                <i class='bx bxs-food-menu'></i>
                 <span class="links_name">Meal Plan</span>
             </a>
         </li>
-       
+
         <div calss="divider">
             <span class="fade-effect1"></span>
         </div>
@@ -74,7 +76,18 @@
                 <span class="links_name">Bookings</span>
             </a>
         </li>
-        
+
+
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
+        <li>
+            <a href="./feedback.php">
+                <i class='bx bx-clipboard'></i>
+                <span class="links_name">Feedback</span>
+            </a>
+        </li>
+
 
         <div calss="divider">
             <span class="fade-effect1"></span>

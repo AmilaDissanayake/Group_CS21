@@ -5,12 +5,12 @@
         <span class="logo_name">FITNESS</span>
     </div>
     <ul class="nav-links">
-        <li>
+        <!-- <li>
             <a href="./dashboard.php" class="links_name">
                 <i class='bx bx-grid-alt'></i>
                 <span class="links_name">Dashboard</span>
             </a>
-        </li>
+        </li> -->
         <div calss="divider">
             <span class="fade-effect1"></span>
         </div>
@@ -79,7 +79,26 @@
                 <span class="links_name">Accountants</span>
             </a>
         </li>
+        <span class="fade-effect1"></span>
 
+        <li>
+            <a href="./reviews.php">
+                <i class='bx bxs-star-half'></i>
+                <span class="links_name">Reviews</span>
+            </a>
+        </li>
+
+
+
+        <div calss="divider">
+            <span class="fade-effect1"></span>
+        </div>
+        <li>
+            <a href="./feedback.php">
+                <i class='bx bx-clipboard'></i>
+                <span class="links_name">Feedback</span>
+            </a>
+        </li>
         <span class="fade-effect1"></span>
 
         <li>

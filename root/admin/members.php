@@ -121,6 +121,12 @@
                         $expired_members++;
                     }
 
+                    $count_sql4 = "SELECT * FROM member_drops";
+                    $count_result4 = mysqli_query($conn, $count_sql4);
+                    $count_drops = mysqli_fetch_assoc($count_result4);
+
+                    $member_drops = $count_drops['count'];
+
 
 
 
@@ -164,7 +170,7 @@
                 </div>
 
                 <div class="four">
-                    <p class="value">2-</p>
+                    <p class="value"><?php echo $member_drops ?>-</p>
                     <p class="name">Member Drops</p>
                 </div>
 

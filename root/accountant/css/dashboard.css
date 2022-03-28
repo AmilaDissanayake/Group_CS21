@@ -186,7 +186,7 @@ nav .sidebar-button i{
   font-size: 20px;
   transition: all 0.4 ease;
 }
-.home-section nav .profile-details{
+/* .home-section nav .profile-details{
   display: flex;
   align-items: center;
   background: #F5F6FA;
@@ -207,7 +207,7 @@ nav .profile-details .admin_name{
 nav .profile-details i{
   font-size: 25px;
   color: #333;
-}
+} */
 .home-section .home-content{
   position: relative;
   padding-top: 104px;
@@ -670,7 +670,7 @@ table{
 
 .bmi2 {
   width:400px;
-  height:400px;
+  height:250px;
   background-color: white;
   margin-left: 50px;
   align-items: center;
@@ -774,8 +774,8 @@ table{
   /* margin-bottom: 20px; */
   background-color: white;
   width: 90%;
-  height: 40%;
-  padding-top: 40px;
+  height: 50%;
+  padding-top: 20px;
   padding-bottom: 20px;
   border: 6px #ddd solid;
   /* border-radius: 5px; */

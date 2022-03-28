@@ -92,9 +92,9 @@ function getval() {
         $("#bmi_val_holder").text(bmi2);
         $("#intr_id").val(bmi2);
         $("#bmi_pass").val(bmi2);
-        var day = $("#day_hold").text();
+        var day = $("#day_hold").val();
 
-        if(day <= 15){
+        if (day <= 15) {
             window.location.href = "#popup5";
         } else {
             window.location.href = "#popup3";

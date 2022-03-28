@@ -175,7 +175,7 @@ document.querySelector('.calculate4 .calc4').onclick = function () {
     document.querySelector('.result4').style.display = 'flex';
 }
 
-    document.querySelector('.result4 .recal4').onclick = function () {
+document.querySelector('.result4 .recal4').onclick = function () {
     document.querySelector('.result4').style.display = 'none';
     document.querySelector('.calculate4').style.display = 'flex';
 }
@@ -190,9 +190,9 @@ function getvalbf() {
         $("#bf_val_holder").text(bf2);
         $("#intr_id").val(bf2);
         $("#bf_pass").val(bf2);
-        var day = $("#day_hold").text();
+        var day = $("#day_hold").val();
 
-        if(day <= 15){
+        if (day <= 15) {
             window.location.href = "#popup5";
         } else {
             window.location.href = "#popup3bf";

@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Colombo');
 
 require "includes/db.php";
 
@@ -24,7 +25,7 @@ if (isset($_POST['submit'])) {
                 header('Location: ../admin/members.php');
                 $_SESSION['user_type'] = 'admin';
             } elseif ($row['user_type'] == 'member') {
-                date_default_timezone_set('Asia/Colombo');
+
 
                 $query1 = "SELECT * FROM member WHERE username = '" . $username . "'";
                 $result1 = mysqli_query($conn, $query1);
@@ -51,13 +52,15 @@ if (isset($_POST['submit'])) {
 
                 $date = date('Y-m-d');
                 $today = new DateTime($date);
-                $mem_date = new DateTime("$joined_date");
-                $expirey = new DateTime("$exp_date"); // $expirey = "2021-12-01";
+                $mem_date = new DateTime($joined_date);
+                $expirey = new DateTime($exp_date); // $expirey = "2021-12-01";
 
                 if ($today > $expirey) {
 
                     $query3 = "SELECT * FROM extend_membership  WHERE member_id = '" . $member_id . "'";
-                    $result3 = mysqli_query($conn, $query3);
+                    $result32 = mysqli_query($conn, $query3);
+                    $result3 = mysqli_num_rows($result32);
+
 
                     if ($result3 != 0) {
                         $result3 = mysqli_query($conn, $query3);

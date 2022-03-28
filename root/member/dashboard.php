@@ -40,7 +40,6 @@ $username = $_SESSION['username'];
 
             $member_id = $row1['member_id'];
             $trainer_assignment = $row1['assign_trainer'];
-            $gender = $row1['gender'];
 
             $query2 = "SELECT * FROM membership  WHERE member_id = '" . $member_id . "'";
             $result2 = mysqli_query($conn, $query2);
@@ -181,100 +180,6 @@ $username = $_SESSION['username'];
                 }
             }
 
-            $package_table = $membership_type . 'm_package_progress';
-
-            $package_query = "SELECT * FROM $package_table WHERE member_id= '" . $member_id . "'";
-            $package_result = mysqli_query($conn, $package_query);
-            $pk_row = mysqli_fetch_assoc($package_result);
-
-            $bmi_value_list = $pk_row['bmi_values'];
-            $value_holder = json_decode($bmi_value_list);
-
-            $out = $value_holder;
-
-            if ($mem_interval->d <= 15) {
-                switch ($next_mon) {
-                    case 1:
-                        $limit = 0;
-                        break;
-                    case 2:
-                        $limit = 1;
-                        break;
-                    case 3:
-                        $limit = 2;
-                        break;
-                    case 4:
-                        $limit = 3;
-                        break;
-                    case 5:
-                        $limit = 4;
-                        break;
-                    case 6:
-                        $limit = 5;
-                        break;
-                    case 7:
-                        $limit = 6;
-                        break;
-                    case 8:
-                        $limit = 7;
-                        break;
-                    case 9:
-                        $limit = 8;
-                        break;
-                    case 10:
-                        $limit = 9;
-                        break;
-                    case 11:
-                        $limit = 10;
-                        break;
-                    case 12:
-                        $limit = 11;
-                        break;
-                }
-            } else {
-                $limit = $next_mon;
-            }
-
-            if ($membership_type == 12) {
-                $months = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-            } else if ($membership_type == 6) {
-                $months = [false, false, false, false, false, false];
-            } else if ($membership_type == 3) {
-                $months = [false, false, false, false, false, false];
-            } else if ($membership_type == 1) {
-                $months = [false, false, false, false];
-            }
-
-            if ($membership_type == 12 || $membership_type == 6) {
-                for ($i = 0; $i < $limit; $i++) {
-                    $months[$i] = true;
-                }
-            } else if ($membership_type == 3) {
-                for ($i = 0; $i < ($limit * 2); $i++) {
-                    $months[$i] = true;
-                }
-            } else if ($membership_type == 1) {
-                if ($limit == 1) {
-                    $months = [true, true, true, true];
-                } else if ($limit == 0) {
-                    $months = [false, false, false, false];
-                }
-            }
-
-            if ($months[0] == false) {
-                $label_val = "N/A";
-            } else {
-                if ($membership_type == 12 || $membership_type == 6) {
-                    if ($limit > 0) {
-                        $label_val = $out[$limit - 1];
-                    }
-                } else if ($membership_type == 3) {
-                    $label_val = $out[($limit * 2) - 1];
-                } else if ($membership_type == 1) {
-                    $label_val = $out[3];
-                }
-            }
-
             ?>
 
         </div>
@@ -409,183 +314,33 @@ $username = $_SESSION['username'];
                     <p>BMI STATISTICS</p>
                 </div>
 
+                <div class="bmi">
+                    <canvas id="canvas"></canvas>
+                </div>
+
                 <div class="bmistatus">
-                    <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt'></i><span id=" bmi_c" <?php if ($label_val >= 30) {
-                                                                                                                            echo "class='ob'";
-                                                                                                                        } else if ($label_val < 30 && $label_val >= 25) {
-                                                                                                                            echo "class='ov'";
-                                                                                                                        } else if ($label_val < 25 && $label_val >= 18.5) {
-                                                                                                                            echo "class='hl'";
-                                                                                                                        } else if ($label_val == 'N/A') {
-                                                                                                                            echo "class='nm'";
-                                                                                                                        } else if ($label_val < 18.5) {
-                                                                                                                            echo "class='un'";
-                                                                                                                        } ?>><?php if ($label_val >= 30) {
-                                                                                                                                                        echo " OBESITY";
-                                                                                                                                                    } else if ($label_val < 30 && $label_val >= 25) {
-                                                                                                                                                        echo "OVER WEIGHT";
-                                                                                                                                                    } else if ($label_val < 25 && $label_val >= 18.5) {
-                                                                                                                                                        echo "HEALTHY";
-                                                                                                                                                    } else if ($label_val == 'N/A') {
-                                                                                                                                                        echo "N/A";
-                                                                                                                                                    } else if ($label_val < 18.5) {
-                                                                                                                                                        echo "UNDER WEIGHT";
-                                                                                                                                                    } ?></span></p>
+                    <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt'></i><span id=" bmi_c" class="ob"> OBESITY</span></p>
                     <div class="pgo">
                         <a href="./progress.php#updatebmi" class="readmore_btn" id="readMore">UPDATE BMI</a>
                     </div>
                 </div>
             </div>
-
-            <div class="bmistatus">
-                <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt'></i><span id=" bmi_c" class="ob"> OBESITY</span></p>
-                <div class="pgo">
-                    <a href="./progress.php#updatebmi" class="readmore_btn" id="readMore">UPDATE BMI</a>
+            <div class="divider"></div>
+            <div class="lpanel">
+                <div class="btag">
+                    <p>BODY FAT STATISTICS</p>
                 </div>
-
-                <?php
-
-                $package_table = $membership_type . 'm_package_progress';
-
-                $package_query = "SELECT * FROM $package_table WHERE member_id= '" . $member_id . "'";
-                $package_result = mysqli_query($conn, $package_query);
-                $pk_row = mysqli_fetch_assoc($package_result);
-
-                $bf_value_list = $pk_row['bf_values'];
-                $value_holder2 = json_decode($bf_value_list);
-
-                // if($mem_interval->d >= 15){
-                //     switch ($mem_interval->m) {
-                //         case 0:$limit = 0;break;
-                //         case 1:$limit = 0;break;
-                //         case 2:$limit = 1;break;
-                //         case 3:$limit = 2;break;
-                //         case 4:$limit = 3;break;
-                //         case 5:$limit = 4;break;
-                //         case 6:$limit = 5;break;
-                //         case 7:$limit = 6;break;
-                //         case 8:$limit = 7;break;
-                //         case 9:$limit = 8;break;
-                //         case 10:$limit = 9;break;
-                //         case 11:$limit = 10;break; 
-                //         case 12:$limit = 11;break; 
-                //         }
-                //     } else {
-                //         $limit = $mem_interval->m;
-                //     }
-
-                //     if ($membership_type == 12) {
-                //         $months = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-                //     } else if ($membership_type == 6) {
-                //         $months = [false, false, false, false, false, false];
-                //     } else if ($membership_type == 3) {
-                //         $months = [false, false, false, false, false, false];
-                //     } else if ($membership_type == 1) {
-                //         $months = [false, false, false, false];
-                //     }
-
-                if ($membership_type == 12 || $membership_type == 6) {
-                    for ($i = 0; $i < $limit; $i++) {
-                        $months[$i] = true;
-                    }
-                } else if ($membership_type == 3) {
-                    for ($i = 0; $i < ($limit * 2); $i++) {
-                        $months[$i] = true;
-                    }
-                } else if ($membership_type == 1) {
-                    if ($limit == 1) {
-                        $months = [true, true, true, true];
-                    } else if ($limit == 0) {
-                        $months = [false, false, false, false];
-                    }
-                }
-
-                $out = $value_holder2;
-
-                if ($months[0] == false) {
-                    $label_val2 = "N/A";
-                } else {
-                    if ($membership_type == 12 || $membership_type == 6) {
-                        $label_val2 = $out[$limit - 1];
-                    } else if ($membership_type == 3) {
-                        $label_val2 = $out[($limit * 2) - 1];
-                    } else if ($membership_type == 1) {
-                        $label_val2 = $out[3];
-                    }
-                }
-                ?>
+                <div class="bmi">
+                    <canvas id="canvas2"></canvas>
+                </div>
                 <div class="bmistatus">
-                    <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt'></i><span id=" bf_c" <?php
-                                                                                                                    if ($gender == 'female') {
-                                                                                                                        if ($label_val2 >= 31) {
-                                                                                                                            echo "class='ob'";
-                                                                                                                        } else if ($label_val2 == "N/A") {
-                                                                                                                            echo "class='nm'";
-                                                                                                                        } else if ($label_val2 < 31 && $label_val2 >= 25) {
-                                                                                                                            echo "class='avg'";
-                                                                                                                        } else if ($label_val2 < 25 && $label_val2 >= 21) {
-                                                                                                                            echo "class='fit'";
-                                                                                                                        } else if ($label_val2 < 21 && $label_val2 >= 14) {
-                                                                                                                            echo "class='ath'";
-                                                                                                                        } else if ($label_val2 < 14 && $label_val2 >= 10) {
-                                                                                                                            echo "class='es'";
-                                                                                                                        }
-                                                                                                                    } else if ($gender == 'male') {
-                                                                                                                        if ($label_val2 >= 25) {
-                                                                                                                            echo "class='ob'";
-                                                                                                                        } else if ($label_val2 == "N/A") {
-                                                                                                                            echo "class='nm'";
-                                                                                                                        } else if ($label_val2 < 25 && $label_val2 >= 18) {
-                                                                                                                            echo "class='avg'";
-                                                                                                                        } else if ($label_val2 < 18 && $label_val2 >= 14) {
-                                                                                                                            echo "class='fit'";
-                                                                                                                        } else if ($label_val2 < 14 && $label_val2 >= 6) {
-                                                                                                                            echo "class='ath'";
-                                                                                                                        } else if ($label_val2 < 6) {
-                                                                                                                            echo "class='es'";
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                    ?>>
-                            <?php
-
-                            if ($gender == 'female') {
-                                if ($label_val2 >= 31) {
-                                    echo "OBESE";
-                                } else if ($label_val2 == "N/A") {
-                                    echo "N/A";
-                                } else if ($label_val2 < 31 && $label_val2 >= 25) {
-                                    echo "AVERAGE";
-                                } else if ($label_val2 < 25 && $label_val2 >= 21) {
-                                    echo "FITNESS";
-                                } else if ($label_val2 < 21 && $label_val2 >= 14) {
-                                    echo "ATHLETES";
-                                } else if ($label_val2 < 14 && $label_val2 >= 10) {
-                                    echo "ESSANTIAL FAT";
-                                }
-                            } else if ($gender == 'male') {
-                                if ($label_val2 >= 25) {
-                                    echo "OBESE";
-                                } else if ($label_val2 == "N/A") {
-                                    echo "N/A";
-                                } else if ($label_val2 < 25 && $label_val2 >= 18) {
-                                    echo "AVERAGE";
-                                } else if ($label_val2 < 18 && $label_val2 >= 14) {
-                                    echo "FITNESS";
-                                } else if ($label_val2 < 14 && $label_val2 >= 6) {
-                                    echo "ATHLETES";
-                                } else if ($label_val2 < 6 && $label_val2 >= 2) {
-                                    echo "ESSANTIAL FAT";
-                                }
-                            }
-                            ?>
-                        </span></p>
+                    <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt'></i><span id=" bf_c" class="avg"> AVERAGE </span></p>
                     <div class="pgo">
                         <a href="./progress.php#updatebf" class="readmore_btn" id="readMore">UPDATE BODY FAT</a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="vboderdivider"></div>
+            <div class="vboderdivider"></div>
         </div>
         <div class="Hdivider"></div>
         <div class="analy2">
@@ -607,7 +362,7 @@ $username = $_SESSION['username'];
                                         </div>
                                     </div>
                                     <div class="cat1">
-                                        <div class="cimg"><img src="./media/1.jpg" alt="Under weight"></div>
+                                        <div class="cimg"><img src="./media/1.png" alt="Under weight"></div>
                                         <div class="tx">
                                             <div class="ty">
                                                 <p>UNDER</p>
@@ -617,7 +372,7 @@ $username = $_SESSION['username'];
                                             </div>
                                         </div>
                                         <div class="cat1">
-                                            <div class="cimg"><img src="./media/2.jpg" alt="Healthy weight"></div>
+                                            <div class="cimg"><img src="./media/2.png" alt="Healthy weight"></div>
                                             <div class="tx">
                                                 <div class="ty">
                                                     <p>HEALTHY</p>
@@ -626,7 +381,7 @@ $username = $_SESSION['username'];
                                             </div>
                                         </div>
                                         <div class="cat1">
-                                            <div class="cimg"><img src="./media/3.jpg" alt="Over weight"></div>
+                                            <div class="cimg"><img src="./media/3.png" alt="Over weight"></div>
                                             <div class="tx">
                                                 <div class="ty">
                                                     <p>OVER</p>
@@ -635,7 +390,7 @@ $username = $_SESSION['username'];
                                             </div>
                                         </div>
                                         <div class="cat1">
-                                            <div class="cimg"><img src="./media/4.jpg" alt="Obese weight"></div>
+                                            <div class="cimg"><img src="./media/4.png" alt="Obese weight"></div>
                                             <div class="tx">
                                                 <div class="ty">
                                                     <p>OBESE</p>
