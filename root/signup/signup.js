@@ -49,7 +49,7 @@ function checkInputs() {
 	const password2 = document.getElementById('password2');
 	const checkbox1 = document.getElementById('mycheck');
 	const unameresponse = document.getElementById('uname_response');
-	
+
 
 	// trim to remove the whitespaces
 
@@ -163,13 +163,10 @@ function checkInputs() {
 	} else if (!isusername(usernameValue)) {
 		setErrorFor(username, 'User Name is Too Short');
 		usernameValid = false;
-	} else if (!isusername2(usernameValue)) {
-		setErrorFor(username, 'User Name can not have spaces');
-		usernameValid = false;
-	}else if (unameresponse.innerText == 'Not Available') {
+	} else if (unameresponse.innerText == 'Not Available') {
 		setErrorFor(username, '');
-		usernameValid = false; 
-	}else {
+		usernameValid = false;
+	} else {
 		setSuccessFor(username);
 		usernameValid = true;
 	}

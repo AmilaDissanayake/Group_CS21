@@ -141,7 +141,7 @@ if ($trainer_bb > 0) {
 $schedule_insert = "INSERT INTO schedule (member_id) VALUES ('$member_id');";
 $scedule_insert_result = mysqli_query($conn, $schedule_insert);
 
-if ($result0 && $result1 && $result3 && $result4 && $result5) {
+if ($result0 && $result1 && $result3 && $result4) {
     $_SESSION['notification'] = "Account successfully created";
     $_SESSION['username'] = $username_bb;
 

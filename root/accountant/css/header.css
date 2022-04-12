@@ -125,7 +125,7 @@ body{
   }
 
 
-  .home-section nav .profile-details{
+  /* .home-section nav .profile-details{
     display: flex;
     align-items: center;
     background: #F5F6FA;
@@ -136,20 +136,20 @@ body{
     padding: 0 15px 0 2px;
     margin-left: 750px;
     cursor: pointer;
-  }
+  } */
   nav .header-img img {
     height: 50px;
     width: 50px;
     border-radius: 30px;
     object-fit: cover;
   }
-  nav .profile-details .admin_name{
+  /* nav .profile-details .admin_name{
     font-size: 15px;
     font-weight: 500;
     color: #5AC400;
     margin: 0 10px;
     white-space: nowrap;
-  }
+  } */
   nav .profile-details i{
     font-size: 25px;
     color: #5AC400;

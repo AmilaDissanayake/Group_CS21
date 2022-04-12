@@ -1,6 +1,7 @@
 <?php include "includes/check_login.php" ?>
 <?php require "includes/db.php";
-require "includes/date-joined.php"; ?>
+require "includes/date-joined.php";
+date_default_timezone_set("Asia/Colombo"); ?>
 
 <?php
 $username = $_SESSION['username'];
@@ -21,7 +22,7 @@ $date_joined = date_registered($trainer_id);
 
 $_SESSION['trainer_id'] = $trainer_row['trainer_id'];
 
-$query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+$query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id AND status=1";
 $review_query = mysqli_query($conn, $query2);
 
 $review_count = mysqli_num_rows($review_query);
@@ -81,7 +82,7 @@ $count = mysqli_num_rows($result1);
                 </div>
 
                 <div class="two">
-                    <p class="value"><?php echo $month_earning; ?></p>
+                    <p class="value"><?php echo $month_earning * .8; ?></p>
                     <a href="earnings.php" class="name">Earnings(This month)</a>
                 </div>
 
@@ -132,7 +133,7 @@ $count = mysqli_num_rows($result1);
                         <span class="fade-effect3"> </span>
                     </div>
                     <?php
-                    $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+                    $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id AND status=1";
                     $review_query = mysqli_query($conn, $query2);
 
                     while ($review_row = mysqli_fetch_assoc($review_query)) {

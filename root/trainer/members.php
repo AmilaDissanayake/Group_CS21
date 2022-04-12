@@ -105,7 +105,7 @@ $assign_members = mysqli_num_rows($assign_query);
                             <td><?php echo $injury; ?></td>
                             <td>
                                 <div class="row-action">
-                                    <button class="about_btn1" onclick="location.href='meal_plan.php?member_id=<?php echo $member_id; ?>'">Meal Plan and Schedule</button>
+                                    <button class="about_btn1" onclick="location.href='meal_plan.php?member_id=<?php echo $member_id ?>'">Meal Plan and Schedule</button>
                                 </div>
                             </td>
                             <td>

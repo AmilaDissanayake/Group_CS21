@@ -33,7 +33,7 @@
 
 
                 <div class="form__div" id="main_address1">
-                    <input type="text" class="form__input" id="address1" name="username" placeholder=" " value=<?= $_GET["username"] ?>>
+                    <input type="text" class="form__input" id="address1" name="username" placeholder=" " value=<?= $_GET["username"] ?> readonly>
                     <label for="" class="form__label">Username</label>
 
                 </div>
@@ -105,7 +105,7 @@
 
 
                 <div class="form__div" id="main_address1">
-                    <input type="text" class="form__input" id="address2" placeholder=" " name="amount" value=<?= $_GET["payment_amount"] ?>>
+                    <input type="text" class="form__input" id="address2" placeholder=" " name="amount" value=<?= $_GET["payment_amount"] ?> readonly>
                     <label for="" class="form__label">Amount</label>
                 </div>
 

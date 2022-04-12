@@ -149,7 +149,7 @@ include "includes/check_login.php";
 
                         <div class="name">
                             <div class="form__div">
-                                <input type="text" class="name_input" id="fname" value="" name="f_name_cc">
+                                <input type="text" class="name_input" id="fname" value="" name="f_name_cc" required>
                                 <label for="" class="form__label">Equipment Name</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>
@@ -159,7 +159,7 @@ include "includes/check_login.php";
                                 <small>Error message</small>
                             </div>
                             <div class="form__div">
-                                <input type="text" class="name_input" id="lname" value="" name=" l_name_cc">
+                                <input type="text" class="name_input" id="lname" value="" name=" l_name_cc" required>
                                 <label for="" class="form__label">Quantity</label>
                                 <i class="fa fa-check"></i>
                                 <i class="fas fa-exclamation-triangle"></i>
@@ -173,7 +173,7 @@ include "includes/check_login.php";
                         <input type="file" class="custom-file-input" name="quipment_name" required>
 
 
-                        <div class="buttondiv"><input type="button" class="form__button" value="ADD NEW EQUIPMENT" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+                        <div class="buttondiv"><input type="button" class="form__button" value="ADD NEW EQUIPMENT" name="form_submit" id="form_submit"></div>
 
                     </form>
 

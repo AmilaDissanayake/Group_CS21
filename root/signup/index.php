@@ -259,7 +259,7 @@
                                     // $rate = (int)$rate;
 
 
-                                    $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id";
+                                    $query2 = "SELECT * FROM review WHERE trainer_id = $trainer_id AND status =1";
                                     $review_query = mysqli_query($conn, $query2);
                                     $review_count = mysqli_num_rows($review_query);
                                     $review_value = 0;

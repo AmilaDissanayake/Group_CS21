@@ -54,7 +54,7 @@
                             <p class="value">Rs. <?php echo $sum;
                                                 }
                                                     ?></p>
-                            <p class="name">Member Recievables</p>
+                            <p class="name">All Recievables</p>
                 </div>
 
                 <div class="two">
@@ -76,6 +76,27 @@
                         // $count = $row3['assignment_count'];
                     } ?>
 
+                    <?php $select_query = "SELECT * FROM payment WHERE payment_date>='$year-$month-01'";
+                    $select_result = mysqli_query($conn, $select_query);
+                    // where payment_date>='$year-$month-01
+                    $sum_new = 0;
+                    $sum_tr = 0;
+
+                    if (mysqli_num_rows($select_result) > 0) {
+                        while ($row = mysqli_fetch_assoc($select_result)) {
+                            $sum_new = $sum_new + $row['payment_amount'];
+                            $trainer_id = $row['trainer_id'];
+                            if ($trainer_id > 0) {
+                                $sql4 = "SELECT * FROM trainer WHERE trainer_id = '$trainer_id';";
+                                $select_result2 = mysqli_query($conn, $sql4);
+                                $row4 = mysqli_fetch_assoc($select_result2);
+                                $rate = $row4['rate'];
+                                $sum_tr = $sum_tr + $rate;
+                            }
+                        }
+                    }
+                    ?>
+
 
 
                     <p class="value">Rs. <?php echo $sum2;
@@ -95,7 +116,7 @@
 
                 <div class="one">
 
-                    <p class="value">Rs. <?php echo $sum - $sum2;
+                    <p class="value">Rs. <?php echo $sum - ($sum2 - ($sum2 * 0.2));
 
                                             ?></p>
                     <p class="name">Profit</p>
@@ -145,12 +166,12 @@
 
 
 
-                        <p class="value">Rs. <?php echo $totalsum;
+                        <p class="value">Rs. <?php echo $sum_new - ($sum_new - ($sum_tr * 0.2));
 
                                                 ?></p>
 
 
-                        <p class="name">Amount</p>
+                        <p class="name">This Month</p>
                     </div>
                 </div>
                 <!-- <button class="hero_btn" >More Reports >></button> -->

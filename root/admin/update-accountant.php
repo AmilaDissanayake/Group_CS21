@@ -64,7 +64,7 @@ $accountant_id = $row['accountant_id'];
     <link rel="stylesheet" href="css/jquery-confirm.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="js/update-member.js"></script>
+    <script type="text/javascript" src="js/update-accountant.js"></script>
     <style>
         .jconfirm.jconfirm-my-theme .jconfirm-bg {
             background-color: rgba(0, 0, 0, 0.2);
@@ -341,12 +341,25 @@ $accountant_id = $row['accountant_id'];
 
 
 
-                        <div class="buttondiv"><input type="button" class="form__button" value="UPDATE ACCOUNTANT" name="form_submit" id="form_submit" onclick="submitFunction()"></div>
+                        <div class="buttondiv"><input type="button" class="form__button" value="UPDATE ACCOUNTANT" name="form_submit" id="form_submit" onclick="go()"></div>
 
                         <div class="buttondiv" id="delete_submit"><input type="button" class="form__button" value="DELETE ACCOUNTANT"></div>
                         <script>
                             function go() {
-                                document.getElementById("delete_form").submit();
+
+                                var result = checkInputs();
+                                //console.log(result);
+
+                                if (result == true) {
+                                    // e.preventDefault();
+
+
+                                    document.getElementById("signup_form").submit();
+
+
+
+                                    // document.getElementById("delete_form").submit();
+                                }
                             }
                             // var $btn = $('.btn-calendar').pignoseCalendar({
                             //     // apply: onApplyHandler,
