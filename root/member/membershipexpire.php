@@ -19,6 +19,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
+    <!-- expire payment window -->
     <div class="expire_payment">
         <div class="expire_img"><img src="./media/timeup.png" alt=""></div>
         <div class="situation"><p>Oops...! Looks like your membership is experied !</p></div>
@@ -61,6 +62,7 @@
 
         $email = $row3['email']; 
     ?>
+    <!-- payment submiting form -->
     <div class="udetails">
         <div class="paralist" id="email" ></div>
         <form id="amount_form" action="add-payment.php" method="POST">
@@ -73,6 +75,7 @@
     <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
 
     <script>   
+        // payment handling scriptings
         var cost = 0; 
         var pack; 
         $("#mon1").click(function(){

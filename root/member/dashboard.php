@@ -69,7 +69,7 @@
             $joinpoint_date = new DateTime("$point_date");
 
             $mem_interval2 = $today->diff($joinpoint_date);
-        
+            // active week, current active month checking
             if($mem_interval2->d <= 7){
                 $active_week = 1;
             }else if($mem_interval2->d <= 14){
@@ -104,7 +104,7 @@
         
             $full_attendance = json_decode($attendace);
             $perc_value = $full_attendance[$next_mon - 1][0];
-
+            // membership duration
             $mem_interval = $today->diff($membexp_date);
 
             if($mem_date  == $today){
@@ -119,6 +119,7 @@
             if($trainer_assignment == 0){
                 $flag = 0;
             }else{
+                // check the assignment expiery
                 $assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_assignment ORDER BY assignment_id DESC LIMIT 1;";
                 $assignment_result = mysqli_query($conn, $assignment_query);
                 $assignment_row = mysqli_fetch_assoc($assignment_result); 
@@ -152,6 +153,7 @@
                 }
             }
 
+            // get bmi values and organize
             $package_table = $membership_type . 'm_package_progress';
 
             $package_query = "SELECT * FROM $package_table WHERE member_id= '" . $member_id . "'";
@@ -161,7 +163,7 @@
             $bmi_value_list = $pk_row['bmi_values'];
             $value_holder = json_decode($bmi_value_list);
 
-            $out = $value_holder;
+            $out2 = $value_holder;
 
             if ($mem_interval->d <= 15) {
                 switch ($next_mon) {
@@ -232,25 +234,26 @@
                 }
             }
 
-            if ($months[0] == false) {
-                $label_val = "N/A";
-            } else {
-                if ($membership_type == 12 || $membership_type == 6) {
-                    if ($limit > 0) {
-                        $label_val = $out[$limit - 1];
-                    }
-                } else if ($membership_type == 3) {
-                    $label_val = $out[($limit * 2) - 1];
-                } else if ($membership_type == 1) {
-                    $label_val = $out[3];
-                }
-            }
+            // if ($months[0] == false) {
+            //     $label_val = "N/A";
+            // } else {
+            //     if ($membership_type == 12 || $membership_type == 6) {
+            //         if ($limit > 0) {
+            //             $label_val = $out2[$limit];
+            //         }
+            //     } else if ($membership_type == 3) {
+            //         $label_val = $out2[($limit * 2)];
+            //     } else if ($membership_type == 1) {
+            //         $label_val = $out2[3];
+            //     }
+            // }
 
             ?>
 
         </div>
         <div class="Hdivider"></div>
-        <?php 
+        <?php    
+        // trainer assignment checking
                 if($trainer_assignment != 0){
                     $trainer_id = $trainer_assignment;
                     $assign_trainer_query = "SELECT * FROM trainer WHERE trainer_id = $trainer_id";
@@ -273,7 +276,7 @@
                         }
                         $final_rating = $review_value / $review_count;
                     } 
-
+                    // checking for the next available booking if any fixed
                    $query2 = "SELECT * FROM book  WHERE member_id = '".$member_id."' AND date >='".$date."' LIMIT 2"; 
                    $result2 = mysqli_query($conn, $query2);
                    $current_time = date("H:i:s");  
@@ -309,7 +312,7 @@
                     }
                 }                 
         ?>
-
+        <!-- dashboard upper details view -->
         <div class="member-stats">
             <div class="one">
                 <p class="value"><?php echo "$mem_interval->m"  ?><span id="mon_tg"> Months</span> <?php echo "$mem_interval->d" ?><span id="mon_tg"> Days</span></p>
@@ -370,9 +373,9 @@
                         <div class="bmi">
                             <canvas id="canvas"></canvas>
                         </div>
-
+                        <!-- bmi categorizers -->
                         <div class="bmistatus">
-                            <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id=" bmi_c" <?php if ($label_val >= 30) {
+                            <p><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt' ></i><span id=" bmi_c" <?php $label_val=20.2; if ($label_val >= 30) {
                                                                                                                                                 echo "class='ob'";
                                                                                                                                             } else if ($label_val < 30 && $label_val >= 25) {
                                                                                                                                                 echo "class='ov'";
@@ -399,6 +402,7 @@
                         </div>
                 </div>
                 <div class="divider"></div>
+                <!-- bf chart -->
                 <div class="lpanel">
                     <div class="btag"><p>BODY FAT STATISTICS</p></div>
                     <div class="bmi">
@@ -415,36 +419,6 @@
     
                                     $bf_value_list = $pk_row['bf_values'];
                                     $value_holder2 = json_decode($bf_value_list);
-    
-                                    // if($mem_interval->d >= 15){
-                                    //     switch ($mem_interval->m) {
-                                    //         case 0:$limit = 0;break;
-                                    //         case 1:$limit = 0;break;
-                                    //         case 2:$limit = 1;break;
-                                    //         case 3:$limit = 2;break;
-                                    //         case 4:$limit = 3;break;
-                                    //         case 5:$limit = 4;break;
-                                    //         case 6:$limit = 5;break;
-                                    //         case 7:$limit = 6;break;
-                                    //         case 8:$limit = 7;break;
-                                    //         case 9:$limit = 8;break;
-                                    //         case 10:$limit = 9;break;
-                                    //         case 11:$limit = 10;break; 
-                                    //         case 12:$limit = 11;break; 
-                                    //         }
-                                    //     } else {
-                                    //         $limit = $mem_interval->m;
-                                    //     }
-    
-                                    //     if ($membership_type == 12) {
-                                    //         $months = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
-                                    //     } else if ($membership_type == 6) {
-                                    //         $months = [false, false, false, false, false, false];
-                                    //     } else if ($membership_type == 3) {
-                                    //         $months = [false, false, false, false, false, false];
-                                    //     } else if ($membership_type == 1) {
-                                    //         $months = [false, false, false, false];
-                                    //     }
     
                                         if ($membership_type == 12 || $membership_type == 6) {
                                             for ($i = 0; $i < $limit; $i++) {
@@ -476,8 +450,9 @@
                                         }
                                     }
                                     ?>
+                                    <!-- BF categoriezers -->
                     <div class="bmistatus">
-                        <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span id=" bf_c"  <?php
+                        <p><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt' ></i><span id=" bf_c"  <?php $label_val2=15.5;
                                                                                                                                     if ($gender == 'female') {
                                                                                                                                         if ($label_val2 >= 31) {
                                                                                                                                             echo "class='ob'";
@@ -571,9 +546,105 @@
                             <ul>
                             <?php 
 
+                        for($m=0;$m<=6;$m++){ 
+                            $week=array("day1_ex1","day2_ex1","day3_ex1","day4_ex1","day5_ex1","day6_ex1","day7_ex1");
+
+                            $column = $week[$m];
+                            $find = "SELECT $column FROM schedule WHERE member_id='$member_id';";
+                            $result2 = mysqli_query($conn, $find);
+
+                            $row = mysqli_fetch_assoc($result2);
+                            $en_rs = $row["$week[$m]"];
+
+                            $ex1 = unserialize(base64_decode($en_rs));
+                            $out[$m]=$ex1;
+                        }
+
+                            if($out[0]==''){$day1_flag=0;}else if($out[0][0]!='0'){$day1_flag=1;}else if($out[0][0]== '0'){$day1_flag=0;}
+                            if($out[1]==''){$day2_flag=0;}else if($out[1][0]!='0'){$day2_flag=1;}else if($out[1][0]== '0'){$day2_flag=0;}
+                            if($out[2]==''){$day3_flag=0;}else if($out[2][0]!='0'){$day3_flag=1;}else if($out[2][0]== '0'){$day3_flag=0;}
+                            if($out[3]==''){$day4_flag=0;}else if($out[3][0]!='0'){$day4_flag=1;}else if($out[3][0]== '0'){$day4_flag=0;}
+                            if($out[4]==''){$day5_flag=0;}else if($out[4][0]!='0'){$day5_flag=1;}else if($out[4][0]== '0'){$day5_flag=0;}
+                            if($out[5]==''){$day6_flag=0;}else if($out[5][0]!='0'){$day6_flag=1;}else if($out[5][0]== '0'){$day6_flag=0;}
+                            if($out[6]==''){$day7_flag=0;}else if($out[6][0]!='0'){$day7_flag=1;}else if($out[6][0]== '0'){$day7_flag=0;}
+
+                            $total_workout_days = $day1_flag + $day2_flag + $day3_flag + $day4_flag + $day5_flag + $day6_flag + $day7_flag;
+
+                            if($total_workout_days == 3){
+                                $query2 = "SELECT * FROM membership WHERE member_id = '" . $member_id . "'";
+                                $result2 = mysqli_query($conn, $query2);
+                                $row2 = mysqli_fetch_assoc($result2);
+        
+        
+                                $package_type = $row2['membership_type'];
+        
+                                $cur_date = date('Y-m-d');
+                                $today_at = new DateTime("$cur_date");
+                                $point_date = date('0000-00-00');
+                                $today_from = new DateTime("$point_date");
+                                $day_interval = $today_from->diff($today_at);
+                                // making membership interval type from backword
+                                if($mem_interval2->d <= 7){
+                                    $active_week2 = 1;
+                                }else if($mem_interval2->d <= 14){
+                                    $active_week2 = 2;
+                                }else if($mem_interval2->d <= 21){
+                                    $active_week2 = 3;
+                                }else if($mem_interval2->d <= 31){
+                                    $active_week2 = 4;
+                                }
+                                $active_month=$day_interval->m;
+                                            //making point date to get the date interval
+
+                                $point_date = date('Y-m-d',strtotime("$joined_date"));
+                                $joinpoint_date = new DateTime("$point_date");
+
+                                $date = date('Y-m-d');
+                                $today = new DateTime($date);
+                                
+
+                                $mem_interval = $today->diff($joinpoint_date);
+
+                                switch ($mem_interval->m) {
+                                    case 0:$next_mon = 1;break;
+                                    case 1:$next_mon = 2;break;
+                                    case 2:$next_mon = 3;break;
+                                    case 3:$next_mon = 4;break;
+                                    case 4:$next_mon = 5;break;
+                                    case 5:$next_mon = 6;break;
+                                    case 6:$next_mon = 7;break;
+                                    case 7:$next_mon = 8;break;
+                                    case 8:$next_mon = 9;break;
+                                    case 9:$next_mon = 10;break;
+                                    case 10:$next_mon = 11;break;
+                                    case 11:$next_mon = 12;break;  
+                                }
+
+                                
+                                $find_attendance = "SELECT * FROM {$package_type}m_package_progress WHERE member_id='$member_id';";
+                                $attendance_result = mysqli_query($conn, $find_attendance);
+
+                                $result_row = mysqli_fetch_assoc($attendance_result);
+                                $attendace = $result_row['attendance'];
+                                $bmi_values = $result_row['bmi_values'];
+                                $bf_values = $result_row['bf_values'];
+
+
+                                $full_attendance = json_decode($attendace);//attendance 2D array
+                                $total_per = $full_attendance[$next_mon - 1][$active_week2];
+
+                                $active_day_count = ($total_per/100)*$total_workout_days;
+
+                                $d_count = (int)$active_day_count;
+
+                                $cur_point = $d_count_1+1;
+                                 
+                            }else{
+                                $cur_point = 1;
+                            }
 
                             for($i=1; $i<=6 ; $i++){
-                                $cur_point = 3;
+                                // $cur_point = 1;
                                 for($m=0;$m<=6;$m++){ 
                                     $cur_point = $cur_point + 1;
 

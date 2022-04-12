@@ -65,6 +65,7 @@ $username = $_SESSION['username'];
             $row1 = mysqli_fetch_assoc($result1);
             $member_id = $row1['member_id'];
 
+            // getting meal plan data for each table cell from each database entry column of the relevant member
             $query2 = "SELECT * FROM meal_plan WHERE member_id = '" . $member_id . "'";
             $result2 = mysqli_query($conn, $query2);
             $row2 = mysqli_fetch_assoc($result2);
@@ -109,6 +110,7 @@ $username = $_SESSION['username'];
                 <div class="note">
                     <h1>Meal Plan</h1>
                 </div>
+                <!-- meal plan editing popup -->
                 <div id="popup1" class="overlay">
                     <div class="popup">
                         <h2>Hi <?php echo $username ?>! You may edit your meal plan now. </h2>
@@ -210,6 +212,7 @@ $username = $_SESSION['username'];
                     </div>
                 </div>
             </div>
+            <!-- meal plan display -->
             <div class="member-list">
                 <table class="table table-hover">
                     <thead>
@@ -378,6 +381,7 @@ $username = $_SESSION['username'];
         <div class="dwnpart">
             <div class="vboderdivider"></div>
             <div class="lsd">
+                <!-- static info section -->
                 <img src="media/img.jpg">
                 <div class="note2">
                     <h1>Suggestions for Meal Plan</h1>
@@ -477,37 +481,10 @@ $username = $_SESSION['username'];
     <?php include "includes/footer.php" ?>
 
     <script>
+        // page refresh popup clear function
         $(document).ready(function() {
             window.location.href = "#";
         });
-
-        // var isValid;
-        // const form = document.getElementById('meal_form');
-        // form.addEventListener("submit", function (e) {
-        //     e.preventDefault();
-        //     var result = checkInputs();
-
-        //     alert(result);
-
-
-
-        // });
-
-
-        // function checkInputs() {
-        //     const in1 = document.getElementById('1');
-        //     const in1val = in1.value.trim();
-
-        //     if (in1val === '') {
-        //         in1.style.borderColor="red";
-
-        //         isValid = false;
-        //         return false;
-        //     } 
-        //     else {
-        //         isValid = true;
-        //         return true;
-        //     }
     </script>
 </body>
 

@@ -82,7 +82,7 @@ $username = $_SESSION['username'];
 
         $exp_date;
 
-
+        // membership expiery calculation
         if ($membership_type == 12) {
             $exp_date = date('Y-m-d', strtotime("+12 month", strtotime("$joined_date")));
         } else if ($membership_type == 6) {
@@ -99,6 +99,7 @@ $username = $_SESSION['username'];
         $mem_date = new DateTime("$joined_date");
         $membexp_date = new DateTime("$exp_date");
 
+        //membership duration calculation
         $mem_interval = $today->diff($membexp_date);
 
         if ($mem_date  == $today) {
@@ -110,6 +111,7 @@ $username = $_SESSION['username'];
             }
         }
 
+        //trainer assignment flag setting
         if ($trainer_assignment == 0) {
             $flag = 0;
         } else {
@@ -127,7 +129,7 @@ $username = $_SESSION['username'];
             $t_assign_date = new DateTime($t_assign_d);
             $t_exp_date = new DateTime($t_exp_d);
 
-
+            //trainer duartion calculation
             $tr_interval = $today->diff($t_exp_date);
         }
 
@@ -135,6 +137,7 @@ $username = $_SESSION['username'];
         <div class="board">
             <div class="vboderdivider"></div>
             <div class="dubar">
+                <!-- dashboard detail view -->
                 <div class="duhead">
                     <h2>Membership</h2>
                 </div>
@@ -210,6 +213,7 @@ $username = $_SESSION['username'];
         </div>
         <div class="divid"></div>
         <?php
+        // iff there is a assign trainer get relavent data  
         if ($trainer_assignment != 0) {
             $trainer_id = $trainer_assignment;
             $assign_trainer_query = "SELECT * FROM trainer WHERE trainer_id = $trainer_id";
@@ -242,6 +246,7 @@ $username = $_SESSION['username'];
             }
         }
         ?>
+        <!-- popups for scenarios -->
         <div id="popup1" class="overlay">
             <div class="popup">
                 <h2>Hi <?php echo $username ?> </h2>
@@ -312,6 +317,8 @@ $username = $_SESSION['username'];
                 </div>
             </div>
         </div>
+
+        <!-- trainer rating popup -->
         <div id="rate_popup" class="overlay">
             <div class="container">
                 <div class="post">
@@ -340,6 +347,7 @@ $username = $_SESSION['username'];
             </div>
 
         </div>
+        <!-- renew membership section -->
         <div class="btmsec">
             <div class="vboderdivider"></div>
             <div class="meship">
@@ -377,6 +385,7 @@ $username = $_SESSION['username'];
                             </thead>
 
                             <?php
+                            // get data for payment history
                             $query1 = "SELECT * FROM member WHERE username = '" . $username . "'";
                             $result1 = mysqli_query($conn, $query1);
                             $row1 = mysqli_fetch_assoc($result1);
@@ -409,7 +418,7 @@ $username = $_SESSION['username'];
                                     <td><?php echo "$date" ?></td>
                                     <td><?php echo "$method" ?></td>
                                     <td><?php echo "$description" ?></td>
-                                    <!-- <td>Pamodha98</td> -->
+                                    <!-- <td>Pamodha98</td>{optional} -->
                                     <td><?php echo "$amount" ?></td>
                                 </tr>
                             <?php } ?>
@@ -421,7 +430,7 @@ $username = $_SESSION['username'];
             <div class="tassign">
                 <div class="seltr">
                     <?php
-
+                    // UI change according to the trainer assignment
                     if ($flag == 0) {
                         echo
                         "<div class='note2'><h1>Trainer Assignment</h1></div> 
@@ -495,7 +504,7 @@ $username = $_SESSION['username'];
 
                     ?>
 
-
+                    <!-- trainer list holder -->
                     <div class="note2">
                         <h1>Trainer List</h1>
                     </div>
@@ -579,6 +588,7 @@ $username = $_SESSION['username'];
 
     <script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
     <script>
+        // payment handling scriptings
         var i;
 
         function changerate(i) {
@@ -741,6 +751,7 @@ $username = $_SESSION['username'];
             payhere.startPayment(tr_payment);
         }
 
+        // special trainer assignment function
         function check_tr(tr_id, fname, rating, lname, image, rate, exp, count) {
             var response;
 

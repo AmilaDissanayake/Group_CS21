@@ -1,3 +1,21 @@
+<!-- //easier to read use a foreach loop to loop through the $_POST collection and print the values.POST method all passed value checking -->
+
+<!-- <table> -->
+<?php 
+    // foreach ($_GET as $key => $value) {
+    //     echo "<tr>";
+    //     echo "<td>";
+    //     echo $key;
+    //     echo "</td>";
+    //     echo "<td>";
+    //     echo $value;
+    //     echo "</td>";
+    //     echo "</tr>";
+    // }
+
+?>
+<!-- </table> -->
+
 <?php
 
 session_start();
@@ -7,6 +25,7 @@ if ($_SESSION['notification']) {
 }
 
 require "includes/db.php";
+
 
 $username = $_SESSION['username'];
 
