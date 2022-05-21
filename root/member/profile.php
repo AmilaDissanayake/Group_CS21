@@ -56,6 +56,7 @@
             });
         </script>
         <?php 
+        // query all member data
             $query1 = "SELECT * FROM member WHERE username = '".$username."'";
             $result1 = mysqli_query($conn, $query1);
             $row1 = mysqli_fetch_assoc($result1);
@@ -90,7 +91,7 @@
             $email = $row3['email'];    
 
         ?>
-       
+       <!-- pofile upper part(cover page and profile image management) -->
         <div class="home-content">
             <div class="cover">
                 <?php
@@ -158,7 +159,6 @@
                             <i class='bx bx-dumbbell'></i> AGE  <p> <i class='bx bxs-right-arrow'></i><?php echo $diff->format('%y'); ?></p>
                             <i class='bx bx-dumbbell'></i> LIVES IN <p> <i class='bx bxs-right-arrow'></i><?php echo $address ?></p>
                             <i class='bx bx-dumbbell'></i> CONTACT NO. <p> <i class='bx bxs-right-arrow'></i><?php echo $p_no ?></p>
-                            <!-- <i class='bx bx-dumbbell'></i> E-MAIL <p><i class='bx bxs-right-arrow'></i><?php echo $email ?></p> -->
                             </div>
                         </div>
                     </div>
@@ -166,6 +166,7 @@
             </div>  
             <div class="divider3"></div>
             <div class="rsd">
+                <!-- personal information handling form -->
                 <div class="con1">
                     <form action="./includes/updatepersonal.php" class="form" id="form" method="POST">
                         <div class="separator">
@@ -239,6 +240,7 @@
                         
                     <div class="buttondiv"><input type="submit" class="form__button" value="SAVE PROFILE"  ></div>
                 </form>
+                <!-- account information handleing form -->
                 <form action="progress.php" class="form" id="acc_form" method="POST">
                     <div class="separator">
                         <hr class="hr-left2" />
@@ -258,7 +260,7 @@
 
                     <div class="buttondiv"><input type="submit" class="form__button" value="UPDATE EMAIL"  ></div>
                 </form>
- 
+                <!-- password changing form -->
                 <form action="./includes/update_pw.php" class="form" id="pw_form" method="POST">
                     <div class="topic"><h2><i class='bx bx-pen'></i>Change Password</h2></div>
                     <div class="form__div">
@@ -303,6 +305,7 @@
     </section>
     <?php include "includes/footer.php" ?>
     <script>
+        // show password password checkbox script
         function myunction() {
             var x = document.getElementById("password1");
             var y = document.getElementById("password2");

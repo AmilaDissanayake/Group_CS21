@@ -63,7 +63,7 @@
             <div class="middle">
                 <div class="note"><h1>Workout Schedule</h1></div>
                 <?php 
-
+                    //schedule value initializing
                     $query1 = "SELECT * FROM member WHERE username = '".$username."'";
                     $result1 = mysqli_query($conn, $query1);
                     $row1 = mysqli_fetch_assoc($result1);
@@ -94,6 +94,8 @@
                     if($out[6]==''){$day7_flag=0;}else if($out[6][0]!='0'){$day7_flag=1;}else if($out[6][0]== '0'){$day7_flag=0;}
 
                 ?>
+
+                <!-- schedule editor -->
                 <div id="popup1" class="overlay">
                     <div class="popup">
                         <h2>Hi <?php echo $username ?>! You may edit your Schedule now. </h2>
@@ -190,6 +192,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- schedule dispaly -->
                 <div class="member-list">
                     <table class="table table-hover">
                         <thead>
@@ -274,10 +277,14 @@
     <?php include "includes/footer.php" ?>
 
     <script>   
+
+
         $( document ).ready(function() {
             window.location.href = "#";
         });
 
+
+        //schedule day changer
         var i;
         function changemode(i) {                         
 
@@ -287,6 +294,7 @@
             if (value === true){
                 for(j=1;j<=6;j++){
                     if(j <= 3){
+                        alert("hi");
                         $("#d"+i+"ex"+j).empty();$("#d"+i+"ex"+j).html("<b><span class ='bpart'><input type='text' class='muscle_input' id='"+i+"_"+j+"1' placeholder='Muscle>' name='D"+i+"_"+j+"1' value='0' required ></input></span><br><input type='text' class='exercise_input' id='"+i+"_"+j+"2' placeholder='exercise' name='D"+i+"_"+j+"2' value='' required> </input> </b><br><input type='number' class='num_input' id='"+i+"_"+j+"3' name='D"+i+"_"+j+"3' min ='1' max='10' value='1' required></input>  sets of <input type='number' class='num_input' id='"+i+"_"+j+"4' name='D"+i+"_"+j+"4' min ='1' max='80' value='1' required></input> reps");
                         // document.getElementById("d"+i+"ex"+j).innerHTML= "<b><span class ='bpart'><input type='text' class='muscle_input' id='"+i+"_"+j+"1' placeholder='Muscle>' name='D"+i+"_"+j+"1' value='0' required ></input></span><br><input type='text' class='exercise_input' id='"+i+"_"+j+"2' placeholder='exercise' name='D"+i+"_"+j+"2' value='' required> </input> </b><br><input type='number' class='num_input' id='"+i+"_"+j+"3' name='D"+i+"_"+j+"3' min ='1' max='10' value='1' required></input>  sets of <input type='number' class='num_input' id='"+i+"_"+j+"4' name='D"+i+"_"+j+"4' min ='1' max='80' value='1' required></input> reps";
                     }

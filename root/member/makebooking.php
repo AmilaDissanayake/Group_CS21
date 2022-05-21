@@ -10,11 +10,12 @@ if (isset($_SESSION['notification'])) {
 }
 
 require "includes/db.php";
-
+// getting booking data
 $username = $_SESSION['username'];
 $slot = $_POST['time_cc'];
 $date = $_POST['date_cc'];
 
+// do queries for the relevant data which required to make the booking complete
 $query1 = "SELECT * FROM member WHERE username = '".$username."'";
 $result1 = mysqli_query($conn, $query1);
 $row1 = mysqli_fetch_assoc($result1);
@@ -35,6 +36,7 @@ $row2 = mysqli_fetch_assoc($result2);
 
 $userEmail=$row2['email'];
 
+// selecting the assignment duration to avoid booking days after the trainer assignment
 $assignment_query = "SELECT * FROM assignment WHERE member_id =$member_id AND trainer_id =$trainer_id ORDER BY assignment_id DESC LIMIT 1;";
 $assignment_result = mysqli_query($conn, $assignment_query);
 $assignment_row = mysqli_fetch_assoc($assignment_result);
@@ -54,7 +56,7 @@ if($tr_interval->y > 0 || $tr_interval->m > 0 || $tr_interval->d >0){
     $today = date('Y-m-d');
     $time = date('H:i:s');
 
-
+//time slot formating for the booking
     if($slot == 1){ 
         $sel_Time = DateTime::createFromFormat('H\h i\m s\s','06h 00m 00s')->format('H:i:s');}
     else if($slot == 2){ 

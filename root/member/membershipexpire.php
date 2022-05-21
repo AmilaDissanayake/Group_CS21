@@ -21,6 +21,7 @@ $username = $_SESSION['username'];
 </head>
 
 <body>
+    <!-- expire payment window -->
     <div class="expire_payment">
         <div class="expire_img"><img src="./media/timeup.png" alt=""></div>
         <div class="situation">
@@ -69,6 +70,7 @@ $username = $_SESSION['username'];
 
     $email = $row3['email'];
     ?>
+    <!-- payment submiting form -->
     <div class="udetails">
         <div class="paralist" id="email"></div>
         <form id="amount_form" action="add-payment.php" method="POST">

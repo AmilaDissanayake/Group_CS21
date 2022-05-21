@@ -132,7 +132,7 @@ $username = $_SESSION['username'];
 
             $full_attendance = json_decode($attendace);
             $perc_value = $full_attendance[$next_mon - 1][0];
-
+            // membership duration
             $mem_interval = $today->diff($membexp_date);
 
             if ($mem_date  == $today) {
@@ -243,7 +243,7 @@ $username = $_SESSION['username'];
             }
         }
         ?>
-
+        <!-- dashboard upper details view -->
         <div class="member-stats">
             <div class="one">
                 <p class="value"><?php echo "$mem_interval->m"  ?><span id="mon_tg"> Months</span> <?php echo "$mem_interval->d" ?><span id="mon_tg"> Days</span></p>

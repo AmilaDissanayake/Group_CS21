@@ -29,7 +29,7 @@ $username = $_SESSION['username'];
     <?php include "includes/sidebar.php" ?>
     <section class="home-section">
     <?php 
-
+            //setting timezone
             date_default_timezone_set('Asia/Colombo');
 
             $query1 = "SELECT * FROM member WHERE username = '".$username."'";
@@ -47,6 +47,7 @@ $username = $_SESSION['username'];
             $membership_type = $row2['membership_type']; 
             $joined_date = $row2['joined_date'];
 
+            //expire date calculating according to the membership package 
             if($membership_type==12){ 
                 $exp_date = date('Y-m-d',strtotime("+12 month", strtotime("$joined_date")));}
             else if($membership_type==6){ 
@@ -56,6 +57,7 @@ $username = $_SESSION['username'];
             else if($membership_type==1){ 
                 $exp_date = date('Y-m-d',strtotime("+1 month", strtotime("$joined_date")));}
 
+            //making point date to get the date interval
             $point_date = date('Y-m-d',strtotime("$joined_date"));
             $joinpoint_date = new DateTime("$point_date");
 
@@ -85,6 +87,7 @@ $username = $_SESSION['username'];
             $current_month_start = date('Y-m-d',strtotime($par1, strtotime("$joined_date")));
             $current_month_end = date('Y-m-d',strtotime($par2, strtotime("$joined_date")));
 
+            //membershipt type checking and period checking
             // echo $current_month_start, $current_month_end;
             //$membership_type = 6;
         ?>
@@ -126,7 +129,7 @@ $username = $_SESSION['username'];
                 });
             </script>
         </div>
-
+        <!-- scenario popups  -->
         <div id="popup5" class="overlay">
             <div class="popup">
                 <h2>Sorry! <?php echo $username ?> </h2>
@@ -193,6 +196,8 @@ $username = $_SESSION['username'];
                 </div>
             </div>
         </div>
+
+        <!-- bmi value editor -->
         <div id="popup1" class="overlay_2">
             <div class="popup_2">
                 <h2>Hi <?php echo $username ?>! You may edit your BMI values now. </h2>
@@ -431,6 +436,8 @@ $username = $_SESSION['username'];
                     </div>
             </div>
         </div>
+
+        <!-- body fat value editior -->
         <div id="popup1bf" class="overlay_2">
             <div class="popup_2">
                 <h2>Hi <?php echo $username ?>! You may edit your BOADY FAT values now. </h2>
@@ -647,6 +654,7 @@ $username = $_SESSION['username'];
         </div>
         <div class="analy">
             <div class="vboderdivider"></div>
+            <!-- bmi cal holder panel -->
             <div class="rpanel">
                 <div class="pan" id="updatebmi">
                     <?php include "./includes/bmi-calc.php" ?>
@@ -657,12 +665,14 @@ $username = $_SESSION['username'];
             <div class="left">
                 <div class="lpanel">
                     <div class="btag">
+                        <!-- bmi charts -->
                         <p>BMI STATISTICS</p>
                     </div>
                     <div class="manage_btn"><button id="bmi_btn" class="about_btn2">BMI value Editor</button></div>
                     <div class="bmip" id="weekprgs">
                         <canvas id="canvas"></canvas>
                     </div>
+                    <!-- weigh categorizers -->
                     <p class="category"><i class='bx bxs-pin'></i> Weight status category <i class='bx bx-tag-alt'></i><span id=" bmi_c" <?php if ($label_val >= 30) {
                                                                                                                                                 echo "class='ob'";
                                                                                                                                             } else if ($label_val < 30 && $label_val >= 25) {
@@ -689,14 +699,7 @@ $username = $_SESSION['username'];
                 <div class="indc1">
                     <h2>Weekly Progress</h2>
                     <?php
-                    date_default_timezone_set('Asia/Colombo');
-                    $query1 = "SELECT * FROM member WHERE username = '" . $username . "'";
-                    $result1 = mysqli_query($conn, $query1);
-                    $row1 = mysqli_fetch_assoc($result1);
-
-                    $member_id = $row1['member_id'];
-
-
+                    //total workout day calculating from the schedule
                     for ($m = 0; $m <= 6; $m++) {
                         $week = array("day1_ex1", "day2_ex1", "day3_ex1", "day4_ex1", "day5_ex1", "day6_ex1", "day7_ex1");
 
@@ -779,7 +782,7 @@ $username = $_SESSION['username'];
                         $point_date = date('0000-00-00');
                         $today_from = new DateTime("$point_date");
                         $day_interval = $today_from->diff($today_at);
-
+                        // making membership interval type from backword
                         if ($day_interval->d <= 7) {
                             $active_week = 4;
                         } else if ($day_interval->d <= 14) {
@@ -797,7 +800,7 @@ $username = $_SESSION['username'];
                         $joinpoint_date = new DateTime("$point_date");
 
                         $mem_interval2 = $today->diff($joinpoint_date);
-
+                        //making interval type from forward
                         if($mem_interval2->d <= 7){
                             $active_week2 = 1;
                         }else if($mem_interval2->d <= 14){
@@ -821,13 +824,10 @@ $username = $_SESSION['username'];
                         $bf_values = $result_row['bf_values'];
 
 
-                        $full_attendance = json_decode($attendace);
-                        $full_bmi = json_decode($bmi_values);
-                        $full_bf = json_decode($bf_values);
-                        // if($full_bf[0] == ''){$msg="HI";}else{$msg="So";}
-                        // echo $msg;
-                        // print_r($full_attendance);
-                        // $attendance_set[$m]=$full_attendance;
+                        $full_attendance = json_decode($attendace);//attendance 2D array
+                        $full_bmi = json_decode($bmi_values);//bmi values array
+                        $full_bf = json_decode($bf_values);//bf array
+
                         ?>
                         <div <?php if ($total_workout_days < 5) {
                                     echo ('class="wdetails"');
@@ -842,9 +842,9 @@ $username = $_SESSION['username'];
                                 $active_day_count = ($total_per/100)*$total_workout_days;
 
                                 $d_count = (int)$active_day_count;
-
+                                // value testing according to the different packages and workout days
                                 //echo $d_count;
-                               // $total_workout_days = 6;
+                                // $total_workout_days = 6;
                                 //$package_type = 6;
 
                                 if($total_workout_days== 2){
@@ -1006,6 +1006,7 @@ $username = $_SESSION['username'];
             <div class="divider"></div>
             <div class="left">
                 <div class="indc1">
+                    <!-- monthly attendance holder -->
                     <h2>Monthly Attendance</h2>
                     <div class="monthviewlst">
                         <?php
@@ -1216,6 +1217,7 @@ $username = $_SESSION['username'];
 
                 </div>
                 <div class="divider3"></div>
+                <!-- body fat chart -->
                 <div class="dlpanel">
                     <div class="btag">
                         <p>BODY FAT STATISTICS</p>
@@ -1226,6 +1228,7 @@ $username = $_SESSION['username'];
                             <canvas id="canvas2"></canvas>
                         </div>
                     </div>
+                    <!-- body fat value categorizers -->
                     <p class="category"><i class='bx bxs-pin'></i> Body Fat category <i class='bx bx-tag-alt'></i><span id=" bf_c" <?php
                                                                                                                                     if ($gender == 'female') {
                                                                                                                                         if ($label_val2 >= 31) {
@@ -1305,6 +1308,7 @@ $username = $_SESSION['username'];
     <script type="text/javascript" src="js/bfc-cal.js"></script>
 
     <script>
+        //script for days completing
         function tick_check(i) {
 
             var checkbox = document.getElementById("ck_d" + i);
@@ -1322,6 +1326,7 @@ $username = $_SESSION['username'];
             }
         }
 
+        // progress updating from ticks
         function go_for_progress(i, j) {
             var day = i;
             var state = j;

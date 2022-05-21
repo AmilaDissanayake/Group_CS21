@@ -29,6 +29,7 @@
         <div class="welcomenote"><h1></h1></div>
 
         <?php 
+            // calender constraints setting 
             date_default_timezone_set('Asia/Colombo');
             $date = date('Y-m-d');
             $maxdate = date('Y-m-d',strtotime("+1 week", strtotime($date)));
@@ -87,7 +88,7 @@
                                     <button type="submit" class="check_btn"  name="date-submit" id="check_date">CHECK</button>
                                 </div>
                                 <script>
-
+                                    // check time slots and update the ui view according to that
                                     function slot_update(respo){
                                         if(respo.slot1== true){var i = 1; $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot1== false){var i = 1; $('#time_slot option[value='+i+']').prop('disabled',true);}
                                         if(respo.slot2== true){var i = 2;  $('#time_slot option[value='+i+']').prop('disabled',false);}else if(respo.slot2== false){var i = 2 ; $('#time_slot option[value='+i+']').prop('disabled',true);}
@@ -162,6 +163,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- calender view -->
                         <div id="calendar-t" class="calendar-top">
                             <h1>Calendar</h1>
                             <div id="calendar" class="calendar"></div>
@@ -185,6 +188,7 @@
 
                     <div class="midvdiv"></div>
                     <div class="right">
+                        <!-- available time slot  listing section -->
                         <h1>Time slots</h1>
                         <div class="tslotlist">
                             <div class="grid-container" id="display_slots">
@@ -228,6 +232,7 @@
                             
                             <div >
                                 <div><h1>Fixed Booking List</h1></div>
+                                <!-- listed view of fixed bookings -->
                                 <table>
                                     <tr>
                                         <th>Date</th>

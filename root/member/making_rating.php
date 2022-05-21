@@ -7,7 +7,7 @@ if (isset($_SESSION['notification'])) {
 }
 
 require "includes/db.php";
-
+// get rating info
 $username = $_SESSION['username'];
 $trainer_id = $_POST['trainer'];
 $tr_rating = $_POST['rating'];
@@ -22,6 +22,7 @@ $member_id = $row1['member_id'];
 date_default_timezone_set('Asia/Colombo');
 $today = date('Y-m-d');
 
+// insert of update the made review
 $check_reviews = "SELECT * FROM review WHERE member_id ='$member_id' AND trainer_id ='$trainer_id' LIMIT 1;";
 $result = mysqli_query($conn,$check_reviews);
 $review_count=mysqli_num_rows($result);
