@@ -176,6 +176,13 @@
                 // while ($count_row2 = mysqli_fetch_array($count_result2)) {
                 // }
 
+                //$barbell =0;
+
+                $count_sql4 = "SELECT SUM(quantity) FROM inventory WHERE name LIKE '%barbell%'";
+                $count_result4 = mysqli_query($conn, $count_sql4);
+                $count_row4 = mysqli_fetch_array($count_result4);
+                $count_total4 = $count_row4[0];
+
                 ?>
                 <div class="one">
                     <p class="value"><?php echo $count_total1 ?></p>
@@ -193,7 +200,7 @@
                 </div>
 
                 <div class="four">
-                    <p class="value">15</p>
+                    <p class="value"><?php echo $count_total4 ?></p>
                     <p class="name">Total Barbells</p>
                 </div>
 

@@ -17,6 +17,12 @@ if (isset($_POST['date-submit'])) {
     $date_check = "SELECT * FROM close_times";
     $date_check_result = mysqli_query($conn, $date_check);
 
+    $sql3 = "DELETE FROM availability WHERE date = '$date';";
+    $availability_delete_result = mysqli_query($conn, $sql3);
+
+    $sql4 = "DELETE FROM booking WHERE date = '$date';";
+    $booking_delete_result = mysqli_query($conn, $sql4);
+
     while ($date_check_row = mysqli_fetch_assoc($date_check_result)) {
         $seted_date = $date_check_row['date'];
         $seted_date_id = $date_check_row['close_time_id'];

@@ -2,7 +2,7 @@
 
 //require "includes/db.php";
 ?>
-<?php require "includes/check_login.php"?>
+<?php require "includes/check_login.php" ?>
 
 <!DOCTYPE html>
 
@@ -24,9 +24,9 @@
 
         <?php include "includes/header.php" ?>
         <?php
-        $mydate=date("y-m-d");
-        $month=date('m',strtotime($mydate));
-        $year=date('y',strtotime($mydate));
+        $mydate = date("y-m-d");
+        $month = date('m', strtotime($mydate));
+        $year = date('y', strtotime($mydate));
         ?>
 
         <script>
@@ -77,14 +77,14 @@
                 <div class="search-container">
 
 
-</div>
+                </div>
 
 
                 <div class="search-box">
                     <button class="see-more2"><a href="member_payment_form.php">+ ADD PAYMENT</a></button>
                 </div>
             </div>
-            
+
 
             <div class="member-list">
                 <table class="table table-hover">
@@ -104,50 +104,49 @@
                     </thead>
                     <tbody class="output" id="output">
                         <?php
-                            $sql = "SELECT * FROM payment WHERE payment_date>='$year-$month-01'";
-                            $result = mysqli_query($conn, $sql);
-                            while ($payment_row = mysqli_fetch_assoc($result)) {
-                                $payment_id = $payment_row['payment_id'];
-                                $member_id = $payment_row['member_id'];
-                                $payment_date = $payment_row['payment_date'];
-                                $payment_amount = $payment_row['payment_amount'];
-                                $trainer_id = $payment_row['trainer_id'];
-                                $payment_type = $payment_row['payment_type'];
-                                $description = $payment_row['description'];
-                                
-                                $sql2 = "SELECT * FROM member WHERE member_id = $member_id";
-                                $result2 = mysqli_query($conn, $sql2);
-                                $payment_row2 = mysqli_fetch_assoc($result2);
-                                $f_name = $payment_row2['f_name'];
-                                $l_name = $payment_row2['l_name'];
-                                $phone_no = $payment_row2['phone_no'];
-                                $assign_trainer = $payment_row2['assign_trainer'];
-                                if ($assign_trainer >= 1){
-                                    $sql3 = "SELECT username FROM trainer WHERE trainer_id = '$assign_trainer'";
-                                    $result3 = mysqli_query($conn, $sql3);
-                                    $payment_row3 = mysqli_fetch_assoc($result3);
-                                    $trainer_name = $payment_row3['username'];
-                                }
-                                else{
-                                    $trainer_name = "N/A";
-                                }
+                        $sql = "SELECT * FROM payment WHERE payment_date>='$year-$month-01'";
+                        $result = mysqli_query($conn, $sql);
+                        while ($payment_row = mysqli_fetch_assoc($result)) {
+                            $payment_id = $payment_row['payment_id'];
+                            $member_id = $payment_row['member_id'];
+                            $payment_date = $payment_row['payment_date'];
+                            $payment_amount = $payment_row['payment_amount'];
+                            $trainer_id = $payment_row['trainer_id'];
+                            $payment_type = $payment_row['payment_type'];
+                            $description = $payment_row['description'];
 
-                                // $sql4 = "SELECT membership_type FROM membership WHERE member_id = $member_id";
-                                // $result4 = mysqli_query($conn, $sql4);
-                                // $payment_row4 = mysqli_fetch_assoc($result4);
-                                // $membership_type = $payment_row4['membership_type'];
+                            $sql2 = "SELECT * FROM member WHERE member_id = $member_id";
+                            $result2 = mysqli_query($conn, $sql2);
+                            $payment_row2 = mysqli_fetch_assoc($result2);
+                            $f_name = $payment_row2['f_name'];
+                            $l_name = $payment_row2['l_name'];
+                            $phone_no = $payment_row2['phone_no'];
+                            $assign_trainer = $payment_row2['assign_trainer'];
+                            if ($assign_trainer >= 1) {
+                                $sql3 = "SELECT username FROM trainer WHERE trainer_id = '$assign_trainer'";
+                                $result3 = mysqli_query($conn, $sql3);
+                                $payment_row3 = mysqli_fetch_assoc($result3);
+                                $trainer_name = $payment_row3['username'];
+                            } else {
+                                $trainer_name = "N/A";
+                            }
+
+                            // $sql4 = "SELECT membership_type FROM membership WHERE member_id = $member_id";
+                            // $result4 = mysqli_query($conn, $sql4);
+                            // $payment_row4 = mysqli_fetch_assoc($result4);
+                            // $membership_type = $payment_row4['membership_type'];
                         ?>
-                        <tr>
-                            <td><?php echo "$payment_id"?></td>
-                            <td><?php echo "$f_name"?></td>
-                            <td><?php echo "$l_name"?></td>
-                            <td><?php echo "$phone_no"?></td>
-                            <td><?php echo "$description"?></td>
-                            <td><?php echo "$trainer_name"?></td>
-                            <td><?php echo "$payment_amount"?></td>
-                            <td><?php echo "$payment_date"?></td>
-                            <td><?php echo "$payment_type"?></td>
-                        </tr>
+                            <tr>
+                                <td><?php echo "$payment_id" ?></td>
+                                <td><?php echo "$f_name" ?></td>
+                                <td><?php echo "$l_name" ?></td>
+                                <td><?php echo "$phone_no" ?></td>
+                                <td><?php echo "$description" ?></td>
+                                <td><?php echo "$trainer_name" ?></td>
+                                <td><?php echo "$payment_amount" ?></td>
+                                <td><?php echo "$payment_date" ?></td>
+                                <td><?php echo "$payment_type" ?></td>
+                            </tr>
                         <?php } ?>
 
                     </tbody>
@@ -157,7 +156,7 @@
             </div>
         </div>
 
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
             $(document).ready(function() {
                 $("#search").keypress(function() {
                     $.ajax({
@@ -172,11 +171,7 @@
                     });
                 });
             });
-
-        
-
-
-        </script>
+        </script> -->
 
     </section>
     <?php include "includes/footer.php" ?>
@@ -186,27 +181,23 @@
 
 
 
-<script> 
-
-    function searchUser(){
+<script>
+    function searchUser() {
         var input = document.getElementById("search");
         var filter = input.value.toUpperCase();
         var tbody = document.getElementById("output");
         var row = tbody.getElementsByTagName("tr");
-        for(let i = 0;i < row.length; i++){
+        for (let i = 0; i < row.length; i++) {
             var td = row[i].getElementsByTagName('td')[1];
             var txtValue = td.textContent || td.innerText;
-            if(txtValue.toUpperCase().indexOf(filter) > -1){
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 row[i].style.display = "";
-            }
-            else{
+            } else {
                 row[i].style.display = "none";
             }
         }
 
     }
-
-
 </script>
 
 

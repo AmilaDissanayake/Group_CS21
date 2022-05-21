@@ -56,7 +56,7 @@
                         <?php
 
 
-                        $sql1 = "SELECT * FROM payment";
+                        $sql1 = "SELECT * FROM payment where payment_amount>7000";
                         $result1 = mysqli_query($conn, $sql1);
 
                         // $sql = "SELECT * FROM trainer";
@@ -230,8 +230,10 @@
         var row = tbody.getElementsByTagName("tr");
         for (let i = 0; i < row.length; i++) {
             var td = row[i].getElementsByTagName('td')[0];
-            var txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            var amountt = row[i].getElementsByTagName('td')[3];
+            //var txtValue = td.textContent || td.innerText;
+            if (parseInt(amountt.textContent) > 7000) {
+                console.log(parseInt(amountt))
                 row[i].style.display = "";
             } else {
                 row[i].style.display = "none";

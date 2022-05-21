@@ -12,6 +12,7 @@ if (mysqli_num_rows($result) > 0) {
         $username = $row['username'];
         // $row2 = mysqli_fetch_assoc($result2);
         $dateMembership = $row['joined_date'];
+        $type = $row['type'];
 
         $query = "SELECT * FROM review WHERE trainer_id = '$row[trainer_id]'";
         $result2 = mysqli_query($conn, $query);
@@ -53,7 +54,9 @@ if (mysqli_num_rows($result) > 0) {
                                     
                                     <td>" . $row['username'] . "</td>
                                     <td>" . $row['joined_date'] . "</td>
+                                    <td>" . $type . " </td>
                                     <td>" . $row['phone_no'] . " </td>
+                                    
                                     <td>" . $row['rate'] . "</td>
                                     <td>⭐" . $final_rating . " </td>
                                     <td>" . $row['assigned_members'] . " </td>

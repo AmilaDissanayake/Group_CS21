@@ -155,6 +155,15 @@
 
                     </select>
                 </div>
+                <div class="filter2">
+                    <select name="type" class="justselect" id="type">
+                        <option selected="selected" value="all2">Type</option>
+                        <option value="beginer">Beginer</option>
+                        <option value="expert">Expert</option>
+
+
+                    </select>
+                </div>
                 <div class="add_button"><button class="add_btn_filter" id="btn">Filter</button></div>
 
                 <!-- <div class="add_button"><button class="add_btn_filter" onclick="location.href='#'">Filter</button></div> -->
@@ -175,6 +184,7 @@
 
                             <th>Username</th>
                             <th>Joined Date</th>
+                            <th>Type</th>
                             <th>Phone Number</th>
                             <!-- <th>Address</th> -->
                             <!-- <th>Qualifications</th> -->
@@ -197,6 +207,7 @@
                                 $date = strtotime($row['joined_date']);
                                 $formattedValue = date("F Y", $date);
                                 $username = $row['username'];
+                                $type = $row['type'];
 
 
                                 $query = "SELECT * FROM review WHERE trainer_id = $row[trainer_id]";
@@ -242,6 +253,7 @@
                                     </td>
                                     <td><?php echo $row['username'] ?> </td>
                                     <td><?php echo $formattedValue ?> </td>
+                                    <td><?php echo $type ?> </td>
                                     <td><?php echo $row['phone_no'] ?> </td>
 
                                     <td><?php echo  $row['rate'] ?> </td>
@@ -315,6 +327,7 @@
                         data: {
                             gender: $('#gender :selected').val(),
                             rating: $('#rating :selected').val(),
+                            type: $('#type :selected').val(),
                         },
                         success: function(data) {
                             $("#output").html(data);

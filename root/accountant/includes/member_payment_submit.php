@@ -50,7 +50,7 @@ if (isset($_POST['form_submit'])) {
 
 
         $sql3 = "INSERT INTO payment(member_id, description, payment_amount, trainer_id, payment_type) VALUES('$member_id', '$description', '$amount', '$assigned_trainer', '$payment_type')";
-        mysqli_query($conn, $sql3);
+        $result3 = mysqli_query($conn, $sql3);
 
 
 
@@ -78,11 +78,13 @@ if (isset($_POST['form_submit'])) {
         $query4 = "UPDATE membership SET membership_type = '$membership_type', joined_date='$date' WHERE member_id = '" . $member_id . "'";
         $result4 = mysqli_query($conn, $query4);
 
-        if ($result1 && $result2 && $result4) {
+        if ($result1 && $result2 && $result3 && $result4) {
             $_SESSION['notification'] = "Payment successfully";
             header("location:../member_payment.php");
+
+            //echo "dsfdsf";
         } else {
-            echo die(mysqli_error($conn));
+            echo "no";
         }
     }
 }
